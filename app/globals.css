@@ -49,6 +49,9 @@ html {
 
 body {
   margin: 0;
+  /* Aucun élément isolé ne doit pouvoir élargir la page : le défilement
+     horizontal n'existe qu'à l'intérieur des conteneurs prévus (tableaux). */
+  overflow-x: clip;
   background: var(--color-ink-900);
   color: var(--color-mist-050);
   font-family: var(--font-display);

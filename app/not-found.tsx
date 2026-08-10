@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: "Page introuvable" };
 
 export default function NotFound() {
   return (
-    <main id="contenu" className="relative z-10 mx-auto flex min-h-[80dvh] max-w-[1180px] flex-col justify-center px-6">
+    <main id="contenu" className="relative z-10 mx-auto flex min-h-[80dvh] max-w-[1180px] flex-col justify-center px-4 sm:px-6">
       <p className="m-0 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">Erreur 404</p>
       <h1 className="display mt-3 text-[clamp(1.8rem,4vw,2.6rem)] text-mist-050">Cette page n&apos;existe pas.</h1>
       <p className="prose-measure mt-4 text-[0.98rem] leading-relaxed text-mist-300">

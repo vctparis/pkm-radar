@@ -28,9 +28,10 @@ export default function GrowthBars({ strata }: { strata: Stratum[] }) {
         const value = stratum.growth;
         if (value == null) {
           return (
-            <div key={stratum.key} className="grid grid-cols-[8rem_1fr] items-center gap-3">
+            <div key={stratum.key} className="grid grid-cols-[minmax(5.5rem,8rem)_1fr_4.2rem] items-center gap-2 sm:gap-3">
               <span className="text-[0.84rem] text-mist-300">{stratum.label}</span>
               <span className="text-[0.8rem] text-mist-500">échantillon insuffisant</span>
+              <span aria-hidden />
             </div>
           );
         }
@@ -38,9 +39,12 @@ export default function GrowthBars({ strata }: { strata: Stratum[] }) {
         const positive = value >= 0;
 
         return (
-          <div key={stratum.key} className="grid grid-cols-[8rem_1fr] items-start gap-3">
+          // La valeur vit dans sa propre colonne, jamais en absolu au bout de
+          // la barre : au bout d'une barre longue elle sortirait du cadre sur
+          // un écran de téléphone.
+          <div key={stratum.key} className="grid grid-cols-[minmax(5.5rem,8rem)_1fr_4.2rem] items-start gap-2 sm:gap-3">
             <div className="pt-0.5">
-              <span className="block text-[0.84rem] font-medium text-mist-100">{stratum.label}</span>
+              <span className="block text-[0.84rem] font-medium leading-tight text-mist-100">{stratum.label}</span>
               <span className="block text-[0.72rem] text-mist-500">{stratum.cards} cartes</span>
             </div>
 
@@ -56,19 +60,6 @@ export default function GrowthBars({ strata }: { strata: Stratum[] }) {
                     width: `${Math.max(width, 0.4)}%`,
                   }}
                 />
-                <span
-                  className={`tabular absolute top-1 text-[0.82rem] font-semibold leading-5 ${
-                    positive ? "text-mist-050" : "text-mist-050"
-                  }`}
-                  style={
-                    positive
-                      ? { left: `calc(50% + ${width}% + 0.5rem)` }
-                      : { right: `calc(50% + ${width}% + 0.5rem)` }
-                  }
-                >
-                  {positive ? "+" : ""}
-                  {value.toFixed(1)} %
-                </span>
               </div>
 
               {stratum.driver && (
@@ -83,6 +74,11 @@ export default function GrowthBars({ strata }: { strata: Stratum[] }) {
                 </p>
               )}
             </div>
+
+            <span className={`tabular pt-1.5 text-right text-[0.82rem] font-semibold ${positive ? "text-mist-050" : "text-mist-050"}`}>
+              {positive ? "+" : ""}
+              {value.toFixed(1)} %
+            </span>
           </div>
         );
       })}

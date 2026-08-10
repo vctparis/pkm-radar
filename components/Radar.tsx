@@ -131,7 +131,7 @@ export default function Radar({ data }: { data: RadarData }) {
   return (
     <div className="relative z-10">
       <header className="border-b border-ink-700/70">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4 px-6 py-5">
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4 px-4 py-5 sm:px-6">
           <div className="flex items-baseline gap-3">
             <span className="display text-[1.15rem] tracking-tight text-mist-050">PKM Radar</span>
             <span className="text-[0.78rem] text-mist-500">relevé du {generated}</span>
@@ -156,7 +156,7 @@ export default function Radar({ data }: { data: RadarData }) {
         </div>
       </header>
 
-      <main id="contenu" className="mx-auto max-w-[1180px] px-6 pb-24">
+      <main id="contenu" className="mx-auto max-w-[1180px] px-4 pb-24 sm:px-6">
         {/* Le constat d'abord : c'est lui qui conditionne la lecture du reste. */}
         <section className="grid gap-8 py-14 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
           <div>
@@ -210,7 +210,7 @@ export default function Radar({ data }: { data: RadarData }) {
               <thead className="bg-ink-800 text-left align-bottom">
                 <tr>
                   {[
-                    { label: "Set", hint: "", align: "left" },
+                    { label: "Set", hint: "", align: "left", sticky: true },
                     { label: "Booster", hint: "le moins cher, neuf", align: "right" },
                     { label: "Offre", hint: "eBay.fr + unités CardTrader", align: "right" },
                     { label: "Carte phare", hint: "celle qui porte le set", align: "left" },
@@ -218,11 +218,13 @@ export default function Radar({ data }: { data: RadarData }) {
                     { label: "Fond du set", hint: "croissance 30 j", align: "right" },
                     { label: "Poids carte n°1", hint: "part de la valeur du set", align: "right" },
                     { label: "Score", hint: "sur 100", align: "right" },
-                  ].map((column) => (
+                  ].map((column: { label: string; hint: string; align: string; sticky?: boolean }) => (
                     <th
                       key={column.label}
                       scope="col"
-                      className={`px-4 py-3 font-medium text-mist-100 ${column.align === "right" ? "text-right" : ""}`}
+                      className={`px-4 py-3 font-medium text-mist-100 ${column.align === "right" ? "text-right" : ""} ${
+                        column.sticky ? "sticky left-0 z-10 bg-ink-800" : ""
+                      }`}
                     >
                       {column.label}
                       {column.hint && (
@@ -255,7 +257,12 @@ export default function Radar({ data }: { data: RadarData }) {
                         selected ? "bg-accent/10" : "hover:bg-ink-800/70"
                       }`}
                     >
-                      <th scope="row" className="px-4 py-3 text-left font-medium text-mist-050">
+                      <th
+                        scope="row"
+                        className={`sticky left-0 z-10 px-4 py-3 text-left font-medium text-mist-050 ${
+                          selected ? "bg-[#161c2e]" : "bg-ink-850"
+                        }`}
+                      >
                         {set.name}
                         <span className="mt-0.5 block text-[0.74rem] font-normal text-mist-500">
                           {set.nameEN && set.nameEN !== set.name ? `${set.nameEN} · ` : ""}
@@ -479,7 +486,7 @@ export default function Radar({ data }: { data: RadarData }) {
                 base commune. Un second axe serait plus court à écrire et
                 trompeur à lire. */}
             <LineChart
-              title="Booster, Top 5 et Top 12 hors Top 5 — base 100"
+              title="Booster, Top 5 et Rangs 6-12 — base 100"
               subtitle="Paniers de composition figée, valorisés chaque jour au plancher CardTrader. Aucune source accessible ne vend 3-4 ans d'historique de prix : cette série se construit à partir d'aujourd'hui, un relevé par jour."
               series={[
                 {
@@ -498,7 +505,7 @@ export default function Radar({ data }: { data: RadarData }) {
                   points: indexed(active.liveHistory, (p) => p.top5Value ?? null),
                 },
                 {
-                  label: "Top 12 hors Top 5",
+                  label: "Rangs 6-12",
                   color: SERIES.commons,
                   points: indexed(active.liveHistory, (p) => p.top12ex5Value ?? null),
                 },
@@ -515,10 +522,11 @@ export default function Radar({ data }: { data: RadarData }) {
             {!active.jpOnly && (
             <LineChart
               title="Croissance dans le temps"
+              legend={false}
               subtitle={
                 smoothing === "monthly"
-                  ? "Croissance pondérée par la valeur, fenêtre glissante de 90 jours avancée mois par mois. Le Top 5 et le Top 12 n'y figurent pas : Cardmarket relève les cartes chères trop rarement pour en tirer une courbe."
-                  : "Croissance pondérée par la valeur, fenêtre glissante de 180 jours avancée trimestre par trimestre — moins de points, moins de bruit."
+                  ? "Croissance pondérée par la valeur, fenêtre glissante de 90 jours avancée mois par mois. Les strates hautes (carte-titre, rangs 2-5) n'ont que peu de points : Cardmarket relève les cartes chères rarement. Le booster est en variation depuis son premier relevé."
+                  : "Croissance pondérée par la valeur, fenêtre glissante de 180 jours avancée trimestre par trimestre — moins de points, moins de bruit. Le booster est en variation depuis son premier relevé."
               }
               height={430}
               controls={
@@ -803,7 +811,7 @@ export default function Radar({ data }: { data: RadarData }) {
       </main>
 
       <footer className="border-t border-ink-700/70">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-6 py-8 text-[0.8rem] text-mist-500">
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-4 py-8 sm:px-6 text-[0.8rem] text-mist-500">
           <p className="m-0">
             Outil d&apos;analyse personnel. Aucune de ces mesures ne constitue un conseil d&apos;investissement.
           </p>

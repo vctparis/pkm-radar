@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export type Point = { date: string; value: number | null; sample?: number };
 export type Series = { label: string; color: string; points: Point[]; unit?: string };
@@ -17,18 +17,45 @@ type Props = {
   height?: number;
   /** Commandes supplémentaires affichées dans l'en-tête (ex. bascule de lissage). */
   controls?: React.ReactNode;
+  /** Masquer la légende interne quand les commandes tiennent déjà ce rôle
+      (des pastilles de sélection colorées SONT une légende). */
+  legend?: boolean;
 };
 
-const W = 880;
-const PAD = { top: 28, right: 24, bottom: 42, left: 52 };
+const dateFmtShort = new Intl.DateTimeFormat("fr-FR", { month: "short", year: "2-digit" });
 
 const dateFmt = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short", year: "2-digit" });
 const parse = (iso: string) => Date.parse(`${iso}T12:00:00Z`);
 
-export default function LineChart({ title, subtitle, series, reference, emptyHint, format, height, controls }: Props) {
-  const H = height ?? 320;
+export default function LineChart({ title, subtitle, series, reference, emptyHint, format, height, controls, legend = true }: Props) {
   const [hover, setHover] = useState<number | null>(null);
   const [asTable, setAsTable] = useState(false);
+
+  // Le SVG est dessiné dans un viewBox virtuel puis mis à l'échelle par le
+  // navigateur : sur un écran de 375 px, un viewBox de 880 écrase le texte
+  // sous les 5 px. On observe donc la largeur réelle du conteneur et on
+  // redessine dans un viewBox étroit quand elle passe sous 560 px — le texte
+  // garde ainsi une taille lisible après mise à l'échelle.
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const [compact, setCompact] = useState(false);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width ?? 0;
+      setCompact(width > 0 && width < 560);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const W = compact ? 460 : 880;
+  const PAD = useMemo(
+    () => (compact ? { top: 26, right: 12, bottom: 40, left: 62 } : { top: 28, right: 24, bottom: 42, left: 52 }),
+    [compact],
+  );
+  const FONT = compact ? 13 : 11;
+  const H = Math.round((height ?? 320) * (compact ? 0.85 : 1));
 
   const model = useMemo(() => {
     const clean = series
@@ -60,7 +87,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
     const dates = [...new Set(clean.flatMap((s) => s.points.map((p) => p.date)))].sort();
 
     return { clean, x, y, lo, hi, minT, maxT, dates };
-  }, [series, reference, H]);
+  }, [series, reference, H, W, PAD]);
 
   // Une ligne exige au moins deux points ; en dessous on affiche l'état réel
   // plutôt qu'un graphe trompeusement vide.
@@ -74,9 +101,9 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
           <h3 className="display m-0 text-[1.05rem] text-mist-050">{title}</h3>
           {subtitle && <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">{subtitle}</p>}
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           {controls}
-          {model && model.clean.length >= 2 && (
+          {legend && model && model.clean.length >= 2 && (
             <ul className="m-0 flex list-none flex-wrap gap-3 p-0">
               {model.clean.map((s) => (
                 <li key={s.label} className="flex items-center gap-1.5 text-[0.78rem] text-mist-300">
@@ -98,7 +125,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
       </figcaption>
 
       {!enough || !model ? (
-        <div className="flex min-h-[170px] flex-col items-start justify-center gap-2 rounded-xl border border-dashed border-ink-600 px-5 py-8">
+        <div ref={wrapRef} className="flex min-h-[170px] flex-col items-start justify-center gap-2 rounded-xl border border-dashed border-ink-600 px-5 py-8">
           <strong className="text-[0.92rem] text-mist-100">Pas encore de série</strong>
           <p className="prose-measure m-0 text-[0.82rem] leading-relaxed text-mist-500">{emptyHint}</p>
         </div>
@@ -131,14 +158,15 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
           </table>
         </div>
       ) : (
-        <div className="relative">
+        <div className="relative" ref={wrapRef}>
           <svg
             viewBox={`0 0 ${W} ${H}`}
             className="block h-auto w-full touch-none"
             role="img"
             aria-label={`${title}. ${model.clean.map((s) => `${s.label} : ${fmt(s.points.at(-1)!.value as number)}`).join(". ")}`}
-            onMouseLeave={() => setHover(null)}
-            onMouseMove={(event) => {
+            onPointerLeave={() => setHover(null)}
+            onPointerDown={(event) => event.currentTarget.setPointerCapture(event.pointerId)}
+            onPointerMove={(event) => {
               const box = event.currentTarget.getBoundingClientRect();
               const px = ((event.clientX - box.left) / box.width) * W;
               let best = 0;
@@ -160,7 +188,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
               return (
                 <g key={i}>
                   <line x1={PAD.left} y1={gy} x2={W - PAD.right} y2={gy} stroke="#1e2230" strokeWidth={1} />
-                  <text x={PAD.left - 10} y={gy + 4} textAnchor="end" className="tabular" fontSize={11} fill="#6b7488">
+                  <text x={PAD.left - 10} y={gy + 4} textAnchor="end" className="tabular" fontSize={FONT} fill="#6b7488">
                     {fmt(value)}
                   </text>
                 </g>
@@ -178,7 +206,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
                   strokeWidth={1}
                   strokeDasharray="5 5"
                 />
-                <text x={W - PAD.right} y={model.y(reference.value) - 7} textAnchor="end" fontSize={11} fill="#6b7488">
+                <text x={W - PAD.right} y={model.y(reference.value) - 7} textAnchor="end" fontSize={FONT} fill="#6b7488">
                   {reference.label}
                 </text>
               </g>
@@ -192,10 +220,10 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
                   y={H - 14}
                   textAnchor={i ? "end" : "start"}
                   className="tabular"
-                  fontSize={11}
+                  fontSize={FONT}
                   fill="#6b7488"
                 >
-                  {dateFmt.format(parse(d))}
+                  {(compact ? dateFmtShort : dateFmt).format(parse(d))}
                 </text>
               ))}
 
@@ -240,7 +268,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
 
           {hover != null && model.dates[hover] && (
             <div
-              className="pointer-events-none absolute top-2 rounded-xl bg-ink-900/95 px-3 py-2 text-[0.78rem] ring-1 ring-ink-600 backdrop-blur"
+              className="pointer-events-none absolute top-2 max-w-[230px] rounded-xl bg-ink-900/95 px-3 py-2 text-[0.78rem] ring-1 ring-ink-600 backdrop-blur"
               style={{
                 left: `${(model.x(parse(model.dates[hover])) / W) * 100}%`,
                 transform: `translateX(${model.x(parse(model.dates[hover])) > W / 2 ? "-108%" : "8%"})`,

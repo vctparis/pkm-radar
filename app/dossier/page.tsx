@@ -24,7 +24,7 @@ export default async function DossierPage() {
   return (
     <div className="relative z-10">
       <header className="border-b border-ink-700/70">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4 px-6 py-5">
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4 px-4 py-5 sm:px-6">
           <Link href="/" className="display text-[1.15rem] tracking-tight text-mist-050">
             PKM Radar
           </Link>
@@ -48,7 +48,7 @@ export default async function DossierPage() {
         </div>
       </header>
 
-      <main id="contenu" className="mx-auto max-w-[1180px] px-6 pb-24">
+      <main id="contenu" className="mx-auto max-w-[1180px] px-4 pb-24 sm:px-6">
         <div className="border-b border-ink-700/70 py-14">
           <p className="m-0 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">Dossier de recherche</p>
           <h1 className="display mt-3 max-w-[22ch] text-[clamp(2rem,4.2vw,2.9rem)] text-mist-050">
@@ -79,7 +79,7 @@ export default async function DossierPage() {
       </main>
 
       <footer className="border-t border-ink-700/70">
-        <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3 px-6 py-8 text-[0.8rem] text-mist-500">
+        <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3 px-4 py-8 sm:px-6 text-[0.8rem] text-mist-500">
           <Link href="/" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
             ← Retour au radar
           </Link>
