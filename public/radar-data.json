@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T18:38:01.638Z",
+  "generatedAt": "2026-08-10T19:13:29.598Z",
   "sets": [
     {
       "id": "burning-shadows",
@@ -131,140 +131,249 @@
           "diffusion": 37.3
         }
       },
-      "segmentSeries": {
-        "chase": [
-          {
-            "date": "2025-11-15",
-            "sample": 26,
-            "momentum": -3.17,
-            "diffusion": 38.5
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 27,
-            "momentum": -2.8,
-            "diffusion": 40.7
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": 105.79,
+          "cards": 5,
+          "basketValue": 841.71,
+          "driver": {
+            "name": "Charizard-GX",
+            "number": "150",
+            "change": 139.8,
+            "share": 1
           }
-        ],
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": 84.73,
+          "cards": 12,
+          "basketValue": 950.45,
+          "driver": {
+            "name": "Charizard-GX",
+            "number": "150",
+            "change": 139.8,
+            "share": 0.99
+          }
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": 64.85,
+          "cards": 30,
+          "basketValue": 1120.51,
+          "driver": {
+            "name": "Charizard-GX",
+            "number": "150",
+            "change": 139.8,
+            "share": 0.98
+          }
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": -16.5,
+          "cards": 66,
+          "basketValue": 148.61,
+          "driver": {
+            "name": "Acerola",
+            "number": "142",
+            "change": -59.8,
+            "share": 0.89
+          }
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": 25.5,
+          "cards": 83,
+          "basketValue": 49.71,
+          "driver": {
+            "name": "Guzma",
+            "number": "115a",
+            "change": 31.7,
+            "share": 0.48
+          }
+        }
+      ],
+      "growthSeries": {
         "mid": [
           {
             "date": "2025-11-15",
             "sample": 24,
-            "momentum": -5.12,
-            "diffusion": 29.2
+            "growth": -24.06,
+            "basketValue": 100.26
           },
           {
             "date": "2025-12-15",
             "sample": 44,
-            "momentum": -2.74,
-            "diffusion": 40.9
+            "growth": -19.81,
+            "basketValue": 124.95
           },
           {
             "date": "2026-01-15",
             "sample": 33,
-            "momentum": 8.97,
-            "diffusion": 51.5
+            "growth": 4.66,
+            "basketValue": 30.78
           },
           {
             "date": "2026-02-15",
             "sample": 30,
-            "momentum": 10.78,
-            "diffusion": 60
+            "growth": 6.34,
+            "basketValue": 34.91
           },
           {
             "date": "2026-03-15",
             "sample": 10,
-            "momentum": 17.61,
-            "diffusion": 70
+            "growth": 13.05,
+            "basketValue": 10.22
           },
           {
             "date": "2026-04-15",
             "sample": 9,
-            "momentum": -1.09,
-            "diffusion": 44.4
+            "growth": 5.72,
+            "basketValue": 11.83
           },
           {
             "date": "2026-05-15",
             "sample": 7,
-            "momentum": -1.09,
-            "diffusion": 42.9
+            "growth": 3.91,
+            "basketValue": 11.96
           },
           {
             "date": "2026-06-15",
             "sample": 12,
-            "momentum": -3.67,
-            "diffusion": 41.7
+            "growth": 2.36,
+            "basketValue": 13.44
           },
           {
             "date": "2026-07-15",
             "sample": 8,
-            "momentum": 6.59,
-            "diffusion": 62.5
+            "growth": 5.2,
+            "basketValue": 10.31
           }
         ],
         "commons": [
           {
             "date": "2025-11-15",
             "sample": 31,
-            "momentum": 0,
-            "diffusion": 38.7
+            "growth": 23.9,
+            "basketValue": 29.08
           },
           {
             "date": "2025-12-15",
             "sample": 48,
-            "momentum": 0,
-            "diffusion": 43.8
+            "growth": 21.54,
+            "basketValue": 32.11
           },
           {
             "date": "2026-01-15",
             "sample": 43,
-            "momentum": 0,
-            "diffusion": 41.9
+            "growth": 10.02,
+            "basketValue": 11.53
           },
           {
             "date": "2026-02-15",
             "sample": 33,
-            "momentum": 0,
-            "diffusion": 36.4
+            "growth": -1.75,
+            "basketValue": 4.49
           },
           {
             "date": "2026-03-15",
             "sample": 16,
-            "momentum": -13.89,
-            "diffusion": 18.8
+            "growth": -9.88,
+            "basketValue": 1.46
           },
           {
             "date": "2026-04-15",
             "sample": 11,
-            "momentum": -14.29,
-            "diffusion": 9.1
+            "growth": -9.23,
+            "basketValue": 1.18
           },
           {
             "date": "2026-05-15",
             "sample": 13,
-            "momentum": 0,
-            "diffusion": 30.8
+            "growth": 41.98,
+            "basketValue": 15.05
           },
           {
             "date": "2026-06-15",
             "sample": 19,
-            "momentum": 0,
-            "diffusion": 36.8
+            "growth": 39.5,
+            "basketValue": 16.14
           },
           {
             "date": "2026-07-15",
             "sample": 14,
-            "momentum": 0,
-            "diffusion": 42.9
+            "growth": 40.97,
+            "basketValue": 15.76
           },
           {
             "date": "2026-08-15",
             "sample": 6,
-            "momentum": 5.56,
-            "diffusion": 50
+            "growth": 12.37,
+            "basketValue": 1.09
           }
         ]
       },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 80,
+          "growth": 51.75,
+          "basketValue": 1186.86
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 118,
+          "growth": 49.69,
+          "basketValue": 1222.29
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 77,
+          "growth": 5.13,
+          "basketValue": 50.02
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 65,
+          "growth": 6.07,
+          "basketValue": 54.88
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 27,
+          "growth": 12.36,
+          "basketValue": 19.45
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 21,
+          "growth": 8.57,
+          "basketValue": 20.78
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 21,
+          "growth": 12.17,
+          "basketValue": 40.74
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 32,
+          "growth": 11.31,
+          "basketValue": 43.31
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 23,
+          "growth": 13.1,
+          "basketValue": 39.8
+        }
+      ],
       "live": {
         "booster": {
           "price": 8.15,
@@ -589,152 +698,240 @@
           "diffusion": 38.7
         }
       },
-      "segmentSeries": {
-        "chase": [
-          {
-            "date": "2025-11-15",
-            "sample": 23,
-            "momentum": -3.3,
-            "diffusion": 34.8
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 28,
-            "momentum": -3.4,
-            "diffusion": 35.7
-          },
-          {
-            "date": "2026-01-15",
-            "sample": 7,
-            "momentum": -3.5,
-            "diffusion": 28.6
-          },
-          {
-            "date": "2026-02-15",
-            "sample": 5,
-            "momentum": -3.5,
-            "diffusion": 40
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": -5.88,
+          "cards": 5,
+          "basketValue": 159.1,
+          "driver": {
+            "name": "Lillie",
+            "number": "147",
+            "change": -27.4,
+            "share": 1
           }
-        ],
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": -8.36,
+          "cards": 12,
+          "basketValue": 253.39,
+          "driver": {
+            "name": "Lillie",
+            "number": "147",
+            "change": -27.4,
+            "share": 0.5
+          }
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": -7.88,
+          "cards": 30,
+          "basketValue": 383.13,
+          "driver": null
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": -6.5,
+          "cards": 42,
+          "basketValue": 44.02,
+          "driver": null
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": 2.11,
+          "cards": 93,
+          "basketValue": 43.15,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
         "mid": [
           {
             "date": "2025-11-15",
             "sample": 10,
-            "momentum": -4.55,
-            "diffusion": 40
+            "growth": -9.67,
+            "basketValue": 19.62
           },
           {
             "date": "2025-12-15",
             "sample": 22,
-            "momentum": -2.87,
-            "diffusion": 40.9
+            "growth": -6.63,
+            "basketValue": 27.74
           },
           {
             "date": "2026-01-15",
             "sample": 24,
-            "momentum": 0,
-            "diffusion": 45.8
+            "growth": 1.68,
+            "basketValue": 16.98
           },
           {
             "date": "2026-02-15",
             "sample": 22,
-            "momentum": -6.62,
-            "diffusion": 36.4
+            "growth": -5.07,
+            "basketValue": 16.29
           },
           {
             "date": "2026-03-15",
             "sample": 10,
-            "momentum": -9.17,
-            "diffusion": 30
+            "growth": -10.91,
+            "basketValue": 8.17
           },
           {
             "date": "2026-04-15",
             "sample": 6,
-            "momentum": -18.63,
-            "diffusion": 16.7
+            "growth": -18.32,
+            "basketValue": 5.75
           },
           {
             "date": "2026-05-15",
             "sample": 6,
-            "momentum": 3.19,
-            "diffusion": 66.7
+            "growth": -1.93,
+            "basketValue": 7.11
           },
           {
             "date": "2026-06-15",
             "sample": 10,
-            "momentum": -3.43,
-            "diffusion": 50
+            "growth": -1.1,
+            "basketValue": 8.11
           },
           {
             "date": "2026-07-15",
             "sample": 7,
-            "momentum": 2.22,
-            "diffusion": 57.1
+            "growth": 6.14,
+            "basketValue": 5.88
           }
         ],
         "commons": [
           {
             "date": "2025-11-15",
             "sample": 31,
-            "momentum": -1.56,
-            "diffusion": 32.3
+            "growth": 0,
+            "basketValue": 24.89
           },
           {
             "date": "2025-12-15",
             "sample": 58,
-            "momentum": 0,
-            "diffusion": 34.5
+            "growth": 2.25,
+            "basketValue": 39.62
           },
           {
             "date": "2026-01-15",
             "sample": 63,
-            "momentum": -11.11,
-            "diffusion": 27
+            "growth": -1.48,
+            "basketValue": 37.17
           },
           {
             "date": "2026-02-15",
             "sample": 44,
-            "momentum": -4.55,
-            "diffusion": 34.1
+            "growth": 4.34,
+            "basketValue": 16.12
           },
           {
             "date": "2026-03-15",
             "sample": 17,
-            "momentum": -16.67,
-            "diffusion": 29.4
+            "growth": -12.58,
+            "basketValue": 1.39
           },
           {
             "date": "2026-04-15",
             "sample": 9,
-            "momentum": 11.11,
-            "diffusion": 55.6
+            "growth": 20.21,
+            "basketValue": 1.13
           },
           {
             "date": "2026-05-15",
             "sample": 11,
-            "momentum": 16.67,
-            "diffusion": 81.8
+            "growth": 24.07,
+            "basketValue": 1.34
           },
           {
             "date": "2026-06-15",
             "sample": 18,
-            "momentum": 11.11,
-            "diffusion": 61.1
+            "growth": 11.46,
+            "basketValue": 2.14
           },
           {
             "date": "2026-07-15",
             "sample": 14,
-            "momentum": 8.33,
-            "diffusion": 57.1
+            "growth": 3.52,
+            "basketValue": 1.47
           },
           {
             "date": "2026-08-15",
             "sample": 7,
-            "momentum": 0,
-            "diffusion": 28.6
+            "growth": -4.76,
+            "basketValue": 0.8
           }
         ]
       },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 62,
+          "growth": -8.69,
+          "basketValue": 357.88
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 105,
+          "growth": -7.54,
+          "basketValue": 407.08
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 91,
+          "growth": -0.52,
+          "basketValue": 80.5
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 70,
+          "growth": -0.58,
+          "basketValue": 58.76
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 27,
+          "growth": -11.15,
+          "basketValue": 9.56
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 15,
+          "growth": -13.78,
+          "basketValue": 6.88
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 18,
+          "growth": -3.23,
+          "basketValue": 14.67
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 30,
+          "growth": -2.55,
+          "basketValue": 21.41
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 23,
+          "growth": -1.59,
+          "basketValue": 18.51
+        },
+        {
+          "date": "2026-08-15",
+          "sample": 11,
+          "growth": 0.56,
+          "basketValue": 1.8
+        }
+      ],
       "live": {
         "booster": {
           "price": 20.26,
@@ -1053,146 +1250,251 @@
           "diffusion": 32.1
         }
       },
-      "segmentSeries": {
-        "chase": [
-          {
-            "date": "2025-11-15",
-            "sample": 30,
-            "momentum": -2.79,
-            "diffusion": 33.3
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 30,
-            "momentum": -2.79,
-            "diffusion": 33.3
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": -5.58,
+          "cards": 5,
+          "basketValue": 451.14,
+          "driver": {
+            "name": "Lugia V",
+            "number": "186",
+            "change": -6,
+            "share": 0.87
           }
-        ],
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": -4.64,
+          "cards": 12,
+          "basketValue": 531.43,
+          "driver": {
+            "name": "Lugia V",
+            "number": "186",
+            "change": -6,
+            "share": 0.9
+          }
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": -4.17,
+          "cards": 30,
+          "basketValue": 647.24,
+          "driver": {
+            "name": "Lugia V",
+            "number": "186",
+            "change": -6,
+            "share": 0.83
+          }
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": 1.75,
+          "cards": 76,
+          "basketValue": 80.07,
+          "driver": null
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": 3,
+          "cards": 109,
+          "basketValue": 4.47,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
         "mid": [
           {
             "date": "2025-11-15",
             "sample": 36,
-            "momentum": 2.52,
-            "diffusion": 58.3
+            "growth": 2.67,
+            "basketValue": 62.29
           },
           {
             "date": "2025-12-15",
             "sample": 49,
-            "momentum": 2.15,
-            "diffusion": 55.1
+            "growth": 1.84,
+            "basketValue": 68.05
           },
           {
             "date": "2026-01-15",
             "sample": 25,
-            "momentum": -4.05,
-            "diffusion": 36
+            "growth": -7.6,
+            "basketValue": 10.21
           },
           {
             "date": "2026-02-15",
             "sample": 28,
-            "momentum": -2.03,
-            "diffusion": 39.3
+            "growth": -3.67,
+            "basketValue": 12.34
           },
           {
             "date": "2026-03-15",
             "sample": 15,
-            "momentum": 0,
-            "diffusion": 33.3
+            "growth": -1.2,
+            "basketValue": 6.58
           },
           {
             "date": "2026-04-15",
             "sample": 9,
-            "momentum": 9.68,
-            "diffusion": 55.6
+            "growth": 10.17,
+            "basketValue": 4.66
           },
           {
             "date": "2026-05-15",
             "sample": 7,
-            "momentum": 0,
-            "diffusion": 42.9
+            "growth": 2.36,
+            "basketValue": 3.04
           },
           {
             "date": "2026-06-15",
             "sample": 12,
-            "momentum": 0.57,
-            "diffusion": 50
+            "growth": 4.41,
+            "basketValue": 5.44
           },
           {
             "date": "2026-07-15",
             "sample": 8,
-            "momentum": 1.27,
-            "diffusion": 62.5
+            "growth": 5.82,
+            "basketValue": 3.82
           },
           {
             "date": "2026-08-15",
             "sample": 5,
-            "momentum": 1.15,
-            "diffusion": 60
+            "growth": 7.14,
+            "basketValue": 2.4
           }
         ],
         "commons": [
           {
             "date": "2025-11-15",
             "sample": 47,
-            "momentum": 0,
-            "diffusion": 31.9
+            "growth": 3.64,
+            "basketValue": 1.71
           },
           {
             "date": "2025-12-15",
             "sample": 73,
-            "momentum": 0,
-            "diffusion": 34.2
+            "growth": 6.47,
+            "basketValue": 2.96
           },
           {
             "date": "2026-01-15",
             "sample": 49,
-            "momentum": 0,
-            "diffusion": 36.7
+            "growth": 3.7,
+            "basketValue": 2.24
           },
           {
             "date": "2026-02-15",
             "sample": 49,
-            "momentum": 0,
-            "diffusion": 32.7
+            "growth": 2.31,
+            "basketValue": 2.21
           },
           {
             "date": "2026-03-15",
             "sample": 23,
-            "momentum": 0,
-            "diffusion": 26.1
+            "growth": -6.8,
+            "basketValue": 0.96
           },
           {
             "date": "2026-04-15",
             "sample": 8,
-            "momentum": -12.5,
-            "diffusion": 25
+            "growth": 5.88,
+            "basketValue": 0.36
           },
           {
             "date": "2026-05-15",
             "sample": 6,
-            "momentum": 0,
-            "diffusion": 33.3
+            "growth": 15.38,
+            "basketValue": 0.3
           },
           {
             "date": "2026-06-15",
             "sample": 13,
-            "momentum": 0,
-            "diffusion": 30.8
+            "growth": 3.77,
+            "basketValue": 0.55
           },
           {
             "date": "2026-07-15",
             "sample": 9,
-            "momentum": 0,
-            "diffusion": 22.2
+            "growth": -8.82,
+            "basketValue": 0.31
           },
           {
             "date": "2026-08-15",
             "sample": 7,
-            "momentum": 0,
-            "diffusion": 28.6
+            "growth": -7.41,
+            "basketValue": 0.25
           }
         ]
       },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 113,
+          "growth": -3.59,
+          "basketValue": 711.24
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 152,
+          "growth": -3.59,
+          "basketValue": 718.25
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 74,
+          "growth": -5.75,
+          "basketValue": 12.45
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 77,
+          "growth": -2.81,
+          "basketValue": 14.55
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 38,
+          "growth": -1.95,
+          "basketValue": 7.54
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 17,
+          "growth": 9.85,
+          "basketValue": 5.02
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 13,
+          "growth": 3.41,
+          "basketValue": 3.34
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 25,
+          "growth": 4.36,
+          "basketValue": 5.99
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 17,
+          "growth": 4.56,
+          "basketValue": 4.13
+        },
+        {
+          "date": "2026-08-15",
+          "sample": 12,
+          "growth": 5.58,
+          "basketValue": 2.65
+        }
+      ],
       "live": {
         "booster": {
           "price": 7.89,
@@ -1511,164 +1813,221 @@
           "diffusion": 25.7
         }
       },
-      "segmentSeries": {
-        "chase": [
-          {
-            "date": "2025-11-15",
-            "sample": 17,
-            "momentum": 5.63,
-            "diffusion": 70.6
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 21,
-            "momentum": 5.63,
-            "diffusion": 71.4
-          },
-          {
-            "date": "2026-01-15",
-            "sample": 10,
-            "momentum": 0.31,
-            "diffusion": 50
-          },
-          {
-            "date": "2026-02-15",
-            "sample": 8,
-            "momentum": 4.53,
-            "diffusion": 62.5
-          },
-          {
-            "date": "2026-03-15",
-            "sample": 4,
-            "momentum": 0.31,
-            "diffusion": 50
-          },
-          {
-            "date": "2026-05-15",
-            "sample": 4,
-            "momentum": 9.28,
-            "diffusion": 100
-          },
-          {
-            "date": "2026-06-15",
-            "sample": 5,
-            "momentum": 8.38,
-            "diffusion": 80
-          },
-          {
-            "date": "2026-07-15",
-            "sample": 5,
-            "momentum": 8.38,
-            "diffusion": 80
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": 11.13,
+          "cards": 5,
+          "basketValue": 169.15,
+          "driver": {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "change": 32.8,
+            "share": 0.6
           }
-        ],
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": 11.09,
+          "cards": 12,
+          "basketValue": 184.61,
+          "driver": {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "change": 32.8,
+            "share": 0.55
+          }
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": 10.28,
+          "cards": 30,
+          "basketValue": 206.87,
+          "driver": {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "change": 32.8,
+            "share": 0.53
+          }
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": -0.73,
+          "cards": 48,
+          "basketValue": 9.52,
+          "driver": null
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": -0.84,
+          "cards": 171,
+          "basketValue": 8.29,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
         "mid": [
           {
             "date": "2025-11-15",
             "sample": 26,
-            "momentum": 9.17,
-            "diffusion": 61.5
+            "growth": 3.9,
+            "basketValue": 5.06
           },
           {
             "date": "2025-12-15",
             "sample": 36,
-            "momentum": 8.33,
-            "diffusion": 55.6
+            "growth": 1.97,
+            "basketValue": 7.26
           },
           {
             "date": "2026-01-15",
             "sample": 18,
-            "momentum": 4.55,
-            "diffusion": 50
+            "growth": 2.48,
+            "basketValue": 4.95
           },
           {
             "date": "2026-02-15",
             "sample": 16,
-            "momentum": -8.71,
-            "diffusion": 31.3
+            "growth": -4.39,
+            "basketValue": 3.7
           },
           {
             "date": "2026-03-15",
             "sample": 6,
-            "momentum": -10.1,
-            "diffusion": 16.7
+            "growth": -7.41,
+            "basketValue": 1.5
           },
           {
             "date": "2026-05-15",
             "sample": 5,
-            "momentum": 0,
-            "diffusion": 20
+            "growth": -5.45,
+            "basketValue": 0.52
           },
           {
             "date": "2026-06-15",
             "sample": 6,
-            "momentum": -6.67,
-            "diffusion": 16.7
+            "growth": -10.59,
+            "basketValue": 0.76
           },
           {
             "date": "2026-07-15",
             "sample": 6,
-            "momentum": -6.67,
-            "diffusion": 16.7
+            "growth": -10.59,
+            "basketValue": 0.76
           }
         ],
         "commons": [
           {
             "date": "2025-11-15",
             "sample": 105,
-            "momentum": 0,
-            "diffusion": 19
+            "growth": -7.4,
+            "basketValue": 4.38
           },
           {
             "date": "2025-12-15",
             "sample": 139,
-            "momentum": 0,
-            "diffusion": 23
+            "growth": -3.06,
+            "basketValue": 6.34
           },
           {
             "date": "2026-01-15",
             "sample": 46,
-            "momentum": 0,
-            "diffusion": 37
+            "growth": 11.95,
+            "basketValue": 2.81
           },
           {
             "date": "2026-02-15",
             "sample": 49,
-            "momentum": 0,
-            "diffusion": 38.8
+            "growth": 11.36,
+            "basketValue": 3.04
           },
           {
             "date": "2026-03-15",
             "sample": 16,
-            "momentum": 7.14,
-            "diffusion": 50
+            "growth": 18.18,
+            "basketValue": 1.17
           },
           {
             "date": "2026-04-15",
             "sample": 7,
-            "momentum": 0,
-            "diffusion": 42.9
+            "growth": 11.63,
+            "basketValue": 0.48
           },
           {
             "date": "2026-05-15",
             "sample": 13,
-            "momentum": 0,
-            "diffusion": 23.1
+            "growth": -8.57,
+            "basketValue": 0.64
           },
           {
             "date": "2026-06-15",
             "sample": 17,
-            "momentum": 0,
-            "diffusion": 29.4
+            "growth": -3.33,
+            "basketValue": 0.87
           },
           {
             "date": "2026-07-15",
             "sample": 17,
-            "momentum": 0,
-            "diffusion": 29.4
+            "growth": -3.33,
+            "basketValue": 0.87
           }
         ]
       },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 148,
+          "growth": 10.1,
+          "basketValue": 197.75
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 196,
+          "growth": 9.67,
+          "basketValue": 207.98
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 74,
+          "growth": 2.75,
+          "basketValue": 22.83
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 73,
+          "growth": 2.56,
+          "basketValue": 18.82
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 26,
+          "growth": 3.46,
+          "basketValue": 8.68
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 22,
+          "growth": 11.42,
+          "basketValue": 6.73
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 28,
+          "growth": 7.13,
+          "basketValue": 8.11
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 28,
+          "growth": 7.13,
+          "basketValue": 8.11
+        }
+      ],
       "live": {
         "booster": {
           "price": 11.92,
@@ -1987,134 +2346,239 @@
           "diffusion": 29.5
         }
       },
-      "segmentSeries": {
-        "chase": [
-          {
-            "date": "2025-11-15",
-            "sample": 28,
-            "momentum": -2.55,
-            "diffusion": 39.3
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 28,
-            "momentum": -2.55,
-            "diffusion": 39.3
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": 23.38,
+          "cards": 5,
+          "basketValue": 410.06,
+          "driver": {
+            "name": "Charizard V",
+            "number": "154",
+            "change": 37,
+            "share": 0.97
           }
-        ],
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": 17.42,
+          "cards": 12,
+          "basketValue": 500.46,
+          "driver": {
+            "name": "Charizard V",
+            "number": "154",
+            "change": 37,
+            "share": 1
+          }
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": 13.18,
+          "cards": 30,
+          "basketValue": 585.15,
+          "driver": {
+            "name": "Charizard V",
+            "number": "154",
+            "change": 37,
+            "share": 1
+          }
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": -2.57,
+          "cards": 67,
+          "basketValue": 43.15,
+          "driver": null
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": -1.18,
+          "cards": 88,
+          "basketValue": 3.35,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
         "mid": [
           {
             "date": "2025-11-15",
             "sample": 23,
-            "momentum": 1.7,
-            "diffusion": 56.5
+            "growth": -4.9,
+            "basketValue": 19.97
           },
           {
             "date": "2025-12-15",
             "sample": 40,
-            "momentum": 1.47,
-            "diffusion": 52.5
+            "growth": -3.36,
+            "basketValue": 29.38
           },
           {
             "date": "2026-01-15",
             "sample": 34,
-            "momentum": 0,
-            "diffusion": 47.1
+            "growth": 0.95,
+            "basketValue": 17
           },
           {
             "date": "2026-02-15",
             "sample": 34,
-            "momentum": -0.72,
-            "diffusion": 41.2
+            "growth": 0.55,
+            "basketValue": 18.36
           },
           {
             "date": "2026-03-15",
             "sample": 18,
-            "momentum": 0,
-            "diffusion": 38.9
+            "growth": 1.69,
+            "basketValue": 10.23
           },
           {
             "date": "2026-04-15",
             "sample": 9,
-            "momentum": -4.05,
-            "diffusion": 33.3
+            "growth": 1.77,
+            "basketValue": 5.17
           },
           {
             "date": "2026-05-15",
             "sample": 6,
-            "momentum": -5.71,
-            "diffusion": 33.3
+            "growth": -2.91,
+            "basketValue": 4.33
           },
           {
             "date": "2026-06-15",
             "sample": 9,
-            "momentum": -6.67,
-            "diffusion": 33.3
+            "growth": -7.57,
+            "basketValue": 3.54
           },
           {
             "date": "2026-07-15",
             "sample": 7,
-            "momentum": -6.67,
-            "diffusion": 42.9
+            "growth": -7.63,
+            "basketValue": 3.27
           }
         ],
         "commons": [
           {
             "date": "2025-11-15",
             "sample": 35,
-            "momentum": 0,
-            "diffusion": 28.6
+            "growth": -1.37,
+            "basketValue": 1.44
           },
           {
             "date": "2025-12-15",
             "sample": 55,
-            "momentum": 0,
-            "diffusion": 29.1
+            "growth": 1.43,
+            "basketValue": 2.13
           },
           {
             "date": "2026-01-15",
             "sample": 38,
-            "momentum": 0,
-            "diffusion": 34.2
+            "growth": 7.87,
+            "basketValue": 1.37
           },
           {
             "date": "2026-02-15",
             "sample": 41,
-            "momentum": 0,
-            "diffusion": 34.1
+            "growth": 0.67,
+            "basketValue": 1.5
           },
           {
             "date": "2026-03-15",
             "sample": 23,
-            "momentum": 0,
-            "diffusion": 34.8
+            "growth": -6.45,
+            "basketValue": 0.87
           },
           {
             "date": "2026-04-15",
             "sample": 11,
-            "momentum": -25,
-            "diffusion": 18.2
+            "growth": -22,
+            "basketValue": 0.39
           },
           {
             "date": "2026-06-15",
             "sample": 10,
-            "momentum": 0,
-            "diffusion": 20
+            "growth": -2.78,
+            "basketValue": 0.35
           },
           {
             "date": "2026-07-15",
             "sample": 10,
-            "momentum": 0,
-            "diffusion": 20
+            "growth": -2.78,
+            "basketValue": 0.35
           },
           {
             "date": "2026-08-15",
             "sample": 8,
-            "momentum": 0,
-            "diffusion": 25
+            "growth": -3.45,
+            "basketValue": 0.28
           }
         ]
       },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 86,
+          "growth": 12.91,
+          "basketValue": 594.88
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 123,
+          "growth": 12.68,
+          "basketValue": 604.98
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 72,
+          "growth": 1.44,
+          "basketValue": 18.37
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 75,
+          "growth": 0.56,
+          "basketValue": 19.86
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 41,
+          "growth": 1,
+          "basketValue": 11.1
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 20,
+          "growth": -0.36,
+          "basketValue": 5.56
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 12,
+          "growth": -6.33,
+          "basketValue": 16.14
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 21,
+          "growth": -7.38,
+          "basketValue": 15.57
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 19,
+          "growth": -7.38,
+          "basketValue": 15.3
+        },
+        {
+          "date": "2026-08-15",
+          "sample": 12,
+          "growth": -10.47,
+          "basketValue": 0.77
+        }
+      ],
       "live": {
         "booster": {
           "price": 6.14,
@@ -2439,134 +2903,233 @@
           "diffusion": 25.5
         }
       },
-      "segmentSeries": {
-        "chase": [
-          {
-            "date": "2025-11-15",
-            "sample": 30,
-            "momentum": 1.39,
-            "diffusion": 53.3
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 30,
-            "momentum": 1.39,
-            "diffusion": 53.3
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": -9.17,
+          "cards": 5,
+          "basketValue": 722.49,
+          "driver": {
+            "name": "Giratina V",
+            "number": "186",
+            "change": -11.5,
+            "share": 0.94
           }
-        ],
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": -8.41,
+          "cards": 12,
+          "basketValue": 780.68,
+          "driver": {
+            "name": "Giratina V",
+            "number": "186",
+            "change": -11.5,
+            "share": 0.96
+          }
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": -7.32,
+          "cards": 30,
+          "basketValue": 850.44,
+          "driver": {
+            "name": "Giratina V",
+            "number": "186",
+            "change": -11.5,
+            "share": 1
+          }
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": -0.37,
+          "cards": 88,
+          "basketValue": 59.93,
+          "driver": null
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": 2.84,
+          "cards": 98,
+          "basketValue": 3.62,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
         "mid": [
           {
             "date": "2025-11-15",
             "sample": 43,
-            "momentum": -0.93,
-            "diffusion": 41.9
+            "growth": -1.53,
+            "basketValue": 43.7
           },
           {
             "date": "2025-12-15",
             "sample": 67,
-            "momentum": 0,
-            "diffusion": 43.3
+            "growth": -0.02,
+            "basketValue": 54.2
           },
           {
             "date": "2026-01-15",
             "sample": 35,
-            "momentum": 0,
-            "diffusion": 48.6
+            "growth": 4.85,
+            "basketValue": 14.04
           },
           {
             "date": "2026-02-15",
             "sample": 35,
-            "momentum": 0,
-            "diffusion": 48.6
+            "growth": 3.93,
+            "basketValue": 14.03
           },
           {
             "date": "2026-03-15",
             "sample": 11,
-            "momentum": 5.26,
-            "diffusion": 54.5
+            "growth": -3.81,
+            "basketValue": 3.53
           },
           {
             "date": "2026-04-15",
             "sample": 9,
-            "momentum": 5.63,
-            "diffusion": 66.7
+            "growth": 4.46,
+            "basketValue": 2.11
           },
           {
             "date": "2026-05-15",
             "sample": 8,
-            "momentum": 8.37,
-            "diffusion": 62.5
+            "growth": 3.59,
+            "basketValue": 2.02
           },
           {
             "date": "2026-06-15",
             "sample": 10,
-            "momentum": 0.44,
-            "diffusion": 50
+            "growth": -3.08,
+            "basketValue": 2.2
           },
           {
             "date": "2026-07-15",
             "sample": 5,
-            "momentum": -16.67,
-            "diffusion": 40
+            "growth": -17.05,
+            "basketValue": 0.73
           }
         ],
         "commons": [
           {
             "date": "2025-11-15",
             "sample": 44,
-            "momentum": 0,
-            "diffusion": 34.1
+            "growth": 8.54,
+            "basketValue": 1.78
           },
           {
             "date": "2025-12-15",
             "sample": 64,
-            "momentum": 0,
-            "diffusion": 28.1
+            "growth": 4.31,
+            "basketValue": 2.42
           },
           {
             "date": "2026-01-15",
             "sample": 41,
-            "momentum": 0,
-            "diffusion": 12.2
+            "growth": -4.32,
+            "basketValue": 1.33
           },
           {
             "date": "2026-02-15",
             "sample": 37,
-            "momentum": 0,
-            "diffusion": 13.5
+            "growth": -5.43,
+            "basketValue": 1.22
           },
           {
             "date": "2026-03-15",
             "sample": 17,
-            "momentum": 0,
-            "diffusion": 11.8
+            "growth": -4.92,
+            "basketValue": 0.58
           },
           {
             "date": "2026-04-15",
             "sample": 14,
-            "momentum": 0,
-            "diffusion": 14.3
+            "growth": -4.44,
+            "basketValue": 0.43
           },
           {
             "date": "2026-05-15",
             "sample": 12,
-            "momentum": 0,
-            "diffusion": 25
+            "growth": 2.5,
+            "basketValue": 0.41
           },
           {
             "date": "2026-06-15",
             "sample": 17,
-            "momentum": 0,
-            "diffusion": 29.4
+            "growth": 5.08,
+            "basketValue": 0.62
           },
           {
             "date": "2026-07-15",
             "sample": 10,
-            "momentum": 0,
-            "diffusion": 30
+            "growth": 5.41,
+            "basketValue": 0.39
           }
         ]
       },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 117,
+          "growth": -7.03,
+          "basketValue": 895.92
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 161,
+          "growth": -6.89,
+          "basketValue": 907.06
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 76,
+          "growth": 3.99,
+          "basketValue": 15.37
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 72,
+          "growth": 3.11,
+          "basketValue": 15.25
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 28,
+          "growth": -3.97,
+          "basketValue": 4.11
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 23,
+          "growth": 2.83,
+          "basketValue": 2.54
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 20,
+          "growth": 3.4,
+          "basketValue": 2.43
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 27,
+          "growth": -1.4,
+          "basketValue": 2.82
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 15,
+          "growth": -10.4,
+          "basketValue": 1.12
+        }
+      ],
       "live": {
         "booster": {
           "price": 5.79,

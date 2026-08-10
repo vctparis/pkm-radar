@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import LineChart from "./LineChart";
+import GrowthBars from "./GrowthBars";
 import type { RadarData, Segment, SetEntry } from "@/lib/types";
 
 const SERIES = { chase: "#3987e5", mid: "#d95926", commons: "#199e70" };
@@ -60,7 +61,18 @@ export default function Radar({ data }: { data: RadarData }) {
   );
 
   // Le classement répond à « quel booster » ; le détail répond à « quelles cartes ».
-  const undiffused = data.sets.filter((s) => (s.history.points.at(-1)?.diffusion ?? 50) < 45).length;
+  // Nombre de sets où le haut du panier progresse plus vite que les communes :
+  // c'est la définition opérationnelle d'une hausse qui ne se propage pas.
+  const growthOf = (set: SetEntry, key: string) => set.strata.find((s) => s.key === key)?.growth ?? null;
+  const topHeavy = data.sets.filter((s) => {
+    const top = growthOf(s, "top12");
+    const low = growthOf(s, "commons");
+    return top != null && low != null && top > low;
+  }).length;
+  // Part du mouvement du Top 12 imputable à une seule carte, set par set.
+  const singleCardDriven = data.sets.filter(
+    (s) => (s.strata.find((x) => x.key === "top12")?.driver?.share ?? 0) >= 0.8,
+  ).length;
 
   return (
     <div className="relative z-10">
@@ -99,10 +111,11 @@ export default function Radar({ data }: { data: RadarData }) {
               La hausse ne se diffuse pas — elle se concentre.
             </h1>
             <p className="prose-measure mt-5 text-[1.02rem] leading-relaxed text-mist-300">
-              Sur les {data.sets.length} sets suivis, {undiffused} affichent une diffusion sous 45 % : la majorité des
-              cartes y baisse pendant que le haut du panier tient. Les communes, une fois écartées celles sans aucune
-              vente, reculent nettement plus vite que les cartes chase. C&apos;est le profil d&apos;une revalorisation
-              portée par quelques pièces, pas d&apos;une inflation de fond.
+              Sur les {data.sets.length} sets suivis, {topHeavy} voient leur Top 12 progresser plus vite que leurs
+              communes. Et dans {singleCardDriven}{" "}
+              cas, plus de 80 % de la hausse du Top 12 tient à une seule carte.
+              C&apos;est le profil d&apos;une revalorisation portée par quelques pièces, pas d&apos;une inflation de
+              fond qui remonterait tout le set.
             </p>
             <p className="prose-measure mt-4 text-[0.92rem] leading-relaxed text-mist-500">
               Le radar est donc construit pour être sceptique : un fort momentum, seul, ne rapporte presque aucun point.
@@ -133,27 +146,44 @@ export default function Radar({ data }: { data: RadarData }) {
             Quel booster
           </h2>
           <p className="prose-measure mt-2 text-[0.92rem] leading-relaxed text-mist-500">
-            Cliquez une ligne pour analyser le set en détail. Le score combine largeur de la hausse, rareté réelle de
-            l&apos;offre scellée, résistance à la dilution du grading, diversification et maturité.
+            Un set intéressant réunit deux choses : une offre scellée réellement contrainte, et une hausse qui ne
+            tienne pas à deux ou trois cartes. Cliquez une ligne pour l&apos;analyser en détail.
           </p>
 
           <div className="mt-6 overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
-            <table className="w-full min-w-[820px] border-collapse text-[0.88rem]">
-              <caption className="sr-only">Classement des sets suivis par score de structure</caption>
-              <thead className="bg-ink-800 text-left">
+            <table className="w-full min-w-[900px] border-collapse text-[0.88rem]">
+              <caption className="sr-only">Classement des sets suivis</caption>
+              <thead className="bg-ink-800 text-left align-bottom">
                 <tr>
-                  <th scope="col" className="px-4 py-3 font-medium text-mist-300">Set</th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium text-mist-300">Booster</th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium text-mist-300">Unités en vente</th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium text-mist-300">Diffusion</th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium text-mist-300">Concentration</th>
-                  <th scope="col" className="px-4 py-3 text-right font-medium text-mist-300">Score</th>
+                  {[
+                    { label: "Set", hint: "", align: "left" },
+                    { label: "Booster", hint: "prix le plus bas, neuf", align: "right" },
+                    { label: "Offre", hint: "boosters dispo. / vendeurs", align: "right" },
+                    { label: "Top 12", hint: "croissance 30 j du haut", align: "right" },
+                    { label: "Communes", hint: "croissance 30 j du bas", align: "right" },
+                    { label: "Carte n°1", hint: "part de la valeur du set", align: "right" },
+                    { label: "Score", hint: "sur 100", align: "right" },
+                  ].map((column) => (
+                    <th
+                      key={column.label}
+                      scope="col"
+                      className={`px-4 py-3 font-medium text-mist-100 ${column.align === "right" ? "text-right" : ""}`}
+                    >
+                      {column.label}
+                      {column.hint && (
+                        <span className="mt-0.5 block text-[0.7rem] font-normal normal-case text-mist-500">
+                          {column.hint}
+                        </span>
+                      )}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
                 {data.sets.map((set) => {
-                  const diffusion = set.history.points.at(-1)?.diffusion ?? null;
                   const selected = set.id === active.id;
+                  const top12 = set.strata.find((s) => s.key === "top12")?.growth ?? null;
+                  const commons = set.strata.find((s) => s.key === "commons")?.growth ?? null;
                   return (
                     <tr
                       key={set.id}
@@ -181,11 +211,12 @@ export default function Radar({ data }: { data: RadarData }) {
                       </td>
                       <td className="tabular px-4 py-3 text-right text-mist-300">
                         {set.live?.booster?.quantity != null ? num.format(set.live.booster.quantity) : "—"}
-                        <span className="ml-1 text-mist-500">({set.live?.booster?.sellers ?? 0} vend.)</span>
+                        <span className="mt-0.5 block text-[0.72rem] text-mist-500">
+                          {set.live?.booster?.sellers ?? 0} vendeurs
+                        </span>
                       </td>
-                      <td className={`tabular px-4 py-3 text-right ${toneFor(diffusion != null ? diffusion - 50 : null)}`}>
-                        {diffusion == null ? "—" : `${diffusion.toFixed(0)} %`}
-                      </td>
+                      <td className={`tabular px-4 py-3 text-right ${toneFor(top12)}`}>{pct(top12)}</td>
+                      <td className={`tabular px-4 py-3 text-right ${toneFor(commons)}`}>{pct(commons)}</td>
                       <td className="tabular px-4 py-3 text-right text-mist-300">
                         {set.concentration == null ? "—" : `${set.concentration} %`}
                       </td>
@@ -201,6 +232,39 @@ export default function Radar({ data }: { data: RadarData }) {
               </tbody>
             </table>
           </div>
+
+          {/* Un score composite sans sa recette n'est pas vérifiable — donc pas
+              utilisable pour décider. */}
+          <details className="mt-4 rounded-2xl border border-ink-600 p-5 [&[open]>summary]:mb-4">
+            <summary className="cursor-pointer text-[0.88rem] font-medium text-mist-100 marker:text-mist-500">
+              Comment lire ces colonnes, et comment le score est calculé
+            </summary>
+            <dl className="prose-measure grid gap-3 text-[0.85rem] leading-relaxed">
+              <div>
+                <dt className="font-medium text-mist-100">Top 12 et Communes</dt>
+                <dd className="m-0 text-mist-300">
+                  Croissance sur 30 jours, pondérée par la valeur du panier. L&apos;écart entre les deux est le
+                  cœur du sujet : si le Top 12 monte pendant que les communes reculent, la hausse reste captée par
+                  le sommet du set et ne se propage pas.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-mist-100">Carte n°1</dt>
+                <dd className="m-0 text-mist-300">
+                  Part de la valeur totale du set concentrée sur sa carte la plus chère. À 60 %, acheter le set
+                  revient surtout à parier sur cette carte-là.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-mist-100">Score</dt>
+                <dd className="m-0 text-mist-300">
+                  30 % largeur de la hausse + 25 % rareté de l&apos;offre scellée + 20 % résistance à la dilution
+                  PSA + 15 % diversification + 10 % maturité. Le momentum seul ne rapporte presque rien : c&apos;est
+                  le signal le plus facile à fabriquer et le premier à se retourner.
+                </dd>
+              </div>
+            </dl>
+          </details>
         </section>
 
         {/* ---- Détail du set ---- */}
@@ -233,40 +297,39 @@ export default function Radar({ data }: { data: RadarData }) {
           </div>
 
           <div className="mt-6 grid gap-5">
-            <LineChart
-              title="La hausse se diffuse-t-elle vers le bas du set ?"
-              subtitle="Part des cartes en hausse, par segment, sur une fenêtre glissante de 90 jours avancée mois par mois. Si la courbe du haut de panier se détache durablement de celle des communes, la valeur reste captée par le sommet du set. Les points se recouvrent : la série est lissée."
-              series={[
-                {
-                  label: "Chase",
-                  color: SERIES.chase,
-                  points: active.segmentSeries.chase.map((p) => ({ date: p.date, value: p.diffusion, sample: p.sample })),
-                },
-                {
-                  label: "Intermédiaires",
-                  color: SERIES.mid,
-                  points: active.segmentSeries.mid.map((p) => ({ date: p.date, value: p.diffusion, sample: p.sample })),
-                },
-                {
-                  label: "Communes",
-                  color: SERIES.commons,
-                  points: active.segmentSeries.commons.map((p) => ({ date: p.date, value: p.diffusion, sample: p.sample })),
-                },
-              ]}
-              reference={{ value: 50, label: "équilibre" }}
-              format={(v) => `${v.toFixed(0)} %`}
-              emptyHint="Aucune date de relevé ne réunit assez de cartes pour ce set."
-            />
+            {/* Réponse directe à « de combien monte le haut par rapport au bas ».
+                Une coupe et non une courbe : voir le commentaire dans ingest.mjs. */}
+            <section className="rounded-2xl bg-ink-850 p-5 ring-1 ring-ink-700/70">
+              <h3 className="display m-0 text-[1.05rem] text-mist-050">
+                De combien chaque strate monte-t-elle ?
+              </h3>
+              <p className="prose-measure m-0 mb-5 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
+                Croissance sur 30 jours, pondérée par la valeur : on somme les prix du panier plutôt que de moyenner
+                des pourcentages, sinon une commune à 0,30 € pèserait autant qu&apos;un Dracaufeu à 300 €. Quand une
+                seule carte fait l&apos;essentiel du mouvement, c&apos;est indiqué sous la barre.
+              </p>
+              <GrowthBars strata={active.strata} />
+            </section>
 
             <div className="grid gap-5 lg:grid-cols-2">
               <LineChart
-                title="Momentum médian sur 30 jours"
-                subtitle="Variation médiane du panier relevé à chaque date. Chaque carte sert de base à elle-même."
+                title="Croissance dans le temps"
+                subtitle="Même mesure, suivie mois par mois sur fenêtre glissante de 90 jours. Le Top 5 et le Top 12 n'y figurent pas : Cardmarket relève les cartes les plus chères trop rarement pour en tirer une courbe."
                 series={[
                   {
-                    label: "Momentum",
+                    label: "Contenu du set",
+                    color: SERIES.chase,
+                    points: active.contentValue.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+                  },
+                  {
+                    label: "Intermédiaires",
                     color: SERIES.mid,
-                    points: active.history.points.map((p) => ({ date: p.date, value: p.momentum, sample: p.sample })),
+                    points: active.growthSeries.mid.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+                  },
+                  {
+                    label: "Communes",
+                    color: SERIES.commons,
+                    points: active.growthSeries.commons.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
                   },
                 ]}
                 reference={{ value: 0, label: "stable" }}
@@ -274,9 +337,8 @@ export default function Radar({ data }: { data: RadarData }) {
                 emptyHint="Série insuffisante pour ce set."
               />
 
-              {/* Un relevé unique ne fait pas une courbe : tant que la série
-                  n'a pas au moins deux points, l'information se lit mieux en
-                  tuiles qu'en graphe vide. */}
+              {/* Un relevé unique ne fait pas une courbe : tant que la série n'a
+                  pas deux points, l'information se lit mieux en tuiles. */}
               {active.liveHistory.length >= 2 ? (
                 <LineChart
                   title="Prix du booster scellé"
@@ -295,8 +357,9 @@ export default function Radar({ data }: { data: RadarData }) {
                 <section className="rounded-2xl bg-ink-850 p-5 ring-1 ring-ink-700/70">
                   <h3 className="display m-0 text-[1.05rem] text-mist-050">Marché scellé aujourd&apos;hui</h3>
                   <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
-                    CardTrader n&apos;expose aucun historique de prix. Ces valeurs sont le relevé du jour ; le cron
-                    quotidien en fera une courbe à partir du deuxième passage.
+                    CardTrader n&apos;expose aucun historique de prix scellé — c&apos;est une limite de l&apos;API, pas
+                    un manque de données. La courbe se construit à partir du deuxième relevé quotidien. En attendant,
+                    la tendance économique du booster se lit sur la courbe « contenu du set » ci-contre.
                   </p>
                   <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
                     {[
@@ -338,7 +401,7 @@ export default function Radar({ data }: { data: RadarData }) {
                   <th scope="col" className="pb-2 font-medium text-mist-300">Segment</th>
                   <th scope="col" className="pb-2 text-right font-medium text-mist-300">Cartes</th>
                   <th scope="col" className="pb-2 text-right font-medium text-mist-300">Variation 30 j</th>
-                  <th scope="col" className="pb-2 text-right font-medium text-mist-300">Diffusion</th>
+                  <th scope="col" className="pb-2 text-right font-medium text-mist-300">Cartes en hausse</th>
                   <th scope="col" className="pb-2 text-right font-medium text-mist-300">Figées</th>
                 </tr>
               </thead>

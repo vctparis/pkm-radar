@@ -108,6 +108,109 @@ export function momentumSeries(cards, { minSample = 8, rollingDays = 0 } = {}) {
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 
+/**
+ * Croissance d'un panier à une date donnée, pondérée par la valeur, avec le
+ * détail de ce qui la produit.
+ *
+ * Une moyenne pondérée sur cinq cartes peut être portée par une seule d'entre
+ * elles : sur Ombres Ardentes, Charizard-GX pèse 309 € des 409 € du Top 5 et
+ * fabrique à lui seul un +106 %. Plafonner ce mouvement le masquerait ; on
+ * l'affiche donc avec sa part de contribution. La concentration du mouvement
+ * est précisément l'information recherchée — un panier qui monte grâce à une
+ * carte ne dit pas la même chose qu'un panier qui monte grâce à vingt.
+ */
+export function basketGrowth(cards) {
+  const items = cards
+    .map((card) => {
+      const { avg30, avg7 } = card.prices;
+      if (!(avg30 > 0) || !(avg7 > 0)) return null;
+      const ratio = avg7 / avg30;
+      if (ratio < 0.33 || ratio > 3) return null;
+      return { name: card.name, number: card.number, before: avg30, after: avg7, delta: avg7 - avg30 };
+    })
+    .filter(Boolean);
+
+  if (!items.length) return null;
+
+  const before = items.reduce((sum, i) => sum + i.before, 0);
+  const after = items.reduce((sum, i) => sum + i.after, 0);
+  const netDelta = after - before;
+
+  // Part du mouvement net imputable à la carte qui bouge le plus, en valeur
+  // absolue. Au-delà de ~40 %, le chiffre du panier décrit une carte.
+  const dominant = [...items].sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
+  const share = netDelta !== 0 ? Math.abs(dominant.delta / netDelta) : 0;
+
+  return {
+    growth: Number(((after / before - 1) * 100).toFixed(2)),
+    cards: items.length,
+    basketValue: Number(after.toFixed(2)),
+    driver:
+      share >= 0.4 && Math.abs(dominant.delta) > 1
+        ? {
+            name: dominant.name,
+            number: dominant.number,
+            change: Number(((dominant.after / dominant.before - 1) * 100).toFixed(1)),
+            share: Number(Math.min(1, share).toFixed(2)),
+          }
+        : null,
+  };
+}
+
+/**
+ * Croissance d'un panier, pondérée par la valeur.
+ *
+ * La diffusion répond à « combien de cartes montent ». Cette mesure-ci répond à
+ * « de combien le panier monte », ce qui est la question économique. On somme
+ * les prix plutôt que de moyenner des pourcentages : Σavg7 / Σavg30 − 1 revient
+ * à pondérer chaque carte par son poids réel dans le panier, alors qu'une
+ * médiane de variations donnerait le même poids à une commune à 0,30 € qu'à un
+ * Dracaufeu à 300 €.
+ *
+ * Réserve de lecture : la composition du panier change d'une fenêtre à l'autre
+ * (les cartes n'ont pas toutes la même date de relevé). Chaque point reste
+ * valide en interne — c'est bien le même jeu de cartes au numérateur et au
+ * dénominateur — mais deux points successifs ne portent pas exactement sur les
+ * mêmes cartes.
+ */
+export function basketGrowthSeries(cards, { minSample = 5, rollingDays = 90 } = {}) {
+  const observations = cards
+    .map((card) => {
+      const { avg30, avg7 } = card.prices;
+      if (!(avg30 > 0) || !(avg7 > 0)) return null;
+      const ratio = avg7 / avg30;
+      if (ratio < 0.33 || ratio > 3) return null;
+      return { t: card.updatedAt, before: avg30, after: avg7 };
+    })
+    .filter(Boolean);
+
+  if (!observations.length) return [];
+
+  const DAY = 86_400_000;
+  const half = (rollingDays / 2) * DAY;
+  const first = new Date(Math.min(...observations.map((o) => o.t)));
+  const last = Math.max(...observations.map((o) => o.t));
+  const points = [];
+
+  const cursor = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), 15, 12));
+  while (cursor.getTime() <= last + half) {
+    const center = cursor.getTime();
+    const window = observations.filter((o) => Math.abs(o.t - center) <= half);
+    if (window.length >= minSample) {
+      const before = window.reduce((sum, o) => sum + o.before, 0);
+      const after = window.reduce((sum, o) => sum + o.after, 0);
+      points.push({
+        date: iso(center),
+        sample: window.length,
+        growth: Number(((after / before - 1) * 100).toFixed(2)),
+        basketValue: Number(after.toFixed(2)),
+      });
+    }
+    cursor.setUTCMonth(cursor.getUTCMonth() + 1);
+  }
+  return points;
+}
+
 // Trajectoire relative médiane : chaque carte est ramenée à base 100 sur son
 // propre avg30, ce qui rend les cartes comparables entre elles quel que soit
 // leur niveau de prix absolu.

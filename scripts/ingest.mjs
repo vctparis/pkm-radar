@@ -16,7 +16,7 @@ import { join } from "node:path";
 
 import { SETS } from "./lib/sets.mjs";
 import { fetchSetCards, normalizeSet } from "./lib/ptcg.mjs";
-import { momentumSeries, normalizedPath, median, cardMomentum } from "./lib/series.mjs";
+import { momentumSeries, basketGrowth, basketGrowthSeries, normalizedPath, median, cardMomentum } from "./lib/series.mjs";
 import {
   fetchExpansions,
   resolveSealedBlueprints,
@@ -126,14 +126,34 @@ async function main() {
       commons: segmentOf(groups.commons),
     };
 
-    // La même mesure déclinée par segment, dans le temps : c'est le graphe qui
-    // tranche entre diffusion réelle et hausse concentrée sur le haut du set.
-    // Seuil d'échantillon abaissé — le chase ne compte que douze cartes.
-    const segmentSeries = {
-      chase: momentumSeries(groups.chase, { minSample: 3, rollingDays: 90 }),
-      mid: momentumSeries(groups.mid, { minSample: 5, rollingDays: 90 }),
-      commons: momentumSeries(groups.commons, { minSample: 5, rollingDays: 90 }),
+    // Croissance en pourcentage par strate, en coupe.
+    //
+    // Volontairement une coupe et non une série : les cartes les plus chères
+    // sont relevées très rarement par Cardmarket. Sur Stars Étincelantes, les
+    // douze premières cartes partagent UN seul mois de relevé — une courbe y
+    // répéterait le même point. Comparer les strates entre elles à leur date
+    // d'observation reste en revanche parfaitement valide, et c'est bien la
+    // question posée : de combien monte le haut par rapport au bas.
+    const strata = [
+      { key: "top5", label: "Top 5", cards: sorted.slice(0, 5) },
+      { key: "top12", label: "Top 12", cards: sorted.slice(0, 12) },
+      { key: "top30", label: "Top 30", cards: sorted.slice(0, 30) },
+      { key: "mid", label: "Intermédiaires", cards: groups.mid },
+      { key: "commons", label: "Communes", cards: groups.commons },
+    ].map(({ key, label, cards: subset }) => ({ key, label, ...(basketGrowth(subset) ?? { growth: null, cards: 0 }) }));
+
+    // Séries temporelles réservées aux strates assez étalées dans le temps.
+    const growthSeries = {
+      mid: basketGrowthSeries(groups.mid, { minSample: 5 }),
+      commons: basketGrowthSeries(groups.commons, { minSample: 5 }),
     };
+
+    // Valeur du contenu : croissance de l'ensemble des cartes du set, pondérée
+    // par leur prix. C'est la meilleure approximation disponible de la tendance
+    // économique derrière un booster — CardTrader n'expose aucun historique de
+    // prix scellé, donc la vraie courbe du booster ne peut que s'accumuler à
+    // partir d'aujourd'hui.
+    const contentValue = basketGrowthSeries(cards, { minSample: 10 });
 
     // ---- Couche live CardTrader -------------------------------------------
     let live = null;
@@ -237,7 +257,9 @@ async function main() {
         path: normalizedPath(cards),
       },
       segments,
-      segmentSeries,
+      strata,
+      growthSeries,
+      contentValue,
       live,
       liveHistory: history.snapshots[set.id] ?? [],
       psa: psa ? { gemRate: psa.gemRate, growth30: psaGrowth30, history: psaHistory } : null,

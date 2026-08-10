@@ -6,6 +6,17 @@ export type Segment = {
   diffusion: number | null;
 };
 
+export type Stratum = {
+  key: string;
+  label: string;
+  cards: number;
+  growth: number | null;
+  basketValue?: number;
+  driver: { name: string; number: string; change: number; share: number } | null;
+};
+
+export type GrowthPoint = { date: string; sample: number; growth: number; basketValue: number };
+
 export type Pick = {
   id: string;
   name: string;
@@ -47,7 +58,9 @@ export type SetEntry = {
     path: { label: string; offset: number; value: number }[];
   };
   segments: { chase: Segment; mid: Segment; commons: Segment };
-  segmentSeries: Record<"chase" | "mid" | "commons", { date: string; sample: number; momentum: number; diffusion: number }[]>;
+  strata: Stratum[];
+  growthSeries: Record<"mid" | "commons", GrowthPoint[]>;
+  contentValue: GrowthPoint[];
   live: { booster: SealedQuote; boosterBox: SealedQuote; singles: { tracked: number; offers: number } } | null;
   liveHistory: { date: string; boosterPrice: number; boosterOffers: number; boxPrice: number | null; singlesOffers: number }[];
   psa: { gemRate: number; growth30: number | null; history: { date: string; total: number }[] } | null;
