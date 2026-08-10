@@ -20,6 +20,27 @@ import { createHash } from "node:crypto";
 
 export const dynamic = "force-dynamic";
 
+// eBay impose un jeton de 32 à 80 caractères pris dans [A-Za-z0-9_-]. Une
+// valeur hors de ces bornes est rejetée côté eBay quoi qu'il arrive : mieux
+// vaut le dire ici, précisément, que de laisser la validation échouer là-bas
+// derrière un message générique.
+function resolveToken() {
+  const raw = process.env.EBAY_VERIFICATION_TOKEN;
+  const candidate = raw?.trim();
+  if (!candidate) return { token: null, problem: "absent" as const, length: 0 };
+  if (!/^[A-Za-z0-9_-]+$/.test(candidate)) {
+    return { token: null, problem: "caractères interdits" as const, length: candidate.length };
+  }
+  if (candidate.length < 32 || candidate.length > 80) {
+    return { token: null, problem: "longueur hors bornes 32-80" as const, length: candidate.length };
+  }
+  // Un collage malheureux embarque souvent la clé et le signe égal.
+  if (candidate.includes("EBAY_")) {
+    return { token: null, problem: "la ligne entière a été collée", length: candidate.length } as const;
+  }
+  return { token: candidate, problem: null, length: candidate.length };
+}
+
 function resolveEndpoint(request: Request) {
   const override = process.env.EBAY_NOTIFICATION_ENDPOINT;
   if (override) return { endpoint: override.trim(), source: "env" as const };
@@ -35,7 +56,7 @@ const fingerprint = (value: string) => createHash("sha256").update(value).digest
 
 export async function GET(request: Request) {
   const challengeCode = new URL(request.url).searchParams.get("challenge_code");
-  const verificationToken = process.env.EBAY_VERIFICATION_TOKEN;
+  const { token: verificationToken, problem, length } = resolveToken();
   const { endpoint, source } = resolveEndpoint(request);
 
   // Mode diagnostic : eBay envoie toujours un challenge_code, donc son absence
@@ -45,14 +66,22 @@ export async function GET(request: Request) {
       ready: Boolean(verificationToken),
       endpointUsedForHash: endpoint,
       endpointSource: source,
-      tokenLength: verificationToken?.length ?? 0,
+      tokenLength: length,
       tokenFingerprint: verificationToken ? fingerprint(verificationToken) : null,
-      hint: "Cette URL et ce token doivent correspondre exactement à ceux saisis dans le portail eBay.",
+      tokenProblem: problem,
+      hint: problem
+        ? `Le jeton présent dans l'environnement est inutilisable (${problem}). Coller uniquement la valeur, sans le nom de la variable ni retour à la ligne, puis redéployer.`
+        : "Saisir dans le portail eBay exactement cette URL, et le jeton dont l'empreinte est indiquée.",
     });
   }
 
   if (!verificationToken) {
-    return Response.json({ error: "EBAY_VERIFICATION_TOKEN non configuré" }, { status: 500 });
+    // Répondre un hash calculé sur un jeton invalide ferait échouer eBay sans
+    // rien expliquer ; l'erreur nomme la cause exacte.
+    return Response.json(
+      { error: `EBAY_VERIFICATION_TOKEN inutilisable : ${problem} (${length} caractères)` },
+      { status: 500 },
+    );
   }
 
   const challengeResponse = createHash("sha256")
