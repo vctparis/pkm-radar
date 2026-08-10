@@ -1,0 +1,66 @@
+{
+  "_comment": "Taux de tirage PAR BOOSTER et par classe de rareté. AUCUNE source officielle n'existe : ce sont des estimations communautaires (agrégats d'ouvertures filmées et comptées — TCGplayer, r/PokemonTCG, JustInBasil), d'où des FOURCHETTES [lo, hi] et jamais un point. `premium: true` marque les classes qu'un revendeur qui écrème (mapping de display) extrait en priorité — elles passent à 0 dans le scénario « booster à l'unité ». Les clés sont les chaînes de rareté exactes de pokemontcg.io.",
+  "fees": 0.13,
+  "bulkThreshold": 0.4,
+  "eras": {
+    "sm": {
+      "label": "Soleil & Lune",
+      "confidence": "grossière",
+      "note": "Échantillons anciens, moins documentés que les ères récentes.",
+      "boostersPerDisplay": 36,
+      "classes": {
+        "Rare": { "lo": 0.5, "hi": 0.7 },
+        "Rare Holo": { "lo": 0.25, "hi": 0.4 },
+        "Rare Holo GX": { "lo": 0.1, "hi": 0.125, "premium": true },
+        "Rare Ultra": { "lo": 0.04, "hi": 0.07, "premium": true },
+        "Rare Rainbow": { "lo": 0.015, "hi": 0.03, "premium": true },
+        "Rare Secret": { "lo": 0.01, "hi": 0.02, "premium": true }
+      }
+    },
+    "swsh": {
+      "label": "Épée et Bouclier",
+      "confidence": "correcte",
+      "note": "Consensus communautaire stable sur l'ère.",
+      "boostersPerDisplay": 36,
+      "classes": {
+        "Rare": { "lo": 0.5, "hi": 0.7 },
+        "Rare Holo": { "lo": 0.25, "hi": 0.4 },
+        "Rare Holo V": { "lo": 0.15, "hi": 0.25 },
+        "Rare Holo VMAX": { "lo": 0.06, "hi": 0.1, "premium": true },
+        "Rare Holo VSTAR": { "lo": 0.06, "hi": 0.1, "premium": true },
+        "Radiant Rare": { "lo": 0.1, "hi": 0.15 },
+        "Rare Ultra": { "lo": 0.05, "hi": 0.08, "premium": true },
+        "Rare Rainbow": { "lo": 0.015, "hi": 0.025, "premium": true },
+        "Rare Secret": { "lo": 0.01, "hi": 0.02, "premium": true }
+      }
+    },
+    "sv": {
+      "label": "Écarlate et Violet",
+      "confidence": "solide",
+      "note": "Slots de rareté réguliers, les mieux documentés.",
+      "boostersPerDisplay": 36,
+      "classes": {
+        "Rare": { "lo": 0.6, "hi": 0.8 },
+        "Double Rare": { "lo": 0.2, "hi": 0.3 },
+        "Ultra Rare": { "lo": 0.07, "hi": 0.11, "premium": true },
+        "Illustration Rare": { "lo": 0.07, "hi": 0.11, "premium": true },
+        "Special Illustration Rare": { "lo": 0.025, "hi": 0.04, "premium": true },
+        "Hyper Rare": { "lo": 0.015, "hi": 0.025, "premium": true }
+      }
+    }
+  },
+  "setOverrides": {
+    "cel25": {
+      "confidence": "grossière",
+      "note": "Boosters de 4 cartes au tirage atypique — fourchettes très larges.",
+      "boostersPerDisplay": null
+    }
+  },
+  "partialSets": {
+    "sm115": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation.",
+    "swsh9": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
+    "swsh11": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
+    "swsh12": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
+    "swsh12pt5": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
+  }
+}

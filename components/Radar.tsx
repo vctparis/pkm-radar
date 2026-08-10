@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import LineChart from "./LineChart";
 import GrowthBars from "./GrowthBars";
+import OpeningPanel from "./OpeningPanel";
 import type { RadarData, Segment, SetEntry } from "@/lib/types";
 
 // Places 1-5 et 7 de la palette catégorielle validée (mode sombre). La couleur
@@ -75,6 +76,7 @@ function SegmentRow({ name, segment, hint }: { name: string; segment: Segment; h
 export default function Radar({ data }: { data: RadarData }) {
   const [activeId, setActiveId] = useState(data.sets[0]?.id);
   const [smoothing, setSmoothing] = useState<"monthly" | "quarterly">("monthly");
+  const [detailView, setDetailView] = useState<"analyse" | "ouverture">("analyse");
   // Toutes les strates visibles par defaut ; le booster s'ajoute des que son
   // historique existe (2 relevés).
   const [visible, setVisible] = useState<Record<string, boolean>>({
@@ -212,6 +214,7 @@ export default function Radar({ data }: { data: RadarData }) {
                   {[
                     { label: "Set", hint: "", align: "left", sticky: true },
                     { label: "Booster", hint: "le moins cher, neuf", align: "right" },
+                    { label: "Contenu", hint: "valeur d'ouverture / prix", align: "right" },
                     { label: "Offre", hint: "eBay.fr + unités CardTrader", align: "right" },
                     { label: "Carte-titre", hint: "et sa croissance 30 j", align: "left" },
                     { label: "Rangs 6-15", hint: "croissance 30 j", align: "right" },
@@ -319,6 +322,18 @@ export default function Radar({ data }: { data: RadarData }) {
                           "—"
                         )}
                       </td>
+                      {/* Ratio contenu/prix : vert quand le contenu rattrape le
+                          prix — signal d'arbitrage rare, pour l'ouvreur comme
+                          pour le holder. */}
+                      <td className="tabular px-4 py-3 text-right">
+                        {set.opening ? (
+                          <span className={((set.opening.ratioLo + set.opening.ratioHi) / 2) >= 0.8 ? "text-[color:var(--color-good)] font-semibold" : "text-mist-300"}>
+                            {(((set.opening.ratioLo + set.opening.ratioHi) / 2)).toFixed(2).replace(".", ",")}×
+                          </span>
+                        ) : (
+                          <span className="text-mist-500">—</span>
+                        )}
+                      </td>
                       <td className="tabular px-4 py-3 text-right text-mist-300">
                         {set.boosterFR ? num.format(set.boosterFR.offers) : "—"}
                         <span className="mt-0.5 block text-[0.72rem] text-mist-500">
@@ -405,6 +420,15 @@ export default function Radar({ data }: { data: RadarData }) {
                 </dd>
               </div>
               <div>
+                <dt className="font-medium text-mist-100">Contenu</dt>
+                <dd className="m-0 text-mist-300">
+                  Ce que le booster contient en moyenne, revendu net, divisé par son prix. À 0,50×, vous payez le
+                  double du contenu — normal, c&apos;est la prime au plaisir d&apos;ouvrir. Un ratio qui monte vers
+                  1× est un signal d&apos;arbitrage : ouvrir devient rationnel, l&apos;offre scellée fond. Le détail
+                  par carte vit dans l&apos;onglet « À l&apos;ouverture » du set.
+                </dd>
+              </div>
+              <div>
                 <dt className="font-medium text-mist-100">Carte-titre et poids de la carte n°1</dt>
                 <dd className="m-0 text-mist-300">
                   La carte la plus chère du set, sa croissance sur 30 jours, et la part de la valeur totale
@@ -441,6 +465,27 @@ export default function Radar({ data }: { data: RadarData }) {
                     : "Historique indisponible"}
               </p>
             </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <div role="group" aria-label="Vue" className="flex rounded-xl border border-ink-600 p-0.5">
+                {(
+                  [
+                    { key: "analyse", label: "Analyse" },
+                    { key: "ouverture", label: "À l'ouverture" },
+                  ] as const
+                ).map((option) => (
+                  <button
+                    key={option.key}
+                    type="button"
+                    onClick={() => setDetailView(option.key)}
+                    aria-pressed={detailView === option.key}
+                    className={`rounded-[10px] px-3 py-1.5 text-[0.85rem] transition-colors duration-200 ${
+                      detailView === option.key ? "bg-ink-600 text-mist-050" : "text-mist-300 hover:text-mist-050"
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
             <label className="flex items-center gap-2 text-[0.85rem] text-mist-300">
               Set analysé
               <select
@@ -455,8 +500,15 @@ export default function Radar({ data }: { data: RadarData }) {
                 ))}
               </select>
             </label>
+            </div>
           </div>
 
+          {detailView === "ouverture" ? (
+            <div className="mt-6">
+              <OpeningPanel opening={active.opening} setName={active.name} />
+            </div>
+          ) : (
+          <>
           <div className="mt-6 grid gap-5">
             {/* Réponse directe à « de combien monte le haut par rapport au bas ».
                 Une coupe et non une courbe : voir le commentaire dans ingest.mjs.
@@ -681,6 +733,8 @@ export default function Radar({ data }: { data: RadarData }) {
               </tbody>
             </table>
           </div>
+          )}
+          </>
           )}
         </section>
 

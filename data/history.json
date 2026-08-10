@@ -42,10 +42,10 @@
         "boosterLanguage": "en",
         "top5Value": 320.51,
         "top12ex5Value": 51.35,
-        "boosterFRp10": 12.75,
+        "boosterFRp10": 13.5,
         "boosterFRmedian": 18,
         "boosterFRoffers": 62,
-        "boosterFRsellers": 28
+        "boosterFRsellers": 29
       }
     ],
     "fusion-strike": [
@@ -91,7 +91,7 @@
         "top5Value": 417.45,
         "top12ex5Value": 53.55,
         "boosterFRp10": 11.37,
-        "boosterFRmedian": 18,
+        "boosterFRmedian": 19.9,
         "boosterFRoffers": 29,
         "boosterFRsellers": 18
       }

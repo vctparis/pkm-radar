@@ -72,6 +72,35 @@ export type BestCard = {
   url: string | null;
 } | null;
 
+export type Opening = {
+  boosterPrice: number;
+  netLo: number;
+  netHi: number;
+  ratioLo: number;
+  ratioHi: number;
+  looseLo: number;
+  looseHi: number;
+  recoupLo: number;
+  recoupHi: number;
+  recoupLooseLo?: number;
+  recoupLooseHi?: number;
+  topPulls: { name: string; nameFR?: string | null; number: string; rarity: string; price: number; oneIn: number; premium: boolean }[];
+  top1: {
+    name: string;
+    nameFR?: string | null;
+    number: string;
+    buyPrice: number;
+    oneInLo: number;
+    oneInHi: number;
+    expectedCostLo: number;
+    expectedCostHi: number;
+    perDisplay: number | null;
+  } | null;
+  boostersPerDisplay: number | null;
+  confidence: string;
+  partialNote: string | null;
+} | null;
+
 export type SetEntry = {
   id: string;
   name: string;
@@ -93,6 +122,7 @@ export type SetEntry = {
   segments: { chase: Segment; mid: Segment; commons: Segment } | null;
   bestCard: BestCard;
   boosterFR: FRBoosterQuote;
+  opening: Opening;
   strata: Stratum[];
   growthSeries: { monthly: GrowthBundle; quarterly: GrowthBundle };
   contentValue: GrowthPoint[];

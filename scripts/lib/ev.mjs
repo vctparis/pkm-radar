@@ -1,0 +1,129 @@
+// Moteur d'espérance d'ouverture.
+//
+// La question posée : « ce booster coûte X ; ce qu'il peut contenir, pondéré
+// par les probabilités de tirage, vaut combien ? ». Trois principes tiennent
+// tout le moteur :
+//
+//   1. FOURCHETTES, jamais un point. Les taux de tirage sont des estimations
+//      communautaires : chaque classe porte [lo, hi] et tout le calcul est
+//      propagé en intervalle.
+//   2. VALEUR NETTE, pas affichée. Une carte tirée se revend moins cher que
+//      son prix demandé : frais de marketplace déduits (~13 %), et tout ce qui
+//      vaut moins que le seuil bulk compte pour ZÉRO — sous les frais d'envoi,
+//      une carte n'a pas de valeur réalisable.
+//   3. L'ESPÉRANCE N'EST PAS LE RÉSULTAT TYPIQUE. La distribution est
+//      violemment asymétrique : on calcule aussi P(rembourser son booster),
+//      qui est le chiffre qui dégrise.
+
+const round2 = (v) => Number(v.toFixed(2));
+
+/**
+ * @param cards      cartes normalisées du set (prix Cardmarket + rareté)
+ * @param eraClasses table {rareté: {lo, hi, premium?}} de l'ère
+ * @param options    { boosterPrice, fees, bulkThreshold, boostersPerDisplay }
+ */
+export function computeOpening(cards, eraClasses, options) {
+  const { boosterPrice, fees = 0.13, bulkThreshold = 0.4, boostersPerDisplay = 36 } = options;
+  if (!boosterPrice || boosterPrice <= 0) return null;
+
+  // Valeur réalisable d'une carte tirée.
+  const netOf = (price) => (price >= bulkThreshold ? price * (1 - fees) : 0);
+
+  // Regroupement par classe de rareté couverte par la table de l'ère.
+  const byClass = new Map();
+  for (const card of cards) {
+    const spec = eraClasses[card.rarity];
+    if (!spec) continue; // communes/peu communes : valeur nette ≈ 0, ignorées
+    if (!byClass.has(card.rarity)) byClass.set(card.rarity, []);
+    byClass.get(card.rarity).push(card);
+  }
+  if (!byClass.size) return null;
+
+  // EV par classe : Σ p_i × v_i = taux_classe × moyenne(v) quand le taux se
+  // répartit uniformément entre les cartes de la classe.
+  let evLo = 0;
+  let evHi = 0;
+  let looseLo = 0;
+  let looseHi = 0;
+  const perCard = []; // { card, pLo, pHi, net }
+
+  for (const [rarity, group] of byClass) {
+    const spec = eraClasses[rarity];
+    const meanNet = group.reduce((sum, card) => sum + netOf(card.reference), 0) / group.length;
+    evLo += spec.lo * meanNet;
+    evHi += spec.hi * meanNet;
+    if (!spec.premium) {
+      looseLo += spec.lo * meanNet;
+      looseHi += spec.hi * meanNet;
+    }
+    for (const card of group) {
+      perCard.push({
+        card,
+        pLo: spec.lo / group.length,
+        pHi: spec.hi / group.length,
+        premium: Boolean(spec.premium),
+        net: netOf(card.reference),
+      });
+    }
+  }
+
+  // P(rembourser son booster) : au moins une carte dont la valeur nette
+  // couvre le prix. Indépendance approchée entre cartes — acceptable à ces
+  // ordres de grandeur, et l'hypothèse est du côté prudent.
+  const recoup = (pick, { excludePremium = false } = {}) => {
+    const winners = perCard.filter((entry) => entry.net >= boosterPrice && (!excludePremium || !entry.premium));
+    if (!winners.length) return 0;
+    return 1 - winners.reduce((acc, entry) => acc * (1 - pick(entry)), 1);
+  };
+
+  // Les pioches qui comptent : les plus grosses valeurs nettes.
+  const topPulls = [...perCard]
+    .sort((a, b) => b.net - a.net)
+    .slice(0, 6)
+    .map((entry) => ({
+      name: entry.card.name,
+      number: entry.card.number,
+      rarity: entry.card.rarity,
+      price: round2(entry.card.reference),
+      // « 1 sur N » se lit mieux qu'un pourcentage — N au point médian.
+      oneIn: Math.round(2 / (entry.pLo + entry.pHi)),
+      premium: entry.premium,
+    }));
+
+  // La carte-titre : coût espéré pour la tirer vs l'acheter directement.
+  const headline = [...perCard].sort((a, b) => b.card.reference - a.card.reference)[0] ?? null;
+  const top1 =
+    headline && headline.pHi > 0
+      ? {
+          name: headline.card.name,
+          number: headline.card.number,
+          buyPrice: round2(headline.card.reference),
+          oneInLo: Math.round(1 / headline.pHi),
+          oneInHi: Math.round(1 / headline.pLo),
+          expectedCostLo: Math.round(boosterPrice / headline.pHi),
+          expectedCostHi: Math.round(boosterPrice / headline.pLo),
+          perDisplay: boostersPerDisplay
+            ? round2(1 - Math.pow(1 - (headline.pLo + headline.pHi) / 2, boostersPerDisplay))
+            : null,
+        }
+      : null;
+
+  return {
+    boosterPrice: round2(boosterPrice),
+    netLo: round2(evLo),
+    netHi: round2(evHi),
+    // Ratio contenu/prix : au-dessus de 1, ouvrir bat le prix — situation
+    // rare, et signal d'arbitrage pour le scellé.
+    ratioLo: round2(evLo / boosterPrice),
+    ratioHi: round2(evHi / boosterPrice),
+    looseLo: round2(looseLo),
+    looseHi: round2(looseHi),
+    recoupLo: round2(recoup((entry) => entry.pLo)),
+    recoupHi: round2(recoup((entry) => entry.pHi)),
+    recoupLooseLo: round2(recoup((entry) => entry.pLo, { excludePremium: true })),
+    recoupLooseHi: round2(recoup((entry) => entry.pHi, { excludePremium: true })),
+    topPulls,
+    top1,
+    boostersPerDisplay,
+  };
+}

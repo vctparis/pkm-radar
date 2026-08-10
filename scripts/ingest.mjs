@@ -28,6 +28,7 @@ import {
 import { fetchSealedBoosterFR, fetchCardFR } from "./lib/ebay.mjs";
 import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
+import { computeOpening } from "./lib/ev.mjs";
 
 // En local le token vit dans .env.local ; en CI il vient des secrets du runner.
 try {
@@ -231,6 +232,7 @@ async function buildJapaneseSet(set, expansionsByCode, history) {
     live,
     liveHistory: history.snapshots[set.id] ?? [],
     psa: null,
+    opening: null,
     picks,
   };
 }
@@ -240,6 +242,7 @@ async function main() {
 
   const history = await loadHistory();
   const psaManual = JSON.parse(await readFile(join(ROOT, "data", "manual-psa.json"), "utf8"));
+  const pullRates = JSON.parse(await readFile(join(ROOT, "data", "pull-rates.json"), "utf8"));
 
   // Résolution des expansions CardTrader une seule fois pour tous les sets.
   let expansionsByCode = new Map();
@@ -440,6 +443,32 @@ async function main() {
       }
     }
 
+    // ---- Espérance d'ouverture ---------------------------------------------
+    // Prix de référence : le booster français (p10 eBay), à défaut CardTrader.
+    // Ère déduite de l'identifiant pokemontcg.io.
+    let opening = null;
+    {
+      const eraKey = set.ptcg.startsWith("sv") ? "sv" : set.ptcg.startsWith("swsh") ? "swsh" : "sm";
+      const era = pullRates.eras[eraKey];
+      const override = pullRates.setOverrides?.[set.ptcg] ?? {};
+      const referencePrice = boosterFR?.floor10 ?? live?.booster?.price ?? null;
+      if (era && referencePrice) {
+        opening = computeOpening(cards, era.classes, {
+          boosterPrice: referencePrice,
+          fees: pullRates.fees,
+          bulkThreshold: pullRates.bulkThreshold,
+          boostersPerDisplay: override.boostersPerDisplay !== undefined ? override.boostersPerDisplay : era.boostersPerDisplay,
+        });
+        if (opening) {
+          opening.confidence = override.confidence ?? era.confidence;
+          opening.partialNote = pullRates.partialSets?.[set.ptcg] ?? null;
+          // Nom français de la carte-titre côté ouverture
+          if (opening.top1) opening.top1.nameFR = frOf(opening.top1.number)?.name ?? null;
+          for (const pull of opening.topPulls) pull.nameFR = frOf(pull.number)?.name ?? null;
+        }
+      }
+    }
+
     // Index des cotations live par numéro de carte, partagé par les paniers
     // fixes et la sélection de pépites.
     const byNumber = new Map();
@@ -577,6 +606,7 @@ async function main() {
       segments,
       bestCard,
       boosterFR,
+      opening,
       strata,
       growthSeries,
       contentValue,

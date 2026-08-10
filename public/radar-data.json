@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T22:04:49.320Z",
+  "generatedAt": "2026-08-10T23:29:44.046Z",
   "sets": [
     {
       "id": "s151",
@@ -134,6 +134,89 @@
         "sellers": 11,
         "matched": 13,
         "scanned": 29
+      },
+      "opening": {
+        "boosterPrice": 13,
+        "netLo": 4.85,
+        "netHi": 7.64,
+        "ratioLo": 0.37,
+        "ratioHi": 0.59,
+        "looseLo": 0.53,
+        "looseHi": 0.79,
+        "recoupLo": 0.09,
+        "recoupHi": 0.14,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Charizard ex",
+            "number": "199",
+            "rarity": "Special Illustration Rare",
+            "price": 235.71,
+            "oneIn": 215,
+            "premium": true,
+            "nameFR": "Dracaufeu-ex"
+          },
+          {
+            "name": "Zapdos ex",
+            "number": "202",
+            "rarity": "Special Illustration Rare",
+            "price": 90.46,
+            "oneIn": 215,
+            "premium": true,
+            "nameFR": "Électhor-ex"
+          },
+          {
+            "name": "Venusaur ex",
+            "number": "198",
+            "rarity": "Special Illustration Rare",
+            "price": 79.88,
+            "oneIn": 215,
+            "premium": true,
+            "nameFR": "Florizarre-ex"
+          },
+          {
+            "name": "Blastoise ex",
+            "number": "200",
+            "rarity": "Special Illustration Rare",
+            "price": 79.37,
+            "oneIn": 215,
+            "premium": true,
+            "nameFR": "Tortank-ex"
+          },
+          {
+            "name": "Alakazam ex",
+            "number": "201",
+            "rarity": "Special Illustration Rare",
+            "price": 53.05,
+            "oneIn": 215,
+            "premium": true,
+            "nameFR": "Alakazam-ex"
+          },
+          {
+            "name": "Charmander",
+            "number": "168",
+            "rarity": "Illustration Rare",
+            "price": 48.15,
+            "oneIn": 178,
+            "premium": true,
+            "nameFR": "Salamèche"
+          }
+        ],
+        "top1": {
+          "name": "Charizard ex",
+          "number": "199",
+          "buyPrice": 235.71,
+          "oneInLo": 175,
+          "oneInHi": 280,
+          "expectedCostLo": 2275,
+          "expectedCostHi": 3640,
+          "perDisplay": 0.15,
+          "nameFR": "Dracaufeu-ex"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "solide",
+        "partialNote": null
       },
       "strata": [
         {
@@ -968,6 +1051,89 @@
         "matched": 2,
         "scanned": 21
       },
+      "opening": {
+        "boosterPrice": 44.9,
+        "netLo": 3,
+        "netHi": 4.81,
+        "ratioLo": 0.07,
+        "ratioHi": 0.11,
+        "looseLo": 2.95,
+        "looseHi": 4.72,
+        "recoupLo": 0.04,
+        "recoupHi": 0.07,
+        "recoupLooseLo": 0.04,
+        "recoupLooseHi": 0.07,
+        "topPulls": [
+          {
+            "name": "Mew",
+            "number": "25",
+            "rarity": "Rare Holo",
+            "price": 73.33,
+            "oneIn": 18,
+            "premium": false,
+            "nameFR": "Mew"
+          },
+          {
+            "name": "Pikachu",
+            "number": "5",
+            "rarity": "Rare Holo",
+            "price": 5.39,
+            "oneIn": 18,
+            "premium": false,
+            "nameFR": "Pikachu"
+          },
+          {
+            "name": "Mew",
+            "number": "11",
+            "rarity": "Rare Holo",
+            "price": 2.61,
+            "oneIn": 18,
+            "premium": false,
+            "nameFR": "Mew"
+          },
+          {
+            "name": "Professor's Research (Professor Oak)",
+            "number": "24",
+            "rarity": "Rare Ultra",
+            "price": 1.58,
+            "oneIn": 18,
+            "premium": true,
+            "nameFR": "Recherches Professorales (Professeur Chen)"
+          },
+          {
+            "name": "Ho-Oh",
+            "number": "1",
+            "rarity": "Rare",
+            "price": 0.22,
+            "oneIn": 20,
+            "premium": false,
+            "nameFR": "Ho-Oh"
+          },
+          {
+            "name": "Palkia",
+            "number": "4",
+            "rarity": "Rare",
+            "price": 0.18,
+            "oneIn": 20,
+            "premium": false,
+            "nameFR": "Palkia"
+          }
+        ],
+        "top1": {
+          "name": "Mew",
+          "number": "25",
+          "buyPrice": 73.33,
+          "oneInLo": 15,
+          "oneInHi": 24,
+          "expectedCostLo": 674,
+          "expectedCostHi": 1078,
+          "perDisplay": null,
+          "nameFR": "Mew"
+        },
+        "boostersPerDisplay": null,
+        "confidence": "grossière",
+        "partialNote": null
+      },
       "strata": [
         {
           "key": "top1",
@@ -1669,6 +1835,89 @@
         "sellers": 11,
         "matched": 15,
         "scanned": 25
+      },
+      "opening": {
+        "boosterPrice": 25,
+        "netLo": 1.75,
+        "netHi": 3.04,
+        "ratioLo": 0.07,
+        "ratioHi": 0.12,
+        "looseLo": 0.24,
+        "looseHi": 0.39,
+        "recoupLo": 0,
+        "recoupHi": 0,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Charizard-GX",
+            "number": "150",
+            "rarity": "Rare Rainbow",
+            "price": 600.79,
+            "oneIn": 578,
+            "premium": true,
+            "nameFR": "Dracaufeu GX"
+          },
+          {
+            "name": "Fairy Energy",
+            "number": "169",
+            "rarity": "Rare Secret",
+            "price": 36.66,
+            "oneIn": 600,
+            "premium": true,
+            "nameFR": "Énergie Fée"
+          },
+          {
+            "name": "Darkness Energy",
+            "number": "168",
+            "rarity": "Rare Secret",
+            "price": 23.38,
+            "oneIn": 600,
+            "premium": true,
+            "nameFR": "Énergie Obscurité"
+          },
+          {
+            "name": "Darkrai-GX",
+            "number": "158",
+            "rarity": "Rare Rainbow",
+            "price": 22.95,
+            "oneIn": 578,
+            "premium": true,
+            "nameFR": "Darkrai GX"
+          },
+          {
+            "name": "Gardevoir-GX",
+            "number": "159",
+            "rarity": "Rare Rainbow",
+            "price": 19.85,
+            "oneIn": 578,
+            "premium": true,
+            "nameFR": "Gardevoir GX"
+          },
+          {
+            "name": "Escape Rope",
+            "number": "163",
+            "rarity": "Rare Secret",
+            "price": 16.72,
+            "oneIn": 600,
+            "premium": true,
+            "nameFR": "Corde Sortie"
+          }
+        ],
+        "top1": {
+          "name": "Charizard-GX",
+          "number": "150",
+          "buyPrice": 600.79,
+          "oneInLo": 433,
+          "oneInHi": 867,
+          "expectedCostLo": 10833,
+          "expectedCostHi": 21667,
+          "perDisplay": 0.06,
+          "nameFR": "Dracaufeu GX"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "grossière",
+        "partialNote": null
       },
       "strata": [
         {
@@ -2579,6 +2828,89 @@
         "matched": 82,
         "scanned": 178
       },
+      "opening": {
+        "boosterPrice": 19.9,
+        "netLo": 1.27,
+        "netHi": 2.07,
+        "ratioLo": 0.06,
+        "ratioHi": 0.1,
+        "looseLo": 0.26,
+        "looseHi": 0.42,
+        "recoupLo": 0.01,
+        "recoupHi": 0.02,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Umbreon-GX",
+            "number": "154",
+            "rarity": "Rare Rainbow",
+            "price": 40.26,
+            "oneIn": 356,
+            "premium": true,
+            "nameFR": "Noctali GX"
+          },
+          {
+            "name": "Umbreon-GX",
+            "number": "142",
+            "rarity": "Rare Ultra",
+            "price": 30.95,
+            "oneIn": 218,
+            "premium": true,
+            "nameFR": "Noctali GX"
+          },
+          {
+            "name": "Espeon-GX",
+            "number": "152",
+            "rarity": "Rare Rainbow",
+            "price": 26.24,
+            "oneIn": 356,
+            "premium": true,
+            "nameFR": "Mentali GX"
+          },
+          {
+            "name": "Lillie",
+            "number": "147",
+            "rarity": "Rare Ultra",
+            "price": 24.32,
+            "oneIn": 218,
+            "premium": true,
+            "nameFR": "Lilie"
+          },
+          {
+            "name": "Ultra Ball",
+            "number": "161",
+            "rarity": "Rare Secret",
+            "price": 22.23,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Hyper Ball"
+          },
+          {
+            "name": "Lapras-GX",
+            "number": "151",
+            "rarity": "Rare Rainbow",
+            "price": 18.23,
+            "oneIn": 356,
+            "premium": true,
+            "nameFR": "Lokhlass GX"
+          }
+        ],
+        "top1": {
+          "name": "Umbreon-GX",
+          "number": "154",
+          "buyPrice": 40.26,
+          "oneInLo": 267,
+          "oneInHi": 533,
+          "expectedCostLo": 5307,
+          "expectedCostHi": 10613,
+          "perDisplay": 0.1,
+          "nameFR": "Noctali GX"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "grossière",
+        "partialNote": null
+      },
       "strata": [
         {
           "key": "top1",
@@ -3038,7 +3370,7 @@
             "price": 2.8,
             "priceUrl": "https://www.ebay.fr/itm/267737712549?_skw=Sharpedo+82%2F149&hash=item3e566947a5:g:13QAAeSwIB1qKq85",
             "floor10": 2.8,
-            "floor10Url": "https://www.ebay.fr/itm/267737712560?_skw=Sharpedo+82%2F149&hash=item3e566947b0:g:9YAAAeSwkxVqKq6C",
+            "floor10Url": "https://www.ebay.fr/itm/267737698792?_skw=Sharpedo+82%2F149&hash=item3e566911e8:g:tDEAAeSw7E1oW9LK",
             "median": 2.85,
             "offers": 10,
             "sellers": 5,
@@ -3336,11 +3668,11 @@
             "priceUrl": "https://www.ebay.fr/itm/194409681262?_skw=%C3%89voli+101%2F149&hash=item2d43b8516e:g:5KUAAOSwHkthWKbu",
             "floor10": 1,
             "floor10Url": "https://www.ebay.fr/itm/194409681262?_skw=%C3%89voli+101%2F149&hash=item2d43b8516e:g:5KUAAOSwHkthWKbu",
-            "median": 2.1,
-            "offers": 7,
-            "sellers": 7,
-            "matched": 7,
-            "scanned": 9
+            "median": 3.9,
+            "offers": 6,
+            "sellers": 6,
+            "matched": 6,
+            "scanned": 8
           }
         },
         {
@@ -3481,6 +3813,7 @@
         }
       ],
       "psa": null,
+      "opening": null,
       "picks": [
         {
           "id": "shiny-star-v-307",
@@ -3923,6 +4256,7 @@
         }
       ],
       "psa": null,
+      "opening": null,
       "picks": [
         {
           "id": "vmax-climax-280",
@@ -4371,6 +4705,89 @@
         "sellers": 9,
         "matched": 13,
         "scanned": 16
+      },
+      "opening": {
+        "boosterPrice": 49.99,
+        "netLo": 2.2,
+        "netHi": 3.54,
+        "ratioLo": 0.04,
+        "ratioHi": 0.07,
+        "looseLo": 0.28,
+        "looseHi": 0.43,
+        "recoupLo": 0,
+        "recoupHi": 0,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Jessie & James",
+            "number": "68",
+            "rarity": "Rare Ultra",
+            "price": 39.57,
+            "oneIn": 55,
+            "premium": true,
+            "nameFR": "Jessie et James"
+          },
+          {
+            "name": "Moltres & Zapdos & Articuno-GX",
+            "number": "44",
+            "rarity": "Rare Holo GX",
+            "price": 37.58,
+            "oneIn": 80,
+            "premium": true,
+            "nameFR": "Sulfura, Électhor et Artikodin-GX"
+          },
+          {
+            "name": "Moltres & Zapdos & Articuno-GX",
+            "number": "69",
+            "rarity": "Rare Rainbow",
+            "price": 30.9,
+            "oneIn": 44,
+            "premium": true,
+            "nameFR": "Sulfura, Électhor et Artikodin-GX"
+          },
+          {
+            "name": "Moltres & Zapdos & Articuno-GX",
+            "number": "66",
+            "rarity": "Rare Ultra",
+            "price": 25.42,
+            "oneIn": 55,
+            "premium": true,
+            "nameFR": "Sulfura, Électhor et Artikodin-GX"
+          },
+          {
+            "name": "Charizard-GX",
+            "number": "9",
+            "rarity": "Rare Holo GX",
+            "price": 15.43,
+            "oneIn": 80,
+            "premium": true,
+            "nameFR": "Dracaufeu-GX"
+          },
+          {
+            "name": "Mewtwo-GX",
+            "number": "31",
+            "rarity": "Rare Holo GX",
+            "price": 5.91,
+            "oneIn": 80,
+            "premium": true,
+            "nameFR": "Mewtwo-GX"
+          }
+        ],
+        "top1": {
+          "name": "Jessie & James",
+          "number": "68",
+          "buyPrice": 39.57,
+          "oneInLo": 43,
+          "oneInHi": 75,
+          "expectedCostLo": 2142,
+          "expectedCostHi": 3749,
+          "perDisplay": 0.49,
+          "nameFR": "Jessie et James"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "grossière",
+        "partialNote": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation."
       },
       "strata": [
         {
@@ -5225,7 +5642,7 @@
         "rarity": "Rare Rainbow",
         "price": 1579.48,
         "change30": 8.9,
-        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Umbreon-VMAX-V3"
+        "url": null
       },
       "boosterFR": {
         "price": 34.99,
@@ -5237,6 +5654,89 @@
         "sellers": 9,
         "matched": 9,
         "scanned": 48
+      },
+      "opening": {
+        "boosterPrice": 34.99,
+        "netLo": 4.7,
+        "netHi": 7.72,
+        "ratioLo": 0.13,
+        "ratioHi": 0.22,
+        "looseLo": 0.24,
+        "looseHi": 0.4,
+        "recoupLo": 0.02,
+        "recoupHi": 0.03,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Umbreon VMAX",
+            "number": "215",
+            "rarity": "Rare Rainbow",
+            "price": 1579.48,
+            "oneIn": 1100,
+            "premium": true,
+            "nameFR": "Noctali VMAX"
+          },
+          {
+            "name": "Rayquaza VMAX",
+            "number": "218",
+            "rarity": "Rare Rainbow",
+            "price": 780.69,
+            "oneIn": 1100,
+            "premium": true,
+            "nameFR": "Rayquaza VMAX"
+          },
+          {
+            "name": "Leafeon VMAX",
+            "number": "205",
+            "rarity": "Rare Rainbow",
+            "price": 286.38,
+            "oneIn": 1100,
+            "premium": true,
+            "nameFR": "Phyllali VMAX"
+          },
+          {
+            "name": "Glaceon VMAX",
+            "number": "209",
+            "rarity": "Rare Rainbow",
+            "price": 276.46,
+            "oneIn": 1100,
+            "premium": true,
+            "nameFR": "Givrali VMAX"
+          },
+          {
+            "name": "Sylveon VMAX",
+            "number": "212",
+            "rarity": "Rare Rainbow",
+            "price": 262.46,
+            "oneIn": 1100,
+            "premium": true,
+            "nameFR": "Nymphali VMAX"
+          },
+          {
+            "name": "Rayquaza V",
+            "number": "194",
+            "rarity": "Rare Ultra",
+            "price": 235.98,
+            "oneIn": 585,
+            "premium": true,
+            "nameFR": "Rayquaza V"
+          }
+        ],
+        "top1": {
+          "name": "Umbreon VMAX",
+          "number": "215",
+          "buyPrice": 1579.48,
+          "oneInLo": 880,
+          "oneInHi": 1467,
+          "expectedCostLo": 30791,
+          "expectedCostHi": 51319,
+          "perDisplay": 0.03,
+          "nameFR": "Noctali VMAX"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "correcte",
+        "partialNote": null
       },
       "strata": [
         {
@@ -6127,11 +6627,94 @@
         "priceUrl": "https://www.ebay.fr/itm/386587359206?_skw=pokemon+booster+Temp%C3%AAte+Argent%C3%A9e&hash=item5a0266f7e6:i:386587359206",
         "floor10": 11.37,
         "floor10Url": "https://www.ebay.fr/itm/396948003939?_skw=pokemon+booster+Temp%C3%AAte+Argent%C3%A9e&hash=item5c6bf1dc63:g:z70AAeSwQhlomHbz",
-        "median": 18,
+        "median": 19.9,
         "offers": 29,
         "sellers": 18,
         "matched": 29,
         "scanned": 56
+      },
+      "opening": {
+        "boosterPrice": 11.37,
+        "netLo": 1.47,
+        "netHi": 2.39,
+        "ratioLo": 0.13,
+        "ratioHi": 0.21,
+        "looseLo": 0.26,
+        "looseHi": 0.42,
+        "recoupLo": 0.01,
+        "recoupHi": 0.02,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Lugia V",
+            "number": "186",
+            "rarity": "Rare Ultra",
+            "price": 387.8,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Lugia V"
+          },
+          {
+            "name": "Lugia VSTAR",
+            "number": "202",
+            "rarity": "Rare Rainbow",
+            "price": 26.33,
+            "oneIn": 700,
+            "premium": true,
+            "nameFR": "Lugia VSTAR"
+          },
+          {
+            "name": "Unown V",
+            "number": "177",
+            "rarity": "Rare Ultra",
+            "price": 20.91,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Zarbi V"
+          },
+          {
+            "name": "Lugia V",
+            "number": "185",
+            "rarity": "Rare Ultra",
+            "price": 19.23,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Lugia V"
+          },
+          {
+            "name": "Regidrago V",
+            "number": "184",
+            "rarity": "Rare Ultra",
+            "price": 19.07,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Regidrago V"
+          },
+          {
+            "name": "Lugia VSTAR",
+            "number": "211",
+            "rarity": "Rare Secret",
+            "price": 17.37,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Lugia VSTAR"
+          }
+        ],
+        "top1": {
+          "name": "Lugia V",
+          "number": "186",
+          "buyPrice": 387.8,
+          "oneInLo": 325,
+          "oneInHi": 520,
+          "expectedCostLo": 3695,
+          "expectedCostHi": 5912,
+          "perDisplay": 0.09,
+          "nameFR": "Lugia V"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "correcte",
+        "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
       "strata": [
         {
@@ -6496,7 +7079,7 @@
           "top5Value": 417.45,
           "top12ex5Value": 53.55,
           "boosterFRp10": 11.37,
-          "boosterFRmedian": 18,
+          "boosterFRmedian": 19.9,
           "boosterFRoffers": 29,
           "boosterFRsellers": 18
         }
@@ -7010,13 +7593,96 @@
       "boosterFR": {
         "price": 2.99,
         "priceUrl": "https://www.ebay.fr/itm/355009061956?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item52a8306444:g:W5MAAOSwrtJk75hm",
-        "floor10": 12.75,
-        "floor10Url": "https://www.ebay.fr/itm/137275112483?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item1ff63bfc23:g:ysUAAeSwcIBp9gFP",
+        "floor10": 13.5,
+        "floor10Url": "https://www.ebay.fr/itm/358886979923?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item538f54b953:g:rhAAAeSwFO1p6PrA",
         "median": 18,
         "offers": 62,
-        "sellers": 28,
+        "sellers": 29,
         "matched": 62,
         "scanned": 135
+      },
+      "opening": {
+        "boosterPrice": 13.5,
+        "netLo": 1.55,
+        "netHi": 2.56,
+        "ratioLo": 0.12,
+        "ratioHi": 0.19,
+        "looseLo": 0.25,
+        "looseHi": 0.41,
+        "recoupLo": 0.01,
+        "recoupHi": 0.02,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Charizard V",
+            "number": "154",
+            "rarity": "Rare Ultra",
+            "price": 254.06,
+            "oneIn": 323,
+            "premium": true,
+            "nameFR": "Dracaufeu V"
+          },
+          {
+            "name": "Arceus V",
+            "number": "166",
+            "rarity": "Rare Ultra",
+            "price": 56.58,
+            "oneIn": 323,
+            "premium": true,
+            "nameFR": "Arceus V"
+          },
+          {
+            "name": "Charizard VSTAR",
+            "number": "174",
+            "rarity": "Rare Rainbow",
+            "price": 44.62,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Dracaufeu VSTAR"
+          },
+          {
+            "name": "Charizard V",
+            "number": "153",
+            "rarity": "Rare Ultra",
+            "price": 19.09,
+            "oneIn": 323,
+            "premium": true,
+            "nameFR": "Dracaufeu V"
+          },
+          {
+            "name": "Ultra Ball",
+            "number": "186",
+            "rarity": "Rare Secret",
+            "price": 16.65,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Hyper Ball"
+          },
+          {
+            "name": "Galarian Moltres V",
+            "number": "183",
+            "rarity": "Rare Secret",
+            "price": 14.77,
+            "oneIn": 400,
+            "premium": true,
+            "nameFR": "Sulfura de Galar V"
+          }
+        ],
+        "top1": {
+          "name": "Charizard V",
+          "number": "154",
+          "buyPrice": 254.06,
+          "oneInLo": 263,
+          "oneInHi": 420,
+          "expectedCostLo": 3544,
+          "expectedCostHi": 5670,
+          "perDisplay": 0.11,
+          "nameFR": "Dracaufeu V"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "correcte",
+        "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
       "strata": [
         {
@@ -7369,10 +8035,10 @@
           "boosterLanguage": "en",
           "top5Value": 320.51,
           "top12ex5Value": 51.35,
-          "boosterFRp10": 12.75,
+          "boosterFRp10": 13.5,
           "boosterFRmedian": 18,
           "boosterFRoffers": 62,
-          "boosterFRsellers": 28
+          "boosterFRsellers": 29
         }
       ],
       "psa": {
@@ -7677,7 +8343,7 @@
             "discount": 100
           },
           "nameFR": "Saltimbanque",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Kindler-V2-BRS170",
+          "url": null,
           "marketFR": {
             "price": 3.19,
             "priceUrl": "https://www.ebay.fr/itm/377087747282?_skw=Saltimbanque+170%2F172&hash=item57cc2e64d2:g:WZkAAeSwnjFp0TsM",
@@ -7893,6 +8559,89 @@
         "sellers": 5,
         "matched": 5,
         "scanned": 16
+      },
+      "opening": {
+        "boosterPrice": 25.99,
+        "netLo": 1.57,
+        "netHi": 2.63,
+        "ratioLo": 0.06,
+        "ratioHi": 0.1,
+        "looseLo": 0.75,
+        "looseHi": 1.16,
+        "recoupLo": 0.01,
+        "recoupHi": 0.02,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Pikachu",
+            "number": "160",
+            "rarity": "Rare Secret",
+            "price": 37.74,
+            "oneIn": 67,
+            "premium": true,
+            "nameFR": "Pikachu"
+          },
+          {
+            "name": "Elesa's Sparkle",
+            "number": "147",
+            "rarity": "Rare Ultra",
+            "price": 18.09,
+            "oneIn": 200,
+            "premium": true,
+            "nameFR": "Éclat d'Inezia"
+          },
+          {
+            "name": "Radiant Charizard",
+            "number": "20",
+            "rarity": "Radiant Rare",
+            "price": 15.61,
+            "oneIn": 24,
+            "premium": false,
+            "nameFR": null
+          },
+          {
+            "name": "Charizard VSTAR",
+            "number": "19",
+            "rarity": "Rare Holo VSTAR",
+            "price": 10.12,
+            "oneIn": 100,
+            "premium": true,
+            "nameFR": null
+          },
+          {
+            "name": "Friends in Sinnoh",
+            "number": "149",
+            "rarity": "Rare Ultra",
+            "price": 8.01,
+            "oneIn": 200,
+            "premium": true,
+            "nameFR": "Amis de Sinnoh"
+          },
+          {
+            "name": "Friends in Hisui",
+            "number": "148",
+            "rarity": "Rare Ultra",
+            "price": 6.28,
+            "oneIn": 200,
+            "premium": true,
+            "nameFR": "Amis de Hisui"
+          }
+        ],
+        "top1": {
+          "name": "Pikachu",
+          "number": "160",
+          "buyPrice": 37.74,
+          "oneInLo": 50,
+          "oneInHi": 100,
+          "expectedCostLo": 1300,
+          "expectedCostHi": 2599,
+          "perDisplay": 0.42,
+          "nameFR": "Pikachu"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "correcte",
+        "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
       },
       "strata": [
         {
@@ -8759,6 +9508,89 @@
         "matched": 29,
         "scanned": 42
       },
+      "opening": {
+        "boosterPrice": 7.19,
+        "netLo": 1.4,
+        "netHi": 2.27,
+        "ratioLo": 0.19,
+        "ratioHi": 0.32,
+        "looseLo": 0.17,
+        "looseHi": 0.29,
+        "recoupLo": 0.03,
+        "recoupHi": 0.05,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Celebi V",
+            "number": "245",
+            "rarity": "Rare Ultra",
+            "price": 99.61,
+            "oneIn": 92,
+            "premium": true,
+            "nameFR": "Celebi V"
+          },
+          {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "rarity": "Rare Holo VMAX",
+            "price": 27.92,
+            "oneIn": 100,
+            "premium": true,
+            "nameFR": "Ectoplasma VMAX"
+          },
+          {
+            "name": "Mew V",
+            "number": "250",
+            "rarity": "Rare Ultra",
+            "price": 14.17,
+            "oneIn": 92,
+            "premium": true,
+            "nameFR": "Mew V"
+          },
+          {
+            "name": "Mew VMAX",
+            "number": "114",
+            "rarity": "Rare Holo VMAX",
+            "price": 12.93,
+            "oneIn": 100,
+            "premium": true,
+            "nameFR": "Mew VMAX"
+          },
+          {
+            "name": "Gengar V",
+            "number": "156",
+            "rarity": "Rare Holo V",
+            "price": 6.86,
+            "oneIn": 95,
+            "premium": false,
+            "nameFR": "Ectoplasma V"
+          },
+          {
+            "name": "Chandelure V",
+            "number": "247",
+            "rarity": "Rare Ultra",
+            "price": 2.68,
+            "oneIn": 92,
+            "premium": true,
+            "nameFR": "Lugulabre V"
+          }
+        ],
+        "top1": {
+          "name": "Celebi V",
+          "number": "245",
+          "buyPrice": 99.61,
+          "oneInLo": 75,
+          "oneInHi": 120,
+          "expectedCostLo": 539,
+          "expectedCostHi": 863,
+          "perDisplay": 0.32,
+          "nameFR": "Celebi V"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "correcte",
+        "partialNote": null
+      },
       "strata": [
         {
           "key": "top1",
@@ -9521,7 +10353,7 @@
             "discount": 100
           },
           "nameFR": "Lucario V",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Lucario-V",
           "marketFR": {
             "price": 2.99,
             "priceUrl": "https://www.ebay.fr/itm/188554777701?_skw=Lucario+V+146%2F264&hash=item2be6bd9465:g:kpsAAeSw8utqO9EV",
@@ -9610,6 +10442,7 @@
       },
       "liveHistory": [],
       "psa": null,
+      "opening": null,
       "picks": [
         {
           "id": "tag-all-stars-191",
@@ -10089,6 +10922,89 @@
         "matched": 58,
         "scanned": 99
       },
+      "opening": {
+        "boosterPrice": 12.07,
+        "netLo": 1.77,
+        "netHi": 2.87,
+        "ratioLo": 0.15,
+        "ratioHi": 0.24,
+        "looseLo": 0.16,
+        "looseHi": 0.26,
+        "recoupLo": 0.01,
+        "recoupHi": 0.01,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Giratina V",
+            "number": "186",
+            "rarity": "Rare Ultra",
+            "price": 566.41,
+            "oneIn": 385,
+            "premium": true,
+            "nameFR": "Giratina V"
+          },
+          {
+            "name": "Aerodactyl V",
+            "number": "180",
+            "rarity": "Rare Ultra",
+            "price": 128.95,
+            "oneIn": 385,
+            "premium": true,
+            "nameFR": "Ptéra V"
+          },
+          {
+            "name": "Rotom V",
+            "number": "177",
+            "rarity": "Rare Ultra",
+            "price": 22.54,
+            "oneIn": 385,
+            "premium": true,
+            "nameFR": "Motisma V"
+          },
+          {
+            "name": "Galarian Perrserker V",
+            "number": "184",
+            "rarity": "Rare Ultra",
+            "price": 18.63,
+            "oneIn": 385,
+            "premium": true,
+            "nameFR": "Berserkatt de Galar V"
+          },
+          {
+            "name": "Giratina VSTAR",
+            "number": "201",
+            "rarity": "Rare Rainbow",
+            "price": 13.84,
+            "oneIn": 750,
+            "premium": true,
+            "nameFR": "Giratina VSTAR"
+          },
+          {
+            "name": "Aerodactyl VSTAR",
+            "number": "199",
+            "rarity": "Rare Rainbow",
+            "price": 10.37,
+            "oneIn": 750,
+            "premium": true,
+            "nameFR": "Ptéra VSTAR"
+          }
+        ],
+        "top1": {
+          "name": "Giratina V",
+          "number": "186",
+          "buyPrice": 566.41,
+          "oneInLo": 313,
+          "oneInHi": 500,
+          "expectedCostLo": 3772,
+          "expectedCostHi": 6035,
+          "perDisplay": 0.09,
+          "nameFR": "Giratina V"
+        },
+        "boostersPerDisplay": 36,
+        "confidence": "correcte",
+        "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
+      },
       "strata": [
         {
           "key": "top1",
@@ -10508,7 +11424,7 @@
             "discount": 100
           },
           "nameFR": "Ptéra VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Aerodactyl-VSTAR-V2-LOR199",
+          "url": null,
           "marketFR": {
             "price": 25,
             "priceUrl": "https://www.ebay.fr/itm/227340103409?_skw=Pt%C3%A9ra+VSTAR+199%2F196&hash=item34ee86aef1:g:H88AAeSwe1Np-dsS",
