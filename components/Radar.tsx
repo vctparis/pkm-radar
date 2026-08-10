@@ -6,7 +6,8 @@ import LineChart from "./LineChart";
 import GrowthBars from "./GrowthBars";
 import type { RadarData, Segment, SetEntry } from "@/lib/types";
 
-const SERIES = { chase: "#3987e5", mid: "#d95926", commons: "#199e70" };
+// Quatre premières places de la palette catégorielle validée (mode sombre).
+const SERIES = { chase: "#3987e5", mid: "#d95926", commons: "#199e70", fr: "#c98500" };
 
 const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 const num = new Intl.NumberFormat("fr-FR");
@@ -169,7 +170,7 @@ export default function Radar({ data }: { data: RadarData }) {
                   {[
                     { label: "Set", hint: "", align: "left" },
                     { label: "Booster", hint: "le moins cher, neuf", align: "right" },
-                    { label: "Offre", hint: "boosters dispo. / vendeurs", align: "right" },
+                    { label: "Offre FR", hint: "annonces / vendeurs eBay.fr", align: "right" },
                     { label: "Carte phare", hint: "celle qui porte le set", align: "left" },
                     { label: "Top 12 hors Top 5", hint: "croissance 30 j", align: "right" },
                     { label: "Communes", hint: "croissance 30 j", align: "right" },
@@ -218,18 +219,31 @@ export default function Radar({ data }: { data: RadarData }) {
                           {set.era} · {set.ageYears} ans · {set.cardsTracked} cartes
                         </span>
                       </th>
+                      {/* Priorité au marché français (eBay.fr, 10e centile) ;
+                          CardTrader en repli, avec sa langue réelle. */}
                       <td className="tabular px-4 py-3 text-right text-mist-100">
-                        {set.live?.booster?.price != null ? eur.format(set.live.booster.price) : "—"}
-                        {set.live?.booster?.language && (
-                          <span className="mt-0.5 block text-[0.72rem] uppercase text-mist-500">
-                            {set.live.booster.language}
-                          </span>
+                        {set.boosterFR?.floor10 != null ? (
+                          <>
+                            {eur.format(set.boosterFR.floor10)}
+                            <span className="mt-0.5 block text-[0.72rem] text-mist-500">
+                              FR · eBay · méd. {set.boosterFR.median != null ? eur.format(set.boosterFR.median) : "—"}
+                            </span>
+                          </>
+                        ) : set.live?.booster?.price != null ? (
+                          <>
+                            {eur.format(set.live.booster.price)}
+                            <span className="mt-0.5 block text-[0.72rem] uppercase text-mist-500">
+                              {set.live.booster.language ?? "?"} · CardTrader
+                            </span>
+                          </>
+                        ) : (
+                          "—"
                         )}
                       </td>
                       <td className="tabular px-4 py-3 text-right text-mist-300">
-                        {set.live?.booster?.quantity != null ? num.format(set.live.booster.quantity) : "—"}
+                        {set.boosterFR ? num.format(set.boosterFR.offers) : "—"}
                         <span className="mt-0.5 block text-[0.72rem] text-mist-500">
-                          {set.live?.booster?.sellers ?? 0} vendeurs
+                          {set.boosterFR?.sellers ?? 0} vendeurs
                         </span>
                       </td>
                       <td className="px-4 py-3 text-left">
@@ -363,7 +377,12 @@ export default function Radar({ data }: { data: RadarData }) {
               subtitle="Paniers de composition figée, valorisés chaque jour au plancher CardTrader. Aucune source accessible ne vend 3-4 ans d'historique de prix : cette série se construit à partir d'aujourd'hui, un relevé par jour."
               series={[
                 {
-                  label: "Booster",
+                  label: "Booster FR (eBay, p10)",
+                  color: SERIES.fr,
+                  points: indexed(active.liveHistory, (p) => p.boosterFRp10 ?? null),
+                },
+                {
+                  label: "Booster (CardTrader)",
                   color: SERIES.chase,
                   points: indexed(active.liveHistory, (p) => p.boosterPrice),
                 },
@@ -436,12 +455,21 @@ export default function Radar({ data }: { data: RadarData }) {
                   <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
                     {[
                       {
-                        term: `Booster${active.live?.booster?.language ? ` (${active.live.booster.language})` : ""}`,
+                        term: "Booster FR (eBay, p10)",
+                        value: active.boosterFR?.floor10 != null ? eur.format(active.boosterFR.floor10) : "—",
+                      },
+                      {
+                        term: "Médiane FR",
+                        value: active.boosterFR?.median != null ? eur.format(active.boosterFR.median) : "—",
+                      },
+                      {
+                        term: "Offres FR",
+                        value: active.boosterFR ? `${num.format(active.boosterFR.offers)} · ${active.boosterFR.sellers} vend.` : "—",
+                      },
+                      {
+                        term: `CardTrader${active.live?.booster?.language ? ` (${active.live.booster.language})` : ""}`,
                         value: active.live?.booster?.price != null ? eur.format(active.live.booster.price) : "—",
                       },
-                      { term: "Display", value: active.live?.boosterBox?.price != null ? eur.format(active.live.boosterBox.price) : "—" },
-                      { term: "Unités en vente", value: active.live?.booster?.quantity != null ? num.format(active.live.booster.quantity) : "—" },
-                      { term: "Vendeurs", value: active.live?.booster?.sellers != null ? num.format(active.live.booster.sellers) : "—" },
                     ].map((tile) => (
                       <div key={tile.term}>
                         <dt className="text-[0.74rem] uppercase tracking-wider text-mist-500">{tile.term}</dt>

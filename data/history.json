@@ -9,7 +9,11 @@
         "singlesOffers": 9536,
         "boosterLanguage": "en",
         "top5Value": 119.23,
-        "top12ex5Value": 53.8
+        "top12ex5Value": 53.8,
+        "boosterFRp10": 20,
+        "boosterFRmedian": 69.9,
+        "boosterFRoffers": 76,
+        "boosterFRsellers": 37
       }
     ],
     "burning-shadows": [
@@ -21,7 +25,11 @@
         "singlesOffers": 8845,
         "boosterLanguage": "it",
         "top5Value": 423.34,
-        "top12ex5Value": 66.08
+        "top12ex5Value": 66.08,
+        "boosterFRp10": 25,
+        "boosterFRmedian": 69.99,
+        "boosterFRoffers": 19,
+        "boosterFRsellers": 13
       }
     ],
     "brilliant-stars": [
@@ -33,7 +41,11 @@
         "singlesOffers": 32073,
         "boosterLanguage": "en",
         "top5Value": 320.51,
-        "top12ex5Value": 51.35
+        "top12ex5Value": 51.35,
+        "boosterFRp10": 12.75,
+        "boosterFRmedian": 17.99,
+        "boosterFRoffers": 66,
+        "boosterFRsellers": 34
       }
     ],
     "fusion-strike": [
@@ -45,7 +57,11 @@
         "singlesOffers": 35821,
         "boosterLanguage": "en",
         "top5Value": 136.3,
-        "top12ex5Value": 11.52
+        "top12ex5Value": 11.52,
+        "boosterFRp10": 15,
+        "boosterFRmedian": 45,
+        "boosterFRoffers": 53,
+        "boosterFRsellers": 32
       }
     ],
     "lost-origin": [
@@ -57,7 +73,11 @@
         "singlesOffers": 37229,
         "boosterLanguage": "en",
         "top5Value": 760.74,
-        "top12ex5Value": 29.73
+        "top12ex5Value": 29.73,
+        "boosterFRp10": 13.99,
+        "boosterFRmedian": 23.54,
+        "boosterFRoffers": 68,
+        "boosterFRsellers": 32
       }
     ],
     "silver-tempest": [
@@ -69,7 +89,11 @@
         "singlesOffers": 39084,
         "boosterLanguage": "en",
         "top5Value": 417.45,
-        "top12ex5Value": 53.55
+        "top12ex5Value": 53.55,
+        "boosterFRp10": 8.5,
+        "boosterFRmedian": 20,
+        "boosterFRoffers": 49,
+        "boosterFRsellers": 31
       }
     ]
   }

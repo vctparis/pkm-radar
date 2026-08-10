@@ -23,6 +23,7 @@ import {
   fetchBlueprintMarket,
   fetchExpansionSingles,
 } from "./lib/cardtrader.mjs";
+import { fetchSealedBoosterFR } from "./lib/ebay.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
 
 // En local le token vit dans .env.local ; en CI il vient des secrets du runner.
@@ -212,6 +213,23 @@ async function main() {
       }
     }
 
+    // ---- Couche live eBay.fr ----------------------------------------------
+    // Le marché français du scellé, absent de CardTrader (marketplace
+    // italienne, zéro booster FR). Le plancher brut y est pollué par des
+    // échantillons à 2-3 € : le 10e centile et la médiane sont les mesures.
+    let boosterFR = null;
+    if (!OFFLINE && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
+      try {
+        boosterFR = await fetchSealedBoosterFR(set.name);
+        log(
+          `${set.name.padEnd(20)} eBay.fr p10 ${boosterFR.floor10 ?? "—"} € · médiane ${boosterFR.median ?? "—"} €` +
+            ` · ${boosterFR.offers} offres / ${boosterFR.sellers} vendeurs`,
+        );
+      } catch (error) {
+        console.warn(`  ${set.name} : eBay.fr indisponible (${error.message})`);
+      }
+    }
+
     // Index des cotations live par numéro de carte, partagé par les paniers
     // fixes et la sélection de pépites.
     const byNumber = new Map();
@@ -247,18 +265,23 @@ async function main() {
     const top12ex5Live = liveValueOf(sorted.slice(5, 12));
 
     // Accumulation : un point par jour et par set, jamais écrasé rétroactivement.
-    if (live?.booster?.price != null) {
+    if (live?.booster?.price != null || boosterFR?.floor10 != null) {
       const bucket = (history.snapshots[set.id] ??= []);
       const existing = bucket.find((point) => point.date === TODAY);
       const point = {
         date: TODAY,
-        boosterPrice: live.booster.price,
-        boosterOffers: live.booster.offers,
-        boosterLanguage: live.booster.language ?? null,
-        boxPrice: live.boosterBox?.price ?? null,
-        singlesOffers: live.singles.offers,
+        boosterPrice: live?.booster?.price ?? null,
+        boosterOffers: live?.booster?.offers ?? null,
+        boosterLanguage: live?.booster?.language ?? null,
+        boxPrice: live?.boosterBox?.price ?? null,
+        singlesOffers: live?.singles.offers ?? null,
         top5Value: top5Live?.value ?? null,
         top12ex5Value: top12ex5Live?.value ?? null,
+        // eBay.fr : p10 plutôt que plancher (bruit), médiane en confirmation.
+        boosterFRp10: boosterFR?.floor10 ?? null,
+        boosterFRmedian: boosterFR?.median ?? null,
+        boosterFRoffers: boosterFR?.offers ?? null,
+        boosterFRsellers: boosterFR?.sellers ?? null,
       };
       if (existing) Object.assign(existing, point);
       else bucket.push(point);
@@ -315,6 +338,7 @@ async function main() {
       },
       segments,
       bestCard,
+      boosterFR,
       strata,
       growthSeries,
       contentValue,
@@ -347,7 +371,13 @@ async function main() {
         id: "cardtrader",
         label: "CardTrader",
         role: "Prix demandés et profondeur d'offre en temps réel",
-        note: "Aucun historique côté API : la série se construit un relevé par jour.",
+        note: "Aucun historique côté API : la série se construit un relevé par jour. Marketplace italienne — quasiment aucun produit en français.",
+      },
+      {
+        id: "ebay",
+        label: "eBay.fr (Browse API)",
+        role: "Marché français du scellé",
+        note: "Boosters neufs, achat immédiat, vendeurs en France. Le plancher brut étant pollué par des annonces atypiques, les mesures retenues sont le 10e centile et la médiane.",
       },
       {
         id: "psa",

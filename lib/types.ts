@@ -44,6 +44,16 @@ export type SealedQuote = {
   language: string | null;
 } | null;
 
+export type FRBoosterQuote = {
+  price: number | null;
+  floor10: number | null;
+  median?: number | null;
+  offers: number;
+  sellers: number;
+  matched: number;
+  scanned: number;
+} | null;
+
 export type BestCard = {
   name: string;
   number: string;
@@ -71,6 +81,7 @@ export type SetEntry = {
   };
   segments: { chase: Segment; mid: Segment; commons: Segment };
   bestCard: BestCard;
+  boosterFR: FRBoosterQuote;
   strata: Stratum[];
   growthSeries: Record<"mid" | "commons", GrowthPoint[]>;
   contentValue: GrowthPoint[];
@@ -84,6 +95,10 @@ export type SetEntry = {
     singlesOffers: number;
     top5Value?: number | null;
     top12ex5Value?: number | null;
+    boosterFRp10?: number | null;
+    boosterFRmedian?: number | null;
+    boosterFRoffers?: number | null;
+    boosterFRsellers?: number | null;
   }[];
   psa: { gemRate: number; growth30: number | null; history: { date: string; total: number }[] } | null;
   picks: Pick[];
