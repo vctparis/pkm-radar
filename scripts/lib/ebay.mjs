@@ -100,26 +100,34 @@ function summarize(items) {
  * matche à peu près rien ici — puis un filtre de titre pour ce qui reste.
  */
 const NOISE = /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir/i;
+// Cartes à l'unité égarées dans la catégorie scellée : « Carte Pokemon X » au
+// singulier, ou un numéro de collection XXX/YYY dans le titre — signature d'un
+// single, jamais d'un booster (vécu : plancher 151 à 1,49 € qui était un
+// Leveinard holo, puis un booster chinois à 5,99 €).
+const SINGLE_IN_SEALED = /(?:^|[^a-zà-ÿ])carte\s|\b\d{1,3}\/\d{2,3}\b/i;
 // Le marché des produits japonais vendus en France est pollué par des boosters
 // coréens ou chinois visuellement identiques, et par des cartes à l'unité mal
 // catégorisées en scellé.
 const NOT_JAPANESE = /cor[ée]en|korean|chinois|chinese|carte pok|card\b/i;
 // « 5 Booster Pokémon… » : une quantité ≥ 2 devant « booster » signale un lot,
 // dont le prix ne se compare pas à l'unité.
-const MULTIPACK = /\b([2-9]|\d{2,})\s*boosters?\b/i;
+const MULTIPACK = /\b([2-9]|\d{2,})\s*x?\s*boosters?\b|\bx\s*([2-9]|\d{2,})\b/i;
 
 export async function fetchSealedBoosterFR(setName, { japanese = false } = {}) {
   const payload = await browse({
     q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
     category_ids: "183456",
     filter: "conditions:{NEW},buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
+    // L'aspect de langue est le vrai rempart : sans lui, un booster chinois à
+    // 5,99 € devient le « plancher français » du set (vécu sur 151).
+    aspect_filter: `categoryId:183456,Langue:{${japanese ? "Japonais" : "Français"}}`,
     limit: "100",
   });
 
   const needle = setName.toLowerCase().split(" ")[0];
   const items = (payload.itemSummaries ?? []).filter((item) => {
     const title = (item.title ?? "").toLowerCase();
-    if (NOISE.test(title) || MULTIPACK.test(title)) return false;
+    if (NOISE.test(title) || MULTIPACK.test(title) || SINGLE_IN_SEALED.test(title)) return false;
     if (japanese && NOT_JAPANESE.test(title)) return false;
     return title.includes(needle);
   });

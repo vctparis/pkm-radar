@@ -69,7 +69,7 @@ async function loadHistory() {
 
 // Structures vides pour un set sans historique Cardmarket : l'interface les
 // reconnaît et remplace les blocs analytiques par une note d'explication.
-const EMPTY_BUNDLE = { content: [], mid: [], commons: [] };
+const EMPTY_BUNDLE = { top1: [], r2_5: [], r6_15: [], r16_50: [], fond: [] };
 
 async function buildJapaneseSet(set, expansionsByCode, history) {
   // ---- CardTrader : scellé jp + singles + images --------------------------
@@ -321,14 +321,26 @@ async function main() {
     // répéterait le même point. Comparer les strates entre elles à leur date
     // d'observation reste en revanche parfaitement valide, et c'est bien la
     // question posée : de combien monte le haut par rapport au bas.
-    const strata = [
-      { key: "top5", label: "Top 5", cards: sorted.slice(0, 5) },
-      { key: "top12", label: "Top 12", cards: sorted.slice(0, 12) },
-      { key: "top12ex5", label: "Top 12 hors Top 5", cards: sorted.slice(5, 12) },
-      { key: "top30", label: "Top 30", cards: sorted.slice(0, 30) },
-      { key: "mid", label: "Intermédiaires", cards: groups.mid },
-      { key: "commons", label: "Communes", cards: groups.commons },
-    ].map(({ key, label, cards: subset }) => ({ key, label, ...(basketGrowth(subset) ?? { growth: null, cards: 0 }) }));
+    // Strates par rang de valeur, SANS chevauchement : chaque étage joue un
+    // rôle spéculatif distinct et l'écart entre deux étages adjacents devient
+    // directement interprétable.
+    //   Top 1      la carte-titre — marché propre, isolée pour ne pas polluer le reste
+    //   2-5        le premier cercle des chases — début de rotation quand ça monte
+    //   6-15       les chases secondaires — c'est ici que la diffusion se voit en premier
+    //   16-50      la profondeur encore vendable à l'unité
+    //   51+        le bulk économique — ne monte qu'en euphorie généralisée
+    const tierDefs = [
+      { key: "top1", label: "Carte-titre", cards: sorted.slice(0, 1), minSample: 1 },
+      { key: "r2_5", label: "Rangs 2-5", cards: sorted.slice(1, 5), minSample: 2 },
+      { key: "r6_15", label: "Rangs 6-15", cards: sorted.slice(5, 15), minSample: 4 },
+      { key: "r16_50", label: "Rangs 16-50", cards: sorted.slice(15, 50), minSample: 8 },
+      { key: "fond", label: "Fond du set (51+)", cards: sorted.slice(50), minSample: 10 },
+    ];
+    const strata = tierDefs.map(({ key, label, cards: subset }) => ({
+      key,
+      label,
+      ...(basketGrowth(subset) ?? { growth: null, cards: 0, driver: null }),
+    }));
 
     // Catalogue français : noms et images des cartes FR, indexés par numéro
     // de collection. C'est lui qui permet d'interroger eBay.fr sans bruit.
@@ -364,16 +376,18 @@ async function main() {
     // L'historique ne peut pas remonter plus loin que novembre 2025 : c'est la
     // première date de relevé Cardmarket disponible, aucune source accessible
     // ne vend plus profond.
-    const seriesAt = (opts) => ({
-      content: basketGrowthSeries(cards, { minSample: 10, ...opts }),
-      mid: basketGrowthSeries(groups.mid, { minSample: 5, ...opts }),
-      commons: basketGrowthSeries(groups.commons, { minSample: 5, ...opts }),
-    });
+    const bundleAt = (opts) =>
+      Object.fromEntries(
+        tierDefs.map((tier) => [
+          tier.key,
+          basketGrowthSeries(tier.cards, { minSample: tier.minSample, ...opts }),
+        ]),
+      );
     const growthSeries = {
-      monthly: seriesAt({ rollingDays: 90, stepMonths: 1 }),
-      quarterly: seriesAt({ rollingDays: 180, stepMonths: 3 }),
+      monthly: bundleAt({ rollingDays: 90, stepMonths: 1 }),
+      quarterly: bundleAt({ rollingDays: 180, stepMonths: 3 }),
     };
-    const contentValue = growthSeries.monthly.content;
+    const contentValue = basketGrowthSeries(cards, { minSample: 10 });
 
     // ---- Couche live CardTrader -------------------------------------------
     let live = null;

@@ -6,8 +6,17 @@ import LineChart from "./LineChart";
 import GrowthBars from "./GrowthBars";
 import type { RadarData, Segment, SetEntry } from "@/lib/types";
 
-// Quatre premières places de la palette catégorielle validée (mode sombre).
+// Places 1-5 et 7 de la palette catégorielle validée (mode sombre). La couleur
+// suit l'entité, jamais son rang : masquer une série ne repeint pas les autres.
 const SERIES = { chase: "#3987e5", mid: "#d95926", commons: "#199e70", fr: "#c98500" };
+const TIER_SERIES = [
+  { key: "top1", label: "Carte-titre", color: "#3987e5" },
+  { key: "r2_5", label: "Rangs 2-5", color: "#d95926" },
+  { key: "r6_15", label: "Rangs 6-15", color: "#199e70" },
+  { key: "r16_50", label: "Rangs 16-50", color: "#c98500" },
+  { key: "fond", label: "Fond (51+)", color: "#d55181" },
+  { key: "booster", label: "Booster", color: "#9085e9" },
+] as const;
 
 const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 const num = new Intl.NumberFormat("fr-FR");
@@ -66,6 +75,11 @@ function SegmentRow({ name, segment, hint }: { name: string; segment: Segment; h
 export default function Radar({ data }: { data: RadarData }) {
   const [activeId, setActiveId] = useState(data.sets[0]?.id);
   const [smoothing, setSmoothing] = useState<"monthly" | "quarterly">("monthly");
+  // Toutes les strates visibles par defaut ; le booster s'ajoute des que son
+  // historique existe (2 relevés).
+  const [visible, setVisible] = useState<Record<string, boolean>>({
+    top1: true, r2_5: true, r6_15: true, r16_50: true, fond: true, booster: true,
+  });
   const active: SetEntry | undefined = data.sets.find((s) => s.id === activeId) ?? data.sets[0];
   if (!active) return null;
 
@@ -78,14 +92,41 @@ export default function Radar({ data }: { data: RadarData }) {
   // c'est la définition opérationnelle d'une hausse qui ne se propage pas.
   const growthOf = (set: SetEntry, key: string) => set.strata.find((s) => s.key === key)?.growth ?? null;
   const topHeavy = data.sets.filter((s) => {
-    const top = growthOf(s, "top12ex5");
-    const low = growthOf(s, "commons");
+    const top = growthOf(s, "r6_15");
+    const low = growthOf(s, "fond");
     return top != null && low != null && top > low;
   }).length;
-  // Part du mouvement du Top 12 imputable à une seule carte, set par set.
-  const singleCardDriven = data.sets.filter(
-    (s) => (s.strata.find((x) => x.key === "top12")?.driver?.share ?? 0) >= 0.8,
-  ).length;
+  // Sets où la carte-titre fait cavalier seul : elle croît plus vite que le
+  // premier cercle des chases — le mouvement ne déborde même pas sur les
+  // rangs 2 à 5.
+  const loneRider = data.sets.filter((s) => {
+    const t1 = growthOf(s, "top1");
+    const circle = growthOf(s, "r2_5");
+    return t1 != null && circle != null && t1 > Math.max(circle, 0);
+  }).length;
+
+  // Series du graphe de croissance : les 5 strates (croissance 30 j sur
+  // fenetre glissante) + le booster, exprime lui aussi en pourcentage — la
+  // variation depuis son premier releve. Un axe unique impose une unite
+  // unique : tout est en %.
+  const boosterGrowthPoints = (() => {
+    const rows = active.liveHistory;
+    const value = (row: (typeof rows)[number]) => row.boosterFRp10 ?? row.boosterPrice ?? null;
+    const base = rows.map(value).find((v) => v != null && v > 0);
+    if (base == null) return [];
+    return rows.map((row) => {
+      const v = value(row);
+      return { date: row.date, value: v != null && v > 0 ? Number((((v / base) - 1) * 100).toFixed(2)) : null };
+    });
+  })();
+  const growthChartSeries = TIER_SERIES.filter((tier) => visible[tier.key]).map((tier) => ({
+    label: tier.label,
+    color: tier.color,
+    points:
+      tier.key === "booster"
+        ? boosterGrowthPoints
+        : active.growthSeries[smoothing][tier.key].map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+  }));
 
   return (
     <div className="relative z-10">
@@ -124,9 +165,9 @@ export default function Radar({ data }: { data: RadarData }) {
               La hausse ne se diffuse pas — elle se concentre.
             </h1>
             <p className="prose-measure mt-5 text-[1.02rem] leading-relaxed text-mist-300">
-              Sur les {data.sets.length} sets suivis, {topHeavy} voient leur Top 12 progresser plus vite que leurs
-              communes. Et dans {singleCardDriven}{" "}
-              cas, plus de 80 % de la hausse du Top 12 tient à une seule carte.
+              Sur les {data.sets.length} sets suivis, {topHeavy} voient leurs rangs 6-15 progresser plus vite que le
+              fond du set. Et dans {loneRider}{" "}
+              cas, la carte-titre fait cavalier seul : elle monte plus vite que les rangs 2 à 5.
               C&apos;est le profil d&apos;une revalorisation portée par quelques pièces, pas d&apos;une inflation de
               fond qui remonterait tout le set.
             </p>
@@ -173,8 +214,8 @@ export default function Radar({ data }: { data: RadarData }) {
                     { label: "Booster", hint: "le moins cher, neuf", align: "right" },
                     { label: "Offre", hint: "eBay.fr + unités CardTrader", align: "right" },
                     { label: "Carte phare", hint: "celle qui porte le set", align: "left" },
-                    { label: "Top 12 hors Top 5", hint: "croissance 30 j", align: "right" },
-                    { label: "Communes", hint: "croissance 30 j", align: "right" },
+                    { label: "Rangs 6-15", hint: "croissance 30 j", align: "right" },
+                    { label: "Fond du set", hint: "croissance 30 j", align: "right" },
                     { label: "Poids carte n°1", hint: "part de la valeur du set", align: "right" },
                     { label: "Score", hint: "sur 100", align: "right" },
                   ].map((column) => (
@@ -196,8 +237,8 @@ export default function Radar({ data }: { data: RadarData }) {
               <tbody>
                 {data.sets.map((set) => {
                   const selected = set.id === active.id;
-                  const top12 = set.strata.find((s) => s.key === "top12ex5")?.growth ?? null;
-                  const commons = set.strata.find((s) => s.key === "commons")?.growth ?? null;
+                  const top12 = set.strata.find((s) => s.key === "r6_15")?.growth ?? null;
+                  const commons = set.strata.find((s) => s.key === "fond")?.growth ?? null;
                   return (
                     <tr
                       key={set.id}
@@ -341,12 +382,12 @@ export default function Radar({ data }: { data: RadarData }) {
             </summary>
             <dl className="prose-measure grid gap-3 text-[0.85rem] leading-relaxed">
               <div>
-                <dt className="font-medium text-mist-100">Top 12 hors Top 5, et Communes</dt>
+                <dt className="font-medium text-mist-100">Rangs 6-15 et Fond du set</dt>
                 <dd className="m-0 text-mist-300">
-                  Croissance sur 30 jours, pondérée par la valeur du panier. Le Top 5 est volontairement exclu :
-                  sur Ombres Ardentes il affiche +105 % dont la totalité vient du seul Charizard-GX, ce qui masque
-                  ce que fait le reste du haut de gamme. Les rangs 6 à 12 y montent de 3,1 %, ce qui est une tout
-                  autre histoire. L&apos;écart avec les communes dit si la hausse se propage.
+                  Croissance sur 30 jours, pondérée par la valeur, sur des strates qui ne se chevauchent pas :
+                  carte-titre / rangs 2-5 / 6-15 / 16-50 / fond (51+). Les rangs 6-15 sont le meilleur détecteur de
+                  diffusion — c&apos;est là qu&apos;une demande de set se voit en premier, hors effet de la
+                  carte-titre. L&apos;écart avec le fond dit si la hausse se propage ou reste captée par le sommet.
                 </dd>
               </div>
               <div>
@@ -481,6 +522,29 @@ export default function Radar({ data }: { data: RadarData }) {
               }
               height={430}
               controls={
+                <>
+                <div role="group" aria-label="Séries affichées" className="flex flex-wrap gap-1.5">
+                  {TIER_SERIES.map((tier) => (
+                    <button
+                      key={tier.key}
+                      type="button"
+                      onClick={() => setVisible((prev) => ({ ...prev, [tier.key]: !prev[tier.key] }))}
+                      aria-pressed={visible[tier.key]}
+                      className={`flex items-center gap-1.5 rounded-lg border px-2 py-1 text-[0.72rem] transition-colors duration-200 ${
+                        visible[tier.key]
+                          ? "border-ink-500 text-mist-100"
+                          : "border-ink-700 text-mist-500 hover:text-mist-300"
+                      }`}
+                    >
+                      <span
+                        aria-hidden
+                        className="h-[3px] w-3 rounded-full"
+                        style={{ background: tier.color, opacity: visible[tier.key] ? 1 : 0.3 }}
+                      />
+                      {tier.label}
+                    </button>
+                  ))}
+                </div>
                 <div role="group" aria-label="Lissage" className="flex rounded-lg border border-ink-600 p-0.5">
                   {(
                     [
@@ -501,24 +565,9 @@ export default function Radar({ data }: { data: RadarData }) {
                     </button>
                   ))}
                 </div>
+                </>
               }
-              series={[
-                {
-                  label: "Contenu du set",
-                  color: SERIES.chase,
-                  points: active.growthSeries[smoothing].content.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
-                },
-                {
-                  label: "Intermédiaires",
-                  color: SERIES.mid,
-                  points: active.growthSeries[smoothing].mid.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
-                },
-                {
-                  label: "Communes",
-                  color: SERIES.commons,
-                  points: active.growthSeries[smoothing].commons.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
-                },
-              ]}
+              series={growthChartSeries}
               reference={{ value: 0, label: "stable" }}
               format={(v) => `${v > 0 ? "+" : ""}${v.toFixed(1)} %`}
               emptyHint="Série insuffisante pour ce set."
@@ -691,9 +740,12 @@ export default function Radar({ data }: { data: RadarData }) {
                       </>
                     ) : (
                       <>
-                        <dt className="text-mist-500">Force rel.</dt>
-                        <dd className={`tabular m-0 text-right ${toneFor(pick.relativeStrength)}`}>
-                          {pct(pick.relativeStrength)}
+                        {/* Croissance 30 jours : l'horizon maximal par carte —
+                            Cardmarket n'expose que avg30/avg7/avg1 par carte,
+                            le 90 j n'existe qu'au niveau des paniers. */}
+                        <dt className="text-mist-500">Croiss. 30 j</dt>
+                        <dd className={`tabular m-0 text-right ${toneFor(pick.momentum30)}`}>
+                          {pct(pick.momentum30)}
                         </dd>
                       </>
                     )}

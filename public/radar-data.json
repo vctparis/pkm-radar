@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T21:34:40.167Z",
+  "generatedAt": "2026-08-10T22:04:49.320Z",
   "sets": [
     {
       "id": "s151",
@@ -125,23 +125,36 @@
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/151/Charizard-ex-V3-MEW199"
       },
       "boosterFR": {
-        "price": 1.49,
-        "priceUrl": "https://www.ebay.fr/itm/177962053822?_skw=pokemon+booster+151&hash=item296f5d70be:g:MYcAAeSwq1pprcfW",
-        "floor10": 5.99,
-        "floor10Url": "https://www.ebay.fr/itm/157998474005?_skw=pokemon+booster+151&hash=item24c9716315:g:6FgAAeSw1OhqLk8E",
-        "median": 30,
-        "offers": 61,
-        "sellers": 35,
-        "matched": 61,
-        "scanned": 91
+        "price": 6.5,
+        "priceUrl": "https://www.ebay.fr/itm/147495656305?_skw=pokemon+booster+151&hash=item22576d1b71:g:9j4AAeSw4NdqYFyM",
+        "floor10": 13,
+        "floor10Url": "https://www.ebay.fr/itm/126961953666?_skw=pokemon+booster+151&hash=item1d8f85ab82:g:LyYAAeSwKZtnvg-F",
+        "median": 35,
+        "offers": 13,
+        "sellers": 11,
+        "matched": 13,
+        "scanned": 29
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 9.39,
-          "cards": 5,
-          "basketValue": 695.23,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": 0.37,
+          "cards": 1,
+          "basketValue": 273.75,
+          "driver": {
+            "name": "Charizard ex",
+            "number": "199",
+            "change": 0.4,
+            "share": 1
+          }
+        },
+        {
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 16.17,
+          "cards": 4,
+          "basketValue": 421.48,
           "driver": {
             "name": "Charmander",
             "number": "4",
@@ -150,313 +163,242 @@
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 4.29,
-          "cards": 12,
-          "basketValue": 1051.98,
-          "driver": {
-            "name": "Charmander",
-            "number": "4",
-            "change": 84.4,
-            "share": 1
-          }
-        },
-        {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": -4.41,
-          "cards": 7,
-          "basketValue": 356.75,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -2.55,
+          "cards": 10,
+          "basketValue": 467.28,
           "driver": {
             "name": "Squirtle",
             "number": "170",
             "change": -13.5,
-            "share": 0.41
+            "share": 0.56
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": 3.03,
-          "cards": 30,
-          "basketValue": 1435.24,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -1.02,
+          "cards": 35,
+          "basketValue": 408.87,
           "driver": {
-            "name": "Charmander",
-            "number": "4",
-            "change": 84.4,
+            "name": "Wartortle",
+            "number": "171",
+            "change": -11.7,
             "share": 1
           }
         },
         {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": 0.64,
-          "cards": 51,
-          "basketValue": 150.33,
-          "driver": {
-            "name": "Golem ex",
-            "number": "189",
-            "change": 12.4,
-            "share": 1
-          }
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 32.28,
-          "cards": 127,
-          "basketValue": 241.68,
-          "driver": {
-            "name": "Charmander",
-            "number": "4",
-            "change": 84.4,
-            "share": 1
-          }
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -1.51,
+          "cards": 156,
+          "basketValue": 22.23,
+          "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 105,
-              "growth": -1.24,
-              "basketValue": 1330.42
+              "sample": 1,
+              "growth": 0.37,
+              "basketValue": 273.75
             },
             {
               "date": "2025-12-15",
-              "sample": 146,
-              "growth": -1.25,
-              "basketValue": 1338.04
+              "sample": 1,
+              "growth": 0.37,
+              "basketValue": 273.75
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 2,
+              "growth": -0.27,
+              "basketValue": 187.84
             },
             {
-              "date": "2026-01-15",
-              "sample": 73,
-              "growth": -4.21,
-              "basketValue": 12.07
+              "date": "2025-12-15",
+              "sample": 2,
+              "growth": -0.27,
+              "basketValue": 187.84
             },
             {
-              "date": "2026-02-15",
-              "sample": 73,
-              "growth": 0.56,
-              "basketValue": 19.74
-            },
+              "date": "2026-06-15",
+              "sample": 2,
+              "growth": 33.92,
+              "basketValue": 233.64
+            }
+          ],
+          "r6_15": [
             {
-              "date": "2026-03-15",
-              "sample": 32,
-              "growth": 2.8,
-              "basketValue": 12.12
-            },
-            {
-              "date": "2026-04-15",
+              "date": "2025-11-15",
               "sample": 10,
-              "growth": 78.08,
-              "basketValue": 163.21
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 16,
-              "growth": 83.09,
-              "basketValue": 156.38
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 28,
-              "growth": 32.37,
-              "basketValue": 243.45
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 23,
-              "growth": -11.45,
-              "basketValue": 88.13
-            }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 34,
-              "growth": 0.57,
-              "basketValue": 126.39
+              "growth": -2.55,
+              "basketValue": 467.28
             },
             {
               "date": "2025-12-15",
-              "sample": 40,
-              "growth": 0.3,
-              "basketValue": 131.85
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 11,
-              "growth": -6.06,
-              "basketValue": 8.52
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 12,
-              "growth": -0.75,
-              "basketValue": 15.8
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 6,
-              "growth": 1.97,
-              "basketValue": 10.34
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 5,
-              "growth": 4.49,
-              "basketValue": 8.14
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 5,
-              "growth": 4.49,
-              "basketValue": 8.14
+              "sample": 10,
+              "growth": -2.55,
+              "basketValue": 467.28
             }
           ],
-          "commons": [
+          "r16_50": [
             {
               "date": "2025-11-15",
-              "sample": 43,
-              "growth": -15.03,
-              "basketValue": 2.43
+              "sample": 30,
+              "growth": -1.22,
+              "basketValue": 392.07
             },
             {
               "date": "2025-12-15",
-              "sample": 78,
-              "growth": -6.71,
-              "basketValue": 4.59
-            },
+              "sample": 31,
+              "growth": -1.25,
+              "basketValue": 393.87
+            }
+          ],
+          "fond": [
             {
-              "date": "2026-01-15",
+              "date": "2025-11-15",
               "sample": 62,
-              "growth": 0.57,
-              "basketValue": 3.55
+              "growth": -1.96,
+              "basketValue": 9.48
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 102,
+              "growth": -1.67,
+              "basketValue": 15.3
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 72,
+              "growth": -3.57,
+              "basketValue": 10.27
             },
             {
               "date": "2026-02-15",
-              "sample": 61,
-              "growth": 6.2,
-              "basketValue": 3.94
+              "sample": 71,
+              "growth": -1.57,
+              "basketValue": 10.66
             },
             {
               "date": "2026-03-15",
-              "sample": 26,
-              "growth": 7.88,
-              "basketValue": 1.78
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 9,
-              "growth": 83.88,
-              "basketValue": 155.93
+              "sample": 31,
+              "growth": -2.02,
+              "basketValue": 4.84
             },
             {
               "date": "2026-05-15",
-              "sample": 14,
-              "growth": 83.46,
-              "basketValue": 155.96
+              "sample": 15,
+              "growth": 2.26,
+              "basketValue": 1.36
             },
             {
               "date": "2026-06-15",
               "sample": 23,
-              "growth": 33.6,
-              "basketValue": 235.31
+              "growth": 0.97,
+              "basketValue": 2.09
             },
             {
               "date": "2026-07-15",
-              "sample": 18,
-              "growth": -12.81,
-              "basketValue": 79.99
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 6,
-              "growth": -12.91,
-              "basketValue": 79.06
+              "sample": 19,
+              "growth": 1.7,
+              "basketValue": 1.79
             }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 161,
-              "growth": -1.26,
-              "basketValue": 1340.4
+              "sample": 1,
+              "growth": 0.37,
+              "basketValue": 273.75
             },
             {
               "date": "2026-02-15",
-              "sample": 183,
-              "growth": 3.74,
-              "basketValue": 1505.48
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 45,
-              "growth": 31.04,
-              "basketValue": 253.21
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 23,
-              "growth": -11.45,
-              "basketValue": 88.13
+              "sample": 1,
+              "growth": 0.37,
+              "basketValue": 273.75
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 42,
-              "growth": 0.24,
-              "basketValue": 133.45
+              "sample": 2,
+              "growth": -0.27,
+              "basketValue": 187.84
             },
             {
               "date": "2026-02-15",
-              "sample": 46,
-              "growth": 0.42,
-              "basketValue": 142.19
+              "sample": 3,
+              "growth": 25.86,
+              "basketValue": 342.86
             },
             {
               "date": "2026-05-15",
-              "sample": 9,
-              "growth": 3.88,
-              "basketValue": 16.88
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 5,
-              "growth": 4.49,
-              "basketValue": 8.14
+              "sample": 2,
+              "growth": 33.92,
+              "basketValue": 233.64
             }
           ],
-          "commons": [
+          "r6_15": [
             {
               "date": "2025-11-15",
-              "sample": 91,
-              "growth": -6.47,
-              "basketValue": 5.35
+              "sample": 10,
+              "growth": -2.55,
+              "basketValue": 467.28
             },
             {
               "date": "2026-02-15",
-              "sample": 109,
-              "growth": 77.76,
-              "basketValue": 161.69
+              "sample": 10,
+              "growth": -2.55,
+              "basketValue": 467.28
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 31,
+              "growth": -1.25,
+              "basketValue": 393.87
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 32,
+              "growth": -1.12,
+              "basketValue": 401.15
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 117,
+              "growth": -2.11,
+              "basketValue": 17.66
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 137,
+              "growth": -1.78,
+              "basketValue": 20.44
             },
             {
               "date": "2026-05-15",
-              "sample": 36,
-              "growth": 33.53,
-              "basketValue": 236.33
+              "sample": 39,
+              "growth": 0.88,
+              "basketValue": 4.57
             },
             {
               "date": "2026-08-15",
-              "sample": 18,
-              "growth": -12.81,
-              "basketValue": 79.99
+              "sample": 19,
+              "growth": 1.7,
+              "basketValue": 1.79
             }
           ]
         }
@@ -542,10 +484,10 @@
           "singlesOffers": 32681,
           "top5Value": 675.86,
           "top12ex5Value": 478.04,
-          "boosterFRp10": 5.99,
-          "boosterFRmedian": 30,
-          "boosterFRoffers": 61,
-          "boosterFRsellers": 35
+          "boosterFRp10": 13,
+          "boosterFRmedian": 35,
+          "boosterFRoffers": 13,
+          "boosterFRsellers": 11
         }
       ],
       "psa": null,
@@ -1016,119 +958,179 @@
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Celebrations/Mew-V2"
       },
       "boosterFR": {
-        "price": 4.2,
-        "priceUrl": "https://www.ebay.fr/itm/365918731931?_skw=pokemon+booster+C%C3%A9l%C3%A9brations&hash=item553274be9b:g:LpEAAeSwfpJo7HHw",
-        "floor10": 4.2,
-        "floor10Url": "https://www.ebay.fr/itm/365918731931?_skw=pokemon+booster+C%C3%A9l%C3%A9brations&hash=item553274be9b:g:LpEAAeSwfpJo7HHw",
-        "median": 44.9,
-        "offers": 8,
-        "sellers": 7,
-        "matched": 8,
-        "scanned": 37
+        "price": 44.9,
+        "priceUrl": "https://www.ebay.fr/itm/257456940587?_skw=pokemon+booster+C%C3%A9l%C3%A9brations&hash=item3bf1a1262b:g:ru4AAeSwBUJpIJ-r",
+        "floor10": 44.9,
+        "floor10Url": "https://www.ebay.fr/itm/257456940587?_skw=pokemon+booster+C%C3%A9l%C3%A9brations&hash=item3bf1a1262b:g:ru4AAeSwBUJpIJ-r",
+        "median": 70,
+        "offers": 2,
+        "sellers": 2,
+        "matched": 2,
+        "scanned": 21
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": -7.17,
-          "cards": 5,
-          "basketValue": 92.71,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -5.8,
+          "cards": 1,
+          "basketValue": 70.84,
           "driver": {
             "name": "Mew",
             "number": "25",
             "change": -5.8,
-            "share": 0.61
+            "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": -6.75,
-          "cards": 12,
-          "basketValue": 102.63,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": -11.35,
+          "cards": 4,
+          "basketValue": 21.87,
           "driver": {
-            "name": "Mew",
-            "number": "25",
-            "change": -5.8,
-            "share": 0.59
+            "name": "Surfing Pikachu V",
+            "number": "8",
+            "change": -31.6,
+            "share": 0.58
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": -2.65,
-          "cards": 7,
-          "basketValue": 9.92,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -1.1,
+          "cards": 10,
+          "basketValue": 10.75,
           "driver": null
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": -6.04,
-          "cards": 25,
-          "basketValue": 105.91,
-          "driver": {
-            "name": "Mew",
-            "number": "25",
-            "change": -5.8,
-            "share": 0.64
-          }
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": 23.74,
+          "cards": 10,
+          "basketValue": 2.45,
+          "driver": null
         },
         {
-          "key": "mid",
-          "label": "Intermédiaires",
+          "key": "fond",
+          "label": "Fond du set (51+)",
           "growth": null,
-          "cards": 0
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": null,
-          "cards": 0
+          "cards": 0,
+          "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2026-06-15",
-              "sample": 25,
-              "growth": -6.04,
-              "basketValue": 105.91
+              "sample": 1,
+              "growth": -5.8,
+              "basketValue": 70.84
             },
             {
               "date": "2026-07-15",
-              "sample": 25,
-              "growth": -6.04,
-              "basketValue": 105.91
+              "sample": 1,
+              "growth": -5.8,
+              "basketValue": 70.84
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2026-07-15",
+              "sample": 4,
+              "growth": -11.35,
+              "basketValue": 21.87
             },
             {
               "date": "2026-08-15",
-              "sample": 23,
-              "growth": -6.56,
-              "basketValue": 34.91
+              "sample": 4,
+              "growth": -11.35,
+              "basketValue": 21.87
             }
           ],
-          "mid": [],
-          "commons": []
-        },
-        "quarterly": {
-          "content": [
+          "r6_15": [
+            {
+              "date": "2026-07-15",
+              "sample": 10,
+              "growth": -1.1,
+              "basketValue": 10.75
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 10,
+              "growth": -1.1,
+              "basketValue": 10.75
+            }
+          ],
+          "r16_50": [
             {
               "date": "2026-06-15",
-              "sample": 25,
-              "growth": -6.04,
-              "basketValue": 105.91
+              "sample": 10,
+              "growth": 23.74,
+              "basketValue": 2.45
+            },
+            {
+              "date": "2026-07-15",
+              "sample": 10,
+              "growth": 23.74,
+              "basketValue": 2.45
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 9,
+              "growth": 25.82,
+              "basketValue": 2.29
+            }
+          ],
+          "fond": []
+        },
+        "quarterly": {
+          "top1": [
+            {
+              "date": "2026-06-15",
+              "sample": 1,
+              "growth": -5.8,
+              "basketValue": 70.84
             },
             {
               "date": "2026-09-15",
-              "sample": 25,
-              "growth": -6.04,
-              "basketValue": 105.91
+              "sample": 1,
+              "growth": -5.8,
+              "basketValue": 70.84
             }
           ],
-          "mid": [],
-          "commons": []
+          "r2_5": [
+            {
+              "date": "2026-07-15",
+              "sample": 4,
+              "growth": -11.35,
+              "basketValue": 21.87
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2026-07-15",
+              "sample": 10,
+              "growth": -1.1,
+              "basketValue": 10.75
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2026-06-15",
+              "sample": 10,
+              "growth": 23.74,
+              "basketValue": 2.45
+            },
+            {
+              "date": "2026-09-15",
+              "sample": 10,
+              "growth": 23.74,
+              "basketValue": 2.45
+            }
+          ],
+          "fond": []
         }
       },
       "contentValue": [
@@ -1176,10 +1178,10 @@
           "singlesOffers": 4079,
           "top5Value": 76.23,
           "top12ex5Value": 6.58,
-          "boosterFRp10": 4.2,
-          "boosterFRmedian": 44.9,
-          "boosterFRoffers": 8,
-          "boosterFRsellers": 7
+          "boosterFRp10": 44.9,
+          "boosterFRmedian": 70,
+          "boosterFRoffers": 2,
+          "boosterFRsellers": 2
         }
       ],
       "psa": null,
@@ -1662,19 +1664,19 @@
         "priceUrl": "https://www.ebay.fr/itm/358630422222?_skw=pokemon+booster+Ombres+Ardentes&hash=item538009f6ce:g:91kAAeSwcLZqHyPP",
         "floor10": 25,
         "floor10Url": "https://www.ebay.fr/itm/198475704622?_skw=pokemon+booster+Ombres+Ardentes&hash=item2e3612e92e:g:-2sAAeSwuY1qSXL2",
-        "median": 69.99,
-        "offers": 19,
-        "sellers": 13,
-        "matched": 19,
-        "scanned": 32
+        "median": 40.2,
+        "offers": 15,
+        "sellers": 11,
+        "matched": 15,
+        "scanned": 25
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 105.79,
-          "cards": 5,
-          "basketValue": 841.71,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": 139.76,
+          "cards": 1,
+          "basketValue": 740.85,
           "driver": {
             "name": "Charizard-GX",
             "number": "150",
@@ -1683,325 +1685,249 @@
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 84.73,
-          "cards": 12,
-          "basketValue": 950.45,
-          "driver": {
-            "name": "Charizard-GX",
-            "number": "150",
-            "change": 139.8,
-            "share": 0.99
-          }
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 0.85,
+          "cards": 4,
+          "basketValue": 100.86,
+          "driver": null
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": 3.06,
-          "cards": 7,
-          "basketValue": 108.74,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": 6.82,
+          "cards": 10,
+          "basketValue": 148.29,
           "driver": {
             "name": "Marshadow-GX",
             "number": "156",
             "change": 47.3,
-            "share": 1
+            "share": 0.54
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": 64.85,
-          "cards": 30,
-          "basketValue": 1120.51,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -1.81,
+          "cards": 35,
+          "basketValue": 233.45,
           "driver": {
-            "name": "Charizard-GX",
-            "number": "150",
-            "change": 139.8,
-            "share": 0.98
+            "name": "Golisopod-GX",
+            "number": "129",
+            "change": -35.3,
+            "share": 0.41
           }
         },
         {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -16.5,
-          "cards": 66,
-          "basketValue": 148.61,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -29.34,
+          "cards": 127,
+          "basketValue": 61.6,
           "driver": {
             "name": "Acerola",
             "number": "142",
             "change": -59.8,
-            "share": 0.89
-          }
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 25.5,
-          "cards": 83,
-          "basketValue": 49.71,
-          "driver": {
-            "name": "Guzma",
-            "number": "115a",
-            "change": 31.7,
-            "share": 0.48
+            "share": 1
           }
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 80,
-              "growth": 51.75,
-              "basketValue": 1186.86
+              "sample": 1,
+              "growth": 139.76,
+              "basketValue": 740.85
             },
             {
               "date": "2025-12-15",
-              "sample": 118,
-              "growth": 49.69,
-              "basketValue": 1222.29
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 77,
-              "growth": 5.13,
-              "basketValue": 50.02
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 65,
-              "growth": 6.07,
-              "basketValue": 54.88
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 27,
-              "growth": 12.36,
-              "basketValue": 19.45
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 21,
-              "growth": 8.57,
-              "basketValue": 20.78
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 21,
-              "growth": 12.17,
-              "basketValue": 40.74
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 32,
-              "growth": 11.31,
-              "basketValue": 43.31
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 23,
-              "growth": 13.1,
-              "basketValue": 39.8
+              "sample": 1,
+              "growth": 139.76,
+              "basketValue": 740.85
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 24,
-              "growth": -24.06,
-              "basketValue": 100.26
+              "sample": 4,
+              "growth": 0.85,
+              "basketValue": 100.86
             },
             {
               "date": "2025-12-15",
-              "sample": 44,
-              "growth": -19.81,
-              "basketValue": 124.95
-            },
+              "sample": 4,
+              "growth": 0.85,
+              "basketValue": 100.86
+            }
+          ],
+          "r6_15": [
             {
-              "date": "2026-01-15",
-              "sample": 33,
-              "growth": 4.66,
-              "basketValue": 30.78
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 30,
-              "growth": 6.34,
-              "basketValue": 34.91
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 10,
-              "growth": 13.05,
-              "basketValue": 10.22
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 9,
-              "growth": 5.72,
-              "basketValue": 11.83
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 7,
-              "growth": 3.91,
-              "basketValue": 11.96
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 12,
-              "growth": 2.36,
-              "basketValue": 13.44
-            },
-            {
-              "date": "2026-07-15",
+              "date": "2025-11-15",
               "sample": 8,
-              "growth": 5.2,
-              "basketValue": 10.31
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 31,
-              "growth": 23.9,
-              "basketValue": 29.08
+              "growth": 4.78,
+              "basketValue": 120.78
             },
             {
               "date": "2025-12-15",
-              "sample": 48,
-              "growth": 21.54,
-              "basketValue": 32.11
+              "sample": 8,
+              "growth": 4.78,
+              "basketValue": 120.78
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 28,
+              "growth": -3.76,
+              "basketValue": 193.84
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 32,
+              "growth": -2.99,
+              "basketValue": 215.07
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 39,
+              "growth": -45.89,
+              "basketValue": 30.53
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 73,
+              "growth": -36.63,
+              "basketValue": 44.73
             },
             {
               "date": "2026-01-15",
-              "sample": 43,
-              "growth": 10.02,
-              "basketValue": 11.53
+              "sample": 72,
+              "growth": 4.66,
+              "basketValue": 24.49
             },
             {
               "date": "2026-02-15",
-              "sample": 33,
-              "growth": -1.75,
-              "basketValue": 4.49
+              "sample": 59,
+              "growth": 1.27,
+              "basketValue": 20.77
             },
             {
               "date": "2026-03-15",
-              "sample": 16,
-              "growth": -9.88,
-              "basketValue": 1.46
+              "sample": 25,
+              "growth": 3.46,
+              "basketValue": 6.57
             },
             {
               "date": "2026-04-15",
-              "sample": 11,
-              "growth": -9.23,
-              "basketValue": 1.18
+              "sample": 19,
+              "growth": -3.42,
+              "basketValue": 7.9
             },
             {
               "date": "2026-05-15",
-              "sample": 13,
-              "growth": 41.98,
-              "basketValue": 15.05
+              "sample": 18,
+              "growth": 0.91,
+              "basketValue": 7.73
             },
             {
               "date": "2026-06-15",
-              "sample": 19,
-              "growth": 39.5,
-              "basketValue": 16.14
+              "sample": 29,
+              "growth": 0.49,
+              "basketValue": 10.3
             },
             {
               "date": "2026-07-15",
-              "sample": 14,
-              "growth": 40.97,
-              "basketValue": 15.76
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 6,
-              "growth": 12.37,
-              "basketValue": 1.09
+              "sample": 20,
+              "growth": 3.98,
+              "basketValue": 6.79
             }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 124,
-              "growth": 49.67,
-              "basketValue": 1223.43
+              "sample": 1,
+              "growth": 139.76,
+              "basketValue": 740.85
             },
             {
               "date": "2026-02-15",
-              "sample": 154,
-              "growth": 48.67,
-              "basketValue": 1245.25
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 53,
-              "growth": 11.33,
-              "basketValue": 61.62
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 23,
-              "growth": 13.1,
-              "basketValue": 39.8
+              "sample": 1,
+              "growth": 139.76,
+              "basketValue": 740.85
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 46,
-              "growth": -19.55,
-              "basketValue": 125.85
+              "sample": 4,
+              "growth": 0.85,
+              "basketValue": 100.86
             },
             {
               "date": "2026-02-15",
-              "sample": 58,
-              "growth": -17.77,
-              "basketValue": 138.3
-            },
+              "sample": 4,
+              "growth": 0.85,
+              "basketValue": 100.86
+            }
+          ],
+          "r6_15": [
             {
-              "date": "2026-05-15",
-              "sample": 20,
-              "growth": 5.66,
-              "basketValue": 22.76
-            },
-            {
-              "date": "2026-08-15",
+              "date": "2025-11-15",
               "sample": 8,
-              "growth": 5.2,
-              "basketValue": 10.31
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 52,
-              "growth": 21.34,
-              "basketValue": 32.35
+              "growth": 4.78,
+              "basketValue": 120.78
             },
             {
               "date": "2026-02-15",
-              "sample": 69,
-              "growth": 19.42,
-              "basketValue": 33.95
+              "sample": 8,
+              "growth": 4.78,
+              "basketValue": 120.78
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 32,
+              "growth": -2.99,
+              "basketValue": 215.07
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 34,
+              "growth": -2.02,
+              "basketValue": 227.95
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 79,
+              "growth": -35.8,
+              "basketValue": 45.87
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 107,
+              "growth": -32.04,
+              "basketValue": 54.81
             },
             {
               "date": "2026-05-15",
-              "sample": 31,
-              "growth": 34.05,
-              "basketValue": 17.36
+              "sample": 48,
+              "growth": 0,
+              "basketValue": 15.73
             },
             {
               "date": "2026-08-15",
-              "sample": 14,
-              "growth": 40.97,
-              "basketValue": 15.76
+              "sample": 20,
+              "growth": 3.98,
+              "basketValue": 6.79
             }
           ]
         }
@@ -2095,9 +2021,9 @@
           "top5Value": 423.34,
           "top12ex5Value": 66.08,
           "boosterFRp10": 25,
-          "boosterFRmedian": 69.99,
-          "boosterFRoffers": 19,
-          "boosterFRsellers": 13
+          "boosterFRmedian": 40.2,
+          "boosterFRoffers": 15,
+          "boosterFRsellers": 11
         }
       ],
       "psa": {
@@ -2643,137 +2569,202 @@
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Umbreon-GX-V3-SUM154"
       },
       "boosterFR": {
-        "price": 9.9,
-        "priceUrl": "https://www.ebay.fr/itm/800486292876?_skw=pokemon+booster+Soleil+%26+Lune&hash=itemba60b37d8c:g:NPQAAeSw4qpqedAn",
-        "floor10": 20,
-        "floor10Url": "https://www.ebay.fr/itm/407121208473?_skw=pokemon+booster+Soleil+%26+Lune&hash=item5eca50a499:g:wRAAAeSwlYhqcrtm",
-        "median": 69.9,
-        "offers": 76,
-        "sellers": 36,
-        "matched": 76,
-        "scanned": 306
+        "price": 9,
+        "priceUrl": "https://www.ebay.fr/itm/127318774714?_skw=pokemon+booster+Soleil+%26+Lune&hash=item1da4ca53ba:g:wYMAAOSwa7dnXt7Y",
+        "floor10": 19.9,
+        "floor10Url": "https://www.ebay.fr/itm/377184582082?_skw=pokemon+booster+Soleil+%26+Lune&hash=item57d1f3f9c2:g:af4AAeSwEPFqBftV",
+        "median": 72,
+        "offers": 82,
+        "sellers": 32,
+        "matched": 82,
+        "scanned": 178
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": -5.88,
-          "cards": 5,
-          "basketValue": 159.1,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": 7.54,
+          "cards": 1,
+          "basketValue": 46.62,
           "driver": {
-            "name": "Lillie",
-            "number": "147",
-            "change": -27.4,
+            "name": "Umbreon-GX",
+            "number": "154",
+            "change": 7.5,
             "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": -8.36,
-          "cards": 12,
-          "basketValue": 253.39,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": -10.51,
+          "cards": 4,
+          "basketValue": 112.48,
           "driver": {
             "name": "Lillie",
             "number": "147",
             "change": -27.4,
-            "share": 0.5
+            "share": 0.87
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": -12.26,
-          "cards": 7,
-          "basketValue": 94.29,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -9.96,
+          "cards": 10,
+          "basketValue": 125.09,
           "driver": {
             "name": "Lapras-GX",
             "number": "151",
             "change": -42.1,
-            "share": 0.66
+            "share": 0.63
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": -7.88,
-          "cards": 30,
-          "basketValue": 383.13,
-          "driver": null
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -7.63,
+          "cards": 35,
+          "basketValue": 137.94,
+          "driver": {
+            "name": "Espeon-GX",
+            "number": "140",
+            "change": -27.7,
+            "share": 0.56
+          }
         },
         {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -6.5,
-          "cards": 42,
-          "basketValue": 44.02,
-          "driver": null
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 2.11,
-          "cards": 93,
-          "basketValue": 43.15,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": 1.27,
+          "cards": 112,
+          "basketValue": 15.92,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 62,
-              "growth": -8.69,
-              "basketValue": 357.88
+              "sample": 1,
+              "growth": 7.54,
+              "basketValue": 46.62
             },
             {
               "date": "2025-12-15",
-              "sample": 105,
-              "growth": -7.54,
-              "basketValue": 407.08
+              "sample": 1,
+              "growth": 7.54,
+              "basketValue": 46.62
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -10.51,
+              "basketValue": 112.48
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 4,
+              "growth": -10.51,
+              "basketValue": 112.48
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 8,
+              "growth": -12.14,
+              "basketValue": 103.1
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 10,
+              "growth": -9.96,
+              "basketValue": 125.09
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 18,
+              "growth": -9.9,
+              "basketValue": 91.38
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 25,
+              "growth": -7.79,
+              "basketValue": 113.32
             },
             {
               "date": "2026-01-15",
-              "sample": 91,
-              "growth": -0.52,
-              "basketValue": 80.5
+              "sample": 13,
+              "growth": -0.25,
+              "basketValue": 32.52
             },
             {
               "date": "2026-02-15",
-              "sample": 70,
-              "growth": -0.58,
-              "basketValue": 58.76
+              "sample": 12,
+              "growth": -1.82,
+              "basketValue": 29.2
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 31,
+              "growth": 3.86,
+              "basketValue": 4.3
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 65,
+              "growth": 1.38,
+              "basketValue": 9.57
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 75,
+              "growth": -4.99,
+              "basketValue": 9.53
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 56,
+              "growth": -2.82,
+              "basketValue": 7.57
             },
             {
               "date": "2026-03-15",
-              "sample": 27,
-              "growth": -11.15,
-              "basketValue": 9.56
+              "sample": 22,
+              "growth": -7.63,
+              "basketValue": 2.3
             },
             {
               "date": "2026-04-15",
-              "sample": 15,
-              "growth": -13.78,
-              "basketValue": 6.88
+              "sample": 12,
+              "growth": 8.33,
+              "basketValue": 1.69
             },
             {
               "date": "2026-05-15",
-              "sample": 18,
-              "growth": -3.23,
-              "basketValue": 14.67
+              "sample": 14,
+              "growth": 12.5,
+              "basketValue": 2.25
             },
             {
               "date": "2026-06-15",
-              "sample": 30,
-              "growth": -2.55,
-              "basketValue": 21.41
+              "sample": 25,
+              "growth": 6.86,
+              "basketValue": 4.05
             },
             {
               "date": "2026-07-15",
-              "sample": 23,
-              "growth": -1.59,
-              "basketValue": 18.51
+              "sample": 19,
+              "growth": 3.9,
+              "basketValue": 2.93
             },
             {
               "date": "2026-08-15",
@@ -2781,203 +2772,95 @@
               "growth": 0.56,
               "basketValue": 1.8
             }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 10,
-              "growth": -9.67,
-              "basketValue": 19.62
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 22,
-              "growth": -6.63,
-              "basketValue": 27.74
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 24,
-              "growth": 1.68,
-              "basketValue": 16.98
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 22,
-              "growth": -5.07,
-              "basketValue": 16.29
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 10,
-              "growth": -10.91,
-              "basketValue": 8.17
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 6,
-              "growth": -18.32,
-              "basketValue": 5.75
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 6,
-              "growth": -1.93,
-              "basketValue": 7.11
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 10,
-              "growth": -1.1,
-              "basketValue": 8.11
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 7,
-              "growth": 6.14,
-              "basketValue": 5.88
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 31,
-              "growth": 0,
-              "basketValue": 24.89
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 58,
-              "growth": 2.25,
-              "basketValue": 39.62
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 63,
-              "growth": -1.48,
-              "basketValue": 37.17
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 44,
-              "growth": 4.34,
-              "basketValue": 16.12
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 17,
-              "growth": -12.58,
-              "basketValue": 1.39
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 9,
-              "growth": 20.21,
-              "basketValue": 1.13
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 11,
-              "growth": 24.07,
-              "basketValue": 1.34
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 18,
-              "growth": 11.46,
-              "basketValue": 2.14
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 14,
-              "growth": 3.52,
-              "basketValue": 1.47
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 7,
-              "growth": -4.76,
-              "basketValue": 0.8
-            }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 110,
-              "growth": -7.56,
-              "basketValue": 408.05
+              "sample": 1,
+              "growth": 7.54,
+              "basketValue": 46.62
             },
             {
               "date": "2026-02-15",
-              "sample": 139,
-              "growth": -7.63,
-              "basketValue": 419.54
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 52,
-              "growth": -5.12,
-              "basketValue": 30
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 23,
-              "growth": -1.59,
-              "basketValue": 18.51
+              "sample": 1,
+              "growth": 7.54,
+              "basketValue": 46.62
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 23,
-              "growth": -6.72,
-              "basketValue": 28.45
+              "sample": 4,
+              "growth": -10.51,
+              "basketValue": 112.48
             },
             {
               "date": "2026-02-15",
-              "sample": 35,
-              "growth": -8.18,
-              "basketValue": 38.14
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 19,
-              "growth": -6.09,
-              "basketValue": 15.57
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 7,
-              "growth": 6.14,
-              "basketValue": 5.88
+              "sample": 4,
+              "growth": -10.51,
+              "basketValue": 112.48
             }
           ],
-          "commons": [
+          "r6_15": [
             {
               "date": "2025-11-15",
-              "sample": 62,
-              "growth": 2.07,
-              "basketValue": 39.88
+              "sample": 10,
+              "growth": -9.96,
+              "basketValue": 125.09
             },
             {
               "date": "2026-02-15",
-              "sample": 79,
-              "growth": 2.06,
-              "basketValue": 41.68
+              "sample": 10,
+              "growth": -9.96,
+              "basketValue": 125.09
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 26,
+              "growth": -7.8,
+              "basketValue": 114.03
             },
             {
-              "date": "2026-05-15",
+              "date": "2026-02-15",
               "sample": 31,
-              "growth": 2.51,
-              "basketValue": 3.27
+              "growth": -8.24,
+              "basketValue": 122.36
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 9,
+              "growth": -6.82,
+              "basketValue": 23.91
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 69,
+              "growth": 0.72,
+              "basketValue": 9.83
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 93,
+              "growth": 0.7,
+              "basketValue": 12.99
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 43,
+              "growth": 2.18,
+              "basketValue": 6.09
             },
             {
               "date": "2026-08-15",
-              "sample": 14,
-              "growth": 3.52,
-              "basketValue": 1.47
+              "sample": 19,
+              "growth": 3.9,
+              "basketValue": 2.93
             }
           ]
         }
@@ -3076,10 +2959,10 @@
           "boosterLanguage": "en",
           "top5Value": 119.23,
           "top12ex5Value": 53.8,
-          "boosterFRp10": 20,
-          "boosterFRmedian": 69.9,
-          "boosterFRoffers": 76,
-          "boosterFRsellers": 36
+          "boosterFRp10": 19.9,
+          "boosterFRmedian": 72,
+          "boosterFRoffers": 82,
+          "boosterFRsellers": 32
         }
       ],
       "psa": {
@@ -3417,9 +3300,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Double-Colorless-Energy-V3-SUM136",
           "marketFR": {
             "price": 1.9,
-            "priceUrl": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
+            "priceUrl": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
             "floor10": 1.9,
-            "floor10Url": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
+            "floor10Url": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
             "median": 1.9,
             "offers": 2,
             "sellers": 1,
@@ -3544,14 +3427,18 @@
       "strata": [],
       "growthSeries": {
         "monthly": {
-          "content": [],
-          "mid": [],
-          "commons": []
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
         },
         "quarterly": {
-          "content": [],
-          "mid": [],
-          "commons": []
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
         }
       },
       "contentValue": [],
@@ -3982,14 +3869,18 @@
       "strata": [],
       "growthSeries": {
         "monthly": {
-          "content": [],
-          "mid": [],
-          "commons": []
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
         },
         "quarterly": {
-          "content": [],
-          "mid": [],
-          "commons": []
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
         }
       },
       "contentValue": [],
@@ -4473,34 +4364,34 @@
       "boosterFR": {
         "price": 49.9,
         "priceUrl": "https://www.ebay.fr/itm/117287349288?_skw=pokemon+booster+Destin%C3%A9es+Occultes&hash=item1b4edeec28:g:20QAAeSwVW1qQNXe",
-        "floor10": 50,
-        "floor10Url": "https://www.ebay.fr/itm/178344910771?_skw=pokemon+booster+Destin%C3%A9es+Occultes&hash=item29862f5fb3:g:ohgAAeSw5llpkI3o",
+        "floor10": 49.99,
+        "floor10Url": "https://www.ebay.fr/itm/376966542509?_skw=pokemon+booster+Destin%C3%A9es+Occultes&hash=item57c4f4f4ad:g:61wAAeSwZThpkeBe",
         "median": 110,
-        "offers": 28,
-        "sellers": 18,
-        "matched": 28,
-        "scanned": 35
+        "offers": 13,
+        "sellers": 9,
+        "matched": 13,
+        "scanned": 16
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": -5.53,
-          "cards": 5,
-          "basketValue": 141.07,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -4.73,
+          "cards": 1,
+          "basketValue": 40.85,
           "driver": {
-            "name": "Moltres & Zapdos & Articuno-GX",
-            "number": "69",
-            "change": 34,
-            "share": 0.96
+            "name": "Jessie & James",
+            "number": "68",
+            "change": -4.7,
+            "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": -3.41,
-          "cards": 12,
-          "basketValue": 167.15,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": -5.84,
+          "cards": 4,
+          "basketValue": 100.22,
           "driver": {
             "name": "Moltres & Zapdos & Articuno-GX",
             "number": "69",
@@ -4509,206 +4400,237 @@
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": 9.9,
-          "cards": 7,
-          "basketValue": 26.08,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": 8.67,
+          "cards": 10,
+          "basketValue": 30.72,
           "driver": {
             "name": "Raichu-GX",
             "number": "20",
             "change": 50.5,
-            "share": 0.62
+            "share": 0.6
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": -3.25,
-          "cards": 30,
-          "basketValue": 178.82,
-          "driver": {
-            "name": "Moltres & Zapdos & Articuno-GX",
-            "number": "69",
-            "change": 34,
-            "share": 1
-          }
-        },
-        {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -7.2,
-          "cards": 7,
-          "basketValue": 1.16,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -2.5,
+          "cards": 35,
+          "basketValue": 9.35,
           "driver": null
         },
         {
-          "key": "commons",
-          "label": "Communes",
-          "growth": -1.75,
-          "cards": 35,
-          "basketValue": 3.93,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -0.78,
+          "cards": 19,
+          "basketValue": 1.28,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2026-02-15",
-              "sample": 36,
-              "growth": -2.66,
-              "basketValue": 148.5
+              "sample": 1,
+              "growth": -4.73,
+              "basketValue": 40.85
             },
             {
               "date": "2026-03-15",
-              "sample": 39,
-              "growth": -2.35,
-              "basketValue": 157.29
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 20,
-              "growth": -6.89,
-              "basketValue": 49.7
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 15,
-              "growth": 12.65,
-              "basketValue": 16.21
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 30,
-              "growth": -8.28,
-              "basketValue": 25.13
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 26,
-              "growth": -7.91,
-              "basketValue": 24.45
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 18,
-              "growth": -17.7,
-              "basketValue": 17.71
+              "sample": 1,
+              "growth": -4.73,
+              "basketValue": 40.85
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2026-02-15",
-              "sample": 6,
-              "growth": -9.52,
-              "basketValue": 0.95
+              "sample": 3,
+              "growth": -2.52,
+              "basketValue": 91.04
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 3,
+              "growth": -2.52,
+              "basketValue": 91.04
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2026-02-15",
+              "sample": 4,
+              "growth": 5.34,
+              "basketValue": 11.45
             },
             {
               "date": "2026-03-15",
               "sample": 6,
-              "growth": -9.52,
-              "basketValue": 0.95
+              "growth": 4.5,
+              "basketValue": 20.2
+            },
+            {
+              "date": "2026-04-15",
+              "sample": 4,
+              "growth": 5.83,
+              "basketValue": 13.07
+            },
+            {
+              "date": "2026-06-15",
+              "sample": 4,
+              "growth": 17.67,
+              "basketValue": 10.52
+            },
+            {
+              "date": "2026-07-15",
+              "sample": 4,
+              "growth": 17.67,
+              "basketValue": 10.52
             }
           ],
-          "commons": [
+          "r16_50": [
             {
               "date": "2026-02-15",
-              "sample": 17,
-              "growth": -11.33,
-              "basketValue": 1.8
+              "sample": 18,
+              "growth": -6.11,
+              "basketValue": 4.46
             },
             {
               "date": "2026-03-15",
               "sample": 18,
-              "growth": -11.54,
-              "basketValue": 1.84
+              "growth": -6.11,
+              "basketValue": 4.46
             },
             {
               "date": "2026-04-15",
-              "sample": 10,
-              "growth": -10.42,
-              "basketValue": 0.86
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 7,
-              "growth": 28.28,
-              "basketValue": 1.27
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 17,
-              "growth": 8.85,
-              "basketValue": 2.09
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 15,
-              "growth": 8.38,
-              "basketValue": 1.94
-            },
-            {
-              "date": "2026-08-15",
               "sample": 11,
-              "growth": -12.24,
-              "basketValue": 0.86
+              "growth": -13.66,
+              "basketValue": 1.77
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 8,
+              "growth": 2.49,
+              "basketValue": 2.88
+            },
+            {
+              "date": "2026-06-15",
+              "sample": 17,
+              "growth": 1.03,
+              "basketValue": 4.89
+            },
+            {
+              "date": "2026-07-15",
+              "sample": 14,
+              "growth": 5.68,
+              "basketValue": 4.28
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 9,
+              "growth": -0.99,
+              "basketValue": 2.01
+            }
+          ],
+          "fond": [
+            {
+              "date": "2026-02-15",
+              "sample": 10,
+              "growth": 4.48,
+              "basketValue": 0.7
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 11,
+              "growth": 2.78,
+              "basketValue": 0.74
             }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2026-02-15",
-              "sample": 43,
-              "growth": -2.44,
-              "basketValue": 157.97
+              "sample": 1,
+              "growth": -4.73,
+              "basketValue": 40.85
             },
             {
               "date": "2026-05-15",
-              "sample": 68,
-              "growth": -8.46,
-              "basketValue": 151.24
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 26,
-              "growth": -7.91,
-              "basketValue": 24.45
+              "sample": 1,
+              "growth": -4.73,
+              "basketValue": 40.85
             }
           ],
-          "mid": [
+          "r2_5": [
+            {
+              "date": "2026-02-15",
+              "sample": 3,
+              "growth": -2.52,
+              "basketValue": 91.04
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 3,
+              "growth": -17,
+              "basketValue": 69.04
+            }
+          ],
+          "r6_15": [
             {
               "date": "2026-02-15",
               "sample": 6,
-              "growth": -9.52,
-              "basketValue": 0.95
+              "growth": 4.5,
+              "basketValue": 20.2
             },
             {
               "date": "2026-05-15",
-              "sample": 7,
-              "growth": -7.2,
-              "basketValue": 1.16
+              "sample": 10,
+              "growth": 8.67,
+              "basketValue": 30.72
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 4,
+              "growth": 17.67,
+              "basketValue": 10.52
             }
           ],
-          "commons": [
+          "r16_50": [
             {
               "date": "2026-02-15",
-              "sample": 20,
-              "growth": -9.95,
-              "basketValue": 1.99
+              "sample": 21,
+              "growth": -8.48,
+              "basketValue": 5.07
             },
             {
               "date": "2026-05-15",
               "sample": 35,
-              "growth": -1.75,
-              "basketValue": 3.93
+              "growth": -2.5,
+              "basketValue": 9.35
             },
             {
               "date": "2026-08-15",
-              "sample": 15,
-              "growth": 8.38,
-              "basketValue": 1.94
+              "sample": 14,
+              "growth": 5.68,
+              "basketValue": 4.28
+            }
+          ],
+          "fond": [
+            {
+              "date": "2026-02-15",
+              "sample": 12,
+              "growth": 3.85,
+              "basketValue": 0.81
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 19,
+              "growth": -0.78,
+              "basketValue": 1.28
             }
           ]
         }
@@ -4782,10 +4704,10 @@
           "singlesOffers": 7364,
           "top5Value": 174.63,
           "top12ex5Value": 19.9,
-          "boosterFRp10": 50,
+          "boosterFRp10": 49.99,
           "boosterFRmedian": 110,
-          "boosterFRoffers": 28,
-          "boosterFRsellers": 18
+          "boosterFRoffers": 13,
+          "boosterFRsellers": 9
         }
       ],
       "psa": null,
@@ -4845,15 +4767,15 @@
           "nameFR": "Raichu-GX",
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Hidden-Fates/Raichu-GX-V1-HIF20",
           "marketFR": {
-            "price": 5,
-            "priceUrl": "https://www.ebay.fr/itm/177571336515?_skw=Raichu-GX+20%2F68&hash=item2958139143:g:bSAAAeSw5FNpFQOP",
+            "price": 5.9,
+            "priceUrl": "https://www.ebay.fr/itm/117020766133?_skw=Raichu-GX+20%2F68&hash=item1b3efb2fb5:g:obQAAOSwyz5lkpW1",
             "floor10": 5.9,
             "floor10Url": "https://www.ebay.fr/itm/117020766133?_skw=Raichu-GX+20%2F68&hash=item1b3efb2fb5:g:obQAAOSwyz5lkpW1",
             "median": 8,
-            "offers": 10,
-            "sellers": 9,
-            "matched": 10,
-            "scanned": 10
+            "offers": 9,
+            "sellers": 8,
+            "matched": 9,
+            "scanned": 9
           }
         },
         {
@@ -5306,49 +5228,49 @@
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Umbreon-VMAX-V3"
       },
       "boosterFR": {
-        "price": 6.9,
-        "priceUrl": "https://www.ebay.fr/itm/407104643891?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item5ec953e333:g:~LMAAeSwPpdqaQzL",
-        "floor10": 25,
-        "floor10Url": "https://www.ebay.fr/itm/178387231386?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item2988b5229a:g:fE4AAeSw75ZqakHM",
-        "median": 49.9,
-        "offers": 33,
-        "sellers": 28,
-        "matched": 33,
-        "scanned": 88
+        "price": 34.99,
+        "priceUrl": "https://www.ebay.fr/itm/387771829547?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item5a49008d2b:g:y3UAAOSwvexnPyVi",
+        "floor10": 34.99,
+        "floor10Url": "https://www.ebay.fr/itm/387771829547?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item5a49008d2b:g:y3UAAOSwvexnPyVi",
+        "median": 59,
+        "offers": 9,
+        "sellers": 9,
+        "matched": 9,
+        "scanned": 48
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 8.23,
-          "cards": 5,
-          "basketValue": 3434.33,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": 8.85,
+          "cards": 1,
+          "basketValue": 1674.5,
+          "driver": {
+            "name": "Umbreon VMAX",
+            "number": "215",
+            "change": 8.9,
+            "share": 1
+          }
+        },
+        {
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 7.64,
+          "cards": 4,
+          "basketValue": 1759.83,
           "driver": {
             "name": "Rayquaza VMAX",
             "number": "218",
             "change": 19.3,
-            "share": 0.58
+            "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 6.09,
-          "cards": 12,
-          "basketValue": 4764.66,
-          "driver": {
-            "name": "Rayquaza VMAX",
-            "number": "218",
-            "change": 19.3,
-            "share": 0.55
-          }
-        },
-        {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": 0.95,
-          "cards": 7,
-          "basketValue": 1330.33,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": 0.91,
+          "cards": 10,
+          "basketValue": 1481.83,
           "driver": {
             "name": "Dragonite V",
             "number": "192",
@@ -5357,66 +5279,114 @@
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": 6.03,
-          "cards": 30,
-          "basketValue": 5313.03,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": 4.75,
+          "cards": 35,
+          "basketValue": 639.18,
           "driver": {
-            "name": "Rayquaza VMAX",
-            "number": "218",
-            "change": 19.3,
-            "share": 0.5
+            "name": "Glaceon V",
+            "number": "174",
+            "change": 59.9,
+            "share": 0.46
           }
         },
         {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": 0.21,
-          "cards": 114,
-          "basketValue": 450.74,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -0.18,
+          "cards": 187,
+          "basketValue": 212.53,
           "driver": {
-            "name": "Leafeon V",
-            "number": "166",
-            "change": 39.3,
+            "name": "Trevenant VMAX",
+            "number": "14",
+            "change": -50.2,
             "share": 1
           }
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 1.99,
-          "cards": 93,
-          "basketValue": 4.1,
-          "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 136,
-              "growth": 5.71,
-              "basketValue": 5658.3
+              "sample": 1,
+              "growth": 8.85,
+              "basketValue": 1674.5
             },
             {
               "date": "2025-12-15",
-              "sample": 181,
-              "growth": 5.69,
-              "basketValue": 5715.07
+              "sample": 1,
+              "growth": 8.85,
+              "basketValue": 1674.5
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": 7.64,
+              "basketValue": 1759.83
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 4,
+              "growth": 7.64,
+              "basketValue": 1759.83
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 10,
+              "growth": 0.91,
+              "basketValue": 1481.83
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 10,
+              "growth": 0.91,
+              "basketValue": 1481.83
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 31,
+              "growth": 5.34,
+              "basketValue": 599.17
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 33,
+              "growth": 5.39,
+              "basketValue": 628.25
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 90,
+              "growth": 0.63,
+              "basketValue": 142.97
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 133,
+              "growth": 0.6,
+              "basketValue": 170.66
             },
             {
               "date": "2026-01-15",
-              "sample": 79,
-              "growth": 8.12,
-              "basketValue": 90.85
+              "sample": 76,
+              "growth": 1.09,
+              "basketValue": 52.14
             },
             {
               "date": "2026-02-15",
-              "sample": 70,
-              "growth": 3.05,
-              "basketValue": 77.73
+              "sample": 68,
+              "growth": 1.16,
+              "basketValue": 48.65
             },
             {
               "date": "2026-03-15",
@@ -5432,213 +5402,105 @@
             },
             {
               "date": "2026-05-15",
-              "sample": 24,
-              "growth": -12.79,
-              "basketValue": 24.95
+              "sample": 23,
+              "growth": -8.64,
+              "basketValue": 20.31
             },
             {
               "date": "2026-06-15",
-              "sample": 31,
-              "growth": -13.5,
-              "basketValue": 31.84
+              "sample": 29,
+              "growth": -8.09,
+              "basketValue": 20.91
             },
             {
               "date": "2026-07-15",
-              "sample": 16,
-              "growth": -21.39,
-              "basketValue": 16.28
-            }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 65,
-              "growth": 1.49,
-              "basketValue": 364.27
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 87,
-              "growth": 1.43,
-              "basketValue": 399.39
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 38,
-              "growth": 8.31,
-              "basketValue": 68.46
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 31,
-              "growth": 1.28,
-              "basketValue": 55.35
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 9,
-              "growth": 2.17,
-              "basketValue": 20.23
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 8,
-              "growth": -3.94,
-              "basketValue": 15.1
-            },
-            {
-              "date": "2026-05-15",
               "sample": 14,
-              "growth": -13.34,
-              "basketValue": 24.37
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 18,
-              "growth": -14.06,
-              "basketValue": 31.12
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 10,
-              "growth": -21.82,
-              "basketValue": 16.02
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 42,
-              "growth": -1.15,
-              "basketValue": 1.72
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 64,
-              "growth": -1.49,
-              "basketValue": 2.65
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 40,
-              "growth": -2.91,
-              "basketValue": 1.67
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 38,
-              "growth": -1.19,
-              "basketValue": 1.66
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 16,
-              "growth": 0,
-              "basketValue": 0.73
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 8,
-              "growth": 17.78,
-              "basketValue": 0.53
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 10,
-              "growth": 18.37,
-              "basketValue": 0.58
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 13,
-              "growth": 20,
-              "basketValue": 0.72
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 6,
-              "growth": 18.18,
-              "basketValue": 0.26
+              "growth": -19.55,
+              "basketValue": 5.35
             }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 187,
-              "growth": 5.68,
-              "basketValue": 5722.26
+              "sample": 1,
+              "growth": 8.85,
+              "basketValue": 1674.5
             },
             {
               "date": "2026-02-15",
-              "sample": 221,
-              "growth": 5.65,
-              "basketValue": 5751.59
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 50,
-              "growth": -9.23,
-              "basketValue": 45.61
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 16,
-              "growth": -21.39,
-              "basketValue": 16.28
+              "sample": 1,
+              "growth": 8.85,
+              "basketValue": 1674.5
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 90,
-              "growth": 1.43,
-              "basketValue": 406.41
+              "sample": 4,
+              "growth": 7.64,
+              "basketValue": 1759.83
             },
             {
               "date": "2026-02-15",
-              "sample": 104,
-              "growth": 1.26,
-              "basketValue": 434.72
-            },
+              "sample": 4,
+              "growth": 7.64,
+              "basketValue": 1759.83
+            }
+          ],
+          "r6_15": [
             {
-              "date": "2026-05-15",
-              "sample": 24,
-              "growth": -9.68,
-              "basketValue": 44.33
-            },
-            {
-              "date": "2026-08-15",
+              "date": "2025-11-15",
               "sample": 10,
-              "growth": -21.82,
-              "basketValue": 16.02
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 67,
-              "growth": -1.05,
-              "basketValue": 2.82
+              "growth": 0.91,
+              "basketValue": 1481.83
             },
             {
               "date": "2026-02-15",
-              "sample": 87,
-              "growth": 1.05,
-              "basketValue": 3.84
+              "sample": 10,
+              "growth": 0.91,
+              "basketValue": 1481.83
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 33,
+              "growth": 5.39,
+              "basketValue": 628.25
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 33,
+              "growth": 5.39,
+              "basketValue": 628.25
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 139,
+              "growth": 0.63,
+              "basketValue": 177.85
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 173,
+              "growth": 0.44,
+              "basketValue": 207.18
             },
             {
               "date": "2026-05-15",
-              "sample": 26,
-              "growth": 9.4,
-              "basketValue": 1.28
+              "sample": 48,
+              "growth": -4.17,
+              "basketValue": 34.68
             },
             {
               "date": "2026-08-15",
-              "sample": 6,
-              "growth": 18.18,
-              "basketValue": 0.26
+              "sample": 14,
+              "growth": -19.55,
+              "basketValue": 5.35
             }
           ]
         }
@@ -5731,10 +5593,10 @@
           "singlesOffers": 26562,
           "top5Value": 3118.07,
           "top12ex5Value": 1544.53,
-          "boosterFRp10": 25,
-          "boosterFRmedian": 49.9,
-          "boosterFRoffers": 33,
-          "boosterFRsellers": 28
+          "boosterFRp10": 34.99,
+          "boosterFRmedian": 59,
+          "boosterFRoffers": 9,
+          "boosterFRsellers": 9
         }
       ],
       "psa": null,
@@ -6261,49 +6123,49 @@
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Lugia-V-V3-SIT186"
       },
       "boosterFR": {
-        "price": 4.99,
-        "priceUrl": "https://www.ebay.fr/itm/298229463870?_skw=pokemon+booster+Temp%C3%AAte+Argent%C3%A9e&hash=item456fdc7b3e:g:sE8AAeSweDNp35yB",
-        "floor10": 8.5,
-        "floor10Url": "https://www.ebay.fr/itm/358560795826?_skw=pokemon+booster+Temp%C3%AAte+Argent%C3%A9e&hash=item537be38cb2:g:RAcAAeSwtppqB90E",
-        "median": 20,
-        "offers": 49,
-        "sellers": 31,
-        "matched": 49,
-        "scanned": 84
+        "price": 6,
+        "priceUrl": "https://www.ebay.fr/itm/386587359206?_skw=pokemon+booster+Temp%C3%AAte+Argent%C3%A9e&hash=item5a0266f7e6:i:386587359206",
+        "floor10": 11.37,
+        "floor10Url": "https://www.ebay.fr/itm/396948003939?_skw=pokemon+booster+Temp%C3%AAte+Argent%C3%A9e&hash=item5c6bf1dc63:g:z70AAeSwQhlomHbz",
+        "median": 18,
+        "offers": 29,
+        "sellers": 18,
+        "matched": 29,
+        "scanned": 56
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": -5.58,
-          "cards": 5,
-          "basketValue": 451.14,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -5.97,
+          "cards": 1,
+          "basketValue": 367.3,
           "driver": {
             "name": "Lugia V",
             "number": "186",
             "change": -6,
-            "share": 0.87
+            "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": -4.64,
-          "cards": 12,
-          "basketValue": 531.43,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": -3.84,
+          "cards": 4,
+          "basketValue": 83.84,
           "driver": {
-            "name": "Lugia V",
-            "number": "186",
-            "change": -6,
-            "share": 0.9
+            "name": "Unown V",
+            "number": "177",
+            "change": -23.5,
+            "share": 1
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": 0.97,
-          "cards": 7,
-          "basketValue": 80.29,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -1,
+          "cards": 10,
+          "basketValue": 104.12,
           "driver": {
             "name": "Serena",
             "number": "193",
@@ -6312,49 +6174,97 @@
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": -4.17,
-          "cards": 30,
-          "basketValue": 647.24,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": 1.26,
+          "cards": 35,
+          "basketValue": 150.3,
           "driver": {
-            "name": "Lugia V",
-            "number": "186",
-            "change": -6,
-            "share": 0.83
+            "name": "Candice",
+            "number": "189",
+            "change": 47.1,
+            "share": 1
           }
         },
         {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": 1.75,
-          "cards": 76,
-          "basketValue": 80.07,
-          "driver": null
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 3,
-          "cards": 109,
-          "basketValue": 4.47,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -2.92,
+          "cards": 165,
+          "basketValue": 26.22,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 113,
-              "growth": -3.59,
-              "basketValue": 711.24
+              "sample": 1,
+              "growth": -5.97,
+              "basketValue": 367.3
             },
             {
               "date": "2025-12-15",
-              "sample": 152,
-              "growth": -3.59,
-              "basketValue": 718.25
+              "sample": 1,
+              "growth": -5.97,
+              "basketValue": 367.3
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -3.84,
+              "basketValue": 83.84
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 4,
+              "growth": -3.84,
+              "basketValue": 83.84
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 10,
+              "growth": -1,
+              "basketValue": 104.12
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 10,
+              "growth": -1,
+              "basketValue": 104.12
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 34,
+              "growth": 1.06,
+              "basketValue": 148.57
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 34,
+              "growth": 1.06,
+              "basketValue": 148.57
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 64,
+              "growth": -4.02,
+              "basketValue": 7.41
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 103,
+              "growth": -3.87,
+              "basketValue": 14.42
             },
             {
               "date": "2026-01-15",
@@ -6364,21 +6274,21 @@
             },
             {
               "date": "2026-02-15",
-              "sample": 77,
-              "growth": -2.81,
-              "basketValue": 14.55
+              "sample": 76,
+              "growth": -5.39,
+              "basketValue": 12.82
             },
             {
               "date": "2026-03-15",
-              "sample": 38,
-              "growth": -1.95,
-              "basketValue": 7.54
+              "sample": 37,
+              "growth": -7.34,
+              "basketValue": 5.81
             },
             {
               "date": "2026-04-15",
-              "sample": 17,
-              "growth": 9.85,
-              "basketValue": 5.02
+              "sample": 16,
+              "growth": 4.44,
+              "basketValue": 3.29
             },
             {
               "date": "2026-05-15",
@@ -6404,209 +6314,89 @@
               "growth": 5.58,
               "basketValue": 2.65
             }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 36,
-              "growth": 2.67,
-              "basketValue": 62.29
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 49,
-              "growth": 1.84,
-              "basketValue": 68.05
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 25,
-              "growth": -7.6,
-              "basketValue": 10.21
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 28,
-              "growth": -3.67,
-              "basketValue": 12.34
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 15,
-              "growth": -1.2,
-              "basketValue": 6.58
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 9,
-              "growth": 10.17,
-              "basketValue": 4.66
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 7,
-              "growth": 2.36,
-              "basketValue": 3.04
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 12,
-              "growth": 4.41,
-              "basketValue": 5.44
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 8,
-              "growth": 5.82,
-              "basketValue": 3.82
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 5,
-              "growth": 7.14,
-              "basketValue": 2.4
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 47,
-              "growth": 3.64,
-              "basketValue": 1.71
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 73,
-              "growth": 6.47,
-              "basketValue": 2.96
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 49,
-              "growth": 3.7,
-              "basketValue": 2.24
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 49,
-              "growth": 2.31,
-              "basketValue": 2.21
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 23,
-              "growth": -6.8,
-              "basketValue": 0.96
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 8,
-              "growth": 5.88,
-              "basketValue": 0.36
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 6,
-              "growth": 15.38,
-              "basketValue": 0.3
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 13,
-              "growth": 3.77,
-              "basketValue": 0.55
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 9,
-              "growth": -8.82,
-              "basketValue": 0.31
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 7,
-              "growth": -7.41,
-              "basketValue": 0.25
-            }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 169,
-              "growth": -3.59,
-              "basketValue": 721.29
+              "sample": 1,
+              "growth": -5.97,
+              "basketValue": 367.3
             },
             {
               "date": "2026-02-15",
-              "sample": 198,
-              "growth": -3.55,
-              "basketValue": 727.65
+              "sample": 1,
+              "growth": -5.97,
+              "basketValue": 367.3
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -3.84,
+              "basketValue": 83.84
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 4,
+              "growth": -3.84,
+              "basketValue": 83.84
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 10,
+              "growth": -1,
+              "basketValue": 104.12
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 10,
+              "growth": -1,
+              "basketValue": 104.12
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 34,
+              "growth": 1.06,
+              "basketValue": 148.57
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 35,
+              "growth": 1.26,
+              "basketValue": 150.3
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 120,
+              "growth": -3.85,
+              "basketValue": 17.46
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 148,
+              "growth": -4.21,
+              "basketValue": 22.09
             },
             {
               "date": "2026-05-15",
-              "sample": 46,
-              "growth": 2.14,
-              "basketValue": 10.49
+              "sample": 45,
+              "growth": -1.02,
+              "basketValue": 8.76
             },
             {
               "date": "2026-08-15",
               "sample": 17,
               "growth": 4.56,
               "basketValue": 4.13
-            }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 53,
-              "growth": 1.64,
-              "basketValue": 70.51
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 68,
-              "growth": 1.56,
-              "basketValue": 76.25
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 23,
-              "growth": 2.58,
-              "basketValue": 9.56
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 8,
-              "growth": 5.82,
-              "basketValue": 3.82
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 86,
-              "growth": 4.42,
-              "basketValue": 3.54
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 100,
-              "growth": 4,
-              "basketValue": 4.16
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 23,
-              "growth": -2.11,
-              "basketValue": 0.93
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 9,
-              "growth": -8.82,
-              "basketValue": 0.31
             }
           ]
         }
@@ -6705,10 +6495,10 @@
           "boosterLanguage": "en",
           "top5Value": 417.45,
           "top12ex5Value": 53.55,
-          "boosterFRp10": 8.5,
-          "boosterFRmedian": 20,
-          "boosterFRoffers": 49,
-          "boosterFRsellers": 31
+          "boosterFRp10": 11.37,
+          "boosterFRmedian": 18,
+          "boosterFRoffers": 29,
+          "boosterFRsellers": 18
         }
       ],
       "psa": {
@@ -7222,32 +7012,19 @@
         "priceUrl": "https://www.ebay.fr/itm/355009061956?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item52a8306444:g:W5MAAOSwrtJk75hm",
         "floor10": 12.75,
         "floor10Url": "https://www.ebay.fr/itm/137275112483?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item1ff63bfc23:g:ysUAAeSwcIBp9gFP",
-        "median": 17.99,
-        "offers": 66,
-        "sellers": 34,
-        "matched": 66,
-        "scanned": 182
+        "median": 18,
+        "offers": 62,
+        "sellers": 28,
+        "matched": 62,
+        "scanned": 135
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 23.38,
-          "cards": 5,
-          "basketValue": 410.06,
-          "driver": {
-            "name": "Charizard V",
-            "number": "154",
-            "change": 37,
-            "share": 0.97
-          }
-        },
-        {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 17.42,
-          "cards": 12,
-          "basketValue": 500.46,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": 37.04,
+          "cards": 1,
+          "basketValue": 279.62,
           "driver": {
             "name": "Charizard V",
             "number": "154",
@@ -7256,104 +7033,154 @@
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": -3.7,
-          "cards": 7,
-          "basketValue": 90.4,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 1.66,
+          "cards": 4,
+          "basketValue": 130.44,
+          "driver": {
+            "name": "Arceus V",
+            "number": "166",
+            "change": 2.7,
+            "share": 0.62
+          }
+        },
+        {
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -4.01,
+          "cards": 10,
+          "basketValue": 116.07,
           "driver": {
             "name": "Arceus V",
             "number": "122",
             "change": 26.8,
-            "share": 1
+            "share": 0.82
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": 13.18,
-          "cards": 30,
-          "basketValue": 585.15,
-          "driver": {
-            "name": "Charizard V",
-            "number": "154",
-            "change": 37,
-            "share": 1
-          }
-        },
-        {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -2.57,
-          "cards": 67,
-          "basketValue": 43.15,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -5.9,
+          "cards": 35,
+          "basketValue": 88.42,
           "driver": null
         },
         {
-          "key": "commons",
-          "label": "Communes",
-          "growth": -1.18,
-          "cards": 88,
-          "basketValue": 3.35,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -2.01,
+          "cards": 135,
+          "basketValue": 17.1,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 86,
-              "growth": 12.91,
-              "basketValue": 594.88
+              "sample": 1,
+              "growth": 37.04,
+              "basketValue": 279.62
             },
             {
               "date": "2025-12-15",
-              "sample": 123,
-              "growth": 12.68,
-              "basketValue": 604.98
+              "sample": 1,
+              "growth": 37.04,
+              "basketValue": 279.62
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": 1.66,
+              "basketValue": 130.44
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 4,
+              "growth": 1.66,
+              "basketValue": 130.44
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 9,
+              "growth": -4.09,
+              "basketValue": 109.07
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 9,
+              "growth": -4.09,
+              "basketValue": 109.07
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 25,
+              "growth": -6.41,
+              "basketValue": 71.54
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 28,
+              "growth": -5.82,
+              "basketValue": 76.25
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 47,
+              "growth": -2.77,
+              "basketValue": 4.21
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 81,
+              "growth": -2.54,
+              "basketValue": 9.6
             },
             {
               "date": "2026-01-15",
-              "sample": 72,
-              "growth": 1.44,
-              "basketValue": 18.37
+              "sample": 66,
+              "growth": 0.7,
+              "basketValue": 10.09
             },
             {
               "date": "2026-02-15",
-              "sample": 75,
-              "growth": 0.56,
-              "basketValue": 19.86
+              "sample": 68,
+              "growth": -0.78,
+              "basketValue": 10.17
             },
             {
               "date": "2026-03-15",
-              "sample": 41,
-              "growth": 1,
-              "basketValue": 11.1
+              "sample": 36,
+              "growth": 0.62,
+              "basketValue": 4.84
             },
             {
               "date": "2026-04-15",
-              "sample": 20,
-              "growth": -0.36,
-              "basketValue": 5.56
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 12,
-              "growth": -6.33,
-              "basketValue": 16.14
+              "sample": 17,
+              "growth": -9.13,
+              "basketValue": 1.89
             },
             {
               "date": "2026-06-15",
-              "sample": 21,
-              "growth": -7.38,
-              "basketValue": 15.57
+              "sample": 18,
+              "growth": -4.66,
+              "basketValue": 2.66
             },
             {
               "date": "2026-07-15",
-              "sample": 19,
-              "growth": -7.38,
-              "basketValue": 15.3
+              "sample": 16,
+              "growth": -4.4,
+              "basketValue": 2.39
             },
             {
               "date": "2026-08-15",
@@ -7361,197 +7188,89 @@
               "growth": -10.47,
               "basketValue": 0.77
             }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 23,
-              "growth": -4.9,
-              "basketValue": 19.97
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 40,
-              "growth": -3.36,
-              "basketValue": 29.38
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 34,
-              "growth": 0.95,
-              "basketValue": 17
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 34,
-              "growth": 0.55,
-              "basketValue": 18.36
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 18,
-              "growth": 1.69,
-              "basketValue": 10.23
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 9,
-              "growth": 1.77,
-              "basketValue": 5.17
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 6,
-              "growth": -2.91,
-              "basketValue": 4.33
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 9,
-              "growth": -7.57,
-              "basketValue": 3.54
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 7,
-              "growth": -7.63,
-              "basketValue": 3.27
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 35,
-              "growth": -1.37,
-              "basketValue": 1.44
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 55,
-              "growth": 1.43,
-              "basketValue": 2.13
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 38,
-              "growth": 7.87,
-              "basketValue": 1.37
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 41,
-              "growth": 0.67,
-              "basketValue": 1.5
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 23,
-              "growth": -6.45,
-              "basketValue": 0.87
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 11,
-              "growth": -22,
-              "basketValue": 0.39
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 10,
-              "growth": -2.78,
-              "basketValue": 0.35
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 10,
-              "growth": -2.78,
-              "basketValue": 0.35
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 8,
-              "growth": -3.45,
-              "basketValue": 0.28
-            }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 139,
-              "growth": 12.62,
-              "basketValue": 608.1
+              "sample": 1,
+              "growth": 37.04,
+              "basketValue": 279.62
             },
             {
               "date": "2026-02-15",
-              "sample": 166,
-              "growth": 12.44,
-              "basketValue": 616.35
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 46,
-              "growth": -4.66,
-              "basketValue": 23.55
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 19,
-              "growth": -7.38,
-              "basketValue": 15.3
+              "sample": 1,
+              "growth": 37.04,
+              "basketValue": 279.62
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 47,
-              "growth": -3.14,
-              "basketValue": 32.13
+              "sample": 4,
+              "growth": 1.66,
+              "basketValue": 130.44
             },
             {
               "date": "2026-02-15",
-              "sample": 60,
-              "growth": -2.13,
-              "basketValue": 39.88
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 20,
-              "growth": -0.9,
-              "basketValue": 11.02
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 7,
-              "growth": -7.63,
-              "basketValue": 3.27
+              "sample": 4,
+              "growth": 1.66,
+              "basketValue": 130.44
             }
           ],
-          "commons": [
+          "r6_15": [
             {
               "date": "2025-11-15",
-              "sample": 64,
-              "growth": 2.88,
-              "basketValue": 2.5
+              "sample": 9,
+              "growth": -4.09,
+              "basketValue": 109.07
             },
             {
               "date": "2026-02-15",
-              "sample": 78,
-              "growth": -0.99,
-              "basketValue": 3
+              "sample": 9,
+              "growth": -4.09,
+              "basketValue": 109.07
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 29,
+              "growth": -5.73,
+              "basketValue": 77.51
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 33,
+              "growth": -5.31,
+              "basketValue": 82.51
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 96,
+              "growth": -1.97,
+              "basketValue": 11.46
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 119,
+              "growth": -1.61,
+              "basketValue": 14.71
             },
             {
               "date": "2026-05-15",
-              "sample": 24,
-              "growth": -11.46,
-              "basketValue": 0.85
+              "sample": 39,
+              "growth": -2.08,
+              "basketValue": 5.64
             },
             {
               "date": "2026-08-15",
-              "sample": 10,
-              "growth": -2.78,
-              "basketValue": 0.35
+              "sample": 16,
+              "growth": -4.4,
+              "basketValue": 2.39
             }
           ]
         }
@@ -7651,9 +7370,9 @@
           "top5Value": 320.51,
           "top12ex5Value": 51.35,
           "boosterFRp10": 12.75,
-          "boosterFRmedian": 17.99,
-          "boosterFRoffers": 66,
-          "boosterFRsellers": 34
+          "boosterFRmedian": 18,
+          "boosterFRoffers": 62,
+          "boosterFRsellers": 28
         }
       ],
       "psa": {
@@ -8169,331 +7888,302 @@
         "priceUrl": "https://www.ebay.fr/itm/358579046632?_skw=pokemon+booster+Z%C3%A9nith+Supr%C3%AAme&hash=item537cfa08e8:g:yhsAAeSwFd5qDksI",
         "floor10": 25.99,
         "floor10Url": "https://www.ebay.fr/itm/358579046632?_skw=pokemon+booster+Z%C3%A9nith+Supr%C3%AAme&hash=item537cfa08e8:g:yhsAAeSwFd5qDksI",
-        "median": 44.9,
-        "offers": 8,
-        "sellers": 7,
-        "matched": 8,
-        "scanned": 20
+        "median": 30,
+        "offers": 5,
+        "sellers": 5,
+        "matched": 5,
+        "scanned": 16
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 2.93,
-          "cards": 5,
-          "basketValue": 86.18,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -4.62,
+          "cards": 1,
+          "basketValue": 33.23,
           "driver": {
-            "name": "Radiant Charizard",
-            "number": "20",
-            "change": 23.9,
+            "name": "Pikachu",
+            "number": "160",
+            "change": -4.6,
             "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 1.1,
-          "cards": 12,
-          "basketValue": 117.37,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 8.3,
+          "cards": 4,
+          "basketValue": 52.95,
           "driver": {
             "name": "Radiant Charizard",
             "number": "20",
             "change": 23.9,
-            "share": 1
+            "share": 0.77
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": -3.62,
-          "cards": 7,
-          "basketValue": 31.19,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -2.03,
+          "cards": 10,
+          "basketValue": 39.59,
           "driver": null
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": -0.13,
-          "cards": 30,
-          "basketValue": 154.74,
-          "driver": {
-            "name": "Radiant Charizard",
-            "number": "20",
-            "change": 23.9,
-            "share": 1
-          }
-        },
-        {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": 1.75,
-          "cards": 59,
-          "basketValue": 27.31,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -3.26,
+          "cards": 35,
+          "basketValue": 47.75,
           "driver": null
         },
         {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 6.47,
-          "cards": 71,
-          "basketValue": 2.96,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": 3.89,
+          "cards": 110,
+          "basketValue": 11.49,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 63,
-              "growth": -3.2,
-              "basketValue": 119.63
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
             },
             {
               "date": "2025-12-15",
-              "sample": 105,
-              "growth": -2.4,
-              "basketValue": 132.83
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 2,
+              "growth": -0.86,
+              "basketValue": 26.62
             },
             {
-              "date": "2026-01-15",
-              "sample": 88,
-              "growth": -0.73,
-              "basketValue": 50.35
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 72,
-              "growth": 0.56,
-              "basketValue": 25.1
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 33,
-              "growth": -2.48,
-              "basketValue": 13.36
+              "date": "2025-12-15",
+              "sample": 2,
+              "growth": -0.86,
+              "basketValue": 26.62
             },
             {
               "date": "2026-04-15",
-              "sample": 16,
-              "growth": 18.62,
-              "basketValue": 29.75
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
             },
             {
               "date": "2026-05-15",
-              "sample": 16,
-              "growth": 12.06,
-              "basketValue": 39.78
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
             },
             {
               "date": "2026-06-15",
-              "sample": 22,
-              "growth": 11.68,
-              "basketValue": 38.82
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 18,
-              "growth": -2.77,
-              "basketValue": 11.24
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
             }
           ],
-          "mid": [
+          "r6_15": [
             {
               "date": "2025-11-15",
-              "sample": 21,
-              "growth": 1.64,
-              "basketValue": 10.53
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 38,
-              "growth": 3.96,
-              "basketValue": 17.57
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 41,
-              "growth": 0.05,
-              "basketValue": 20.82
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 29,
-              "growth": 0.08,
-              "basketValue": 12.91
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 14,
-              "growth": -3.69,
-              "basketValue": 7.3
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 6,
-              "growth": 13.82,
-              "basketValue": 3.13
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 6,
-              "growth": 10.03,
-              "basketValue": 3.62
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 7,
-              "growth": 3.39,
-              "basketValue": 2.44
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 5,
-              "growth": -0.83,
-              "basketValue": 1.19
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 23,
-              "growth": 5.71,
-              "basketValue": 1.11
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 45,
-              "growth": 5.95,
-              "basketValue": 1.96
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 36,
-              "growth": 12.4,
-              "basketValue": 1.45
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 37,
-              "growth": 7.41,
-              "basketValue": 1.45
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 16,
-              "growth": 6.78,
-              "basketValue": 0.63
-            },
-            {
-              "date": "2026-04-15",
               "sample": 8,
-              "growth": 0,
-              "basketValue": 0.29
+              "growth": -1.49,
+              "basketValue": 31.77
             },
             {
-              "date": "2026-05-15",
-              "sample": 5,
-              "growth": 0,
-              "basketValue": 0.15
+              "date": "2025-12-15",
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 16,
+              "growth": -7.13,
+              "basketValue": 23.7
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 23,
+              "growth": -4.38,
+              "basketValue": 32.97
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 25,
+              "growth": -2.29,
+              "basketValue": 29.82
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 15,
+              "growth": -0.62,
+              "basketValue": 19.33
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 9,
+              "growth": -1.97,
+              "basketValue": 11.42
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 36,
+              "growth": 4.61,
+              "basketValue": 4.31
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 71,
+              "growth": 7.29,
+              "basketValue": 8.24
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 60,
+              "growth": 4.61,
+              "basketValue": 6.35
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 57,
+              "growth": 4.72,
+              "basketValue": 5.77
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 24,
+              "growth": -5.37,
+              "basketValue": 1.94
+            },
+            {
+              "date": "2026-04-15",
+              "sample": 12,
+              "growth": 8.11,
+              "basketValue": 1.2
             },
             {
               "date": "2026-06-15",
-              "sample": 10,
-              "growth": 8.82,
-              "basketValue": 0.37
+              "sample": 15,
+              "growth": -1.5,
+              "basketValue": 1.31
             },
             {
               "date": "2026-07-15",
-              "sample": 10,
-              "growth": 8.82,
-              "basketValue": 0.37
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 6,
-              "growth": 8.7,
-              "basketValue": 0.25
+              "sample": 14,
+              "growth": -2.13,
+              "basketValue": 0.92
             }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 105,
-              "growth": -2.4,
-              "basketValue": 132.83
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
             },
             {
               "date": "2026-02-15",
-              "sample": 142,
-              "growth": 0.45,
-              "basketValue": 173.77
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 55,
-              "growth": 7.68,
-              "basketValue": 52.18
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 18,
-              "growth": -2.77,
-              "basketValue": 11.24
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 38,
-              "growth": 3.96,
-              "basketValue": 17.57
+              "sample": 2,
+              "growth": -0.86,
+              "basketValue": 26.62
             },
             {
               "date": "2026-02-15",
-              "sample": 54,
-              "growth": 1.87,
-              "basketValue": 26.12
+              "sample": 4,
+              "growth": 8.3,
+              "basketValue": 52.95
             },
             {
               "date": "2026-05-15",
-              "sample": 21,
-              "growth": -2.01,
-              "basketValue": 9.74
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 5,
-              "growth": -0.83,
-              "basketValue": 1.19
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
             }
           ],
-          "commons": [
+          "r6_15": [
             {
               "date": "2025-11-15",
-              "sample": 45,
-              "growth": 5.95,
-              "basketValue": 1.96
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
             },
             {
               "date": "2026-02-15",
-              "sample": 61,
-              "growth": 6.15,
-              "basketValue": 2.59
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 23,
+              "growth": -4.38,
+              "basketValue": 32.97
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 33,
+              "growth": -3.52,
+              "basketValue": 45.25
             },
             {
               "date": "2026-05-15",
-              "sample": 26,
-              "growth": 7.53,
-              "basketValue": 1
+              "sample": 12,
+              "growth": -0.67,
+              "basketValue": 14.78
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 71,
+              "growth": 7.29,
+              "basketValue": 8.24
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 96,
+              "growth": 4.45,
+              "basketValue": 10.57
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 39,
+              "growth": -3.85,
+              "basketValue": 3.25
             },
             {
               "date": "2026-08-15",
-              "sample": 10,
-              "growth": 8.82,
-              "basketValue": 0.37
+              "sample": 14,
+              "growth": -2.13,
+              "basketValue": 0.92
             }
           ]
         }
@@ -8580,9 +8270,9 @@
           "top5Value": 86.42,
           "top12ex5Value": 28.34,
           "boosterFRp10": 25.99,
-          "boosterFRmedian": 44.9,
-          "boosterFRoffers": 8,
-          "boosterFRsellers": 7
+          "boosterFRmedian": 30,
+          "boosterFRoffers": 5,
+          "boosterFRsellers": 5
         }
       ],
       "psa": null,
@@ -9061,315 +8751,286 @@
       "boosterFR": {
         "price": 2.99,
         "priceUrl": "https://www.ebay.fr/itm/355009890063?_skw=pokemon+booster+Poing+de+Fusion&hash=item52a83d070f:g:a9UAAOSwCANk8Edb",
-        "floor10": 15,
-        "floor10Url": "https://www.ebay.fr/itm/407121220683?_skw=pokemon+booster+Poing+de+Fusion&hash=item5eca50d44b:g:c0QAAeSw6JVqcr3V",
-        "median": 45,
-        "offers": 53,
-        "sellers": 32,
-        "matched": 53,
-        "scanned": 74
+        "floor10": 7.19,
+        "floor10Url": "https://www.ebay.fr/itm/204947936222?_skw=pokemon+booster+Poing+de+Fusion&hash=item2fb7d953de:g:mNkAAeSwHQ9okK79",
+        "median": 25,
+        "offers": 29,
+        "sellers": 19,
+        "matched": 29,
+        "scanned": 42
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 11.13,
-          "cards": 5,
-          "basketValue": 169.15,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": 11.11,
+          "cards": 1,
+          "basketValue": 95.27,
+          "driver": {
+            "name": "Celebi V",
+            "number": "245",
+            "change": 11.1,
+            "share": 1
+          }
+        },
+        {
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 11.15,
+          "cards": 4,
+          "basketValue": 73.88,
           "driver": {
             "name": "Gengar VMAX",
             "number": "157",
             "change": 32.8,
-            "share": 0.6
+            "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 11.09,
-          "cards": 12,
-          "basketValue": 184.61,
-          "driver": {
-            "name": "Gengar VMAX",
-            "number": "157",
-            "change": 32.8,
-            "share": 0.55
-          }
-        },
-        {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": 10.67,
-          "cards": 7,
-          "basketValue": 15.46,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": 8.56,
+          "cards": 10,
+          "basketValue": 20.8,
           "driver": null
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": 10.28,
-          "cards": 30,
-          "basketValue": 206.87,
-          "driver": {
-            "name": "Gengar VMAX",
-            "number": "157",
-            "change": 32.8,
-            "share": 0.53
-          }
-        },
-        {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -0.73,
-          "cards": 48,
-          "basketValue": 9.52,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": 4.9,
+          "cards": 35,
+          "basketValue": 23.14,
           "driver": null
         },
         {
-          "key": "commons",
-          "label": "Communes",
-          "growth": -0.84,
-          "cards": 171,
-          "basketValue": 8.29,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -4.21,
+          "cards": 199,
+          "basketValue": 11.59,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 148,
-              "growth": 10.1,
-              "basketValue": 197.75
+              "sample": 1,
+              "growth": 11.11,
+              "basketValue": 95.27
             },
             {
               "date": "2025-12-15",
-              "sample": 196,
-              "growth": 9.67,
-              "basketValue": 207.98
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 74,
-              "growth": 2.75,
-              "basketValue": 22.83
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 73,
-              "growth": 2.56,
-              "basketValue": 18.82
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 26,
-              "growth": 3.46,
-              "basketValue": 8.68
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 22,
-              "growth": 11.42,
-              "basketValue": 6.73
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 28,
-              "growth": 7.13,
-              "basketValue": 8.11
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 28,
-              "growth": 7.13,
-              "basketValue": 8.11
+              "sample": 1,
+              "growth": 11.11,
+              "basketValue": 95.27
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 26,
-              "growth": 3.9,
-              "basketValue": 5.06
+              "sample": 4,
+              "growth": 11.15,
+              "basketValue": 73.88
             },
             {
               "date": "2025-12-15",
-              "sample": 36,
-              "growth": 1.97,
-              "basketValue": 7.26
-            },
+              "sample": 4,
+              "growth": 11.15,
+              "basketValue": 73.88
+            }
+          ],
+          "r6_15": [
             {
-              "date": "2026-01-15",
-              "sample": 18,
-              "growth": 2.48,
-              "basketValue": 4.95
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 16,
-              "growth": -4.39,
-              "basketValue": 3.7
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 6,
-              "growth": -7.41,
-              "basketValue": 1.5
-            },
-            {
-              "date": "2026-05-15",
+              "date": "2025-11-15",
               "sample": 5,
-              "growth": -5.45,
-              "basketValue": 0.52
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 6,
-              "growth": -10.59,
-              "basketValue": 0.76
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 6,
-              "growth": -10.59,
-              "basketValue": 0.76
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 105,
-              "growth": -7.4,
-              "basketValue": 4.38
+              "growth": 10.45,
+              "basketValue": 10.99
             },
             {
               "date": "2025-12-15",
-              "sample": 139,
-              "growth": -3.06,
-              "basketValue": 6.34
+              "sample": 7,
+              "growth": 9.45,
+              "basketValue": 14.6
             },
             {
               "date": "2026-01-15",
-              "sample": 46,
-              "growth": 11.95,
-              "basketValue": 2.81
+              "sample": 5,
+              "growth": 4.18,
+              "basketValue": 9.73
             },
             {
               "date": "2026-02-15",
-              "sample": 49,
-              "growth": 11.36,
-              "basketValue": 3.04
+              "sample": 4,
+              "growth": 6.1,
+              "basketValue": 8
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 20,
+              "growth": 7.14,
+              "basketValue": 11.56
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 26,
+              "growth": 4.14,
+              "basketValue": 15.6
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 14,
+              "growth": 0,
+              "basketValue": 9.27
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 10,
+              "growth": -2.2,
+              "basketValue": 6.67
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 118,
+              "growth": -9.16,
+              "basketValue": 6.05
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 158,
+              "growth": -5.27,
+              "basketValue": 8.63
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 55,
+              "growth": 6.09,
+              "basketValue": 3.83
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 59,
+              "growth": 4.01,
+              "basketValue": 4.15
             },
             {
               "date": "2026-03-15",
-              "sample": 16,
-              "growth": 18.18,
-              "basketValue": 1.17
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 7,
-              "growth": 11.63,
-              "basketValue": 0.48
+              "sample": 20,
+              "growth": 3.11,
+              "basketValue": 1.66
             },
             {
               "date": "2026-05-15",
-              "sample": 13,
-              "growth": -8.57,
-              "basketValue": 0.64
+              "sample": 18,
+              "growth": -7.2,
+              "basketValue": 1.16
             },
             {
               "date": "2026-06-15",
-              "sample": 17,
-              "growth": -3.33,
-              "basketValue": 0.87
+              "sample": 22,
+              "growth": -4.14,
+              "basketValue": 1.39
             },
             {
               "date": "2026-07-15",
-              "sample": 17,
-              "growth": -3.33,
-              "basketValue": 0.87
+              "sample": 22,
+              "growth": -4.14,
+              "basketValue": 1.39
             }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 196,
-              "growth": 9.67,
-              "basketValue": 207.98
+              "sample": 1,
+              "growth": 11.11,
+              "basketValue": 95.27
             },
             {
               "date": "2026-02-15",
-              "sample": 221,
-              "growth": 9.4,
-              "basketValue": 216.57
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 53,
-              "growth": 5.1,
-              "basketValue": 16.7
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 28,
-              "growth": 7.13,
-              "basketValue": 8.11
+              "sample": 1,
+              "growth": 11.11,
+              "basketValue": 95.27
             }
           ],
-          "mid": [
+          "r2_5": [
             {
               "date": "2025-11-15",
-              "sample": 36,
-              "growth": 1.97,
-              "basketValue": 7.26
+              "sample": 4,
+              "growth": 11.15,
+              "basketValue": 73.88
             },
             {
               "date": "2026-02-15",
-              "sample": 42,
-              "growth": 0.23,
-              "basketValue": 8.76
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 12,
-              "growth": -8.5,
-              "basketValue": 2.26
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 6,
-              "growth": -10.59,
-              "basketValue": 0.76
+              "sample": 4,
+              "growth": 11.15,
+              "basketValue": 73.88
             }
           ],
-          "commons": [
+          "r6_15": [
             {
               "date": "2025-11-15",
-              "sample": 139,
-              "growth": -3.06,
-              "basketValue": 6.34
+              "sample": 7,
+              "growth": 9.45,
+              "basketValue": 14.6
             },
             {
               "date": "2026-02-15",
-              "sample": 154,
-              "growth": -0.54,
-              "basketValue": 7.42
+              "sample": 9,
+              "growth": 8.58,
+              "basketValue": 18.99
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 26,
+              "growth": 4.14,
+              "basketValue": 15.6
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 30,
+              "growth": 3.52,
+              "basketValue": 18.23
             },
             {
               "date": "2026-05-15",
-              "sample": 32,
-              "growth": 7.14,
-              "basketValue": 1.95
+              "sample": 9,
+              "growth": 6.5,
+              "basketValue": 7.54
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 158,
+              "growth": -5.27,
+              "basketValue": 8.63
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 177,
+              "growth": -4.23,
+              "basketValue": 10.2
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 41,
+              "growth": -1,
+              "basketValue": 2.96
             },
             {
               "date": "2026-08-15",
-              "sample": 17,
-              "growth": -3.33,
-              "basketValue": 0.87
+              "sample": 22,
+              "growth": -4.14,
+              "basketValue": 1.39
             }
           ]
         }
@@ -9456,10 +9117,10 @@
           "boosterLanguage": "en",
           "top5Value": 136.3,
           "top12ex5Value": 11.52,
-          "boosterFRp10": 15,
-          "boosterFRmedian": 45,
-          "boosterFRoffers": 53,
-          "boosterFRsellers": 32
+          "boosterFRp10": 7.19,
+          "boosterFRmedian": 25,
+          "boosterFRoffers": 29,
+          "boosterFRsellers": 19
         }
       ],
       "psa": {
@@ -9860,7 +9521,7 @@
             "discount": 100
           },
           "nameFR": "Lucario V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Lucario-V",
+          "url": null,
           "marketFR": {
             "price": 2.99,
             "priceUrl": "https://www.ebay.fr/itm/188554777701?_skw=Lucario+V+146%2F264&hash=item2be6bd9465:g:kpsAAeSw8utqO9EV",
@@ -9924,14 +9585,18 @@
       "strata": [],
       "growthSeries": {
         "monthly": {
-          "content": [],
-          "mid": [],
-          "commons": []
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
         },
         "quarterly": {
-          "content": [],
-          "mid": [],
-          "commons": []
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
         }
       },
       "contentValue": [],
@@ -10414,118 +10079,161 @@
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Giratina-V-V3-LOR186"
       },
       "boosterFR": {
-        "price": 2,
-        "priceUrl": "https://www.ebay.fr/itm/389919820024?_skw=pokemon+booster+Origine+Perdue&hash=item5ac90848f8:g:OOEAAeSwCy1p56V4",
-        "floor10": 13.99,
-        "floor10Url": "https://www.ebay.fr/itm/116671341901?_skw=pokemon+booster+Origine+Perdue&hash=item1b2a27654d:g:WVQAAeSwWxhoYBb2",
+        "price": 3,
+        "priceUrl": "https://www.ebay.fr/itm/315181341575?_skw=pokemon+booster+Origine+Perdue&hash=item4962459b87:g:db4AAOSwBmtl25lR",
+        "floor10": 12.07,
+        "floor10Url": "https://www.ebay.fr/itm/128008157111?_skw=pokemon+booster+Origine+Perdue&hash=item1dcde177b7:g:35IAAeSwtcBqbH5i",
         "median": 23.54,
-        "offers": 67,
-        "sellers": 31,
-        "matched": 67,
-        "scanned": 122
+        "offers": 58,
+        "sellers": 28,
+        "matched": 58,
+        "scanned": 99
       },
       "strata": [
         {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": -9.17,
-          "cards": 5,
-          "basketValue": 722.49,
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -11.47,
+          "cards": 1,
+          "basketValue": 531,
           "driver": {
             "name": "Giratina V",
             "number": "186",
             "change": -11.5,
-            "share": 0.94
+            "share": 1
           }
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": -8.41,
-          "cards": 12,
-          "basketValue": 780.68,
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": -2.09,
+          "cards": 4,
+          "basketValue": 191.49,
           "driver": {
-            "name": "Giratina V",
-            "number": "186",
-            "change": -11.5,
-            "share": 0.96
+            "name": "Aerodactyl V",
+            "number": "180",
+            "change": -2.2,
+            "share": 0.71
           }
         },
         {
-          "key": "top12ex5",
-          "label": "Top 12 hors Top 5",
-          "growth": 2.07,
-          "cards": 7,
-          "basketValue": 58.19,
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": 3.75,
+          "cards": 10,
+          "basketValue": 73.31,
           "driver": {
             "name": "Giratina VSTAR",
             "number": "212",
             "change": -20,
-            "share": 1
+            "share": 0.95
           }
         },
         {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": -7.32,
-          "cards": 30,
-          "basketValue": 850.44,
-          "driver": {
-            "name": "Giratina V",
-            "number": "186",
-            "change": -11.5,
-            "share": 1
-          }
-        },
-        {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -0.37,
-          "cards": 88,
-          "basketValue": 59.93,
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": 2.95,
+          "cards": 35,
+          "basketValue": 92.87,
           "driver": null
         },
         {
-          "key": "commons",
-          "label": "Communes",
-          "growth": 2.84,
-          "cards": 98,
-          "basketValue": 3.62,
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": 1.16,
+          "cards": 166,
+          "basketValue": 25.32,
           "driver": null
         }
       ],
       "growthSeries": {
         "monthly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 117,
-              "growth": -7.03,
-              "basketValue": 895.92
+              "sample": 1,
+              "growth": -11.47,
+              "basketValue": 531
             },
             {
               "date": "2025-12-15",
-              "sample": 161,
-              "growth": -6.89,
-              "basketValue": 907.06
+              "sample": 1,
+              "growth": -11.47,
+              "basketValue": 531
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -2.09,
+              "basketValue": 191.49
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 4,
+              "growth": -2.09,
+              "basketValue": 191.49
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 10,
+              "growth": 3.75,
+              "basketValue": 73.31
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 10,
+              "growth": 3.75,
+              "basketValue": 73.31
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 33,
+              "growth": 2.5,
+              "basketValue": 89.3
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 34,
+              "growth": 3.02,
+              "basketValue": 91.41
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 69,
+              "growth": 3.34,
+              "basketValue": 10.82
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 112,
+              "growth": 2.48,
+              "basketValue": 19.85
             },
             {
               "date": "2026-01-15",
-              "sample": 76,
-              "growth": 3.99,
-              "basketValue": 15.37
+              "sample": 74,
+              "growth": 0.94,
+              "basketValue": 11.8
             },
             {
               "date": "2026-02-15",
-              "sample": 72,
-              "growth": 3.11,
-              "basketValue": 15.25
+              "sample": 70,
+              "growth": -0.17,
+              "basketValue": 11.68
             },
             {
               "date": "2026-03-15",
-              "sample": 28,
-              "growth": -3.97,
-              "basketValue": 4.11
+              "sample": 27,
+              "growth": -5.36,
+              "basketValue": 2.65
             },
             {
               "date": "2026-04-15",
@@ -10551,197 +10259,89 @@
               "growth": -10.4,
               "basketValue": 1.12
             }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 43,
-              "growth": -1.53,
-              "basketValue": 43.7
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 67,
-              "growth": -0.02,
-              "basketValue": 54.2
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 35,
-              "growth": 4.85,
-              "basketValue": 14.04
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 35,
-              "growth": 3.93,
-              "basketValue": 14.03
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 11,
-              "growth": -3.81,
-              "basketValue": 3.53
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 9,
-              "growth": 4.46,
-              "basketValue": 2.11
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 8,
-              "growth": 3.59,
-              "basketValue": 2.02
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 10,
-              "growth": -3.08,
-              "basketValue": 2.2
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 5,
-              "growth": -17.05,
-              "basketValue": 0.73
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 44,
-              "growth": 8.54,
-              "basketValue": 1.78
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 64,
-              "growth": 4.31,
-              "basketValue": 2.42
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 41,
-              "growth": -4.32,
-              "basketValue": 1.33
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 37,
-              "growth": -5.43,
-              "basketValue": 1.22
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 17,
-              "growth": -4.92,
-              "basketValue": 0.58
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 14,
-              "growth": -4.44,
-              "basketValue": 0.43
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 12,
-              "growth": 2.5,
-              "basketValue": 0.41
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 17,
-              "growth": 5.08,
-              "basketValue": 0.62
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 10,
-              "growth": 5.41,
-              "basketValue": 0.39
-            }
           ]
         },
         "quarterly": {
-          "content": [
+          "top1": [
             {
               "date": "2025-11-15",
-              "sample": 161,
-              "growth": -6.89,
-              "basketValue": 907.06
+              "sample": 1,
+              "growth": -11.47,
+              "basketValue": 531
             },
             {
               "date": "2026-02-15",
-              "sample": 201,
-              "growth": -6.85,
-              "basketValue": 912.87
+              "sample": 1,
+              "growth": -11.47,
+              "basketValue": 531
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -2.09,
+              "basketValue": 191.49
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 4,
+              "growth": -2.09,
+              "basketValue": 191.49
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 10,
+              "growth": 3.75,
+              "basketValue": 73.31
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 10,
+              "growth": 3.75,
+              "basketValue": 73.31
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 34,
+              "growth": 3.02,
+              "basketValue": 91.41
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 35,
+              "growth": 2.95,
+              "basketValue": 92.87
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 112,
+              "growth": 2.48,
+              "basketValue": 19.85
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 151,
+              "growth": 1.77,
+              "basketValue": 24.2
             },
             {
               "date": "2026-05-15",
-              "sample": 55,
-              "growth": -2.94,
-              "basketValue": 6.93
+              "sample": 54,
+              "growth": -3.36,
+              "basketValue": 5.47
             },
             {
               "date": "2026-08-15",
               "sample": 15,
               "growth": -10.4,
               "basketValue": 1.12
-            }
-          ],
-          "mid": [
-            {
-              "date": "2025-11-15",
-              "sample": 67,
-              "growth": -0.02,
-              "basketValue": 54.2
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 83,
-              "growth": -0.12,
-              "basketValue": 59.2
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 21,
-              "growth": -3.54,
-              "basketValue": 5.73
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 5,
-              "growth": -17.05,
-              "basketValue": 0.73
-            }
-          ],
-          "commons": [
-            {
-              "date": "2025-11-15",
-              "sample": 64,
-              "growth": 4.31,
-              "basketValue": 2.42
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 88,
-              "growth": 2.54,
-              "basketValue": 3.23
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 34,
-              "growth": 0,
-              "basketValue": 1.2
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 10,
-              "growth": 5.41,
-              "basketValue": 0.39
             }
           ]
         }
@@ -10834,10 +10434,10 @@
           "boosterLanguage": "en",
           "top5Value": 760.74,
           "top12ex5Value": 29.73,
-          "boosterFRp10": 13.99,
+          "boosterFRp10": 12.07,
           "boosterFRmedian": 23.54,
-          "boosterFRoffers": 67,
-          "boosterFRsellers": 31
+          "boosterFRoffers": 58,
+          "boosterFRsellers": 28
         }
       ],
       "psa": {
@@ -11004,10 +10604,10 @@
             "floor10": 2,
             "floor10Url": "https://www.ebay.fr/itm/365718339647?_skw=Berserkatt+de+Galar+V+129%2F196&hash=item552683003f:g:MH0AAeSwOvlobWbu",
             "median": 4,
-            "offers": 25,
-            "sellers": 25,
-            "matched": 25,
-            "scanned": 26
+            "offers": 24,
+            "sellers": 24,
+            "matched": 24,
+            "scanned": 25
           }
         },
         {

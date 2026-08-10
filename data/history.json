@@ -10,10 +10,10 @@
         "boosterLanguage": "en",
         "top5Value": 119.23,
         "top12ex5Value": 53.8,
-        "boosterFRp10": 20,
-        "boosterFRmedian": 69.9,
-        "boosterFRoffers": 76,
-        "boosterFRsellers": 36
+        "boosterFRp10": 19.9,
+        "boosterFRmedian": 72,
+        "boosterFRoffers": 82,
+        "boosterFRsellers": 32
       }
     ],
     "burning-shadows": [
@@ -27,9 +27,9 @@
         "top5Value": 423.34,
         "top12ex5Value": 66.08,
         "boosterFRp10": 25,
-        "boosterFRmedian": 69.99,
-        "boosterFRoffers": 19,
-        "boosterFRsellers": 13
+        "boosterFRmedian": 40.2,
+        "boosterFRoffers": 15,
+        "boosterFRsellers": 11
       }
     ],
     "brilliant-stars": [
@@ -43,9 +43,9 @@
         "top5Value": 320.51,
         "top12ex5Value": 51.35,
         "boosterFRp10": 12.75,
-        "boosterFRmedian": 17.99,
-        "boosterFRoffers": 66,
-        "boosterFRsellers": 34
+        "boosterFRmedian": 18,
+        "boosterFRoffers": 62,
+        "boosterFRsellers": 28
       }
     ],
     "fusion-strike": [
@@ -58,10 +58,10 @@
         "boosterLanguage": "en",
         "top5Value": 136.3,
         "top12ex5Value": 11.52,
-        "boosterFRp10": 15,
-        "boosterFRmedian": 45,
-        "boosterFRoffers": 53,
-        "boosterFRsellers": 32
+        "boosterFRp10": 7.19,
+        "boosterFRmedian": 25,
+        "boosterFRoffers": 29,
+        "boosterFRsellers": 19
       }
     ],
     "lost-origin": [
@@ -74,10 +74,10 @@
         "boosterLanguage": "en",
         "top5Value": 760.74,
         "top12ex5Value": 29.73,
-        "boosterFRp10": 13.99,
+        "boosterFRp10": 12.07,
         "boosterFRmedian": 23.54,
-        "boosterFRoffers": 67,
-        "boosterFRsellers": 31
+        "boosterFRoffers": 58,
+        "boosterFRsellers": 28
       }
     ],
     "silver-tempest": [
@@ -90,10 +90,10 @@
         "boosterLanguage": "en",
         "top5Value": 417.45,
         "top12ex5Value": 53.55,
-        "boosterFRp10": 8.5,
-        "boosterFRmedian": 20,
-        "boosterFRoffers": 49,
-        "boosterFRsellers": 31
+        "boosterFRp10": 11.37,
+        "boosterFRmedian": 18,
+        "boosterFRoffers": 29,
+        "boosterFRsellers": 18
       }
     ],
     "hidden-fates": [
@@ -106,10 +106,10 @@
         "singlesOffers": 7364,
         "top5Value": 174.63,
         "top12ex5Value": 19.9,
-        "boosterFRp10": 50,
+        "boosterFRp10": 49.99,
         "boosterFRmedian": 110,
-        "boosterFRoffers": 28,
-        "boosterFRsellers": 18
+        "boosterFRoffers": 13,
+        "boosterFRsellers": 9
       }
     ],
     "evolving-skies": [
@@ -122,10 +122,10 @@
         "singlesOffers": 26562,
         "top5Value": 3118.07,
         "top12ex5Value": 1544.53,
-        "boosterFRp10": 25,
-        "boosterFRmedian": 49.9,
-        "boosterFRoffers": 33,
-        "boosterFRsellers": 28
+        "boosterFRp10": 34.99,
+        "boosterFRmedian": 59,
+        "boosterFRoffers": 9,
+        "boosterFRsellers": 9
       }
     ],
     "crown-zenith": [
@@ -139,9 +139,9 @@
         "top5Value": 86.42,
         "top12ex5Value": 28.34,
         "boosterFRp10": 25.99,
-        "boosterFRmedian": 44.9,
-        "boosterFRoffers": 8,
-        "boosterFRsellers": 7
+        "boosterFRmedian": 30,
+        "boosterFRoffers": 5,
+        "boosterFRsellers": 5
       }
     ],
     "celebrations": [
@@ -154,10 +154,10 @@
         "singlesOffers": 4079,
         "top5Value": 76.23,
         "top12ex5Value": 6.58,
-        "boosterFRp10": 4.2,
-        "boosterFRmedian": 44.9,
-        "boosterFRoffers": 8,
-        "boosterFRsellers": 7
+        "boosterFRp10": 44.9,
+        "boosterFRmedian": 70,
+        "boosterFRoffers": 2,
+        "boosterFRsellers": 2
       }
     ],
     "s151": [
@@ -170,10 +170,10 @@
         "singlesOffers": 32681,
         "top5Value": 675.86,
         "top12ex5Value": 478.04,
-        "boosterFRp10": 5.99,
-        "boosterFRmedian": 30,
-        "boosterFRoffers": 61,
-        "boosterFRsellers": 35
+        "boosterFRp10": 13,
+        "boosterFRmedian": 35,
+        "boosterFRoffers": 13,
+        "boosterFRsellers": 11
       }
     ],
     "shiny-star-v": [

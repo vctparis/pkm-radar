@@ -17,7 +17,8 @@ export type Stratum = {
 
 export type GrowthPoint = { date: string; sample: number; growth: number; basketValue: number };
 
-export type GrowthBundle = { content: GrowthPoint[]; mid: GrowthPoint[]; commons: GrowthPoint[] };
+export type TierKey = "top1" | "r2_5" | "r6_15" | "r16_50" | "fond";
+export type GrowthBundle = Record<TierKey, GrowthPoint[]>;
 
 export type Pick = {
   id: string;
