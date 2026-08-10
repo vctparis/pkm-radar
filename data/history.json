@@ -3,10 +3,13 @@
     "sun-moon": [
       {
         "date": "2026-08-10",
-        "boosterPrice": 20.26,
-        "boosterOffers": 5,
+        "boosterPrice": 25.39,
+        "boosterOffers": 1,
         "boxPrice": 1286.74,
-        "singlesOffers": 9536
+        "singlesOffers": 9536,
+        "boosterLanguage": "en",
+        "top5Value": 119.23,
+        "top12ex5Value": 53.8
       }
     ],
     "burning-shadows": [
@@ -15,43 +18,58 @@
         "boosterPrice": 8.15,
         "boosterOffers": 7,
         "boxPrice": 1299.99,
-        "singlesOffers": 8845
+        "singlesOffers": 8845,
+        "boosterLanguage": "it",
+        "top5Value": 423.34,
+        "top12ex5Value": 66.08
       }
     ],
     "brilliant-stars": [
       {
         "date": "2026-08-10",
-        "boosterPrice": 6.14,
-        "boosterOffers": 26,
-        "boxPrice": 440.54,
-        "singlesOffers": 32073
+        "boosterPrice": 9.99,
+        "boosterOffers": 4,
+        "boxPrice": 460.64,
+        "singlesOffers": 32073,
+        "boosterLanguage": "en",
+        "top5Value": 320.51,
+        "top12ex5Value": 51.35
       }
     ],
     "fusion-strike": [
       {
         "date": "2026-08-10",
-        "boosterPrice": 11.92,
-        "boosterOffers": 13,
+        "boosterPrice": 28.82,
+        "boosterOffers": 1,
         "boxPrice": 800.63,
-        "singlesOffers": 35821
+        "singlesOffers": 35821,
+        "boosterLanguage": "en",
+        "top5Value": 136.3,
+        "top12ex5Value": 11.52
       }
     ],
     "lost-origin": [
       {
         "date": "2026-08-10",
-        "boosterPrice": 5.79,
-        "boosterOffers": 29,
-        "boxPrice": 345.64,
-        "singlesOffers": 37229
+        "boosterPrice": 14.21,
+        "boosterOffers": 3,
+        "boxPrice": 501.81,
+        "singlesOffers": 37229,
+        "boosterLanguage": "en",
+        "top5Value": 760.74,
+        "top12ex5Value": 29.73
       }
     ],
     "silver-tempest": [
       {
         "date": "2026-08-10",
-        "boosterPrice": 7.89,
-        "boosterOffers": 20,
-        "boxPrice": 179.59,
-        "singlesOffers": 39084
+        "boosterPrice": 12.01,
+        "boosterOffers": 3,
+        "boxPrice": 390.64,
+        "singlesOffers": 39084,
+        "boosterLanguage": "en",
+        "top5Value": 417.45,
+        "top12ex5Value": 53.55
       }
     ]
   }

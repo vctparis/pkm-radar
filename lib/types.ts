@@ -31,6 +31,7 @@ export type Pick = {
   marketFloor: number | null;
   score: number;
   components: { relative: number; tightness: number; liquidity: number; discount: number };
+  url?: string | null;
 };
 
 export type SealedQuote = {
@@ -39,6 +40,17 @@ export type SealedQuote = {
   offers: number;
   quantity: number;
   sellers: number;
+  /** Langue effectivement retenue : fr si disponible, sinon jp, en, ou la moins chère. */
+  language: string | null;
+} | null;
+
+export type BestCard = {
+  name: string;
+  number: string;
+  rarity: string;
+  price: number;
+  change30: number | null;
+  url: string | null;
 } | null;
 
 export type SetEntry = {
@@ -58,11 +70,21 @@ export type SetEntry = {
     path: { label: string; offset: number; value: number }[];
   };
   segments: { chase: Segment; mid: Segment; commons: Segment };
+  bestCard: BestCard;
   strata: Stratum[];
   growthSeries: Record<"mid" | "commons", GrowthPoint[]>;
   contentValue: GrowthPoint[];
   live: { booster: SealedQuote; boosterBox: SealedQuote; singles: { tracked: number; offers: number } } | null;
-  liveHistory: { date: string; boosterPrice: number; boosterOffers: number; boxPrice: number | null; singlesOffers: number }[];
+  liveHistory: {
+    date: string;
+    boosterPrice: number;
+    boosterOffers: number;
+    boosterLanguage?: string | null;
+    boxPrice: number | null;
+    singlesOffers: number;
+    top5Value?: number | null;
+    top12ex5Value?: number | null;
+  }[];
   psa: { gemRate: number; growth30: number | null; history: { date: string; total: number }[] } | null;
   picks: Pick[];
 };

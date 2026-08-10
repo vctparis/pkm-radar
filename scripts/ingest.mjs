@@ -15,7 +15,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 
 import { SETS } from "./lib/sets.mjs";
-import { fetchSetCards, normalizeSet } from "./lib/ptcg.mjs";
+import { fetchSetCards, normalizeSet, resolveCardmarketUrl } from "./lib/ptcg.mjs";
 import { momentumSeries, basketGrowth, basketGrowthSeries, normalizedPath, median, cardMomentum } from "./lib/series.mjs";
 import {
   fetchExpansions,
@@ -39,6 +39,11 @@ const OFFLINE = process.argv.includes("--offline");
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const log = (message) => console.log(`  ${message}`);
+
+// Ordre de préférence des langues pour le scellé : le français d'abord puisque
+// c'est le marché visé, le japonais ensuite pour les produits qui n'existent
+// que sous cette forme, l'anglais en dernier recours.
+const LANGUAGE_PREFERENCE = ["fr", "jp", "en"];
 
 // CardTrader écrit "036/149", pokemontcg.io écrit "36" : on ramène les deux
 // à un entier pour pouvoir apparier les deux catalogues.
@@ -137,10 +142,28 @@ async function main() {
     const strata = [
       { key: "top5", label: "Top 5", cards: sorted.slice(0, 5) },
       { key: "top12", label: "Top 12", cards: sorted.slice(0, 12) },
+      { key: "top12ex5", label: "Top 12 hors Top 5", cards: sorted.slice(5, 12) },
       { key: "top30", label: "Top 30", cards: sorted.slice(0, 30) },
       { key: "mid", label: "Intermédiaires", cards: groups.mid },
       { key: "commons", label: "Communes", cards: groups.commons },
     ].map(({ key, label, cards: subset }) => ({ key, label, ...(basketGrowth(subset) ?? { growth: null, cards: 0 }) }));
+
+    // Carte phare : celle qui porte le set, et donc le risque qu'on prend en
+    // achetant le set. Son lien Cardmarket est résolu pour pouvoir vérifier le
+    // prix chez le marchand plutôt que sur parole.
+    const headline = sorted[0];
+    const bestCard = headline
+      ? {
+          name: headline.name,
+          number: headline.number,
+          rarity: headline.rarity,
+          price: Number(headline.reference.toFixed(2)),
+          change30: headline.prices.avg30 > 0 && headline.prices.avg7 > 0
+            ? Number(((headline.prices.avg7 / headline.prices.avg30 - 1) * 100).toFixed(1))
+            : null,
+          url: await resolveCardmarketUrl(headline.cardmarketUrl),
+        }
+      : null;
 
     // Séries temporelles réservées aux strates assez étalées dans le temps.
     const growthSeries = {
@@ -164,8 +187,10 @@ async function main() {
       try {
         const sealed = await resolveSealedBlueprints(expansion.id);
         const [booster, boosterBox] = await Promise.all([
-          sealed.booster ? fetchBlueprintMarket(sealed.booster.id, { sealed: true }) : null,
-          sealed.boosterBox ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true }) : null,
+          sealed.booster ? fetchBlueprintMarket(sealed.booster.id, { sealed: true, languages: LANGUAGE_PREFERENCE }) : null,
+          sealed.boosterBox
+            ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: LANGUAGE_PREFERENCE })
+            : null,
         ]);
         singlesMarket = await fetchExpansionSingles(expansion.id);
 
@@ -187,6 +212,40 @@ async function main() {
       }
     }
 
+    // Index des cotations live par numéro de carte, partagé par les paniers
+    // fixes et la sélection de pépites.
+    const byNumber = new Map();
+    for (const entry of singlesMarket.values()) {
+      const key = normalizeNumber(entry.collectorNumber);
+      if (key && !byNumber.has(key)) byNumber.set(key, entry);
+    }
+
+    // Paniers fixes suivis au prix du jour.
+    //
+    // Aucune source accessible ne vend 3-4 ans d'historique de prix : l'API
+    // PriceCharting ne sert que le prix courant, CardTrader n'a aucun
+    // historique, et le plus profond du marché plafonne à 12 mois. La seule
+    // façon d'obtenir cette profondeur est de commencer à l'enregistrer.
+    //
+    // La composition des paniers est figée une fois pour toutes par le prix de
+    // référence Cardmarket, puis valorisée chaque jour au plancher CardTrader.
+    // Panier fixe = un vrai indice de prix : ce qui bouge est le prix, jamais
+    // le contenu.
+    const liveValueOf = (subset) => {
+      const prices = subset
+        .map((card) => byNumber.get(normalizeNumber(card.number))?.price)
+        .filter((price) => typeof price === "number" && price > 0);
+      // Sous la moitié du panier coté, la somme décrirait surtout les absents.
+      if (prices.length < Math.ceil(subset.length / 2)) return null;
+      return {
+        value: Number(prices.reduce((sum, price) => sum + price, 0).toFixed(2)),
+        matched: prices.length,
+        of: subset.length,
+      };
+    };
+    const top5Live = liveValueOf(sorted.slice(0, 5));
+    const top12ex5Live = liveValueOf(sorted.slice(5, 12));
+
     // Accumulation : un point par jour et par set, jamais écrasé rétroactivement.
     if (live?.booster?.price != null) {
       const bucket = (history.snapshots[set.id] ??= []);
@@ -195,8 +254,11 @@ async function main() {
         date: TODAY,
         boosterPrice: live.booster.price,
         boosterOffers: live.booster.offers,
+        boosterLanguage: live.booster.language ?? null,
         boxPrice: live.boosterBox?.price ?? null,
         singlesOffers: live.singles.offers,
+        top5Value: top5Live?.value ?? null,
+        top12ex5Value: top12ex5Live?.value ?? null,
       };
       if (existing) Object.assign(existing, point);
       else bucket.push(point);
@@ -204,12 +266,7 @@ async function main() {
     }
 
     // ---- Sélection des cartes ---------------------------------------------
-    const byNumber = new Map();
-    for (const entry of singlesMarket.values()) {
-      const key = normalizeNumber(entry.collectorNumber);
-      if (key && !byNumber.has(key)) byNumber.set(key, entry);
-    }
-
+    const cardsById = new Map(cards.map((card) => [card.id, card]));
     const context = { medianMomentum };
     const picks = cards
       .map((card) => scoreCard(card, byNumber.get(normalizeNumber(card.number)) ?? null, context))
@@ -257,13 +314,19 @@ async function main() {
         path: normalizedPath(cards),
       },
       segments,
+      bestCard,
       strata,
       growthSeries,
       contentValue,
       live,
       liveHistory: history.snapshots[set.id] ?? [],
       psa: psa ? { gemRate: psa.gemRate, growth30: psaGrowth30, history: psaHistory } : null,
-      picks: picks.slice(0, 8),
+      picks: await Promise.all(
+        picks.slice(0, 12).map(async (pick) => ({
+          ...pick,
+          url: await resolveCardmarketUrl(cardsById.get(pick.id)?.cardmarketUrl ?? null),
+        })),
+      ),
     });
   }
 

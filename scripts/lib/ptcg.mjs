@@ -65,6 +65,7 @@ export function normalizeCard(card) {
     rarity: card.rarity ?? "Inconnue",
     isCommon: COMMON_RARITIES.has(card.rarity),
     image: card.images?.small ?? null,
+    cardmarketUrl: market.url ?? null,
     updatedAt,
     prices,
     reference,
@@ -75,4 +76,37 @@ export function normalizeCard(card) {
 
 export function normalizeSet(cards) {
   return cards.map(normalizeCard).filter(Boolean);
+}
+
+/**
+ * Résout le lien Cardmarket d'une carte et le bascule en locale française.
+ *
+ * `cardmarket.url` pointe vers un redirecteur pokemontcg.io, pas vers la fiche.
+ * On suit la redirection une fois pour récupérer l'URL réelle, on retire les
+ * paramètres de campagne et on remplace /en/ par /fr/. Appelé uniquement sur
+ * les cartes affichées — une résolution par carte du catalogue ferait des
+ * milliers de requêtes pour rien.
+ */
+export async function resolveCardmarketUrl(redirectUrl, tries = 3) {
+  if (!redirectUrl) return null;
+  for (let attempt = 1; attempt <= tries; attempt++) {
+    try {
+      const response = await fetch(redirectUrl, {
+        redirect: "manual",
+        signal: AbortSignal.timeout(20_000),
+      });
+      const location = response.headers.get("location");
+      if (location) {
+        const url = new URL(location);
+        url.search = "";
+        url.pathname = url.pathname.replace(/^\/en\//, "/fr/");
+        return url.toString();
+      }
+    } catch {
+      // Le redirecteur renvoie des erreurs sporadiques ; on retente.
+    }
+    if (attempt < tries) await new Promise((r) => setTimeout(r, 800 * attempt));
+  }
+  // Un lien manquant vaut mieux qu'un lien faux : l'interface le masquera.
+  return null;
 }

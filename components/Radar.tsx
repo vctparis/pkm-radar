@@ -12,6 +12,17 @@ const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" 
 const num = new Intl.NumberFormat("fr-FR");
 const pct = (v: number | null, digits = 1) => (v == null ? "—" : `${v > 0 ? "+" : ""}${v.toFixed(digits)} %`);
 
+// Ramène une série de prix à base 100 sur son premier relevé, pour rendre
+// comparables des grandeurs d'ordres différents sur un axe unique.
+function indexed<T extends { date: string }>(rows: T[], pick: (row: T) => number | null) {
+  const base = rows.map(pick).find((v) => v != null && v > 0);
+  if (base == null) return [];
+  return rows.map((row) => {
+    const value = pick(row);
+    return { date: row.date, value: value != null && value > 0 ? (value / base) * 100 : null };
+  });
+}
+
 function toneFor(value: number | null) {
   if (value == null) return "text-mist-500";
   if (value > 1) return "text-[color:var(--color-good)]";
@@ -65,7 +76,7 @@ export default function Radar({ data }: { data: RadarData }) {
   // c'est la définition opérationnelle d'une hausse qui ne se propage pas.
   const growthOf = (set: SetEntry, key: string) => set.strata.find((s) => s.key === key)?.growth ?? null;
   const topHeavy = data.sets.filter((s) => {
-    const top = growthOf(s, "top12");
+    const top = growthOf(s, "top12ex5");
     const low = growthOf(s, "commons");
     return top != null && low != null && top > low;
   }).length;
@@ -157,11 +168,12 @@ export default function Radar({ data }: { data: RadarData }) {
                 <tr>
                   {[
                     { label: "Set", hint: "", align: "left" },
-                    { label: "Booster", hint: "prix le plus bas, neuf", align: "right" },
+                    { label: "Booster", hint: "le moins cher, neuf", align: "right" },
                     { label: "Offre", hint: "boosters dispo. / vendeurs", align: "right" },
-                    { label: "Top 12", hint: "croissance 30 j du haut", align: "right" },
-                    { label: "Communes", hint: "croissance 30 j du bas", align: "right" },
-                    { label: "Carte n°1", hint: "part de la valeur du set", align: "right" },
+                    { label: "Carte phare", hint: "celle qui porte le set", align: "left" },
+                    { label: "Top 12 hors Top 5", hint: "croissance 30 j", align: "right" },
+                    { label: "Communes", hint: "croissance 30 j", align: "right" },
+                    { label: "Poids carte n°1", hint: "part de la valeur du set", align: "right" },
                     { label: "Score", hint: "sur 100", align: "right" },
                   ].map((column) => (
                     <th
@@ -182,7 +194,7 @@ export default function Radar({ data }: { data: RadarData }) {
               <tbody>
                 {data.sets.map((set) => {
                   const selected = set.id === active.id;
-                  const top12 = set.strata.find((s) => s.key === "top12")?.growth ?? null;
+                  const top12 = set.strata.find((s) => s.key === "top12ex5")?.growth ?? null;
                   const commons = set.strata.find((s) => s.key === "commons")?.growth ?? null;
                   return (
                     <tr
@@ -208,12 +220,41 @@ export default function Radar({ data }: { data: RadarData }) {
                       </th>
                       <td className="tabular px-4 py-3 text-right text-mist-100">
                         {set.live?.booster?.price != null ? eur.format(set.live.booster.price) : "—"}
+                        {set.live?.booster?.language && (
+                          <span className="mt-0.5 block text-[0.72rem] uppercase text-mist-500">
+                            {set.live.booster.language}
+                          </span>
+                        )}
                       </td>
                       <td className="tabular px-4 py-3 text-right text-mist-300">
                         {set.live?.booster?.quantity != null ? num.format(set.live.booster.quantity) : "—"}
                         <span className="mt-0.5 block text-[0.72rem] text-mist-500">
                           {set.live?.booster?.sellers ?? 0} vendeurs
                         </span>
+                      </td>
+                      <td className="px-4 py-3 text-left">
+                        {set.bestCard ? (
+                          <>
+                            {set.bestCard.url ? (
+                              <a
+                                href={set.bestCard.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="text-mist-050 underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
+                              >
+                                {set.bestCard.name}
+                              </a>
+                            ) : (
+                              <span className="text-mist-050">{set.bestCard.name}</span>
+                            )}
+                            <span className="tabular mt-0.5 block text-[0.72rem] text-mist-500">
+                              {set.bestCard.number} · {eur.format(set.bestCard.price)}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-mist-500">—</span>
+                        )}
                       </td>
                       <td className={`tabular px-4 py-3 text-right ${toneFor(top12)}`}>{pct(top12)}</td>
                       <td className={`tabular px-4 py-3 text-right ${toneFor(commons)}`}>{pct(commons)}</td>
@@ -241,18 +282,20 @@ export default function Radar({ data }: { data: RadarData }) {
             </summary>
             <dl className="prose-measure grid gap-3 text-[0.85rem] leading-relaxed">
               <div>
-                <dt className="font-medium text-mist-100">Top 12 et Communes</dt>
+                <dt className="font-medium text-mist-100">Top 12 hors Top 5, et Communes</dt>
                 <dd className="m-0 text-mist-300">
-                  Croissance sur 30 jours, pondérée par la valeur du panier. L&apos;écart entre les deux est le
-                  cœur du sujet : si le Top 12 monte pendant que les communes reculent, la hausse reste captée par
-                  le sommet du set et ne se propage pas.
+                  Croissance sur 30 jours, pondérée par la valeur du panier. Le Top 5 est volontairement exclu :
+                  sur Ombres Ardentes il affiche +105 % dont la totalité vient du seul Charizard-GX, ce qui masque
+                  ce que fait le reste du haut de gamme. Les rangs 6 à 12 y montent de 3,1 %, ce qui est une tout
+                  autre histoire. L&apos;écart avec les communes dit si la hausse se propage.
                 </dd>
               </div>
               <div>
-                <dt className="font-medium text-mist-100">Carte n°1</dt>
+                <dt className="font-medium text-mist-100">Carte phare et poids de la carte n°1</dt>
                 <dd className="m-0 text-mist-300">
-                  Part de la valeur totale du set concentrée sur sa carte la plus chère. À 60 %, acheter le set
-                  revient surtout à parier sur cette carte-là.
+                  La carte la plus chère du set, et la part de la valeur totale qu&apos;elle capte à elle seule.
+                  À 60 %, acheter le set revient surtout à parier sur cette carte-là. Le nom renvoie à sa fiche
+                  Cardmarket en français.
                 </dd>
               </div>
               <div>
@@ -311,6 +354,35 @@ export default function Radar({ data }: { data: RadarData }) {
               <GrowthBars strata={active.strata} />
             </section>
 
+            {/* Trois grandeurs d'échelles très différentes (booster ~10 €,
+                Top 5 ~700 €) : elles ne sont comparables qu'indexées sur une
+                base commune. Un second axe serait plus court à écrire et
+                trompeur à lire. */}
+            <LineChart
+              title="Booster, Top 5 et Top 12 hors Top 5 — base 100"
+              subtitle="Paniers de composition figée, valorisés chaque jour au plancher CardTrader. Aucune source accessible ne vend 3-4 ans d'historique de prix : cette série se construit à partir d'aujourd'hui, un relevé par jour."
+              series={[
+                {
+                  label: "Booster",
+                  color: SERIES.chase,
+                  points: indexed(active.liveHistory, (p) => p.boosterPrice),
+                },
+                {
+                  label: "Top 5",
+                  color: SERIES.mid,
+                  points: indexed(active.liveHistory, (p) => p.top5Value ?? null),
+                },
+                {
+                  label: "Top 12 hors Top 5",
+                  color: SERIES.commons,
+                  points: indexed(active.liveHistory, (p) => p.top12ex5Value ?? null),
+                },
+              ]}
+              reference={{ value: 100, label: "départ" }}
+              format={(v) => v.toFixed(1)}
+              emptyHint="Premier relevé enregistré aujourd'hui. La courbe apparaît au deuxième passage du cron quotidien — c'est le seul moyen d'obtenir cette profondeur, aucune API ne la vend."
+            />
+
             <div className="grid gap-5 lg:grid-cols-2">
               <LineChart
                 title="Croissance dans le temps"
@@ -363,7 +435,10 @@ export default function Radar({ data }: { data: RadarData }) {
                   </p>
                   <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
                     {[
-                      { term: "Booster", value: active.live?.booster?.price != null ? eur.format(active.live.booster.price) : "—" },
+                      {
+                        term: `Booster${active.live?.booster?.language ? ` (${active.live.booster.language})` : ""}`,
+                        value: active.live?.booster?.price != null ? eur.format(active.live.booster.price) : "—",
+                      },
                       { term: "Display", value: active.live?.boosterBox?.price != null ? eur.format(active.live.boosterBox.price) : "—" },
                       { term: "Unités en vente", value: active.live?.booster?.quantity != null ? num.format(active.live.booster.quantity) : "—" },
                       { term: "Vendeurs", value: active.live?.booster?.sellers != null ? num.format(active.live.booster.sellers) : "—" },
@@ -420,8 +495,9 @@ export default function Radar({ data }: { data: RadarData }) {
             Quelles cartes dans {active.name}
           </h2>
           <p className="prose-measure mt-2 text-[0.92rem] leading-relaxed text-mist-500">
-            Classement par force relative au set, tension de l&apos;offre et liquidité. Le bulk sous 40 centimes est
-            écarté : les frais d&apos;envoi y dépassent toute plus-value envisageable.
+            Les 12 meilleures, classées par force relative au set, tension de l&apos;offre et liquidité. Le bulk
+            sous 40 centimes est écarté : les frais d&apos;envoi y dépassent toute plus-value envisageable. Chaque
+            nom renvoie à sa fiche Cardmarket en français.
           </p>
 
           {active.picks.length === 0 ? (
@@ -429,7 +505,7 @@ export default function Radar({ data }: { data: RadarData }) {
               Aucune carte de ce set ne dépasse le seuil de prix retenu.
             </p>
           ) : (
-            <ul className="mt-6 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 xl:grid-cols-4">
+            <ul className="mt-6 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {active.picks.map((pick, rank) => (
                 <li
                   key={pick.id}
@@ -450,7 +526,18 @@ export default function Radar({ data }: { data: RadarData }) {
                       className="mx-auto my-3 h-auto w-[104px] rounded-lg"
                     />
                   )}
-                  <p className="m-0 text-[0.95rem] font-medium leading-tight text-mist-050">{pick.name}</p>
+                  {pick.url ? (
+                    <a
+                      href={pick.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[0.95rem] font-medium leading-tight text-mist-050 underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
+                    >
+                      {pick.name}
+                    </a>
+                  ) : (
+                    <p className="m-0 text-[0.95rem] font-medium leading-tight text-mist-050">{pick.name}</p>
+                  )}
                   <p className="m-0 mt-0.5 text-[0.74rem] text-mist-500">
                     {pick.number} · {pick.rarity}
                   </p>

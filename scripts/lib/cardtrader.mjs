@@ -83,10 +83,37 @@ function summarizeOffers(products, { sealed = false } = {}) {
   };
 }
 
+/**
+ * Marché d'un blueprint, avec préférence de langue.
+ *
+ * CardTrader est une marketplace italienne : sur Ombres Ardentes on compte 33
+ * produits en français pour 19 659 au total, et zéro booster scellé français.
+ * Afficher le prix le plus bas toutes langues confondues revient donc à montrer
+ * un prix italien ou espagnol à un acheteur qui vise du français. On parcourt
+ * les langues par ordre de préférence et on renvoie TOUJOURS celle retenue,
+ * pour que l'interface puisse l'afficher plutôt que de laisser croire.
+ */
 export async function fetchBlueprintMarket(blueprintId, options = {}) {
+  const { languages = [], ...rest } = options;
   const payload = await get(`/marketplace/products?blueprint_id=${blueprintId}`);
   const products = Object.values(payload).flat();
-  return summarizeOffers(products, options);
+
+  for (const language of languages) {
+    const subset = products.filter((p) => p.properties_hash?.pokemon_language === language);
+    if (subset.length) {
+      const summary = summarizeOffers(subset, rest);
+      if (summary.offers) return { ...summary, language };
+    }
+  }
+
+  // Aucune langue préférée disponible : on retombe sur le marché entier, en
+  // nommant la langue effectivement la moins chère.
+  const summary = summarizeOffers(products, rest);
+  if (!summary.offers) return { ...summary, language: null };
+  const cheapest = products
+    .filter((p) => p.price_cents > 0 && !p.graded && !p.on_vacation)
+    .sort((a, b) => a.price_cents - b.price_cents)[0];
+  return { ...summary, language: cheapest?.properties_hash?.pokemon_language ?? null };
 }
 
 /**

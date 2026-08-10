@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T19:13:29.598Z",
+  "generatedAt": "2026-08-10T19:44:10.517Z",
   "sets": [
     {
       "id": "burning-shadows",
@@ -131,6 +131,14 @@
           "diffusion": 37.3
         }
       },
+      "bestCard": {
+        "name": "Charizard-GX",
+        "number": "150",
+        "rarity": "Rare Rainbow",
+        "price": 600.79,
+        "change30": 139.8,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Charizard-GX-V2-BUS150"
+      },
       "strata": [
         {
           "key": "top5",
@@ -156,6 +164,19 @@
             "number": "150",
             "change": 139.8,
             "share": 0.99
+          }
+        },
+        {
+          "key": "top12ex5",
+          "label": "Top 12 hors Top 5",
+          "growth": 3.06,
+          "cards": 7,
+          "basketValue": 108.74,
+          "driver": {
+            "name": "Marshadow-GX",
+            "number": "156",
+            "change": 47.3,
+            "share": 1
           }
         },
         {
@@ -380,14 +401,16 @@
           "floor10": 8.15,
           "offers": 7,
           "quantity": 24,
-          "sellers": 7
+          "sellers": 7,
+          "language": "it"
         },
         "boosterBox": {
           "price": 1299.99,
           "floor10": 1299.99,
           "offers": 4,
           "quantity": 5,
-          "sellers": 4
+          "sellers": 4,
+          "language": "en"
         },
         "singles": {
           "tracked": 169,
@@ -400,7 +423,10 @@
           "boosterPrice": 8.15,
           "boosterOffers": 7,
           "boxPrice": 1299.99,
-          "singlesOffers": 8845
+          "singlesOffers": 8845,
+          "boosterLanguage": "it",
+          "top5Value": 423.34,
+          "top12ex5Value": 66.08
         }
       ],
       "psa": {
@@ -436,7 +462,8 @@
             "tightness": 50,
             "liquidity": 77,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Guzma-V3-G17"
         },
         {
           "id": "sm3-115a",
@@ -456,7 +483,8 @@
             "tightness": 50,
             "liquidity": 77,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Guzma-V4-BUS115a"
         },
         {
           "id": "sm3-80",
@@ -476,7 +504,8 @@
             "tightness": 45,
             "liquidity": 86,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Marshadow-GX-V2-BUS80"
         },
         {
           "id": "sm3-39a",
@@ -496,7 +525,8 @@
             "tightness": 43,
             "liquidity": 91,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Tapu-Fini-GX-V4-BUS39a"
         },
         {
           "id": "sm3-135",
@@ -516,7 +546,8 @@
             "tightness": 75,
             "liquidity": 32,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Machamp-GX-V2-BUS135"
         },
         {
           "id": "sm3-156",
@@ -536,7 +567,8 @@
             "tightness": 83,
             "liquidity": 18,
             "discount": 76
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Marshadow-GX-V3-BUS156"
         },
         {
           "id": "sm3-99",
@@ -556,7 +588,8 @@
             "tightness": 30,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Noivern-GX-V1-BUS99"
         },
         {
           "id": "sm3-18a",
@@ -576,7 +609,92 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Charmander-V2-BUS18a"
+        },
+        {
+          "id": "sm3-53",
+          "name": "Dusknoir",
+          "number": "53",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm3/53.png",
+          "price": 0.67,
+          "momentum30": 58.7,
+          "relativeStrength": 58.7,
+          "sellers": 46,
+          "offers": 66,
+          "marketFloor": 0.39,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Dusknoir-BUS53"
+        },
+        {
+          "id": "sm3-71",
+          "name": "Lucario",
+          "number": "71",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm3/71.png",
+          "price": 0.71,
+          "momentum30": 10.4,
+          "relativeStrength": 10.4,
+          "sellers": 15,
+          "offers": 17,
+          "marketFloor": 0.4,
+          "score": 72,
+          "components": {
+            "relative": 76,
+            "tightness": 63,
+            "liquidity": 55,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Lucario-BUS71"
+        },
+        {
+          "id": "sm3-41",
+          "name": "Raichu",
+          "number": "41",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm3/41.png",
+          "price": 7.98,
+          "momentum30": 16.8,
+          "relativeStrength": 16.8,
+          "sellers": 19,
+          "offers": 24,
+          "marketFloor": 0.7,
+          "score": 69,
+          "components": {
+            "relative": 92,
+            "tightness": 53,
+            "liquidity": 73,
+            "discount": 41
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Raichu-V5-BUS41"
+        },
+        {
+          "id": "sm3-144",
+          "name": "Kiawe",
+          "number": "144",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/sm3/144.png",
+          "price": 9.34,
+          "momentum30": 24,
+          "relativeStrength": 24,
+          "sellers": 13,
+          "offers": 13,
+          "marketFloor": 5.89,
+          "score": 66,
+          "components": {
+            "relative": 100,
+            "tightness": 68,
+            "liquidity": 45,
+            "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Kiawe-V2-BUS144"
         }
       ]
     },
@@ -586,10 +704,10 @@
       "era": "Sun & Moon",
       "releaseDate": "2017/02/03",
       "ageYears": 9.5,
-      "score": 58,
+      "score": 62,
       "components": {
         "breadth": 5,
-        "scarcity": 83,
+        "scarcity": 99,
         "psaResistance": 61,
         "spread": 91,
         "maturity": 100
@@ -698,6 +816,14 @@
           "diffusion": 38.7
         }
       },
+      "bestCard": {
+        "name": "Umbreon-GX",
+        "number": "154",
+        "rarity": "Rare Rainbow",
+        "price": 40.26,
+        "change30": 7.5,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Umbreon-GX-V3-SUM154"
+      },
       "strata": [
         {
           "key": "top5",
@@ -723,6 +849,19 @@
             "number": "147",
             "change": -27.4,
             "share": 0.5
+          }
+        },
+        {
+          "key": "top12ex5",
+          "label": "Top 12 hors Top 5",
+          "growth": -12.26,
+          "cards": 7,
+          "basketValue": 94.29,
+          "driver": {
+            "name": "Lapras-GX",
+            "number": "151",
+            "change": -42.1,
+            "share": 0.66
           }
         },
         {
@@ -934,18 +1073,20 @@
       ],
       "live": {
         "booster": {
-          "price": 20.26,
-          "floor10": 20.26,
-          "offers": 5,
-          "quantity": 85,
-          "sellers": 5
+          "price": 25.39,
+          "floor10": 25.39,
+          "offers": 1,
+          "quantity": 1,
+          "sellers": 1,
+          "language": "en"
         },
         "boosterBox": {
           "price": 1286.74,
           "floor10": 1286.74,
           "offers": 1,
           "quantity": 1,
-          "sellers": 1
+          "sellers": 1,
+          "language": "en"
         },
         "singles": {
           "tracked": 173,
@@ -955,10 +1096,13 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
-          "boosterPrice": 20.26,
-          "boosterOffers": 5,
+          "boosterPrice": 25.39,
+          "boosterOffers": 1,
           "boxPrice": 1286.74,
-          "singlesOffers": 9536
+          "singlesOffers": 9536,
+          "boosterLanguage": "en",
+          "top5Value": 119.23,
+          "top12ex5Value": 53.8
         }
       ],
       "psa": {
@@ -994,7 +1138,8 @@
             "tightness": 48,
             "liquidity": 82,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Ribombee-SUM93"
         },
         {
           "id": "sm1-82",
@@ -1014,7 +1159,8 @@
             "tightness": 50,
             "liquidity": 77,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Sharpedo-SUM82"
         },
         {
           "id": "sm1-85",
@@ -1034,7 +1180,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Krookodile-SUM85"
         },
         {
           "id": "sm1-157",
@@ -1054,7 +1201,8 @@
             "tightness": 50,
             "liquidity": 77,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Gumshoos-GX-V3-SUM157"
         },
         {
           "id": "sm1-22",
@@ -1074,7 +1222,8 @@
             "tightness": 73,
             "liquidity": 36,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Arcanine-SUM22"
         },
         {
           "id": "sm1-154",
@@ -1094,7 +1243,8 @@
             "tightness": 68,
             "liquidity": 45,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Umbreon-GX-V3-SUM154"
         },
         {
           "id": "sm1-156",
@@ -1114,7 +1264,8 @@
             "tightness": 55,
             "liquidity": 68,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Tauros-GX-V3-SUM156"
         },
         {
           "id": "sm1-161",
@@ -1134,7 +1285,92 @@
             "tightness": 58,
             "liquidity": 64,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Ultra-Ball-V2-SUM161"
+        },
+        {
+          "id": "sm1-87",
+          "name": "Alolan Dugtrio",
+          "number": "87",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm1/87.png",
+          "price": 0.77,
+          "momentum30": 22.8,
+          "relativeStrength": 24.4,
+          "sellers": 26,
+          "offers": 30,
+          "marketFloor": 0.63,
+          "score": 66,
+          "components": {
+            "relative": 100,
+            "tightness": 35,
+            "liquidity": 100,
+            "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Alolan-Dugtrio-SUM87"
+        },
+        {
+          "id": "sm1-136",
+          "name": "Double Colorless Energy",
+          "number": "136",
+          "rarity": "Uncommon",
+          "image": "https://images.pokemontcg.io/sm1/136.png",
+          "price": 0.64,
+          "momentum30": 14,
+          "relativeStrength": 15.5,
+          "sellers": 28,
+          "offers": 30,
+          "marketFloor": 0.29,
+          "score": 66,
+          "components": {
+            "relative": 89,
+            "tightness": 30,
+            "liquidity": 100,
+            "discount": 42
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Double-Colorless-Energy-V3-SUM136"
+        },
+        {
+          "id": "sm1-101a",
+          "name": "Eevee",
+          "number": "101a",
+          "rarity": "Common",
+          "image": "https://images.pokemontcg.io/sm1/101a.png",
+          "price": 15.59,
+          "momentum30": 8.2,
+          "relativeStrength": 9.8,
+          "sellers": 34,
+          "offers": 35,
+          "marketFloor": 0.11,
+          "score": 65,
+          "components": {
+            "relative": 75,
+            "tightness": 15,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Eevee-V2-SUM101a"
+        },
+        {
+          "id": "sm1-89",
+          "name": "Solgaleo-GX",
+          "number": "89",
+          "rarity": "Rare Holo GX",
+          "image": "https://images.pokemontcg.io/sm1/89.png",
+          "price": 6.66,
+          "momentum30": 20.8,
+          "relativeStrength": 22.3,
+          "sellers": 29,
+          "offers": 29,
+          "marketFloor": 3.27,
+          "score": 64,
+          "components": {
+            "relative": 100,
+            "tightness": 28,
+            "liquidity": 100,
+            "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Solgaleo-GX-V2-SUM89"
         }
       ]
     },
@@ -1144,15 +1380,15 @@
       "era": "Sword & Shield",
       "releaseDate": "2022/11/11",
       "ageYears": 3.7,
-      "score": 47,
+      "score": 56,
       "components": {
         "breadth": 37,
-        "scarcity": 60,
+        "scarcity": 95,
         "psaResistance": 47,
         "spread": 48,
         "maturity": 42
       },
-      "verdict": "Sous surveillance",
+      "verdict": "Diffusion sélective",
       "concentration": 52,
       "cardsTracked": 215,
       "history": {
@@ -1250,6 +1486,14 @@
           "diffusion": 32.1
         }
       },
+      "bestCard": {
+        "name": "Lugia V",
+        "number": "186",
+        "rarity": "Rare Ultra",
+        "price": 387.8,
+        "change30": -6,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Lugia-V-V3-SIT186"
+      },
       "strata": [
         {
           "key": "top5",
@@ -1275,6 +1519,19 @@
             "number": "186",
             "change": -6,
             "share": 0.9
+          }
+        },
+        {
+          "key": "top12ex5",
+          "label": "Top 12 hors Top 5",
+          "growth": 0.97,
+          "cards": 7,
+          "basketValue": 80.29,
+          "driver": {
+            "name": "Serena",
+            "number": "193",
+            "change": 14.7,
+            "share": 1
           }
         },
         {
@@ -1497,18 +1754,20 @@
       ],
       "live": {
         "booster": {
-          "price": 7.89,
-          "floor10": 8.69,
-          "offers": 20,
-          "quantity": 143,
-          "sellers": 18
+          "price": 12.01,
+          "floor10": 12.01,
+          "offers": 3,
+          "quantity": 9,
+          "sellers": 3,
+          "language": "en"
         },
         "boosterBox": {
-          "price": 179.59,
-          "floor10": 300.64,
-          "offers": 17,
-          "quantity": 20,
-          "sellers": 17
+          "price": 390.64,
+          "floor10": 390.64,
+          "offers": 8,
+          "quantity": 8,
+          "sellers": 8,
+          "language": "en"
         },
         "singles": {
           "tracked": 246,
@@ -1518,10 +1777,13 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
-          "boosterPrice": 7.89,
-          "boosterOffers": 20,
-          "boxPrice": 179.59,
-          "singlesOffers": 39084
+          "boosterPrice": 12.01,
+          "boosterOffers": 3,
+          "boxPrice": 390.64,
+          "singlesOffers": 39084,
+          "boosterLanguage": "en",
+          "top5Value": 417.45,
+          "top12ex5Value": 53.55
         }
       ],
       "psa": {
@@ -1557,7 +1819,8 @@
             "tightness": 40,
             "liquidity": 95,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Serena-V2-SIT193"
         },
         {
           "id": "swsh12-189",
@@ -1577,7 +1840,8 @@
             "tightness": 3,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Candice-V2-SIT189"
         },
         {
           "id": "swsh12-34",
@@ -1597,7 +1861,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Alolan-Vulpix-VSTAR-V1-SIT034"
         },
         {
           "id": "swsh12-190",
@@ -1617,7 +1882,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Furisode-Girl-V2-SIT190"
         },
         {
           "id": "swsh12-181",
@@ -1637,7 +1903,8 @@
             "tightness": 10,
             "liquidity": 100,
             "discount": 96
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Skuntank-V-V3-SIT181"
         },
         {
           "id": "swsh12-183",
@@ -1657,7 +1924,8 @@
             "tightness": 28,
             "liquidity": 100,
             "discount": 81
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Regidrago-V-V2-SIT183"
         },
         {
           "id": "swsh12-185",
@@ -1677,7 +1945,8 @@
             "tightness": 8,
             "liquidity": 100,
             "discount": 48
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Lugia-V-V2-SIT185"
         },
         {
           "id": "swsh12-179",
@@ -1697,540 +1966,92 @@
             "tightness": 38,
             "liquidity": 100,
             "discount": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": "fusion-strike",
-      "name": "Poing de Fusion",
-      "era": "Sword & Shield",
-      "releaseDate": "2021/11/12",
-      "ageYears": 4.7,
-      "score": 46,
-      "components": {
-        "breadth": 18,
-        "scarcity": 71,
-        "psaResistance": 48,
-        "spread": 54,
-        "maturity": 53
-      },
-      "verdict": "Hausse non diffusée",
-      "concentration": 46,
-      "cardsTracked": 249,
-      "history": {
-        "points": [
-          {
-            "date": "2025-11-18",
-            "sample": 92,
-            "momentum": 0,
-            "diffusion": 31.5
           },
-          {
-            "date": "2025-11-21",
-            "sample": 46,
-            "momentum": -8.33,
-            "diffusion": 30.4
-          },
-          {
-            "date": "2025-12-07",
-            "sample": 10,
-            "momentum": 3.32,
-            "diffusion": 50
-          },
-          {
-            "date": "2026-01-16",
-            "sample": 19,
-            "momentum": 0,
-            "diffusion": 47.4
-          },
-          {
-            "date": "2026-01-19",
-            "sample": 19,
-            "momentum": 0,
-            "diffusion": 42.1
-          },
-          {
-            "date": "2026-02-19",
-            "sample": 16,
-            "momentum": 0,
-            "diffusion": 43.8
-          },
-          {
-            "date": "2026-03-11",
-            "sample": 9,
-            "momentum": 0,
-            "diffusion": 33.3
-          }
-        ],
-        "window": {
-          "from": "2025-11-18",
-          "to": "2026-03-11"
-        },
-        "path": [
-          {
-            "label": "J-30",
-            "offset": -30,
-            "value": 100
-          },
-          {
-            "label": "J-7",
-            "offset": -7,
-            "value": 100
-          },
-          {
-            "label": "J-1",
-            "offset": -1,
-            "value": 75
-          },
-          {
-            "label": "tendance",
-            "offset": 0,
-            "value": 100
-          }
-        ]
-      },
-      "segments": {
-        "chase": {
-          "cards": 30,
-          "change30": 5.9,
-          "changeMovers": 5.9,
-          "stale": 0,
-          "diffusion": 70
-        },
-        "mid": {
-          "cards": 48,
-          "change30": 0,
-          "changeMovers": 6.7,
-          "stale": 13,
-          "diffusion": 45.8
-        },
-        "commons": {
-          "cards": 171,
-          "change30": 0,
-          "changeMovers": -20,
-          "stale": 31,
-          "diffusion": 25.7
-        }
-      },
-      "strata": [
-        {
-          "key": "top5",
-          "label": "Top 5",
-          "growth": 11.13,
-          "cards": 5,
-          "basketValue": 169.15,
-          "driver": {
-            "name": "Gengar VMAX",
-            "number": "157",
-            "change": 32.8,
-            "share": 0.6
-          }
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Hisuian-Arcanine-V-V2-SIT179"
         },
         {
-          "key": "top12",
-          "label": "Top 12",
-          "growth": 11.09,
-          "cards": 12,
-          "basketValue": 184.61,
-          "driver": {
-            "name": "Gengar VMAX",
-            "number": "157",
-            "change": 32.8,
-            "share": 0.55
-          }
-        },
-        {
-          "key": "top30",
-          "label": "Top 30",
-          "growth": 10.28,
-          "cards": 30,
-          "basketValue": 206.87,
-          "driver": {
-            "name": "Gengar VMAX",
-            "number": "157",
-            "change": 32.8,
-            "share": 0.53
-          }
-        },
-        {
-          "key": "mid",
-          "label": "Intermédiaires",
-          "growth": -0.73,
-          "cards": 48,
-          "basketValue": 9.52,
-          "driver": null
-        },
-        {
-          "key": "commons",
-          "label": "Communes",
-          "growth": -0.84,
-          "cards": 171,
-          "basketValue": 8.29,
-          "driver": null
-        }
-      ],
-      "growthSeries": {
-        "mid": [
-          {
-            "date": "2025-11-15",
-            "sample": 26,
-            "growth": 3.9,
-            "basketValue": 5.06
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 36,
-            "growth": 1.97,
-            "basketValue": 7.26
-          },
-          {
-            "date": "2026-01-15",
-            "sample": 18,
-            "growth": 2.48,
-            "basketValue": 4.95
-          },
-          {
-            "date": "2026-02-15",
-            "sample": 16,
-            "growth": -4.39,
-            "basketValue": 3.7
-          },
-          {
-            "date": "2026-03-15",
-            "sample": 6,
-            "growth": -7.41,
-            "basketValue": 1.5
-          },
-          {
-            "date": "2026-05-15",
-            "sample": 5,
-            "growth": -5.45,
-            "basketValue": 0.52
-          },
-          {
-            "date": "2026-06-15",
-            "sample": 6,
-            "growth": -10.59,
-            "basketValue": 0.76
-          },
-          {
-            "date": "2026-07-15",
-            "sample": 6,
-            "growth": -10.59,
-            "basketValue": 0.76
-          }
-        ],
-        "commons": [
-          {
-            "date": "2025-11-15",
-            "sample": 105,
-            "growth": -7.4,
-            "basketValue": 4.38
-          },
-          {
-            "date": "2025-12-15",
-            "sample": 139,
-            "growth": -3.06,
-            "basketValue": 6.34
-          },
-          {
-            "date": "2026-01-15",
-            "sample": 46,
-            "growth": 11.95,
-            "basketValue": 2.81
-          },
-          {
-            "date": "2026-02-15",
-            "sample": 49,
-            "growth": 11.36,
-            "basketValue": 3.04
-          },
-          {
-            "date": "2026-03-15",
-            "sample": 16,
-            "growth": 18.18,
-            "basketValue": 1.17
-          },
-          {
-            "date": "2026-04-15",
-            "sample": 7,
-            "growth": 11.63,
-            "basketValue": 0.48
-          },
-          {
-            "date": "2026-05-15",
-            "sample": 13,
-            "growth": -8.57,
-            "basketValue": 0.64
-          },
-          {
-            "date": "2026-06-15",
-            "sample": 17,
-            "growth": -3.33,
-            "basketValue": 0.87
-          },
-          {
-            "date": "2026-07-15",
-            "sample": 17,
-            "growth": -3.33,
-            "basketValue": 0.87
-          }
-        ]
-      },
-      "contentValue": [
-        {
-          "date": "2025-11-15",
-          "sample": 148,
-          "growth": 10.1,
-          "basketValue": 197.75
-        },
-        {
-          "date": "2025-12-15",
-          "sample": 196,
-          "growth": 9.67,
-          "basketValue": 207.98
-        },
-        {
-          "date": "2026-01-15",
-          "sample": 74,
-          "growth": 2.75,
-          "basketValue": 22.83
-        },
-        {
-          "date": "2026-02-15",
-          "sample": 73,
-          "growth": 2.56,
-          "basketValue": 18.82
-        },
-        {
-          "date": "2026-03-15",
-          "sample": 26,
-          "growth": 3.46,
-          "basketValue": 8.68
-        },
-        {
-          "date": "2026-05-15",
-          "sample": 22,
-          "growth": 11.42,
-          "basketValue": 6.73
-        },
-        {
-          "date": "2026-06-15",
-          "sample": 28,
-          "growth": 7.13,
-          "basketValue": 8.11
-        },
-        {
-          "date": "2026-07-15",
-          "sample": 28,
-          "growth": 7.13,
-          "basketValue": 8.11
-        }
-      ],
-      "live": {
-        "booster": {
-          "price": 11.92,
-          "floor10": 12.5,
-          "offers": 13,
-          "quantity": 106,
-          "sellers": 13
-        },
-        "boosterBox": {
-          "price": 800.63,
-          "floor10": 800.63,
-          "offers": 8,
-          "quantity": 8,
-          "sellers": 8
-        },
-        "singles": {
-          "tracked": 284,
-          "offers": 35821
-        }
-      },
-      "liveHistory": [
-        {
-          "date": "2026-08-10",
-          "boosterPrice": 11.92,
-          "boosterOffers": 13,
-          "boxPrice": 800.63,
-          "singlesOffers": 35821
-        }
-      ],
-      "psa": {
-        "gemRate": 52,
-        "growth30": 1.7486824789226585,
-        "history": [
-          {
-            "date": "2026-07-11",
-            "total": 166411
-          },
-          {
-            "date": "2026-08-10",
-            "total": 169321
-          }
-        ]
-      },
-      "picks": [
-        {
-          "id": "swsh8-245",
-          "name": "Celebi V",
-          "number": "245",
-          "rarity": "Rare Ultra",
-          "image": "https://images.pokemontcg.io/swsh8/245.png",
-          "price": 99.61,
-          "momentum30": 11.1,
-          "relativeStrength": 11.1,
-          "sellers": 25,
-          "offers": 25,
-          "marketFloor": 74.64,
-          "score": 73,
-          "components": {
-            "relative": 78,
-            "tightness": 38,
-            "liquidity": 100,
-            "discount": 100
-          }
-        },
-        {
-          "id": "swsh8-78",
-          "name": "Inteleon V",
-          "number": "78",
+          "id": "swsh12-33",
+          "name": "Alolan Vulpix V",
+          "number": "33",
           "rarity": "Rare Holo V",
-          "image": "https://images.pokemontcg.io/swsh8/78.png",
-          "price": 0.97,
-          "momentum30": 34,
-          "relativeStrength": 34,
-          "sellers": 76,
-          "offers": 81,
-          "marketFloor": 0.19,
-          "score": 72,
-          "components": {
-            "relative": 100,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          }
-        },
-        {
-          "id": "swsh8-248",
-          "name": "Crabominable V",
-          "number": "248",
-          "rarity": "Rare Ultra",
-          "image": "https://images.pokemontcg.io/swsh8/248.png",
-          "price": 1.83,
-          "momentum30": 37.8,
-          "relativeStrength": 37.8,
-          "sellers": 56,
-          "offers": 61,
-          "marketFloor": 0.65,
-          "score": 72,
-          "components": {
-            "relative": 100,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          }
-        },
-        {
-          "id": "swsh8-156",
-          "name": "Gengar V",
-          "number": "156",
-          "rarity": "Rare Holo V",
-          "image": "https://images.pokemontcg.io/swsh8/156.png",
-          "price": 6.86,
-          "momentum30": 5.6,
-          "relativeStrength": 5.6,
-          "sellers": 24,
-          "offers": 24,
-          "marketFloor": 5.37,
-          "score": 68,
-          "components": {
-            "relative": 64,
-            "tightness": 40,
-            "liquidity": 95,
-            "discount": 100
-          }
-        },
-        {
-          "id": "swsh8-246",
-          "name": "Tsareena V",
-          "number": "246",
-          "rarity": "Rare Ultra",
-          "image": "https://images.pokemontcg.io/swsh8/246.png",
-          "price": 2.39,
-          "momentum30": 22.8,
-          "relativeStrength": 22.8,
-          "sellers": 48,
-          "offers": 51,
-          "marketFloor": 1.55,
-          "score": 68,
-          "components": {
-            "relative": 100,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 73
-          }
-        },
-        {
-          "id": "swsh8-22",
-          "name": "Rillaboom V",
-          "number": "22",
-          "rarity": "Rare Holo V",
-          "image": "https://images.pokemontcg.io/swsh8/22.png",
-          "price": 0.85,
-          "momentum30": 10.2,
-          "relativeStrength": 10.2,
-          "sellers": 83,
-          "offers": 89,
-          "marketFloor": 0.11,
-          "score": 62,
-          "components": {
-            "relative": 75,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          }
-        },
-        {
-          "id": "swsh8-157",
-          "name": "Gengar VMAX",
-          "number": "157",
-          "rarity": "Rare Holo VMAX",
-          "image": "https://images.pokemontcg.io/swsh8/157.png",
-          "price": 27.92,
-          "momentum30": 32.8,
-          "relativeStrength": 32.8,
-          "sellers": 35,
-          "offers": 36,
-          "marketFloor": 30.32,
+          "image": "https://images.pokemontcg.io/swsh12/33.png",
+          "price": 0.96,
+          "momentum30": 9.7,
+          "relativeStrength": 9.7,
+          "sellers": 78,
+          "offers": 90,
+          "marketFloor": 0.34,
           "score": 61,
           "components": {
-            "relative": 100,
-            "tightness": 13,
+            "relative": 74,
+            "tightness": 0,
             "liquidity": 100,
-            "discount": 0
-          }
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Alolan-Vulpix-V-V1-SIT033"
         },
         {
-          "id": "swsh8-86",
-          "name": "Pikachu V",
-          "number": "86",
+          "id": "swsh12-15",
+          "name": "Chesnaught V",
+          "number": "15",
           "rarity": "Rare Holo V",
-          "image": "https://images.pokemontcg.io/swsh8/86.png",
-          "price": 1.74,
-          "momentum30": 5.3,
-          "relativeStrength": 5.3,
-          "sellers": 23,
-          "offers": 23,
-          "marketFloor": 1.3,
+          "image": "https://images.pokemontcg.io/swsh12/15.png",
+          "price": 0.67,
+          "momentum30": 1.4,
+          "relativeStrength": 1.4,
+          "sellers": 30,
+          "offers": 30,
+          "marketFloor": 15.21,
           "score": 60,
           "components": {
-            "relative": 63,
-            "tightness": 43,
-            "liquidity": 91,
-            "discount": 48
-          }
+            "relative": 53,
+            "tightness": 25,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Chesnaught-V-V1-SIT015"
+        },
+        {
+          "id": "swsh12-203",
+          "name": "Brandon",
+          "number": "203",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh12/203.png",
+          "price": 4.59,
+          "momentum30": -1.5,
+          "relativeStrength": -1.5,
+          "sellers": 26,
+          "offers": 28,
+          "marketFloor": 3.79,
+          "score": 60,
+          "components": {
+            "relative": 46,
+            "tightness": 35,
+            "liquidity": 100,
+            "discount": 97
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Brandon-V3-SIT203"
+        },
+        {
+          "id": "swsh12-208",
+          "name": "Wallace",
+          "number": "208",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh12/208.png",
+          "price": 5.02,
+          "momentum30": 5.5,
+          "relativeStrength": 5.5,
+          "sellers": 37,
+          "offers": 38,
+          "marketFloor": 3.1,
+          "score": 59,
+          "components": {
+            "relative": 64,
+            "tightness": 8,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Wallace-V3-SIT209"
         }
       ]
     },
@@ -2240,10 +2061,10 @@
       "era": "Sword & Shield",
       "releaseDate": "2022/02/25",
       "ageYears": 4.5,
-      "score": 41,
+      "score": 53,
       "components": {
         "breadth": 18,
-        "scarcity": 46,
+        "scarcity": 94,
         "psaResistance": 50,
         "spread": 58,
         "maturity": 50
@@ -2346,6 +2167,14 @@
           "diffusion": 29.5
         }
       },
+      "bestCard": {
+        "name": "Charizard V",
+        "number": "154",
+        "rarity": "Rare Ultra",
+        "price": 254.06,
+        "change30": 37,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Charizard-V-V3-BRS154"
+      },
       "strata": [
         {
           "key": "top5",
@@ -2370,6 +2199,19 @@
             "name": "Charizard V",
             "number": "154",
             "change": 37,
+            "share": 1
+          }
+        },
+        {
+          "key": "top12ex5",
+          "label": "Top 12 hors Top 5",
+          "growth": -3.7,
+          "cards": 7,
+          "basketValue": 90.4,
+          "driver": {
+            "name": "Arceus V",
+            "number": "122",
+            "change": 26.8,
             "share": 1
           }
         },
@@ -2581,18 +2423,20 @@
       ],
       "live": {
         "booster": {
-          "price": 6.14,
-          "floor10": 6.51,
-          "offers": 26,
-          "quantity": 224,
-          "sellers": 21
+          "price": 9.99,
+          "floor10": 9.99,
+          "offers": 4,
+          "quantity": 14,
+          "sellers": 4,
+          "language": "en"
         },
         "boosterBox": {
-          "price": 440.54,
+          "price": 460.64,
           "floor10": 460.64,
-          "offers": 11,
-          "quantity": 12,
-          "sellers": 11
+          "offers": 4,
+          "quantity": 4,
+          "sellers": 4,
+          "language": "en"
         },
         "singles": {
           "tracked": 229,
@@ -2602,10 +2446,13 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
-          "boosterPrice": 6.14,
-          "boosterOffers": 26,
-          "boxPrice": 440.54,
-          "singlesOffers": 32073
+          "boosterPrice": 9.99,
+          "boosterOffers": 4,
+          "boxPrice": 460.64,
+          "singlesOffers": 32073,
+          "boosterLanguage": "en",
+          "top5Value": 320.51,
+          "top12ex5Value": 51.35
         }
       ],
       "psa": {
@@ -2641,7 +2488,8 @@
             "tightness": 73,
             "liquidity": 36,
             "discount": 64
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Charizard-V-V3-BRS154"
         },
         {
           "id": "swsh9-16",
@@ -2661,7 +2509,8 @@
             "tightness": 65,
             "liquidity": 50,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Zarude-V-BRS016"
         },
         {
           "id": "swsh9-122",
@@ -2681,7 +2530,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 55
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Arceus-V-V4-BRS122"
         },
         {
           "id": "swsh9-185",
@@ -2701,7 +2551,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 93
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Magma-Basin-V2-BRS185"
         },
         {
           "id": "swsh9-28",
@@ -2721,7 +2572,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Kingler-V-BRS028"
         },
         {
           "id": "swsh9-105",
@@ -2741,7 +2593,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Zamazenta-V-V1-BRS105"
         },
         {
           "id": "swsh9-153",
@@ -2761,7 +2614,8 @@
             "tightness": 50,
             "liquidity": 77,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Charizard-V-V2-BRS153"
         },
         {
           "id": "swsh9-79",
@@ -2781,7 +2635,738 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Lucario-V1-BRS079"
+        },
+        {
+          "id": "swsh9-166",
+          "name": "Arceus V",
+          "number": "166",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh9/166.png",
+          "price": 56.58,
+          "momentum30": 2.7,
+          "relativeStrength": 2.7,
+          "sellers": 24,
+          "offers": 26,
+          "marketFloor": 44.14,
+          "score": 57,
+          "components": {
+            "relative": 57,
+            "tightness": 40,
+            "liquidity": 95,
+            "discount": 46
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Arceus-V-V3-BRS166"
+        },
+        {
+          "id": "swsh9-170",
+          "name": "Kindler",
+          "number": "170",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh9/170.png",
+          "price": 1.53,
+          "momentum30": 5.4,
+          "relativeStrength": 5.4,
+          "sellers": 71,
+          "offers": 74,
+          "marketFloor": 0.7,
+          "score": 57,
+          "components": {
+            "relative": 64,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Kindler-V2-BRS170"
+        },
+        {
+          "id": "swsh9-68",
+          "name": "Mimikyu V",
+          "number": "68",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh9/68.png",
+          "price": 1.15,
+          "momentum30": 12.6,
+          "relativeStrength": 12.6,
+          "sellers": 54,
+          "offers": 55,
+          "marketFloor": 0.31,
+          "score": 56,
+          "components": {
+            "relative": 82,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 50
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Mimikyu-V-V1-BRS068"
+        },
+        {
+          "id": "swsh9-161",
+          "name": "Honchkrow V",
+          "number": "161",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh9/161.png",
+          "price": 1.73,
+          "momentum30": 8.7,
+          "relativeStrength": 8.7,
+          "sellers": 74,
+          "offers": 77,
+          "marketFloor": 0.59,
+          "score": 56,
+          "components": {
+            "relative": 72,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 73
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Honchkrow-V-V2-BRS161"
+        }
+      ]
+    },
+    {
+      "id": "fusion-strike",
+      "name": "Poing de Fusion",
+      "era": "Sword & Shield",
+      "releaseDate": "2021/11/12",
+      "ageYears": 4.7,
+      "score": 52,
+      "components": {
+        "breadth": 18,
+        "scarcity": 93,
+        "psaResistance": 48,
+        "spread": 54,
+        "maturity": 53
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 46,
+      "cardsTracked": 249,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-18",
+            "sample": 92,
+            "momentum": 0,
+            "diffusion": 31.5
+          },
+          {
+            "date": "2025-11-21",
+            "sample": 46,
+            "momentum": -8.33,
+            "diffusion": 30.4
+          },
+          {
+            "date": "2025-12-07",
+            "sample": 10,
+            "momentum": 3.32,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 19,
+            "momentum": 0,
+            "diffusion": 47.4
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 19,
+            "momentum": 0,
+            "diffusion": 42.1
+          },
+          {
+            "date": "2026-02-19",
+            "sample": 16,
+            "momentum": 0,
+            "diffusion": 43.8
+          },
+          {
+            "date": "2026-03-11",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 33.3
           }
+        ],
+        "window": {
+          "from": "2025-11-18",
+          "to": "2026-03-11"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 75
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": 5.9,
+          "changeMovers": 5.9,
+          "stale": 0,
+          "diffusion": 70
+        },
+        "mid": {
+          "cards": 48,
+          "change30": 0,
+          "changeMovers": 6.7,
+          "stale": 13,
+          "diffusion": 45.8
+        },
+        "commons": {
+          "cards": 171,
+          "change30": 0,
+          "changeMovers": -20,
+          "stale": 31,
+          "diffusion": 25.7
+        }
+      },
+      "bestCard": {
+        "name": "Celebi V",
+        "number": "245",
+        "rarity": "Rare Ultra",
+        "price": 99.61,
+        "change30": 11.1,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Celebi-V"
+      },
+      "strata": [
+        {
+          "key": "top5",
+          "label": "Top 5",
+          "growth": 11.13,
+          "cards": 5,
+          "basketValue": 169.15,
+          "driver": {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "change": 32.8,
+            "share": 0.6
+          }
+        },
+        {
+          "key": "top12",
+          "label": "Top 12",
+          "growth": 11.09,
+          "cards": 12,
+          "basketValue": 184.61,
+          "driver": {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "change": 32.8,
+            "share": 0.55
+          }
+        },
+        {
+          "key": "top12ex5",
+          "label": "Top 12 hors Top 5",
+          "growth": 10.67,
+          "cards": 7,
+          "basketValue": 15.46,
+          "driver": null
+        },
+        {
+          "key": "top30",
+          "label": "Top 30",
+          "growth": 10.28,
+          "cards": 30,
+          "basketValue": 206.87,
+          "driver": {
+            "name": "Gengar VMAX",
+            "number": "157",
+            "change": 32.8,
+            "share": 0.53
+          }
+        },
+        {
+          "key": "mid",
+          "label": "Intermédiaires",
+          "growth": -0.73,
+          "cards": 48,
+          "basketValue": 9.52,
+          "driver": null
+        },
+        {
+          "key": "commons",
+          "label": "Communes",
+          "growth": -0.84,
+          "cards": 171,
+          "basketValue": 8.29,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 26,
+            "growth": 3.9,
+            "basketValue": 5.06
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 36,
+            "growth": 1.97,
+            "basketValue": 7.26
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 18,
+            "growth": 2.48,
+            "basketValue": 4.95
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 16,
+            "growth": -4.39,
+            "basketValue": 3.7
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 6,
+            "growth": -7.41,
+            "basketValue": 1.5
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 5,
+            "growth": -5.45,
+            "basketValue": 0.52
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 6,
+            "growth": -10.59,
+            "basketValue": 0.76
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 6,
+            "growth": -10.59,
+            "basketValue": 0.76
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 105,
+            "growth": -7.4,
+            "basketValue": 4.38
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 139,
+            "growth": -3.06,
+            "basketValue": 6.34
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 46,
+            "growth": 11.95,
+            "basketValue": 2.81
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 49,
+            "growth": 11.36,
+            "basketValue": 3.04
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 16,
+            "growth": 18.18,
+            "basketValue": 1.17
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 7,
+            "growth": 11.63,
+            "basketValue": 0.48
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 13,
+            "growth": -8.57,
+            "basketValue": 0.64
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 17,
+            "growth": -3.33,
+            "basketValue": 0.87
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 17,
+            "growth": -3.33,
+            "basketValue": 0.87
+          }
+        ]
+      },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 148,
+          "growth": 10.1,
+          "basketValue": 197.75
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 196,
+          "growth": 9.67,
+          "basketValue": 207.98
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 74,
+          "growth": 2.75,
+          "basketValue": 22.83
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 73,
+          "growth": 2.56,
+          "basketValue": 18.82
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 26,
+          "growth": 3.46,
+          "basketValue": 8.68
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 22,
+          "growth": 11.42,
+          "basketValue": 6.73
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 28,
+          "growth": 7.13,
+          "basketValue": 8.11
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 28,
+          "growth": 7.13,
+          "basketValue": 8.11
+        }
+      ],
+      "live": {
+        "booster": {
+          "price": 28.82,
+          "floor10": 28.82,
+          "offers": 1,
+          "quantity": 42,
+          "sellers": 1,
+          "language": "en"
+        },
+        "boosterBox": {
+          "price": 800.63,
+          "floor10": 800.63,
+          "offers": 4,
+          "quantity": 4,
+          "sellers": 4,
+          "language": "en"
+        },
+        "singles": {
+          "tracked": 284,
+          "offers": 35821
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 28.82,
+          "boosterOffers": 1,
+          "boxPrice": 800.63,
+          "singlesOffers": 35821,
+          "boosterLanguage": "en",
+          "top5Value": 136.3,
+          "top12ex5Value": 11.52
+        }
+      ],
+      "psa": {
+        "gemRate": 52,
+        "growth30": 1.7486824789226585,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 166411
+          },
+          {
+            "date": "2026-08-10",
+            "total": 169321
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "swsh8-245",
+          "name": "Celebi V",
+          "number": "245",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh8/245.png",
+          "price": 99.61,
+          "momentum30": 11.1,
+          "relativeStrength": 11.1,
+          "sellers": 25,
+          "offers": 25,
+          "marketFloor": 74.64,
+          "score": 73,
+          "components": {
+            "relative": 78,
+            "tightness": 38,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Celebi-V"
+        },
+        {
+          "id": "swsh8-78",
+          "name": "Inteleon V",
+          "number": "78",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/78.png",
+          "price": 0.97,
+          "momentum30": 34,
+          "relativeStrength": 34,
+          "sellers": 76,
+          "offers": 81,
+          "marketFloor": 0.19,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Inteleon-V"
+        },
+        {
+          "id": "swsh8-248",
+          "name": "Crabominable V",
+          "number": "248",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh8/248.png",
+          "price": 1.83,
+          "momentum30": 37.8,
+          "relativeStrength": 37.8,
+          "sellers": 56,
+          "offers": 61,
+          "marketFloor": 0.65,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Crabominable-V-V2"
+        },
+        {
+          "id": "swsh8-156",
+          "name": "Gengar V",
+          "number": "156",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/156.png",
+          "price": 6.86,
+          "momentum30": 5.6,
+          "relativeStrength": 5.6,
+          "sellers": 24,
+          "offers": 24,
+          "marketFloor": 5.37,
+          "score": 68,
+          "components": {
+            "relative": 64,
+            "tightness": 40,
+            "liquidity": 95,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Gengar-V"
+        },
+        {
+          "id": "swsh8-246",
+          "name": "Tsareena V",
+          "number": "246",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh8/246.png",
+          "price": 2.39,
+          "momentum30": 22.8,
+          "relativeStrength": 22.8,
+          "sellers": 48,
+          "offers": 51,
+          "marketFloor": 1.55,
+          "score": 68,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 73
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Tsareena-V-V2-FST246"
+        },
+        {
+          "id": "swsh8-22",
+          "name": "Rillaboom V",
+          "number": "22",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/22.png",
+          "price": 0.85,
+          "momentum30": 10.2,
+          "relativeStrength": 10.2,
+          "sellers": 83,
+          "offers": 89,
+          "marketFloor": 0.11,
+          "score": 62,
+          "components": {
+            "relative": 75,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Rillaboom-V"
+        },
+        {
+          "id": "swsh8-157",
+          "name": "Gengar VMAX",
+          "number": "157",
+          "rarity": "Rare Holo VMAX",
+          "image": "https://images.pokemontcg.io/swsh8/157.png",
+          "price": 27.92,
+          "momentum30": 32.8,
+          "relativeStrength": 32.8,
+          "sellers": 35,
+          "offers": 36,
+          "marketFloor": 30.32,
+          "score": 61,
+          "components": {
+            "relative": 100,
+            "tightness": 13,
+            "liquidity": 100,
+            "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Gengar-VMAX-V1"
+        },
+        {
+          "id": "swsh8-86",
+          "name": "Pikachu V",
+          "number": "86",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/86.png",
+          "price": 1.74,
+          "momentum30": 5.3,
+          "relativeStrength": 5.3,
+          "sellers": 23,
+          "offers": 23,
+          "marketFloor": 1.3,
+          "score": 60,
+          "components": {
+            "relative": 63,
+            "tightness": 43,
+            "liquidity": 91,
+            "discount": 48
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Pikachu-V"
+        },
+        {
+          "id": "swsh8-103",
+          "name": "Boltund V",
+          "number": "103",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/103.png",
+          "price": 0.71,
+          "momentum30": 10.5,
+          "relativeStrength": 10.5,
+          "sellers": 74,
+          "offers": 81,
+          "marketFloor": 0.17,
+          "score": 60,
+          "components": {
+            "relative": 76,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 88
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Boltund-V-V1"
+        },
+        {
+          "id": "swsh8-21",
+          "name": "Tsareena V",
+          "number": "21",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/21.png",
+          "price": 1.05,
+          "momentum30": 6.1,
+          "relativeStrength": 6.1,
+          "sellers": 84,
+          "offers": 91,
+          "marketFloor": 0.6,
+          "score": 58,
+          "components": {
+            "relative": 65,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Tsareena-V-V1"
+        },
+        {
+          "id": "swsh8-26",
+          "name": "Appletun V",
+          "number": "26",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/26.png",
+          "price": 1.14,
+          "momentum30": 44.3,
+          "relativeStrength": 44.3,
+          "sellers": 71,
+          "offers": 79,
+          "marketFloor": 0.43,
+          "score": 57,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Appletun-V"
+        },
+        {
+          "id": "swsh8-146",
+          "name": "Lucario V",
+          "number": "146",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/146.png",
+          "price": 1.34,
+          "momentum30": -5.6,
+          "relativeStrength": -5.6,
+          "sellers": 24,
+          "offers": 26,
+          "marketFloor": 1.1,
+          "score": 57,
+          "components": {
+            "relative": 36,
+            "tightness": 40,
+            "liquidity": 95,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Lucario-V"
         }
       ]
     },
@@ -2791,10 +3376,10 @@
       "era": "Sword & Shield",
       "releaseDate": "2022/09/09",
       "ageYears": 3.9,
-      "score": 23,
+      "score": 44,
       "components": {
         "breadth": 5,
-        "scarcity": 5,
+        "scarcity": 90,
         "psaResistance": 51,
         "spread": 39,
         "maturity": 44
@@ -2903,6 +3488,14 @@
           "diffusion": 25.5
         }
       },
+      "bestCard": {
+        "name": "Giratina V",
+        "number": "186",
+        "rarity": "Rare Ultra",
+        "price": 566.41,
+        "change30": -11.5,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Giratina-V-V3-LOR186"
+      },
       "strata": [
         {
           "key": "top5",
@@ -2928,6 +3521,19 @@
             "number": "186",
             "change": -11.5,
             "share": 0.96
+          }
+        },
+        {
+          "key": "top12ex5",
+          "label": "Top 12 hors Top 5",
+          "growth": 2.07,
+          "cards": 7,
+          "basketValue": 58.19,
+          "driver": {
+            "name": "Giratina VSTAR",
+            "number": "212",
+            "change": -20,
+            "share": 1
           }
         },
         {
@@ -3132,18 +3738,20 @@
       ],
       "live": {
         "booster": {
-          "price": 5.79,
-          "floor10": 7.91,
-          "offers": 29,
-          "quantity": 529,
-          "sellers": 26
+          "price": 14.21,
+          "floor10": 14.21,
+          "offers": 3,
+          "quantity": 52,
+          "sellers": 3,
+          "language": "en"
         },
         "boosterBox": {
-          "price": 345.64,
-          "floor10": 350.63,
-          "offers": 14,
-          "quantity": 19,
-          "sellers": 14
+          "price": 501.81,
+          "floor10": 501.81,
+          "offers": 1,
+          "quantity": 1,
+          "sellers": 1,
+          "language": "fr"
         },
         "singles": {
           "tracked": 248,
@@ -3153,10 +3761,13 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
-          "boosterPrice": 5.79,
-          "boosterOffers": 29,
-          "boxPrice": 345.64,
-          "singlesOffers": 37229
+          "boosterPrice": 14.21,
+          "boosterOffers": 3,
+          "boxPrice": 501.81,
+          "singlesOffers": 37229,
+          "boosterLanguage": "en",
+          "top5Value": 760.74,
+          "top12ex5Value": 29.73
         }
       ],
       "psa": {
@@ -3192,7 +3803,8 @@
             "tightness": 30,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Hisuian-Zoroark-VSTAR-V2-LOR203"
         },
         {
           "id": "swsh11-199",
@@ -3212,7 +3824,8 @@
             "tightness": 38,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Aerodactyl-VSTAR-V2-LOR199"
         },
         {
           "id": "swsh11-207",
@@ -3232,7 +3845,8 @@
             "tightness": 15,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Iscan-V3-LOR207"
         },
         {
           "id": "swsh11-70",
@@ -3252,7 +3866,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Sableye-LOR070"
         },
         {
           "id": "swsh11-129",
@@ -3272,7 +3887,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Galarian-Perrserker-V-V1-LOR129"
         },
         {
           "id": "swsh11-209",
@@ -3292,7 +3908,8 @@
             "tightness": 20,
             "liquidity": 100,
             "discount": 100
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Miss-Fortune-Sisters-V3-LOR209"
         },
         {
           "id": "swsh11-210",
@@ -3312,7 +3929,8 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 79
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Thorton-V3-LOR210"
         },
         {
           "id": "swsh11-137",
@@ -3332,7 +3950,92 @@
             "tightness": 0,
             "liquidity": 100,
             "discount": 70
-          }
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Pidgeot-V-V1-LOR137"
+        },
+        {
+          "id": "swsh11-215",
+          "name": "Collapsed Stadium",
+          "number": "215",
+          "rarity": "Rare Secret",
+          "image": "https://images.pokemontcg.io/swsh11/215.png",
+          "price": 3.11,
+          "momentum30": 12.5,
+          "relativeStrength": 12.5,
+          "sellers": 49,
+          "offers": 51,
+          "marketFloor": 1.28,
+          "score": 64,
+          "components": {
+            "relative": 81,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Collapsed-Stadium-LOR215"
+        },
+        {
+          "id": "swsh11-27",
+          "name": "Delphox V",
+          "number": "27",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh11/27.png",
+          "price": 0.64,
+          "momentum30": 5.6,
+          "relativeStrength": 5.6,
+          "sellers": 32,
+          "offers": 32,
+          "marketFloor": 5.09,
+          "score": 63,
+          "components": {
+            "relative": 64,
+            "tightness": 20,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Delphox-V-V1-LOR027"
+        },
+        {
+          "id": "swsh11-131",
+          "name": "Giratina VSTAR",
+          "number": "131",
+          "rarity": "Rare Holo VSTAR",
+          "image": "https://images.pokemontcg.io/swsh11/131.png",
+          "price": 1.67,
+          "momentum30": 16.9,
+          "relativeStrength": 16.9,
+          "sellers": 85,
+          "offers": 91,
+          "marketFloor": 0.19,
+          "score": 63,
+          "components": {
+            "relative": 92,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 66
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Giratina-VSTAR-V1-LOR131"
+        },
+        {
+          "id": "swsh11-66",
+          "name": "Gengar",
+          "number": "66",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/swsh11/66.png",
+          "price": 0.87,
+          "momentum30": 25.8,
+          "relativeStrength": 25.8,
+          "sellers": 33,
+          "offers": 40,
+          "marketFloor": 0.83,
+          "score": 62,
+          "components": {
+            "relative": 100,
+            "tightness": 18,
+            "liquidity": 100,
+            "discount": 0
+          },
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Gengar-V3-LOR066"
         }
       ]
     }
