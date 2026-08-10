@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T20:43:46.703Z",
+  "generatedAt": "2026-08-10T20:55:16.255Z",
   "sets": [
     {
       "id": "burning-shadows",
@@ -842,9 +842,9 @@
         "floor10": 20,
         "median": 69.9,
         "offers": 76,
-        "sellers": 37,
+        "sellers": 36,
         "matched": 76,
-        "scanned": 307
+        "scanned": 306
       },
       "strata": [
         {
@@ -1128,7 +1128,7 @@
           "boosterFRp10": 20,
           "boosterFRmedian": 69.9,
           "boosterFRoffers": 76,
-          "boosterFRsellers": 37
+          "boosterFRsellers": 36
         }
       ],
       "psa": {
@@ -1165,7 +1165,7 @@
             "liquidity": 82,
             "discount": 100
           },
-          "url": null
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Ribombee-SUM93"
         },
         {
           "id": "sm1-82",
@@ -1922,7 +1922,7 @@
             "liquidity": 100,
             "discount": 100
           },
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Silver-Tempest/Furisode-Girl-V2-SIT190"
+          "url": null
         },
         {
           "id": "swsh12-181",
@@ -3565,9 +3565,9 @@
         "price": 2,
         "floor10": 13.99,
         "median": 23.54,
-        "offers": 68,
+        "offers": 67,
         "sellers": 32,
-        "matched": 68,
+        "matched": 67,
         "scanned": 122
       },
       "strata": [
@@ -3844,7 +3844,7 @@
           "top12ex5Value": 29.73,
           "boosterFRp10": 13.99,
           "boosterFRmedian": 23.54,
-          "boosterFRoffers": 68,
+          "boosterFRoffers": 67,
           "boosterFRsellers": 32
         }
       ],
