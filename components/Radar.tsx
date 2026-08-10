@@ -213,7 +213,7 @@ export default function Radar({ data }: { data: RadarData }) {
                     { label: "Set", hint: "", align: "left", sticky: true },
                     { label: "Booster", hint: "le moins cher, neuf", align: "right" },
                     { label: "Offre", hint: "eBay.fr + unités CardTrader", align: "right" },
-                    { label: "Carte phare", hint: "celle qui porte le set", align: "left" },
+                    { label: "Carte-titre", hint: "et sa croissance 30 j", align: "left" },
                     { label: "Rangs 6-15", hint: "croissance 30 j", align: "right" },
                     { label: "Fond du set", hint: "croissance 30 j", align: "right" },
                     { label: "Poids carte n°1", hint: "part de la valeur du set", align: "right" },
@@ -330,6 +330,7 @@ export default function Radar({ data }: { data: RadarData }) {
                       </td>
                       <td className="px-4 py-3 text-left">
                         {set.bestCard ? (
+                          <div className="flex items-start justify-between gap-3">
                           <span className="group relative inline-block">
                             {set.bestCard.url ? (
                               <a
@@ -359,6 +360,12 @@ export default function Radar({ data }: { data: RadarData }) {
                               </span>
                             )}
                           </span>
+                          {/* La croissance 30 j de la carte-titre, en colonne :
+                              lue verticalement, elle révèle les cavaliers seuls. */}
+                          <span className={`tabular whitespace-nowrap pt-0.5 text-[0.84rem] ${toneFor(set.bestCard.change30)}`}>
+                            {pct(set.bestCard.change30)}
+                          </span>
+                          </div>
                         ) : (
                           <span className="text-mist-500">—</span>
                         )}
@@ -398,11 +405,13 @@ export default function Radar({ data }: { data: RadarData }) {
                 </dd>
               </div>
               <div>
-                <dt className="font-medium text-mist-100">Carte phare et poids de la carte n°1</dt>
+                <dt className="font-medium text-mist-100">Carte-titre et poids de la carte n°1</dt>
                 <dd className="m-0 text-mist-300">
-                  La carte la plus chère du set, et la part de la valeur totale qu&apos;elle capte à elle seule.
-                  À 60 %, acheter le set revient surtout à parier sur cette carte-là. Le nom renvoie à sa fiche
-                  Cardmarket en français.
+                  La carte la plus chère du set, sa croissance sur 30 jours, et la part de la valeur totale
+                  qu&apos;elle capte à elle seule. À 60 %, acheter le set revient surtout à parier sur cette carte-là.
+                  Une carte-titre qui monte pendant que les rangs 6-15 stagnent fait cavalier seul — c&apos;est un
+                  pump, pas une demande de set. Le nom renvoie à sa fiche Cardmarket en français ; les sets japonais
+                  n&apos;ont pas cette mesure (pas d&apos;historique Cardmarket).
                 </dd>
               </div>
               <div>
