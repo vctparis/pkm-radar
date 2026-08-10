@@ -71,19 +71,22 @@ async function browse(params, tries = 3) {
 }
 
 function summarize(items) {
-  const prices = items
-    .map((item) => Number(item.price?.value))
-    .filter((value) => value > 0)
-    .sort((a, b) => a - b);
-  if (!prices.length) return { price: null, floor10: null, offers: 0, sellers: 0 };
+  const sorted = items
+    .filter((item) => Number(item.price?.value) > 0)
+    .sort((a, b) => Number(a.price.value) - Number(b.price.value));
+  if (!sorted.length) return { price: null, priceUrl: null, floor10: null, floor10Url: null, median: null, offers: 0, sellers: 0 };
+  const p10 = sorted[Math.floor(sorted.length * 0.1)];
   return {
-    price: prices[0],
+    price: Number(sorted[0].price.value),
+    // Lien vers l'annonce réelle : un prix affiché doit être vérifiable en un clic.
+    priceUrl: sorted[0].itemWebUrl ?? null,
     // Comme pour CardTrader : le 10e centile décrit mieux le prix réellement
     // payable que le plancher brut, manipulable par une annonce fantaisiste.
-    floor10: prices[Math.floor(prices.length * 0.1)],
-    median: prices[Math.floor(prices.length / 2)],
-    offers: prices.length,
-    sellers: new Set(items.map((item) => item.seller?.username).filter(Boolean)).size,
+    floor10: Number(p10.price.value),
+    floor10Url: p10.itemWebUrl ?? null,
+    median: Number(sorted[Math.floor(sorted.length / 2)].price.value),
+    offers: sorted.length,
+    sellers: new Set(sorted.map((item) => item.seller?.username).filter(Boolean)).size,
   };
 }
 
@@ -97,22 +100,27 @@ function summarize(items) {
  * matche à peu près rien ici — puis un filtre de titre pour ce qui reste.
  */
 const NOISE = /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir/i;
+// Le marché des produits japonais vendus en France est pollué par des boosters
+// coréens ou chinois visuellement identiques, et par des cartes à l'unité mal
+// catégorisées en scellé.
+const NOT_JAPANESE = /cor[ée]en|korean|chinois|chinese|carte pok|card\b/i;
 // « 5 Booster Pokémon… » : une quantité ≥ 2 devant « booster » signale un lot,
 // dont le prix ne se compare pas à l'unité.
 const MULTIPACK = /\b([2-9]|\d{2,})\s*boosters?\b/i;
 
-export async function fetchSealedBoosterFR(frenchSetName) {
+export async function fetchSealedBoosterFR(setName, { japanese = false } = {}) {
   const payload = await browse({
-    q: `pokemon booster ${frenchSetName}`,
+    q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
     category_ids: "183456",
     filter: "conditions:{NEW},buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
     limit: "100",
   });
 
-  const needle = frenchSetName.toLowerCase().split(" ")[0];
+  const needle = setName.toLowerCase().split(" ")[0];
   const items = (payload.itemSummaries ?? []).filter((item) => {
     const title = (item.title ?? "").toLowerCase();
     if (NOISE.test(title) || MULTIPACK.test(title)) return false;
+    if (japanese && NOT_JAPANESE.test(title)) return false;
     return title.includes(needle);
   });
 
@@ -132,13 +140,13 @@ export async function fetchSealedBoosterFR(frenchSetName) {
 const SINGLES_CATEGORY = "183454"; // « JCC : cartes à l'unité » sur eBay.fr
 const SINGLES_NOISE = /\blots?\b|au[x]? choix|coffret|display|proxy|fake|custom|métal|metal/i;
 
-export async function fetchCardFR(frenchName, collectorNumber, officialCount) {
+export async function fetchCardFR(cardName, collectorNumber, officialCount, { language = "Français" } = {}) {
   const numberTag = officialCount ? `${collectorNumber}/${officialCount}` : collectorNumber;
   const payload = await browse({
-    q: `${frenchName} ${numberTag}`,
+    q: `${cardName} ${numberTag}`,
     category_ids: SINGLES_CATEGORY,
     filter: "buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
-    aspect_filter: `categoryId:${SINGLES_CATEGORY},Langue:{Français}`,
+    aspect_filter: `categoryId:${SINGLES_CATEGORY},Langue:{${language}}`,
     limit: "50",
   });
 

@@ -226,10 +226,38 @@ export default function Radar({ data }: { data: RadarData }) {
                       <td className="tabular px-4 py-3 text-right text-mist-100">
                         {set.boosterFR?.floor10 != null ? (
                           <>
-                            {eur.format(set.boosterFR.floor10)}
+                            {set.boosterFR.floor10Url ? (
+                              <a
+                                href={set.boosterFR.floor10Url}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
+                              >
+                                {eur.format(set.boosterFR.floor10)}
+                              </a>
+                            ) : (
+                              eur.format(set.boosterFR.floor10)
+                            )}
                             <span className="mt-0.5 block text-[0.72rem] text-mist-500">
-                              dès {set.boosterFR.price != null ? eur.format(set.boosterFR.price) : "—"} · méd.{" "}
-                              {set.boosterFR.median != null ? eur.format(set.boosterFR.median) : "—"} · FR eBay
+                              dès{" "}
+                              {set.boosterFR.priceUrl && set.boosterFR.price != null ? (
+                                <a
+                                  href={set.boosterFR.priceUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="underline decoration-ink-500 underline-offset-2 transition-colors duration-200 hover:decoration-accent"
+                                >
+                                  {eur.format(set.boosterFR.price)}
+                                </a>
+                              ) : set.boosterFR.price != null ? (
+                                eur.format(set.boosterFR.price)
+                              ) : (
+                                "—"
+                              )}{" "}
+                              · méd. {set.boosterFR.median != null ? eur.format(set.boosterFR.median) : "—"} ·{" "}
+                              {set.jpOnly ? "JP" : "FR"} eBay
                             </span>
                           </>
                         ) : set.live?.booster?.price != null ? (
@@ -349,9 +377,11 @@ export default function Radar({ data }: { data: RadarData }) {
                 {active.name}
               </h2>
               <p className="mt-1 text-[0.86rem] text-mist-500">
-                {active.history.window
-                  ? `Historique Cardmarket du ${active.history.window.from} au ${active.history.window.to}`
-                  : "Historique indisponible"}
+                {active.jpOnly
+                  ? "Set japonais sans équivalent occidental — pas de catalogue Cardmarket, donc pas d'historique : mesures live et accumulation quotidienne."
+                  : active.history.window
+                    ? `Historique Cardmarket du ${active.history.window.from} au ${active.history.window.to}`
+                    : "Historique indisponible"}
               </p>
             </div>
             <label className="flex items-center gap-2 text-[0.85rem] text-mist-300">
@@ -372,7 +402,9 @@ export default function Radar({ data }: { data: RadarData }) {
 
           <div className="mt-6 grid gap-5">
             {/* Réponse directe à « de combien monte le haut par rapport au bas ».
-                Une coupe et non une courbe : voir le commentaire dans ingest.mjs. */}
+                Une coupe et non une courbe : voir le commentaire dans ingest.mjs.
+                Les sets japonais n'ont pas cette lecture — pas d'historique. */}
+            {!active.jpOnly && (
             <section className="rounded-2xl bg-ink-850 p-5 ring-1 ring-ink-700/70">
               <h3 className="display m-0 text-[1.05rem] text-mist-050">
                 De combien chaque strate monte-t-elle ?
@@ -384,6 +416,22 @@ export default function Radar({ data }: { data: RadarData }) {
               </p>
               <GrowthBars strata={active.strata} />
             </section>
+            )}
+
+            {/* Note de méthode pour les sets japonais : dire ce qui manque et
+                pourquoi vaut mieux qu'afficher des blocs vides. */}
+            {active.jpOnly && (
+              <section className="rounded-2xl border border-ink-600 p-5">
+                <h3 className="display m-0 text-[1.05rem] text-mist-050">Set japonais — ce que le radar mesure ici</h3>
+                <p className="prose-measure m-0 mt-2 text-[0.86rem] leading-relaxed text-mist-300">
+                  Ce set n&apos;a jamais été tiré en Occident : pas de catalogue Cardmarket, donc ni historique de
+                  croissance, ni strates, ni segments. Le radar mesure ce qui existe — prix demandés et profondeur
+                  d&apos;offre des annonces japonaises sur CardTrader, produits japonais vendus en France sur eBay.fr —
+                  et accumule un relevé par jour. La rareté non diluée par un tirage international est précisément ce
+                  qui rend ces sets intéressants ; la contrepartie est une lecture plus courte.
+                </p>
+              </section>
+            )}
 
             {/* Trois grandeurs d'échelles très différentes (booster ~10 €,
                 Top 5 ~700 €) : elles ne sont comparables qu'indexées sur une
@@ -423,6 +471,7 @@ export default function Radar({ data }: { data: RadarData }) {
                 principal. L'historique commence en novembre 2025 — première
                 date de relevé Cardmarket, aucune source accessible ne remonte
                 plus loin ; le cron l'allonge désormais chaque jour. */}
+            {!active.jpOnly && (
             <LineChart
               title="Croissance dans le temps"
               subtitle={
@@ -474,6 +523,7 @@ export default function Radar({ data }: { data: RadarData }) {
               format={(v) => `${v > 0 ? "+" : ""}${v.toFixed(1)} %`}
               emptyHint="Série insuffisante pour ce set."
             />
+            )}
 
             <div className="grid gap-5">
               {/* Un relevé unique ne fait pas une courbe : tant que la série n'a
@@ -538,7 +588,9 @@ export default function Radar({ data }: { data: RadarData }) {
 
           {/* Le tableau des segments est le cœur du diagnostic : c'est l'écart
               entre le haut et le bas du set qui tranche entre revalorisation
-              structurelle et pump concentré. */}
+              structurelle et pump concentré. Absent pour les sets japonais :
+              pas d'historique Cardmarket, donc rien à segmenter. */}
+          {active.segments && (
           <div className="mt-8 overflow-x-auto rounded-2xl bg-ink-850 p-5 ring-1 ring-ink-700/70">
             <h3 className="display m-0 text-[1.05rem] text-mist-050">La hausse descend-elle dans le set ?</h3>
             <p className="prose-measure mt-1 text-[0.82rem] leading-relaxed text-mist-500">
@@ -563,6 +615,7 @@ export default function Radar({ data }: { data: RadarData }) {
               </tbody>
             </table>
           </div>
+          )}
         </section>
 
         {/* ---- Quelles cartes ---- */}
@@ -590,9 +643,11 @@ export default function Radar({ data }: { data: RadarData }) {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span className="tabular text-[0.72rem] text-mist-500">#{rank + 1}</span>
-                    <span className="tabular rounded-lg bg-ink-700 px-2 py-0.5 text-[0.8rem] font-semibold text-mist-050">
-                      {pick.score}
-                    </span>
+                    {pick.score != null && (
+                      <span className="tabular rounded-lg bg-ink-700 px-2 py-0.5 text-[0.8rem] font-semibold text-mist-050">
+                        {pick.score}
+                      </span>
+                    )}
                   </div>
                   {pick.image && (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -622,12 +677,26 @@ export default function Radar({ data }: { data: RadarData }) {
                     {pick.number} · {pick.rarity}
                   </p>
                   <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-[0.76rem]">
-                    <dt className="text-mist-500">Tendance CM</dt>
+                    {/* Pour un set japonais, le « prix » est un prix demandé
+                        CardTrader (p10) — parfois porté par un seul vendeur.
+                        Le nombre d'annonces à côté permet de jauger. */}
+                    <dt className="text-mist-500">{active.jpOnly ? "Ask CT (jp)" : "Tendance CM"}</dt>
                     <dd className="tabular m-0 text-right text-mist-050">{eur.format(pick.price)}</dd>
-                    <dt className="text-mist-500">Force rel.</dt>
-                    <dd className={`tabular m-0 text-right ${toneFor(pick.relativeStrength)}`}>
-                      {pct(pick.relativeStrength)}
-                    </dd>
+                    {active.jpOnly ? (
+                      <>
+                        <dt className="text-mist-500">Annonces CT</dt>
+                        <dd className="tabular m-0 text-right text-mist-300">
+                          {pick.offers ?? "—"} · {pick.sellers ?? "—"} vend.
+                        </dd>
+                      </>
+                    ) : (
+                      <>
+                        <dt className="text-mist-500">Force rel.</dt>
+                        <dd className={`tabular m-0 text-right ${toneFor(pick.relativeStrength)}`}>
+                          {pct(pick.relativeStrength)}
+                        </dd>
+                      </>
+                    )}
                     {/* Le marché qui compte : annonces françaises réelles sur
                         eBay.fr. Les listings toutes-langues de CardTrader ne
                         sont plus affichés ici — ils brouillaient la lecture. */}

@@ -43,11 +43,17 @@ export async function fetchExpansions() {
   return all.filter((expansion) => expansion.game_id === 5);
 }
 
+// Catalogue complet des blueprints d'une expansion. Chaque blueprint porte
+// un image_url (couverture mesurée : 100 %) — c'est la source d'illustrations
+// des sets japonais, absents de TCGdex.
+export async function fetchBlueprints(expansionId) {
+  return get(`/blueprints/export?expansion_id=${expansionId}`);
+}
+
 // Repère le booster à l'unité et le display d'un set.
 // Plusieurs blueprints peuvent porter le même nom (doublons de catalogue) :
 // on garde le plus ancien identifiant, qui est celui réellement approvisionné.
-export async function resolveSealedBlueprints(expansionId) {
-  const blueprints = await get(`/blueprints/export?expansion_id=${expansionId}`);
+export function pickSealedFrom(blueprints) {
   const pick = (categoryId) =>
     blueprints
       .filter((blueprint) => blueprint.category_id === categoryId)
@@ -57,6 +63,10 @@ export async function resolveSealedBlueprints(expansionId) {
     booster: pick(CATEGORY.booster),
     boosterBox: pick(CATEGORY.boosterBox),
   };
+}
+
+export async function resolveSealedBlueprints(expansionId) {
+  return pickSealedFrom(await fetchBlueprints(expansionId));
 }
 
 // `sealed` : un produit scellé n'a pas de condition (son properties_hash ne

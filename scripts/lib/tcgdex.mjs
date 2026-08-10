@@ -10,13 +10,13 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 
-const BASE = "https://api.tcgdex.net/v2/fr";
+const BASE = "https://api.tcgdex.net/v2";
 const CACHE_DIR = join(process.cwd(), "data", "raw");
 // Le catalogue d'un set clos ne change pas : cache long.
 const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
-export async function fetchFrenchCatalog(tcgdexId, { useCache = true } = {}) {
-  const cachePath = join(CACHE_DIR, `tcgdex-${tcgdexId.replace(/[^a-z0-9.]/gi, "_")}.json`);
+export async function fetchFrenchCatalog(tcgdexId, { useCache = true, lang = "fr" } = {}) {
+  const cachePath = join(CACHE_DIR, `tcgdex-${lang}-${tcgdexId.replace(/[^a-z0-9.]/gi, "_")}.json`);
   if (useCache && existsSync(cachePath)) {
     const raw = JSON.parse(await readFile(cachePath, "utf8"));
     if (Date.now() - raw.cachedAt < CACHE_TTL_MS) return raw.data;
@@ -25,7 +25,7 @@ export async function fetchFrenchCatalog(tcgdexId, { useCache = true } = {}) {
   let lastError;
   for (let attempt = 1; attempt <= 4; attempt++) {
     try {
-      const response = await fetch(`${BASE}/sets/${encodeURIComponent(tcgdexId)}`, {
+      const response = await fetch(`${BASE}/${lang}/sets/${encodeURIComponent(tcgdexId)}`, {
         headers: { Accept: "application/json" },
         signal: AbortSignal.timeout(30_000),
       });

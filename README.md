@@ -18,11 +18,21 @@ le plus facile à fabriquer et le premier à se retourner. Le score combine, dan
 
 ## Sources et ce qu'elles permettent
 
+Le scope linguistique : **cartes françaises en priorité, japonaises quand la série n'existe qu'au Japon**. Les
+autres langues sont exclues des métriques de marché — elles brouillent la mesure. Trois sets japonais sans
+équivalent occidental sont suivis en mode « live seulement » (Tag All Stars, Shiny Star V, VMAX Climax).
+
 | Source | Rôle | Limite |
 |---|---|---|
-| Cardmarket via `pokemontcg.io` | Historique des prix de cartes | S'arrête au 1ᵉʳ juillet 2026 ; API instable (~1 requête sur 3 en erreur, d'où les tentatives multiples) |
-| CardTrader | Prix demandés et profondeur d'offre en direct | **Aucun** endpoint d'historique : la série se construit un relevé par jour |
-| PSA | Population gradée | Pas d'API publique — saisie manuelle dans `data/manual-psa.json` |
+| eBay.fr (Browse, OAuth client credentials) | **Vendeurs réels français** : boosters + chaque pépite, aspect `Langue:Français` (ou `Japonais`), vendeur en France, liens d'annonces | Prix demandés, pas conclus ; plancher brut bruité → p10 et médiane |
+| TCGdex (libre, sans clé) | Catalogue **français** (noms, images) + locale `ja` pour les sets japonais | Pas de prix |
+| Cardmarket via `pokemontcg.io` | Historique des prix de cartes (base des croissances) | S'arrête au 1ᵉʳ juillet 2026 ; toutes langues ; API instable (~1 requête sur 3 en erreur) ; **aucun set japonais** |
+| CardTrader | Profondeur d'offre en direct ; source scellée principale des sets japonais (annonces `jp`) | Marketplace italienne — quasi aucun produit français ; aucun historique |
+| PSA | Population gradée | Pas d'API publique — saisie manuelle dans `data/manual-psa.json`, couvre les 6 sets d'origine |
+
+**Ventes conclues** : la seule source existante est eBay Marketplace Insights (Limited Release, approbation
+business rarement accordée) — candidature possible, rien d'intégré. Vinted et le scraping des ventes terminées
+eBay sont écartés : hors conditions d'utilisation.
 
 ### Ce que la donnée ne permet pas
 

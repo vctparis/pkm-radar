@@ -20,6 +20,8 @@ import { momentumSeries, basketGrowth, basketGrowthSeries, normalizedPath, media
 import {
   fetchExpansions,
   resolveSealedBlueprints,
+  fetchBlueprints,
+  pickSealedFrom,
   fetchBlueprintMarket,
   fetchExpansionSingles,
 } from "./lib/cardtrader.mjs";
@@ -65,6 +67,174 @@ async function loadHistory() {
   }
 }
 
+// Structures vides pour un set sans historique Cardmarket : l'interface les
+// reconnaît et remplace les blocs analytiques par une note d'explication.
+const EMPTY_BUNDLE = { content: [], mid: [], commons: [] };
+
+async function buildJapaneseSet(set, expansionsByCode, history) {
+  // ---- CardTrader : scellé jp + singles + images --------------------------
+  // TCGdex ne référence pas les cartes des sets japonais (coquilles vides) ;
+  // les blueprints CardTrader portent une image_url sur 100 % du catalogue,
+  // c'est donc lui qui fournit les illustrations.
+  let live = null;
+  let singles = [];
+  let imageByNumber = new Map();
+  const expansion = expansionsByCode.get(set.cardtrader.toLowerCase());
+  if (expansion) {
+    try {
+      const blueprints = await fetchBlueprints(expansion.id);
+      imageByNumber = new Map(
+        blueprints
+          .filter((b) => b.category_id === 73 && b.fixed_properties?.collector_number && b.image_url)
+          .map((b) => [normalizeNumber(b.fixed_properties.collector_number), b.image_url]),
+      );
+      const sealed = pickSealedFrom(blueprints);
+      const [booster, boosterBox] = await Promise.all([
+        sealed.booster ? fetchBlueprintMarket(sealed.booster.id, { sealed: true, languages: ["jp"] }) : null,
+        sealed.boosterBox ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: ["jp"] }) : null,
+      ]);
+      const market = await fetchExpansionSingles(expansion.id);
+      singles = [...market.values()].filter((entry) => entry.price != null);
+      live = {
+        booster,
+        boosterBox,
+        singles: { tracked: singles.length, offers: singles.reduce((sum, item) => sum + item.offers, 0) },
+      };
+      log(
+        `${set.name.padEnd(20)} booster ${booster?.price ?? "—"} € (${booster?.language ?? "?"})` +
+          ` · ${singles.length} singles jp suivis`,
+      );
+    } catch (error) {
+      console.warn(`  ${set.name} : couche live indisponible (${error.message})`);
+    }
+  }
+
+  // ---- eBay.fr : booster japonais vendu en France -------------------------
+  let boosterFR = null;
+  if (process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
+    try {
+      boosterFR = await fetchSealedBoosterFR(set.nameEN, { japanese: true });
+      log(`${set.name.padEnd(20)} eBay.fr (jp) p10 ${boosterFR.floor10 ?? "—"} € · ${boosterFR.offers} offres`);
+    } catch (error) {
+      console.warn(`  ${set.name} : eBay.fr indisponible (${error.message})`);
+    }
+  }
+
+  // ---- Pépites : les 12 singles les plus chers, marché FR (annonces jp) ---
+  // Classées et affichées au 10e centile, pas au plancher brut : une annonce
+  // fantaisiste d'un vendeur unique (vu : 10 000 € sur une carte à ~1 500 €)
+  // fausserait tout le haut du classement.
+  const top = [...singles]
+    .filter((entry) => entry.floor10 != null)
+    .sort((a, b) => b.floor10 - a.floor10)
+    .slice(0, 12);
+  const picks = [];
+  for (const entry of top) {
+    let marketFR = null;
+    if (process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET && entry.collectorNumber) {
+      try {
+        marketFR = await fetchCardFR(entry.name, entry.collectorNumber, null, { language: "Japonais" });
+      } catch {
+        // Marché fin : l'absence de résultat est une information, pas une erreur.
+      }
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    picks.push({
+      id: `${set.id}-${entry.collectorNumber ?? entry.name}`,
+      name: entry.name,
+      nameFR: null,
+      number: entry.collectorNumber ?? "—",
+      rarity: entry.rarity ?? "—",
+      image: imageByNumber.get(normalizeNumber(entry.collectorNumber)) ?? null,
+      price: entry.floor10,
+      momentum30: null,
+      relativeStrength: null,
+      sellers: entry.sellers,
+      offers: entry.offers,
+      marketFloor: entry.floor10,
+      score: null,
+      components: null,
+      url: null,
+      marketFR,
+    });
+  }
+
+  const headline = picks[0] ?? null;
+
+  // ---- Accumulation quotidienne -------------------------------------------
+  if (live?.booster?.price != null || boosterFR?.floor10 != null) {
+    const bucket = (history.snapshots[set.id] ??= []);
+    const existing = bucket.find((point) => point.date === TODAY);
+    const point = {
+      date: TODAY,
+      boosterPrice: live?.booster?.price ?? null,
+      boosterOffers: live?.booster?.offers ?? null,
+      boosterLanguage: live?.booster?.language ?? null,
+      boxPrice: live?.boosterBox?.price ?? null,
+      singlesOffers: live?.singles.offers ?? null,
+      top5Value: null,
+      top12ex5Value: null,
+      boosterFRp10: boosterFR?.floor10 ?? null,
+      boosterFRmedian: boosterFR?.median ?? null,
+      boosterFRoffers: boosterFR?.offers ?? null,
+      boosterFRsellers: boosterFR?.sellers ?? null,
+    };
+    if (existing) Object.assign(existing, point);
+    else bucket.push(point);
+    bucket.sort((a, b) => a.date.localeCompare(b.date));
+  }
+
+  const ageYears = set.releaseDate
+    ? (Date.now() - Date.parse(set.releaseDate)) / (365.25 * 24 * 3600 * 1000)
+    : null;
+  const { score, components } = scoreSet({
+    diffusion: null,
+    units: live?.booster?.quantity ?? null,
+    sellers: live?.booster?.sellers ?? null,
+    concentration: null,
+    ageYears: ageYears ?? 0,
+    psaGrowth30: null,
+    gemRate: null,
+  });
+
+  return {
+    id: set.id,
+    name: set.name,
+    nameEN: set.nameEN,
+    era: set.era,
+    jpOnly: true,
+    releaseDate: set.releaseDate,
+    ageYears: ageYears ? Number(ageYears.toFixed(1)) : null,
+    score,
+    components,
+    verdict: "Japonais · mesure partielle",
+    concentration: null,
+    cardsTracked: singles.length,
+    history: { points: [], window: null, path: [] },
+    segments: null,
+    bestCard: headline
+      ? {
+          name: headline.name,
+          nameFR: null,
+          image: headline.image,
+          number: headline.number,
+          rarity: headline.rarity,
+          price: headline.price,
+          change30: null,
+          url: null,
+        }
+      : null,
+    boosterFR,
+    strata: [],
+    growthSeries: { monthly: EMPTY_BUNDLE, quarterly: EMPTY_BUNDLE },
+    contentValue: [],
+    live,
+    liveHistory: history.snapshots[set.id] ?? [],
+    psa: null,
+    picks,
+  };
+}
+
 async function main() {
   console.log(`\nRelevé du ${TODAY}${OFFLINE ? " (mode hors-ligne)" : ""}\n`);
 
@@ -86,6 +256,16 @@ async function main() {
   const output = [];
 
   for (const set of SETS) {
+    // ---- Sets japonais : pipeline dédié -----------------------------------
+    // Pas de catalogue pokemontcg.io (anglais uniquement), donc ni historique
+    // Cardmarket, ni strates, ni croissance. Tout vient du live : CardTrader
+    // (annonces jp) et eBay.fr (produits japonais vendus en France), plus le
+    // catalogue TCGdex en locale ja pour les numéros et illustrations.
+    if (set.jpOnly) {
+      output.push(await buildJapaneseSet(set, expansionsByCode, history));
+      continue;
+    }
+
     const rawCards = await fetchSetCards(set.ptcg);
     const cards = normalizeSet(rawCards);
     if (!cards.length) {

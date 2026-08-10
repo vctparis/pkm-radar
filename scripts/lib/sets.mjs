@@ -21,6 +21,14 @@ export const SETS = [
   { id: "crown-zenith", name: "Zénith Suprême", nameEN: "Crown Zenith", ptcg: "swsh12pt5", tcgdex: "swsh12.5", cardtrader: "CRZ", era: "Épée et Bouclier" },
   { id: "celebrations", name: "Célébrations", nameEN: "Celebrations", ptcg: "cel25", tcgdex: "cel25", cardtrader: "C25", era: "Épée et Bouclier" },
   { id: "s151", name: "151", nameEN: "151", ptcg: "sv3pt5", tcgdex: "sv03.5", cardtrader: "MEW", era: "Écarlate et Violet" },
+
+  // Sets japonais sans équivalent occidental — d'où leur intérêt : la rareté
+  // n'est pas diluée par un tirage international. Pas de données Cardmarket
+  // (catalogue anglais uniquement), donc pas d'historique : mesures live et
+  // accumulation quotidienne seulement. releaseDate posée à la main.
+  { id: "tag-all-stars", name: "Tag All Stars", nameEN: "Tag Team GX: Tag All Stars", jpOnly: true, releaseDate: "2019-10-04", tcgdex: "sm12a", cardtrader: "sm12a", era: "Soleil & Lune (JP)" },
+  { id: "shiny-star-v", name: "Shiny Star V", nameEN: "Shiny Star V", jpOnly: true, releaseDate: "2020-11-20", tcgdex: "s4a", cardtrader: "s4a", era: "Épée et Bouclier (JP)" },
+  { id: "vmax-climax", name: "VMAX Climax", nameEN: "VMAX Climax", jpOnly: true, releaseDate: "2021-12-03", tcgdex: "s8b", cardtrader: "s8b", era: "Épée et Bouclier (JP)" },
 ];
 
 export const bySetId = Object.fromEntries(SETS.map((s) => [s.id, s]));

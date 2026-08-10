@@ -175,6 +175,38 @@
         "boosterFRoffers": 61,
         "boosterFRsellers": 35
       }
+    ],
+    "shiny-star-v": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 30.4,
+        "boosterOffers": 1,
+        "boosterLanguage": "jp",
+        "boxPrice": 150.64,
+        "singlesOffers": 4600,
+        "top5Value": null,
+        "top12ex5Value": null,
+        "boosterFRp10": 15,
+        "boosterFRmedian": 15,
+        "boosterFRoffers": 1,
+        "boosterFRsellers": 1
+      }
+    ],
+    "vmax-climax": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 15.11,
+        "boosterOffers": 2,
+        "boosterLanguage": "jp",
+        "boxPrice": 199.64,
+        "singlesOffers": 5761,
+        "top5Value": null,
+        "top12ex5Value": null,
+        "boosterFRp10": null,
+        "boosterFRmedian": null,
+        "boosterFRoffers": 0,
+        "boosterFRsellers": 0
+      }
     ]
   }
 }

@@ -28,13 +28,13 @@ export type Pick = {
   rarity: string;
   image: string | null;
   price: number;
-  momentum30: number;
-  relativeStrength: number;
+  momentum30: number | null;
+  relativeStrength: number | null;
   sellers: number | null;
   offers: number | null;
   marketFloor: number | null;
-  score: number;
-  components: { relative: number; tightness: number; liquidity: number; discount: number };
+  score: number | null;
+  components: { relative: number; tightness: number; liquidity: number; discount: number } | null;
   url?: string | null;
 };
 
@@ -50,7 +50,9 @@ export type SealedQuote = {
 
 export type FRBoosterQuote = {
   price: number | null;
+  priceUrl?: string | null;
   floor10: number | null;
+  floor10Url?: string | null;
   median?: number | null;
   offers: number;
   sellers: number;
@@ -74,6 +76,7 @@ export type SetEntry = {
   name: string;
   nameEN?: string;
   era: string;
+  jpOnly?: boolean;
   releaseDate: string | null;
   ageYears: number | null;
   score: number;
@@ -86,7 +89,7 @@ export type SetEntry = {
     window: { from: string; to: string } | null;
     path: { label: string; offset: number; value: number }[];
   };
-  segments: { chase: Segment; mid: Segment; commons: Segment };
+  segments: { chase: Segment; mid: Segment; commons: Segment } | null;
   bestCard: BestCard;
   boosterFR: FRBoosterQuote;
   strata: Stratum[];
