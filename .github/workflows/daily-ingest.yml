@@ -1,0 +1,50 @@
+name: Relevé quotidien
+
+# CardTrader n'expose aucun historique : la seule façon d'obtenir une série de
+# prix scellés est d'en relever un point par jour. Le job commite le résultat,
+# ce qui déclenche automatiquement un redéploiement Vercel et laisse une piste
+# d'audit versionnée de chaque relevé.
+
+on:
+  schedule:
+    # 06:12 UTC — décalé de l'heure pile, où les runners GitHub sont saturés
+    # et les démarrages différés de plusieurs dizaines de minutes.
+    - cron: "12 6 * * *"
+  workflow_dispatch:
+
+# Deux relevés simultanés se marcheraient dessus au moment du commit.
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Relever les sources
+        env:
+          CARDTRADER_API_TOKEN: ${{ secrets.CARDTRADER_API_TOKEN }}
+        run: node scripts/ingest.mjs
+
+      - name: Commiter le relevé
+        run: |
+          git config user.name "pkm-radar-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/history.json public/radar-data.json
+          # Sans changement, `git commit` sort en erreur et ferait échouer le
+          # job : une journée sans mouvement de prix est un cas normal.
+          if git diff --staged --quiet; then
+            echo "Aucun changement dans les relevés"
+          else
+            git commit -m "Relevé du $(date -u +%Y-%m-%d)"
+            git push
+          fi

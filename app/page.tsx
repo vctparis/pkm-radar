@@ -1,26 +1,17 @@
-// Internal workspace sites can read the authenticated OpenAI user from the
-// forwarded request headers:
-//
-// import { headers } from "next/headers";
-//
-// export default async function Home() {
-//   const requestHeaders = await headers();
-//   const email = requestHeaders.get("oai-authenticated-user-email");
-//   const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-//   const fullName =
-//     encodedFullName &&
-//     requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-//       "percent-encoded-utf-8"
-//       ? decodeURIComponent(encodedFullName)
-//       : null;
-//   const displayName = fullName ?? email;
-//   // ...
-// }
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import Radar from "@/components/Radar";
+import type { RadarData } from "@/lib/types";
 
-export default function Home() {
-  return (
-    <main className="report-shell">
-      <iframe className="report-frame" src="/report.html" title="Pokémon TCG — Dossier de marché 2026" />
-    </main>
-  );
+// Le fichier est régénéré par le cron d'ingestion puis commité : le lire au
+// rendu plutôt que de l'importer garde la page alignée sur le dernier relevé
+// sans dépendre du moment du build.
+async function loadRadar(): Promise<RadarData> {
+  const raw = await readFile(join(process.cwd(), "public", "radar-data.json"), "utf8");
+  return JSON.parse(raw) as RadarData;
+}
+
+export default async function Page() {
+  const data = await loadRadar();
+  return <Radar data={data} />;
 }

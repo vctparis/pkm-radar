@@ -1,0 +1,58 @@
+{
+  "snapshots": {
+    "sun-moon": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 20.26,
+        "boosterOffers": 5,
+        "boxPrice": 1286.74,
+        "singlesOffers": 9536
+      }
+    ],
+    "burning-shadows": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 8.15,
+        "boosterOffers": 7,
+        "boxPrice": 1299.99,
+        "singlesOffers": 8845
+      }
+    ],
+    "brilliant-stars": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 6.14,
+        "boosterOffers": 26,
+        "boxPrice": 440.54,
+        "singlesOffers": 32073
+      }
+    ],
+    "fusion-strike": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 11.92,
+        "boosterOffers": 13,
+        "boxPrice": 800.63,
+        "singlesOffers": 35821
+      }
+    ],
+    "lost-origin": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 5.79,
+        "boosterOffers": 29,
+        "boxPrice": 345.64,
+        "singlesOffers": 37229
+      }
+    ],
+    "silver-tempest": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 7.89,
+        "boosterOffers": 20,
+        "boxPrice": 179.59,
+        "singlesOffers": 39084
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_comment": "Populations PSA relevées manuellement — l'API PSA n'est pas publique. Reprises du premier snapshot du radar (10 août 2026). À réactualiser à la main : chaque relevé ajouté ici enrichit la série de dilution du grading.",
+  "sun-moon": {
+    "gemRate": 29,
+    "history": [
+      { "date": "2026-07-11", "total": 49426 },
+      { "date": "2026-08-10", "total": 50227 }
+    ]
+  },
+  "burning-shadows": {
+    "gemRate": 20,
+    "history": [
+      { "date": "2026-07-11", "total": 43630 },
+      { "date": "2026-08-10", "total": 43968 }
+    ]
+  },
+  "fusion-strike": {
+    "gemRate": 52,
+    "history": [
+      { "date": "2026-07-11", "total": 166411 },
+      { "date": "2026-08-10", "total": 169321 }
+    ]
+  },
+  "lost-origin": {
+    "gemRate": 43,
+    "history": [
+      { "date": "2026-07-11", "total": 228251 },
+      { "date": "2026-08-10", "total": 232499 }
+    ]
+  },
+  "silver-tempest": {
+    "gemRate": 57,
+    "history": [
+      { "date": "2026-07-11", "total": 233012 },
+      { "date": "2026-08-10", "total": 236854 }
+    ]
+  },
+  "brilliant-stars": {
+    "gemRate": 51,
+    "history": [
+      { "date": "2026-07-11", "total": 279231 },
+      { "date": "2026-08-10", "total": 283850 }
+    ]
+  }
+}

@@ -1,23 +1,235 @@
 @import "tailwindcss";
 
+/*
+  Système de design du radar.
+
+  Neutres froids uniquement (aucun gris chaud mélangé), fond anthracite tinté
+  plutôt que noir pur, et un seul accent d'interface. Les couleurs de séries
+  des graphes sont un encodage de donnée, pas de la décoration : elles sortent
+  d'une palette catégorielle validée (bande de clarté, plancher de chroma,
+  séparation daltonisme all-pairs et contraste ≥ 3:1 sur cette surface).
+*/
+
+@theme {
+  --color-ink-900: #0d0f14;
+  --color-ink-850: #12141a;
+  --color-ink-800: #171a22;
+  --color-ink-700: #1e2230;
+  --color-ink-600: #2a3040;
+  --color-ink-500: #3d4457;
+
+  --color-mist-500: #6b7488;
+  --color-mist-300: #99a1b3;
+  --color-mist-100: #ccd2de;
+  --color-mist-050: #eef1f6;
+
+  --color-accent: #3987e5;
+  --color-accent-soft: #1d3559;
+
+  --color-series-1: #3987e5;
+  --color-series-2: #d95926;
+  --color-series-3: #199e70;
+
+  --color-good: #199e70;
+  --color-warn: #c98500;
+  --color-bad: #e66767;
+
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-data), ui-monospace, monospace;
+}
+
 :root {
-  --background: #0b0d12;
-  --foreground: #edf2f7;
+  color-scheme: dark;
+  --surface: var(--color-ink-900);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-html, body {
+body {
   margin: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--background);
-  color: var(--foreground);
-  overflow: hidden;
+  background: var(--color-ink-900);
+  color: var(--color-mist-050);
+  font-family: var(--font-display);
+  /* Grain très léger : une surface parfaitement plate a un rendu synthétique.
+     Fixé et non cliquable pour ne jamais intercepter un pointeur. */
+  position: relative;
 }
-.report-shell{width:100%;height:100vh;background:#0b0d12}.report-frame{display:block;width:100%;height:100%;border:0}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Les chiffres d'un tableau doivent s'aligner colonne par colonne :
+   sans chasse fixe, une virgule décalée casse la lecture verticale. */
+.tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.display {
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.prose-measure {
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+/* Accessibilité clavier : un anneau visible partout, jamais supprimé. */
+:where(a, button, select, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 50;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: top 180ms ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/*
+  Dossier de recherche : le contenu éditorial provient d'un HTML statique
+  autrefois servi en iframe. Il est réinjecté dans la page, donc stylé ici
+  par ses classes d'origine plutôt que réécrit balise par balise.
+*/
+.dossier {
+  display: grid;
+  gap: 3.5rem;
+  padding-top: 3.5rem;
+}
+.dossier section {
+  scroll-margin-top: 2rem;
+}
+.dossier h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--color-mist-050);
+  margin: 0 0 0.9rem;
+}
+.dossier h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-mist-100);
+  margin: 2rem 0 0.6rem;
+}
+.dossier p,
+.dossier li {
+  max-width: 68ch;
+  font-size: 0.94rem;
+  line-height: 1.72;
+  color: var(--color-mist-300);
+  text-wrap: pretty;
+}
+.dossier p { margin: 0 0 0.9rem; }
+.dossier ul, .dossier ol { margin: 0 0 1rem; padding-left: 1.15rem; }
+.dossier li { margin-bottom: 0.4rem; }
+.dossier strong { color: var(--color-mist-050); font-weight: 600; }
+.dossier a { color: var(--color-accent); text-underline-offset: 3px; }
+.dossier a:hover { color: var(--color-mist-050); }
+
+.dossier .grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+}
+.dossier .card {
+  background: var(--color-ink-850);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: inset 0 0 0 1px rgb(30 34 48 / 0.7);
+}
+.dossier .card.wide { grid-column: 1 / -1; }
+.dossier .card p:last-child { margin-bottom: 0; }
+
+.dossier .note {
+  border-left: 2px solid var(--color-accent);
+  background: rgb(29 53 89 / 0.28);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 1rem 1.15rem;
+}
+.dossier .note.warning {
+  border-left-color: var(--color-warn);
+  background: rgb(201 133 0 / 0.1);
+}
+.dossier .note p:last-child { margin-bottom: 0; }
+
+.dossier .kpi {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  display: block;
+}
+.dossier .kpi.red { color: var(--color-bad); }
+.dossier .label,
+.dossier .muted {
+  font-size: 0.78rem;
+  color: var(--color-mist-500);
+}
+
+.dossier .formula {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  background: var(--color-ink-900);
+  border-radius: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  overflow-x: auto;
+  color: var(--color-mist-100);
+}
+
+.dossier .flow { display: grid; gap: 0.6rem; }
+.dossier .step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  background: var(--color-ink-850);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+/* Un tableau large ne doit jamais élargir la page : il défile dans son cadre. */
+.dossier .tablewrap { overflow-x: auto; border-radius: 0.9rem; box-shadow: inset 0 0 0 1px rgb(30 34 48 / 0.7); }
+.dossier table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 34rem; }
+.dossier th, .dossier td { padding: 0.6rem 0.85rem; text-align: left; }
+.dossier thead th { background: var(--color-ink-800); color: var(--color-mist-300); font-weight: 500; }
+.dossier tbody tr { border-top: 1px solid rgb(30 34 48 / 0.7); }
+.dossier td { color: var(--color-mist-300); }
+
+.dossier .refs { display: grid; gap: 0.5rem; font-size: 0.84rem; }

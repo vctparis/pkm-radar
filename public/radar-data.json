@@ -1,97 +1,2797 @@
 {
-  "generatedAt": "2026-08-10T08:00:00+02:00",
-  "currencyNote": "Booster et offres en EUR/France. Top 5 et communes restent des proxies EN/USD tant que le panier français n'est pas relevé de façon comparable.",
-  "pulseMethod": "30% diffusion + 25% rarete de l'offre + 20% resistance PSA + 15% diversification + 10% maturite. Offre=100-min(100,offres/20). Resistance PSA=0.5*(100-min(100,croissance30j*30))+0.5*(100-gemRate). Diversification=100-concentration Top1/Top5. Maturite=min(100,age en annees/9*100).",
+  "generatedAt": "2026-08-10T18:38:01.638Z",
   "sets": [
-    {
-      "id": "sun-moon",
-      "name": "Soleil & Lune",
-      "year": 2017,
-      "age": "environ 9 ans",
-      "booster": {"trend": 19.18, "minimum": 9, "offers": 419, "history": [{"date": "2026-08-10", "value": 19.18, "offers": 419}]},
-      "top5": {"basket": 231, "history": [{"date": "2026-08-10", "index": 100}]},
-      "commons": {"median": 2.12, "sampleSize": 3, "history": [{"date": "2026-08-10", "index": 100}]},
-      "psa": {"total": 50227, "new30": 801, "growth30": 1.59, "gemRate": 29, "history": [{"date": "2026-07-11", "value": 49426}, {"date": "2026-08-10", "value": 50227}]},
-      "concentration": 37,
-      "diffusion": 88,
-      "pulse": 78,
-      "verdict": "Diffusion large",
-      "reading": "Valeur diversifiée et petites cartes iconiques déjà au-dessus du bulk."
-    },
     {
       "id": "burning-shadows",
       "name": "Ombres Ardentes",
-      "year": 2017,
-      "age": "environ 9 ans",
-      "booster": {"trend": 17.16, "minimum": 12.99, "offers": 310, "history": [{"date": "2026-08-10", "value": 17.16, "offers": 310}]},
-      "top5": {"basket": 467, "history": [{"date": "2026-08-10", "index": 100}]},
-      "commons": {"median": 0.99, "sampleSize": 5, "history": [{"date": "2026-08-10", "index": 100}]},
-      "psa": {"total": 43968, "new30": 338, "growth30": 0.77, "gemRate": 20, "history": [{"date": "2026-07-11", "value": 43630}, {"date": "2026-08-10", "value": 43968}]},
-      "concentration": 57,
-      "diffusion": 82,
-      "pulse": 78,
-      "verdict": "Offre contrainte",
-      "reading": "Sealed rare et flux PSA lent, mais dépendance plus forte à Dracaufeu."
+      "era": "Sun & Moon",
+      "releaseDate": "2017/08/05",
+      "ageYears": 9,
+      "score": 68,
+      "components": {
+        "breadth": 43,
+        "scarcity": 89,
+        "psaResistance": 78,
+        "spread": 47,
+        "maturity": 100
+      },
+      "verdict": "Diffusion sélective",
+      "concentration": 53,
+      "cardsTracked": 177,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-18",
+            "sample": 19,
+            "momentum": -4.32,
+            "diffusion": 21.1
+          },
+          {
+            "date": "2025-11-21",
+            "sample": 37,
+            "momentum": -0.55,
+            "diffusion": 40.5
+          },
+          {
+            "date": "2025-12-07",
+            "sample": 16,
+            "momentum": 0,
+            "diffusion": 37.5
+          },
+          {
+            "date": "2025-12-28",
+            "sample": 8,
+            "momentum": -2.08,
+            "diffusion": 37.5
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 16,
+            "momentum": 0.13,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 12,
+            "momentum": 16.67,
+            "diffusion": 66.7
+          },
+          {
+            "date": "2026-02-19",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-03-11",
+            "sample": 12,
+            "momentum": -5.56,
+            "diffusion": 41.7
+          },
+          {
+            "date": "2026-05-14",
+            "sample": 9,
+            "momentum": -6.25,
+            "diffusion": 11.1
+          },
+          {
+            "date": "2026-07-01",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 44.4
+          }
+        ],
+        "window": {
+          "from": "2025-11-18",
+          "to": "2026-07-01"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 91.21
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": -2.5,
+          "changeMovers": -2.5,
+          "stale": 0,
+          "diffusion": 43.3
+        },
+        "mid": {
+          "cards": 66,
+          "change30": -0.3,
+          "changeMovers": -1.1,
+          "stale": 5,
+          "diffusion": 45.5
+        },
+        "commons": {
+          "cards": 83,
+          "change30": 0,
+          "changeMovers": -9.5,
+          "stale": 20,
+          "diffusion": 37.3
+        }
+      },
+      "segmentSeries": {
+        "chase": [
+          {
+            "date": "2025-11-15",
+            "sample": 26,
+            "momentum": -3.17,
+            "diffusion": 38.5
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 27,
+            "momentum": -2.8,
+            "diffusion": 40.7
+          }
+        ],
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 24,
+            "momentum": -5.12,
+            "diffusion": 29.2
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 44,
+            "momentum": -2.74,
+            "diffusion": 40.9
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 33,
+            "momentum": 8.97,
+            "diffusion": 51.5
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 30,
+            "momentum": 10.78,
+            "diffusion": 60
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 10,
+            "momentum": 17.61,
+            "diffusion": 70
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 9,
+            "momentum": -1.09,
+            "diffusion": 44.4
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 7,
+            "momentum": -1.09,
+            "diffusion": 42.9
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 12,
+            "momentum": -3.67,
+            "diffusion": 41.7
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 8,
+            "momentum": 6.59,
+            "diffusion": 62.5
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 31,
+            "momentum": 0,
+            "diffusion": 38.7
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 48,
+            "momentum": 0,
+            "diffusion": 43.8
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 43,
+            "momentum": 0,
+            "diffusion": 41.9
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 33,
+            "momentum": 0,
+            "diffusion": 36.4
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 16,
+            "momentum": -13.89,
+            "diffusion": 18.8
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 11,
+            "momentum": -14.29,
+            "diffusion": 9.1
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 13,
+            "momentum": 0,
+            "diffusion": 30.8
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 19,
+            "momentum": 0,
+            "diffusion": 36.8
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 14,
+            "momentum": 0,
+            "diffusion": 42.9
+          },
+          {
+            "date": "2026-08-15",
+            "sample": 6,
+            "momentum": 5.56,
+            "diffusion": 50
+          }
+        ]
+      },
+      "live": {
+        "booster": {
+          "price": 8.15,
+          "floor10": 8.15,
+          "offers": 7,
+          "quantity": 24,
+          "sellers": 7
+        },
+        "boosterBox": {
+          "price": 1299.99,
+          "floor10": 1299.99,
+          "offers": 4,
+          "quantity": 5,
+          "sellers": 4
+        },
+        "singles": {
+          "tracked": 169,
+          "offers": 8845
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 8.15,
+          "boosterOffers": 7,
+          "boxPrice": 1299.99,
+          "singlesOffers": 8845
+        }
+      ],
+      "psa": {
+        "gemRate": 20,
+        "growth30": 0.7746963098785198,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 43630
+          },
+          {
+            "date": "2026-08-10",
+            "total": 43968
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "sm3-115",
+          "name": "Guzma",
+          "number": "115",
+          "rarity": "Uncommon",
+          "image": "https://images.pokemontcg.io/sm3/115.png",
+          "price": 2.3,
+          "momentum30": 35.5,
+          "relativeStrength": 35.5,
+          "sellers": 20,
+          "offers": 22,
+          "marketFloor": 0.62,
+          "score": 82,
+          "components": {
+            "relative": 100,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm3-115a",
+          "name": "Guzma",
+          "number": "115a",
+          "rarity": "Uncommon",
+          "image": "https://images.pokemontcg.io/sm3/115a.png",
+          "price": 19.75,
+          "momentum30": 31.7,
+          "relativeStrength": 31.7,
+          "sellers": 20,
+          "offers": 22,
+          "marketFloor": 0.62,
+          "score": 82,
+          "components": {
+            "relative": 100,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm3-80",
+          "name": "Marshadow-GX",
+          "number": "80",
+          "rarity": "Rare Holo GX",
+          "image": "https://images.pokemontcg.io/sm3/80.png",
+          "price": 3.24,
+          "momentum30": 20,
+          "relativeStrength": 20,
+          "sellers": 22,
+          "offers": 23,
+          "marketFloor": 1.18,
+          "score": 81,
+          "components": {
+            "relative": 100,
+            "tightness": 45,
+            "liquidity": 86,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm3-39a",
+          "name": "Tapu Fini-GX",
+          "number": "39a",
+          "rarity": "Rare Holo GX",
+          "image": "https://images.pokemontcg.io/sm3/39a.png",
+          "price": 4.32,
+          "momentum30": 18.6,
+          "relativeStrength": 18.6,
+          "sellers": 23,
+          "offers": 25,
+          "marketFloor": 2.1,
+          "score": 80,
+          "components": {
+            "relative": 96,
+            "tightness": 43,
+            "liquidity": 91,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm3-135",
+          "name": "Machamp-GX",
+          "number": "135",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/sm3/135.png",
+          "price": 6.05,
+          "momentum30": 17.9,
+          "relativeStrength": 17.9,
+          "sellers": 10,
+          "offers": 11,
+          "marketFloor": 6.13,
+          "score": 78,
+          "components": {
+            "relative": 95,
+            "tightness": 75,
+            "liquidity": 32,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm3-156",
+          "name": "Marshadow-GX",
+          "number": "156",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/sm3/156.png",
+          "price": 13.59,
+          "momentum30": 47.3,
+          "relativeStrength": 47.3,
+          "sellers": 7,
+          "offers": 7,
+          "marketFloor": 9.71,
+          "score": 78,
+          "components": {
+            "relative": 100,
+            "tightness": 83,
+            "liquidity": 18,
+            "discount": 76
+          }
+        },
+        {
+          "id": "sm3-99",
+          "name": "Noivern-GX",
+          "number": "99",
+          "rarity": "Rare Holo GX",
+          "image": "https://images.pokemontcg.io/sm3/99.png",
+          "price": 2.21,
+          "momentum30": 13.2,
+          "relativeStrength": 13.2,
+          "sellers": 28,
+          "offers": 30,
+          "marketFloor": 1.58,
+          "score": 73,
+          "components": {
+            "relative": 83,
+            "tightness": 30,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm3-18a",
+          "name": "Charmander",
+          "number": "18a",
+          "rarity": "Common",
+          "image": "https://images.pokemontcg.io/sm3/18a.png",
+          "price": 11.65,
+          "momentum30": 47.5,
+          "relativeStrength": 47.5,
+          "sellers": 58,
+          "offers": 73,
+          "marketFloor": 0.11,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        }
+      ]
     },
     {
-      "id": "fusion-strike",
-      "name": "Poing de Fusion",
-      "year": 2021,
-      "age": "environ 4 ans et 9 mois",
-      "booster": {"trend": 11.14, "minimum": 7.5, "offers": 1670, "history": [{"date": "2026-08-10", "value": 11.14, "offers": 1670}]},
-      "top5": {"basket": 1621, "history": [{"date": "2026-08-10", "index": 100}]},
-      "commons": {"median": 0.76, "sampleSize": 4, "history": [{"date": "2026-08-10", "index": 100}]},
-      "psa": {"total": 169321, "new30": 2910, "growth30": 1.72, "gemRate": 52, "history": [{"date": "2026-07-11", "value": 166411}, {"date": "2026-08-10", "value": 169321}]},
-      "concentration": 56,
-      "diffusion": 26,
-      "pulse": 34,
-      "verdict": "Sommet concentré",
-      "reading": "Ectoplasma porte le marché ; la hausse descend encore peu vers les cartes ordinaires."
-    },
-    {
-      "id": "lost-origin",
-      "name": "Origine Perdue",
-      "year": 2022,
-      "age": "environ 4 ans",
-      "booster": {"trend": 9.36, "minimum": 7, "offers": 1957, "history": [{"date": "2026-08-10", "value": 9.36, "offers": 1957}]},
-      "top5": {"basket": 1215, "history": [{"date": "2026-08-10", "index": 100}]},
-      "commons": {"median": null, "sampleSize": 0, "history": []},
-      "psa": {"total": 232499, "new30": 4248, "growth30": 1.83, "gemRate": 43, "history": [{"date": "2026-07-11", "value": 228251}, {"date": "2026-08-10", "value": 232499}]},
-      "concentration": 63,
-      "diffusion": 48,
-      "pulse": 35,
-      "verdict": "Giratina-dépendant",
-      "reading": "Valeur interne forte, mais concentration élevée et réservoir PSA encore actif."
+      "id": "sun-moon",
+      "name": "Soleil & Lune",
+      "era": "Sun & Moon",
+      "releaseDate": "2017/02/03",
+      "ageYears": 9.5,
+      "score": 58,
+      "components": {
+        "breadth": 5,
+        "scarcity": 83,
+        "psaResistance": 61,
+        "spread": 91,
+        "maturity": 100
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 9,
+      "cardsTracked": 164,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-21",
+            "sample": 26,
+            "momentum": -0.33,
+            "diffusion": 46.2
+          },
+          {
+            "date": "2025-12-07",
+            "sample": 25,
+            "momentum": -12.5,
+            "diffusion": 24
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 25,
+            "momentum": 0,
+            "diffusion": 44
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 8,
+            "momentum": -8.62,
+            "diffusion": 37.5
+          },
+          {
+            "date": "2026-01-21",
+            "sample": 8,
+            "momentum": -1.75,
+            "diffusion": 12.5
+          },
+          {
+            "date": "2026-02-19",
+            "sample": 8,
+            "momentum": -24.04,
+            "diffusion": 25
+          },
+          {
+            "date": "2026-06-27",
+            "sample": 8,
+            "momentum": 8.5,
+            "diffusion": 75
+          },
+          {
+            "date": "2026-07-01",
+            "sample": 11,
+            "momentum": -9.09,
+            "diffusion": 27.3
+          }
+        ],
+        "window": {
+          "from": "2025-11-21",
+          "to": "2026-07-01"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 98.44
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 87.5
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": -3.4,
+          "changeMovers": -3.4,
+          "stale": 0,
+          "diffusion": 33.3
+        },
+        "mid": {
+          "cards": 43,
+          "change30": -6.6,
+          "changeMovers": -7.9,
+          "stale": 5,
+          "diffusion": 40.5
+        },
+        "commons": {
+          "cards": 94,
+          "change30": 0,
+          "changeMovers": -9.5,
+          "stale": 16,
+          "diffusion": 38.7
+        }
+      },
+      "segmentSeries": {
+        "chase": [
+          {
+            "date": "2025-11-15",
+            "sample": 23,
+            "momentum": -3.3,
+            "diffusion": 34.8
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 28,
+            "momentum": -3.4,
+            "diffusion": 35.7
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 7,
+            "momentum": -3.5,
+            "diffusion": 28.6
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 5,
+            "momentum": -3.5,
+            "diffusion": 40
+          }
+        ],
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 10,
+            "momentum": -4.55,
+            "diffusion": 40
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 22,
+            "momentum": -2.87,
+            "diffusion": 40.9
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 24,
+            "momentum": 0,
+            "diffusion": 45.8
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 22,
+            "momentum": -6.62,
+            "diffusion": 36.4
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 10,
+            "momentum": -9.17,
+            "diffusion": 30
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 6,
+            "momentum": -18.63,
+            "diffusion": 16.7
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 6,
+            "momentum": 3.19,
+            "diffusion": 66.7
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 10,
+            "momentum": -3.43,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 7,
+            "momentum": 2.22,
+            "diffusion": 57.1
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 31,
+            "momentum": -1.56,
+            "diffusion": 32.3
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 58,
+            "momentum": 0,
+            "diffusion": 34.5
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 63,
+            "momentum": -11.11,
+            "diffusion": 27
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 44,
+            "momentum": -4.55,
+            "diffusion": 34.1
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 17,
+            "momentum": -16.67,
+            "diffusion": 29.4
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 9,
+            "momentum": 11.11,
+            "diffusion": 55.6
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 11,
+            "momentum": 16.67,
+            "diffusion": 81.8
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 18,
+            "momentum": 11.11,
+            "diffusion": 61.1
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 14,
+            "momentum": 8.33,
+            "diffusion": 57.1
+          },
+          {
+            "date": "2026-08-15",
+            "sample": 7,
+            "momentum": 0,
+            "diffusion": 28.6
+          }
+        ]
+      },
+      "live": {
+        "booster": {
+          "price": 20.26,
+          "floor10": 20.26,
+          "offers": 5,
+          "quantity": 85,
+          "sellers": 5
+        },
+        "boosterBox": {
+          "price": 1286.74,
+          "floor10": 1286.74,
+          "offers": 1,
+          "quantity": 1,
+          "sellers": 1
+        },
+        "singles": {
+          "tracked": 173,
+          "offers": 9536
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 20.26,
+          "boosterOffers": 5,
+          "boxPrice": 1286.74,
+          "singlesOffers": 9536
+        }
+      ],
+      "psa": {
+        "gemRate": 29,
+        "growth30": 1.6206045401205849,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 49426
+          },
+          {
+            "date": "2026-08-10",
+            "total": 50227
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "sm1-93",
+          "name": "Ribombee",
+          "number": "93",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm1/93.png",
+          "price": 0.68,
+          "momentum30": 51.1,
+          "relativeStrength": 52.6,
+          "sellers": 21,
+          "offers": 23,
+          "marketFloor": 0.72,
+          "score": 82,
+          "components": {
+            "relative": 100,
+            "tightness": 48,
+            "liquidity": 82,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-82",
+          "name": "Sharpedo",
+          "number": "82",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm1/82.png",
+          "price": 0.55,
+          "momentum30": 14.3,
+          "relativeStrength": 15.9,
+          "sellers": 20,
+          "offers": 25,
+          "marketFloor": 0.51,
+          "score": 77,
+          "components": {
+            "relative": 90,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-85",
+          "name": "Krookodile",
+          "number": "85",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm1/85.png",
+          "price": 0.76,
+          "momentum30": 54.7,
+          "relativeStrength": 56.3,
+          "sellers": 42,
+          "offers": 51,
+          "marketFloor": 0.25,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-157",
+          "name": "Gumshoos-GX",
+          "number": "157",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/sm1/157.png",
+          "price": 7.64,
+          "momentum30": 9,
+          "relativeStrength": 10.6,
+          "sellers": 20,
+          "offers": 21,
+          "marketFloor": 2.8,
+          "score": 72,
+          "components": {
+            "relative": 76,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-22",
+          "name": "Arcanine",
+          "number": "22",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/sm1/22.png",
+          "price": 2.59,
+          "momentum30": 7.5,
+          "relativeStrength": 9.1,
+          "sellers": 11,
+          "offers": 12,
+          "marketFloor": 1.9,
+          "score": 70,
+          "components": {
+            "relative": 73,
+            "tightness": 73,
+            "liquidity": 36,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-154",
+          "name": "Umbreon-GX",
+          "number": "154",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/sm1/154.png",
+          "price": 40.26,
+          "momentum30": 7.5,
+          "relativeStrength": 9.1,
+          "sellers": 13,
+          "offers": 13,
+          "marketFloor": 24.4,
+          "score": 70,
+          "components": {
+            "relative": 73,
+            "tightness": 68,
+            "liquidity": 45,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-156",
+          "name": "Tauros-GX",
+          "number": "156",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/sm1/156.png",
+          "price": 9.56,
+          "momentum30": 3.7,
+          "relativeStrength": 5.2,
+          "sellers": 18,
+          "offers": 19,
+          "marketFloor": 8.75,
+          "score": 67,
+          "components": {
+            "relative": 63,
+            "tightness": 55,
+            "liquidity": 68,
+            "discount": 100
+          }
+        },
+        {
+          "id": "sm1-161",
+          "name": "Ultra Ball",
+          "number": "161",
+          "rarity": "Rare Secret",
+          "image": "https://images.pokemontcg.io/sm1/161.png",
+          "price": 22.23,
+          "momentum30": 4.1,
+          "relativeStrength": 5.6,
+          "sellers": 17,
+          "offers": 20,
+          "marketFloor": 25.4,
+          "score": 67,
+          "components": {
+            "relative": 64,
+            "tightness": 58,
+            "liquidity": 64,
+            "discount": 100
+          }
+        }
+      ]
     },
     {
       "id": "silver-tempest",
       "name": "Tempête Argentée",
-      "year": 2022,
-      "age": "environ 3 ans et 9 mois",
-      "booster": {"trend": 8.06, "minimum": 4.49, "offers": 1639, "history": [{"date": "2026-08-10", "value": 8.06, "offers": 1639}]},
-      "top5": {"basket": 792, "history": [{"date": "2026-08-10", "index": 100}]},
-      "commons": {"median": 1.65, "sampleSize": 4, "history": [{"date": "2026-08-10", "index": 100}]},
-      "psa": {"total": 236854, "new30": 3842, "growth30": 1.62, "gemRate": 57, "history": [{"date": "2026-07-11", "value": 233012}, {"date": "2026-08-10", "value": 236854}]},
-      "concentration": 62,
-      "diffusion": 57,
-      "pulse": 41,
-      "verdict": "Diffusion sélective",
-      "reading": "Quelques holos et Pokémon iconiques progressent, mais l'offre moderne reste profonde."
+      "era": "Sword & Shield",
+      "releaseDate": "2022/11/11",
+      "ageYears": 3.7,
+      "score": 47,
+      "components": {
+        "breadth": 37,
+        "scarcity": 60,
+        "psaResistance": 47,
+        "spread": 48,
+        "maturity": 42
+      },
+      "verdict": "Sous surveillance",
+      "concentration": 52,
+      "cardsTracked": 215,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-18",
+            "sample": 59,
+            "momentum": 0,
+            "diffusion": 42.4
+          },
+          {
+            "date": "2025-11-21",
+            "sample": 39,
+            "momentum": 0,
+            "diffusion": 35.9
+          },
+          {
+            "date": "2025-11-25",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 21,
+            "momentum": 0,
+            "diffusion": 42.9
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 18,
+            "momentum": 0,
+            "diffusion": 38.9
+          },
+          {
+            "date": "2026-02-01",
+            "sample": 16,
+            "momentum": 0,
+            "diffusion": 31.3
+          },
+          {
+            "date": "2026-07-01",
+            "sample": 12,
+            "momentum": 0,
+            "diffusion": 41.7
+          }
+        ],
+        "window": {
+          "from": "2025-11-18",
+          "to": "2026-07-01"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 86.39
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": -2.8,
+          "changeMovers": -2.8,
+          "stale": 0,
+          "diffusion": 33.3
+        },
+        "mid": {
+          "cards": 76,
+          "change30": 0.2,
+          "changeMovers": 2.2,
+          "stale": 12,
+          "diffusion": 50
+        },
+        "commons": {
+          "cards": 109,
+          "change30": 0,
+          "changeMovers": -20,
+          "stale": 29,
+          "diffusion": 32.1
+        }
+      },
+      "segmentSeries": {
+        "chase": [
+          {
+            "date": "2025-11-15",
+            "sample": 30,
+            "momentum": -2.79,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 30,
+            "momentum": -2.79,
+            "diffusion": 33.3
+          }
+        ],
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 36,
+            "momentum": 2.52,
+            "diffusion": 58.3
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 49,
+            "momentum": 2.15,
+            "diffusion": 55.1
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 25,
+            "momentum": -4.05,
+            "diffusion": 36
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 28,
+            "momentum": -2.03,
+            "diffusion": 39.3
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 15,
+            "momentum": 0,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 9,
+            "momentum": 9.68,
+            "diffusion": 55.6
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 7,
+            "momentum": 0,
+            "diffusion": 42.9
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 12,
+            "momentum": 0.57,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 8,
+            "momentum": 1.27,
+            "diffusion": 62.5
+          },
+          {
+            "date": "2026-08-15",
+            "sample": 5,
+            "momentum": 1.15,
+            "diffusion": 60
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 47,
+            "momentum": 0,
+            "diffusion": 31.9
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 73,
+            "momentum": 0,
+            "diffusion": 34.2
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 49,
+            "momentum": 0,
+            "diffusion": 36.7
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 49,
+            "momentum": 0,
+            "diffusion": 32.7
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 23,
+            "momentum": 0,
+            "diffusion": 26.1
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 8,
+            "momentum": -12.5,
+            "diffusion": 25
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 6,
+            "momentum": 0,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 13,
+            "momentum": 0,
+            "diffusion": 30.8
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 22.2
+          },
+          {
+            "date": "2026-08-15",
+            "sample": 7,
+            "momentum": 0,
+            "diffusion": 28.6
+          }
+        ]
+      },
+      "live": {
+        "booster": {
+          "price": 7.89,
+          "floor10": 8.69,
+          "offers": 20,
+          "quantity": 143,
+          "sellers": 18
+        },
+        "boosterBox": {
+          "price": 179.59,
+          "floor10": 300.64,
+          "offers": 17,
+          "quantity": 20,
+          "sellers": 17
+        },
+        "singles": {
+          "tracked": 246,
+          "offers": 39084
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 7.89,
+          "boosterOffers": 20,
+          "boxPrice": 179.59,
+          "singlesOffers": 39084
+        }
+      ],
+      "psa": {
+        "gemRate": 57,
+        "growth30": 1.6488421197191627,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 233012
+          },
+          {
+            "date": "2026-08-10",
+            "total": 236854
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "swsh12-193",
+          "name": "Serena",
+          "number": "193",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/193.png",
+          "price": 11.27,
+          "momentum30": 14.7,
+          "relativeStrength": 14.7,
+          "sellers": 24,
+          "offers": 24,
+          "marketFloor": 8.96,
+          "score": 76,
+          "components": {
+            "relative": 87,
+            "tightness": 40,
+            "liquidity": 95,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh12-189",
+          "name": "Candice",
+          "number": "189",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/189.png",
+          "price": 7.45,
+          "momentum30": 47.1,
+          "relativeStrength": 47.1,
+          "sellers": 39,
+          "offers": 40,
+          "marketFloor": 3.5,
+          "score": 73,
+          "components": {
+            "relative": 100,
+            "tightness": 3,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh12-34",
+          "name": "Alolan Vulpix VSTAR",
+          "number": "34",
+          "rarity": "Rare Holo VSTAR",
+          "image": "https://images.pokemontcg.io/swsh12/34.png",
+          "price": 1.76,
+          "momentum30": 21.8,
+          "relativeStrength": 21.8,
+          "sellers": 61,
+          "offers": 68,
+          "marketFloor": 0.83,
+          "score": 71,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh12-190",
+          "name": "Furisode Girl",
+          "number": "190",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/190.png",
+          "price": 5.56,
+          "momentum30": 18.6,
+          "relativeStrength": 18.6,
+          "sellers": 49,
+          "offers": 51,
+          "marketFloor": 2.9,
+          "score": 70,
+          "components": {
+            "relative": 97,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh12-181",
+          "name": "Skuntank V",
+          "number": "181",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/181.png",
+          "price": 10.89,
+          "momentum30": 11.9,
+          "relativeStrength": 11.9,
+          "sellers": 36,
+          "offers": 37,
+          "marketFloor": 6.99,
+          "score": 66,
+          "components": {
+            "relative": 80,
+            "tightness": 10,
+            "liquidity": 100,
+            "discount": 96
+          }
+        },
+        {
+          "id": "swsh12-183",
+          "name": "Regidrago V",
+          "number": "183",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/183.png",
+          "price": 2.81,
+          "momentum30": 9.8,
+          "relativeStrength": 9.8,
+          "sellers": 29,
+          "offers": 30,
+          "marketFloor": 1.49,
+          "score": 66,
+          "components": {
+            "relative": 74,
+            "tightness": 28,
+            "liquidity": 100,
+            "discount": 81
+          }
+        },
+        {
+          "id": "swsh12-185",
+          "name": "Lugia V",
+          "number": "185",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/185.png",
+          "price": 19.23,
+          "momentum30": 22.5,
+          "relativeStrength": 22.5,
+          "sellers": 37,
+          "offers": 38,
+          "marketFloor": 7.14,
+          "score": 66,
+          "components": {
+            "relative": 100,
+            "tightness": 8,
+            "liquidity": 100,
+            "discount": 48
+          }
+        },
+        {
+          "id": "swsh12-179",
+          "name": "Hisuian Arcanine V",
+          "number": "179",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh12/179.png",
+          "price": 3.6,
+          "momentum30": 17,
+          "relativeStrength": 17,
+          "sellers": 25,
+          "offers": 26,
+          "marketFloor": 2.08,
+          "score": 64,
+          "components": {
+            "relative": 92,
+            "tightness": 38,
+            "liquidity": 100,
+            "discount": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fusion-strike",
+      "name": "Poing de Fusion",
+      "era": "Sword & Shield",
+      "releaseDate": "2021/11/12",
+      "ageYears": 4.7,
+      "score": 46,
+      "components": {
+        "breadth": 18,
+        "scarcity": 71,
+        "psaResistance": 48,
+        "spread": 54,
+        "maturity": 53
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 46,
+      "cardsTracked": 249,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-18",
+            "sample": 92,
+            "momentum": 0,
+            "diffusion": 31.5
+          },
+          {
+            "date": "2025-11-21",
+            "sample": 46,
+            "momentum": -8.33,
+            "diffusion": 30.4
+          },
+          {
+            "date": "2025-12-07",
+            "sample": 10,
+            "momentum": 3.32,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 19,
+            "momentum": 0,
+            "diffusion": 47.4
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 19,
+            "momentum": 0,
+            "diffusion": 42.1
+          },
+          {
+            "date": "2026-02-19",
+            "sample": 16,
+            "momentum": 0,
+            "diffusion": 43.8
+          },
+          {
+            "date": "2026-03-11",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 33.3
+          }
+        ],
+        "window": {
+          "from": "2025-11-18",
+          "to": "2026-03-11"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 75
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": 5.9,
+          "changeMovers": 5.9,
+          "stale": 0,
+          "diffusion": 70
+        },
+        "mid": {
+          "cards": 48,
+          "change30": 0,
+          "changeMovers": 6.7,
+          "stale": 13,
+          "diffusion": 45.8
+        },
+        "commons": {
+          "cards": 171,
+          "change30": 0,
+          "changeMovers": -20,
+          "stale": 31,
+          "diffusion": 25.7
+        }
+      },
+      "segmentSeries": {
+        "chase": [
+          {
+            "date": "2025-11-15",
+            "sample": 17,
+            "momentum": 5.63,
+            "diffusion": 70.6
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 21,
+            "momentum": 5.63,
+            "diffusion": 71.4
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 10,
+            "momentum": 0.31,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 8,
+            "momentum": 4.53,
+            "diffusion": 62.5
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 4,
+            "momentum": 0.31,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 4,
+            "momentum": 9.28,
+            "diffusion": 100
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 5,
+            "momentum": 8.38,
+            "diffusion": 80
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 5,
+            "momentum": 8.38,
+            "diffusion": 80
+          }
+        ],
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 26,
+            "momentum": 9.17,
+            "diffusion": 61.5
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 36,
+            "momentum": 8.33,
+            "diffusion": 55.6
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 18,
+            "momentum": 4.55,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 16,
+            "momentum": -8.71,
+            "diffusion": 31.3
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 6,
+            "momentum": -10.1,
+            "diffusion": 16.7
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 5,
+            "momentum": 0,
+            "diffusion": 20
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 6,
+            "momentum": -6.67,
+            "diffusion": 16.7
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 6,
+            "momentum": -6.67,
+            "diffusion": 16.7
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 105,
+            "momentum": 0,
+            "diffusion": 19
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 139,
+            "momentum": 0,
+            "diffusion": 23
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 46,
+            "momentum": 0,
+            "diffusion": 37
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 49,
+            "momentum": 0,
+            "diffusion": 38.8
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 16,
+            "momentum": 7.14,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 7,
+            "momentum": 0,
+            "diffusion": 42.9
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 13,
+            "momentum": 0,
+            "diffusion": 23.1
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 17,
+            "momentum": 0,
+            "diffusion": 29.4
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 17,
+            "momentum": 0,
+            "diffusion": 29.4
+          }
+        ]
+      },
+      "live": {
+        "booster": {
+          "price": 11.92,
+          "floor10": 12.5,
+          "offers": 13,
+          "quantity": 106,
+          "sellers": 13
+        },
+        "boosterBox": {
+          "price": 800.63,
+          "floor10": 800.63,
+          "offers": 8,
+          "quantity": 8,
+          "sellers": 8
+        },
+        "singles": {
+          "tracked": 284,
+          "offers": 35821
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 11.92,
+          "boosterOffers": 13,
+          "boxPrice": 800.63,
+          "singlesOffers": 35821
+        }
+      ],
+      "psa": {
+        "gemRate": 52,
+        "growth30": 1.7486824789226585,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 166411
+          },
+          {
+            "date": "2026-08-10",
+            "total": 169321
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "swsh8-245",
+          "name": "Celebi V",
+          "number": "245",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh8/245.png",
+          "price": 99.61,
+          "momentum30": 11.1,
+          "relativeStrength": 11.1,
+          "sellers": 25,
+          "offers": 25,
+          "marketFloor": 74.64,
+          "score": 73,
+          "components": {
+            "relative": 78,
+            "tightness": 38,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh8-78",
+          "name": "Inteleon V",
+          "number": "78",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/78.png",
+          "price": 0.97,
+          "momentum30": 34,
+          "relativeStrength": 34,
+          "sellers": 76,
+          "offers": 81,
+          "marketFloor": 0.19,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh8-248",
+          "name": "Crabominable V",
+          "number": "248",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh8/248.png",
+          "price": 1.83,
+          "momentum30": 37.8,
+          "relativeStrength": 37.8,
+          "sellers": 56,
+          "offers": 61,
+          "marketFloor": 0.65,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh8-156",
+          "name": "Gengar V",
+          "number": "156",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/156.png",
+          "price": 6.86,
+          "momentum30": 5.6,
+          "relativeStrength": 5.6,
+          "sellers": 24,
+          "offers": 24,
+          "marketFloor": 5.37,
+          "score": 68,
+          "components": {
+            "relative": 64,
+            "tightness": 40,
+            "liquidity": 95,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh8-246",
+          "name": "Tsareena V",
+          "number": "246",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh8/246.png",
+          "price": 2.39,
+          "momentum30": 22.8,
+          "relativeStrength": 22.8,
+          "sellers": 48,
+          "offers": 51,
+          "marketFloor": 1.55,
+          "score": 68,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 73
+          }
+        },
+        {
+          "id": "swsh8-22",
+          "name": "Rillaboom V",
+          "number": "22",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/22.png",
+          "price": 0.85,
+          "momentum30": 10.2,
+          "relativeStrength": 10.2,
+          "sellers": 83,
+          "offers": 89,
+          "marketFloor": 0.11,
+          "score": 62,
+          "components": {
+            "relative": 75,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh8-157",
+          "name": "Gengar VMAX",
+          "number": "157",
+          "rarity": "Rare Holo VMAX",
+          "image": "https://images.pokemontcg.io/swsh8/157.png",
+          "price": 27.92,
+          "momentum30": 32.8,
+          "relativeStrength": 32.8,
+          "sellers": 35,
+          "offers": 36,
+          "marketFloor": 30.32,
+          "score": 61,
+          "components": {
+            "relative": 100,
+            "tightness": 13,
+            "liquidity": 100,
+            "discount": 0
+          }
+        },
+        {
+          "id": "swsh8-86",
+          "name": "Pikachu V",
+          "number": "86",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh8/86.png",
+          "price": 1.74,
+          "momentum30": 5.3,
+          "relativeStrength": 5.3,
+          "sellers": 23,
+          "offers": 23,
+          "marketFloor": 1.3,
+          "score": 60,
+          "components": {
+            "relative": 63,
+            "tightness": 43,
+            "liquidity": 91,
+            "discount": 48
+          }
+        }
+      ]
     },
     {
       "id": "brilliant-stars",
       "name": "Stars Étincelantes",
-      "year": 2022,
-      "age": "environ 4 ans et 6 mois",
-      "booster": {"trend": 9.5, "minimum": null, "offers": 1700, "history": [{"date": "2026-08-10", "value": 9.5, "offers": 1700}]},
-      "top5": {"basket": 613, "history": [{"date": "2026-08-10", "index": 100}]},
-      "commons": {"median": null, "sampleSize": 0, "history": []},
-      "psa": {"total": 283850, "new30": 4619, "growth30": 1.63, "gemRate": 51, "history": [{"date": "2026-07-11", "value": 279231}, {"date": "2026-08-10", "value": 283850}]},
-      "concentration": 47,
-      "diffusion": 74,
-      "pulse": 49,
-      "verdict": "Largeur intermédiaire",
-      "reading": "Trainer Gallery très diffuse ; les communes classiques doivent rester un panier séparé."
+      "era": "Sword & Shield",
+      "releaseDate": "2022/02/25",
+      "ageYears": 4.5,
+      "score": 41,
+      "components": {
+        "breadth": 18,
+        "scarcity": 46,
+        "psaResistance": 50,
+        "spread": 58,
+        "maturity": 50
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 42,
+      "cardsTracked": 185,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-18",
+            "sample": 27,
+            "momentum": 0.29,
+            "diffusion": 51.9
+          },
+          {
+            "date": "2025-11-21",
+            "sample": 42,
+            "momentum": -0.18,
+            "diffusion": 31
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 18,
+            "momentum": 0,
+            "diffusion": 22.2
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 13,
+            "momentum": 10,
+            "diffusion": 53.8
+          },
+          {
+            "date": "2026-02-04",
+            "sample": 9,
+            "momentum": 25,
+            "diffusion": 77.8
+          },
+          {
+            "date": "2026-03-11",
+            "sample": 15,
+            "momentum": -20,
+            "diffusion": 26.7
+          },
+          {
+            "date": "2026-07-01",
+            "sample": 12,
+            "momentum": 0,
+            "diffusion": 33.3
+          }
+        ],
+        "window": {
+          "from": "2025-11-18",
+          "to": "2026-07-01"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 91.53
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": -2.8,
+          "changeMovers": -2.8,
+          "stale": 0,
+          "diffusion": 36.7
+        },
+        "mid": {
+          "cards": 67,
+          "change30": 0,
+          "changeMovers": -1.4,
+          "stale": 6,
+          "diffusion": 46.3
+        },
+        "commons": {
+          "cards": 88,
+          "change30": 0,
+          "changeMovers": -20,
+          "stale": 35,
+          "diffusion": 29.5
+        }
+      },
+      "segmentSeries": {
+        "chase": [
+          {
+            "date": "2025-11-15",
+            "sample": 28,
+            "momentum": -2.55,
+            "diffusion": 39.3
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 28,
+            "momentum": -2.55,
+            "diffusion": 39.3
+          }
+        ],
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 23,
+            "momentum": 1.7,
+            "diffusion": 56.5
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 40,
+            "momentum": 1.47,
+            "diffusion": 52.5
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 34,
+            "momentum": 0,
+            "diffusion": 47.1
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 34,
+            "momentum": -0.72,
+            "diffusion": 41.2
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 18,
+            "momentum": 0,
+            "diffusion": 38.9
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 9,
+            "momentum": -4.05,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 6,
+            "momentum": -5.71,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 9,
+            "momentum": -6.67,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 7,
+            "momentum": -6.67,
+            "diffusion": 42.9
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 35,
+            "momentum": 0,
+            "diffusion": 28.6
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 55,
+            "momentum": 0,
+            "diffusion": 29.1
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 38,
+            "momentum": 0,
+            "diffusion": 34.2
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 41,
+            "momentum": 0,
+            "diffusion": 34.1
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 23,
+            "momentum": 0,
+            "diffusion": 34.8
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 11,
+            "momentum": -25,
+            "diffusion": 18.2
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 10,
+            "momentum": 0,
+            "diffusion": 20
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 10,
+            "momentum": 0,
+            "diffusion": 20
+          },
+          {
+            "date": "2026-08-15",
+            "sample": 8,
+            "momentum": 0,
+            "diffusion": 25
+          }
+        ]
+      },
+      "live": {
+        "booster": {
+          "price": 6.14,
+          "floor10": 6.51,
+          "offers": 26,
+          "quantity": 224,
+          "sellers": 21
+        },
+        "boosterBox": {
+          "price": 440.54,
+          "floor10": 460.64,
+          "offers": 11,
+          "quantity": 12,
+          "sellers": 11
+        },
+        "singles": {
+          "tracked": 229,
+          "offers": 32073
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 6.14,
+          "boosterOffers": 26,
+          "boxPrice": 440.54,
+          "singlesOffers": 32073
+        }
+      ],
+      "psa": {
+        "gemRate": 51,
+        "growth30": 1.6541859607278608,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 279231
+          },
+          {
+            "date": "2026-08-10",
+            "total": 283850
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "swsh9-154",
+          "name": "Charizard V",
+          "number": "154",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh9/154.png",
+          "price": 254.06,
+          "momentum30": 37,
+          "relativeStrength": 37,
+          "sellers": 11,
+          "offers": 12,
+          "marketFloor": 220.63,
+          "score": 76,
+          "components": {
+            "relative": 100,
+            "tightness": 73,
+            "liquidity": 36,
+            "discount": 64
+          }
+        },
+        {
+          "id": "swsh9-16",
+          "name": "Zarude V",
+          "number": "16",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh9/16.png",
+          "price": 0.68,
+          "momentum30": 3.7,
+          "relativeStrength": 3.7,
+          "sellers": 14,
+          "offers": 14,
+          "marketFloor": 24.4,
+          "score": 65,
+          "components": {
+            "relative": 59,
+            "tightness": 65,
+            "liquidity": 50,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh9-122",
+          "name": "Arceus V",
+          "number": "122",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh9/122.png",
+          "price": 14.65,
+          "momentum30": 26.8,
+          "relativeStrength": 26.8,
+          "sellers": 47,
+          "offers": 49,
+          "marketFloor": 0.41,
+          "score": 65,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 55
+          }
+        },
+        {
+          "id": "swsh9-185",
+          "name": "Magma Basin",
+          "number": "185",
+          "rarity": "Rare Secret",
+          "image": "https://images.pokemontcg.io/swsh9/185.png",
+          "price": 3.95,
+          "momentum30": 12.7,
+          "relativeStrength": 12.7,
+          "sellers": 56,
+          "offers": 60,
+          "marketFloor": 0.49,
+          "score": 63,
+          "components": {
+            "relative": 82,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 93
+          }
+        },
+        {
+          "id": "swsh9-28",
+          "name": "Kingler V",
+          "number": "28",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh9/28.png",
+          "price": 0.89,
+          "momentum30": 10.8,
+          "relativeStrength": 10.8,
+          "sellers": 69,
+          "offers": 73,
+          "marketFloor": 0.94,
+          "score": 62,
+          "components": {
+            "relative": 77,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh9-105",
+          "name": "Zamazenta V",
+          "number": "105",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh9/105.png",
+          "price": 1.1,
+          "momentum30": 10.1,
+          "relativeStrength": 10.1,
+          "sellers": 89,
+          "offers": 95,
+          "marketFloor": 0.45,
+          "score": 62,
+          "components": {
+            "relative": 75,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh9-153",
+          "name": "Charizard V",
+          "number": "153",
+          "rarity": "Rare Ultra",
+          "image": "https://images.pokemontcg.io/swsh9/153.png",
+          "price": 19.09,
+          "momentum30": -0.4,
+          "relativeStrength": -0.4,
+          "sellers": 20,
+          "offers": 20,
+          "marketFloor": 20.27,
+          "score": 62,
+          "components": {
+            "relative": 49,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh9-79",
+          "name": "Lucario",
+          "number": "79",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/swsh9/79.png",
+          "price": 0.5,
+          "momentum30": 27.6,
+          "relativeStrength": 27.6,
+          "sellers": 88,
+          "offers": 106,
+          "marketFloor": 0.11,
+          "score": 57,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "lost-origin",
+      "name": "Origine Perdue",
+      "era": "Sword & Shield",
+      "releaseDate": "2022/09/09",
+      "ageYears": 3.9,
+      "score": 23,
+      "components": {
+        "breadth": 5,
+        "scarcity": 5,
+        "psaResistance": 51,
+        "spread": 39,
+        "maturity": 44
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 61,
+      "cardsTracked": 217,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-18",
+            "sample": 55,
+            "momentum": 0,
+            "diffusion": 47.3
+          },
+          {
+            "date": "2025-11-21",
+            "sample": 41,
+            "momentum": 0,
+            "diffusion": 46.3
+          },
+          {
+            "date": "2025-12-07",
+            "sample": 13,
+            "momentum": 0,
+            "diffusion": 23.1
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 21,
+            "momentum": 0,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 33.3
+          },
+          {
+            "date": "2026-01-21",
+            "sample": 13,
+            "momentum": -6.25,
+            "diffusion": 30.8
+          },
+          {
+            "date": "2026-02-21",
+            "sample": 11,
+            "momentum": 0,
+            "diffusion": 27.3
+          },
+          {
+            "date": "2026-03-11",
+            "sample": 11,
+            "momentum": 0,
+            "diffusion": 27.3
+          }
+        ],
+        "window": {
+          "from": "2025-11-18",
+          "to": "2026-03-11"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 88.69
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": 1.4,
+          "changeMovers": 1.4,
+          "stale": 0,
+          "diffusion": 53.3
+        },
+        "mid": {
+          "cards": 88,
+          "change30": 0,
+          "changeMovers": -1.1,
+          "stale": 7,
+          "diffusion": 45.5
+        },
+        "commons": {
+          "cards": 99,
+          "change30": 0,
+          "changeMovers": 1.2,
+          "stale": 49,
+          "diffusion": 25.5
+        }
+      },
+      "segmentSeries": {
+        "chase": [
+          {
+            "date": "2025-11-15",
+            "sample": 30,
+            "momentum": 1.39,
+            "diffusion": 53.3
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 30,
+            "momentum": 1.39,
+            "diffusion": 53.3
+          }
+        ],
+        "mid": [
+          {
+            "date": "2025-11-15",
+            "sample": 43,
+            "momentum": -0.93,
+            "diffusion": 41.9
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 67,
+            "momentum": 0,
+            "diffusion": 43.3
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 35,
+            "momentum": 0,
+            "diffusion": 48.6
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 35,
+            "momentum": 0,
+            "diffusion": 48.6
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 11,
+            "momentum": 5.26,
+            "diffusion": 54.5
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 9,
+            "momentum": 5.63,
+            "diffusion": 66.7
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 8,
+            "momentum": 8.37,
+            "diffusion": 62.5
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 10,
+            "momentum": 0.44,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 5,
+            "momentum": -16.67,
+            "diffusion": 40
+          }
+        ],
+        "commons": [
+          {
+            "date": "2025-11-15",
+            "sample": 44,
+            "momentum": 0,
+            "diffusion": 34.1
+          },
+          {
+            "date": "2025-12-15",
+            "sample": 64,
+            "momentum": 0,
+            "diffusion": 28.1
+          },
+          {
+            "date": "2026-01-15",
+            "sample": 41,
+            "momentum": 0,
+            "diffusion": 12.2
+          },
+          {
+            "date": "2026-02-15",
+            "sample": 37,
+            "momentum": 0,
+            "diffusion": 13.5
+          },
+          {
+            "date": "2026-03-15",
+            "sample": 17,
+            "momentum": 0,
+            "diffusion": 11.8
+          },
+          {
+            "date": "2026-04-15",
+            "sample": 14,
+            "momentum": 0,
+            "diffusion": 14.3
+          },
+          {
+            "date": "2026-05-15",
+            "sample": 12,
+            "momentum": 0,
+            "diffusion": 25
+          },
+          {
+            "date": "2026-06-15",
+            "sample": 17,
+            "momentum": 0,
+            "diffusion": 29.4
+          },
+          {
+            "date": "2026-07-15",
+            "sample": 10,
+            "momentum": 0,
+            "diffusion": 30
+          }
+        ]
+      },
+      "live": {
+        "booster": {
+          "price": 5.79,
+          "floor10": 7.91,
+          "offers": 29,
+          "quantity": 529,
+          "sellers": 26
+        },
+        "boosterBox": {
+          "price": 345.64,
+          "floor10": 350.63,
+          "offers": 14,
+          "quantity": 19,
+          "sellers": 14
+        },
+        "singles": {
+          "tracked": 248,
+          "offers": 37229
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 5.79,
+          "boosterOffers": 29,
+          "boxPrice": 345.64,
+          "singlesOffers": 37229
+        }
+      ],
+      "psa": {
+        "gemRate": 43,
+        "growth30": 1.8611090422385956,
+        "history": [
+          {
+            "date": "2026-07-11",
+            "total": 228251
+          },
+          {
+            "date": "2026-08-10",
+            "total": 232499
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "swsh11-203",
+          "name": "Hisuian Zoroark VSTAR",
+          "number": "203",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh11/203.png",
+          "price": 7.74,
+          "momentum30": 26.1,
+          "relativeStrength": 26.1,
+          "sellers": 28,
+          "offers": 28,
+          "marketFloor": 2.9,
+          "score": 80,
+          "components": {
+            "relative": 100,
+            "tightness": 30,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh11-199",
+          "name": "Aerodactyl VSTAR",
+          "number": "199",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh11/199.png",
+          "price": 10.37,
+          "momentum30": 14.3,
+          "relativeStrength": 14.3,
+          "sellers": 25,
+          "offers": 27,
+          "marketFloor": 6.14,
+          "score": 76,
+          "components": {
+            "relative": 86,
+            "tightness": 38,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh11-207",
+          "name": "Iscan",
+          "number": "207",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh11/207.png",
+          "price": 4.14,
+          "momentum30": 25.2,
+          "relativeStrength": 25.2,
+          "sellers": 34,
+          "offers": 34,
+          "marketFloor": 1.58,
+          "score": 76,
+          "components": {
+            "relative": 100,
+            "tightness": 15,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh11-70",
+          "name": "Sableye",
+          "number": "70",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/swsh11/70.png",
+          "price": 0.42,
+          "momentum30": 22.9,
+          "relativeStrength": 22.9,
+          "sellers": 69,
+          "offers": 86,
+          "marketFloor": 0.11,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh11-129",
+          "name": "Galarian Perrserker V",
+          "number": "129",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh11/129.png",
+          "price": 0.64,
+          "momentum30": 23.4,
+          "relativeStrength": 23.4,
+          "sellers": 138,
+          "offers": 150,
+          "marketFloor": 0.11,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh11-209",
+          "name": "Miss Fortune Sisters",
+          "number": "209",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh11/209.png",
+          "price": 4.05,
+          "momentum30": 12.1,
+          "relativeStrength": 12.1,
+          "sellers": 32,
+          "offers": 32,
+          "marketFloor": 2.5,
+          "score": 69,
+          "components": {
+            "relative": 80,
+            "tightness": 20,
+            "liquidity": 100,
+            "discount": 100
+          }
+        },
+        {
+          "id": "swsh11-210",
+          "name": "Thorton",
+          "number": "210",
+          "rarity": "Rare Rainbow",
+          "image": "https://images.pokemontcg.io/swsh11/210.png",
+          "price": 3.32,
+          "momentum30": 21.3,
+          "relativeStrength": 21.3,
+          "sellers": 57,
+          "offers": 60,
+          "marketFloor": 2.19,
+          "score": 68,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 79
+          }
+        },
+        {
+          "id": "swsh11-137",
+          "name": "Pidgeot V",
+          "number": "137",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh11/137.png",
+          "price": 0.77,
+          "momentum30": 17.1,
+          "relativeStrength": 17.1,
+          "sellers": 97,
+          "offers": 101,
+          "marketFloor": 0.23,
+          "score": 64,
+          "components": {
+            "relative": 93,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 70
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "cardmarket",
+      "label": "Cardmarket via pokemontcg.io",
+      "role": "Historique des prix de cartes",
+      "note": "Moyennes glissantes avg30 / avg7 / avg1 rattachées à la date de relevé de chaque carte."
+    },
+    {
+      "id": "cardtrader",
+      "label": "CardTrader",
+      "role": "Prix demandés et profondeur d'offre en temps réel",
+      "note": "Aucun historique côté API : la série se construit un relevé par jour."
+    },
+    {
+      "id": "psa",
+      "label": "PSA (relevé manuel)",
+      "role": "Population gradée",
+      "note": "Pas d'API publique. Les points sont saisis à la main dans data/manual-psa.json."
     }
   ]
 }
