@@ -119,6 +119,40 @@ export async function fetchSealedBoosterFR(frenchSetName) {
   return { ...summarize(items), matched: items.length, scanned: payload.total ?? 0 };
 }
 
+/**
+ * Marché français d'UNE carte sur eBay.fr — les vendeurs réels.
+ *
+ * La requête « {nom français} {numéro}/{total} » est très discriminante : le
+ * numéro de collection est unique dans le set et les vendeurs français
+ * l'écrivent systématiquement dans leurs titres. L'aspect Langue:Français
+ * fait le tri des versions étrangères, et le filtre de titre écarte les
+ * annonces « au choix » des boutiques (leur prix ne décrit pas cette carte)
+ * ainsi que les lots.
+ */
+const SINGLES_CATEGORY = "183454"; // « JCC : cartes à l'unité » sur eBay.fr
+const SINGLES_NOISE = /\blots?\b|au[x]? choix|coffret|display|proxy|fake|custom|métal|metal/i;
+
+export async function fetchCardFR(frenchName, collectorNumber, officialCount) {
+  const numberTag = officialCount ? `${collectorNumber}/${officialCount}` : collectorNumber;
+  const payload = await browse({
+    q: `${frenchName} ${numberTag}`,
+    category_ids: SINGLES_CATEGORY,
+    filter: "buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
+    aspect_filter: `categoryId:${SINGLES_CATEGORY},Langue:{Français}`,
+    limit: "50",
+  });
+
+  const items = (payload.itemSummaries ?? []).filter((item) => {
+    const title = (item.title ?? "") .toLowerCase();
+    if (SINGLES_NOISE.test(title)) return false;
+    // Le numéro de collection doit apparaître : sans lui, on ne sait pas si
+    // l'annonce décrit cette carte ou une autre du même Pokémon.
+    return title.includes(String(collectorNumber).toLowerCase());
+  });
+
+  return { ...summarize(items), matched: items.length, scanned: payload.total ?? 0 };
+}
+
 // Test de bout en bout : jeton + une recherche.
 export async function healthcheck() {
   await applicationToken();

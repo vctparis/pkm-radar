@@ -23,7 +23,8 @@ import {
   fetchBlueprintMarket,
   fetchExpansionSingles,
 } from "./lib/cardtrader.mjs";
-import { fetchSealedBoosterFR } from "./lib/ebay.mjs";
+import { fetchSealedBoosterFR, fetchCardFR } from "./lib/ebay.mjs";
+import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
 
 // En local le token vit dans .env.local ; en CI il vient des secrets du runner.
@@ -149,6 +150,16 @@ async function main() {
       { key: "commons", label: "Communes", cards: groups.commons },
     ].map(({ key, label, cards: subset }) => ({ key, label, ...(basketGrowth(subset) ?? { growth: null, cards: 0 }) }));
 
+    // Catalogue français : noms et images des cartes FR, indexés par numéro
+    // de collection. C'est lui qui permet d'interroger eBay.fr sans bruit.
+    let frCatalog = null;
+    try {
+      frCatalog = await fetchFrenchCatalog(set.tcgdex);
+    } catch (error) {
+      console.warn(`  ${set.name} : catalogue FR indisponible (${error.message})`);
+    }
+    const frOf = (number) => frCatalog?.byLocalId[normalizeNumber(number)] ?? null;
+
     // Carte phare : celle qui porte le set, et donc le risque qu'on prend en
     // achetant le set. Son lien Cardmarket est résolu pour pouvoir vérifier le
     // prix chez le marchand plutôt que sur parole.
@@ -156,6 +167,8 @@ async function main() {
     const bestCard = headline
       ? {
           name: headline.name,
+          nameFR: frOf(headline.number)?.name ?? null,
+          image: frOf(headline.number)?.image ?? headline.image,
           number: headline.number,
           rarity: headline.rarity,
           price: Number(headline.reference.toFixed(2)),
@@ -166,18 +179,21 @@ async function main() {
         }
       : null;
 
-    // Séries temporelles réservées aux strates assez étalées dans le temps.
+    // Séries temporelles à deux lissages : mensuel (fenêtre 90 j avancée mois
+    // par mois) et trimestriel (fenêtre 180 j avancée trimestre par trimestre).
+    // L'historique ne peut pas remonter plus loin que novembre 2025 : c'est la
+    // première date de relevé Cardmarket disponible, aucune source accessible
+    // ne vend plus profond.
+    const seriesAt = (opts) => ({
+      content: basketGrowthSeries(cards, { minSample: 10, ...opts }),
+      mid: basketGrowthSeries(groups.mid, { minSample: 5, ...opts }),
+      commons: basketGrowthSeries(groups.commons, { minSample: 5, ...opts }),
+    });
     const growthSeries = {
-      mid: basketGrowthSeries(groups.mid, { minSample: 5 }),
-      commons: basketGrowthSeries(groups.commons, { minSample: 5 }),
+      monthly: seriesAt({ rollingDays: 90, stepMonths: 1 }),
+      quarterly: seriesAt({ rollingDays: 180, stepMonths: 3 }),
     };
-
-    // Valeur du contenu : croissance de l'ensemble des cartes du set, pondérée
-    // par leur prix. C'est la meilleure approximation disponible de la tendance
-    // économique derrière un booster — CardTrader n'expose aucun historique de
-    // prix scellé, donc la vraie courbe du booster ne peut que s'accumuler à
-    // partir d'aujourd'hui.
-    const contentValue = basketGrowthSeries(cards, { minSample: 10 });
+    const contentValue = growthSeries.monthly.content;
 
     // ---- Couche live CardTrader -------------------------------------------
     let live = null;
@@ -296,6 +312,33 @@ async function main() {
       .filter(Boolean)
       .sort((a, b) => b.score - a.score);
 
+    // Enrichissement des 12 pépites retenues : nom et image de la carte
+    // FRANÇAISE, lien Cardmarket, et surtout le marché français réel relevé
+    // sur eBay.fr — vendeurs, plancher, profondeur. Les métriques affichées
+    // reposent sur ces annonces françaises ; les listings CardTrader toutes
+    // langues ne servent qu'au classement initial, jamais à la lecture.
+    const enrichedPicks = [];
+    for (const pick of picks.slice(0, 12)) {
+      const fr = frOf(pick.number);
+      let marketFR = null;
+      if (!OFFLINE && fr?.name && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
+        try {
+          marketFR = await fetchCardFR(fr.name, normalizeNumber(pick.number), frCatalog?.officialCount);
+        } catch (error) {
+          console.warn(`  ${set.name} · ${pick.name} : marché FR indisponible (${error.message})`);
+        }
+        // L'API Browse tient 5 requêtes/s sans broncher ; on reste large.
+        await new Promise((r) => setTimeout(r, 250));
+      }
+      enrichedPicks.push({
+        ...pick,
+        nameFR: fr?.name ?? null,
+        image: fr?.image ?? pick.image,
+        url: await resolveCardmarketUrl(cardsById.get(pick.id)?.cardmarketUrl ?? null),
+        marketFR,
+      });
+    }
+
     // ---- Score du set ------------------------------------------------------
     const psa = psaManual[set.id] ?? null;
     const psaHistory = psa?.history ?? [];
@@ -323,6 +366,7 @@ async function main() {
     output.push({
       id: set.id,
       name: set.name,
+      nameEN: set.nameEN,
       era: set.era,
       releaseDate,
       ageYears: ageYears ? Number(ageYears.toFixed(1)) : null,
@@ -345,12 +389,7 @@ async function main() {
       live,
       liveHistory: history.snapshots[set.id] ?? [],
       psa: psa ? { gemRate: psa.gemRate, growth30: psaGrowth30, history: psaHistory } : null,
-      picks: await Promise.all(
-        picks.slice(0, 12).map(async (pick) => ({
-          ...pick,
-          url: await resolveCardmarketUrl(cardsById.get(pick.id)?.cardmarketUrl ?? null),
-        })),
-      ),
+      picks: enrichedPicks,
     });
   }
 
@@ -380,10 +419,16 @@ async function main() {
         note: "Boosters neufs, achat immédiat, vendeurs en France. Le plancher brut étant pollué par des annonces atypiques, les mesures retenues sont le 10e centile et la médiane.",
       },
       {
+        id: "tcgdex",
+        label: "TCGdex",
+        role: "Catalogue français",
+        note: "Noms et illustrations des cartes françaises. C'est lui qui rend les requêtes eBay.fr précises (nom FR + numéro de collection).",
+      },
+      {
         id: "psa",
         label: "PSA (relevé manuel)",
         role: "Population gradée",
-        note: "Pas d'API publique. Les points sont saisis à la main dans data/manual-psa.json.",
+        note: "Pas d'API publique. Les points sont saisis à la main dans data/manual-psa.json — couvre les 6 sets d'origine.",
       },
     ],
   };

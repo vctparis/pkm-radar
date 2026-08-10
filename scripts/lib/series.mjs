@@ -173,7 +173,7 @@ export function basketGrowth(cards) {
  * dénominateur — mais deux points successifs ne portent pas exactement sur les
  * mêmes cartes.
  */
-export function basketGrowthSeries(cards, { minSample = 5, rollingDays = 90 } = {}) {
+export function basketGrowthSeries(cards, { minSample = 5, rollingDays = 90, stepMonths = 1 } = {}) {
   const observations = cards
     .map((card) => {
       const { avg30, avg7 } = card.prices;
@@ -206,7 +206,7 @@ export function basketGrowthSeries(cards, { minSample = 5, rollingDays = 90 } = 
         basketValue: Number(after.toFixed(2)),
       });
     }
-    cursor.setUTCMonth(cursor.getUTCMonth() + 1);
+    cursor.setUTCMonth(cursor.getUTCMonth() + stepMonths);
   }
   return points;
 }

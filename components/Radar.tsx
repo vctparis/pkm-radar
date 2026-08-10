@@ -65,6 +65,7 @@ function SegmentRow({ name, segment, hint }: { name: string; segment: Segment; h
 
 export default function Radar({ data }: { data: RadarData }) {
   const [activeId, setActiveId] = useState(data.sets[0]?.id);
+  const [smoothing, setSmoothing] = useState<"monthly" | "quarterly">("monthly");
   const active: SetEntry | undefined = data.sets.find((s) => s.id === activeId) ?? data.sets[0];
   if (!active) return null;
 
@@ -170,7 +171,7 @@ export default function Radar({ data }: { data: RadarData }) {
                   {[
                     { label: "Set", hint: "", align: "left" },
                     { label: "Booster", hint: "le moins cher, neuf", align: "right" },
-                    { label: "Offre FR", hint: "annonces / vendeurs eBay.fr", align: "right" },
+                    { label: "Offre", hint: "eBay.fr + unités CardTrader", align: "right" },
                     { label: "Carte phare", hint: "celle qui porte le set", align: "left" },
                     { label: "Top 12 hors Top 5", hint: "croissance 30 j", align: "right" },
                     { label: "Communes", hint: "croissance 30 j", align: "right" },
@@ -216,7 +217,8 @@ export default function Radar({ data }: { data: RadarData }) {
                       <th scope="row" className="px-4 py-3 text-left font-medium text-mist-050">
                         {set.name}
                         <span className="mt-0.5 block text-[0.74rem] font-normal text-mist-500">
-                          {set.era} · {set.ageYears} ans · {set.cardsTracked} cartes
+                          {set.nameEN && set.nameEN !== set.name ? `${set.nameEN} · ` : ""}
+                          {set.era} · {set.ageYears} ans
                         </span>
                       </th>
                       {/* Priorité au marché français (eBay.fr, 10e centile) ;
@@ -226,7 +228,8 @@ export default function Radar({ data }: { data: RadarData }) {
                           <>
                             {eur.format(set.boosterFR.floor10)}
                             <span className="mt-0.5 block text-[0.72rem] text-mist-500">
-                              FR · eBay · méd. {set.boosterFR.median != null ? eur.format(set.boosterFR.median) : "—"}
+                              dès {set.boosterFR.price != null ? eur.format(set.boosterFR.price) : "—"} · méd.{" "}
+                              {set.boosterFR.median != null ? eur.format(set.boosterFR.median) : "—"} · FR eBay
                             </span>
                           </>
                         ) : set.live?.booster?.price != null ? (
@@ -243,12 +246,15 @@ export default function Radar({ data }: { data: RadarData }) {
                       <td className="tabular px-4 py-3 text-right text-mist-300">
                         {set.boosterFR ? num.format(set.boosterFR.offers) : "—"}
                         <span className="mt-0.5 block text-[0.72rem] text-mist-500">
-                          {set.boosterFR?.sellers ?? 0} vendeurs
+                          {set.boosterFR?.sellers ?? 0} vendeurs FR
+                        </span>
+                        <span className="mt-0.5 block text-[0.72rem] text-mist-500">
+                          CT {set.live?.booster?.quantity != null ? num.format(set.live.booster.quantity) : "—"} unités
                         </span>
                       </td>
                       <td className="px-4 py-3 text-left">
                         {set.bestCard ? (
-                          <>
+                          <span className="group relative inline-block">
                             {set.bestCard.url ? (
                               <a
                                 href={set.bestCard.url}
@@ -257,15 +263,26 @@ export default function Radar({ data }: { data: RadarData }) {
                                 onClick={(e) => e.stopPropagation()}
                                 className="text-mist-050 underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
                               >
-                                {set.bestCard.name}
+                                {set.bestCard.nameFR ?? set.bestCard.name}
                               </a>
                             ) : (
-                              <span className="text-mist-050">{set.bestCard.name}</span>
+                              <span className="text-mist-050">{set.bestCard.nameFR ?? set.bestCard.name}</span>
                             )}
                             <span className="tabular mt-0.5 block text-[0.72rem] text-mist-500">
                               {set.bestCard.number} · {eur.format(set.bestCard.price)}
                             </span>
-                          </>
+                            {/* Aperçu de la carte française au survol — chargé
+                                paresseusement, jamais au rendu initial. */}
+                            {set.bestCard.image && (
+                              <span
+                                aria-hidden
+                                className="pointer-events-none absolute left-0 top-full z-20 mt-2 hidden w-[150px] overflow-hidden rounded-lg shadow-[0_18px_40px_-12px_rgba(4,8,20,0.95)] ring-1 ring-ink-600 group-hover:block"
+                              >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={set.bestCard.image} alt="" loading="lazy" className="block h-auto w-full" />
+                              </span>
+                            )}
+                          </span>
                         ) : (
                           <span className="text-mist-500">—</span>
                         )}
@@ -402,32 +419,63 @@ export default function Radar({ data }: { data: RadarData }) {
               emptyHint="Premier relevé enregistré aujourd'hui. La courbe apparaît au deuxième passage du cron quotidien — c'est le seul moyen d'obtenir cette profondeur, aucune API ne la vend."
             />
 
-            <div className="grid gap-5 lg:grid-cols-2">
-              <LineChart
-                title="Croissance dans le temps"
-                subtitle="Même mesure, suivie mois par mois sur fenêtre glissante de 90 jours. Le Top 5 et le Top 12 n'y figurent pas : Cardmarket relève les cartes les plus chères trop rarement pour en tirer une courbe."
-                series={[
-                  {
-                    label: "Contenu du set",
-                    color: SERIES.chase,
-                    points: active.contentValue.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
-                  },
-                  {
-                    label: "Intermédiaires",
-                    color: SERIES.mid,
-                    points: active.growthSeries.mid.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
-                  },
-                  {
-                    label: "Communes",
-                    color: SERIES.commons,
-                    points: active.growthSeries.commons.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
-                  },
-                ]}
-                reference={{ value: 0, label: "stable" }}
-                format={(v) => `${v > 0 ? "+" : ""}${v.toFixed(1)} %`}
-                emptyHint="Série insuffisante pour ce set."
-              />
+            {/* Pleine largeur et plus haut : c'est le graphe de lecture
+                principal. L'historique commence en novembre 2025 — première
+                date de relevé Cardmarket, aucune source accessible ne remonte
+                plus loin ; le cron l'allonge désormais chaque jour. */}
+            <LineChart
+              title="Croissance dans le temps"
+              subtitle={
+                smoothing === "monthly"
+                  ? "Croissance pondérée par la valeur, fenêtre glissante de 90 jours avancée mois par mois. Le Top 5 et le Top 12 n'y figurent pas : Cardmarket relève les cartes chères trop rarement pour en tirer une courbe."
+                  : "Croissance pondérée par la valeur, fenêtre glissante de 180 jours avancée trimestre par trimestre — moins de points, moins de bruit."
+              }
+              height={430}
+              controls={
+                <div role="group" aria-label="Lissage" className="flex rounded-lg border border-ink-600 p-0.5">
+                  {(
+                    [
+                      { key: "monthly", label: "Mois" },
+                      { key: "quarterly", label: "Trimestre" },
+                    ] as const
+                  ).map((option) => (
+                    <button
+                      key={option.key}
+                      type="button"
+                      onClick={() => setSmoothing(option.key)}
+                      aria-pressed={smoothing === option.key}
+                      className={`rounded-md px-2.5 py-1 text-[0.75rem] transition-colors duration-200 ${
+                        smoothing === option.key ? "bg-ink-600 text-mist-050" : "text-mist-300 hover:text-mist-050"
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              }
+              series={[
+                {
+                  label: "Contenu du set",
+                  color: SERIES.chase,
+                  points: active.growthSeries[smoothing].content.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+                },
+                {
+                  label: "Intermédiaires",
+                  color: SERIES.mid,
+                  points: active.growthSeries[smoothing].mid.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+                },
+                {
+                  label: "Communes",
+                  color: SERIES.commons,
+                  points: active.growthSeries[smoothing].commons.map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+                },
+              ]}
+              reference={{ value: 0, label: "stable" }}
+              format={(v) => `${v > 0 ? "+" : ""}${v.toFixed(1)} %`}
+              emptyHint="Série insuffisante pour ce set."
+            />
 
+            <div className="grid gap-5">
               {/* Un relevé unique ne fait pas une courbe : tant que la série n'a
                   pas deux points, l'information se lit mieux en tuiles. */}
               {active.liveHistory.length >= 2 ? (
@@ -450,7 +498,7 @@ export default function Radar({ data }: { data: RadarData }) {
                   <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
                     CardTrader n&apos;expose aucun historique de prix scellé — c&apos;est une limite de l&apos;API, pas
                     un manque de données. La courbe se construit à partir du deuxième relevé quotidien. En attendant,
-                    la tendance économique du booster se lit sur la courbe « contenu du set » ci-contre.
+                    la tendance économique du booster se lit sur la courbe « contenu du set » ci-dessus.
                   </p>
                   <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
                     {[
@@ -524,8 +572,9 @@ export default function Radar({ data }: { data: RadarData }) {
           </h2>
           <p className="prose-measure mt-2 text-[0.92rem] leading-relaxed text-mist-500">
             Les 12 meilleures, classées par force relative au set, tension de l&apos;offre et liquidité. Le bulk
-            sous 40 centimes est écarté : les frais d&apos;envoi y dépassent toute plus-value envisageable. Chaque
-            nom renvoie à sa fiche Cardmarket en français.
+            sous 40 centimes est écarté : les frais d&apos;envoi y dépassent toute plus-value envisageable. Le
+            plancher et les offres affichés sont ceux des annonces <strong className="font-medium">françaises</strong>{" "}
+            sur eBay.fr — les autres langues sont exclues de la lecture. Chaque nom renvoie à sa fiche Cardmarket.
           </p>
 
           {active.picks.length === 0 ? (
@@ -561,26 +610,34 @@ export default function Radar({ data }: { data: RadarData }) {
                       rel="noreferrer"
                       className="text-[0.95rem] font-medium leading-tight text-mist-050 underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
                     >
-                      {pick.name}
+                      {pick.nameFR ?? pick.name}
                     </a>
                   ) : (
-                    <p className="m-0 text-[0.95rem] font-medium leading-tight text-mist-050">{pick.name}</p>
+                    <p className="m-0 text-[0.95rem] font-medium leading-tight text-mist-050">
+                      {pick.nameFR ?? pick.name}
+                    </p>
                   )}
                   <p className="m-0 mt-0.5 text-[0.74rem] text-mist-500">
+                    {pick.nameFR && pick.nameFR !== pick.name ? `${pick.name} · ` : ""}
                     {pick.number} · {pick.rarity}
                   </p>
                   <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-[0.76rem]">
-                    <dt className="text-mist-500">Prix</dt>
+                    <dt className="text-mist-500">Tendance CM</dt>
                     <dd className="tabular m-0 text-right text-mist-050">{eur.format(pick.price)}</dd>
                     <dt className="text-mist-500">Force rel.</dt>
                     <dd className={`tabular m-0 text-right ${toneFor(pick.relativeStrength)}`}>
                       {pct(pick.relativeStrength)}
                     </dd>
-                    <dt className="text-mist-500">Vendeurs</dt>
-                    <dd className="tabular m-0 text-right text-mist-300">{pick.sellers ?? "—"}</dd>
-                    <dt className="text-mist-500">Plancher</dt>
+                    {/* Le marché qui compte : annonces françaises réelles sur
+                        eBay.fr. Les listings toutes-langues de CardTrader ne
+                        sont plus affichés ici — ils brouillaient la lecture. */}
+                    <dt className="text-mist-500">Plancher FR</dt>
+                    <dd className="tabular m-0 text-right text-mist-050">
+                      {pick.marketFR?.price != null ? eur.format(pick.marketFR.price) : "—"}
+                    </dd>
+                    <dt className="text-mist-500">Offres FR</dt>
                     <dd className="tabular m-0 text-right text-mist-300">
-                      {pick.marketFloor != null ? eur.format(pick.marketFloor) : "—"}
+                      {pick.marketFR ? `${pick.marketFR.offers} · ${pick.marketFR.sellers} vend.` : "—"}
                     </dd>
                   </dl>
                 </li>

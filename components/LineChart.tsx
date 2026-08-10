@@ -13,16 +13,20 @@ type Props = {
   reference?: { value: number; label: string };
   emptyHint: string;
   format?: (value: number) => string;
+  /** Hauteur du tracé en unités viewBox — 320 par défaut, plus pour un graphe pleine largeur. */
+  height?: number;
+  /** Commandes supplémentaires affichées dans l'en-tête (ex. bascule de lissage). */
+  controls?: React.ReactNode;
 };
 
 const W = 880;
-const H = 320;
 const PAD = { top: 28, right: 24, bottom: 42, left: 52 };
 
 const dateFmt = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short", year: "2-digit" });
 const parse = (iso: string) => Date.parse(`${iso}T12:00:00Z`);
 
-export default function LineChart({ title, subtitle, series, reference, emptyHint, format }: Props) {
+export default function LineChart({ title, subtitle, series, reference, emptyHint, format, height, controls }: Props) {
+  const H = height ?? 320;
   const [hover, setHover] = useState<number | null>(null);
   const [asTable, setAsTable] = useState(false);
 
@@ -56,7 +60,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
     const dates = [...new Set(clean.flatMap((s) => s.points.map((p) => p.date)))].sort();
 
     return { clean, x, y, lo, hi, minT, maxT, dates };
-  }, [series, reference]);
+  }, [series, reference, H]);
 
   // Une ligne exige au moins deux points ; en dessous on affiche l'état réel
   // plutôt qu'un graphe trompeusement vide.
@@ -71,6 +75,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
           {subtitle && <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">{subtitle}</p>}
         </div>
         <div className="flex items-center gap-3">
+          {controls}
           {model && model.clean.length >= 2 && (
             <ul className="m-0 flex list-none flex-wrap gap-3 p-0">
               {model.clean.map((s) => (

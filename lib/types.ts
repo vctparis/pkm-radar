@@ -17,9 +17,13 @@ export type Stratum = {
 
 export type GrowthPoint = { date: string; sample: number; growth: number; basketValue: number };
 
+export type GrowthBundle = { content: GrowthPoint[]; mid: GrowthPoint[]; commons: GrowthPoint[] };
+
 export type Pick = {
   id: string;
   name: string;
+  nameFR?: string | null;
+  marketFR?: FRBoosterQuote;
   number: string;
   rarity: string;
   image: string | null;
@@ -56,6 +60,8 @@ export type FRBoosterQuote = {
 
 export type BestCard = {
   name: string;
+  nameFR?: string | null;
+  image?: string | null;
   number: string;
   rarity: string;
   price: number;
@@ -66,6 +72,7 @@ export type BestCard = {
 export type SetEntry = {
   id: string;
   name: string;
+  nameEN?: string;
   era: string;
   releaseDate: string | null;
   ageYears: number | null;
@@ -83,7 +90,7 @@ export type SetEntry = {
   bestCard: BestCard;
   boosterFR: FRBoosterQuote;
   strata: Stratum[];
-  growthSeries: Record<"mid" | "commons", GrowthPoint[]>;
+  growthSeries: { monthly: GrowthBundle; quarterly: GrowthBundle };
   contentValue: GrowthPoint[];
   live: { booster: SealedQuote; boosterBox: SealedQuote; singles: { tracked: number; offers: number } } | null;
   liveHistory: {
