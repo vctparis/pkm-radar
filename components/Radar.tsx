@@ -85,9 +85,14 @@ export default function Radar({ data }: { data: RadarData }) {
   const active: SetEntry | undefined = data.sets.find((s) => s.id === activeId) ?? data.sets[0];
   if (!active) return null;
 
-  const generated = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" }).format(
-    new Date(data.generatedAt),
-  );
+  // Fuseau explicite : le serveur (UTC chez Vercel) et le navigateur doivent
+  // produire exactement le même texte, sinon React signale un écart
+  // d'hydratation à chaque chargement.
+  const generated = new Intl.DateTimeFormat("fr-FR", {
+    dateStyle: "long",
+    timeStyle: "short",
+    timeZone: "Europe/Paris",
+  }).format(new Date(data.generatedAt));
 
   // Le classement répond à « quel booster » ; le détail répond à « quelles cartes ».
   // Nombre de sets où le haut du panier progresse plus vite que les communes :
