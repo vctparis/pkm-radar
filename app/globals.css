@@ -365,3 +365,50 @@ body::before {
   color: var(--color-mist-500);
   max-width: 30ch;
 }
+
+/*
+  Figures des articles : SVG statiques en encart. ViewBox étroit (360) pour
+  que le texte reste lisible une fois mis à l'échelle sur téléphone — la
+  largeur est plafonnée sur grand écran plutôt que le texte rétréci sur petit.
+*/
+.dossier .viz {
+  margin: 2rem 0;
+  max-width: 34rem;
+}
+.dossier .viz svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.dossier .viz figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--color-mist-500);
+  max-width: 52ch;
+}
+.dossier .vizlegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--color-mist-300);
+}
+.dossier .vizlegend i {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.4rem;
+  border-radius: 3px;
+  vertical-align: -1px;
+  font-style: normal;
+}
+.dossier .vizpair {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  max-width: 44rem;
+}
