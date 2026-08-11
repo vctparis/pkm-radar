@@ -65,6 +65,9 @@ export type BestCard = {
   name: string;
   nameFR?: string | null;
   image?: string | null;
+  /** Plancher p10 des annonces françaises (eBay.fr) — le vrai prix FR. */
+  priceFR?: number | null;
+  offersFR?: number | null;
   number: string;
   rarity: string;
   price: number;
@@ -128,11 +131,14 @@ export type Opening = {
     oneInHi: number;
     expectedCostLo: number;
     expectedCostHi: number;
+    buyPriceFR?: number | null;
     perDisplay: number | null;
   } | null;
   boostersPerDisplay: number | null;
   confidence: string;
   partialNote: string | null;
+  /** "mappable" : worst-case « lot trié » crédible ; "independent" : taux valides en loose, risque non quantifié. */
+  looseModel?: "independent" | "mappable";
 } | null;
 
 export type DropRates = {
@@ -154,6 +160,8 @@ export type DropRates = {
   sample?: string | null;
   sampleSource?: string | null;
   partialNote: string | null;
+  /** "mappable" : worst-case « lot trié » crédible ; "independent" : taux valides en loose, risque non quantifié. */
+  looseModel?: "independent" | "mappable";
 } | null;
 
 export type SetEntry = {

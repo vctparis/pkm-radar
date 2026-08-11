@@ -51,9 +51,11 @@ export default function DropRates({ data }: { data: RadarData }) {
   const [era, setEra] = useState(eras[0]);
   const setsOfEra = data.sets.filter((set) => eraOf(set) === era);
   const [activeId, setActiveId] = useState(setsOfEra[0]?.id);
-  // Scellé ou à l'unité : le loose retire les classes premium — un revendeur
-  // qui mappe ses displays extrait les boosters à gros hit avant de vendre
-  // le reste. Conclusion : sur du loose inconnu, la carte-titre est partie.
+  // Provenance : produit scellé ou loose d'origine inconnue. Deux risques très
+  // différents selon l'ère (looseModel) : "mappable" (pré-SV) — le worst-case
+  // « lot trié » est crédible, classes premium comptées à zéro ; "independent"
+  // (SV) — aucun quota par produit documenté, les taux restent valides, le
+  // risque de sélection est réel mais non quantifié (pas de décote automatique).
   const [loose, setLoose] = useState(false);
   const active = setsOfEra.find((set) => set.id === activeId) ?? setsOfEra[0];
 
@@ -73,12 +75,12 @@ export default function DropRates({ data }: { data: RadarData }) {
   const netMid = opening ? (opening.netLo + opening.netHi) / 2 : null;
   const lossPct = opening && boosterPrice && netMid != null ? Math.round((1 - netMid / boosterPrice) * 100) : null;
   const maxRate = active.dropRates ? Math.max(...active.dropRates.classes.map((row) => row.rateHi)) : 1;
-  // Lignes de la section euros selon le scénario : en loose, les classes
-  // premium sont écrémées (contribution zéro).
+  // Le worst-case « écrémé » ne s'applique qu'aux ères où le tri est crédible.
+  const mappable = (active.dropRates?.looseModel ?? "mappable") === "mappable";
   const activeRows = (active.dropRates?.classes ?? []).map((row) => ({
     ...row,
-    skimmed: loose && row.premium,
-    effective: loose && row.premium ? 0 : row.contribution,
+    skimmed: loose && mappable && row.premium,
+    effective: loose && mappable && row.premium ? 0 : row.contribution,
   }));
   const grossEffective = Number(activeRows.reduce((sum, row) => sum + row.effective, 0).toFixed(2));
 
@@ -177,7 +179,15 @@ export default function DropRates({ data }: { data: RadarData }) {
                     </span>
                   )}
                 </span>
-                <span className="tabular ml-2 text-[0.82rem] text-mist-500">{eur.format(card.price)}</span>
+                <span className="tabular ml-2 text-[0.82rem] text-mist-500">
+                  {card.priceFR != null ? (
+                    <>
+                      <span className="text-mist-100">{eur.format(card.priceFR)} FR</span> · CM {eur.format(card.price)}
+                    </>
+                  ) : (
+                    eur.format(card.price)
+                  )}
+                </span>
               </p>
             </div>
           ))}
@@ -209,8 +219,8 @@ export default function DropRates({ data }: { data: RadarData }) {
                 <div role="group" aria-label="Provenance du booster" className="flex rounded-xl border border-ink-600 p-0.5">
                   {(
                     [
-                      { key: false, label: "Booster scellé" },
-                      { key: true, label: "À l'unité (loose)" },
+                      { key: false, label: "Issu d'un produit scellé" },
+                      { key: true, label: "Loose — origine inconnue" },
                     ] as const
                   ).map((option) => (
                     <button
@@ -227,15 +237,28 @@ export default function DropRates({ data }: { data: RadarData }) {
                   ))}
                 </div>
               </div>
-              {loose && (
-                <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
-                  À l&apos;unité d&apos;origine inconnue : les revendeurs qui mappent leurs displays extraient les
-                  boosters à gros hit avant de vendre le reste. Les classes chase sont comptées à zéro.
-                </p>
-              )}
+              {loose &&
+                (mappable ? (
+                  <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
+                    Worst-case : lot présumé trié. Sur cette ère, tous les boosters ne contiennent pas de hit — un
+                    mappeur peut repérer les boosters à hit (sans voir <em>lequel</em> contient quoi) et les retirer
+                    en bloc avant de revendre. Les classes chase sont donc comptées à zéro : un plancher crédible,
+                    pas le cas typique.
+                  </p>
+                ) : (
+                  <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
+                    Risque de sélection : réel, mais non quantifié — les chiffres restent ceux du scellé. Aucun quota
+                    de chase par produit n&apos;est documenté sur ce set : même si le vendeur a tiré sa grosse carte,
+                    un booster ne « sait » pas ce que les autres ont donné — les taux par booster restent la meilleure
+                    estimation. Aucun coefficient fiable ne permet d&apos;écrémer automatiquement les IR/UR/SIR/HR ;
+                    le risque (tri, manipulation, provenance) se gère par le choix du vendeur.
+                  </p>
+                ))}
               <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
                 Taux universels × prix observés : moyenne Cardmarket de chaque classe — c&apos;est elle que l&apos;espérance exige, et les cartes-titres y pèsent lourd ; la médiane indique le hit typique
-                {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (médiane eBay.fr)` : ""}.
+                {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (médiane eBay.fr)` : ""}. Les
+                moyennes de classe sont des prix produit Cardmarket toutes langues — les exemplaires français se
+                négocient souvent au-dessus (voir le podium en prix FR).
               </p>
 
               {/* D'où vient la valeur d'un booster : chaque classe, sa part. */}
@@ -261,7 +284,8 @@ export default function DropRates({ data }: { data: RadarData }) {
                         <span className="text-[0.82rem] text-mist-500">écrémé — compté à zéro</span>
                       ) : (
                         <span className="tabular text-right text-mist-100">
-                          moy. {eur.format(row.mean ?? row.median)} × 1/{row.oneInAny} ={" "}
+                          moy. {eur.format(row.mean ?? row.median)} ×{" "}
+                          {(row.rateLo + row.rateHi) / 2 >= 0.5 ? pctFmt((row.rateLo + row.rateHi) / 2) : `1/${row.oneInAny}`} ={" "}
                           <strong className="text-mist-050">{eur.format(row.effective)}</strong>
                           <span className="ml-1.5 text-[0.74rem] text-mist-500">hit typique {eur.format(row.median)}</span>
                         </span>
@@ -282,7 +306,7 @@ export default function DropRates({ data }: { data: RadarData }) {
                   <div>
                     <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Nette une fois revendu</p>
                     <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-accent">
-                      {loose ? `${eur.format(opening.looseLo)} – ${eur.format(opening.looseHi)}` : `${eur.format(opening.netLo)} – ${eur.format(opening.netHi)}`}
+                      {loose && mappable ? `${eur.format(opening.looseLo)} – ${eur.format(opening.looseHi)}` : `${eur.format(opening.netLo)} – ${eur.format(opening.netHi)}`}
                     </p>
                   </div>
                 )}
@@ -310,7 +334,7 @@ export default function DropRates({ data }: { data: RadarData }) {
                     Tomber sur <strong className="font-semibold text-mist-050">{opening.top1.nameFR ?? opening.top1.name}</strong>
                     <span className="tabular ml-1.5 text-[0.8rem] text-mist-500">({eur.format(opening.top1.buyPrice)})</span>
                   </span>
-                  {loose ? (
+                  {loose && mappable ? (
                     <span className="text-[0.9rem] font-semibold text-[color:var(--color-warn)]">
                       ≈ 0 — considérez-la écrémée
                     </span>
@@ -452,6 +476,12 @@ export default function DropRates({ data }: { data: RadarData }) {
                 {box.confidence}
               </span>
             </div>
+            <p className="prose-measure m-0 mt-3 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
+              Risque de sélection sur boîte entamée : élevé. Une boîte japonaise collatée porte des quotas de slots —
+              un vendeur peut avoir consommé le slot SR+ avant de revendre le reste. Ne mettez à zéro que les slots
+              réellement consommés, jamais toute la boîte : cochez ce qui est déjà sorti dans l&apos;onglet
+              « À l&apos;ouverture » du radar, l&apos;espérance des boosters restants se recalcule slot par slot.
+            </p>
             <h3 className="display m-0 mt-8 text-[1.1rem] text-mist-050">Les garanties, boîte par boîte</h3>
             <div className="mt-3 overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
               <table className="w-full min-w-[560px] border-collapse text-[0.86rem]">

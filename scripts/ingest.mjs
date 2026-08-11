@@ -458,7 +458,22 @@ async function main() {
     // pages qui comparent le haut du set d'un regard.
     const podium = [];
     for (const card of sorted.slice(0, 3)) {
+      // Le prix français réel (annonces eBay.fr, aspect Langue:Français) :
+      // les exemplaires FR se négocient souvent nettement au-dessus du prix
+      // produit Cardmarket toutes langues.
+      let marketFR = null;
+      const frName = frOf(card.number)?.name;
+      if (!OFFLINE && frName && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
+        try {
+          marketFR = await fetchCardFR(frName, normalizeNumber(card.number), frCatalog?.officialCount);
+        } catch {
+          // marché fin : l'absence est une information
+        }
+        await new Promise((r) => setTimeout(r, 250));
+      }
       podium.push({
+        priceFR: marketFR?.floor10 ?? marketFR?.price ?? null,
+        offersFR: marketFR?.offers ?? null,
         name: card.name,
         nameFR: frOf(card.number)?.name ?? null,
         image: frOf(card.number)?.image ?? card.image,
@@ -471,6 +486,11 @@ async function main() {
             : null,
         url: await resolveCardmarketUrl(card.cardmarketUrl),
       });
+    }
+
+    if (bestCard && podium[0] && podium[0].number === bestCard.number) {
+      bestCard.priceFR = podium[0].priceFR;
+      bestCard.offersFR = podium[0].offersFR;
     }
 
     // Séries temporelles à deux lissages : mensuel (fenêtre 90 j avancée mois
@@ -561,18 +581,24 @@ async function main() {
       // surcharger classe par classe (boosters atypiques, slots propres).
       const eraClasses = { ...era?.classes, ...(override.classes ?? {}) };
       if (era && referencePrice) {
+        const looseModel = override.looseModel ?? era.looseModel ?? "mappable";
         opening = computeOpening(cards, eraClasses, {
           boosterPrice: referencePrice,
           fees: pullRates.fees,
           bulkThreshold: pullRates.bulkThreshold,
           boostersPerDisplay: override.boostersPerDisplay !== undefined ? override.boostersPerDisplay : era.boostersPerDisplay,
+          looseModel,
         });
         if (opening) {
           opening.mode = "booster";
+          if (opening.top1 && podium[0] && podium[0].number === opening.top1.number) {
+            opening.top1.buyPriceFR = podium[0].priceFR;
+          }
           opening.distribution = simulateDistribution(cards, eraClasses, {
             boosterPrice: referencePrice,
             fees: pullRates.fees,
             bulkThreshold: pullRates.bulkThreshold,
+            looseModel,
           });
           opening.confidence = override.confidence ?? era.confidence;
           opening.partialNote = pullRates.partialSets?.[set.ptcg] ?? null;
@@ -631,9 +657,10 @@ async function main() {
           classes: rows,
           grossPerBooster: Number(rows.reduce((sum, row) => sum + row.contribution, 0).toFixed(2)),
           confidence: override.confidence ?? era.confidence,
+          looseModel: override.looseModel ?? era.looseModel ?? "mappable",
           eraLabel: era.label,
-          sample: era.sample ?? null,
-          sampleSource: era.sampleSource ?? null,
+          sample: override.sample ?? era.sample ?? null,
+          sampleSource: override.sampleSource ?? era.sampleSource ?? null,
           partialNote: pullRates.partialSets?.[set.ptcg] ?? null,
         };
       }

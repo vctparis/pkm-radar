@@ -179,7 +179,15 @@ const COLUMNS: Column[] = [
               <span className="text-mist-050">{s.bestCard.nameFR ?? s.bestCard.name}</span>
             )}
             <span className="tabular mt-0.5 block text-[0.72rem] text-mist-500">
-              {s.bestCard.number} · {eur.format(s.bestCard.price)}
+              {s.bestCard.number} ·{" "}
+              {s.bestCard.priceFR != null ? (
+                <>
+                  <span className="text-mist-300">{eur.format(s.bestCard.priceFR)} FR</span> · CM{" "}
+                  {eur.format(s.bestCard.price)}
+                </>
+              ) : (
+                eur.format(s.bestCard.price)
+              )}
             </span>
             {s.bestCard.image && (
               <span

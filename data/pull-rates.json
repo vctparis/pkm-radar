@@ -1,5 +1,5 @@
 {
-  "_comment": "Taux de tirage PAR BOOSTER et par classe de rareté. AUCUNE source officielle n'existe : ce sont des estimations communautaires (agrégats d'ouvertures filmées et comptées — TCGplayer, r/PokemonTCG, JustInBasil), d'où des FOURCHETTES [lo, hi] et jamais un point. `premium: true` marque les classes qu'un revendeur qui écrème (mapping de display) extrait en priorité — elles passent à 0 dans le scénario « booster à l'unité ». Les clés sont les chaînes de rareté exactes de pokemontcg.io.",
+  "_comment": "Taux de tirage PAR BOOSTER et par classe de rareté. AUCUNE source officielle n'existe : estimations communautaires (TCGplayer, r/PokemonTCG, JustInBasil), d'où des FOURCHETTES [lo, hi]. `premium: true` marque les classes chase. `looseModel` par ère : 'mappable' (pré-SV — tous les boosters n'ont pas de hit, un mappeur peut repérer et retirer les boosters à hit : le worst-case « lot trié » est techniquement crédible, classes premium à 0) ou 'independent' (SV — chaque booster a un hit garanti, pas de quota par produit documenté : les taux par booster restent valides en loose, le risque de sélection est réel mais NON quantifié — aucune décote automatique). Les clés sont les chaînes de rareté exactes de pokemontcg.io.",
   "fees": 0.13,
   "bulkThreshold": 0.4,
   "eras": {
@@ -39,7 +39,8 @@
         }
       },
       "sample": "quelques centaines de boosters",
-      "sampleSource": "ouvertures communautaires anciennes"
+      "sampleSource": "ouvertures communautaires anciennes",
+      "looseModel": "mappable"
     },
     "swsh": {
       "label": "Épée et Bouclier",
@@ -90,7 +91,8 @@
         }
       },
       "sample": "plusieurs milliers de boosters sur l'ère",
-      "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)"
+      "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
+      "looseModel": "mappable"
     },
     "sv": {
       "label": "Écarlate et Violet",
@@ -128,7 +130,8 @@
         }
       },
       "sample": "2 000 à 5 000+ boosters ouverts par set",
-      "sampleSource": "études TCGplayer Infinite"
+      "sampleSource": "études TCGplayer Infinite",
+      "looseModel": "independent"
     },
     "xy": {
       "label": "XY",
@@ -161,7 +164,8 @@
         }
       },
       "sample": "quelques centaines de boosters",
-      "sampleSource": "ouvertures communautaires anciennes"
+      "sampleSource": "ouvertures communautaires anciennes",
+      "looseModel": "mappable"
     }
   },
   "setOverrides": {
@@ -187,6 +191,41 @@
     },
     "swsh45": {
       "confidence": "grossière"
+    },
+    "sv3pt5": {
+      "confidence": "solide",
+      "sample": "1 500+ boosters (TCGplayer Infinite), recoupés sur ~700 boosters communautaires",
+      "sampleSource": "étude dédiée 151 — taux empiriques par booster",
+      "classes": {
+        "Rare": {
+          "lo": 0.78,
+          "hi": 0.82
+        },
+        "Double Rare": {
+          "lo": 0.125,
+          "hi": 0.14
+        },
+        "Ultra Rare": {
+          "lo": 0.06,
+          "hi": 0.068,
+          "premium": true
+        },
+        "Illustration Rare": {
+          "lo": 0.08,
+          "hi": 0.09,
+          "premium": true
+        },
+        "Special Illustration Rare": {
+          "lo": 0.029,
+          "hi": 0.033,
+          "premium": true
+        },
+        "Hyper Rare": {
+          "lo": 0.018,
+          "hi": 0.021,
+          "premium": true
+        }
+      }
     }
   },
   "partialSets": {

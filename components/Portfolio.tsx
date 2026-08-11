@@ -369,7 +369,8 @@ export default function Portfolio() {
           </div>
 
           <p className="prose-measure m-0 mt-4 text-[0.78rem] leading-relaxed text-mist-500">
-            Cours : référence Cardmarket pour les sets occidentaux, plancher p10 des annonces japonaises en Europe
+            Cours : référence <strong className="font-medium text-mist-300">produit</strong> Cardmarket (toutes
+            langues) pour les sets occidentaux — les exemplaires français se négocient souvent au-dessus, plancher p10 des annonces japonaises en Europe
             pour les sets JP — rafraîchis chaque matin. Vos positions et l&apos;historique restent dans ce
             navigateur : videz son stockage et ils disparaissent.
           </p>

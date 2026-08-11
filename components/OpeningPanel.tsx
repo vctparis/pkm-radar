@@ -19,7 +19,7 @@ const PROVENANCES: { key: ProvenanceKey; label: string; hint: string; factor: nu
   { key: "sealedBox", label: "Display scellé", hint: "Toutes les chances sont intactes.", factor: 1 },
   { key: "freshBox", label: "Booster d'un display ouvert devant vous", hint: "Mêmes chances qu'un display scellé.", factor: 1 },
   { key: "trustedLoose", label: "Boutique qui détaille", hint: "Chances des grosses cartes réduites de 30 %, par prudence.", factor: 0.7 },
-  { key: "unknownLoose", label: "À l'unité, origine inconnue", hint: "Comptez les grosses cartes à zéro : c'est le plancher.", factor: 0 },
+  { key: "unknownLoose", label: "Loose — origine inconnue", hint: "Le plancher : un lot mappé perd TOUS ses boosters à hit — le mappeur ne voit pas lequel contient quoi, il les retire en bloc.", factor: 0 },
 ];
 
 function Statement({ children, tone }: { children: React.ReactNode; tone?: "good" | "warn" }) {
@@ -87,12 +87,21 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
   }
 
   const chosen = PROVENANCES.find((p) => p.key === provenance)!;
+  // En ère SV (looseModel "independent"), aucun quota par produit n'est
+  // documenté : les facteurs de décote ne s'appliquent pas — le risque de
+  // sélection existe mais n'est pas quantifiable, on ne l'invente pas.
+  const independent = opening.looseModel === "independent";
+  const effFactor = independent ? 1 : chosen.factor;
+  const hint =
+    independent && chosen.factor < 1
+      ? "Taux inchangés : aucun quota par produit n'est documenté sur ce set — aucune décote automatique n'est défendable. Le risque de sélection est réel mais non quantifié : il se gère par le choix du vendeur."
+      : chosen.hint;
   const stats = opening.distribution?.byProvenance[provenance] ?? null;
 
   // Fourchette d'espérance du niveau choisi : interpolation entre le plancher
   // (classes premium à zéro) et le nominal, par le facteur de confiance.
-  const lo = opening.looseLo + chosen.factor * (opening.netLo - opening.looseLo);
-  const hi = opening.looseHi + chosen.factor * (opening.netHi - opening.looseHi);
+  const lo = opening.looseLo + effFactor * (opening.netLo - opening.looseLo);
+  const hi = opening.looseHi + effFactor * (opening.netHi - opening.looseHi);
   const ratioMid = (lo + hi) / 2 / opening.boosterPrice;
   const payMultiple = ratioMid > 0 ? 1 / ratioMid : null;
   const top1 = opening.top1;
@@ -145,7 +154,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
               </button>
             ))}
           </div>
-          <p className="m-0 mt-2 text-[0.82rem] text-mist-500">{chosen.hint}</p>
+          <p className="m-0 mt-2 text-[0.82rem] text-mist-500">{hint}</p>
         </div>
 
         {/* Où atterrit un booster */}
@@ -189,8 +198,13 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
                 </span>
               </li>
               <li className="flex items-baseline justify-between gap-4">
-                <span>L&apos;acheter directement</span>
-                <span className="tabular text-right text-mist-050">{eur.format(top1.buyPrice)}</span>
+                <span>L&apos;acheter directement{top1.buyPriceFR != null ? " en français" : ""}</span>
+                <span className="tabular text-right text-mist-050">
+                  {eur.format(top1.buyPriceFR ?? top1.buyPrice)}
+                  {top1.buyPriceFR != null && (
+                    <span className="ml-1.5 text-[0.78rem] text-mist-500">CM {eur.format(top1.buyPrice)}</span>
+                  )}
+                </span>
               </li>
               {top1.perDisplay != null && (
                 <li className="flex items-baseline justify-between gap-4">
@@ -200,7 +214,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
               )}
             </ul>
             <p className="display m-0 mt-5 text-[1.05rem] text-accent">{top1Verdict}</p>
-            {chosen.factor < 1 && (
+            {effFactor < 1 && (
               <p className="m-0 mt-2 text-[0.78rem] text-mist-500">
                 Ces chances valent pour un booster aux probabilités intactes — pas pour la provenance choisie.
               </p>
@@ -213,11 +227,11 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
           <h3 className="display m-0 text-[1.1rem] text-mist-050">Ce que vous pouvez y trouver</h3>
           <ul className="m-0 mt-4 grid list-none gap-1.5 p-0">
             {opening.topPulls.map((pull) => {
-              const dimmed = chosen.factor === 0 && pull.premium;
+              const dimmed = effFactor === 0 && pull.premium;
               // Les cotes suivent la provenance : à −30 % de chances premium,
               // « 1 sur 215 » devient « 1 sur 307 » — sinon l'espérance et les
               // cotes affichées se contrediraient.
-              const factor = pull.premium ? chosen.factor : 1;
+              const factor = pull.premium ? effFactor : 1;
               const oneIn = factor > 0 ? Math.round(pull.oneIn / factor) : null;
               const contribution = pull.contribution != null ? pull.contribution * factor : null;
               return (
@@ -244,7 +258,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
             })}
           </ul>
           <p className="m-0 mt-4 border-t border-ink-700 pt-3 text-[0.8rem] leading-relaxed text-mist-500">
-            {chosen.factor === 0
+            {effFactor === 0
               ? "Les cartes barrées sont celles qu'un vendeur qui écrème retire en premier."
               : "Chacune vaut plus que le booster — multipliée par sa rareté, chacune ne pèse que quelques dizaines de centimes dans la moyenne. C'est tout le paradoxe d'une loterie."}
           </p>

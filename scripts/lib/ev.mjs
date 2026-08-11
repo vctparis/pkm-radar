@@ -23,7 +23,7 @@ const round2 = (v) => Number(v.toFixed(2));
  * @param options    { boosterPrice, fees, bulkThreshold, boostersPerDisplay }
  */
 export function computeOpening(cards, eraClasses, options) {
-  const { boosterPrice, fees = 0.13, bulkThreshold = 0.4, boostersPerDisplay = 36 } = options;
+  const { boosterPrice, fees = 0.13, bulkThreshold = 0.4, boostersPerDisplay = 36, looseModel = "mappable" } = options;
   if (!boosterPrice || boosterPrice <= 0) return null;
 
   // Valeur réalisable d'une carte tirée.
@@ -129,6 +129,10 @@ export function computeOpening(cards, eraClasses, options) {
     topPulls,
     top1,
     boostersPerDisplay,
+    // "mappable" : le worst-case « lot trié » (looseLo/Hi) est crédible sur
+    // cette ère. "independent" : aucun quota par produit documenté — les taux
+    // restent valides en loose, le risque de sélection est non quantifié.
+    looseModel,
   };
 }
 
@@ -139,10 +143,14 @@ export function computeOpening(cards, eraClasses, options) {
 // va probablement m'arriver ». On simule N ouvertures (Monte-Carlo, taux au
 // point médian) et on en tire les quantiles et les probabilités utiles.
 //
-// La provenance module les chances des classes premium — celles qu'un
-// intermédiaire informé extrait : boîte scellée (1), booster tiré d'une boîte
-// fraîche sous vos yeux (1), détaillant de confiance (0,7 — prudence, pas
-// accusation), origine inconnue (0 — le plancher).
+// La provenance module les chances des classes premium — mais SEULEMENT là où
+// le tri est techniquement crédible (looseModel "mappable", pré-SV : tous les
+// boosters n'ont pas de hit, les boosters à hit sont repérables et retirés en
+// bloc). En ère SV ("independent"), chaque booster a un hit garanti et aucun
+// quota par produit n'est documenté : les boosters sont traités comme
+// indépendants — un booster ne « sait » pas ce que les autres ont donné — et
+// les facteurs restent à 1 ; le risque de sélection est réel mais non
+// quantifié, il se gère par le choix du vendeur, pas par un coefficient.
 // ---------------------------------------------------------------------------
 
 export const PROVENANCES = [
@@ -153,7 +161,7 @@ export const PROVENANCES = [
 ];
 
 export function simulateDistribution(cards, eraClasses, options) {
-  const { boosterPrice, fees = 0.13, bulkThreshold = 0.4, sims = 20000 } = options;
+  const { boosterPrice, fees = 0.13, bulkThreshold = 0.4, sims = 20000, looseModel = "mappable" } = options;
   if (!boosterPrice || boosterPrice <= 0) return null;
   const netOf = (price) => (price >= bulkThreshold ? price * (1 - fees) : 0);
 
@@ -201,6 +209,8 @@ export function simulateDistribution(cards, eraClasses, options) {
 
   return {
     jackpotNet: round2(jackpotNet),
-    byProvenance: Object.fromEntries(PROVENANCES.map((p) => [p.key, runFor(p.factor)])),
+    byProvenance: Object.fromEntries(
+      PROVENANCES.map((p) => [p.key, runFor(looseModel === "independent" ? 1 : p.factor)]),
+    ),
   };
 }

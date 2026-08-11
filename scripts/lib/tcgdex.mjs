@@ -15,12 +15,24 @@ const CACHE_DIR = join(process.cwd(), "data", "raw");
 // Le catalogue d'un set clos ne change pas : cache long.
 const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
+// L'ère SV zéro-padde ses localId ('004') là où les autres écrivent '4' :
+// on normalise les clés numériques pour que la jonction par numéro tienne
+// sur toutes les ères — y compris sur les caches déjà écrits.
+function normalizeLocalIds(data) {
+  if (!data?.byLocalId) return data;
+  const normalized = {};
+  for (const [key, value] of Object.entries(data.byLocalId)) {
+    normalized[/^\d+$/.test(key) ? String(Number(key)) : key] = value;
+  }
+  return { ...data, byLocalId: normalized };
+}
+
 export async function fetchFrenchCatalog(tcgdexId, { useCache = true, lang = "fr" } = {}) {
   const cachePath = join(CACHE_DIR, `tcgdex-${lang}-${tcgdexId.replace(/[^a-z0-9.]/gi, "_")}.json`);
   if (useCache && existsSync(cachePath)) {
     const raw = JSON.parse(await readFile(cachePath, "utf8"));
     // "logo" absent = cache d'une version antérieure du schéma : on rafraîchit.
-    if (Date.now() - raw.cachedAt < CACHE_TTL_MS && "logo" in raw.data) return raw.data;
+    if (Date.now() - raw.cachedAt < CACHE_TTL_MS && "logo" in raw.data) return normalizeLocalIds(raw.data);
   }
 
   let lastError;
@@ -50,7 +62,7 @@ export async function fetchFrenchCatalog(tcgdexId, { useCache = true, lang = "fr
         };
         await mkdir(dirname(cachePath), { recursive: true });
         await writeFile(cachePath, JSON.stringify({ cachedAt: Date.now(), data }));
-        return data;
+        return normalizeLocalIds(data);
       }
       lastError = new Error(`HTTP ${response.status}`);
     } catch (error) {

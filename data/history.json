@@ -27,7 +27,7 @@
         "boosterFRp10": 20,
         "boosterFRmedian": 99.99,
         "boosterFRoffers": 82,
-        "boosterFRsellers": 30
+        "boosterFRsellers": 31
       }
     ],
     "burning-shadows": [
@@ -55,9 +55,9 @@
         "top5Value": 423.34,
         "top12ex5Value": 66.08,
         "boosterFRp10": 25,
-        "boosterFRmedian": 40.2,
-        "boosterFRoffers": 15,
-        "boosterFRsellers": 11
+        "boosterFRmedian": 69.99,
+        "boosterFRoffers": 16,
+        "boosterFRsellers": 12
       }
     ],
     "brilliant-stars": [
@@ -146,8 +146,8 @@
         "top12ex5Value": 29.74,
         "boosterFRp10": 13,
         "boosterFRmedian": 23.54,
-        "boosterFRoffers": 56,
-        "boosterFRsellers": 28
+        "boosterFRoffers": 57,
+        "boosterFRsellers": 29
       }
     ],
     "silver-tempest": [
@@ -322,8 +322,8 @@
         "boosterLanguage": "fr",
         "boxPrice": null,
         "singlesOffers": 32522,
-        "top5Value": 695.87,
-        "top12ex5Value": 470.95,
+        "top5Value": 758.8,
+        "top12ex5Value": 352.59,
         "boosterFRp10": 13,
         "boosterFRmedian": 45,
         "boosterFRoffers": 15,
@@ -429,10 +429,10 @@
         "boxPrice": null,
         "singlesOffers": 5658,
         "top5Value": 269.38,
-        "top12ex5Value": 189.53,
+        "top12ex5Value": 209.19,
         "boosterFRp10": 149.9,
-        "boosterFRmedian": 200,
-        "boosterFRoffers": 11,
+        "boosterFRmedian": 219.99,
+        "boosterFRoffers": 10,
         "boosterFRsellers": 7
       }
     ],

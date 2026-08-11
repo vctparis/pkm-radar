@@ -58,6 +58,12 @@ export function normalizeCard(card) {
   const reference = prices.trendPrice || prices.avg30 || prices.averageSellPrice || 0;
   if (!reference) return null;
 
+  // Garde-fou contre les mauvais mappages produit côté pokemontcg.io : une
+  // commune « à 140 € » (vécu : Charmander n°4 du 151, trend 140 €, plancher
+  // 58 €) est un produit Cardmarket mal relié, pas une carte chère. La garder
+  // empoisonnerait podium, strates et espérances.
+  if (COMMON_RARITIES.has(card.rarity) && reference > 25) return null;
+
   return {
     id: card.id,
     name: card.name,
