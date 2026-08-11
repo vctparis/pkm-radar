@@ -2,24 +2,18 @@ import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
-import Calculators from "@/components/Calculators";
 
 export const metadata: Metadata = {
-  title: "Dossier de marché",
+  title: "Print run, offre réelle et prix",
   description:
-    "Cadre analytique du marché Pokémon TCG : rareté, grading, cascades de FOMO et mécanisme d'inflation, du chase aux communes.",
+    "Pourquoi le volume d'impression brut explique moins bien le prix d'une carte Pokémon que le rapport entre son offre réellement disponible et sa demande.",
 };
 
-// Le dossier était servi dans une iframe pointant vers un HTML statique : pas
-// d'indexation, pas de responsive maîtrisé, deux barres de défilement et aucun
-// partage de design avec le reste du site. Le contenu éditorial est désormais
-// rendu par Next, encadré par les calculateurs reconstruits en React.
-async function part(name: string) {
-  return readFile(join(process.cwd(), "content", name), "utf8");
-}
-
-export default async function DossierPage() {
-  const [before, after] = await Promise.all([part("dossier-part1.html"), part("dossier-part2.html")]);
+// Deuxième article du site, même gabarit que le dossier de marché : contenu
+// éditorial en HTML statique stylé par les classes .dossier, encadré par la
+// navigation commune.
+export default async function OffrePage() {
+  const body = await readFile(join(process.cwd(), "content", "offre.html"), "utf8");
 
   return (
     <div className="relative z-10">
@@ -39,17 +33,17 @@ export default async function DossierPage() {
                 </Link>
               </li>
               <li>
-                <span aria-current="page" className="rounded-lg bg-ink-800 px-3 py-1.5 text-[0.85rem] text-mist-050">
-                  Dossier de marché
-                </span>
-              </li>
-              <li>
                 <Link
-                  href="/offre"
+                  href="/dossier"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >
-                  Offre &amp; print run
+                  Dossier de marché
                 </Link>
+              </li>
+              <li>
+                <span aria-current="page" className="rounded-lg bg-ink-800 px-3 py-1.5 text-[0.85rem] text-mist-050">
+                  Offre & print run
+                </span>
               </li>
             </ul>
           </nav>
@@ -59,15 +53,17 @@ export default async function DossierPage() {
       <main id="contenu" className="mx-auto max-w-[1180px] px-4 pb-24 sm:px-6">
         <div className="border-b border-ink-700/70 py-14">
           <p className="m-0 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">Dossier de recherche</p>
-          <h1 className="display mt-3 max-w-[22ch] text-[clamp(2rem,4.2vw,2.9rem)] text-mist-050">
-            Rareté, flux spéculatifs et mécanisme d&apos;inflation des cartes
+          <h1 className="display mt-3 max-w-[24ch] text-[clamp(2rem,4.2vw,2.9rem)] text-mist-050">
+            Print run, offre réelle et prix : pourquoi « beaucoup imprimé » ne suffit pas
           </h1>
           <p className="prose-measure mt-5 text-[1.02rem] leading-relaxed text-mist-300">
-            Cadre analytique pour distinguer valeur de collection durable, rareté réellement verrouillée, effet du
-            grading et cascades de FOMO — du chase aux cartes secondaires, puis parfois aux communes et au scellé.
+            À demande constante, davantage d&apos;exemplaires imprimés pèse bien sur le prix. Mais le volume
+            d&apos;impression brut explique beaucoup moins bien le prix d&apos;une carte que le rapport entre son
+            offre réellement disponible et sa demande — d&apos;où Moonbreon à 4 300 $ malgré 21 000 PSA 10, et un
+            Lugia à 48 000 $ dont la rareté est un état, pas un tirage.
           </p>
           <ul className="mt-6 flex list-none flex-wrap gap-2 p-0 text-[0.78rem] text-mist-300">
-            {["France / Europe", "Raw + PSA + scellé", "Quantitatif", "Sources primaires"].map((tag) => (
+            {["Print run vs pull rate", "Effective float", "Condition scarcity", "Sources primaires"].map((tag) => (
               <li key={tag} className="rounded-lg bg-ink-800 px-2.5 py-1">
                 {tag}
               </li>
@@ -75,21 +71,20 @@ export default async function DossierPage() {
           </ul>
         </div>
 
-        <article className="dossier">
-          <div dangerouslySetInnerHTML={{ __html: before }} />
-          <Calculators />
-          <div dangerouslySetInnerHTML={{ __html: after }} />
-        </article>
+        <article className="dossier" dangerouslySetInnerHTML={{ __html: body }} />
 
         <p className="prose-measure mt-12 rounded-2xl border border-ink-600 p-5 text-[0.84rem] leading-relaxed text-mist-500">
-          Dossier de recherche v1.0 — outil d&apos;analyse personnel. Ni conseil financier, ni fiscal, ni juridique.
+          Dossier de recherche — outil d&apos;analyse personnel. Ni conseil financier, ni fiscal, ni juridique.
         </p>
       </main>
 
       <footer className="border-t border-ink-700/70">
-        <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3 px-4 py-8 sm:px-6 text-[0.8rem] text-mist-500">
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-4 py-8 text-[0.8rem] text-mist-500 sm:px-6">
           <Link href="/" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
             ← Retour au radar
+          </Link>
+          <Link href="/dossier" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
+            Dossier de marché →
           </Link>
         </div>
       </footer>
