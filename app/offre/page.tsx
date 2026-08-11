@@ -56,11 +56,15 @@ export default async function OffrePage() {
           <h1 className="display mt-3 max-w-[24ch] text-[clamp(2rem,4.2vw,2.9rem)] text-mist-050">
             Print run, offre réelle et prix : pourquoi « beaucoup imprimé » ne suffit pas
           </h1>
-          <p className="prose-measure mt-5 text-[1.02rem] leading-relaxed text-mist-300">
-            À demande constante, davantage d&apos;exemplaires imprimés pèse bien sur le prix. Mais le volume
-            d&apos;impression brut explique beaucoup moins bien le prix d&apos;une carte que le rapport entre son
-            offre réellement disponible et sa demande — d&apos;où Moonbreon à 4 300 $ malgré 21 000 PSA 10, et un
-            Lugia à 48 000 $ dont la rareté est un état, pas un tirage.
+          <p className="prose-measure mt-5 text-[1.15rem] leading-relaxed text-mist-300">
+            Le volume d&apos;impression brut explique{" "}
+            <strong className="font-semibold text-[color:var(--color-warn)]">
+              beaucoup moins bien le prix d&apos;une carte
+            </strong>{" "}
+            que le rapport entre son{" "}
+            <strong className="font-semibold text-mist-050">offre réellement disponible</strong> et sa{" "}
+            <strong className="font-semibold text-mist-050">demande</strong> — d&apos;où Moonbreon à 4 300 $ malgré
+            21 000 PSA 10, et un Lugia à 48 000 $ dont la rareté est un état, pas un tirage.
           </p>
           <ul className="mt-6 flex list-none flex-wrap gap-2 p-0 text-[0.78rem] text-mist-300">
             {["Print run vs pull rate", "Effective float", "Condition scarcity", "Sources primaires"].map((tag) => (
