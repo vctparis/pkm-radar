@@ -25,8 +25,8 @@
         "top5Value": 119.23,
         "top12ex5Value": 53.8,
         "boosterFRp10": 19.9,
-        "boosterFRmedian": 72,
-        "boosterFRoffers": 82,
+        "boosterFRmedian": 99,
+        "boosterFRoffers": 84,
         "boosterFRsellers": 32
       }
     ],
@@ -87,7 +87,7 @@
         "boosterFRp10": 13.5,
         "boosterFRmedian": 18,
         "boosterFRoffers": 62,
-        "boosterFRsellers": 29
+        "boosterFRsellers": 28
       }
     ],
     "fusion-strike": [
@@ -114,10 +114,10 @@
         "singlesOffers": 35821,
         "top5Value": 136.3,
         "top12ex5Value": 11.52,
-        "boosterFRp10": 7.19,
-        "boosterFRmedian": 25,
-        "boosterFRoffers": 29,
-        "boosterFRsellers": 19
+        "boosterFRp10": 13.5,
+        "boosterFRmedian": 30,
+        "boosterFRoffers": 30,
+        "boosterFRsellers": 20
       }
     ],
     "lost-origin": [
@@ -205,8 +205,8 @@
         "top5Value": 174.63,
         "top12ex5Value": 19.9,
         "boosterFRp10": 49.99,
-        "boosterFRmedian": 110,
-        "boosterFRoffers": 13,
+        "boosterFRmedian": 119.9,
+        "boosterFRoffers": 14,
         "boosterFRsellers": 9
       }
     ],
@@ -234,9 +234,9 @@
         "singlesOffers": 26562,
         "top5Value": 3118.07,
         "top12ex5Value": 1544.53,
-        "boosterFRp10": 34.99,
-        "boosterFRmedian": 59,
-        "boosterFRoffers": 9,
+        "boosterFRp10": 40,
+        "boosterFRmedian": 109.99,
+        "boosterFRoffers": 14,
         "boosterFRsellers": 9
       }
     ],
@@ -257,8 +257,8 @@
       },
       {
         "date": "2026-08-11",
-        "boosterPrice": 32.03,
-        "boosterOffers": 2,
+        "boosterPrice": 31.72,
+        "boosterOffers": 3,
         "boosterLanguage": "en",
         "boxPrice": null,
         "singlesOffers": 27430,
@@ -325,9 +325,9 @@
         "top5Value": 675.86,
         "top12ex5Value": 478.04,
         "boosterFRp10": 13,
-        "boosterFRmedian": 35,
-        "boosterFRoffers": 13,
-        "boosterFRsellers": 11
+        "boosterFRmedian": 45,
+        "boosterFRoffers": 15,
+        "boosterFRsellers": 12
       }
     ],
     "shiny-star-v": [

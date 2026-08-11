@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T00:44:33.010Z",
+  "generatedAt": "2026-08-11T07:44:02.880Z",
   "sets": [
     {
       "id": "s151",
@@ -129,11 +129,11 @@
         "priceUrl": "https://www.ebay.fr/itm/147495656305?_skw=pokemon+booster+151&hash=item22576d1b71:g:9j4AAeSw4NdqYFyM",
         "floor10": 13,
         "floor10Url": "https://www.ebay.fr/itm/126961953666?_skw=pokemon+booster+151&hash=item1d8f85ab82:g:LyYAAeSwKZtnvg-F",
-        "median": 35,
-        "offers": 13,
-        "sellers": 11,
-        "matched": 13,
-        "scanned": 29
+        "median": 45,
+        "offers": 15,
+        "sellers": 12,
+        "matched": 15,
+        "scanned": 31
       },
       "opening": {
         "boosterPrice": 13,
@@ -226,25 +226,25 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.14,
+              "evNet": 6.38,
               "p25": 0,
               "median": 0,
-              "p75": 2.64,
-              "pRecoup": 0.12,
-              "pLoseHalf": 0.79,
-              "pDouble": 0.07
-            },
-            "freshBox": {
-              "evNet": 6.5,
-              "p25": 0,
-              "median": 0,
-              "p75": 3.6,
+              "p75": 2.86,
               "pRecoup": 0.12,
               "pLoseHalf": 0.78,
               "pDouble": 0.07
             },
+            "freshBox": {
+              "evNet": 6.35,
+              "p25": 0,
+              "median": 0,
+              "p75": 2.86,
+              "pRecoup": 0.13,
+              "pLoseHalf": 0.78,
+              "pDouble": 0.07
+            },
             "trustedLoose": {
-              "evNet": 4.58,
+              "evNet": 4.46,
               "p25": 0,
               "median": 0,
               "p75": 1.9,
@@ -253,7 +253,7 @@
               "pDouble": 0.05
             },
             "unknownLoose": {
-              "evNet": 0.67,
+              "evNet": 0.66,
               "p25": 0,
               "median": 0,
               "p75": 1.01,
@@ -630,9 +630,9 @@
           "top5Value": 675.86,
           "top12ex5Value": 478.04,
           "boosterFRp10": 13,
-          "boosterFRmedian": 35,
-          "boosterFRoffers": 13,
-          "boosterFRsellers": 11
+          "boosterFRmedian": 45,
+          "boosterFRoffers": 15,
+          "boosterFRsellers": 12
         }
       ],
       "psa": null,
@@ -1204,7 +1204,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.91,
+              "evNet": 3.77,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1213,16 +1213,16 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 3.88,
+              "evNet": 4.05,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.78,
+              "evNet": 3.75,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1231,7 +1231,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 3.88,
+              "evNet": 3.93,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -2051,7 +2051,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.31,
+              "evNet": 2.38,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -2060,7 +2060,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.24,
+              "evNet": 2.19,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -2069,7 +2069,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.97,
+              "evNet": 1.81,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -2078,7 +2078,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.31,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -2529,7 +2529,7 @@
             "discount": 100
           },
           "nameFR": "Guzma",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Guzma-V4-BUS115a",
+          "url": null,
           "marketFR": {
             "price": 1,
             "priceUrl": "https://www.ebay.fr/itm/304126645142?_skw=Guzma+115%2F147&hash=item46cf5c5396:g:-vQAAOSwK8thLOd8",
@@ -2727,7 +2727,7 @@
             "discount": 100
           },
           "nameFR": "Salamèche",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Charmander-V2-BUS18a",
+          "url": null,
           "marketFR": {
             "price": 1,
             "priceUrl": "https://www.ebay.fr/itm/256017236645?_skw=Salam%C3%A8che+18%2F147&hash=item3b9bd102a5:g:BvkAAOSwnPtkGWkD",
@@ -3008,11 +3008,11 @@
         "priceUrl": "https://www.ebay.fr/itm/127318774714?_skw=pokemon+booster+Soleil+%26+Lune&hash=item1da4ca53ba:g:wYMAAOSwa7dnXt7Y",
         "floor10": 19.9,
         "floor10Url": "https://www.ebay.fr/itm/377184583366?_skw=pokemon+booster+Soleil+%26+Lune&hash=item57d1f3fec6:g:LK0AAeSwCy1qBfug",
-        "median": 72,
-        "offers": 82,
+        "median": 99,
+        "offers": 84,
         "sellers": 32,
-        "matched": 82,
-        "scanned": 178
+        "matched": 84,
+        "scanned": 185
       },
       "opening": {
         "boosterPrice": 19.9,
@@ -3105,16 +3105,16 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.64,
+              "evNet": 1.67,
               "p25": 0,
               "median": 0,
-              "p75": 0.76,
-              "pRecoup": 0.01,
+              "p75": 0.99,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.67,
+              "evNet": 1.65,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
@@ -3123,12 +3123,12 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.3,
+              "evNet": 1.23,
               "p25": 0,
               "median": 0,
               "p75": 0.66,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
@@ -3540,8 +3540,8 @@
           "top5Value": 119.23,
           "top12ex5Value": 53.8,
           "boosterFRp10": 19.9,
-          "boosterFRmedian": 72,
-          "boosterFRoffers": 82,
+          "boosterFRmedian": 99,
+          "boosterFRoffers": 84,
           "boosterFRsellers": 32
         }
       ],
@@ -3880,9 +3880,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Double-Colorless-Energy-V3-SUM136",
           "marketFR": {
             "price": 1.9,
-            "priceUrl": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
+            "priceUrl": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
             "floor10": 1.9,
-            "floor10Url": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
+            "floor10Url": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
             "median": 1.9,
             "offers": 2,
             "sellers": 1,
@@ -5232,11 +5232,11 @@
         "priceUrl": "https://www.ebay.fr/itm/117287349288?_skw=pokemon+booster+Destin%C3%A9es+Occultes&hash=item1b4edeec28:g:20QAAeSwVW1qQNXe",
         "floor10": 49.99,
         "floor10Url": "https://www.ebay.fr/itm/376966542509?_skw=pokemon+booster+Destin%C3%A9es+Occultes&hash=item57c4f4f4ad:g:61wAAeSwZThpkeBe",
-        "median": 110,
-        "offers": 13,
+        "median": 119.9,
+        "offers": 14,
         "sellers": 9,
-        "matched": 13,
-        "scanned": 16
+        "matched": 14,
+        "scanned": 17
       },
       "opening": {
         "boosterPrice": 49.99,
@@ -5329,16 +5329,7 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.85,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.23,
-              "pRecoup": 0,
-              "pLoseHalf": 0.95,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 2.82,
+              "evNet": 2.9,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
@@ -5346,17 +5337,26 @@
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
+            "freshBox": {
+              "evNet": 2.8,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.2,
+              "pRecoup": 0,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
             "trustedLoose": {
-              "evNet": 2.06,
+              "evNet": 2.01,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
               "pRecoup": 0,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.36,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -5716,8 +5716,8 @@
           "top5Value": 174.63,
           "top12ex5Value": 19.9,
           "boosterFRp10": 49.99,
-          "boosterFRmedian": 110,
-          "boosterFRoffers": 13,
+          "boosterFRmedian": 119.9,
+          "boosterFRoffers": 14,
           "boosterFRsellers": 9
         }
       ],
@@ -6241,24 +6241,24 @@
       "boosterFR": {
         "price": 34.99,
         "priceUrl": "https://www.ebay.fr/itm/387771829547?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item5a49008d2b:g:y3UAAOSwvexnPyVi",
-        "floor10": 34.99,
-        "floor10Url": "https://www.ebay.fr/itm/387771829547?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item5a49008d2b:g:y3UAAOSwvexnPyVi",
-        "median": 59,
-        "offers": 9,
+        "floor10": 40,
+        "floor10Url": "https://www.ebay.fr/itm/388144752290?_skw=pokemon+booster+%C3%89volution+C%C3%A9leste&hash=item5a5f3ae6a2:g:Tk4AAeSwhGdn4tld",
+        "median": 109.99,
+        "offers": 14,
         "sellers": 9,
-        "matched": 9,
-        "scanned": 48
+        "matched": 14,
+        "scanned": 54
       },
       "opening": {
-        "boosterPrice": 34.99,
+        "boosterPrice": 40,
         "netLo": 4.7,
         "netHi": 7.72,
-        "ratioLo": 0.13,
-        "ratioHi": 0.22,
+        "ratioLo": 0.12,
+        "ratioHi": 0.19,
         "looseLo": 0.24,
         "looseHi": 0.4,
-        "recoupLo": 0.02,
-        "recoupHi": 0.03,
+        "recoupLo": 0.01,
+        "recoupHi": 0.02,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -6329,8 +6329,8 @@
           "buyPrice": 1579.48,
           "oneInLo": 880,
           "oneInHi": 1467,
-          "expectedCostLo": 30791,
-          "expectedCostHi": 51319,
+          "expectedCostLo": 35200,
+          "expectedCostHi": 58667,
           "perDisplay": 0.03,
           "nameFR": "Noctali VMAX"
         },
@@ -6340,7 +6340,7 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.57,
+              "evNet": 5.77,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -6349,7 +6349,7 @@
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 6.39,
+              "evNet": 6.86,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -6358,16 +6358,16 @@
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 4.79,
+              "evNet": 4.4,
               "p25": 0,
               "median": 0,
-              "p75": 0.82,
-              "pRecoup": 0.02,
+              "p75": 0.84,
+              "pRecoup": 0.01,
               "pLoseHalf": 0.97,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.31,
               "p25": 0,
               "median": 0,
               "p75": 0.36,
@@ -6749,9 +6749,9 @@
           "singlesOffers": 26562,
           "top5Value": 3118.07,
           "top12ex5Value": 1544.53,
-          "boosterFRp10": 34.99,
-          "boosterFRmedian": 59,
-          "boosterFRoffers": 9,
+          "boosterFRp10": 40,
+          "boosterFRmedian": 109.99,
+          "boosterFRoffers": 14,
           "boosterFRsellers": 9
         }
       ],
@@ -6810,7 +6810,7 @@
             "discount": 100
           },
           "nameFR": "Rayquaza VMAX",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Rayquaza-VMAX-V4-EVS111",
           "marketFR": {
             "price": 12,
             "priceUrl": "https://www.ebay.fr/itm/404681826033?_skw=Rayquaza+VMAX+111%2F203&hash=item5e38ea9ef1:g:h1UAAOSwOZBle1fM",
@@ -6850,10 +6850,10 @@
             "floor10": 25,
             "floor10Url": "https://www.ebay.fr/itm/407075484291?_skw=Phyllali+V+166%2F203&hash=item5ec796f283:g:R-AAAeSwDTBqV85z",
             "median": 49.99,
-            "offers": 7,
-            "sellers": 7,
-            "matched": 7,
-            "scanned": 7
+            "offers": 6,
+            "sellers": 6,
+            "matched": 6,
+            "scanned": 6
           }
         },
         {
@@ -7380,7 +7380,7 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.83,
+              "evNet": 1.77,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -7389,7 +7389,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.95,
+              "evNet": 1.9,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -7398,7 +7398,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.56,
+              "evNet": 1.53,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -8315,7 +8315,7 @@
         "floor10Url": "https://www.ebay.fr/itm/358886979923?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item538f54b953:g:rhAAAeSwFO1p6PrA",
         "median": 18,
         "offers": 62,
-        "sellers": 29,
+        "sellers": 28,
         "matched": 62,
         "scanned": 135
       },
@@ -8410,16 +8410,16 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.14,
+              "evNet": 2.07,
               "p25": 0,
               "median": 0,
-              "p75": 1.04,
+              "p75": 1.01,
               "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.89,
+              "evNet": 2.09,
               "p25": 0,
               "median": 0,
               "p75": 1.1,
@@ -8428,16 +8428,16 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.44,
+              "evNet": 1.6,
               "p25": 0,
               "median": 0,
-              "p75": 0.73,
+              "p75": 0.76,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.33,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -8818,7 +8818,7 @@
           "boosterFRp10": 13.5,
           "boosterFRmedian": 18,
           "boosterFRoffers": 62,
-          "boosterFRsellers": 29
+          "boosterFRsellers": 28
         }
       ],
       "psa": {
@@ -9204,7 +9204,7 @@
       "score": 53,
       "components": {
         "breadth": 18,
-        "scarcity": 88,
+        "scarcity": 86,
         "psaResistance": 50,
         "spread": 80,
         "maturity": 40
@@ -9431,7 +9431,16 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.11,
+              "evNet": 2.14,
+              "p25": 0,
+              "median": 0.41,
+              "p75": 1.5,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.08,
               "p25": 0,
               "median": 0.41,
               "p75": 1.49,
@@ -9439,22 +9448,13 @@
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 2.07,
-              "p25": 0,
-              "median": 0.4,
-              "p75": 1.49,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.94,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.71,
+              "evNet": 1.76,
               "p25": 0,
               "median": 0,
               "p75": 1.2,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "unknownLoose": {
@@ -9823,11 +9823,11 @@
       ],
       "live": {
         "booster": {
-          "price": 32.03,
-          "floor10": 32.03,
-          "offers": 2,
-          "quantity": 78,
-          "sellers": 2,
+          "price": 31.72,
+          "floor10": 31.72,
+          "offers": 3,
+          "quantity": 79,
+          "sellers": 3,
           "language": "en"
         },
         "boosterBox": null,
@@ -9853,8 +9853,8 @@
         },
         {
           "date": "2026-08-11",
-          "boosterPrice": 32.03,
-          "boosterOffers": 2,
+          "boosterPrice": 31.72,
+          "boosterOffers": 3,
           "boosterLanguage": "en",
           "boxPrice": null,
           "singlesOffers": 27430,
@@ -10342,24 +10342,24 @@
       "boosterFR": {
         "price": 2.99,
         "priceUrl": "https://www.ebay.fr/itm/355009890063?_skw=pokemon+booster+Poing+de+Fusion&hash=item52a83d070f:g:a9UAAOSwCANk8Edb",
-        "floor10": 7.19,
-        "floor10Url": "https://www.ebay.fr/itm/204947936222?_skw=pokemon+booster+Poing+de+Fusion&hash=item2fb7d953de:g:mNkAAeSwHQ9okK79",
-        "median": 25,
-        "offers": 29,
-        "sellers": 19,
-        "matched": 29,
-        "scanned": 42
+        "floor10": 13.5,
+        "floor10Url": "https://www.ebay.fr/itm/188123553811?_skw=pokemon+booster+Poing+de+Fusion&hash=item2bcd09a013:g:l10AAeSwMD1pqY8h",
+        "median": 30,
+        "offers": 30,
+        "sellers": 20,
+        "matched": 30,
+        "scanned": 43
       },
       "opening": {
-        "boosterPrice": 7.19,
+        "boosterPrice": 13.5,
         "netLo": 1.4,
         "netHi": 2.27,
-        "ratioLo": 0.19,
-        "ratioHi": 0.32,
+        "ratioLo": 0.1,
+        "ratioHi": 0.17,
         "looseLo": 0.17,
         "looseHi": 0.29,
-        "recoupLo": 0.03,
-        "recoupHi": 0.05,
+        "recoupLo": 0.02,
+        "recoupHi": 0.03,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -10430,8 +10430,8 @@
           "buyPrice": 99.61,
           "oneInLo": 75,
           "oneInHi": 120,
-          "expectedCostLo": 539,
-          "expectedCostHi": 863,
+          "expectedCostLo": 1012,
+          "expectedCostHi": 1620,
           "perDisplay": 0.32,
           "nameFR": "Celebi V"
         },
@@ -10441,30 +10441,30 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.85,
+              "evNet": 1.92,
               "p25": 0,
               "median": 0,
-              "p75": 0.73,
-              "pRecoup": 0.04,
-              "pLoseHalf": 0.95,
-              "pDouble": 0.02
+              "p75": 0.74,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.96,
+              "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.93,
+              "evNet": 1.92,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
-              "pRecoup": 0.04,
-              "pLoseHalf": 0.95,
-              "pDouble": 0.02
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.96,
+              "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.28,
+              "evNet": 1.35,
               "p25": 0,
               "median": 0,
-              "p75": 0.58,
-              "pRecoup": 0.03,
-              "pLoseHalf": 0.96,
+              "p75": 0.62,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
               "pDouble": 0.01
             },
             "unknownLoose": {
@@ -10473,7 +10473,7 @@
               "median": 0,
               "p75": 0,
               "pRecoup": 0,
-              "pLoseHalf": 0.99,
+              "pLoseHalf": 1,
               "pDouble": 0
             }
           }
@@ -10853,10 +10853,10 @@
           "singlesOffers": 35821,
           "top5Value": 136.3,
           "top12ex5Value": 11.52,
-          "boosterFRp10": 7.19,
-          "boosterFRmedian": 25,
-          "boosterFRoffers": 29,
-          "boosterFRsellers": 19
+          "boosterFRp10": 13.5,
+          "boosterFRmedian": 30,
+          "boosterFRoffers": 30,
+          "boosterFRsellers": 20
         }
       ],
       "psa": {
@@ -12590,7 +12590,16 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.42,
+              "evNet": 2.22,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.77,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.4,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
@@ -12598,17 +12607,8 @@
               "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
-            "freshBox": {
-              "evNet": 2.39,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.77,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
-              "pDouble": 0.01
-            },
             "trustedLoose": {
-              "evNet": 1.59,
+              "evNet": 1.5,
               "p25": 0,
               "median": 0,
               "p75": 0.65,
