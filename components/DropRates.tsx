@@ -192,7 +192,7 @@ export default function DropRates({ data }: { data: RadarData }) {
             <section className="mt-5 rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
               <h3 className="display m-0 text-[1.1rem] text-mist-050">Ces taux de drop se traduisent en euros</h3>
               <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
-                Taux universels × prix observés : médiane Cardmarket de chaque classe
+                Taux universels × prix observés : moyenne Cardmarket de chaque classe — c&apos;est elle que l&apos;espérance exige, et les cartes-titres y pèsent lourd ; la médiane indique le hit typique
                 {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (médiane eBay.fr)` : ""}.
               </p>
 
@@ -213,8 +213,9 @@ export default function DropRates({ data }: { data: RadarData }) {
                     <li key={row.rarity} className="flex flex-wrap items-baseline justify-between gap-x-4 text-[0.86rem]">
                       <span className="text-mist-300"><Dot color={tierOf(row.rarity).color} />{row.rarity}</span>
                       <span className="tabular text-right text-mist-100">
-                        méd. {eur.format(row.median)} × 1/{row.oneInAny} ={" "}
+                        moy. {eur.format(row.mean ?? row.median)} × 1/{row.oneInAny} ={" "}
                         <strong className="text-mist-050">{eur.format(row.contribution)}</strong>
+                        <span className="ml-1.5 text-[0.74rem] text-mist-500">hit typique {eur.format(row.median)}</span>
                       </span>
                     </li>
                   ))}

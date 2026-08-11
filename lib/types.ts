@@ -144,6 +144,7 @@ export type DropRates = {
     oneInAny: number;
     oneInSpecific: number;
     median: number;
+    mean?: number;
     contribution: number;
     premium: boolean;
   }[];

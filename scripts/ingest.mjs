@@ -558,6 +558,12 @@ async function main() {
         if (!group.length) continue;
         const prices = group.map((card) => card.reference).sort((a, b) => a - b);
         const rateMid = (spec.lo + spec.hi) / 2;
+        // L'espérance exige la MOYENNE de la classe (Σ p·prix = taux × moyenne) :
+        // dans une classe asymétrique — six full arts à 3 € et un Celebi V à
+        // 99 € — la médiane décrit le hit typique mais ignore la carte-titre,
+        // et la somme des contributions sous-évalue le booster. On garde la
+        // médiane pour l'affichage du hit typique, la moyenne pour le calcul.
+        const mean = prices.reduce((sum, value) => sum + value, 0) / prices.length;
         rows.push({
           rarity,
           count: group.length,
@@ -566,7 +572,8 @@ async function main() {
           oneInAny: Math.round(1 / rateMid),
           oneInSpecific: Math.round(group.length / rateMid),
           median: Number(prices[Math.floor(prices.length / 2)].toFixed(2)),
-          contribution: Number((rateMid * prices[Math.floor(prices.length / 2)]).toFixed(2)),
+          mean: Number(mean.toFixed(2)),
+          contribution: Number((rateMid * mean).toFixed(2)),
           premium: Boolean(spec.premium),
         });
       }

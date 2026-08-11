@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T14:41:06.146Z",
+  "generatedAt": "2026-08-11T15:08:32.700Z",
   "sets": [
     {
       "id": "s151",
@@ -226,7 +226,16 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.03,
+              "evNet": 6.51,
+              "p25": 0,
+              "median": 0,
+              "p75": 2.86,
+              "pRecoup": 0.13,
+              "pLoseHalf": 0.78,
+              "pDouble": 0.07
+            },
+            "freshBox": {
+              "evNet": 6.15,
               "p25": 0,
               "median": 0,
               "p75": 2.64,
@@ -234,21 +243,12 @@
               "pLoseHalf": 0.79,
               "pDouble": 0.07
             },
-            "freshBox": {
-              "evNet": 6.24,
-              "p25": 0,
-              "median": 0,
-              "p75": 2.86,
-              "pRecoup": 0.12,
-              "pLoseHalf": 0.79,
-              "pDouble": 0.07
-            },
             "trustedLoose": {
-              "evNet": 4.57,
+              "evNet": 4.69,
               "p25": 0,
               "median": 0,
               "p75": 1.9,
-              "pRecoup": 0.08,
+              "pRecoup": 0.09,
               "pLoseHalf": 0.84,
               "pDouble": 0.05
             },
@@ -256,7 +256,7 @@
               "evNet": 0.66,
               "p25": 0,
               "median": 0,
-              "p75": 1.01,
+              "p75": 0.37,
               "pRecoup": 0,
               "pLoseHalf": 0.98,
               "pDouble": 0
@@ -276,6 +276,7 @@
             "oneInAny": 1,
             "oneInSpecific": 36,
             "median": 0.21,
+            "mean": 0.22,
             "contribution": 0.15,
             "premium": false
           },
@@ -287,7 +288,8 @@
             "oneInAny": 4,
             "oneInSpecific": 48,
             "median": 2.18,
-            "contribution": 0.55,
+            "mean": 2.99,
+            "contribution": 0.75,
             "premium": false
           },
           {
@@ -298,7 +300,8 @@
             "oneInAny": 11,
             "oneInSpecific": 178,
             "median": 10.13,
-            "contribution": 0.91,
+            "mean": 13.26,
+            "contribution": 1.19,
             "premium": true
           },
           {
@@ -309,7 +312,8 @@
             "oneInAny": 11,
             "oneInSpecific": 178,
             "median": 26.89,
-            "contribution": 2.42,
+            "mean": 26.57,
+            "contribution": 2.39,
             "premium": true
           },
           {
@@ -320,7 +324,8 @@
             "oneInAny": 31,
             "oneInSpecific": 215,
             "median": 79.37,
-            "contribution": 2.58,
+            "mean": 82.1,
+            "contribution": 2.67,
             "premium": true
           },
           {
@@ -331,11 +336,12 @@
             "oneInAny": 50,
             "oneInSpecific": 150,
             "median": 4.14,
-            "contribution": 0.08,
+            "mean": 8.02,
+            "contribution": 0.16,
             "premium": true
           }
         ],
-        "grossPerBooster": 6.69,
+        "grossPerBooster": 7.31,
         "confidence": "solide",
         "eraLabel": "Écarlate et Violet",
         "sample": "2 000 à 5 000+ boosters ouverts par set",
@@ -1281,7 +1287,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.95,
+              "evNet": 4.13,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1290,16 +1296,16 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 3.99,
+              "evNet": 3.94,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.06,
-              "pLoseHalf": 0.94,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.99,
+              "evNet": 4.15,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1308,12 +1314,12 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 3.86,
+              "evNet": 3.97,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             }
           }
@@ -1331,7 +1337,8 @@
             "oneInAny": 2,
             "oneInSpecific": 20,
             "median": 0.2,
-            "contribution": 0.12,
+            "mean": 0.21,
+            "contribution": 0.13,
             "premium": false
           },
           {
@@ -1342,7 +1349,8 @@
             "oneInAny": 3,
             "oneInSpecific": 18,
             "median": 2.61,
-            "contribution": 0.85,
+            "mean": 13.66,
+            "contribution": 4.44,
             "premium": false
           },
           {
@@ -1353,11 +1361,12 @@
             "oneInAny": 18,
             "oneInSpecific": 18,
             "median": 1.58,
+            "mean": 1.58,
             "contribution": 0.09,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.06,
+        "grossPerBooster": 4.66,
         "confidence": "grossière",
         "eraLabel": "Soleil & Lune",
         "sample": "quelques centaines de boosters",
@@ -2166,16 +2175,16 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.81,
+              "evNet": 1.75,
               "p25": 0,
-              "median": 0.48,
+              "median": 0.45,
               "p75": 1.71,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.75,
+              "evNet": 1.76,
               "p25": 0,
               "median": 0.48,
               "p75": 1.71,
@@ -2184,16 +2193,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.42,
+              "evNet": 1.45,
               "p25": 0,
               "median": 0.42,
-              "p75": 1.37,
+              "p75": 1.44,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.7,
+              "evNet": 0.71,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -2216,7 +2225,8 @@
             "oneInAny": 2,
             "oneInSpecific": 55,
             "median": 0.17,
-            "contribution": 0.1,
+            "mean": 0.37,
+            "contribution": 0.22,
             "premium": false
           },
           {
@@ -2227,7 +2237,8 @@
             "oneInAny": 3,
             "oneInSpecific": 55,
             "median": 0.63,
-            "contribution": 0.2,
+            "mean": 0.96,
+            "contribution": 0.31,
             "premium": false
           },
           {
@@ -2238,7 +2249,8 @@
             "oneInAny": 5,
             "oneInSpecific": 70,
             "median": 1.32,
-            "contribution": 0.26,
+            "mean": 1.87,
+            "contribution": 0.37,
             "premium": false
           },
           {
@@ -2249,7 +2261,8 @@
             "oneInAny": 13,
             "oneInSpecific": 88,
             "median": 3.31,
-            "contribution": 0.26,
+            "mean": 9.07,
+            "contribution": 0.73,
             "premium": true
           },
           {
@@ -2260,6 +2273,7 @@
             "oneInAny": 15,
             "oneInSpecific": 200,
             "median": 3.17,
+            "mean": 3.19,
             "contribution": 0.21,
             "premium": true
           },
@@ -2271,6 +2285,7 @@
             "oneInAny": 50,
             "oneInSpecific": 350,
             "median": 9.67,
+            "mean": 9.39,
             "contribution": 0.19,
             "premium": true
           },
@@ -2282,11 +2297,12 @@
             "oneInAny": 67,
             "oneInSpecific": 333,
             "median": 4.45,
-            "contribution": 0.07,
+            "mean": 5.74,
+            "contribution": 0.09,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.29,
+        "grossPerBooster": 2.12,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -3263,7 +3279,16 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.6,
+              "evNet": 1.5,
+              "p25": 0,
+              "median": 0.41,
+              "p75": 1.27,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.99,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.5,
               "p25": 0,
               "median": 0.41,
               "p75": 1.22,
@@ -3271,26 +3296,17 @@
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 1.48,
-              "p25": 0,
-              "median": 0.39,
-              "p75": 1.27,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.99,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.21,
+              "evNet": 1.18,
               "p25": 0,
-              "median": 0.36,
+              "median": 0,
               "p75": 1.02,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.49,
+              "evNet": 0.5,
               "p25": 0,
               "median": 0,
               "p75": 0.68,
@@ -3313,7 +3329,8 @@
             "oneInAny": 2,
             "oneInSpecific": 55,
             "median": 0.19,
-            "contribution": 0.11,
+            "mean": 0.36,
+            "contribution": 0.21,
             "premium": false
           },
           {
@@ -3324,7 +3341,8 @@
             "oneInAny": 3,
             "oneInSpecific": 58,
             "median": 0.48,
-            "contribution": 0.16,
+            "mean": 0.7,
+            "contribution": 0.23,
             "premium": false
           },
           {
@@ -3335,7 +3353,8 @@
             "oneInAny": 5,
             "oneInSpecific": 55,
             "median": 0.83,
-            "contribution": 0.17,
+            "mean": 1.24,
+            "contribution": 0.25,
             "premium": false
           },
           {
@@ -3346,7 +3365,8 @@
             "oneInAny": 13,
             "oneInSpecific": 75,
             "median": 1.65,
-            "contribution": 0.13,
+            "mean": 2.28,
+            "contribution": 0.18,
             "premium": true
           },
           {
@@ -3357,7 +3377,8 @@
             "oneInAny": 15,
             "oneInSpecific": 308,
             "median": 4.17,
-            "contribution": 0.27,
+            "mean": 6.94,
+            "contribution": 0.45,
             "premium": true
           },
           {
@@ -3368,7 +3389,8 @@
             "oneInAny": 50,
             "oneInSpecific": 600,
             "median": 8.97,
-            "contribution": 0.18,
+            "mean": 22.37,
+            "contribution": 0.45,
             "premium": true
           },
           {
@@ -3379,11 +3401,12 @@
             "oneInAny": 67,
             "oneInSpecific": 400,
             "median": 4.16,
-            "contribution": 0.06,
+            "mean": 4.85,
+            "contribution": 0.07,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.08,
+        "grossPerBooster": 1.84,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -3935,12 +3958,12 @@
             "discount": 100
           },
           "nameFR": "Pikachu VMAX",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Vivid-Voltage/Pikachu-VMAX-V2-VIV188",
           "marketFR": {
             "price": 10,
             "priceUrl": "https://www.ebay.fr/itm/317725346766?_skw=Pikachu+VMAX+188%2F185&hash=item49f9e80bce:g:LX0AAeSw3NlpWAZu",
             "floor10": 30,
-            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1TybgpdDPMoEYDFyMIuh76A2CqqPuMA7rJO8qzYeXEPo0uB0AmhW6JYUQOqcFWVzKcG707b1HRFLzyKhWP6zKRL1KWsk8F11EqaDVFXZBluQgAU9oQ0%2FcVUeMscRT1g28WMziXiYhnmqEKUnTdD1G0N0UgW3XkrB%2B11IwZ%2BOIDvEFg%3D%3D",
+            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1TxEq--ALqH92W3lTpx%2Fx5vbluWdU4vi81CCaY0PUvakA0glHp8DI9s8pFetS0rHvvx4ETBY%2BdiFR60VPaYfPTMF0Z%2Fb%2FHR%2FtnGMIC3aM8Lgawy92dfXRBzbm8W8bjulOVLSV8bGEoYHi71GuVCUqsKfajyPJJt2XGb48Faq77QivQ%3D%3D",
             "median": 299,
             "offers": 17,
             "sellers": 17,
@@ -4391,7 +4414,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.16,
+              "evNet": 2.34,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4400,7 +4423,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.46,
+              "evNet": 2.29,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4409,7 +4432,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.79,
+              "evNet": 1.76,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -4418,7 +4441,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.3,
+              "evNet": 0.32,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -4441,7 +4464,8 @@
             "oneInAny": 2,
             "oneInSpecific": 42,
             "median": 0.19,
-            "contribution": 0.11,
+            "mean": 0.23,
+            "contribution": 0.14,
             "premium": false
           },
           {
@@ -4452,7 +4476,8 @@
             "oneInAny": 3,
             "oneInSpecific": 43,
             "median": 0.63,
-            "contribution": 0.2,
+            "mean": 1.11,
+            "contribution": 0.36,
             "premium": false
           },
           {
@@ -4463,7 +4488,8 @@
             "oneInAny": 9,
             "oneInSpecific": 124,
             "median": 3.24,
-            "contribution": 0.36,
+            "mean": 4.5,
+            "contribution": 0.51,
             "premium": true
           },
           {
@@ -4474,7 +4500,8 @@
             "oneInAny": 18,
             "oneInSpecific": 345,
             "median": 5.3,
-            "contribution": 0.29,
+            "mean": 7.03,
+            "contribution": 0.39,
             "premium": true
           },
           {
@@ -4485,7 +4512,8 @@
             "oneInAny": 44,
             "oneInSpecific": 578,
             "median": 10.85,
-            "contribution": 0.24,
+            "mean": 57.24,
+            "contribution": 1.29,
             "premium": true
           },
           {
@@ -4496,11 +4524,12 @@
             "oneInAny": 67,
             "oneInSpecific": 600,
             "median": 8.6,
-            "contribution": 0.13,
+            "mean": 13.61,
+            "contribution": 0.2,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.33,
+        "grossPerBooster": 2.89,
         "confidence": "grossière",
         "eraLabel": "Soleil & Lune",
         "sample": "quelques centaines de boosters",
@@ -5522,7 +5551,7 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.68,
+              "evNet": 1.66,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
@@ -5531,16 +5560,16 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.64,
+              "evNet": 1.7,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 0.8,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.22,
+              "evNet": 1.26,
               "p25": 0,
               "median": 0,
               "p75": 0.66,
@@ -5572,7 +5601,8 @@
             "oneInAny": 2,
             "oneInSpecific": 28,
             "median": 0.2,
-            "contribution": 0.12,
+            "mean": 0.21,
+            "contribution": 0.13,
             "premium": false
           },
           {
@@ -5583,7 +5613,8 @@
             "oneInAny": 3,
             "oneInSpecific": 49,
             "median": 0.74,
-            "contribution": 0.24,
+            "mean": 1.17,
+            "contribution": 0.38,
             "premium": false
           },
           {
@@ -5594,7 +5625,8 @@
             "oneInAny": 9,
             "oneInSpecific": 98,
             "median": 3.14,
-            "contribution": 0.35,
+            "mean": 4.27,
+            "contribution": 0.48,
             "premium": true
           },
           {
@@ -5605,7 +5637,8 @@
             "oneInAny": 18,
             "oneInSpecific": 218,
             "median": 6.13,
-            "contribution": 0.34,
+            "mean": 8.77,
+            "contribution": 0.48,
             "premium": true
           },
           {
@@ -5616,7 +5649,8 @@
             "oneInAny": 44,
             "oneInSpecific": 356,
             "median": 14.02,
-            "contribution": 0.32,
+            "mean": 16.7,
+            "contribution": 0.38,
             "premium": true
           },
           {
@@ -5627,11 +5661,12 @@
             "oneInAny": 67,
             "oneInSpecific": 400,
             "median": 11.18,
-            "contribution": 0.17,
+            "mean": 12.85,
+            "contribution": 0.19,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.54,
+        "grossPerBooster": 2.04,
         "confidence": "grossière",
         "eraLabel": "Soleil & Lune",
         "sample": "quelques centaines de boosters",
@@ -6006,7 +6041,7 @@
         },
         "singles": {
           "tracked": 173,
-          "offers": 9536
+          "offers": 9631
         }
       },
       "liveHistory": [
@@ -6030,7 +6065,7 @@
           "boosterOffers": 1,
           "boosterLanguage": "en",
           "boxPrice": 1286.74,
-          "singlesOffers": 9536,
+          "singlesOffers": 9631,
           "top5Value": 119.23,
           "top12ex5Value": 53.8,
           "boosterFRp10": 20,
@@ -6352,6 +6387,39 @@
           }
         },
         {
+          "id": "sm1-101a",
+          "name": "Eevee",
+          "number": "101a",
+          "rarity": "Common",
+          "image": "https://assets.tcgdex.net/fr/sm/sm1/101/low.webp",
+          "price": 15.59,
+          "momentum30": 8.2,
+          "relativeStrength": 9.8,
+          "sellers": 33,
+          "offers": 34,
+          "marketFloor": 0.11,
+          "score": 66,
+          "components": {
+            "relative": 75,
+            "tightness": 18,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Évoli",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Eevee-V2-SUM101a",
+          "marketFR": {
+            "price": 1,
+            "priceUrl": "https://www.ebay.fr/itm/194409681262?_skw=%C3%89voli+101%2F149&hash=item2d43b8516e:g:5KUAAOSwHkthWKbu",
+            "floor10": 1,
+            "floor10Url": "https://www.ebay.fr/itm/194409681262?_skw=%C3%89voli+101%2F149&hash=item2d43b8516e:g:5KUAAOSwHkthWKbu",
+            "median": 3.9,
+            "offers": 6,
+            "sellers": 6,
+            "matched": 6,
+            "scanned": 8
+          }
+        },
+        {
           "id": "sm1-136",
           "name": "Double Colorless Energy",
           "number": "136",
@@ -6385,69 +6453,36 @@
           }
         },
         {
-          "id": "sm1-101a",
-          "name": "Eevee",
-          "number": "101a",
-          "rarity": "Common",
-          "image": "https://assets.tcgdex.net/fr/sm/sm1/101/low.webp",
-          "price": 15.59,
-          "momentum30": 8.2,
-          "relativeStrength": 9.8,
-          "sellers": 34,
-          "offers": 35,
-          "marketFloor": 0.11,
-          "score": 65,
+          "id": "sm1-110",
+          "name": "Gumshoos-GX",
+          "number": "110",
+          "rarity": "Rare Holo GX",
+          "image": "https://assets.tcgdex.net/fr/sm/sm1/110/low.webp",
+          "price": 1.3,
+          "momentum30": 11.9,
+          "relativeStrength": 13.4,
+          "sellers": 42,
+          "offers": 43,
+          "marketFloor": 1,
+          "score": 64,
           "components": {
-            "relative": 75,
-            "tightness": 15,
+            "relative": 84,
+            "tightness": 0,
             "liquidity": 100,
             "discount": 100
           },
-          "nameFR": "Évoli",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Eevee-V2-SUM101a",
+          "nameFR": "Argouste GX",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Gumshoos-GX-V1-SUM110",
           "marketFR": {
-            "price": 1,
-            "priceUrl": "https://www.ebay.fr/itm/194409681262?_skw=%C3%89voli+101%2F149&hash=item2d43b8516e:g:5KUAAOSwHkthWKbu",
-            "floor10": 1,
-            "floor10Url": "https://www.ebay.fr/itm/194409681262?_skw=%C3%89voli+101%2F149&hash=item2d43b8516e:g:5KUAAOSwHkthWKbu",
-            "median": 3.9,
-            "offers": 6,
-            "sellers": 6,
-            "matched": 6,
-            "scanned": 8
-          }
-        },
-        {
-          "id": "sm1-89",
-          "name": "Solgaleo-GX",
-          "number": "89",
-          "rarity": "Rare Holo GX",
-          "image": "https://assets.tcgdex.net/fr/sm/sm1/89/low.webp",
-          "price": 6.66,
-          "momentum30": 20.8,
-          "relativeStrength": 22.3,
-          "sellers": 29,
-          "offers": 29,
-          "marketFloor": 3.27,
-          "score": 64,
-          "components": {
-            "relative": 100,
-            "tightness": 28,
-            "liquidity": 100,
-            "discount": 0
-          },
-          "nameFR": "Solgaleo GX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Solgaleo-GX-V2-SUM89",
-          "marketFR": {
-            "price": 9,
-            "priceUrl": "https://www.ebay.fr/itm/144904662966?_skw=Solgaleo+GX+89%2F149&hash=item21bcfdafb6:g:ZsgAAOSwAW5jxlj7",
-            "floor10": 9,
-            "floor10Url": "https://www.ebay.fr/itm/144904662966?_skw=Solgaleo+GX+89%2F149&hash=item21bcfdafb6:g:ZsgAAOSwAW5jxlj7",
-            "median": 12.85,
-            "offers": 7,
-            "sellers": 7,
-            "matched": 7,
-            "scanned": 7
+            "price": 2.5,
+            "priceUrl": "https://www.ebay.fr/itm/317420240488?_skw=Argouste+GX+110%2F149&hash=item49e7b87e68:g:gcwAAeSwsqto8AeF",
+            "floor10": 3.9,
+            "floor10Url": "https://www.ebay.fr/itm/402313905839?_skw=Argouste+GX+110%2F149&hash=item5dabc706af:g:PwoAAOSwL3Fe~bND",
+            "median": 6.9,
+            "offers": 20,
+            "sellers": 18,
+            "matched": 20,
+            "scanned": 21
           }
         }
       ]
@@ -6665,7 +6700,7 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.64,
+              "evNet": 11.33,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -6674,7 +6709,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 11.55,
+              "evNet": 11.38,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -6683,16 +6718,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 10.54,
+              "evNet": 10.41,
               "p25": 0,
               "median": 0.35,
-              "p75": 4.29,
+              "p75": 4.56,
               "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.22,
+              "evNet": 8.37,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
@@ -6715,7 +6750,8 @@
             "oneInAny": 2,
             "oneInSpecific": 15,
             "median": 0.29,
-            "contribution": 0.17,
+            "mean": 0.47,
+            "contribution": 0.28,
             "premium": false
           },
           {
@@ -6726,7 +6762,8 @@
             "oneInAny": 3,
             "oneInSpecific": 40,
             "median": 4.56,
-            "contribution": 1.48,
+            "mean": 29.09,
+            "contribution": 9.46,
             "premium": false
           },
           {
@@ -6737,7 +6774,8 @@
             "oneInAny": 9,
             "oneInSpecific": 104,
             "median": 7.83,
-            "contribution": 0.9,
+            "mean": 11.24,
+            "contribution": 1.29,
             "premium": true
           },
           {
@@ -6748,7 +6786,8 @@
             "oneInAny": 18,
             "oneInSpecific": 164,
             "median": 26,
-            "contribution": 1.43,
+            "mean": 39.51,
+            "contribution": 2.17,
             "premium": true
           },
           {
@@ -6759,11 +6798,12 @@
             "oneInAny": 54,
             "oneInSpecific": 270,
             "median": 4.82,
-            "contribution": 0.09,
+            "mean": 3.93,
+            "contribution": 0.07,
             "premium": true
           }
         ],
-        "grossPerBooster": 4.07,
+        "grossPerBooster": 13.27,
         "confidence": "grossière",
         "eraLabel": "XY",
         "sample": "quelques centaines de boosters",
@@ -9471,25 +9511,25 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.88,
+              "evNet": 2.84,
               "p25": 0,
               "median": 0,
-              "p75": 1.23,
+              "p75": 1.15,
               "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.92,
+              "evNet": 2.84,
               "p25": 0,
               "median": 0,
-              "p75": 1.2,
+              "p75": 1.15,
               "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 2.06,
+              "evNet": 2.12,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
@@ -9521,7 +9561,8 @@
             "oneInAny": 2,
             "oneInSpecific": 25,
             "median": 0.22,
-            "contribution": 0.13,
+            "mean": 0.43,
+            "contribution": 0.26,
             "premium": false
           },
           {
@@ -9532,7 +9573,8 @@
             "oneInAny": 3,
             "oneInSpecific": 18,
             "median": 0.68,
-            "contribution": 0.22,
+            "mean": 0.8,
+            "contribution": 0.26,
             "premium": false
           },
           {
@@ -9543,7 +9585,8 @@
             "oneInAny": 9,
             "oneInSpecific": 80,
             "median": 2.73,
-            "contribution": 0.31,
+            "mean": 8.01,
+            "contribution": 0.9,
             "premium": true
           },
           {
@@ -9554,7 +9597,8 @@
             "oneInAny": 18,
             "oneInSpecific": 55,
             "median": 25.42,
-            "contribution": 1.4,
+            "mean": 23.56,
+            "contribution": 1.3,
             "premium": true
           },
           {
@@ -9565,11 +9609,12 @@
             "oneInAny": 44,
             "oneInSpecific": 44,
             "median": 30.9,
+            "mean": 30.9,
             "contribution": 0.7,
             "premium": true
           }
         ],
-        "grossPerBooster": 2.76,
+        "grossPerBooster": 3.42,
         "confidence": "grossière",
         "eraLabel": "Soleil & Lune",
         "sample": "quelques centaines de boosters",
@@ -10548,7 +10593,7 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.65,
+              "evNet": 6.06,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -10557,16 +10602,16 @@
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 5.91,
+              "evNet": 5.73,
               "p25": 0,
               "median": 0,
-              "p75": 1.18,
+              "p75": 1.14,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 4.59,
+              "evNet": 4.72,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -10598,6 +10643,7 @@
             "oneInAny": 2,
             "oneInSpecific": 32,
             "median": 0.08,
+            "mean": 0.08,
             "contribution": 0.05,
             "premium": false
           },
@@ -10609,6 +10655,7 @@
             "oneInAny": 3,
             "oneInSpecific": 62,
             "median": 0.35,
+            "mean": 0.34,
             "contribution": 0.11,
             "premium": false
           },
@@ -10620,7 +10667,8 @@
             "oneInAny": 5,
             "oneInSpecific": 90,
             "median": 1.36,
-            "contribution": 0.27,
+            "mean": 1.62,
+            "contribution": 0.32,
             "premium": false
           },
           {
@@ -10631,6 +10679,7 @@
             "oneInAny": 13,
             "oneInSpecific": 188,
             "median": 6.11,
+            "mean": 6.17,
             "contribution": 0.49,
             "premium": true
           },
@@ -10642,7 +10691,8 @@
             "oneInAny": 15,
             "oneInSpecific": 585,
             "median": 17.92,
-            "contribution": 1.16,
+            "mean": 45.22,
+            "contribution": 2.94,
             "premium": true
           },
           {
@@ -10653,7 +10703,8 @@
             "oneInAny": 50,
             "oneInSpecific": 1100,
             "median": 24.45,
-            "contribution": 0.49,
+            "mean": 159.55,
+            "contribution": 3.19,
             "premium": true
           },
           {
@@ -10664,11 +10715,12 @@
             "oneInAny": 67,
             "oneInSpecific": 800,
             "median": 9.02,
+            "mean": 9.61,
             "contribution": 0.14,
             "premium": true
           }
         ],
-        "grossPerBooster": 2.71,
+        "grossPerBooster": 7.24,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -11676,7 +11728,16 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.98,
+              "evNet": 2.11,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.84,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.95,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -11684,17 +11745,8 @@
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 1.85,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.84,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.94,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.43,
+              "evNet": 1.38,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -11703,7 +11755,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
               "p75": 0.46,
@@ -11726,6 +11778,7 @@
             "oneInAny": 2,
             "oneInSpecific": 35,
             "median": 0.09,
+            "mean": 0.08,
             "contribution": 0.05,
             "premium": false
           },
@@ -11737,7 +11790,8 @@
             "oneInAny": 3,
             "oneInSpecific": 43,
             "median": 0.22,
-            "contribution": 0.07,
+            "mean": 0.23,
+            "contribution": 0.08,
             "premium": false
           },
           {
@@ -11748,7 +11802,8 @@
             "oneInAny": 5,
             "oneInSpecific": 75,
             "median": 0.71,
-            "contribution": 0.14,
+            "mean": 1.48,
+            "contribution": 0.3,
             "premium": false
           },
           {
@@ -11759,6 +11814,7 @@
             "oneInAny": 8,
             "oneInSpecific": 24,
             "median": 0.61,
+            "mean": 0.66,
             "contribution": 0.08,
             "premium": false
           },
@@ -11770,6 +11826,7 @@
             "oneInAny": 13,
             "oneInSpecific": 13,
             "median": 0.97,
+            "mean": 0.97,
             "contribution": 0.08,
             "premium": true
           },
@@ -11781,7 +11838,8 @@
             "oneInAny": 13,
             "oneInSpecific": 75,
             "median": 1.15,
-            "contribution": 0.09,
+            "mean": 1.51,
+            "contribution": 0.12,
             "premium": true
           },
           {
@@ -11792,7 +11850,8 @@
             "oneInAny": 15,
             "oneInSpecific": 400,
             "median": 5.07,
-            "contribution": 0.33,
+            "mean": 21.25,
+            "contribution": 1.38,
             "premium": true
           },
           {
@@ -11803,7 +11862,8 @@
             "oneInAny": 50,
             "oneInSpecific": 700,
             "median": 7,
-            "contribution": 0.14,
+            "mean": 8.28,
+            "contribution": 0.17,
             "premium": true
           },
           {
@@ -11814,11 +11874,12 @@
             "oneInAny": 67,
             "oneInSpecific": 400,
             "median": 4.83,
-            "contribution": 0.07,
+            "mean": 5.78,
+            "contribution": 0.09,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.05,
+        "grossPerBooster": 2.35,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -12798,7 +12859,7 @@
           "jackpotNet": 8.99,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 0.52,
+              "evNet": 0.51,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -12848,7 +12909,8 @@
             "oneInAny": 2,
             "oneInSpecific": 13,
             "median": 0.12,
-            "contribution": 0.07,
+            "mean": 0.15,
+            "contribution": 0.09,
             "premium": false
           },
           {
@@ -12859,6 +12921,7 @@
             "oneInAny": 3,
             "oneInSpecific": 22,
             "median": 0.15,
+            "mean": 0.15,
             "contribution": 0.05,
             "premium": false
           },
@@ -12870,6 +12933,7 @@
             "oneInAny": 5,
             "oneInSpecific": 40,
             "median": 0.9,
+            "mean": 0.88,
             "contribution": 0.18,
             "premium": false
           },
@@ -12881,7 +12945,8 @@
             "oneInAny": 13,
             "oneInSpecific": 75,
             "median": 1.93,
-            "contribution": 0.15,
+            "mean": 1.71,
+            "contribution": 0.14,
             "premium": true
           },
           {
@@ -12892,7 +12957,8 @@
             "oneInAny": 15,
             "oneInSpecific": 138,
             "median": 2.31,
-            "contribution": 0.15,
+            "mean": 3.49,
+            "contribution": 0.23,
             "premium": true
           },
           {
@@ -12903,11 +12969,12 @@
             "oneInAny": 50,
             "oneInSpecific": 50,
             "median": 2.18,
+            "mean": 2.18,
             "contribution": 0.04,
             "premium": true
           }
         ],
-        "grossPerBooster": 0.64,
+        "grossPerBooster": 0.73,
         "confidence": "grossière",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -13808,9 +13875,9 @@
         "floor10Url": "https://www.ebay.fr/itm/198141346245?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item2e222501c5:g:nzgAAeSw0tFpoWfC",
         "median": 18,
         "offers": 62,
-        "sellers": 26,
+        "sellers": 27,
         "matched": 62,
-        "scanned": 132
+        "scanned": 134
       },
       "opening": {
         "boosterPrice": 14,
@@ -13903,7 +13970,7 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.11,
+              "evNet": 2.1,
               "p25": 0,
               "median": 0,
               "p75": 1.11,
@@ -13912,25 +13979,25 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2,
+              "evNet": 2.02,
               "p25": 0,
               "median": 0,
-              "p75": 1.11,
+              "p75": 1.1,
               "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.53,
+              "evNet": 1.67,
               "p25": 0,
               "median": 0,
-              "p75": 0.73,
+              "p75": 0.76,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.34,
+              "evNet": 0.31,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -13953,7 +14020,8 @@
             "oneInAny": 2,
             "oneInSpecific": 43,
             "median": 0.09,
-            "contribution": 0.05,
+            "mean": 0.12,
+            "contribution": 0.07,
             "premium": false
           },
           {
@@ -13964,7 +14032,8 @@
             "oneInAny": 3,
             "oneInSpecific": 28,
             "median": 0.19,
-            "contribution": 0.06,
+            "mean": 0.23,
+            "contribution": 0.08,
             "premium": false
           },
           {
@@ -13975,7 +14044,8 @@
             "oneInAny": 5,
             "oneInSpecific": 100,
             "median": 0.87,
-            "contribution": 0.17,
+            "mean": 1.76,
+            "contribution": 0.35,
             "premium": false
           },
           {
@@ -13986,7 +14056,8 @@
             "oneInAny": 13,
             "oneInSpecific": 38,
             "median": 1.46,
-            "contribution": 0.12,
+            "mean": 1.68,
+            "contribution": 0.13,
             "premium": true
           },
           {
@@ -13997,7 +14068,8 @@
             "oneInAny": 13,
             "oneInSpecific": 50,
             "median": 2.98,
-            "contribution": 0.24,
+            "mean": 3.12,
+            "contribution": 0.25,
             "premium": true
           },
           {
@@ -14008,7 +14080,8 @@
             "oneInAny": 15,
             "oneInSpecific": 323,
             "median": 3.36,
-            "contribution": 0.22,
+            "mean": 19.47,
+            "contribution": 1.27,
             "premium": true
           },
           {
@@ -14019,7 +14092,8 @@
             "oneInAny": 50,
             "oneInSpecific": 400,
             "median": 4.12,
-            "contribution": 0.08,
+            "mean": 8.83,
+            "contribution": 0.18,
             "premium": true
           },
           {
@@ -14030,11 +14104,12 @@
             "oneInAny": 67,
             "oneInSpecific": 400,
             "median": 11.64,
-            "contribution": 0.17,
+            "mean": 10.58,
+            "contribution": 0.16,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.11,
+        "grossPerBooster": 2.49,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -14410,7 +14485,7 @@
           "boosterFRp10": 14,
           "boosterFRmedian": 18,
           "boosterFRoffers": 62,
-          "boosterFRsellers": 26
+          "boosterFRsellers": 27
         }
       ],
       "psa": {
@@ -15023,18 +15098,18 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.11,
+              "evNet": 2.09,
               "p25": 0,
-              "median": 0.41,
-              "p75": 1.51,
-              "pRecoup": 0.01,
+              "median": 0.4,
+              "p75": 1.48,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.1,
+              "evNet": 2.06,
               "p25": 0,
-              "median": 0.41,
+              "median": 0.4,
               "p75": 1.49,
               "pRecoup": 0.02,
               "pLoseHalf": 0.94,
@@ -15050,10 +15125,10 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.98,
+              "evNet": 0.92,
               "p25": 0,
               "median": 0,
-              "p75": 0.66,
+              "p75": 0.6,
               "pRecoup": 0,
               "pLoseHalf": 0.96,
               "pDouble": 0
@@ -15073,7 +15148,8 @@
             "oneInAny": 2,
             "oneInSpecific": 37,
             "median": 0.11,
-            "contribution": 0.07,
+            "mean": 0.11,
+            "contribution": 0.06,
             "premium": false
           },
           {
@@ -15084,7 +15160,8 @@
             "oneInAny": 3,
             "oneInSpecific": 62,
             "median": 0.46,
-            "contribution": 0.15,
+            "mean": 0.5,
+            "contribution": 0.16,
             "premium": false
           },
           {
@@ -15095,7 +15172,8 @@
             "oneInAny": 5,
             "oneInSpecific": 85,
             "median": 0.96,
-            "contribution": 0.19,
+            "mean": 1.5,
+            "contribution": 0.3,
             "premium": false
           },
           {
@@ -15106,7 +15184,8 @@
             "oneInAny": 8,
             "oneInSpecific": 24,
             "median": 0.53,
-            "contribution": 0.07,
+            "mean": 5.41,
+            "contribution": 0.68,
             "premium": false
           },
           {
@@ -15117,7 +15196,8 @@
             "oneInAny": 13,
             "oneInSpecific": 63,
             "median": 2.08,
-            "contribution": 0.17,
+            "mean": 3.04,
+            "contribution": 0.24,
             "premium": true
           },
           {
@@ -15128,7 +15208,8 @@
             "oneInAny": 13,
             "oneInSpecific": 100,
             "median": 1.62,
-            "contribution": 0.13,
+            "mean": 2.77,
+            "contribution": 0.22,
             "premium": true
           },
           {
@@ -15139,7 +15220,8 @@
             "oneInAny": 15,
             "oneInSpecific": 200,
             "median": 2.44,
-            "contribution": 0.16,
+            "mean": 4.41,
+            "contribution": 0.29,
             "premium": true
           },
           {
@@ -15150,11 +15232,12 @@
             "oneInAny": 67,
             "oneInSpecific": 67,
             "median": 37.74,
+            "mean": 37.74,
             "contribution": 0.57,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.51,
+        "grossPerBooster": 2.52,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -16141,7 +16224,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.77,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -16150,16 +16233,16 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.37,
+              "evNet": 1.4,
               "p25": 0,
               "median": 0,
-              "p75": 0.64,
+              "p75": 0.62,
               "pRecoup": 0.02,
               "pLoseHalf": 0.97,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.24,
+              "evNet": 0.23,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -16182,6 +16265,7 @@
             "oneInAny": 2,
             "oneInSpecific": 53,
             "median": 0.11,
+            "mean": 0.12,
             "contribution": 0.07,
             "premium": false
           },
@@ -16193,6 +16277,7 @@
             "oneInAny": 3,
             "oneInSpecific": 40,
             "median": 0.2,
+            "mean": 0.21,
             "contribution": 0.07,
             "premium": false
           },
@@ -16204,7 +16289,8 @@
             "oneInAny": 5,
             "oneInSpecific": 95,
             "median": 0.97,
-            "contribution": 0.19,
+            "mean": 1.33,
+            "contribution": 0.27,
             "premium": false
           },
           {
@@ -16215,7 +16301,8 @@
             "oneInAny": 13,
             "oneInSpecific": 100,
             "median": 1.99,
-            "contribution": 0.16,
+            "mean": 6.41,
+            "contribution": 0.51,
             "premium": true
           },
           {
@@ -16226,11 +16313,12 @@
             "oneInAny": 15,
             "oneInSpecific": 92,
             "median": 2.68,
-            "contribution": 0.17,
+            "mean": 20.5,
+            "contribution": 1.33,
             "premium": true
           }
         ],
-        "grossPerBooster": 0.66,
+        "grossPerBooster": 2.25,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -18355,30 +18443,30 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.09,
+              "evNet": 2.45,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.12,
+              "evNet": 2.43,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.51,
+              "evNet": 1.69,
               "p25": 0,
               "median": 0,
-              "p75": 0.65,
+              "p75": 0.6,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.99,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
@@ -18405,7 +18493,8 @@
             "oneInAny": 2,
             "oneInSpecific": 47,
             "median": 0.09,
-            "contribution": 0.05,
+            "mean": 0.1,
+            "contribution": 0.06,
             "premium": false
           },
           {
@@ -18416,7 +18505,8 @@
             "oneInAny": 3,
             "oneInSpecific": 68,
             "median": 0.25,
-            "contribution": 0.08,
+            "mean": 0.36,
+            "contribution": 0.12,
             "premium": false
           },
           {
@@ -18427,6 +18517,7 @@
             "oneInAny": 5,
             "oneInSpecific": 60,
             "median": 0.64,
+            "mean": 0.65,
             "contribution": 0.13,
             "premium": false
           },
@@ -18438,6 +18529,7 @@
             "oneInAny": 8,
             "oneInSpecific": 24,
             "median": 0.57,
+            "mean": 0.54,
             "contribution": 0.07,
             "premium": false
           },
@@ -18449,6 +18541,7 @@
             "oneInAny": 13,
             "oneInSpecific": 13,
             "median": 1.4,
+            "mean": 1.4,
             "contribution": 0.11,
             "premium": true
           },
@@ -18460,7 +18553,8 @@
             "oneInAny": 13,
             "oneInSpecific": 75,
             "median": 0.89,
-            "contribution": 0.07,
+            "mean": 0.96,
+            "contribution": 0.08,
             "premium": true
           },
           {
@@ -18471,7 +18565,8 @@
             "oneInAny": 15,
             "oneInSpecific": 385,
             "median": 2.39,
-            "contribution": 0.16,
+            "mean": 31.62,
+            "contribution": 2.06,
             "premium": true
           },
           {
@@ -18482,7 +18577,8 @@
             "oneInAny": 50,
             "oneInSpecific": 750,
             "median": 4.61,
-            "contribution": 0.09,
+            "mean": 5.81,
+            "contribution": 0.12,
             "premium": true
           },
           {
@@ -18493,11 +18589,12 @@
             "oneInAny": 67,
             "oneInSpecific": 400,
             "median": 3.18,
-            "contribution": 0.05,
+            "mean": 4.5,
+            "contribution": 0.07,
             "premium": true
           }
         ],
-        "grossPerBooster": 0.81,
+        "grossPerBooster": 2.82,
         "confidence": "correcte",
         "eraLabel": "Épée et Bouclier",
         "sample": "plusieurs milliers de boosters sur l'ère",
@@ -19484,7 +19581,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.2,
+              "evNet": 4.15,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -19493,16 +19590,16 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 4.38,
+              "evNet": 4.47,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.99,
+              "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 2.75,
+              "evNet": 2.85,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
@@ -19511,10 +19608,10 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.18,
+              "evNet": 0.19,
               "p25": 0,
               "median": 0,
-              "p75": 0,
+              "p75": 0.38,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -19534,6 +19631,7 @@
             "oneInAny": 1,
             "oneInSpecific": 23,
             "median": 0.09,
+            "mean": 0.08,
             "contribution": 0.06,
             "premium": false
           },
@@ -19545,7 +19643,8 @@
             "oneInAny": 4,
             "oneInSpecific": 40,
             "median": 0.51,
-            "contribution": 0.13,
+            "mean": 0.85,
+            "contribution": 0.21,
             "premium": false
           },
           {
@@ -19556,7 +19655,8 @@
             "oneInAny": 7,
             "oneInSpecific": 889,
             "median": 2.76,
-            "contribution": 0.37,
+            "mean": 3.87,
+            "contribution": 0.52,
             "premium": true
           },
           {
@@ -19567,7 +19667,8 @@
             "oneInAny": 11,
             "oneInSpecific": 56,
             "median": 0.52,
-            "contribution": 0.05,
+            "mean": 0.48,
+            "contribution": 0.04,
             "premium": true
           },
           {
@@ -19578,6 +19679,7 @@
             "oneInAny": 11,
             "oneInSpecific": 33,
             "median": 0.85,
+            "mean": 0.91,
             "contribution": 0.08,
             "premium": true
           },
@@ -19589,7 +19691,8 @@
             "oneInAny": 31,
             "oneInSpecific": 246,
             "median": 20.85,
-            "contribution": 0.68,
+            "mean": 110.75,
+            "contribution": 3.6,
             "premium": true
           },
           {
@@ -19600,7 +19703,8 @@
             "oneInAny": 33,
             "oneInSpecific": 400,
             "median": 1.32,
-            "contribution": 0.04,
+            "mean": 2.94,
+            "contribution": 0.09,
             "premium": true
           },
           {
@@ -19611,11 +19715,12 @@
             "oneInAny": 50,
             "oneInSpecific": 300,
             "median": 7.65,
-            "contribution": 0.15,
+            "mean": 7.89,
+            "contribution": 0.16,
             "premium": true
           }
         ],
-        "grossPerBooster": 1.56,
+        "grossPerBooster": 4.76,
         "confidence": "correcte",
         "eraLabel": "Écarlate et Violet",
         "sample": "2 000 à 5 000+ boosters ouverts par set",
