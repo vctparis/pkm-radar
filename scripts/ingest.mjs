@@ -163,6 +163,16 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
   }
 
   const headline = picks[0] ?? null;
+  const podium = top.slice(0, 3).map((entry) => ({
+    name: entry.name,
+    nameFR: null,
+    image: imageByNumber.get(normalizeNumber(entry.collectorNumber)) ?? null,
+    number: entry.collectorNumber ?? "—",
+    rarity: entry.rarity ?? "—",
+    price: entry.floor10,
+    change30: null,
+    url: null,
+  }));
 
   // ---- Accumulation quotidienne -------------------------------------------
   if (live?.booster?.price != null || boosterFR?.floor10 != null) {
@@ -274,6 +284,7 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
         }
       : null,
     boosterFR,
+    podium,
     strata: [],
     growthSeries: { monthly: EMPTY_BUNDLE, quarterly: EMPTY_BUNDLE },
     contentValue: [],
@@ -424,6 +435,25 @@ async function main() {
           url: await resolveCardmarketUrl(headline.cardmarketUrl),
         }
       : null;
+
+    // Podium : titre, dauphin, troisième — pour la carte d'identité des
+    // pages qui comparent le haut du set d'un regard.
+    const podium = [];
+    for (const card of sorted.slice(0, 3)) {
+      podium.push({
+        name: card.name,
+        nameFR: frOf(card.number)?.name ?? null,
+        image: frOf(card.number)?.image ?? card.image,
+        number: card.number,
+        rarity: card.rarity,
+        price: Number(card.reference.toFixed(2)),
+        change30:
+          card.prices.avg30 > 0 && card.prices.avg7 > 0
+            ? Number(((card.prices.avg7 / card.prices.avg30 - 1) * 100).toFixed(1))
+            : null,
+        url: await resolveCardmarketUrl(card.cardmarketUrl),
+      });
+    }
 
     // Séries temporelles à deux lissages : mensuel (fenêtre 90 j avancée mois
     // par mois) et trimestriel (fenêtre 180 j avancée trimestre par trimestre).
@@ -727,6 +757,7 @@ async function main() {
       },
       segments,
       bestCard,
+      podium,
       boosterFR,
       opening,
       dropRates,

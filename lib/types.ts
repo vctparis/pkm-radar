@@ -176,6 +176,7 @@ export type SetEntry = {
   };
   segments: { chase: Segment; mid: Segment; commons: Segment } | null;
   bestCard: BestCard;
+  podium?: NonNullable<BestCard>[];
   boosterFR: FRBoosterQuote;
   opening: Opening | BoxOpening | null;
   dropRates: DropRates;

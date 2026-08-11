@@ -51,6 +51,10 @@ export default function DropRates({ data }: { data: RadarData }) {
   const [era, setEra] = useState(eras[0]);
   const setsOfEra = data.sets.filter((set) => eraOf(set) === era);
   const [activeId, setActiveId] = useState(setsOfEra[0]?.id);
+  // Scellé ou à l'unité : le loose retire les classes premium — un revendeur
+  // qui mappe ses displays extrait les boosters à gros hit avant de vendre
+  // le reste. Conclusion : sur du loose inconnu, la carte-titre est partie.
+  const [loose, setLoose] = useState(false);
   const active = setsOfEra.find((set) => set.id === activeId) ?? setsOfEra[0];
 
   const pickEra = (next: string) => {
@@ -69,6 +73,14 @@ export default function DropRates({ data }: { data: RadarData }) {
   const netMid = opening ? (opening.netLo + opening.netHi) / 2 : null;
   const lossPct = opening && boosterPrice && netMid != null ? Math.round((1 - netMid / boosterPrice) * 100) : null;
   const maxRate = active.dropRates ? Math.max(...active.dropRates.classes.map((row) => row.rateHi)) : 1;
+  // Lignes de la section euros selon le scénario : en loose, les classes
+  // premium sont écrémées (contribution zéro).
+  const activeRows = (active.dropRates?.classes ?? []).map((row) => ({
+    ...row,
+    skimmed: loose && row.premium,
+    effective: loose && row.premium ? 0 : row.contribution,
+  }));
+  const grossEffective = Number(activeRows.reduce((sum, row) => sum + row.effective, 0).toFixed(2));
 
   return (
     <div>
@@ -134,40 +146,42 @@ export default function DropRates({ data }: { data: RadarData }) {
               {boosterPrice != null ? eur.format(boosterPrice) : "—"}
             </p>
           </div>
-          {active.bestCard && (
-            <div>
-              <p className="m-0 text-[0.7rem] uppercase tracking-wider text-mist-500">Carte-titre</p>
+          {(active.podium ?? (active.bestCard ? [active.bestCard] : [])).map((card, index) => (
+            <div key={`${card.number}-${card.name}`}>
+              <p className="m-0 text-[0.7rem] uppercase tracking-wider text-mist-500">
+                {["Carte-titre", "Carte-dauphin", "3ᵉ carte"][index]}
+              </p>
               <p className="m-0 mt-0.5 leading-none">
                 <span className="group relative inline-block">
-                  {active.bestCard.url ? (
+                  {card.url ? (
                     <a
-                      href={active.bestCard.url}
+                      href={card.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[1.05rem] font-semibold text-mist-050 underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
+                      className={`font-semibold text-mist-050 underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent ${index === 0 ? "text-[1.05rem]" : "text-[0.95rem]"}`}
                     >
-                      {active.bestCard.nameFR ?? active.bestCard.name}
+                      {card.nameFR ?? card.name}
                     </a>
                   ) : (
-                    <span className="text-[1.05rem] font-semibold text-mist-050">
-                      {active.bestCard.nameFR ?? active.bestCard.name}
+                    <span className={`font-semibold text-mist-050 ${index === 0 ? "text-[1.05rem]" : "text-[0.95rem]"}`}>
+                      {card.nameFR ?? card.name}
                     </span>
                   )}
-                  {active.bestCard.image && (
+                  {card.image && (
                     <span
                       aria-hidden
                       className="pointer-events-none absolute left-0 top-full z-20 mt-2 hidden w-[150px] overflow-hidden rounded-lg shadow-[0_18px_40px_-12px_rgba(4,8,20,0.95)] ring-1 ring-ink-600 group-hover:block"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={active.bestCard.image} alt="" loading="lazy" className="block h-auto w-full" />
+                      <img src={card.image} alt="" loading="lazy" className="block h-auto w-full" />
                     </span>
                   )}
                 </span>
-                <span className="tabular ml-2 text-[0.82rem] text-mist-500">{eur.format(active.bestCard.price)}</span>
+                <span className="tabular ml-2 text-[0.82rem] text-mist-500">{eur.format(card.price)}</span>
               </p>
             </div>
-          )}
-          <ul className="m-0 ml-auto flex list-none flex-wrap items-center gap-x-4 gap-y-1.5 p-0 text-[0.82rem]">
+          ))}
+          <ul className="m-0 ml-auto flex list-none flex-wrap items-center gap-x-4 gap-y-1.5 p-0 text-[0.82rem] max-lg:ml-0 max-lg:w-full">
             {active.dropRates
               ? active.dropRates.classes.map((row) => (
                   <li key={row.rarity} className="whitespace-nowrap text-mist-300">
@@ -190,7 +204,35 @@ export default function DropRates({ data }: { data: RadarData }) {
           <>
             {/* ---- La traduction en euros, d'abord ---- */}
             <section className="mt-5 rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
-              <h3 className="display m-0 text-[1.1rem] text-mist-050">Ces taux de drop se traduisent en euros</h3>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h3 className="display m-0 text-[1.1rem] text-mist-050">Ces taux de drop se traduisent en euros</h3>
+                <div role="group" aria-label="Provenance du booster" className="flex rounded-xl border border-ink-600 p-0.5">
+                  {(
+                    [
+                      { key: false, label: "Booster scellé" },
+                      { key: true, label: "À l'unité (loose)" },
+                    ] as const
+                  ).map((option) => (
+                    <button
+                      key={String(option.key)}
+                      type="button"
+                      onClick={() => setLoose(option.key)}
+                      aria-pressed={loose === option.key}
+                      className={`rounded-[10px] px-3 py-1.5 text-[0.82rem] transition-colors duration-200 ${
+                        loose === option.key ? "bg-ink-600 text-mist-050" : "text-mist-300 hover:text-mist-050"
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              {loose && (
+                <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
+                  À l&apos;unité d&apos;origine inconnue : les revendeurs qui mappent leurs displays extraient les
+                  boosters à gros hit avant de vendre le reste. Les classes chase sont comptées à zéro.
+                </p>
+              )}
               <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
                 Taux universels × prix observés : moyenne Cardmarket de chaque classe — c&apos;est elle que l&apos;espérance exige, et les cartes-titres y pèsent lourd ; la médiane indique le hit typique
                 {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (médiane eBay.fr)` : ""}.
@@ -198,25 +240,32 @@ export default function DropRates({ data }: { data: RadarData }) {
 
               {/* D'où vient la valeur d'un booster : chaque classe, sa part. */}
               <div className="mt-5">
-                <div className="flex h-4 w-full overflow-hidden rounded-full" role="img"
-                  aria-label={`Composition de la valeur brute d'un booster : ${active.dropRates.classes.map((r) => `${r.rarity} ${eur.format(r.contribution)}`).join(", ")}`}>
-                  {active.dropRates.classes.map((row) => (
+                <div className="flex h-4 w-full overflow-hidden rounded-full bg-ink-800" role="img"
+                  aria-label={`Composition de la valeur brute d'un booster : ${activeRows.map((r) => `${r.rarity} ${eur.format(r.effective)}`).join(", ")}`}>
+                  {activeRows.filter((row) => row.effective > 0).map((row) => (
                     <span
                       key={row.rarity}
                       className="h-full border-r-2 border-ink-850 last:border-r-0"
-                      style={{ width: `${(row.contribution / active.dropRates!.grossPerBooster) * 100}%`, background: tierOf(row.rarity).color }}
+                      style={{ width: `${(row.effective / Math.max(grossEffective, 0.01)) * 100}%`, background: tierOf(row.rarity).color }}
                     />
                   ))}
                 </div>
                 <ul className="m-0 mt-3 grid list-none gap-1 p-0">
-                  {active.dropRates.classes.map((row) => (
+                  {activeRows.map((row) => (
                     <li key={row.rarity} className="flex flex-wrap items-baseline justify-between gap-x-4 text-[0.86rem]">
-                      <span className="text-mist-300"><Dot color={tierOf(row.rarity).color} />{row.rarity}</span>
-                      <span className="tabular text-right text-mist-100">
-                        moy. {eur.format(row.mean ?? row.median)} × 1/{row.oneInAny} ={" "}
-                        <strong className="text-mist-050">{eur.format(row.contribution)}</strong>
-                        <span className="ml-1.5 text-[0.74rem] text-mist-500">hit typique {eur.format(row.median)}</span>
+                      <span className={row.skimmed ? "text-mist-500 line-through" : "text-mist-300"}>
+                        <Dot color={tierOf(row.rarity).color} />
+                        {row.rarity}
                       </span>
+                      {row.skimmed ? (
+                        <span className="text-[0.82rem] text-mist-500">écrémé — compté à zéro</span>
+                      ) : (
+                        <span className="tabular text-right text-mist-100">
+                          moy. {eur.format(row.mean ?? row.median)} × 1/{row.oneInAny} ={" "}
+                          <strong className="text-mist-050">{eur.format(row.effective)}</strong>
+                          <span className="ml-1.5 text-[0.74rem] text-mist-500">hit typique {eur.format(row.median)}</span>
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -226,14 +275,14 @@ export default function DropRates({ data }: { data: RadarData }) {
                 <div>
                   <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Valeur brute / booster</p>
                   <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-mist-050">
-                    {eur.format(active.dropRates.grossPerBooster)}
+                    {eur.format(grossEffective)}
                   </p>
                 </div>
                 {opening && (
                   <div>
                     <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Nette une fois revendu</p>
                     <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-accent">
-                      {eur.format(opening.netLo)} – {eur.format(opening.netHi)}
+                      {loose ? `${eur.format(opening.looseLo)} – ${eur.format(opening.looseHi)}` : `${eur.format(opening.netLo)} – ${eur.format(opening.netHi)}`}
                     </p>
                   </div>
                 )}
@@ -253,6 +302,28 @@ export default function DropRates({ data }: { data: RadarData }) {
                   </div>
                 )}
               </div>
+
+              {/* La ligne que tout le monde vient chercher : la carte-titre. */}
+              {opening?.top1 && (
+                <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 rounded-xl bg-ink-900/70 px-4 py-3 ring-1 ring-ink-700/70">
+                  <span className="text-[0.9rem] text-mist-100">
+                    Tomber sur <strong className="font-semibold text-mist-050">{opening.top1.nameFR ?? opening.top1.name}</strong>
+                    <span className="tabular ml-1.5 text-[0.8rem] text-mist-500">({eur.format(opening.top1.buyPrice)})</span>
+                  </span>
+                  {loose ? (
+                    <span className="text-[0.9rem] font-semibold text-[color:var(--color-warn)]">
+                      ≈ 0 — considérez-la écrémée
+                    </span>
+                  ) : (
+                    <span className="tabular text-[0.9rem] font-semibold text-mist-050">
+                      1 booster sur{" "}
+                      {opening.top1.oneInLo === opening.top1.oneInHi
+                        ? opening.top1.oneInLo
+                        : `${opening.top1.oneInLo} à ${opening.top1.oneInHi}`}
+                    </span>
+                  )}
+                </div>
+              )}
             </section>
 
             {/* Provenance et taille d'échantillon, attachées aux taux. */}
