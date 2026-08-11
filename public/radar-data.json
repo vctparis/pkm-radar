@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T15:57:06.910Z",
+  "generatedAt": "2026-08-11T16:45:45.520Z",
   "sets": [
     {
       "id": "s151",
@@ -258,7 +258,7 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.3,
+              "evNet": 6.35,
               "p25": 0,
               "median": 0,
               "p75": 2.64,
@@ -267,16 +267,16 @@
               "pDouble": 0.07
             },
             "freshBox": {
-              "evNet": 5.91,
+              "evNet": 6.42,
               "p25": 0,
               "median": 0,
               "p75": 2.64,
               "pRecoup": 0.12,
-              "pLoseHalf": 0.8,
-              "pDouble": 0.06
+              "pLoseHalf": 0.79,
+              "pDouble": 0.07
             },
             "trustedLoose": {
-              "evNet": 4.49,
+              "evNet": 4.56,
               "p25": 0,
               "median": 0,
               "p75": 1.9,
@@ -285,7 +285,7 @@
               "pDouble": 0.05
             },
             "unknownLoose": {
-              "evNet": 0.66,
+              "evNet": 0.67,
               "p25": 0,
               "median": 0,
               "p75": 1.01,
@@ -1351,16 +1351,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.97,
-              "p25": 0,
-              "median": 0,
-              "p75": 0,
-              "pRecoup": 0.06,
-              "pLoseHalf": 0.94,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 3.94,
+              "evNet": 3.9,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1368,8 +1359,8 @@
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
-            "trustedLoose": {
-              "evNet": 3.94,
+            "freshBox": {
+              "evNet": 3.98,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1377,8 +1368,17 @@
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
+            "trustedLoose": {
+              "evNet": 3.85,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
             "unknownLoose": {
-              "evNet": 3.86,
+              "evNet": 3.82,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1635,7 +1635,7 @@
         "boosterBox": null,
         "singles": {
           "tracked": 54,
-          "offers": 4079
+          "offers": 4095
         }
       },
       "liveHistory": [
@@ -1659,7 +1659,7 @@
           "boosterOffers": 1,
           "boosterLanguage": "en",
           "boxPrice": null,
-          "singlesOffers": 4079,
+          "singlesOffers": 4095,
           "top5Value": 76.23,
           "top12ex5Value": 6.58,
           "boosterFRp10": 44.9,
@@ -1712,8 +1712,8 @@
           "price": 0.83,
           "momentum30": 7,
           "relativeStrength": 3.3,
-          "sellers": 124,
-          "offers": 133,
+          "sellers": 125,
+          "offers": 134,
           "marketFloor": 0.25,
           "score": 52,
           "components": {
@@ -1745,8 +1745,8 @@
           "price": 6.95,
           "momentum30": -1.1,
           "relativeStrength": -4.8,
-          "sellers": 67,
-          "offers": 73,
+          "sellers": 68,
+          "offers": 74,
           "marketFloor": 2.21,
           "score": 48,
           "components": {
@@ -1778,13 +1778,13 @@
           "price": 73.33,
           "momentum30": -5.8,
           "relativeStrength": -9.5,
-          "sellers": 30,
-          "offers": 35,
+          "sellers": 31,
+          "offers": 37,
           "marketFloor": 66.53,
           "score": 48,
           "components": {
             "relative": 26,
-            "tightness": 25,
+            "tightness": 23,
             "liquidity": 100,
             "discount": 85
           },
@@ -1844,8 +1844,8 @@
           "price": 1.58,
           "momentum30": 3.1,
           "relativeStrength": -0.6,
-          "sellers": 76,
-          "offers": 86,
+          "sellers": 77,
+          "offers": 87,
           "marketFloor": 1.09,
           "score": 37,
           "components": {
@@ -1910,8 +1910,8 @@
           "price": 3.79,
           "momentum30": -11.9,
           "relativeStrength": -15.6,
-          "sellers": 63,
-          "offers": 66,
+          "sellers": 64,
+          "offers": 67,
           "marketFloor": 2.1,
           "score": 30,
           "components": {
@@ -1943,8 +1943,8 @@
           "price": 5.58,
           "momentum30": -9.5,
           "relativeStrength": -13.2,
-          "sellers": 74,
-          "offers": 81,
+          "sellers": 75,
+          "offers": 82,
           "marketFloor": 1.7,
           "score": 27,
           "components": {
@@ -2271,28 +2271,28 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.76,
+              "evNet": 1.78,
               "p25": 0,
               "median": 0.48,
-              "p75": 1.72,
+              "p75": 1.71,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.77,
+              "evNet": 1.74,
               "p25": 0,
-              "median": 0.45,
+              "median": 0.48,
               "p75": 1.71,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.48,
+              "evNet": 1.44,
               "p25": 0,
-              "median": 0.42,
-              "p75": 1.44,
+              "median": 0.39,
+              "p75": 1.37,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -2814,9 +2814,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Darkness-Ablaze/Scizor-VMAX-V2-DAA193",
           "marketFR": {
             "price": 25,
-            "priceUrl": "https://www.ebay.fr/itm/358841898811?_skw=Cizayox+VMAX+193%2F189&hash=item538ca4d73b:g:4soAAeSw7dlqZIlG",
+            "priceUrl": "https://www.ebay.fr/itm/358841898811?_skw=Cizayox+VMAX+193%2F189&hash=item538ca4d73b:g:4soAAeSw7dlqZIlG&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGb4IF%2BUA1ywJ0JZ0n21Rt8au%2FxyCXsYOtybNrUviMbCfYRmPGbsZpoVdJ%2FXtTBVWv7S%2FWP0En050wxobOmomvpLpE7izYPcSl3lD1qIOBQZAtgRIQ%2Ft5w8PJ%2BK6b565TOF2sn55sXyUoXwJ7Egzka9ZS%2BNUaqbPtZiJc7m2wlhEm9X9tD3jbatT3FH6CMG1mF59Uc7AeJHJF7KVrswx%2F4QAvzwlzHbSkzpNmE8SO6zk47pGPZLg7qyqeI7w6sOE%2F6AljD%2FG7ctqvgH4sHZ7OqmO5p3i1y8fggiWTu7WOWdEYw%3D%3D",
             "floor10": 25,
-            "floor10Url": "https://www.ebay.fr/itm/358841898811?_skw=Cizayox+VMAX+193%2F189&hash=item538ca4d73b:g:4soAAeSw7dlqZIlG",
+            "floor10Url": "https://www.ebay.fr/itm/358841898811?_skw=Cizayox+VMAX+193%2F189&hash=item538ca4d73b:g:4soAAeSw7dlqZIlG&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGb4IF%2BUA1ywJ0JZ0n21Rt8au%2FxyCXsYOtybNrUviMbCfYRmPGbsZpoVdJ%2FXtTBVWv7S%2FWP0En050wxobOmomvpLpE7izYPcSl3lD1qIOBQZAtgRIQ%2Ft5w8PJ%2BK6b565TOF2sn55sXyUoXwJ7Egzka9ZS%2BNUaqbPtZiJc7m2wlhEm9X9tD3jbatT3FH6CMG1mF59Uc7AeJHJF7KVrswx%2F4QAvzwlzHbSkzpNmE8SO6zk47pGPZLg7qyqeI7w6sOE%2F6AljD%2FG7ctqvgH4sHZ7OqmO5p3i1y8fggiWTu7WOWdEYw%3D%3D",
             "median": 39.99,
             "offers": 7,
             "sellers": 6,
@@ -3407,7 +3407,16 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.53,
+              "evNet": 1.46,
+              "p25": 0,
+              "median": 0.41,
+              "p75": 1.27,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.99,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.54,
               "p25": 0,
               "median": 0.39,
               "p75": 1.27,
@@ -3415,20 +3424,11 @@
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 1.49,
-              "p25": 0,
-              "median": 0.39,
-              "p75": 1.22,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.99,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.18,
+              "evNet": 1.22,
               "p25": 0,
-              "median": 0.36,
-              "p75": 1.11,
+              "median": 0,
+              "p75": 1.1,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -4091,7 +4091,7 @@
             "price": 10,
             "priceUrl": "https://www.ebay.fr/itm/317725346766?_skw=Pikachu+VMAX+188%2F185&hash=item49f9e80bce:g:LX0AAeSw3NlpWAZu",
             "floor10": 30,
-            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1Tw7ItzKjxbE6yIPMlvLWk8GFiHqtRaFOj%2BWV68lXmJRqJefIU806g5ZMC6JSMoNfYJbX4T2TLwwG%2FmBUkXKdfH4XxH4jjZyCH3%2B%2BISE%2FL8NYDFUaOp8MkThTR9Oi%2BC2WRWV23PvaLnmcDvDxFQTo2HrYrwnfHrfCC6NA9mInOx%2B0Q%3D%3D",
+            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1TxWKwv5zYQukvVdCJs7EBQuw4Vam51--HYx--5WJri1ngHnYBtJd46whquB8jpSm1%2BFbcjhGLZLNuW%2FLUM9WgqDGXsv9SIKraOV%2F9LqbrvUA%2FiNNbkFxG9o7mkwzBcYKGx4C40RBICwcex5FLj36BgnUIvaaLlZ22H4H%2FZykspPuQ%3D%3D",
             "median": 299,
             "offers": 17,
             "sellers": 17,
@@ -4574,7 +4574,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.3,
+              "evNet": 2.27,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4583,7 +4583,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.48,
+              "evNet": 2.24,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4592,7 +4592,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.78,
+              "evNet": 1.85,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -4601,7 +4601,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.31,
+              "evNet": 0.3,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -5743,25 +5743,25 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.62,
+              "evNet": 1.71,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 1.06,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 0.96,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.65,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 0.76,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.28,
+              "evNet": 1.27,
               "p25": 0,
               "median": 0,
               "p75": 0.66,
@@ -5770,7 +5770,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.34,
+              "evNet": 0.33,
               "p25": 0,
               "median": 0,
               "p75": 0.4,
@@ -6831,7 +6831,7 @@
         "offers": 11,
         "sellers": 7,
         "matched": 11,
-        "scanned": 773
+        "scanned": 772
       },
       "opening": {
         "boosterPrice": 149.9,
@@ -6924,7 +6924,7 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.55,
+              "evNet": 11.66,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -6933,7 +6933,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 11.65,
+              "evNet": 11.54,
               "p25": 0,
               "median": 0.36,
               "p75": 5.22,
@@ -6942,16 +6942,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 10.51,
+              "evNet": 10.45,
               "p25": 0,
               "median": 0.35,
-              "p75": 4.65,
+              "p75": 4.32,
               "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.49,
+              "evNet": 8.25,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
@@ -9863,7 +9863,16 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.93,
+              "evNet": 2.95,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.23,
+              "pRecoup": 0,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.91,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
@@ -9871,17 +9880,8 @@
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 2.92,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.24,
-              "pRecoup": 0,
-              "pLoseHalf": 0.94,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 2.15,
+              "evNet": 2.13,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
@@ -9890,7 +9890,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.36,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -10977,16 +10977,16 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.43,
+              "evNet": 6.13,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 0.95,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 6.44,
+              "evNet": 6.18,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -10995,7 +10995,7 @@
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 4.61,
+              "evNet": 4.44,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -11004,7 +11004,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.34,
               "p25": 0,
               "median": 0,
               "p75": 0.38,
@@ -11454,7 +11454,7 @@
         },
         "singles": {
           "tracked": 238,
-          "offers": 26562
+          "offers": 26368
         }
       },
       "liveHistory": [
@@ -11478,9 +11478,9 @@
           "boosterOffers": 3,
           "boosterLanguage": "en",
           "boxPrice": 2300.64,
-          "singlesOffers": 26562,
+          "singlesOffers": 26368,
           "top5Value": 3118.07,
-          "top12ex5Value": 1544.53,
+          "top12ex5Value": 1481.26,
           "boosterFRp10": 40,
           "boosterFRmedian": 109.99,
           "boosterFRoffers": 14,
@@ -11489,39 +11489,6 @@
       ],
       "psa": null,
       "picks": [
-        {
-          "id": "swsh7-169",
-          "name": "Flareon V",
-          "number": "169",
-          "rarity": "Rare Ultra",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh7/169/low.webp",
-          "price": 27.27,
-          "momentum30": 44,
-          "relativeStrength": 44,
-          "sellers": 25,
-          "offers": 25,
-          "marketFloor": 9.8,
-          "score": 83,
-          "components": {
-            "relative": 100,
-            "tightness": 38,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Pyroli V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Flareon-V-EVS169",
-          "marketFR": {
-            "price": 10.5,
-            "priceUrl": "https://www.ebay.fr/itm/317787527843?_skw=Pyroli+V+169%2F203&hash=item49fd9cdaa3:g:0hQAAeSwPX9pcUQJ",
-            "floor10": 10.5,
-            "floor10Url": "https://www.ebay.fr/itm/317787527843?_skw=Pyroli+V+169%2F203&hash=item49fd9cdaa3:g:0hQAAeSwPX9pcUQJ",
-            "median": 49.99,
-            "offers": 7,
-            "sellers": 7,
-            "matched": 7,
-            "scanned": 7
-          }
-        },
         {
           "id": "swsh7-111",
           "name": "Rayquaza VMAX",
@@ -11564,14 +11531,14 @@
           "price": 19.09,
           "momentum30": 39.3,
           "relativeStrength": 39.3,
-          "sellers": 16,
-          "offers": 16,
+          "sellers": 15,
+          "offers": 15,
           "marketFloor": 11.21,
           "score": 82,
           "components": {
             "relative": 100,
-            "tightness": 60,
-            "liquidity": 59,
+            "tightness": 63,
+            "liquidity": 55,
             "discount": 100
           },
           "nameFR": "Phyllali V",
@@ -11581,6 +11548,39 @@
             "priceUrl": "https://www.ebay.fr/itm/407075484291?_skw=Phyllali+V+166%2F203&hash=item5ec796f283:g:R-AAAeSwDTBqV85z",
             "floor10": 25,
             "floor10Url": "https://www.ebay.fr/itm/407075484291?_skw=Phyllali+V+166%2F203&hash=item5ec796f283:g:R-AAAeSwDTBqV85z",
+            "median": 49.99,
+            "offers": 7,
+            "sellers": 7,
+            "matched": 7,
+            "scanned": 7
+          }
+        },
+        {
+          "id": "swsh7-169",
+          "name": "Flareon V",
+          "number": "169",
+          "rarity": "Rare Ultra",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh7/169/low.webp",
+          "price": 27.27,
+          "momentum30": 44,
+          "relativeStrength": 44,
+          "sellers": 22,
+          "offers": 22,
+          "marketFloor": 9.81,
+          "score": 82,
+          "components": {
+            "relative": 100,
+            "tightness": 45,
+            "liquidity": 86,
+            "discount": 100
+          },
+          "nameFR": "Pyroli V",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Flareon-V-EVS169",
+          "marketFR": {
+            "price": 10.5,
+            "priceUrl": "https://www.ebay.fr/itm/317787527843?_skw=Pyroli+V+169%2F203&hash=item49fd9cdaa3:g:0hQAAeSwPX9pcUQJ",
+            "floor10": 10.5,
+            "floor10Url": "https://www.ebay.fr/itm/317787527843?_skw=Pyroli+V+169%2F203&hash=item49fd9cdaa3:g:0hQAAeSwPX9pcUQJ",
             "median": 49.99,
             "offers": 7,
             "sellers": 7,
@@ -11648,10 +11648,10 @@
             "floor10": 160,
             "floor10Url": "https://www.ebay.fr/itm/318416841808?_skw=Mentali+V+180%2F203&hash=item4a231f6c50:g:hyoAAeSwcjdqI-uq",
             "median": 300,
-            "offers": 4,
-            "sellers": 4,
-            "matched": 4,
-            "scanned": 4
+            "offers": 5,
+            "sellers": 5,
+            "matched": 5,
+            "scanned": 5
           }
         },
         {
@@ -11663,14 +11663,14 @@
           "price": 39.3,
           "momentum30": 24.7,
           "relativeStrength": 24.7,
-          "sellers": 17,
-          "offers": 17,
+          "sellers": 16,
+          "offers": 16,
           "marketFloor": 30.37,
           "score": 82,
           "components": {
             "relative": 100,
-            "tightness": 58,
-            "liquidity": 64,
+            "tightness": 60,
+            "liquidity": 59,
             "discount": 100
           },
           "nameFR": "Nymphali VMAX",
@@ -11685,39 +11685,6 @@
             "sellers": 6,
             "matched": 6,
             "scanned": 6
-          }
-        },
-        {
-          "id": "swsh7-221",
-          "name": "Aroma Lady",
-          "number": "221",
-          "rarity": "Rare Rainbow",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh7/221/low.webp",
-          "price": 8.48,
-          "momentum30": 26.3,
-          "relativeStrength": 26.3,
-          "sellers": 27,
-          "offers": 27,
-          "marketFloor": 4.91,
-          "score": 81,
-          "components": {
-            "relative": 100,
-            "tightness": 33,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Aromathérapeute",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Aroma-Lady-V3",
-          "marketFR": {
-            "price": 15,
-            "priceUrl": "https://www.ebay.fr/itm/197633178833?_skw=Aromath%C3%A9rapeute+221%2F203&hash=item2e03dafcd1:g:lWsAAeSwfjxopgtt",
-            "floor10": 15,
-            "floor10Url": "https://www.ebay.fr/itm/197633178833?_skw=Aromath%C3%A9rapeute+221%2F203&hash=item2e03dafcd1:g:lWsAAeSwfjxopgtt",
-            "median": 22.9,
-            "offers": 4,
-            "sellers": 4,
-            "matched": 4,
-            "scanned": 4
           }
         },
         {
@@ -11742,15 +11709,15 @@
           "nameFR": "Phyllali V",
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Leafeon-V-V3",
           "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
+            "price": 199.9,
+            "priceUrl": "https://www.ebay.fr/itm/307120267437?_skw=Phyllali+V+167%2F203&hash=item4781cb60ad:g:PeAAAeSwFkJqeygg",
+            "floor10": 199.9,
+            "floor10Url": "https://www.ebay.fr/itm/307120267437?_skw=Phyllali+V+167%2F203&hash=item4781cb60ad:g:PeAAAeSwFkJqeygg",
+            "median": 199.9,
+            "offers": 1,
+            "sellers": 1,
+            "matched": 1,
+            "scanned": 1
           }
         },
         {
@@ -11787,6 +11754,39 @@
           }
         },
         {
+          "id": "swsh7-221",
+          "name": "Aroma Lady",
+          "number": "221",
+          "rarity": "Rare Rainbow",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh7/221/low.webp",
+          "price": 8.48,
+          "momentum30": 26.3,
+          "relativeStrength": 26.3,
+          "sellers": 28,
+          "offers": 28,
+          "marketFloor": 4.91,
+          "score": 80,
+          "components": {
+            "relative": 100,
+            "tightness": 30,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Aromathérapeute",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Aroma-Lady-V3",
+          "marketFR": {
+            "price": 15,
+            "priceUrl": "https://www.ebay.fr/itm/197633178833?_skw=Aromath%C3%A9rapeute+221%2F203&hash=item2e03dafcd1:g:lWsAAeSwfjxopgtt",
+            "floor10": 15,
+            "floor10Url": "https://www.ebay.fr/itm/197633178833?_skw=Aromath%C3%A9rapeute+221%2F203&hash=item2e03dafcd1:g:lWsAAeSwfjxopgtt",
+            "median": 22.9,
+            "offers": 4,
+            "sellers": 4,
+            "matched": 4,
+            "scanned": 4
+          }
+        },
+        {
           "id": "swsh7-175",
           "name": "Glaceon V",
           "number": "175",
@@ -11795,14 +11795,14 @@
           "price": 132.81,
           "momentum30": 18,
           "relativeStrength": 18,
-          "sellers": 19,
-          "offers": 20,
-          "marketFloor": 193.91,
+          "sellers": 20,
+          "offers": 21,
+          "marketFloor": 130.64,
           "score": 79,
           "components": {
             "relative": 95,
-            "tightness": 53,
-            "liquidity": 73,
+            "tightness": 50,
+            "liquidity": 77,
             "discount": 100
           },
           "nameFR": "Givrali V",
@@ -11893,7 +11893,7 @@
       "nameEN": "Silver Tempest",
       "era": "Épée et Bouclier",
       "releaseDate": "2022/11/11",
-      "ageYears": 3.7,
+      "ageYears": 3.8,
       "score": 56,
       "components": {
         "breadth": 37,
@@ -12144,25 +12144,25 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.83,
+              "evNet": 1.96,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.82,
+              "evNet": 1.96,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
-              "pRecoup": 0.01,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.67,
+              "evNet": 1.45,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -13307,7 +13307,7 @@
           "jackpotNet": 8.99,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 0.52,
+              "evNet": 0.49,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -13316,7 +13316,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 0.5,
+              "evNet": 0.51,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -14450,30 +14450,30 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.95,
+              "evNet": 2.06,
               "p25": 0,
               "median": 0,
-              "p75": 1.01,
+              "p75": 1.04,
               "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.06,
+              "evNet": 2.09,
               "p25": 0,
               "median": 0,
-              "p75": 1.11,
+              "p75": 1.1,
               "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.57,
+              "evNet": 1.38,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 0.97,
               "pDouble": 0.01
             },
             "unknownLoose": {
@@ -15214,7 +15214,7 @@
             "discount": 0
           },
           "nameFR": null,
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Lucario-V1-BRS079",
           "marketFR": null
         },
         {
@@ -15610,34 +15610,34 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.16,
+              "evNet": 2.03,
               "p25": 0,
-              "median": 0.41,
-              "p75": 1.5,
-              "pRecoup": 0.02,
+              "median": 0.4,
+              "p75": 1.49,
+              "pRecoup": 0.01,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.12,
+              "evNet": 2.11,
               "p25": 0,
-              "median": 0.4,
-              "p75": 1.5,
+              "median": 0.41,
+              "p75": 1.51,
               "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.8,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0.37,
               "p75": 1.2,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.94,
+              "evNet": 0.97,
               "p25": 0,
               "median": 0,
               "p75": 0.63,
@@ -16749,16 +16749,16 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.77,
+              "evNet": 1.95,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 0.73,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.83,
+              "evNet": 1.81,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -16767,7 +16767,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.39,
+              "evNet": 1.32,
               "p25": 0,
               "median": 0,
               "p75": 0.64,
@@ -17205,7 +17205,7 @@
         },
         "singles": {
           "tracked": 284,
-          "offers": 35821
+          "offers": 35505
         }
       },
       "liveHistory": [
@@ -17229,9 +17229,9 @@
           "boosterOffers": 1,
           "boosterLanguage": "en",
           "boxPrice": 800.63,
-          "singlesOffers": 35821,
-          "top5Value": 136.3,
-          "top12ex5Value": 11.52,
+          "singlesOffers": 35505,
+          "top5Value": 135.83,
+          "top12ex5Value": 11.62,
           "boosterFRp10": 16,
           "boosterFRmedian": 35,
           "boosterFRoffers": 27,
@@ -17262,14 +17262,14 @@
           "price": 99.61,
           "momentum30": 11.1,
           "relativeStrength": 11.1,
-          "sellers": 25,
-          "offers": 25,
+          "sellers": 24,
+          "offers": 24,
           "marketFloor": 74.64,
           "score": 73,
           "components": {
             "relative": 78,
-            "tightness": 38,
-            "liquidity": 100,
+            "tightness": 40,
+            "liquidity": 95,
             "discount": 100
           },
           "nameFR": "Celebi V",
@@ -17328,8 +17328,8 @@
           "price": 1.83,
           "momentum30": 37.8,
           "relativeStrength": 37.8,
-          "sellers": 56,
-          "offers": 61,
+          "sellers": 54,
+          "offers": 59,
           "marketFloor": 0.65,
           "score": 72,
           "components": {
@@ -17353,39 +17353,6 @@
           }
         },
         {
-          "id": "swsh8-156",
-          "name": "Gengar V",
-          "number": "156",
-          "rarity": "Rare Holo V",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh8/156/low.webp",
-          "price": 6.86,
-          "momentum30": 5.6,
-          "relativeStrength": 5.6,
-          "sellers": 24,
-          "offers": 24,
-          "marketFloor": 5.37,
-          "score": 68,
-          "components": {
-            "relative": 64,
-            "tightness": 40,
-            "liquidity": 95,
-            "discount": 100
-          },
-          "nameFR": "Ectoplasma V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Gengar-V",
-          "marketFR": {
-            "price": 8,
-            "priceUrl": "https://www.ebay.fr/itm/206464402020?_skw=Ectoplasma+V+156%2F264&hash=item30123cc264:g:d3EAAeSwR-dqcZ9m",
-            "floor10": 8,
-            "floor10Url": "https://www.ebay.fr/itm/206464402020?_skw=Ectoplasma+V+156%2F264&hash=item30123cc264:g:d3EAAeSwR-dqcZ9m",
-            "median": 10,
-            "offers": 5,
-            "sellers": 5,
-            "matched": 5,
-            "scanned": 7
-          }
-        },
-        {
           "id": "swsh8-246",
           "name": "Tsareena V",
           "number": "246",
@@ -17394,8 +17361,8 @@
           "price": 2.39,
           "momentum30": 22.8,
           "relativeStrength": 22.8,
-          "sellers": 48,
-          "offers": 51,
+          "sellers": 50,
+          "offers": 53,
           "marketFloor": 1.55,
           "score": 68,
           "components": {
@@ -17416,6 +17383,39 @@
             "sellers": 4,
             "matched": 5,
             "scanned": 5
+          }
+        },
+        {
+          "id": "swsh8-156",
+          "name": "Gengar V",
+          "number": "156",
+          "rarity": "Rare Holo V",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh8/156/low.webp",
+          "price": 6.86,
+          "momentum30": 5.6,
+          "relativeStrength": 5.6,
+          "sellers": 20,
+          "offers": 20,
+          "marketFloor": 5.37,
+          "score": 67,
+          "components": {
+            "relative": 64,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 100
+          },
+          "nameFR": "Ectoplasma V",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Gengar-V",
+          "marketFR": {
+            "price": 8,
+            "priceUrl": "https://www.ebay.fr/itm/206464402020?_skw=Ectoplasma+V+156%2F264&hash=item30123cc264:g:d3EAAeSwR-dqcZ9m",
+            "floor10": 8,
+            "floor10Url": "https://www.ebay.fr/itm/206464402020?_skw=Ectoplasma+V+156%2F264&hash=item30123cc264:g:d3EAAeSwR-dqcZ9m",
+            "median": 10,
+            "offers": 5,
+            "sellers": 5,
+            "matched": 5,
+            "scanned": 7
           }
         },
         {
@@ -17460,13 +17460,13 @@
           "price": 27.92,
           "momentum30": 32.8,
           "relativeStrength": 32.8,
-          "sellers": 35,
-          "offers": 36,
+          "sellers": 34,
+          "offers": 35,
           "marketFloor": 30.32,
           "score": 61,
           "components": {
             "relative": 100,
-            "tightness": 13,
+            "tightness": 15,
             "liquidity": 100,
             "discount": 0
           },
@@ -17493,14 +17493,14 @@
           "price": 1.74,
           "momentum30": 5.3,
           "relativeStrength": 5.3,
-          "sellers": 23,
-          "offers": 23,
+          "sellers": 24,
+          "offers": 24,
           "marketFloor": 1.3,
           "score": 60,
           "components": {
             "relative": 63,
-            "tightness": 43,
-            "liquidity": 91,
+            "tightness": 40,
+            "liquidity": 95,
             "discount": 48
           },
           "nameFR": "Pikachu V",
@@ -17559,8 +17559,8 @@
           "price": 1.05,
           "momentum30": 6.1,
           "relativeStrength": 6.1,
-          "sellers": 84,
-          "offers": 91,
+          "sellers": 86,
+          "offers": 93,
           "marketFloor": 0.6,
           "score": 58,
           "components": {
@@ -17592,8 +17592,8 @@
           "price": 1.14,
           "momentum30": 44.3,
           "relativeStrength": 44.3,
-          "sellers": 71,
-          "offers": 79,
+          "sellers": 73,
+          "offers": 81,
           "marketFloor": 0.43,
           "score": 57,
           "components": {
@@ -17625,14 +17625,14 @@
           "price": 1.34,
           "momentum30": -5.6,
           "relativeStrength": -5.6,
-          "sellers": 24,
-          "offers": 26,
+          "sellers": 25,
+          "offers": 27,
           "marketFloor": 1.1,
           "score": 57,
           "components": {
             "relative": 36,
-            "tightness": 40,
-            "liquidity": 95,
+            "tightness": 38,
+            "liquidity": 100,
             "discount": 100
           },
           "nameFR": "Lucario V",
@@ -18034,17 +18034,7 @@
           "score": null,
           "components": null,
           "url": null,
-          "marketFR": {
-            "price": 280,
-            "priceUrl": "https://www.ebay.fr/itm/287484820972?_skw=Blastoise+ex+202&hash=item42ef6e3dec:g:apAAAeSwErFqZdEd",
-            "floor10": 280,
-            "floor10Url": "https://www.ebay.fr/itm/287484820972?_skw=Blastoise+ex+202&hash=item42ef6e3dec:g:apAAAeSwErFqZdEd",
-            "median": 300,
-            "offers": 3,
-            "sellers": 3,
-            "matched": 3,
-            "scanned": 3
-          }
+          "marketFR": null
         },
         {
           "id": "s151jp-206",
@@ -19073,7 +19063,7 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.65,
+              "evNet": 2.27,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -19082,16 +19072,16 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.64,
+              "evNet": 1.99,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0.01
+              "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.53,
+              "evNet": 2.13,
               "p25": 0,
               "median": 0,
               "p75": 0.65,
@@ -20243,7 +20233,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.16,
+              "evNet": 3.7,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20252,7 +20242,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 4.32,
+              "evNet": 4.59,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20261,19 +20251,19 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 2.77,
+              "evNet": 2.71,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.18,
+              "evNet": 0.19,
               "p25": 0,
               "median": 0,
-              "p75": 0,
+              "p75": 0.38,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0

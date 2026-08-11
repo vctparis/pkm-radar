@@ -72,7 +72,7 @@ async function loadHistory() {
 // reconnaît et remplace les blocs analytiques par une note d'explication.
 const EMPTY_BUNDLE = { top1: [], r2_5: [], r6_15: [], r16_50: [], fond: [] };
 
-async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef) {
+async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef, jpIndexRef) {
   // Le catalogue ja n'a pas les cartes, mais il a le logo du set.
   const jaMeta = await fetchFrenchCatalog(set.tcgdex, { lang: "ja" }).catch(() => null);
   // ---- CardTrader : scellé jp + singles + images --------------------------
@@ -159,6 +159,20 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
       components: null,
       url: null,
       marketFR,
+    });
+  }
+
+  for (const entry of singles) {
+    const num = normalizeNumber(entry.collectorNumber);
+    if (!num || entry.floor10 == null) continue;
+    jpIndexRef.push({
+      i: `${set.id}-${num}`,
+      n: entry.name,
+      f: null,
+      num: entry.collectorNumber,
+      r: entry.rarity ?? null,
+      s: set.id,
+      p: Number(entry.floor10.toFixed(2)),
     });
   }
 
@@ -319,6 +333,10 @@ async function main() {
   }
 
   const output = [];
+  // Index de toutes les cartes suivies, pour le portefeuille : identifiant,
+  // noms, prix courant et ancres 30 j. Clés courtes — le fichier est servi
+  // au navigateur.
+  const cardIndex = [];
 
   for (const set of SETS) {
     // ---- Sets japonais : pipeline dédié -----------------------------------
@@ -327,7 +345,7 @@ async function main() {
     // (annonces jp) et eBay.fr (produits japonais vendus en France), plus le
     // catalogue TCGdex en locale ja pour les numéros et illustrations.
     if (set.jpOnly) {
-      output.push(await buildJapaneseSet(set, expansionsByCode, history, boxStructures));
+      output.push(await buildJapaneseSet(set, expansionsByCode, history, boxStructures, cardIndex));
       continue;
     }
 
@@ -714,6 +732,21 @@ async function main() {
       });
     }
 
+    for (const card of cards) {
+      cardIndex.push({
+        i: card.id,
+        n: card.name,
+        f: frOf(card.number)?.name ?? null,
+        num: card.number,
+        r: card.rarity,
+        s: set.id,
+        p: Number(card.reference.toFixed(2)),
+        a30: card.prices.avg30 > 0 ? Number(card.prices.avg30.toFixed(2)) : null,
+        a7: card.prices.avg7 > 0 ? Number(card.prices.avg7.toFixed(2)) : null,
+        a1: card.prices.avg1 > 0 ? Number(card.prices.avg1.toFixed(2)) : null,
+      });
+    }
+
     // ---- Score du set ------------------------------------------------------
     const psa = psaManual[set.id] ?? null;
     const psaHistory = psa?.history ?? [];
@@ -812,6 +845,14 @@ async function main() {
     ],
   };
   await writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`);
+  await writeFile(
+    join(ROOT, "public", "cards-index.json"),
+    JSON.stringify({
+      generatedAt: new Date().toISOString(),
+      sets: Object.fromEntries(output.map((entry) => [entry.id, { name: entry.name, jp: Boolean(entry.jpOnly) }])),
+      cards: cardIndex,
+    }),
+  );
 
   console.log(`\n${output.length} sets écrits dans public/radar-data.json`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
