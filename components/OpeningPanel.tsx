@@ -211,27 +211,43 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
         {/* ---- Les pioches qui comptent ---- */}
         <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
           <h3 className="display m-0 text-[1.1rem] text-mist-050">Ce que vous pouvez y trouver</h3>
-          <ul className="m-0 mt-4 grid list-none gap-2.5 p-0">
+          <ul className="m-0 mt-4 grid list-none gap-3 p-0">
             {opening.topPulls.map((pull) => {
               const dimmed = chosen.factor === 0 && pull.premium;
+              // Les cotes suivent la provenance : à −30 % de chances premium,
+              // « 1 sur 215 » devient « 1 sur 307 » — sinon l'espérance et les
+              // cotes affichées se contrediraient.
+              const factor = pull.premium ? chosen.factor : 1;
+              const oneIn = factor > 0 ? Math.round(pull.oneIn / factor) : null;
+              const contribution = pull.contribution != null ? pull.contribution * factor : null;
               return (
-                <li key={`${pull.number}-${pull.name}`} className="flex items-baseline justify-between gap-3 text-[0.92rem]">
-                  <span className={dimmed ? "text-mist-500 line-through" : "text-mist-100"}>
-                    {pull.nameFR ?? pull.name}
-                    <span className="ml-1.5 text-[0.75rem] text-mist-500">{pull.number}</span>
-                  </span>
-                  <span className="tabular whitespace-nowrap text-right text-mist-300">
-                    1 sur {pull.oneIn} · <span className="text-mist-050">{eur.format(pull.price)}</span>
-                  </span>
+                <li key={`${pull.number}-${pull.name}`} className="text-[0.92rem]">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className={dimmed ? "text-mist-500 line-through" : "text-mist-100"}>
+                      {pull.nameFR ?? pull.name}
+                      <span className="ml-1.5 text-[0.75rem] text-mist-500">{pull.number}</span>
+                    </span>
+                    <span className="tabular whitespace-nowrap text-right text-mist-300">
+                      {oneIn != null ? `1 sur ${oneIn}` : "écarté"} ·{" "}
+                      <span className="text-mist-050">{eur.format(pull.price)}</span>
+                    </span>
+                  </div>
+                  {/* La ligne qui réconcilie la grosse carte et la petite
+                      moyenne : sa valeur × sa rareté = son poids réel. */}
+                  {contribution != null && !dimmed && (
+                    <p className="m-0 mt-0.5 text-right text-[0.74rem] text-mist-500">
+                      pèse {eur.format(contribution)} dans l&apos;espérance d&apos;un booster
+                    </p>
+                  )}
                 </li>
               );
             })}
           </ul>
-          {chosen.factor === 0 && (
-            <p className="m-0 mt-3 text-[0.78rem] text-mist-500">
-              Les cartes barrées sont celles qu&apos;un vendeur qui écrème retire en premier.
-            </p>
-          )}
+          <p className="m-0 mt-4 border-t border-ink-700 pt-3 text-[0.8rem] leading-relaxed text-mist-500">
+            {chosen.factor === 0
+              ? "Les cartes barrées sont celles qu'un vendeur qui écrème retire en premier."
+              : "Chacune vaut plus que le booster — multipliée par sa rareté, chacune ne pèse que quelques dizaines de centimes dans la moyenne. C'est tout le paradoxe d'une loterie."}
+          </p>
         </section>
       </div>
 

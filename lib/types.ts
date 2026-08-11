@@ -116,7 +116,7 @@ export type Opening = {
   recoupHi: number;
   recoupLooseLo?: number;
   recoupLooseHi?: number;
-  topPulls: { name: string; nameFR?: string | null; number: string; rarity: string; price: number; oneIn: number; premium: boolean }[];
+  topPulls: { name: string; nameFR?: string | null; number: string; rarity: string; price: number; oneIn: number; contribution?: number; premium: boolean }[];
   top1: {
     name: string;
     nameFR?: string | null;

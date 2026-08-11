@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T23:56:05.399Z",
+  "generatedAt": "2026-08-11T00:44:33.010Z",
   "sets": [
     {
       "id": "s151",
@@ -154,6 +154,7 @@
             "rarity": "Special Illustration Rare",
             "price": 235.71,
             "oneIn": 215,
+            "contribution": 0.95,
             "premium": true,
             "nameFR": "Dracaufeu-ex"
           },
@@ -163,6 +164,7 @@
             "rarity": "Special Illustration Rare",
             "price": 90.46,
             "oneIn": 215,
+            "contribution": 0.37,
             "premium": true,
             "nameFR": "Électhor-ex"
           },
@@ -172,6 +174,7 @@
             "rarity": "Special Illustration Rare",
             "price": 79.88,
             "oneIn": 215,
+            "contribution": 0.32,
             "premium": true,
             "nameFR": "Florizarre-ex"
           },
@@ -181,6 +184,7 @@
             "rarity": "Special Illustration Rare",
             "price": 79.37,
             "oneIn": 215,
+            "contribution": 0.32,
             "premium": true,
             "nameFR": "Tortank-ex"
           },
@@ -190,6 +194,7 @@
             "rarity": "Special Illustration Rare",
             "price": 53.05,
             "oneIn": 215,
+            "contribution": 0.21,
             "premium": true,
             "nameFR": "Alakazam-ex"
           },
@@ -199,6 +204,7 @@
             "rarity": "Illustration Rare",
             "price": 48.15,
             "oneIn": 178,
+            "contribution": 0.24,
             "premium": true,
             "nameFR": "Salamèche"
           }
@@ -220,7 +226,7 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.11,
+              "evNet": 6.14,
               "p25": 0,
               "median": 0,
               "p75": 2.64,
@@ -229,16 +235,16 @@
               "pDouble": 0.07
             },
             "freshBox": {
-              "evNet": 6.3,
+              "evNet": 6.5,
               "p25": 0,
               "median": 0,
-              "p75": 2.64,
+              "p75": 3.6,
               "pRecoup": 0.12,
-              "pLoseHalf": 0.79,
+              "pLoseHalf": 0.78,
               "pDouble": 0.07
             },
             "trustedLoose": {
-              "evNet": 4.67,
+              "evNet": 4.58,
               "p25": 0,
               "median": 0,
               "p75": 1.9,
@@ -247,10 +253,10 @@
               "pDouble": 0.05
             },
             "unknownLoose": {
-              "evNet": 0.64,
+              "evNet": 0.67,
               "p25": 0,
               "median": 0,
-              "p75": 0.37,
+              "p75": 1.01,
               "pRecoup": 0,
               "pLoseHalf": 0.98,
               "pDouble": 0
@@ -602,6 +608,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 29.3,
+          "boosterOffers": 1,
+          "boosterLanguage": "fr",
+          "boxPrice": null,
+          "singlesOffers": 32681,
+          "top5Value": 675.86,
+          "top12ex5Value": 478.04,
+          "boosterFRp10": 13,
+          "boosterFRmedian": 35,
+          "boosterFRoffers": 13,
+          "boosterFRsellers": 11
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 29.3,
           "boosterOffers": 1,
           "boosterLanguage": "fr",
@@ -1112,6 +1132,7 @@
             "rarity": "Rare Holo",
             "price": 73.33,
             "oneIn": 18,
+            "contribution": 3.46,
             "premium": false,
             "nameFR": "Mew"
           },
@@ -1121,6 +1142,7 @@
             "rarity": "Rare Holo",
             "price": 5.39,
             "oneIn": 18,
+            "contribution": 0.25,
             "premium": false,
             "nameFR": "Pikachu"
           },
@@ -1130,6 +1152,7 @@
             "rarity": "Rare Holo",
             "price": 2.61,
             "oneIn": 18,
+            "contribution": 0.12,
             "premium": false,
             "nameFR": "Mew"
           },
@@ -1139,6 +1162,7 @@
             "rarity": "Rare Ultra",
             "price": 1.58,
             "oneIn": 18,
+            "contribution": 0.08,
             "premium": true,
             "nameFR": "Recherches Professorales (Professeur Chen)"
           },
@@ -1148,6 +1172,7 @@
             "rarity": "Rare",
             "price": 0.22,
             "oneIn": 20,
+            "contribution": 0,
             "premium": false,
             "nameFR": "Ho-Oh"
           },
@@ -1157,6 +1182,7 @@
             "rarity": "Rare",
             "price": 0.18,
             "oneIn": 20,
+            "contribution": 0,
             "premium": false,
             "nameFR": "Palkia"
           }
@@ -1178,7 +1204,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.9,
+              "evNet": 3.91,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1187,7 +1213,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 3.95,
+              "evNet": 3.88,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1196,7 +1222,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.81,
+              "evNet": 3.78,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1205,12 +1231,12 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 3.79,
+              "evNet": 3.88,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             }
           }
@@ -1421,6 +1447,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 45.64,
+          "boosterOffers": 1,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 4079,
+          "top5Value": 76.23,
+          "top12ex5Value": 6.58,
+          "boosterFRp10": 44.9,
+          "boosterFRmedian": 70,
+          "boosterFRoffers": 2,
+          "boosterFRsellers": 2
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 45.64,
           "boosterOffers": 1,
           "boosterLanguage": "en",
@@ -1939,6 +1979,7 @@
             "rarity": "Rare Rainbow",
             "price": 600.79,
             "oneIn": 578,
+            "contribution": 0.9,
             "premium": true,
             "nameFR": "Dracaufeu GX"
           },
@@ -1948,6 +1989,7 @@
             "rarity": "Rare Secret",
             "price": 36.66,
             "oneIn": 600,
+            "contribution": 0.05,
             "premium": true,
             "nameFR": "Énergie Fée"
           },
@@ -1957,6 +1999,7 @@
             "rarity": "Rare Secret",
             "price": 23.38,
             "oneIn": 600,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Énergie Obscurité"
           },
@@ -1966,6 +2009,7 @@
             "rarity": "Rare Rainbow",
             "price": 22.95,
             "oneIn": 578,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Darkrai GX"
           },
@@ -1975,6 +2019,7 @@
             "rarity": "Rare Rainbow",
             "price": 19.85,
             "oneIn": 578,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Gardevoir GX"
           },
@@ -1984,6 +2029,7 @@
             "rarity": "Rare Secret",
             "price": 16.72,
             "oneIn": 600,
+            "contribution": 0.02,
             "premium": true,
             "nameFR": "Corde Sortie"
           }
@@ -2005,7 +2051,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.2,
+              "evNet": 2.31,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -2014,7 +2060,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.27,
+              "evNet": 2.24,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -2023,7 +2069,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.79,
+              "evNet": 1.97,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -2032,7 +2078,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.31,
+              "evNet": 0.33,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -2393,6 +2439,20 @@
           "boxPrice": 1299.99,
           "singlesOffers": 8845,
           "boosterLanguage": "it",
+          "top5Value": 423.34,
+          "top12ex5Value": 66.08,
+          "boosterFRp10": 25,
+          "boosterFRmedian": 40.2,
+          "boosterFRoffers": 15,
+          "boosterFRsellers": 11
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 8.15,
+          "boosterOffers": 7,
+          "boosterLanguage": "it",
+          "boxPrice": 1299.99,
+          "singlesOffers": 8845,
           "top5Value": 423.34,
           "top12ex5Value": 66.08,
           "boosterFRp10": 25,
@@ -2947,7 +3007,7 @@
         "price": 9,
         "priceUrl": "https://www.ebay.fr/itm/127318774714?_skw=pokemon+booster+Soleil+%26+Lune&hash=item1da4ca53ba:g:wYMAAOSwa7dnXt7Y",
         "floor10": 19.9,
-        "floor10Url": "https://www.ebay.fr/itm/377184582082?_skw=pokemon+booster+Soleil+%26+Lune&hash=item57d1f3f9c2:g:af4AAeSwEPFqBftV",
+        "floor10Url": "https://www.ebay.fr/itm/377184583366?_skw=pokemon+booster+Soleil+%26+Lune&hash=item57d1f3fec6:g:LK0AAeSwCy1qBfug",
         "median": 72,
         "offers": 82,
         "sellers": 32,
@@ -2973,6 +3033,7 @@
             "rarity": "Rare Rainbow",
             "price": 40.26,
             "oneIn": 356,
+            "contribution": 0.1,
             "premium": true,
             "nameFR": "Noctali GX"
           },
@@ -2982,6 +3043,7 @@
             "rarity": "Rare Ultra",
             "price": 30.95,
             "oneIn": 218,
+            "contribution": 0.12,
             "premium": true,
             "nameFR": "Noctali GX"
           },
@@ -2991,6 +3053,7 @@
             "rarity": "Rare Rainbow",
             "price": 26.24,
             "oneIn": 356,
+            "contribution": 0.06,
             "premium": true,
             "nameFR": "Mentali GX"
           },
@@ -3000,6 +3063,7 @@
             "rarity": "Rare Ultra",
             "price": 24.32,
             "oneIn": 218,
+            "contribution": 0.1,
             "premium": true,
             "nameFR": "Lilie"
           },
@@ -3009,6 +3073,7 @@
             "rarity": "Rare Secret",
             "price": 22.23,
             "oneIn": 400,
+            "contribution": 0.05,
             "premium": true,
             "nameFR": "Hyper Ball"
           },
@@ -3018,6 +3083,7 @@
             "rarity": "Rare Rainbow",
             "price": 18.23,
             "oneIn": 356,
+            "contribution": 0.04,
             "premium": true,
             "nameFR": "Lokhlass GX"
           }
@@ -3042,22 +3108,22 @@
               "evNet": 1.64,
               "p25": 0,
               "median": 0,
+              "p75": 0.76,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.67,
+              "p25": 0,
+              "median": 0,
               "p75": 0.74,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 1.71,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.99,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.27,
+              "evNet": 1.3,
               "p25": 0,
               "median": 0,
               "p75": 0.66,
@@ -3066,7 +3132,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.34,
               "p25": 0,
               "median": 0,
               "p75": 0.4,
@@ -3457,6 +3523,20 @@
           "boxPrice": 1286.74,
           "singlesOffers": 9536,
           "boosterLanguage": "en",
+          "top5Value": 119.23,
+          "top12ex5Value": 53.8,
+          "boosterFRp10": 19.9,
+          "boosterFRmedian": 72,
+          "boosterFRoffers": 82,
+          "boosterFRsellers": 32
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 25.39,
+          "boosterOffers": 1,
+          "boosterLanguage": "en",
+          "boxPrice": 1286.74,
+          "singlesOffers": 9536,
           "top5Value": 119.23,
           "top12ex5Value": 53.8,
           "boosterFRp10": 19.9,
@@ -3967,6 +4047,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 30.4,
+          "boosterOffers": 1,
+          "boosterLanguage": "jp",
+          "boxPrice": 150.64,
+          "singlesOffers": 4600,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": 15,
+          "boosterFRmedian": 15,
+          "boosterFRoffers": 1,
+          "boosterFRsellers": 1
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 30.4,
           "boosterOffers": 1,
           "boosterLanguage": "jp",
@@ -4538,6 +4632,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 15.11,
+          "boosterOffers": 2,
+          "boosterLanguage": "jp",
+          "boxPrice": 199.64,
+          "singlesOffers": 5761,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": null,
+          "boosterFRmedian": null,
+          "boosterFRoffers": 0,
+          "boosterFRsellers": 0
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 15.11,
           "boosterOffers": 2,
           "boosterLanguage": "jp",
@@ -5149,6 +5257,7 @@
             "rarity": "Rare Ultra",
             "price": 39.57,
             "oneIn": 55,
+            "contribution": 0.63,
             "premium": true,
             "nameFR": "Jessie et James"
           },
@@ -5158,6 +5267,7 @@
             "rarity": "Rare Holo GX",
             "price": 37.58,
             "oneIn": 80,
+            "contribution": 0.41,
             "premium": true,
             "nameFR": "Sulfura, Électhor et Artikodin-GX"
           },
@@ -5167,6 +5277,7 @@
             "rarity": "Rare Rainbow",
             "price": 30.9,
             "oneIn": 44,
+            "contribution": 0.6,
             "premium": true,
             "nameFR": "Sulfura, Électhor et Artikodin-GX"
           },
@@ -5176,6 +5287,7 @@
             "rarity": "Rare Ultra",
             "price": 25.42,
             "oneIn": 55,
+            "contribution": 0.41,
             "premium": true,
             "nameFR": "Sulfura, Électhor et Artikodin-GX"
           },
@@ -5185,6 +5297,7 @@
             "rarity": "Rare Holo GX",
             "price": 15.43,
             "oneIn": 80,
+            "contribution": 0.17,
             "premium": true,
             "nameFR": "Dracaufeu-GX"
           },
@@ -5194,6 +5307,7 @@
             "rarity": "Rare Holo GX",
             "price": 5.91,
             "oneIn": 80,
+            "contribution": 0.06,
             "premium": true,
             "nameFR": "Mewtwo-GX"
           }
@@ -5215,16 +5329,16 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.96,
+              "evNet": 2.85,
               "p25": 0,
               "median": 0,
-              "p75": 1.24,
+              "p75": 1.23,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.87,
+              "evNet": 2.82,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
@@ -5233,7 +5347,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 2.08,
+              "evNet": 2.06,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
@@ -5242,7 +5356,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.36,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -5580,6 +5694,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 45.64,
+          "boosterOffers": 2,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 7364,
+          "top5Value": 174.63,
+          "top12ex5Value": 19.9,
+          "boosterFRp10": 49.99,
+          "boosterFRmedian": 110,
+          "boosterFRoffers": 13,
+          "boosterFRsellers": 9
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 45.64,
           "boosterOffers": 2,
           "boosterLanguage": "en",
@@ -6140,6 +6268,7 @@
             "rarity": "Rare Rainbow",
             "price": 1579.48,
             "oneIn": 1100,
+            "contribution": 1.25,
             "premium": true,
             "nameFR": "Noctali VMAX"
           },
@@ -6149,6 +6278,7 @@
             "rarity": "Rare Rainbow",
             "price": 780.69,
             "oneIn": 1100,
+            "contribution": 0.62,
             "premium": true,
             "nameFR": "Rayquaza VMAX"
           },
@@ -6158,6 +6288,7 @@
             "rarity": "Rare Rainbow",
             "price": 286.38,
             "oneIn": 1100,
+            "contribution": 0.23,
             "premium": true,
             "nameFR": "Phyllali VMAX"
           },
@@ -6167,6 +6298,7 @@
             "rarity": "Rare Rainbow",
             "price": 276.46,
             "oneIn": 1100,
+            "contribution": 0.22,
             "premium": true,
             "nameFR": "Givrali VMAX"
           },
@@ -6176,6 +6308,7 @@
             "rarity": "Rare Rainbow",
             "price": 262.46,
             "oneIn": 1100,
+            "contribution": 0.21,
             "premium": true,
             "nameFR": "Nymphali VMAX"
           },
@@ -6185,6 +6318,7 @@
             "rarity": "Rare Ultra",
             "price": 235.98,
             "oneIn": 585,
+            "contribution": 0.35,
             "premium": true,
             "nameFR": "Rayquaza V"
           }
@@ -6206,16 +6340,16 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.18,
+              "evNet": 6.57,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.96,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 6.16,
+              "evNet": 6.39,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -6224,19 +6358,19 @@
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 4.49,
+              "evNet": 4.79,
               "p25": 0,
               "median": 0,
               "p75": 0.82,
-              "pRecoup": 0.01,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.97,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.32,
               "p25": 0,
               "median": 0,
-              "p75": 0.38,
+              "p75": 0.36,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -6605,6 +6739,20 @@
           "boosterFRmedian": 59,
           "boosterFRoffers": 9,
           "boosterFRsellers": 9
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 64.14,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": 2300.64,
+          "singlesOffers": 26562,
+          "top5Value": 3118.07,
+          "top12ex5Value": 1544.53,
+          "boosterFRp10": 34.99,
+          "boosterFRmedian": 59,
+          "boosterFRoffers": 9,
+          "boosterFRsellers": 9
         }
       ],
       "psa": null,
@@ -6662,7 +6810,7 @@
             "discount": 100
           },
           "nameFR": "Rayquaza VMAX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Rayquaza-VMAX-V4-EVS111",
+          "url": null,
           "marketFR": {
             "price": 12,
             "priceUrl": "https://www.ebay.fr/itm/404681826033?_skw=Rayquaza+VMAX+111%2F203&hash=item5e38ea9ef1:g:h1UAAOSwOZBle1fM",
@@ -7160,6 +7308,7 @@
             "rarity": "Rare Ultra",
             "price": 387.8,
             "oneIn": 400,
+            "contribution": 0.84,
             "premium": true,
             "nameFR": "Lugia V"
           },
@@ -7169,6 +7318,7 @@
             "rarity": "Rare Rainbow",
             "price": 26.33,
             "oneIn": 700,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Lugia VSTAR"
           },
@@ -7178,6 +7328,7 @@
             "rarity": "Rare Ultra",
             "price": 20.91,
             "oneIn": 400,
+            "contribution": 0.05,
             "premium": true,
             "nameFR": "Zarbi V"
           },
@@ -7187,6 +7338,7 @@
             "rarity": "Rare Ultra",
             "price": 19.23,
             "oneIn": 400,
+            "contribution": 0.04,
             "premium": true,
             "nameFR": "Lugia V"
           },
@@ -7196,6 +7348,7 @@
             "rarity": "Rare Ultra",
             "price": 19.07,
             "oneIn": 400,
+            "contribution": 0.04,
             "premium": true,
             "nameFR": "Regidrago V"
           },
@@ -7205,6 +7358,7 @@
             "rarity": "Rare Secret",
             "price": 17.37,
             "oneIn": 400,
+            "contribution": 0.04,
             "premium": true,
             "nameFR": "Lugia VSTAR"
           }
@@ -7226,7 +7380,16 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.1,
+              "evNet": 1.83,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.84,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.95,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -7234,17 +7397,8 @@
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 1.85,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.84,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.95,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.52,
+              "evNet": 1.56,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -7253,7 +7407,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.34,
               "p25": 0,
               "median": 0,
               "p75": 0.46,
@@ -7626,6 +7780,20 @@
           "boxPrice": 390.64,
           "singlesOffers": 39084,
           "boosterLanguage": "en",
+          "top5Value": 417.45,
+          "top12ex5Value": 53.55,
+          "boosterFRp10": 11.37,
+          "boosterFRmedian": 19.9,
+          "boosterFRoffers": 29,
+          "boosterFRsellers": 18
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 12.01,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": 390.64,
+          "singlesOffers": 39084,
           "top5Value": 417.45,
           "top12ex5Value": 53.55,
           "boosterFRp10": 11.37,
@@ -8170,6 +8338,7 @@
             "rarity": "Rare Ultra",
             "price": 254.06,
             "oneIn": 323,
+            "contribution": 0.68,
             "premium": true,
             "nameFR": "Dracaufeu V"
           },
@@ -8179,6 +8348,7 @@
             "rarity": "Rare Ultra",
             "price": 56.58,
             "oneIn": 323,
+            "contribution": 0.15,
             "premium": true,
             "nameFR": "Arceus V"
           },
@@ -8188,6 +8358,7 @@
             "rarity": "Rare Rainbow",
             "price": 44.62,
             "oneIn": 400,
+            "contribution": 0.1,
             "premium": true,
             "nameFR": "Dracaufeu VSTAR"
           },
@@ -8197,6 +8368,7 @@
             "rarity": "Rare Ultra",
             "price": 19.09,
             "oneIn": 323,
+            "contribution": 0.05,
             "premium": true,
             "nameFR": "Dracaufeu V"
           },
@@ -8206,6 +8378,7 @@
             "rarity": "Rare Secret",
             "price": 16.65,
             "oneIn": 400,
+            "contribution": 0.04,
             "premium": true,
             "nameFR": "Hyper Ball"
           },
@@ -8215,6 +8388,7 @@
             "rarity": "Rare Secret",
             "price": 14.77,
             "oneIn": 400,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Sulfura de Galar V"
           }
@@ -8236,16 +8410,16 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2,
+              "evNet": 2.14,
               "p25": 0,
               "median": 0,
-              "p75": 1.05,
+              "p75": 1.04,
               "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.07,
+              "evNet": 1.89,
               "p25": 0,
               "median": 0,
               "p75": 1.1,
@@ -8254,7 +8428,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.59,
+              "evNet": 1.44,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -8263,7 +8437,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.32,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -8625,6 +8799,20 @@
           "boxPrice": 460.64,
           "singlesOffers": 32073,
           "boosterLanguage": "en",
+          "top5Value": 320.51,
+          "top12ex5Value": 51.35,
+          "boosterFRp10": 13.5,
+          "boosterFRmedian": 18,
+          "boosterFRoffers": 62,
+          "boosterFRsellers": 29
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 9.99,
+          "boosterOffers": 4,
+          "boosterLanguage": "en",
+          "boxPrice": 460.64,
+          "singlesOffers": 32073,
           "top5Value": 320.51,
           "top12ex5Value": 51.35,
           "boosterFRp10": 13.5,
@@ -9171,6 +9359,7 @@
             "rarity": "Rare Secret",
             "price": 37.74,
             "oneIn": 67,
+            "contribution": 0.49,
             "premium": true,
             "nameFR": "Pikachu"
           },
@@ -9180,6 +9369,7 @@
             "rarity": "Rare Ultra",
             "price": 18.09,
             "oneIn": 200,
+            "contribution": 0.08,
             "premium": true,
             "nameFR": "Éclat d'Inezia"
           },
@@ -9189,6 +9379,7 @@
             "rarity": "Radiant Rare",
             "price": 15.61,
             "oneIn": 24,
+            "contribution": 0.57,
             "premium": false,
             "nameFR": null
           },
@@ -9198,6 +9389,7 @@
             "rarity": "Rare Holo VSTAR",
             "price": 10.12,
             "oneIn": 100,
+            "contribution": 0.09,
             "premium": true,
             "nameFR": null
           },
@@ -9207,6 +9399,7 @@
             "rarity": "Rare Ultra",
             "price": 8.01,
             "oneIn": 200,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Amis de Sinnoh"
           },
@@ -9216,6 +9409,7 @@
             "rarity": "Rare Ultra",
             "price": 6.28,
             "oneIn": 200,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Amis de Hisui"
           }
@@ -9237,27 +9431,27 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.07,
+              "evNet": 2.11,
               "p25": 0,
               "median": 0.41,
               "p75": 1.49,
-              "pRecoup": 0.01,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
               "evNet": 2.07,
               "p25": 0,
-              "median": 0.41,
-              "p75": 1.51,
+              "median": 0.4,
+              "p75": 1.49,
               "pRecoup": 0.01,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.73,
+              "evNet": 1.71,
               "p25": 0,
-              "median": 0.37,
+              "median": 0,
               "p75": 1.2,
               "pRecoup": 0.01,
               "pLoseHalf": 0.95,
@@ -9645,6 +9839,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 32.03,
+          "boosterOffers": 2,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 27430,
+          "top5Value": 86.42,
+          "top12ex5Value": 28.34,
+          "boosterFRp10": 25.99,
+          "boosterFRmedian": 30,
+          "boosterFRoffers": 5,
+          "boosterFRsellers": 5
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 32.03,
           "boosterOffers": 2,
           "boosterLanguage": "en",
@@ -10161,6 +10369,7 @@
             "rarity": "Rare Ultra",
             "price": 99.61,
             "oneIn": 92,
+            "contribution": 0.94,
             "premium": true,
             "nameFR": "Celebi V"
           },
@@ -10170,6 +10379,7 @@
             "rarity": "Rare Holo VMAX",
             "price": 27.92,
             "oneIn": 100,
+            "contribution": 0.24,
             "premium": true,
             "nameFR": "Ectoplasma VMAX"
           },
@@ -10179,6 +10389,7 @@
             "rarity": "Rare Ultra",
             "price": 14.17,
             "oneIn": 92,
+            "contribution": 0.13,
             "premium": true,
             "nameFR": "Mew V"
           },
@@ -10188,6 +10399,7 @@
             "rarity": "Rare Holo VMAX",
             "price": 12.93,
             "oneIn": 100,
+            "contribution": 0.11,
             "premium": true,
             "nameFR": "Mew VMAX"
           },
@@ -10197,6 +10409,7 @@
             "rarity": "Rare Holo V",
             "price": 6.86,
             "oneIn": 95,
+            "contribution": 0.06,
             "premium": false,
             "nameFR": "Ectoplasma V"
           },
@@ -10206,6 +10419,7 @@
             "rarity": "Rare Ultra",
             "price": 2.68,
             "oneIn": 92,
+            "contribution": 0.03,
             "premium": true,
             "nameFR": "Lugulabre V"
           }
@@ -10227,7 +10441,7 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.84,
+              "evNet": 1.85,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -10236,19 +10450,19 @@
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 1.9,
+              "evNet": 1.93,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 0.73,
               "pRecoup": 0.04,
               "pLoseHalf": 0.95,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 1.31,
+              "evNet": 1.28,
               "p25": 0,
               "median": 0,
-              "p75": 0.64,
+              "p75": 0.58,
               "pRecoup": 0.03,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
@@ -10623,6 +10837,20 @@
           "boxPrice": 800.63,
           "singlesOffers": 35821,
           "boosterLanguage": "en",
+          "top5Value": 136.3,
+          "top12ex5Value": 11.52,
+          "boosterFRp10": 7.19,
+          "boosterFRmedian": 25,
+          "boosterFRoffers": 29,
+          "boosterFRsellers": 19
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 28.82,
+          "boosterOffers": 1,
+          "boosterLanguage": "en",
+          "boxPrice": 800.63,
+          "singlesOffers": 35821,
           "top5Value": 136.3,
           "top12ex5Value": 11.52,
           "boosterFRp10": 7.19,
@@ -11133,6 +11361,20 @@
       "liveHistory": [
         {
           "date": "2026-08-10",
+          "boosterPrice": 8.29,
+          "boosterOffers": 8,
+          "boosterLanguage": "jp",
+          "boxPrice": 265.63,
+          "singlesOffers": 10184,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": null,
+          "boosterFRmedian": null,
+          "boosterFRoffers": 0,
+          "boosterFRsellers": 0
+        },
+        {
+          "date": "2026-08-11",
           "boosterPrice": 8.29,
           "boosterOffers": 8,
           "boosterLanguage": "jp",
@@ -12276,6 +12518,7 @@
             "rarity": "Rare Ultra",
             "price": 566.41,
             "oneIn": 385,
+            "contribution": 1.28,
             "premium": true,
             "nameFR": "Giratina V"
           },
@@ -12285,6 +12528,7 @@
             "rarity": "Rare Ultra",
             "price": 128.95,
             "oneIn": 385,
+            "contribution": 0.29,
             "premium": true,
             "nameFR": "Ptéra V"
           },
@@ -12294,6 +12538,7 @@
             "rarity": "Rare Ultra",
             "price": 22.54,
             "oneIn": 385,
+            "contribution": 0.05,
             "premium": true,
             "nameFR": "Motisma V"
           },
@@ -12303,6 +12548,7 @@
             "rarity": "Rare Ultra",
             "price": 18.63,
             "oneIn": 385,
+            "contribution": 0.04,
             "premium": true,
             "nameFR": "Berserkatt de Galar V"
           },
@@ -12312,6 +12558,7 @@
             "rarity": "Rare Rainbow",
             "price": 13.84,
             "oneIn": 750,
+            "contribution": 0.02,
             "premium": true,
             "nameFR": "Giratina VSTAR"
           },
@@ -12321,6 +12568,7 @@
             "rarity": "Rare Rainbow",
             "price": 10.37,
             "oneIn": 750,
+            "contribution": 0.01,
             "premium": true,
             "nameFR": "Ptéra VSTAR"
           }
@@ -12342,7 +12590,7 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.19,
+              "evNet": 2.42,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
@@ -12351,16 +12599,16 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.25,
+              "evNet": 2.39,
               "p25": 0,
               "median": 0,
-              "p75": 0.78,
+              "p75": 0.77,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.77,
+              "evNet": 1.59,
               "p25": 0,
               "median": 0,
               "p75": 0.65,
@@ -12725,6 +12973,20 @@
           "boxPrice": 501.81,
           "singlesOffers": 37229,
           "boosterLanguage": "en",
+          "top5Value": 760.74,
+          "top12ex5Value": 29.73,
+          "boosterFRp10": 12.07,
+          "boosterFRmedian": 23.54,
+          "boosterFRoffers": 58,
+          "boosterFRsellers": 28
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 14.21,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": 501.81,
+          "singlesOffers": 37229,
           "top5Value": 760.74,
           "top12ex5Value": 29.73,
           "boosterFRp10": 12.07,

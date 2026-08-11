@@ -87,6 +87,10 @@ export function computeOpening(cards, eraClasses, options) {
       price: round2(entry.card.reference),
       // « 1 sur N » se lit mieux qu'un pourcentage — N au point médian.
       oneIn: Math.round(2 / (entry.pLo + entry.pHi)),
+      // Ce que la carte pèse dans l'espérance d'un booster : valeur nette ×
+      // probabilité. C'est LA ligne qui réconcilie « cette carte vaut 20× le
+      // booster » et « le contenu moyen vaut 5 € ».
+      contribution: round2(((entry.pLo + entry.pHi) / 2) * entry.net),
       premium: entry.premium,
     }));
 

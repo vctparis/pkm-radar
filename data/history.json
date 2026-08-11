@@ -14,6 +14,20 @@
         "boosterFRmedian": 72,
         "boosterFRoffers": 82,
         "boosterFRsellers": 32
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 25.39,
+        "boosterOffers": 1,
+        "boosterLanguage": "en",
+        "boxPrice": 1286.74,
+        "singlesOffers": 9536,
+        "top5Value": 119.23,
+        "top12ex5Value": 53.8,
+        "boosterFRp10": 19.9,
+        "boosterFRmedian": 72,
+        "boosterFRoffers": 82,
+        "boosterFRsellers": 32
       }
     ],
     "burning-shadows": [
@@ -24,6 +38,20 @@
         "boxPrice": 1299.99,
         "singlesOffers": 8845,
         "boosterLanguage": "it",
+        "top5Value": 423.34,
+        "top12ex5Value": 66.08,
+        "boosterFRp10": 25,
+        "boosterFRmedian": 40.2,
+        "boosterFRoffers": 15,
+        "boosterFRsellers": 11
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 8.15,
+        "boosterOffers": 7,
+        "boosterLanguage": "it",
+        "boxPrice": 1299.99,
+        "singlesOffers": 8845,
         "top5Value": 423.34,
         "top12ex5Value": 66.08,
         "boosterFRp10": 25,
@@ -46,6 +74,20 @@
         "boosterFRmedian": 18,
         "boosterFRoffers": 62,
         "boosterFRsellers": 29
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 9.99,
+        "boosterOffers": 4,
+        "boosterLanguage": "en",
+        "boxPrice": 460.64,
+        "singlesOffers": 32073,
+        "top5Value": 320.51,
+        "top12ex5Value": 51.35,
+        "boosterFRp10": 13.5,
+        "boosterFRmedian": 18,
+        "boosterFRoffers": 62,
+        "boosterFRsellers": 29
       }
     ],
     "fusion-strike": [
@@ -56,6 +98,20 @@
         "boxPrice": 800.63,
         "singlesOffers": 35821,
         "boosterLanguage": "en",
+        "top5Value": 136.3,
+        "top12ex5Value": 11.52,
+        "boosterFRp10": 7.19,
+        "boosterFRmedian": 25,
+        "boosterFRoffers": 29,
+        "boosterFRsellers": 19
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 28.82,
+        "boosterOffers": 1,
+        "boosterLanguage": "en",
+        "boxPrice": 800.63,
+        "singlesOffers": 35821,
         "top5Value": 136.3,
         "top12ex5Value": 11.52,
         "boosterFRp10": 7.19,
@@ -78,6 +134,20 @@
         "boosterFRmedian": 23.54,
         "boosterFRoffers": 58,
         "boosterFRsellers": 28
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 14.21,
+        "boosterOffers": 3,
+        "boosterLanguage": "en",
+        "boxPrice": 501.81,
+        "singlesOffers": 37229,
+        "top5Value": 760.74,
+        "top12ex5Value": 29.73,
+        "boosterFRp10": 12.07,
+        "boosterFRmedian": 23.54,
+        "boosterFRoffers": 58,
+        "boosterFRsellers": 28
       }
     ],
     "silver-tempest": [
@@ -94,11 +164,39 @@
         "boosterFRmedian": 19.9,
         "boosterFRoffers": 29,
         "boosterFRsellers": 18
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 12.01,
+        "boosterOffers": 3,
+        "boosterLanguage": "en",
+        "boxPrice": 390.64,
+        "singlesOffers": 39084,
+        "top5Value": 417.45,
+        "top12ex5Value": 53.55,
+        "boosterFRp10": 11.37,
+        "boosterFRmedian": 19.9,
+        "boosterFRoffers": 29,
+        "boosterFRsellers": 18
       }
     ],
     "hidden-fates": [
       {
         "date": "2026-08-10",
+        "boosterPrice": 45.64,
+        "boosterOffers": 2,
+        "boosterLanguage": "en",
+        "boxPrice": null,
+        "singlesOffers": 7364,
+        "top5Value": 174.63,
+        "top12ex5Value": 19.9,
+        "boosterFRp10": 49.99,
+        "boosterFRmedian": 110,
+        "boosterFRoffers": 13,
+        "boosterFRsellers": 9
+      },
+      {
+        "date": "2026-08-11",
         "boosterPrice": 45.64,
         "boosterOffers": 2,
         "boosterLanguage": "en",
@@ -126,11 +224,39 @@
         "boosterFRmedian": 59,
         "boosterFRoffers": 9,
         "boosterFRsellers": 9
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 64.14,
+        "boosterOffers": 3,
+        "boosterLanguage": "en",
+        "boxPrice": 2300.64,
+        "singlesOffers": 26562,
+        "top5Value": 3118.07,
+        "top12ex5Value": 1544.53,
+        "boosterFRp10": 34.99,
+        "boosterFRmedian": 59,
+        "boosterFRoffers": 9,
+        "boosterFRsellers": 9
       }
     ],
     "crown-zenith": [
       {
         "date": "2026-08-10",
+        "boosterPrice": 32.03,
+        "boosterOffers": 2,
+        "boosterLanguage": "en",
+        "boxPrice": null,
+        "singlesOffers": 27430,
+        "top5Value": 86.42,
+        "top12ex5Value": 28.34,
+        "boosterFRp10": 25.99,
+        "boosterFRmedian": 30,
+        "boosterFRoffers": 5,
+        "boosterFRsellers": 5
+      },
+      {
+        "date": "2026-08-11",
         "boosterPrice": 32.03,
         "boosterOffers": 2,
         "boosterLanguage": "en",
@@ -158,11 +284,39 @@
         "boosterFRmedian": 70,
         "boosterFRoffers": 2,
         "boosterFRsellers": 2
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 45.64,
+        "boosterOffers": 1,
+        "boosterLanguage": "en",
+        "boxPrice": null,
+        "singlesOffers": 4079,
+        "top5Value": 76.23,
+        "top12ex5Value": 6.58,
+        "boosterFRp10": 44.9,
+        "boosterFRmedian": 70,
+        "boosterFRoffers": 2,
+        "boosterFRsellers": 2
       }
     ],
     "s151": [
       {
         "date": "2026-08-10",
+        "boosterPrice": 29.3,
+        "boosterOffers": 1,
+        "boosterLanguage": "fr",
+        "boxPrice": null,
+        "singlesOffers": 32681,
+        "top5Value": 675.86,
+        "top12ex5Value": 478.04,
+        "boosterFRp10": 13,
+        "boosterFRmedian": 35,
+        "boosterFRoffers": 13,
+        "boosterFRsellers": 11
+      },
+      {
+        "date": "2026-08-11",
         "boosterPrice": 29.3,
         "boosterOffers": 1,
         "boosterLanguage": "fr",
@@ -190,6 +344,20 @@
         "boosterFRmedian": 15,
         "boosterFRoffers": 1,
         "boosterFRsellers": 1
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 30.4,
+        "boosterOffers": 1,
+        "boosterLanguage": "jp",
+        "boxPrice": 150.64,
+        "singlesOffers": 4600,
+        "top5Value": null,
+        "top12ex5Value": null,
+        "boosterFRp10": 15,
+        "boosterFRmedian": 15,
+        "boosterFRoffers": 1,
+        "boosterFRsellers": 1
       }
     ],
     "vmax-climax": [
@@ -206,11 +374,39 @@
         "boosterFRmedian": null,
         "boosterFRoffers": 0,
         "boosterFRsellers": 0
+      },
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 15.11,
+        "boosterOffers": 2,
+        "boosterLanguage": "jp",
+        "boxPrice": 199.64,
+        "singlesOffers": 5761,
+        "top5Value": null,
+        "top12ex5Value": null,
+        "boosterFRp10": null,
+        "boosterFRmedian": null,
+        "boosterFRoffers": 0,
+        "boosterFRsellers": 0
       }
     ],
     "s151jp": [
       {
         "date": "2026-08-10",
+        "boosterPrice": 8.29,
+        "boosterOffers": 8,
+        "boosterLanguage": "jp",
+        "boxPrice": 265.63,
+        "singlesOffers": 10184,
+        "top5Value": null,
+        "top12ex5Value": null,
+        "boosterFRp10": null,
+        "boosterFRmedian": null,
+        "boosterFRoffers": 0,
+        "boosterFRsellers": 0
+      },
+      {
+        "date": "2026-08-11",
         "boosterPrice": 8.29,
         "boosterOffers": 8,
         "boosterLanguage": "jp",
