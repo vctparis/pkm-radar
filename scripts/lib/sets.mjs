@@ -29,6 +29,9 @@ export const SETS = [
   { id: "celebrations", name: "Célébrations", nameEN: "Celebrations", ptcg: "cel25", tcgdex: "cel25", cardtrader: "C25", era: "Épée et Bouclier" },
   { id: "paldean-fates", name: "Destinées de Paldea", nameEN: "Paldean Fates", ptcg: "sv4pt5", tcgdex: "sv04.5", cardtrader: "PAF", era: "Écarlate et Violet" },
   { id: "s151", name: "151", nameEN: "151", ptcg: "sv3pt5", tcgdex: "sv03.5", cardtrader: "MEW", era: "Écarlate et Violet" },
+  // ebayNot : les lots mixtes « Noir Fulgurant & Flamme Blanche » et le set
+  // jumeau pollueraient le plancher du booster.
+  { id: "white-flare", name: "Flamme Blanche", nameEN: "White Flare", ptcg: "rsv10pt5", tcgdex: "sv10.5w", cardtrader: "wht", era: "Écarlate et Violet", ebayNot: "fulgurant|black bolt" },
 
   // Sets japonais sans équivalent occidental — d'où leur intérêt : la rareté
   // n'est pas diluée par un tirage international. Pas de données Cardmarket

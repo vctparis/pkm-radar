@@ -567,7 +567,7 @@ async function main() {
     // Ère déduite de l'identifiant pokemontcg.io.
     let opening = null;
     {
-      const eraKey = set.ptcg.startsWith("sv")
+      const eraKey = /^(sv|rsv|zsv)/.test(set.ptcg)
         ? "sv"
         : set.ptcg.startsWith("swsh")
           ? "swsh"
@@ -618,7 +618,7 @@ async function main() {
     // médiane de prix de la classe et sa contribution par booster.
     let dropRates = null;
     {
-      const eraKey = set.ptcg.startsWith("sv")
+      const eraKey = /^(sv|rsv|zsv)/.test(set.ptcg)
         ? "sv"
         : set.ptcg.startsWith("swsh")
           ? "swsh"

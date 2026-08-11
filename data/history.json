@@ -26,7 +26,7 @@
         "top12ex5Value": 53.8,
         "boosterFRp10": 20,
         "boosterFRmedian": 99.99,
-        "boosterFRoffers": 82,
+        "boosterFRoffers": 81,
         "boosterFRsellers": 31
       }
     ],
@@ -257,8 +257,8 @@
       },
       {
         "date": "2026-08-11",
-        "boosterPrice": 32.03,
-        "boosterOffers": 2,
+        "boosterPrice": 31.72,
+        "boosterOffers": 3,
         "boosterLanguage": "en",
         "boxPrice": null,
         "singlesOffers": 27190,
@@ -514,6 +514,22 @@
         "boosterFRmedian": null,
         "boosterFRoffers": 0,
         "boosterFRsellers": 0
+      }
+    ],
+    "white-flare": [
+      {
+        "date": "2026-08-11",
+        "boosterPrice": 12.21,
+        "boosterOffers": 2,
+        "boosterLanguage": "en",
+        "boxPrice": null,
+        "singlesOffers": 20679,
+        "top5Value": 571.69,
+        "top12ex5Value": 184.38,
+        "boosterFRp10": 10.99,
+        "boosterFRmedian": 19.99,
+        "boosterFRoffers": 6,
+        "boosterFRsellers": 5
       }
     ]
   }

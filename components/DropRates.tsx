@@ -113,17 +113,17 @@ export default function DropRates({ data }: { data: RadarData }) {
               role="tab"
               aria-selected={selected}
               onClick={() => setActiveId(set.id)}
-              className={`flex items-center gap-2.5 rounded-xl border px-3 py-2 transition-all duration-200 ${
+              className={`flex flex-col items-center gap-1.5 rounded-xl border px-3 py-2 transition-all duration-200 ${
                 selected ? "border-accent bg-ink-850 shadow-[0_10px_28px_-16px_rgba(4,8,20,0.9)]" : "border-ink-700 hover:border-ink-500"
               }`}
             >
-              {set.logo ? (
+              {set.logo && (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={set.logo} alt="" loading="lazy" className="h-7 w-auto max-w-[84px] object-contain" />
-              ) : (
-                <span className={`text-[0.86rem] font-medium ${selected ? "text-mist-050" : "text-mist-300"}`}>{set.name}</span>
               )}
-              {set.logo && <span className="sr-only">{set.name}</span>}
+              {/* Certains logos (Célébrations…) sont illisibles en 28 px de
+                  haut : le nom est toujours écrit, le logo devient un renfort. */}
+              <span className={`text-[0.74rem] ${selected ? "text-mist-050" : "text-mist-300"}`}>{set.name}</span>
             </button>
           );
         })}
