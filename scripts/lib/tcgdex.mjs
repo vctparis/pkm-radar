@@ -19,7 +19,8 @@ export async function fetchFrenchCatalog(tcgdexId, { useCache = true, lang = "fr
   const cachePath = join(CACHE_DIR, `tcgdex-${lang}-${tcgdexId.replace(/[^a-z0-9.]/gi, "_")}.json`);
   if (useCache && existsSync(cachePath)) {
     const raw = JSON.parse(await readFile(cachePath, "utf8"));
-    if (Date.now() - raw.cachedAt < CACHE_TTL_MS) return raw.data;
+    // "logo" absent = cache d'une version antérieure du schéma : on rafraîchit.
+    if (Date.now() - raw.cachedAt < CACHE_TTL_MS && "logo" in raw.data) return raw.data;
   }
 
   let lastError;
@@ -33,6 +34,8 @@ export async function fetchFrenchCatalog(tcgdexId, { useCache = true, lang = "fr
         const payload = await response.json();
         const data = {
           name: payload.name,
+          // Les logos TCGdex sont des bases d'URL, extension à la demande.
+          logo: payload.logo ? `${payload.logo}.webp` : null,
           officialCount: payload.cardCount?.official ?? null,
           // localId = numéro de collection ("33"), la clé de jonction avec
           // les autres catalogues.

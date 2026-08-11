@@ -34,6 +34,14 @@ export default async function OffrePage() {
               </li>
               <li>
                 <Link
+                  href="/taux-de-drop"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Taux de drop
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/dossier"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >

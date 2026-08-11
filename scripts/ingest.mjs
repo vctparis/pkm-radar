@@ -73,6 +73,8 @@ async function loadHistory() {
 const EMPTY_BUNDLE = { top1: [], r2_5: [], r6_15: [], r16_50: [], fond: [] };
 
 async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef) {
+  // Le catalogue ja n'a pas les cartes, mais il a le logo du set.
+  const jaMeta = await fetchFrenchCatalog(set.tcgdex, { lang: "ja" }).catch(() => null);
   // ---- CardTrader : scellé jp + singles + images --------------------------
   // TCGdex ne référence pas les cartes des sets japonais (coquilles vides) ;
   // les blueprints CardTrader portent une image_url sur 100 % du catalogue,
@@ -277,6 +279,8 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
     liveHistory: history.snapshots[set.id] ?? [],
     psa: null,
     opening,
+    dropRates: null,
+    logo: jaMeta?.logo ?? null,
     picks,
   };
 }
@@ -529,6 +533,52 @@ async function main() {
       }
     }
 
+    // ---- Taux de drop par classe de rareté ---------------------------------
+    // La même table que le moteur d'ouverture, mais exposée telle quelle :
+    // « n'importe quelle carte de la classe » (taux de la classe) et « une
+    // carte précise » (taux ÷ effectif de la classe DANS CE SET), plus la
+    // médiane de prix de la classe et sa contribution par booster.
+    let dropRates = null;
+    {
+      const eraKey = set.ptcg.startsWith("sv")
+        ? "sv"
+        : set.ptcg.startsWith("swsh")
+          ? "swsh"
+          : set.ptcg.startsWith("xy")
+            ? "xy"
+            : "sm";
+      const era = pullRates.eras[eraKey];
+      const override = pullRates.setOverrides?.[set.ptcg] ?? {};
+      const eraClasses = { ...era?.classes, ...(override.classes ?? {}) };
+      const rows = [];
+      for (const [rarity, spec] of Object.entries(eraClasses)) {
+        const group = cards.filter((card) => card.rarity === rarity);
+        if (!group.length) continue;
+        const prices = group.map((card) => card.reference).sort((a, b) => a - b);
+        const rateMid = (spec.lo + spec.hi) / 2;
+        rows.push({
+          rarity,
+          count: group.length,
+          rateLo: spec.lo,
+          rateHi: spec.hi,
+          oneInAny: Math.round(1 / rateMid),
+          oneInSpecific: Math.round(group.length / rateMid),
+          median: Number(prices[Math.floor(prices.length / 2)].toFixed(2)),
+          contribution: Number((rateMid * prices[Math.floor(prices.length / 2)]).toFixed(2)),
+          premium: Boolean(spec.premium),
+        });
+      }
+      if (rows.length) {
+        rows.sort((a, b) => b.rateHi - a.rateHi);
+        dropRates = {
+          classes: rows,
+          grossPerBooster: Number(rows.reduce((sum, row) => sum + row.contribution, 0).toFixed(2)),
+          confidence: override.confidence ?? era.confidence,
+          partialNote: pullRates.partialSets?.[set.ptcg] ?? null,
+        };
+      }
+    }
+
     // Index des cotations live par numéro de carte, partagé par les paniers
     // fixes et la sélection de pépites.
     const byNumber = new Map();
@@ -667,6 +717,8 @@ async function main() {
       bestCard,
       boosterFR,
       opening,
+      dropRates,
+      logo: frCatalog?.logo ?? null,
       strata,
       growthSeries,
       contentValue,

@@ -133,6 +133,23 @@ export type Opening = {
   partialNote: string | null;
 } | null;
 
+export type DropRates = {
+  classes: {
+    rarity: string;
+    count: number;
+    rateLo: number;
+    rateHi: number;
+    oneInAny: number;
+    oneInSpecific: number;
+    median: number;
+    contribution: number;
+    premium: boolean;
+  }[];
+  grossPerBooster: number;
+  confidence: string;
+  partialNote: string | null;
+} | null;
+
 export type SetEntry = {
   id: string;
   name: string;
@@ -155,6 +172,8 @@ export type SetEntry = {
   bestCard: BestCard;
   boosterFR: FRBoosterQuote;
   opening: Opening | BoxOpening | null;
+  dropRates: DropRates;
+  logo?: string | null;
   strata: Stratum[];
   growthSeries: { monthly: GrowthBundle; quarterly: GrowthBundle };
   contentValue: GrowthPoint[];

@@ -29,13 +29,21 @@ export default async function DossierPage() {
             PKM Radar
           </Link>
           <nav aria-label="Sections">
-            <ul className="m-0 flex list-none items-center gap-1 p-0">
+            <ul className="m-0 flex list-none flex-wrap items-center gap-1 p-0">
               <li>
                 <Link
                   href="/"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >
                   Radar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/taux-de-drop"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Taux de drop
                 </Link>
               </li>
               <li>

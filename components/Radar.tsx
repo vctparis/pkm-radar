@@ -153,6 +153,14 @@ export default function Radar({ data }: { data: RadarData }) {
               </li>
               <li>
                 <a
+                  href="/taux-de-drop"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Taux de drop
+                </a>
+              </li>
+              <li>
+                <a
                   href="/dossier"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >

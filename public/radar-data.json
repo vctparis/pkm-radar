@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T11:58:50.298Z",
+  "generatedAt": "2026-08-11T13:52:25.954Z",
   "sets": [
     {
       "id": "s151",
@@ -226,7 +226,7 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.02,
+              "evNet": 6.44,
               "p25": 0,
               "median": 0,
               "p75": 2.64,
@@ -235,16 +235,16 @@
               "pDouble": 0.07
             },
             "freshBox": {
-              "evNet": 6.32,
+              "evNet": 6.17,
               "p25": 0,
               "median": 0,
-              "p75": 2.86,
+              "p75": 2.64,
               "pRecoup": 0.12,
-              "pLoseHalf": 0.78,
+              "pLoseHalf": 0.79,
               "pDouble": 0.07
             },
             "trustedLoose": {
-              "evNet": 4.6,
+              "evNet": 4.53,
               "p25": 0,
               "median": 0,
               "p75": 1.9,
@@ -253,10 +253,10 @@
               "pDouble": 0.05
             },
             "unknownLoose": {
-              "evNet": 0.65,
+              "evNet": 0.66,
               "p25": 0,
               "median": 0,
-              "p75": 0.37,
+              "p75": 1.01,
               "pRecoup": 0,
               "pLoseHalf": 0.98,
               "pDouble": 0
@@ -266,6 +266,80 @@
         "confidence": "solide",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 25,
+            "rateLo": 0.6,
+            "rateHi": 0.8,
+            "oneInAny": 1,
+            "oneInSpecific": 36,
+            "median": 0.21,
+            "contribution": 0.15,
+            "premium": false
+          },
+          {
+            "rarity": "Double Rare",
+            "count": 12,
+            "rateLo": 0.2,
+            "rateHi": 0.3,
+            "oneInAny": 4,
+            "oneInSpecific": 48,
+            "median": 2.18,
+            "contribution": 0.55,
+            "premium": false
+          },
+          {
+            "rarity": "Ultra Rare",
+            "count": 16,
+            "rateLo": 0.07,
+            "rateHi": 0.11,
+            "oneInAny": 11,
+            "oneInSpecific": 178,
+            "median": 10.13,
+            "contribution": 0.91,
+            "premium": true
+          },
+          {
+            "rarity": "Illustration Rare",
+            "count": 16,
+            "rateLo": 0.07,
+            "rateHi": 0.11,
+            "oneInAny": 11,
+            "oneInSpecific": 178,
+            "median": 26.89,
+            "contribution": 2.42,
+            "premium": true
+          },
+          {
+            "rarity": "Special Illustration Rare",
+            "count": 7,
+            "rateLo": 0.025,
+            "rateHi": 0.04,
+            "oneInAny": 31,
+            "oneInSpecific": 215,
+            "median": 79.37,
+            "contribution": 2.58,
+            "premium": true
+          },
+          {
+            "rarity": "Hyper Rare",
+            "count": 3,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 150,
+            "median": 4.14,
+            "contribution": 0.08,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 6.69,
+        "confidence": "solide",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/sv/sv03.5/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -1204,7 +1278,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.02,
+              "evNet": 4.01,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1213,7 +1287,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 4.06,
+              "evNet": 3.96,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1222,7 +1296,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.84,
+              "evNet": 3.88,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1231,12 +1305,12 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 3.86,
+              "evNet": 3.94,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             }
           }
@@ -1244,6 +1318,47 @@
         "confidence": "grossière",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 12,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 20,
+            "median": 0.2,
+            "contribution": 0.12,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 6,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 18,
+            "median": 2.61,
+            "contribution": 0.85,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 1,
+            "rateLo": 0.04,
+            "rateHi": 0.07,
+            "oneInAny": 18,
+            "oneInSpecific": 18,
+            "median": 1.58,
+            "contribution": 0.09,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.06,
+        "confidence": "grossière",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/cel25/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -2045,16 +2160,16 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.77,
+              "evNet": 1.72,
               "p25": 0,
-              "median": 0.48,
+              "median": 0.45,
               "p75": 1.71,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.75,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0.48,
               "p75": 1.71,
@@ -2063,7 +2178,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.41,
+              "evNet": 1.46,
               "p25": 0,
               "median": 0.42,
               "p75": 1.44,
@@ -2085,6 +2200,91 @@
         "confidence": "correcte",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 33,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 55,
+            "median": 0.17,
+            "contribution": 0.1,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 18,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 55,
+            "median": 0.63,
+            "contribution": 0.2,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 14,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 70,
+            "median": 1.32,
+            "contribution": 0.26,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 7,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 88,
+            "median": 3.31,
+            "contribution": 0.26,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 13,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 200,
+            "median": 3.17,
+            "contribution": 0.21,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 7,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 350,
+            "median": 9.67,
+            "contribution": 0.19,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 5,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 333,
+            "median": 4.45,
+            "contribution": 0.07,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.29,
+        "confidence": "correcte",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh3/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -2416,7 +2616,7 @@
         },
         "singles": {
           "tracked": 201,
-          "offers": 19751
+          "offers": 19992
         }
       },
       "liveHistory": [
@@ -2426,7 +2626,7 @@
           "boosterOffers": 7,
           "boosterLanguage": "en",
           "boxPrice": 799.64,
-          "singlesOffers": 19751,
+          "singlesOffers": 19992,
           "top5Value": 76.19,
           "top12ex5Value": 27.74,
           "boosterFRp10": 38,
@@ -2479,14 +2679,14 @@
           "price": 11.21,
           "momentum30": 34.2,
           "relativeStrength": 34.2,
-          "sellers": 22,
-          "offers": 22,
+          "sellers": 23,
+          "offers": 23,
           "marketFloor": 9.15,
           "score": 82,
           "components": {
             "relative": 100,
-            "tightness": 45,
-            "liquidity": 86,
+            "tightness": 43,
+            "liquidity": 91,
             "discount": 100
           },
           "nameFR": "Cizayox VMAX",
@@ -2546,7 +2746,7 @@
           "momentum30": 33.3,
           "relativeStrength": 33.3,
           "sellers": 31,
-          "offers": 37,
+          "offers": 36,
           "marketFloor": 0.59,
           "score": 78,
           "components": {
@@ -2567,6 +2767,39 @@
             "sellers": 2,
             "matched": 2,
             "scanned": 4
+          }
+        },
+        {
+          "id": "swsh3-19",
+          "name": "Charizard V",
+          "number": "19",
+          "rarity": "Rare Holo V",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh3/19/low.webp",
+          "price": 8.12,
+          "momentum30": 30.5,
+          "relativeStrength": 30.5,
+          "sellers": 34,
+          "offers": 35,
+          "marketFloor": 6.14,
+          "score": 76,
+          "components": {
+            "relative": 100,
+            "tightness": 15,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Dracaufeu V",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Darkness-Ablaze/Charizard-V-DAA19",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
           }
         },
         {
@@ -2600,39 +2833,6 @@
             "sellers": 2,
             "matched": 2,
             "scanned": 2
-          }
-        },
-        {
-          "id": "swsh3-19",
-          "name": "Charizard V",
-          "number": "19",
-          "rarity": "Rare Holo V",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh3/19/low.webp",
-          "price": 8.12,
-          "momentum30": 30.5,
-          "relativeStrength": 30.5,
-          "sellers": 36,
-          "offers": 37,
-          "marketFloor": 6.14,
-          "score": 75,
-          "components": {
-            "relative": 100,
-            "tightness": 10,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Dracaufeu V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Darkness-Ablaze/Charizard-V-DAA19",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
           }
         },
         {
@@ -2712,7 +2912,7 @@
           "relativeStrength": 36,
           "sellers": 53,
           "offers": 63,
-          "marketFloor": 0.33,
+          "marketFloor": 0.34,
           "score": 72,
           "components": {
             "relative": 100,
@@ -2743,8 +2943,8 @@
           "price": 5.29,
           "momentum30": 49.1,
           "relativeStrength": 49.1,
-          "sellers": 44,
-          "offers": 47,
+          "sellers": 45,
+          "offers": 48,
           "marketFloor": 2.6,
           "score": 72,
           "components": {
@@ -2776,8 +2976,8 @@
           "price": 0.44,
           "momentum30": 21.6,
           "relativeStrength": 21.6,
-          "sellers": 49,
-          "offers": 64,
+          "sellers": 48,
+          "offers": 63,
           "marketFloor": 0.39,
           "score": 71,
           "components": {
@@ -2809,13 +3009,13 @@
           "price": 1.96,
           "momentum30": 16.1,
           "relativeStrength": 16.1,
-          "sellers": 35,
-          "offers": 38,
+          "sellers": 36,
+          "offers": 39,
           "marketFloor": 1.45,
-          "score": 71,
+          "score": 70,
           "components": {
             "relative": 90,
-            "tightness": 13,
+            "tightness": 10,
             "liquidity": 100,
             "discount": 100
           },
@@ -3054,25 +3254,25 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.42,
+              "evNet": 1.49,
               "p25": 0,
-              "median": 0.39,
-              "p75": 1.27,
+              "median": 0.41,
+              "p75": 1.24,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.66,
+              "evNet": 1.59,
               "p25": 0,
-              "median": 0.39,
+              "median": 0.41,
               "p75": 1.27,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.16,
+              "evNet": 1.27,
               "p25": 0,
               "median": 0.36,
               "p75": 1.11,
@@ -3094,6 +3294,91 @@
         "confidence": "correcte",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 33,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 55,
+            "median": 0.19,
+            "contribution": 0.11,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 19,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 58,
+            "median": 0.48,
+            "contribution": 0.16,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 11,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 55,
+            "median": 0.83,
+            "contribution": 0.17,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 6,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 75,
+            "median": 1.65,
+            "contribution": 0.13,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 20,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 308,
+            "median": 4.17,
+            "contribution": 0.27,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 12,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 600,
+            "median": 8.97,
+            "contribution": 0.18,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 6,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 400,
+            "median": 4.16,
+            "contribution": 0.06,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.08,
+        "confidence": "correcte",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh4/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -3432,7 +3717,7 @@
         },
         "singles": {
           "tracked": 203,
-          "offers": 20117
+          "offers": 20402
         }
       },
       "liveHistory": [
@@ -3442,9 +3727,9 @@
           "boosterOffers": 7,
           "boosterLanguage": "en",
           "boxPrice": 369.64,
-          "singlesOffers": 20117,
-          "top5Value": 201.95,
-          "top12ex5Value": 51.56,
+          "singlesOffers": 20402,
+          "top5Value": 203.6,
+          "top12ex5Value": 51.54,
           "boosterFRp10": 23,
           "boosterFRmedian": 29.99,
           "boosterFRoffers": 25,
@@ -3495,14 +3780,14 @@
           "price": 6.62,
           "momentum30": 21.1,
           "relativeStrength": 21.1,
-          "sellers": 21,
-          "offers": 23,
+          "sellers": 22,
+          "offers": 24,
           "marketFloor": 8.15,
           "score": 81,
           "components": {
             "relative": 100,
-            "tightness": 48,
-            "liquidity": 82,
+            "tightness": 45,
+            "liquidity": 86,
             "discount": 100
           },
           "nameFR": "Zacian",
@@ -3528,14 +3813,14 @@
           "price": 6.61,
           "momentum30": 20.1,
           "relativeStrength": 20.1,
-          "sellers": 23,
-          "offers": 23,
-          "marketFloor": 4.59,
+          "sellers": 24,
+          "offers": 24,
+          "marketFloor": 4.6,
           "score": 81,
           "components": {
             "relative": 100,
-            "tightness": 43,
-            "liquidity": 91,
+            "tightness": 40,
+            "liquidity": 95,
             "discount": 100
           },
           "nameFR": "Monthracite VMAX",
@@ -3553,39 +3838,6 @@
           }
         },
         {
-          "id": "swsh4-191",
-          "name": "Togekiss VMAX",
-          "number": "191",
-          "rarity": "Rare Rainbow",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh4/191/low.webp",
-          "price": 9.4,
-          "momentum30": 19.2,
-          "relativeStrength": 19.2,
-          "sellers": 25,
-          "offers": 25,
-          "marketFloor": 9.14,
-          "score": 81,
-          "components": {
-            "relative": 98,
-            "tightness": 38,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Togekiss VMAX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Vivid-Voltage/Togekiss-VMAX-V2-VIV191",
-          "marketFR": {
-            "price": 15.99,
-            "priceUrl": "https://www.ebay.fr/itm/188698945250?_skw=Togekiss+VMAX+191%2F185&hash=item2bef5566e2:g:8i4AAeSwB-dqZloO",
-            "floor10": 15.99,
-            "floor10Url": "https://www.ebay.fr/itm/188698945250?_skw=Togekiss+VMAX+191%2F185&hash=item2bef5566e2:g:8i4AAeSwB-dqZloO",
-            "median": 29.9,
-            "offers": 6,
-            "sellers": 5,
-            "matched": 6,
-            "scanned": 6
-          }
-        },
-        {
           "id": "swsh4-187",
           "name": "Galarian Darmanitan VMAX",
           "number": "187",
@@ -3594,13 +3846,13 @@
           "price": 9.6,
           "momentum30": 21,
           "relativeStrength": 21,
-          "sellers": 28,
-          "offers": 28,
+          "sellers": 27,
+          "offers": 27,
           "marketFloor": 6.59,
           "score": 80,
           "components": {
             "relative": 100,
-            "tightness": 30,
+            "tightness": 33,
             "liquidity": 100,
             "discount": 100
           },
@@ -3616,6 +3868,39 @@
             "sellers": 1,
             "matched": 1,
             "scanned": 1
+          }
+        },
+        {
+          "id": "swsh4-191",
+          "name": "Togekiss VMAX",
+          "number": "191",
+          "rarity": "Rare Rainbow",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh4/191/low.webp",
+          "price": 9.4,
+          "momentum30": 19.2,
+          "relativeStrength": 19.2,
+          "sellers": 27,
+          "offers": 27,
+          "marketFloor": 9.14,
+          "score": 79,
+          "components": {
+            "relative": 98,
+            "tightness": 33,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Togekiss VMAX",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Vivid-Voltage/Togekiss-VMAX-V2-VIV191",
+          "marketFR": {
+            "price": 15.99,
+            "priceUrl": "https://www.ebay.fr/itm/188698945250?_skw=Togekiss+VMAX+191%2F185&hash=item2bef5566e2:g:8i4AAeSwB-dqZloO",
+            "floor10": 15.99,
+            "floor10Url": "https://www.ebay.fr/itm/188698945250?_skw=Togekiss+VMAX+191%2F185&hash=item2bef5566e2:g:8i4AAeSwB-dqZloO",
+            "median": 29.9,
+            "offers": 6,
+            "sellers": 5,
+            "matched": 6,
+            "scanned": 6
           }
         },
         {
@@ -3643,7 +3928,7 @@
             "price": 10,
             "priceUrl": "https://www.ebay.fr/itm/317725346766?_skw=Pikachu+VMAX+188%2F185&hash=item49f9e80bce:g:LX0AAeSw3NlpWAZu",
             "floor10": 30,
-            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1TzbWNNVSzPLeO49zSwQFl%2F9h79QwlPzLqXtSM6bXSj2U%2BU%2BzYym08zBfNj0ZCHe8hcomNQpD1pjoNCv5Y9mEa3DRqzQiL4chIf1DpWfUhtS86xCx8WSU%2F821e3sVjytftEM317zWzAy%2F8Kt4Aa3MTLO3EtNsykr%2Fcim1YXawELvDg%3D%3D",
+            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1Tx8geu8SQ3jZ9VBDe97wdPdMnABEbUvY%2FIYPrOkw88MjF11yG%2BGeFbJxqiFLQh3v6rzV9jJ8h%2BL5oegFWT1bmSMyrZwQT4ViTydMiU922c3h8Fhuwqu4ad43ZKH1HwpIx553v%2BJ0PgUZkyMtP4WkqNv4xjO%2F5xsi48Hqbj7o0d2Rw%3D%3D",
             "median": 299,
             "offers": 17,
             "sellers": 17,
@@ -3693,8 +3978,8 @@
           "price": 4.38,
           "momentum30": 194.6,
           "relativeStrength": 194.6,
-          "sellers": 76,
-          "offers": 90,
+          "sellers": 74,
+          "offers": 88,
           "marketFloor": 0.11,
           "score": 72,
           "components": {
@@ -3727,7 +4012,7 @@
           "momentum30": 20.7,
           "relativeStrength": 20.7,
           "sellers": 53,
-          "offers": 71,
+          "offers": 72,
           "marketFloor": 0.34,
           "score": 71,
           "components": {
@@ -3827,7 +4112,7 @@
           "relativeStrength": 9.4,
           "sellers": 30,
           "offers": 33,
-          "marketFloor": 8.44,
+          "marketFloor": 10.09,
           "score": 68,
           "components": {
             "relative": 73,
@@ -3990,7 +4275,7 @@
         "rarity": "Rare Rainbow",
         "price": 600.79,
         "change30": 139.8,
-        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Charizard-GX-V2-BUS150"
+        "url": null
       },
       "boosterFR": {
         "price": 15,
@@ -4094,7 +4379,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.39,
+              "evNet": 2.23,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4103,7 +4388,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.53,
+              "evNet": 2.58,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4112,7 +4397,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.68,
+              "evNet": 1.76,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -4134,6 +4419,80 @@
         "confidence": "grossière",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 25,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 42,
+            "median": 0.19,
+            "contribution": 0.11,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 14,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 43,
+            "median": 0.63,
+            "contribution": 0.2,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo GX",
+            "count": 14,
+            "rateLo": 0.1,
+            "rateHi": 0.125,
+            "oneInAny": 9,
+            "oneInSpecific": 124,
+            "median": 3.24,
+            "contribution": 0.36,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 19,
+            "rateLo": 0.04,
+            "rateHi": 0.07,
+            "oneInAny": 18,
+            "oneInSpecific": 345,
+            "median": 5.3,
+            "contribution": 0.29,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 13,
+            "rateLo": 0.015,
+            "rateHi": 0.03,
+            "oneInAny": 44,
+            "oneInSpecific": 578,
+            "median": 10.85,
+            "contribution": 0.24,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 9,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 600,
+            "median": 8.6,
+            "contribution": 0.13,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.33,
+        "confidence": "grossière",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/sm/sm3/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -5148,19 +5507,19 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.72,
+              "evNet": 1.64,
               "p25": 0,
               "median": 0,
-              "p75": 1.04,
+              "p75": 0.74,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.7,
+              "evNet": 1.65,
               "p25": 0,
               "median": 0,
-              "p75": 0.8,
+              "p75": 0.74,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0
@@ -5169,9 +5528,9 @@
               "evNet": 1.29,
               "p25": 0,
               "median": 0,
-              "p75": 0.67,
+              "p75": 0.66,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
@@ -5188,6 +5547,80 @@
         "confidence": "grossière",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 17,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 28,
+            "median": 0.2,
+            "contribution": 0.12,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 16,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 49,
+            "median": 0.74,
+            "contribution": 0.24,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo GX",
+            "count": 11,
+            "rateLo": 0.1,
+            "rateHi": 0.125,
+            "oneInAny": 9,
+            "oneInSpecific": 98,
+            "median": 3.14,
+            "contribution": 0.35,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 12,
+            "rateLo": 0.04,
+            "rateHi": 0.07,
+            "oneInAny": 18,
+            "oneInSpecific": 218,
+            "median": 6.13,
+            "contribution": 0.34,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 8,
+            "rateLo": 0.015,
+            "rateHi": 0.03,
+            "oneInAny": 44,
+            "oneInSpecific": 356,
+            "median": 14.02,
+            "contribution": 0.32,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 6,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 400,
+            "median": 11.18,
+            "contribution": 0.17,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.54,
+        "confidence": "grossière",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/sm/sm1/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -5923,9 +6356,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Double-Colorless-Energy-V3-SUM136",
           "marketFR": {
             "price": 1.9,
-            "priceUrl": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
+            "priceUrl": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
             "floor10": 1.9,
-            "floor10Url": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
+            "floor10Url": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
             "median": 1.9,
             "offers": 2,
             "sellers": 1,
@@ -6121,7 +6554,7 @@
         "offers": 11,
         "sellers": 7,
         "matched": 11,
-        "scanned": 775
+        "scanned": 772
       },
       "opening": {
         "boosterPrice": 149.9,
@@ -6214,16 +6647,16 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.45,
+              "evNet": 11.35,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 11.36,
+              "evNet": 11.51,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -6232,16 +6665,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 10.72,
+              "evNet": 10.48,
               "p25": 0,
               "median": 0.35,
               "p75": 4.32,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.73,
+              "evNet": 8.11,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
@@ -6254,6 +6687,69 @@
         "confidence": "grossière",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 9,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 15,
+            "median": 0.29,
+            "contribution": 0.17,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 13,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 40,
+            "median": 4.56,
+            "contribution": 1.48,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo EX",
+            "count": 12,
+            "rateLo": 0.09,
+            "rateHi": 0.14,
+            "oneInAny": 9,
+            "oneInSpecific": 104,
+            "median": 7.83,
+            "contribution": 0.9,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 9,
+            "rateLo": 0.04,
+            "rateHi": 0.07,
+            "oneInAny": 18,
+            "oneInSpecific": 164,
+            "median": 26,
+            "contribution": 1.43,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 5,
+            "rateLo": 0.012,
+            "rateHi": 0.025,
+            "oneInAny": 54,
+            "oneInSpecific": 270,
+            "median": 4.82,
+            "contribution": 0.09,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 4.07,
+        "confidence": "grossière",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/xy/xy12/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -7286,6 +7782,8 @@
           }
         ]
       },
+      "dropRates": null,
+      "logo": null,
       "picks": [
         {
           "id": "shiny-star-v-307",
@@ -7708,7 +8206,7 @@
         },
         "singles": {
           "tracked": 293,
-          "offers": 5761
+          "offers": 5755
         }
       },
       "liveHistory": [
@@ -7732,7 +8230,7 @@
           "boosterOffers": 2,
           "boosterLanguage": "jp",
           "boxPrice": 199.64,
-          "singlesOffers": 5761,
+          "singlesOffers": 5755,
           "top5Value": null,
           "top12ex5Value": null,
           "boosterFRp10": null,
@@ -7755,7 +8253,7 @@
             "countLo": 4,
             "countHi": 6,
             "poolSize": 70,
-            "meanNet": 13.93,
+            "meanNet": 13.95,
             "top": [
               {
                 "name": "Pikachu VMAX",
@@ -7795,7 +8293,7 @@
             "countLo": 1,
             "countHi": 2,
             "poolSize": 67,
-            "meanNet": 2.67,
+            "meanNet": 2.66,
             "top": [
               {
                 "name": "Gloria",
@@ -7871,6 +8369,8 @@
           }
         ]
       },
+      "dropRates": null,
+      "logo": null,
       "picks": [
         {
           "id": "vmax-climax-280",
@@ -8293,7 +8793,7 @@
         },
         "singles": {
           "tracked": 101,
-          "offers": 2435
+          "offers": 2458
         }
       },
       "liveHistory": [
@@ -8303,7 +8803,7 @@
           "boosterOffers": 2,
           "boosterLanguage": "jp",
           "boxPrice": 790.64,
-          "singlesOffers": 2435,
+          "singlesOffers": 2458,
           "top5Value": null,
           "top12ex5Value": null,
           "boosterFRp10": null,
@@ -8402,6 +8902,8 @@
           }
         ]
       },
+      "dropRates": null,
+      "logo": null,
       "picks": [
         {
           "id": "eevee-heroes-095",
@@ -8942,16 +9444,16 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.92,
+              "evNet": 2.91,
               "p25": 0,
               "median": 0,
-              "p75": 1.23,
+              "p75": 1.24,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.8,
+              "evNet": 2.85,
               "p25": 0,
               "median": 0,
               "p75": 1.2,
@@ -8960,7 +9462,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 2.21,
+              "evNet": 2.07,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
@@ -8969,7 +9471,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.36,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -8982,6 +9484,69 @@
         "confidence": "grossière",
         "partialNote": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation."
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 15,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 25,
+            "median": 0.22,
+            "contribution": 0.13,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 6,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 18,
+            "median": 0.68,
+            "contribution": 0.22,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo GX",
+            "count": 9,
+            "rateLo": 0.1,
+            "rateHi": 0.125,
+            "oneInAny": 9,
+            "oneInSpecific": 80,
+            "median": 2.73,
+            "contribution": 0.31,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 3,
+            "rateLo": 0.04,
+            "rateHi": 0.07,
+            "oneInAny": 18,
+            "oneInSpecific": 55,
+            "median": 25.42,
+            "contribution": 1.4,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 1,
+            "rateLo": 0.015,
+            "rateHi": 0.03,
+            "oneInAny": 44,
+            "oneInSpecific": 44,
+            "median": 30.9,
+            "contribution": 0.7,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 2.76,
+        "confidence": "grossière",
+        "partialNote": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation."
+      },
+      "logo": "https://assets.tcgdex.net/fr/sm/sm115/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -9953,25 +10518,25 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.51,
+              "evNet": 6.05,
               "p25": 0,
               "median": 0,
-              "p75": 1.17,
+              "p75": 1.18,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 6.02,
+              "evNet": 5.74,
               "p25": 0,
               "median": 0,
               "p75": 1.17,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
-              "pDouble": 0.02
+              "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 4.3,
+              "evNet": 4.23,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -9993,6 +10558,91 @@
         "confidence": "correcte",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 19,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 32,
+            "median": 0.08,
+            "contribution": 0.05,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 20,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 62,
+            "median": 0.35,
+            "contribution": 0.11,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 18,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 90,
+            "median": 1.36,
+            "contribution": 0.27,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 15,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 188,
+            "median": 6.11,
+            "contribution": 0.49,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 38,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 585,
+            "median": 17.92,
+            "contribution": 1.16,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 22,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 1100,
+            "median": 24.45,
+            "contribution": 0.49,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 12,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 800,
+            "median": 9.02,
+            "contribution": 0.14,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 2.71,
+        "confidence": "correcte",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh7/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -10993,7 +11643,7 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.95,
+              "evNet": 2.02,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -11002,16 +11652,16 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.93,
+              "evNet": 1.89,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.29,
+              "evNet": 1.38,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -11033,6 +11683,113 @@
         "confidence": "correcte",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 21,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 35,
+            "median": 0.09,
+            "contribution": 0.05,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 14,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 43,
+            "median": 0.22,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 15,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 75,
+            "median": 0.71,
+            "contribution": 0.14,
+            "premium": false
+          },
+          {
+            "rarity": "Radiant Rare",
+            "count": 3,
+            "rateLo": 0.1,
+            "rateHi": 0.15,
+            "oneInAny": 8,
+            "oneInSpecific": 24,
+            "median": 0.61,
+            "contribution": 0.08,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 1,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 13,
+            "median": 0.97,
+            "contribution": 0.08,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Holo VSTAR",
+            "count": 6,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 75,
+            "median": 1.15,
+            "contribution": 0.09,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 26,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 400,
+            "median": 5.07,
+            "contribution": 0.33,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 14,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 700,
+            "median": 7,
+            "contribution": 0.14,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 6,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 400,
+            "median": 4.83,
+            "contribution": 0.07,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.05,
+        "confidence": "correcte",
+        "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh12/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -12005,7 +12762,7 @@
           "jackpotNet": 8.99,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 0.51,
+              "evNet": 0.5,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -12023,7 +12780,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 0.41,
+              "evNet": 0.39,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
@@ -12045,6 +12802,80 @@
         "confidence": "grossière",
         "partialNote": "Le Coffre des Brillants (les shiny, dont le Dracaufeu VMAX chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 8,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 13,
+            "median": 0.12,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 7,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 22,
+            "median": 0.15,
+            "contribution": 0.05,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 8,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 40,
+            "median": 0.9,
+            "contribution": 0.18,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 6,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 75,
+            "median": 1.93,
+            "contribution": 0.15,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 9,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 138,
+            "median": 2.31,
+            "contribution": 0.15,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 1,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 50,
+            "median": 2.18,
+            "contribution": 0.04,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 0.64,
+        "confidence": "grossière",
+        "partialNote": "Le Coffre des Brillants (les shiny, dont le Dracaufeu VMAX chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh4.5/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -12937,10 +13768,10 @@
         "floor10": 14,
         "floor10Url": "https://www.ebay.fr/itm/198141346245?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item2e222501c5:g:nzgAAeSw0tFpoWfC",
         "median": 18,
-        "offers": 61,
-        "sellers": 28,
-        "matched": 61,
-        "scanned": 135
+        "offers": 62,
+        "sellers": 27,
+        "matched": 62,
+        "scanned": 134
       },
       "opening": {
         "boosterPrice": 14,
@@ -13033,16 +13864,16 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.07,
+              "evNet": 2.04,
               "p25": 0,
               "median": 0,
-              "p75": 1.03,
+              "p75": 1.11,
               "pRecoup": 0.02,
               "pLoseHalf": 0.95,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.09,
+              "evNet": 2.18,
               "p25": 0,
               "median": 0,
               "p75": 1.11,
@@ -13051,16 +13882,16 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.48,
+              "evNet": 1.45,
               "p25": 0,
               "median": 0,
-              "p75": 0.76,
+              "p75": 0.73,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -13073,6 +13904,102 @@
         "confidence": "correcte",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 26,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 43,
+            "median": 0.09,
+            "contribution": 0.05,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 9,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 28,
+            "median": 0.19,
+            "contribution": 0.06,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 20,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 100,
+            "median": 0.87,
+            "contribution": 0.17,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 3,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 38,
+            "median": 1.46,
+            "contribution": 0.12,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Holo VSTAR",
+            "count": 4,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 50,
+            "median": 2.98,
+            "contribution": 0.24,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 21,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 323,
+            "median": 3.36,
+            "contribution": 0.22,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 8,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 400,
+            "median": 4.12,
+            "contribution": 0.08,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 6,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 400,
+            "median": 11.64,
+            "contribution": 0.17,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.11,
+        "confidence": "correcte",
+        "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh9/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -13440,8 +14367,8 @@
           "top12ex5Value": 51.36,
           "boosterFRp10": 14,
           "boosterFRmedian": 18,
-          "boosterFRoffers": 61,
-          "boosterFRsellers": 28
+          "boosterFRoffers": 62,
+          "boosterFRsellers": 27
         }
       ],
       "psa": {
@@ -14054,16 +14981,16 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.04,
+              "evNet": 2.13,
               "p25": 0,
-              "median": 0.4,
-              "p75": 1.48,
-              "pRecoup": 0.01,
+              "median": 0.41,
+              "p75": 1.49,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.11,
+              "evNet": 2.13,
               "p25": 0,
               "median": 0.41,
               "p75": 1.49,
@@ -14072,16 +14999,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.75,
+              "evNet": 1.71,
               "p25": 0,
               "median": 0.37,
               "p75": 1.2,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.93,
+              "evNet": 0.96,
               "p25": 0,
               "median": 0,
               "p75": 0.63,
@@ -14094,6 +15021,102 @@
         "confidence": "correcte",
         "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 22,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 37,
+            "median": 0.11,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 20,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 62,
+            "median": 0.46,
+            "contribution": 0.15,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 17,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 85,
+            "median": 0.96,
+            "contribution": 0.19,
+            "premium": false
+          },
+          {
+            "rarity": "Radiant Rare",
+            "count": 3,
+            "rateLo": 0.1,
+            "rateHi": 0.15,
+            "oneInAny": 8,
+            "oneInSpecific": 24,
+            "median": 0.53,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 5,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 63,
+            "median": 2.08,
+            "contribution": 0.17,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Holo VSTAR",
+            "count": 8,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 100,
+            "median": 1.62,
+            "contribution": 0.13,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 13,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 200,
+            "median": 2.44,
+            "contribution": 0.16,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 1,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 67,
+            "median": 37.74,
+            "contribution": 0.57,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.51,
+        "confidence": "correcte",
+        "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh12.5/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -14971,7 +15994,7 @@
         "offers": 27,
         "sellers": 17,
         "matched": 27,
-        "scanned": 43
+        "scanned": 42
       },
       "opening": {
         "boosterPrice": 16,
@@ -15064,16 +16087,16 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.86,
+              "evNet": 1.88,
               "p25": 0,
               "median": 0,
-              "p75": 0.73,
+              "p75": 0.74,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.75,
+              "evNet": 1.82,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
@@ -15082,16 +16105,16 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.29,
+              "evNet": 1.4,
               "p25": 0,
               "median": 0,
               "p75": 0.64,
-              "pRecoup": 0.01,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.97,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.23,
+              "evNet": 0.24,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -15104,6 +16127,69 @@
         "confidence": "correcte",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 32,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 53,
+            "median": 0.11,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 13,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 40,
+            "median": 0.2,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 19,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 95,
+            "median": 0.97,
+            "contribution": 0.19,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 8,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 100,
+            "median": 1.99,
+            "contribution": 0.16,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 6,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 92,
+            "median": 2.68,
+            "contribution": 0.17,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 0.66,
+        "confidence": "correcte",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh8/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -15586,9 +16672,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Fusion-Strike/Crabominable-V-V2",
           "marketFR": {
             "price": 7.99,
-            "priceUrl": "https://www.ebay.fr/itm/187161598848?_skw=Crabominable+V+248%2F264&hash=item2b93b35b80:g:rw0AAOSwklBoBmlM",
+            "priceUrl": "https://www.ebay.fr/itm/335555608313?_skw=Crabominable+V+248%2F264&hash=item4e20ac3ef9:g:zCIAAOSwBaJm0w0H",
             "floor10": 7.99,
-            "floor10Url": "https://www.ebay.fr/itm/187161598848?_skw=Crabominable+V+248%2F264&hash=item2b93b35b80:g:rw0AAOSwklBoBmlM",
+            "floor10Url": "https://www.ebay.fr/itm/335555608313?_skw=Crabominable+V+248%2F264&hash=item4e20ac3ef9:g:zCIAAOSwBaJm0w0H",
             "median": 10.99,
             "offers": 6,
             "sellers": 5,
@@ -16141,6 +17227,8 @@
           }
         ]
       },
+      "dropRates": null,
+      "logo": null,
       "picks": [
         {
           "id": "s151jp-201",
@@ -16498,7 +17586,7 @@
       },
       "verdict": "Japonais · mesure partielle",
       "concentration": null,
-      "cardsTracked": 219,
+      "cardsTracked": 221,
       "history": {
         "points": [],
         "window": null,
@@ -16548,8 +17636,8 @@
         "booster": null,
         "boosterBox": null,
         "singles": {
-          "tracked": 219,
-          "offers": 1473
+          "tracked": 221,
+          "offers": 1491
         }
       },
       "liveHistory": [],
@@ -16566,8 +17654,8 @@
             "label": "Super Rare (SR)",
             "countLo": 1,
             "countHi": 2,
-            "poolSize": 31,
-            "meanNet": 45.87,
+            "poolSize": 32,
+            "meanNet": 47.2,
             "top": [
               {
                 "name": "Moltres & Zapdos & Articuno GX",
@@ -16585,6 +17673,11 @@
                 "price": 200.62
               },
               {
+                "name": "Togepi & Cleffa & Igglybuff GX",
+                "number": "185",
+                "price": 99.88
+              },
+              {
                 "name": "Garchomp & Giratina GX",
                 "number": "225",
                 "price": 82.14
@@ -16593,11 +17686,6 @@
                 "name": "Dedenne GX",
                 "number": "175",
                 "price": 80.54
-              },
-              {
-                "name": "Greninja & Zoroark GX",
-                "number": "223",
-                "price": 55.62
               }
             ]
           },
@@ -16643,6 +17731,8 @@
           }
         ]
       },
+      "dropRates": null,
+      "logo": null,
       "picks": [
         {
           "id": "tag-all-stars-191",
@@ -16897,6 +17987,34 @@
           }
         },
         {
+          "id": "tag-all-stars-185",
+          "name": "Togepi & Cleffa & Igglybuff GX",
+          "nameFR": null,
+          "number": "185",
+          "rarity": "Ultra Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/260586/preview_togepi-cleffa-igglybuff-gx-secret-rare-185-173-tag-team-gx-tag-all-stars.jpg",
+          "price": 99.88,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 1,
+          "offers": 1,
+          "marketFloor": 99.88,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
           "id": "tag-all-stars-212",
           "name": "Espeon & Deoxys GX",
           "nameFR": null,
@@ -16950,34 +18068,6 @@
             "sellers": 1,
             "matched": 4,
             "scanned": 4
-          }
-        },
-        {
-          "id": "tag-all-stars-225",
-          "name": "Garchomp & Giratina GX",
-          "nameFR": null,
-          "number": "225",
-          "rarity": "Ultra Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/260536/preview_garchomp-giratina-gx-ultra-rare-225-173-tag-team-gx-tag-all-stars.jpg",
-          "price": 82.14,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 2,
-          "offers": 2,
-          "marketFloor": 82.14,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
           }
         }
       ]
@@ -17120,7 +18210,7 @@
         "offers": 56,
         "sellers": 28,
         "matched": 56,
-        "scanned": 99
+        "scanned": 98
       },
       "opening": {
         "boosterPrice": 13,
@@ -17213,16 +18303,16 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.2,
+              "evNet": 2.33,
               "p25": 0,
               "median": 0,
-              "p75": 0.77,
+              "p75": 0.78,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.27,
+              "evNet": 2.3,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
@@ -17231,12 +18321,12 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.62,
+              "evNet": 1.64,
               "p25": 0,
               "median": 0,
               "p75": 0.65,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.99,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
@@ -17253,6 +18343,113 @@
         "confidence": "correcte",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 28,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 47,
+            "median": 0.09,
+            "contribution": 0.05,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 22,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 68,
+            "median": 0.25,
+            "contribution": 0.08,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 12,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 60,
+            "median": 0.64,
+            "contribution": 0.13,
+            "premium": false
+          },
+          {
+            "rarity": "Radiant Rare",
+            "count": 3,
+            "rateLo": 0.1,
+            "rateHi": 0.15,
+            "oneInAny": 8,
+            "oneInSpecific": 24,
+            "median": 0.57,
+            "contribution": 0.07,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 1,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 13,
+            "median": 1.4,
+            "contribution": 0.11,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Holo VSTAR",
+            "count": 6,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 75,
+            "median": 0.89,
+            "contribution": 0.07,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 25,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 385,
+            "median": 2.39,
+            "contribution": 0.16,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Rainbow",
+            "count": 15,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 750,
+            "median": 4.61,
+            "contribution": 0.09,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 6,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 400,
+            "median": 3.18,
+            "contribution": 0.05,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 0.81,
+        "confidence": "correcte",
+        "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh11/logo.webp",
       "strata": [
         {
           "key": "top1",
@@ -17585,7 +18782,7 @@
         },
         "singles": {
           "tracked": 248,
-          "offers": 37229
+          "offers": 37223
         }
       },
       "liveHistory": [
@@ -17609,9 +18806,9 @@
           "boosterOffers": 3,
           "boosterLanguage": "en",
           "boxPrice": 501.81,
-          "singlesOffers": 37229,
+          "singlesOffers": 37223,
           "top5Value": 760.74,
-          "top12ex5Value": 29.73,
+          "top12ex5Value": 29.74,
           "boosterFRp10": 13,
           "boosterFRmedian": 23.54,
           "boosterFRoffers": 56,
@@ -17667,39 +18864,6 @@
           }
         },
         {
-          "id": "swsh11-199",
-          "name": "Aerodactyl VSTAR",
-          "number": "199",
-          "rarity": "Rare Rainbow",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh11/199/low.webp",
-          "price": 10.37,
-          "momentum30": 14.3,
-          "relativeStrength": 14.3,
-          "sellers": 25,
-          "offers": 27,
-          "marketFloor": 6.14,
-          "score": 76,
-          "components": {
-            "relative": 86,
-            "tightness": 38,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Ptéra VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Aerodactyl-VSTAR-V2-LOR199",
-          "marketFR": {
-            "price": 24,
-            "priceUrl": "https://www.ebay.fr/itm/358912095643?_skw=Pt%C3%A9ra+VSTAR+199%2F196&hash=item5390d3f59b:g:1pAAAeSwEe9qetQz",
-            "floor10": 24,
-            "floor10Url": "https://www.ebay.fr/itm/358912095643?_skw=Pt%C3%A9ra+VSTAR+199%2F196&hash=item5390d3f59b:g:1pAAAeSwEe9qetQz",
-            "median": 34.99,
-            "offers": 8,
-            "sellers": 8,
-            "matched": 8,
-            "scanned": 9
-          }
-        },
-        {
           "id": "swsh11-207",
           "name": "Iscan",
           "number": "207",
@@ -17708,13 +18872,13 @@
           "price": 4.14,
           "momentum30": 25.2,
           "relativeStrength": 25.2,
-          "sellers": 34,
-          "offers": 34,
+          "sellers": 30,
+          "offers": 30,
           "marketFloor": 1.58,
-          "score": 76,
+          "score": 79,
           "components": {
             "relative": 100,
-            "tightness": 15,
+            "tightness": 25,
             "liquidity": 100,
             "discount": 100
           },
@@ -17733,6 +18897,39 @@
           }
         },
         {
+          "id": "swsh11-199",
+          "name": "Aerodactyl VSTAR",
+          "number": "199",
+          "rarity": "Rare Rainbow",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh11/199/low.webp",
+          "price": 10.37,
+          "momentum30": 14.3,
+          "relativeStrength": 14.3,
+          "sellers": 24,
+          "offers": 26,
+          "marketFloor": 6.14,
+          "score": 76,
+          "components": {
+            "relative": 86,
+            "tightness": 40,
+            "liquidity": 95,
+            "discount": 100
+          },
+          "nameFR": "Ptéra VSTAR",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Aerodactyl-VSTAR-V2-LOR199",
+          "marketFR": {
+            "price": 24,
+            "priceUrl": "https://www.ebay.fr/itm/358912095643?_skw=Pt%C3%A9ra+VSTAR+199%2F196&hash=item5390d3f59b:g:1pAAAeSwEe9qetQz",
+            "floor10": 24,
+            "floor10Url": "https://www.ebay.fr/itm/358912095643?_skw=Pt%C3%A9ra+VSTAR+199%2F196&hash=item5390d3f59b:g:1pAAAeSwEe9qetQz",
+            "median": 34.99,
+            "offers": 8,
+            "sellers": 8,
+            "matched": 8,
+            "scanned": 9
+          }
+        },
+        {
           "id": "swsh11-70",
           "name": "Sableye",
           "number": "70",
@@ -17741,8 +18938,8 @@
           "price": 0.42,
           "momentum30": 22.9,
           "relativeStrength": 22.9,
-          "sellers": 69,
-          "offers": 86,
+          "sellers": 70,
+          "offers": 87,
           "marketFloor": 0.11,
           "score": 72,
           "components": {
@@ -17764,8 +18961,8 @@
           "price": 0.64,
           "momentum30": 23.4,
           "relativeStrength": 23.4,
-          "sellers": 138,
-          "offers": 150,
+          "sellers": 136,
+          "offers": 148,
           "marketFloor": 0.11,
           "score": 72,
           "components": {
@@ -17830,9 +19027,9 @@
           "price": 3.32,
           "momentum30": 21.3,
           "relativeStrength": 21.3,
-          "sellers": 57,
-          "offers": 60,
-          "marketFloor": 2.19,
+          "sellers": 58,
+          "offers": 61,
+          "marketFloor": 2.1,
           "score": 68,
           "components": {
             "relative": 100,
@@ -17863,8 +19060,8 @@
           "price": 0.77,
           "momentum30": 17.1,
           "relativeStrength": 17.1,
-          "sellers": 97,
-          "offers": 101,
+          "sellers": 93,
+          "offers": 97,
           "marketFloor": 0.23,
           "score": 64,
           "components": {
@@ -17896,8 +19093,8 @@
           "price": 3.11,
           "momentum30": 12.5,
           "relativeStrength": 12.5,
-          "sellers": 49,
-          "offers": 51,
+          "sellers": 48,
+          "offers": 50,
           "marketFloor": 1.28,
           "score": 64,
           "components": {
@@ -17921,26 +19118,26 @@
           }
         },
         {
-          "id": "swsh11-27",
-          "name": "Delphox V",
-          "number": "27",
-          "rarity": "Rare Holo V",
-          "image": "https://images.pokemontcg.io/swsh11/27.png",
-          "price": 0.64,
-          "momentum30": 5.6,
-          "relativeStrength": 5.6,
+          "id": "swsh11-66",
+          "name": "Gengar",
+          "number": "66",
+          "rarity": "Rare Holo",
+          "image": "https://images.pokemontcg.io/swsh11/66.png",
+          "price": 0.87,
+          "momentum30": 25.8,
+          "relativeStrength": 25.8,
           "sellers": 32,
-          "offers": 32,
-          "marketFloor": 5.09,
+          "offers": 39,
+          "marketFloor": 0.83,
           "score": 63,
           "components": {
-            "relative": 64,
+            "relative": 100,
             "tightness": 20,
             "liquidity": 100,
-            "discount": 100
+            "discount": 0
           },
           "nameFR": null,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Delphox-V-V1-LOR027",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Gengar-V3-LOR066",
           "marketFR": null
         },
         {
@@ -17952,8 +19149,8 @@
           "price": 1.67,
           "momentum30": 16.9,
           "relativeStrength": 16.9,
-          "sellers": 85,
-          "offers": 91,
+          "sellers": 83,
+          "offers": 89,
           "marketFloor": 0.19,
           "score": 63,
           "components": {
@@ -17977,26 +19174,26 @@
           }
         },
         {
-          "id": "swsh11-66",
-          "name": "Gengar",
-          "number": "66",
-          "rarity": "Rare Holo",
-          "image": "https://images.pokemontcg.io/swsh11/66.png",
-          "price": 0.87,
-          "momentum30": 25.8,
-          "relativeStrength": 25.8,
+          "id": "swsh11-27",
+          "name": "Delphox V",
+          "number": "27",
+          "rarity": "Rare Holo V",
+          "image": "https://images.pokemontcg.io/swsh11/27.png",
+          "price": 0.64,
+          "momentum30": 5.6,
+          "relativeStrength": 5.6,
           "sellers": 33,
-          "offers": 40,
-          "marketFloor": 0.83,
+          "offers": 33,
+          "marketFloor": 4.06,
           "score": 62,
           "components": {
-            "relative": 100,
+            "relative": 64,
             "tightness": 18,
             "liquidity": 100,
-            "discount": 0
+            "discount": 100
           },
           "nameFR": null,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Gengar-V3-LOR066",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Delphox-V-V1-LOR027",
           "marketFR": null
         }
       ]
@@ -18232,7 +19429,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.96,
+              "evNet": 4.35,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -18241,7 +19438,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 4.08,
+              "evNet": 3.81,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -18250,13 +19447,13 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 2.94,
+              "evNet": 2.61,
               "p25": 0,
               "median": 0,
-              "p75": 0.58,
+              "p75": 0.6,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
-              "pDouble": 0.01
+              "pDouble": 0
             },
             "unknownLoose": {
               "evNet": 0.18,
@@ -18272,6 +19469,102 @@
         "confidence": "correcte",
         "partialNote": null
       },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 16,
+            "rateLo": 0.6,
+            "rateHi": 0.8,
+            "oneInAny": 1,
+            "oneInSpecific": 23,
+            "median": 0.09,
+            "contribution": 0.06,
+            "premium": false
+          },
+          {
+            "rarity": "Double Rare",
+            "count": 10,
+            "rateLo": 0.2,
+            "rateHi": 0.3,
+            "oneInAny": 4,
+            "oneInSpecific": 40,
+            "median": 0.51,
+            "contribution": 0.13,
+            "premium": false
+          },
+          {
+            "rarity": "Shiny Rare",
+            "count": 120,
+            "rateLo": 0.1,
+            "rateHi": 0.17,
+            "oneInAny": 7,
+            "oneInSpecific": 889,
+            "median": 2.76,
+            "contribution": 0.37,
+            "premium": true
+          },
+          {
+            "rarity": "Ultra Rare",
+            "count": 5,
+            "rateLo": 0.07,
+            "rateHi": 0.11,
+            "oneInAny": 11,
+            "oneInSpecific": 56,
+            "median": 0.52,
+            "contribution": 0.05,
+            "premium": true
+          },
+          {
+            "rarity": "Illustration Rare",
+            "count": 3,
+            "rateLo": 0.07,
+            "rateHi": 0.11,
+            "oneInAny": 11,
+            "oneInSpecific": 33,
+            "median": 0.85,
+            "contribution": 0.08,
+            "premium": true
+          },
+          {
+            "rarity": "Special Illustration Rare",
+            "count": 8,
+            "rateLo": 0.025,
+            "rateHi": 0.04,
+            "oneInAny": 31,
+            "oneInSpecific": 246,
+            "median": 20.85,
+            "contribution": 0.68,
+            "premium": true
+          },
+          {
+            "rarity": "Shiny Ultra Rare",
+            "count": 12,
+            "rateLo": 0.02,
+            "rateHi": 0.04,
+            "oneInAny": 33,
+            "oneInSpecific": 400,
+            "median": 1.32,
+            "contribution": 0.04,
+            "premium": true
+          },
+          {
+            "rarity": "Hyper Rare",
+            "count": 6,
+            "rateLo": 0.015,
+            "rateHi": 0.025,
+            "oneInAny": 50,
+            "oneInSpecific": 300,
+            "median": 7.65,
+            "contribution": 0.15,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 1.56,
+        "confidence": "correcte",
+        "partialNote": null
+      },
+      "logo": "https://assets.tcgdex.net/fr/sv/sv04.5/logo.webp",
       "strata": [
         {
           "key": "top1",
