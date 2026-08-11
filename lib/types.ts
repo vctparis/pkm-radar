@@ -72,7 +72,39 @@ export type BestCard = {
   url: string | null;
 } | null;
 
+export type ProvenanceStats = {
+  evNet: number;
+  p25: number;
+  median: number;
+  p75: number;
+  pRecoup: number;
+  pLoseHalf: number;
+  pDouble: number;
+};
+
+export type BoxOpening = {
+  mode: "box";
+  packsPerBox: number;
+  boosterPrice: number | null;
+  confidence: string;
+  note: string;
+  slots: {
+    key: string;
+    label: string;
+    countLo: number;
+    countHi: number;
+    poolSize: number;
+    meanNet: number;
+    top: { name: string; number: string; price: number | null }[];
+  }[];
+};
+
 export type Opening = {
+  mode?: "booster";
+  distribution?: {
+    jackpotNet: number;
+    byProvenance: Record<"sealedBox" | "freshBox" | "trustedLoose" | "unknownLoose", ProvenanceStats>;
+  } | null;
   boosterPrice: number;
   netLo: number;
   netHi: number;
@@ -122,7 +154,7 @@ export type SetEntry = {
   segments: { chase: Segment; mid: Segment; commons: Segment } | null;
   bestCard: BestCard;
   boosterFR: FRBoosterQuote;
-  opening: Opening;
+  opening: Opening | BoxOpening | null;
   strata: Stratum[];
   growthSeries: { monthly: GrowthBundle; quarterly: GrowthBundle };
   contentValue: GrowthPoint[];

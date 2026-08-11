@@ -29,6 +29,9 @@ export const SETS = [
   { id: "tag-all-stars", name: "Tag All Stars", nameEN: "Tag Team GX: Tag All Stars", jpOnly: true, releaseDate: "2019-10-04", tcgdex: "sm12a", cardtrader: "sm12a", era: "Soleil & Lune (JP)" },
   { id: "shiny-star-v", name: "Shiny Star V", nameEN: "Shiny Star V", jpOnly: true, releaseDate: "2020-11-20", tcgdex: "s4a", cardtrader: "s4a", era: "Épée et Bouclier (JP)" },
   { id: "vmax-climax", name: "VMAX Climax", nameEN: "VMAX Climax", jpOnly: true, releaseDate: "2021-12-03", tcgdex: "s8b", cardtrader: "s8b", era: "Épée et Bouclier (JP)" },
+  // Le 151 japonais coexiste avec le 151 occidental : ses reverses Master
+  // Ball n'existent qu'au Japon, c'est un produit distinct.
+  { id: "s151jp", name: "151 (JP)", nameEN: "Pokémon Card 151 (JP)", jpOnly: true, releaseDate: "2023-06-16", tcgdex: "sv2a", cardtrader: "sv2a", era: "Écarlate et Violet (JP)" },
 ];
 
 export const bySetId = Object.fromEntries(SETS.map((s) => [s.id, s]));

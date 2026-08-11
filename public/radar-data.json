@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T23:29:44.046Z",
+  "generatedAt": "2026-08-10T23:56:05.399Z",
   "sets": [
     {
       "id": "s151",
@@ -215,6 +215,48 @@
           "nameFR": "Dracaufeu-ex"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 205.07,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 6.11,
+              "p25": 0,
+              "median": 0,
+              "p75": 2.64,
+              "pRecoup": 0.12,
+              "pLoseHalf": 0.79,
+              "pDouble": 0.07
+            },
+            "freshBox": {
+              "evNet": 6.3,
+              "p25": 0,
+              "median": 0,
+              "p75": 2.64,
+              "pRecoup": 0.12,
+              "pLoseHalf": 0.79,
+              "pDouble": 0.07
+            },
+            "trustedLoose": {
+              "evNet": 4.67,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.9,
+              "pRecoup": 0.09,
+              "pLoseHalf": 0.84,
+              "pDouble": 0.05
+            },
+            "unknownLoose": {
+              "evNet": 0.64,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.37,
+              "pRecoup": 0,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "solide",
         "partialNote": null
       },
@@ -1131,6 +1173,48 @@
           "nameFR": "Mew"
         },
         "boostersPerDisplay": null,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 63.8,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 3.9,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 3.95,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 3.81,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 3.79,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "grossière",
         "partialNote": null
       },
@@ -1916,6 +2000,48 @@
           "nameFR": "Dracaufeu GX"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 522.69,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.2,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.85,
+              "pRecoup": 0,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.27,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.85,
+              "pRecoup": 0,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.79,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.62,
+              "pRecoup": 0,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.31,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.35,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "grossière",
         "partialNote": null
       },
@@ -2908,6 +3034,48 @@
           "nameFR": "Noctali GX"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 35.03,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 1.64,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.74,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.71,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.99,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.27,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.66,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.35,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.4,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "grossière",
         "partialNote": null
       },
@@ -3813,7 +3981,135 @@
         }
       ],
       "psa": null,
-      "opening": null,
+      "opening": {
+        "mode": "box",
+        "packsPerBox": 10,
+        "boosterPrice": 30.4,
+        "confidence": "correcte",
+        "note": "Shiny Star V — les shinies « S » sortent par 2-3 par boîte, la SSR environ une boîte sur deux.",
+        "slots": [
+          {
+            "key": "ssr",
+            "label": "Shiny Ultra Rare (SSR)",
+            "countLo": 0,
+            "countHi": 1,
+            "poolSize": 10,
+            "meanNet": 16.22,
+            "top": [
+              {
+                "name": "Charizard VMAX",
+                "number": "308",
+                "price": 145.16
+              },
+              {
+                "name": "Ditto VMAX",
+                "number": "324",
+                "price": 9.21
+              },
+              {
+                "name": "Lapras VMAX",
+                "number": "312",
+                "price": 6.14
+              },
+              {
+                "name": "Crobat VMAX",
+                "number": "320",
+                "price": 5.92
+              },
+              {
+                "name": "Toxtricity VMAX",
+                "number": "315",
+                "price": 4.27
+              },
+              {
+                "name": "Rillaboom VMAX",
+                "number": "305",
+                "price": 4.1
+              }
+            ]
+          },
+          {
+            "key": "s",
+            "label": "Shiny (S)",
+            "countLo": 2,
+            "countHi": 3,
+            "poolSize": 112,
+            "meanNet": 2.43,
+            "top": [
+              {
+                "name": "Marnie",
+                "number": "198",
+                "price": 52.64
+              },
+              {
+                "name": "Skyla",
+                "number": "195",
+                "price": 49.23
+              },
+              {
+                "name": "Poké Kid",
+                "number": "197",
+                "price": 11.91
+              },
+              {
+                "name": "Morpeko",
+                "number": "243",
+                "price": 5.97
+              },
+              {
+                "name": "Yamper",
+                "number": "238",
+                "price": 5.64
+              },
+              {
+                "name": "Galarian Rapidash",
+                "number": "247",
+                "price": 5.08
+              }
+            ]
+          },
+          {
+            "key": "srplus",
+            "label": "SR ou mieux",
+            "countLo": 1,
+            "countHi": 2,
+            "poolSize": 42,
+            "meanNet": 5.03,
+            "top": [
+              {
+                "name": "Charizard V",
+                "number": "307",
+                "price": 160.64
+              },
+              {
+                "name": "Zamazenta V",
+                "number": "330",
+                "price": 12.26
+              },
+              {
+                "name": "Zacian V",
+                "number": "329",
+                "price": 8.87
+              },
+              {
+                "name": "Eternatus VMAX",
+                "number": "328",
+                "price": 7.14
+              },
+              {
+                "name": "Eternatus V",
+                "number": "327",
+                "price": 6.63
+              },
+              {
+                "name": "Ditto V",
+                "number": "323",
+                "price": 5.9
+              }
+            ]
+          }
+        ]
+      },
       "picks": [
         {
           "id": "shiny-star-v-307",
@@ -4256,7 +4552,135 @@
         }
       ],
       "psa": null,
-      "opening": null,
+      "opening": {
+        "mode": "box",
+        "packsPerBox": 10,
+        "boosterPrice": 15.11,
+        "confidence": "correcte",
+        "note": "VMAX Climax — les CHR tombent par 4-6 par boîte, les CSR par 1-2.",
+        "slots": [
+          {
+            "key": "chr",
+            "label": "Character Rare (CHR)",
+            "countLo": 4,
+            "countHi": 6,
+            "poolSize": 70,
+            "meanNet": 13.93,
+            "top": [
+              {
+                "name": "Pikachu VMAX",
+                "number": "223",
+                "price": 120.64
+              },
+              {
+                "name": "Rayquaza VMAX",
+                "number": "252",
+                "price": 100.64
+              },
+              {
+                "name": "Pikachu V",
+                "number": "222",
+                "price": 87.87
+              },
+              {
+                "name": "Umbreon V",
+                "number": "244",
+                "price": 71.91
+              },
+              {
+                "name": "Umbreon VMAX",
+                "number": "245",
+                "price": 68.57
+              },
+              {
+                "name": "Sylveon VMAX",
+                "number": "232",
+                "price": 50.63
+              }
+            ]
+          },
+          {
+            "key": "csr",
+            "label": "Character Super Rare (CSR)",
+            "countLo": 1,
+            "countHi": 2,
+            "poolSize": 67,
+            "meanNet": 2.67,
+            "top": [
+              {
+                "name": "Gloria",
+                "number": "276",
+                "price": 31.43
+              },
+              {
+                "name": "Acerola's Premonition",
+                "number": "255",
+                "price": 24.62
+              },
+              {
+                "name": "Bea",
+                "number": "261",
+                "price": 15.21
+              },
+              {
+                "name": "Nessa",
+                "number": "277",
+                "price": 15.19
+              },
+              {
+                "name": "Professor's Research - Professor Juniper",
+                "number": "266",
+                "price": 12.93
+              },
+              {
+                "name": "Allister",
+                "number": "256",
+                "price": 12.68
+              }
+            ]
+          },
+          {
+            "key": "sec",
+            "label": "Secrète (UR)",
+            "countLo": 0,
+            "countHi": 1,
+            "poolSize": 8,
+            "meanNet": 31.72,
+            "top": [
+              {
+                "name": "Mew VMAX",
+                "number": "280",
+                "price": 139.63
+              },
+              {
+                "name": "Rayquaza VMAX",
+                "number": "284",
+                "price": 68.33
+              },
+              {
+                "name": "Pikachu VMAX",
+                "number": "279",
+                "price": 40.52
+              },
+              {
+                "name": "Shadow Rider Calyrex VMAX",
+                "number": "281",
+                "price": 10.15
+              },
+              {
+                "name": "Single Strike Urshifu VMAX",
+                "number": "282",
+                "price": 9.15
+              },
+              {
+                "name": "Ice Rider Calyrex VMAX",
+                "number": "278",
+                "price": 8.94
+              }
+            ]
+          }
+        ]
+      },
       "picks": [
         {
           "id": "vmax-climax-280",
@@ -4786,6 +5210,48 @@
           "nameFR": "Jessie et James"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 34.43,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.96,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.24,
+              "pRecoup": 0,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.87,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.24,
+              "pRecoup": 0,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 2.08,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.76,
+              "pRecoup": 0,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.35,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.57,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "grossière",
         "partialNote": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation."
       },
@@ -5642,7 +6108,7 @@
         "rarity": "Rare Rainbow",
         "price": 1579.48,
         "change30": 8.9,
-        "url": null
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolving-Skies/Umbreon-VMAX-V3"
       },
       "boosterFR": {
         "price": 34.99,
@@ -5735,6 +6201,48 @@
           "nameFR": "Noctali VMAX"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 1374.15,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 6.18,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.18,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.95,
+              "pDouble": 0.02
+            },
+            "freshBox": {
+              "evNet": 6.16,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.18,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.96,
+              "pDouble": 0.02
+            },
+            "trustedLoose": {
+              "evNet": 4.49,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.82,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0.01
+            },
+            "unknownLoose": {
+              "evNet": 0.33,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.38,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "correcte",
         "partialNote": null
       },
@@ -6713,6 +7221,48 @@
           "nameFR": "Lugia V"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 337.39,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.1,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.84,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.85,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.84,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.52,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.77,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.32,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.46,
+              "pRecoup": 0,
+              "pLoseHalf": 0.99,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "correcte",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
@@ -7681,6 +8231,48 @@
           "nameFR": "Dracaufeu V"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 221.03,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.05,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.95,
+              "pDouble": 0.01
+            },
+            "freshBox": {
+              "evNet": 2.07,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.1,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.95,
+              "pDouble": 0.01
+            },
+            "trustedLoose": {
+              "evNet": 1.59,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.73,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.96,
+              "pDouble": 0.01
+            },
+            "unknownLoose": {
+              "evNet": 0.33,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0,
+              "pLoseHalf": 0.99,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "correcte",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
@@ -8343,7 +8935,7 @@
             "discount": 100
           },
           "nameFR": "Saltimbanque",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Kindler-V2-BRS170",
           "marketFR": {
             "price": 3.19,
             "priceUrl": "https://www.ebay.fr/itm/377087747282?_skw=Saltimbanque+170%2F172&hash=item57cc2e64d2:g:WZkAAeSwnjFp0TsM",
@@ -8640,6 +9232,48 @@
           "nameFR": "Pikachu"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 32.83,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.07,
+              "p25": 0,
+              "median": 0.41,
+              "p75": 1.49,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.07,
+              "p25": 0,
+              "median": 0.41,
+              "p75": 1.51,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.73,
+              "p25": 0,
+              "median": 0.37,
+              "p75": 1.2,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.95,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.95,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.63,
+              "pRecoup": 0,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "correcte",
         "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
       },
@@ -9588,6 +10222,48 @@
           "nameFR": "Celebi V"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 86.66,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 1.84,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.73,
+              "pRecoup": 0.04,
+              "pLoseHalf": 0.95,
+              "pDouble": 0.02
+            },
+            "freshBox": {
+              "evNet": 1.9,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.74,
+              "pRecoup": 0.04,
+              "pLoseHalf": 0.95,
+              "pDouble": 0.02
+            },
+            "trustedLoose": {
+              "evNet": 1.31,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.64,
+              "pRecoup": 0.03,
+              "pLoseHalf": 0.96,
+              "pDouble": 0.01
+            },
+            "unknownLoose": {
+              "evNet": 0.23,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0,
+              "pLoseHalf": 0.99,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "correcte",
         "partialNote": null
       },
@@ -10369,6 +11045,577 @@
       ]
     },
     {
+      "id": "s151jp",
+      "name": "151 (JP)",
+      "nameEN": "Pokémon Card 151 (JP)",
+      "era": "Écarlate et Violet (JP)",
+      "jpOnly": true,
+      "releaseDate": "2023-06-16",
+      "ageYears": 3.2,
+      "score": 52,
+      "components": {
+        "breadth": 40,
+        "scarcity": 75,
+        "psaResistance": 50,
+        "spread": 50,
+        "maturity": 35
+      },
+      "verdict": "Japonais · mesure partielle",
+      "concentration": null,
+      "cardsTracked": 210,
+      "history": {
+        "points": [],
+        "window": null,
+        "path": []
+      },
+      "segments": null,
+      "bestCard": {
+        "name": "Charizard ex",
+        "nameFR": null,
+        "image": "https://cardtrader.com/uploads/blueprints/image/251467/preview_charizard-ex-special-illustration-rare-201-165-pokemon-card-151.jpg",
+        "number": "201",
+        "rarity": "Special Illustration Rare",
+        "price": 290.64,
+        "change30": null,
+        "url": null
+      },
+      "boosterFR": {
+        "price": null,
+        "priceUrl": null,
+        "floor10": null,
+        "floor10Url": null,
+        "median": null,
+        "offers": 0,
+        "sellers": 0,
+        "matched": 0,
+        "scanned": 3
+      },
+      "strata": [],
+      "growthSeries": {
+        "monthly": {
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
+        },
+        "quarterly": {
+          "top1": [],
+          "r2_5": [],
+          "r6_15": [],
+          "r16_50": [],
+          "fond": []
+        }
+      },
+      "contentValue": [],
+      "live": {
+        "booster": {
+          "price": 8.29,
+          "floor10": 8.29,
+          "offers": 8,
+          "quantity": 133,
+          "sellers": 7,
+          "language": "jp"
+        },
+        "boosterBox": {
+          "price": 265.63,
+          "floor10": 271.28,
+          "offers": 10,
+          "quantity": 21,
+          "sellers": 10,
+          "language": "jp"
+        },
+        "singles": {
+          "tracked": 210,
+          "offers": 10184
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 8.29,
+          "boosterOffers": 8,
+          "boosterLanguage": "jp",
+          "boxPrice": 265.63,
+          "singlesOffers": 10184,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": null,
+          "boosterFRmedian": null,
+          "boosterFRoffers": 0,
+          "boosterFRsellers": 0
+        }
+      ],
+      "psa": null,
+      "opening": {
+        "mode": "box",
+        "packsPerBox": 20,
+        "boosterPrice": 8.29,
+        "confidence": "correcte",
+        "note": "151 japonais — les AR sortent par 3-4 par boîte, les SAR par 1-2. Les reverses Master Ball sont des variantes hors nomenclature de rareté : non modélisées ici, la valeur réelle d'une boîte est donc plus haute.",
+        "slots": [
+          {
+            "key": "ar",
+            "label": "Art Rare (AR)",
+            "countLo": 3,
+            "countHi": 4,
+            "poolSize": 18,
+            "meanNet": 12.74,
+            "top": [
+              {
+                "name": "Pikachu",
+                "number": "173",
+                "price": 37.28
+              },
+              {
+                "name": "Charmander",
+                "number": "168",
+                "price": 28.64
+              },
+              {
+                "name": "Psyduck",
+                "number": "175",
+                "price": 24.35
+              },
+              {
+                "name": "Bulbasaur",
+                "number": "166",
+                "price": 23.39
+              },
+              {
+                "name": "Mewtwo",
+                "number": "183",
+                "price": 23.29
+              },
+              {
+                "name": "Charmeleon",
+                "number": "169",
+                "price": 19.25
+              }
+            ]
+          },
+          {
+            "key": "sar",
+            "label": "Special Art Rare (SAR)",
+            "countLo": 1,
+            "countHi": 2,
+            "poolSize": 8,
+            "meanNet": 101.35,
+            "top": [
+              {
+                "name": "Charizard ex",
+                "number": "201",
+                "price": 290.64
+              },
+              {
+                "name": "Mew ex",
+                "number": "205",
+                "price": 154.58
+              },
+              {
+                "name": "Venusaur ex",
+                "number": "200",
+                "price": 149.64
+              },
+              {
+                "name": "Blastoise ex",
+                "number": "202",
+                "price": 120.64
+              },
+              {
+                "name": "Erika's Invitation",
+                "number": "206",
+                "price": 110.48
+              },
+              {
+                "name": "Zapdos ex",
+                "number": "204",
+                "price": 48.63
+              }
+            ]
+          },
+          {
+            "key": "sec",
+            "label": "UR / secrètes",
+            "countLo": 0,
+            "countHi": 1,
+            "poolSize": 28,
+            "meanNet": 6.82,
+            "top": [
+              {
+                "name": "Mew ex",
+                "number": "208",
+                "price": 44.62
+              },
+              {
+                "name": "Charizard ex",
+                "number": "185",
+                "price": 30.4
+              },
+              {
+                "name": "Erika's Invitation",
+                "number": "196",
+                "price": 22.35
+              },
+              {
+                "name": "Mew ex",
+                "number": "195",
+                "price": 17.17
+              },
+              {
+                "name": "Switch",
+                "number": "209",
+                "price": 14.95
+              },
+              {
+                "name": "Psychic Energy",
+                "number": "210",
+                "price": 12.21
+              }
+            ]
+          }
+        ]
+      },
+      "picks": [
+        {
+          "id": "s151jp-201",
+          "name": "Charizard ex",
+          "nameFR": null,
+          "number": "201",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251467/preview_charizard-ex-special-illustration-rare-201-165-pokemon-card-151.jpg",
+          "price": 290.64,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 10,
+          "offers": 10,
+          "marketFloor": 290.64,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 112,
+            "priceUrl": "https://www.ebay.fr/itm/317717788955?_skw=Charizard+ex+201&hash=item49f974b91b:g:aIoAAeSwG0VpVTEb",
+            "floor10": 112,
+            "floor10Url": "https://www.ebay.fr/itm/317717788955?_skw=Charizard+ex+201&hash=item49f974b91b:g:aIoAAeSwG0VpVTEb",
+            "median": 386.95,
+            "offers": 7,
+            "sellers": 7,
+            "matched": 7,
+            "scanned": 7
+          }
+        },
+        {
+          "id": "s151jp-205",
+          "name": "Mew ex",
+          "nameFR": null,
+          "number": "205",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251471/preview_mew-ex-special-illustration-rare-205-165-pokemon-card-151.jpg",
+          "price": 154.58,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 7,
+          "offers": 7,
+          "marketFloor": 154.58,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 599.99,
+            "priceUrl": "https://www.ebay.fr/itm/178370379658?_skw=Mew+ex+205&hash=item2987b3ff8a:g:SuAAAeSwU6VqcKtG",
+            "floor10": 599.99,
+            "floor10Url": "https://www.ebay.fr/itm/178370379658?_skw=Mew+ex+205&hash=item2987b3ff8a:g:SuAAAeSwU6VqcKtG",
+            "median": 640,
+            "offers": 3,
+            "sellers": 3,
+            "matched": 3,
+            "scanned": 3
+          }
+        },
+        {
+          "id": "s151jp-200",
+          "name": "Venusaur ex",
+          "nameFR": null,
+          "number": "200",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251466/preview_venusaur-ex-special-illustration-rare-200-165-pokemon-card-151.jpg",
+          "price": 149.64,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 3,
+          "offers": 3,
+          "marketFloor": 149.64,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 149.9,
+            "priceUrl": "https://www.ebay.fr/itm/377387341341?_skw=Venusaur+ex+200&hash=item57de09d61d:g:vZ8AAeSwXiNqbmhE",
+            "floor10": 149.9,
+            "floor10Url": "https://www.ebay.fr/itm/377387341341?_skw=Venusaur+ex+200&hash=item57de09d61d:g:vZ8AAeSwXiNqbmhE",
+            "median": 169,
+            "offers": 3,
+            "sellers": 3,
+            "matched": 3,
+            "scanned": 3
+          }
+        },
+        {
+          "id": "s151jp-202",
+          "name": "Blastoise ex",
+          "nameFR": null,
+          "number": "202",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251468/preview_blastoise-ex-special-illustration-rare-202-165-pokemon-card-151.jpg",
+          "price": 120.64,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 9,
+          "offers": 9,
+          "marketFloor": 120.64,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 280,
+            "priceUrl": "https://www.ebay.fr/itm/287484820972?_skw=Blastoise+ex+202&hash=item42ef6e3dec:g:apAAAeSwErFqZdEd",
+            "floor10": 280,
+            "floor10Url": "https://www.ebay.fr/itm/287484820972?_skw=Blastoise+ex+202&hash=item42ef6e3dec:g:apAAAeSwErFqZdEd",
+            "median": 300,
+            "offers": 3,
+            "sellers": 3,
+            "matched": 3,
+            "scanned": 3
+          }
+        },
+        {
+          "id": "s151jp-206",
+          "name": "Erika's Invitation",
+          "nameFR": null,
+          "number": "206",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251472/preview_erika-s-invitation-special-illustration-rare-206-165-pokemon-card-151.jpg",
+          "price": 110.48,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 10,
+          "offers": 10,
+          "marketFloor": 110.48,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 94.99,
+            "priceUrl": "https://www.ebay.fr/itm/188440412408?_skw=Erika%27s+Invitation+206&hash=item2bdfec80f8:g:OfoAAeSweCpqGdIb",
+            "floor10": 94.99,
+            "floor10Url": "https://www.ebay.fr/itm/188440412408?_skw=Erika%27s+Invitation+206&hash=item2bdfec80f8:g:OfoAAeSweCpqGdIb",
+            "median": 180,
+            "offers": 2,
+            "sellers": 2,
+            "matched": 2,
+            "scanned": 2
+          }
+        },
+        {
+          "id": "s151jp-204",
+          "name": "Zapdos ex",
+          "nameFR": null,
+          "number": "204",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251470/preview_zapdos-ex-special-illustration-rare-204-165-pokemon-card-151.jpg",
+          "price": 48.63,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 14,
+          "offers": 15,
+          "marketFloor": 48.63,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 90,
+            "priceUrl": "https://www.ebay.fr/itm/236986682248?_skw=Zapdos+ex+204&hash=item372d81cb88:g:fVwAAeSwcXdqaH86",
+            "floor10": 90,
+            "floor10Url": "https://www.ebay.fr/itm/236986682248?_skw=Zapdos+ex+204&hash=item372d81cb88:g:fVwAAeSwcXdqaH86",
+            "median": 178.9,
+            "offers": 3,
+            "sellers": 3,
+            "matched": 3,
+            "scanned": 3
+          }
+        },
+        {
+          "id": "s151jp-208",
+          "name": "Mew ex",
+          "nameFR": null,
+          "number": "208",
+          "rarity": "Secret Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251474/preview_mew-ex-secret-rare-208-165-pokemon-card-151.jpg",
+          "price": 44.62,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 17,
+          "offers": 18,
+          "marketFloor": 44.62,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 76.3,
+            "priceUrl": "https://www.ebay.fr/itm/287398676582?_skw=Mew+ex+208&hash=item42ea4bc866:g:~iEAAeSwDSdqMVaI",
+            "floor10": 76.3,
+            "floor10Url": "https://www.ebay.fr/itm/287398676582?_skw=Mew+ex+208&hash=item42ea4bc866:g:~iEAAeSwDSdqMVaI",
+            "median": 349,
+            "offers": 5,
+            "sellers": 3,
+            "matched": 5,
+            "scanned": 5
+          }
+        },
+        {
+          "id": "s151jp-173",
+          "name": "Pikachu",
+          "nameFR": null,
+          "number": "173",
+          "rarity": "Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251429/preview_pikachu-173-165-pokemon-card-151.jpg",
+          "price": 37.28,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 32,
+          "offers": 35,
+          "marketFloor": 37.28,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 2.4,
+            "priceUrl": "https://www.ebay.fr/itm/205838760207?_skw=Pikachu+173&hash=item2fecf2390f:g:jT8AAeSw~JFpEhJt",
+            "floor10": 4.9,
+            "floor10Url": "https://www.ebay.fr/itm/206398276476?_skw=Pikachu+173&hash=item300e4bc37c:g:4DoAAeSwHbVqS8Ww",
+            "median": 100,
+            "offers": 17,
+            "sellers": 13,
+            "matched": 17,
+            "scanned": 18
+          }
+        },
+        {
+          "id": "s151jp-203",
+          "name": "Alakazam ex",
+          "nameFR": null,
+          "number": "203",
+          "rarity": "Special Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251469/preview_alakazam-ex-special-illustration-rare-203-165-pokemon-card-151.jpg",
+          "price": 35.4,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 12,
+          "offers": 12,
+          "marketFloor": 35.4,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 69.9,
+            "priceUrl": "https://www.ebay.fr/itm/377387341339?_skw=Alakazam+ex+203&hash=item57de09d61b:g:C~kAAeSwOKhqbmhS",
+            "floor10": 69.9,
+            "floor10Url": "https://www.ebay.fr/itm/377387341339?_skw=Alakazam+ex+203&hash=item57de09d61b:g:C~kAAeSwOKhqbmhS",
+            "median": 159.9,
+            "offers": 2,
+            "sellers": 2,
+            "matched": 2,
+            "scanned": 2
+          }
+        },
+        {
+          "id": "s151jp-185",
+          "name": "Charizard ex",
+          "nameFR": null,
+          "number": "185",
+          "rarity": "Ultra Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251441/preview_charizard-ex-ultra-rare-185-165-pokemon-card-151.jpg",
+          "price": 30.4,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 27,
+          "offers": 28,
+          "marketFloor": 30.4,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 44.99,
+            "priceUrl": "https://www.ebay.fr/itm/188440231212?_skw=Charizard+ex+185&hash=item2bdfe9bd2c:g:tD8AAeSwd~hqGcRC",
+            "floor10": 44.99,
+            "floor10Url": "https://www.ebay.fr/itm/188440231212?_skw=Charizard+ex+185&hash=item2bdfe9bd2c:g:tD8AAeSwd~hqGcRC",
+            "median": 60,
+            "offers": 4,
+            "sellers": 4,
+            "matched": 4,
+            "scanned": 4
+          }
+        },
+        {
+          "id": "s151jp-168",
+          "name": "Charmander",
+          "nameFR": null,
+          "number": "168",
+          "rarity": "Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251424/preview_charmander-168-165-pokemon-card-151.jpg",
+          "price": 28.64,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 47,
+          "offers": 48,
+          "marketFloor": 28.64,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 39.9,
+            "priceUrl": "https://www.ebay.fr/itm/206398315692?_skw=Charmander+168&hash=item300e4c5cac:g:5QcAAeSwGgRqS8rg",
+            "floor10": 39.9,
+            "floor10Url": "https://www.ebay.fr/itm/206398315692?_skw=Charmander+168&hash=item300e4c5cac:g:5QcAAeSwGgRqS8rg",
+            "median": 45,
+            "offers": 3,
+            "sellers": 3,
+            "matched": 3,
+            "scanned": 4
+          }
+        },
+        {
+          "id": "s151jp-175",
+          "name": "Psyduck",
+          "nameFR": null,
+          "number": "175",
+          "rarity": "Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/251431/preview_psyduck-175-165-pokemon-card-151.jpg",
+          "price": 24.35,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 25,
+          "offers": 26,
+          "marketFloor": 24.35,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 26,
+            "priceUrl": "https://www.ebay.fr/itm/227462091957?_skw=Psyduck+175&hash=item34f5cc14b5:g:nZ0AAeSwNKlqcinX",
+            "floor10": 26,
+            "floor10Url": "https://www.ebay.fr/itm/227462091957?_skw=Psyduck+175&hash=item34f5cc14b5:g:nZ0AAeSwNKlqcinX",
+            "median": 44.9,
+            "offers": 3,
+            "sellers": 3,
+            "matched": 3,
+            "scanned": 4
+          }
+        }
+      ]
+    },
+    {
       "id": "tag-all-stars",
       "name": "Tag All Stars",
       "nameEN": "Tag Team GX: Tag All Stars",
@@ -10442,7 +11689,95 @@
       },
       "liveHistory": [],
       "psa": null,
-      "opening": null,
+      "opening": {
+        "mode": "box",
+        "packsPerBox": 10,
+        "boosterPrice": null,
+        "confidence": "grossière",
+        "note": "Tag All Stars — environ une SR+ garantie par boîte, les secrètes au-delà sont rares.",
+        "slots": [
+          {
+            "key": "sr",
+            "label": "Super Rare (SR)",
+            "countLo": 1,
+            "countHi": 2,
+            "poolSize": 31,
+            "meanNet": 45.87,
+            "top": [
+              {
+                "name": "Moltres & Zapdos & Articuno GX",
+                "number": "226",
+                "price": 600.63
+              },
+              {
+                "name": "Umbreon & Darkrai GX",
+                "number": "182",
+                "price": 229.64
+              },
+              {
+                "name": "Umbreon & Darkrai GX",
+                "number": "181",
+                "price": 200.62
+              },
+              {
+                "name": "Garchomp & Giratina GX",
+                "number": "225",
+                "price": 82.14
+              },
+              {
+                "name": "Dedenne GX",
+                "number": "175",
+                "price": 80.54
+              },
+              {
+                "name": "Greninja & Zoroark GX",
+                "number": "223",
+                "price": 55.62
+              }
+            ]
+          },
+          {
+            "key": "sec",
+            "label": "HR / UR secrètes",
+            "countLo": 0,
+            "countHi": 1,
+            "poolSize": 32,
+            "meanNet": 375.96,
+            "top": [
+              {
+                "name": "Misty & Lorelei",
+                "number": "191",
+                "price": 10000.64
+              },
+              {
+                "name": "Mewtwo & Mew GX",
+                "number": "222",
+                "price": 1390.64
+              },
+              {
+                "name": "Sightseer",
+                "number": "192",
+                "price": 965.92
+              },
+              {
+                "name": "Erika's Hospitality",
+                "number": "190",
+                "price": 303.65
+              },
+              {
+                "name": "Espeon & Deoxys GX",
+                "number": "177",
+                "price": 270.53
+              },
+              {
+                "name": "Togepi & Cleffa & Igglybuff GX",
+                "number": "186",
+                "price": 180.64
+              }
+            ]
+          }
+        ]
+      },
       "picks": [
         {
           "id": "tag-all-stars-191",
@@ -11002,6 +12337,48 @@
           "nameFR": "Giratina V"
         },
         "boostersPerDisplay": 36,
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 492.78,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.19,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.78,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
+              "pDouble": 0.01
+            },
+            "freshBox": {
+              "evNet": 2.25,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.78,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.77,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.65,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.21,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.46,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            }
+          }
+        },
         "confidence": "correcte",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
@@ -11424,7 +12801,7 @@
             "discount": 100
           },
           "nameFR": "Ptéra VSTAR",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Aerodactyl-VSTAR-V2-LOR199",
           "marketFR": {
             "price": 25,
             "priceUrl": "https://www.ebay.fr/itm/227340103409?_skw=Pt%C3%A9ra+VSTAR+199%2F196&hash=item34ee86aef1:g:H88AAeSwe1Np-dsS",

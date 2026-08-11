@@ -127,3 +127,76 @@ export function computeOpening(cards, eraClasses, options) {
     boostersPerDisplay,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Distribution complète et provenance.
+//
+// L'EV répond « combien en moyenne » ; la distribution répond « qu'est-ce qui
+// va probablement m'arriver ». On simule N ouvertures (Monte-Carlo, taux au
+// point médian) et on en tire les quantiles et les probabilités utiles.
+//
+// La provenance module les chances des classes premium — celles qu'un
+// intermédiaire informé extrait : boîte scellée (1), booster tiré d'une boîte
+// fraîche sous vos yeux (1), détaillant de confiance (0,7 — prudence, pas
+// accusation), origine inconnue (0 — le plancher).
+// ---------------------------------------------------------------------------
+
+export const PROVENANCES = [
+  { key: "sealedBox", label: "Boîte scellée", factor: 1 },
+  { key: "freshBox", label: "Booster d'une boîte fraîche", factor: 1 },
+  { key: "trustedLoose", label: "Détaillant de confiance", factor: 0.7 },
+  { key: "unknownLoose", label: "À l'unité, origine inconnue", factor: 0 },
+];
+
+export function simulateDistribution(cards, eraClasses, options) {
+  const { boosterPrice, fees = 0.13, bulkThreshold = 0.4, sims = 20000 } = options;
+  if (!boosterPrice || boosterPrice <= 0) return null;
+  const netOf = (price) => (price >= bulkThreshold ? price * (1 - fees) : 0);
+
+  // Pools par classe : valeurs nettes prêtes à échantillonner.
+  const pools = [];
+  for (const [rarity, spec] of Object.entries(eraClasses)) {
+    const values = cards.filter((card) => card.rarity === rarity).map((card) => netOf(card.reference));
+    if (values.length) pools.push({ rate: (spec.lo + spec.hi) / 2, premium: Boolean(spec.premium), values });
+  }
+  if (!pools.length) return null;
+
+  const jackpotNet = Math.max(...pools.flatMap((pool) => pool.values));
+
+  const runFor = (factor) => {
+    const outcomes = new Float64Array(sims);
+    for (let i = 0; i < sims; i++) {
+      let total = 0;
+      for (const pool of pools) {
+        const rate = pool.premium ? pool.rate * factor : pool.rate;
+        if (rate > 0 && Math.random() < rate) {
+          total += pool.values[(Math.random() * pool.values.length) | 0];
+        }
+      }
+      outcomes[i] = total;
+    }
+    outcomes.sort();
+    const q = (p) => outcomes[Math.min(sims - 1, Math.floor(p * sims))];
+    const share = (test) => {
+      let count = 0;
+      for (let i = 0; i < sims; i++) if (test(outcomes[i])) count++;
+      return count / sims;
+    };
+    let sum = 0;
+    for (let i = 0; i < sims; i++) sum += outcomes[i];
+    return {
+      evNet: round2(sum / sims),
+      p25: round2(q(0.25)),
+      median: round2(q(0.5)),
+      p75: round2(q(0.75)),
+      pRecoup: round2(share((v) => v >= boosterPrice)),
+      pLoseHalf: round2(share((v) => v < boosterPrice * 0.5)),
+      pDouble: round2(share((v) => v >= boosterPrice * 2)),
+    };
+  };
+
+  return {
+    jackpotNet: round2(jackpotNet),
+    byProvenance: Object.fromEntries(PROVENANCES.map((p) => [p.key, runFor(p.factor)])),
+  };
+}

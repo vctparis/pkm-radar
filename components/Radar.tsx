@@ -326,7 +326,7 @@ export default function Radar({ data }: { data: RadarData }) {
                           prix — signal d'arbitrage rare, pour l'ouvreur comme
                           pour le holder. */}
                       <td className="tabular px-4 py-3 text-right">
-                        {set.opening ? (
+                        {set.opening && set.opening.mode !== "box" ? (
                           <span className={((set.opening.ratioLo + set.opening.ratioHi) / 2) >= 0.8 ? "text-[color:var(--color-good)] font-semibold" : "text-mist-300"}>
                             {(((set.opening.ratioLo + set.opening.ratioHi) / 2)).toFixed(2).replace(".", ",")}×
                           </span>

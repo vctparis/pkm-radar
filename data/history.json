@@ -207,6 +207,22 @@
         "boosterFRoffers": 0,
         "boosterFRsellers": 0
       }
+    ],
+    "s151jp": [
+      {
+        "date": "2026-08-10",
+        "boosterPrice": 8.29,
+        "boosterOffers": 8,
+        "boosterLanguage": "jp",
+        "boxPrice": 265.63,
+        "singlesOffers": 10184,
+        "top5Value": null,
+        "top12ex5Value": null,
+        "boosterFRp10": null,
+        "boosterFRmedian": null,
+        "boosterFRoffers": 0,
+        "boosterFRsellers": 0
+      }
     ]
   }
 }

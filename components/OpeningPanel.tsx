@@ -1,14 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import type { Opening } from "@/lib/types";
+import BoxOpeningPanel from "./BoxOpeningPanel";
+import type { BoxOpening, Opening, ProvenanceStats } from "@/lib/types";
 
-// Panneau « À l'ouverture » : toute l'ingénierie (fourchettes, frais déduits,
-// scénario d'écrémage) reste sous le capot — la surface ne montre que des
-// phrases lisibles et des « 1 sur N ». Aucun jargon.
+// Panneau « À l'ouverture » : l'ingénierie (simulation, fourchettes, frais,
+// provenance) reste sous le capot — la surface parle en phrases et en
+// « 1 sur N ». Aucun jargon statistique n'atteint l'écran.
 
 const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 const eur0 = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+
+type ProvenanceKey = "sealedBox" | "freshBox" | "trustedLoose" | "unknownLoose";
+
+// L'ordre est une échelle de confiance ; chaque niveau dit sa conséquence en
+// une ligne — l'utilisateur choisit une situation, jamais un paramètre.
+const PROVENANCES: { key: ProvenanceKey; label: string; hint: string; factor: number }[] = [
+  { key: "sealedBox", label: "Display scellé", hint: "Toutes les chances sont intactes.", factor: 1 },
+  { key: "freshBox", label: "Booster d'un display ouvert devant vous", hint: "Mêmes chances qu'un display scellé.", factor: 1 },
+  { key: "trustedLoose", label: "Boutique qui détaille", hint: "Chances des grosses cartes réduites de 30 %, par prudence.", factor: 0.7 },
+  { key: "unknownLoose", label: "À l'unité, origine inconnue", hint: "Comptez les grosses cartes à zéro : c'est le plancher.", factor: 0 },
+];
 
 function Statement({ children, tone }: { children: React.ReactNode; tone?: "good" | "warn" }) {
   const color =
@@ -20,32 +32,71 @@ function Statement({ children, tone }: { children: React.ReactNode; tone?: "good
   return <p className={`display m-0 text-[clamp(1.3rem,2.6vw,1.7rem)] leading-snug ${color}`}>{children}</p>;
 }
 
-export default function OpeningPanel({ opening, setName }: { opening: Opening; setName: string }) {
-  const [scenario, setScenario] = useState<"display" | "loose">("display");
+// La distribution en une image : où atterrit un booster. Quatre issues, du
+// jackpot à la perte sèche — encodage divergent, jamais la couleur seule
+// (les libellés portent les pourcentages).
+function OutcomeStrip({ stats }: { stats: ProvenanceStats }) {
+  const double = stats.pDouble;
+  const recoup = Math.max(0, stats.pRecoup - stats.pDouble);
+  const softLoss = Math.max(0, 1 - stats.pRecoup - stats.pLoseHalf);
+  const hardLoss = stats.pLoseHalf;
+  const segments = [
+    { share: double, color: "#199e70", label: "plus du double" },
+    { share: recoup, color: "#3987e5", label: "remboursé" },
+    { share: softLoss, color: "#c98500", label: "perte modérée" },
+    { share: hardLoss, color: "#e66767", label: "plus de la moitié perdue" },
+  ].filter((segment) => segment.share > 0.001);
+
+  return (
+    <div>
+      <div className="flex h-3 w-full overflow-hidden rounded-full" role="img" aria-label={segments.map((s) => `${s.label} : ${Math.round(s.share * 100)} %`).join(", ")}>
+        {segments.map((segment) => (
+          <span
+            key={segment.label}
+            className="h-full border-r-2 border-ink-850 last:border-r-0"
+            style={{ width: `${segment.share * 100}%`, background: segment.color }}
+          />
+        ))}
+      </div>
+      <ul className="m-0 mt-2.5 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 text-[0.78rem] text-mist-300">
+        {segments.map((segment) => (
+          <li key={segment.label} className="flex items-center gap-1.5">
+            <span aria-hidden className="h-2 w-2 rounded-full" style={{ background: segment.color }} />
+            {segment.label} <span className="tabular text-mist-050">{Math.round(segment.share * 100)} %</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default function OpeningPanel({ opening, setName }: { opening: Opening | BoxOpening | null; setName: string }) {
+  const [provenance, setProvenance] = useState<ProvenanceKey>("sealedBox");
+
+  if (opening && opening.mode === "box") return <BoxOpeningPanel opening={opening} />;
 
   if (!opening) {
     return (
       <section className="rounded-2xl border border-ink-600 p-8">
-        <p className="display m-0 text-[1.2rem] text-mist-050">Bientôt pour les sets japonais.</p>
+        <p className="display m-0 text-[1.2rem] text-mist-050">Pas encore de calcul pour ce set.</p>
         <p className="prose-measure m-0 mt-3 text-[0.92rem] leading-relaxed text-mist-300">
-          Les boosters japonais ne fonctionnent pas au hasard pur : chaque boîte porte des garanties de tirage.
-          C&apos;est une mécanique différente, qui mérite son propre calcul — en préparation.
+          Il manque soit un prix de booster fiable, soit des taux de tirage documentés.
         </p>
       </section>
     );
   }
 
-  const isLoose = scenario === "loose";
-  const lo = isLoose ? opening.looseLo : opening.netLo;
-  const hi = isLoose ? opening.looseHi : opening.netHi;
+  const chosen = PROVENANCES.find((p) => p.key === provenance)!;
+  const stats = opening.distribution?.byProvenance[provenance] ?? null;
+
+  // Fourchette d'espérance du niveau choisi : interpolation entre le plancher
+  // (classes premium à zéro) et le nominal, par le facteur de confiance.
+  const lo = opening.looseLo + chosen.factor * (opening.netLo - opening.looseLo);
+  const hi = opening.looseHi + chosen.factor * (opening.netHi - opening.looseHi);
   const ratioMid = (lo + hi) / 2 / opening.boosterPrice;
   const payMultiple = ratioMid > 0 ? 1 / ratioMid : null;
-  const recoupMid = isLoose
-    ? ((opening.recoupLooseLo ?? 0) + (opening.recoupLooseHi ?? 0)) / 2
-    : (opening.recoupLo + opening.recoupHi) / 2;
   const top1 = opening.top1;
 
-  // Verdict en une phrase — le cœur de la lecture.
   const verdict =
     ratioMid >= 0.9
       ? { text: "Le contenu vaut presque le prix du booster — situation rare, à surveiller.", tone: "good" as const }
@@ -63,7 +114,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening; s
 
   return (
     <div className="grid gap-5">
-      {/* ---- L'essentiel, en trois phrases ---- */}
+      {/* ---- L'essentiel ---- */}
       <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70 sm:p-8">
         <p className="m-0 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">À l&apos;ouverture</p>
         <div className="mt-4 grid gap-2">
@@ -73,40 +124,49 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening; s
           </Statement>
           <Statement tone={verdict.tone}>{verdict.text}</Statement>
         </div>
-        <p className="m-0 mt-5 text-[0.95rem] text-mist-300">
-          {recoupMid > 0.005
-            ? `Environ 1 booster sur ${Math.round(1 / recoupMid)} rembourse son prix.`
-            : "Quasiment aucun booster ne rembourse son prix."}
-        </p>
 
-        {/* Scénario : d'où vient le booster ? */}
-        <div className="mt-6 flex flex-wrap items-center gap-2">
-          {(
-            [
-              { key: "display", label: "Booster d'un display scellé" },
-              { key: "loose", label: "Booster acheté à l'unité" },
-            ] as const
-          ).map((option) => (
-            <button
-              key={option.key}
-              type="button"
-              onClick={() => setScenario(option.key)}
-              aria-pressed={scenario === option.key}
-              className={`rounded-xl border px-3 py-1.5 text-[0.85rem] transition-colors duration-200 ${
-                scenario === option.key
-                  ? "border-accent bg-accent/10 text-mist-050"
-                  : "border-ink-600 text-mist-300 hover:text-mist-050"
-              }`}
-            >
-              {option.label}
-            </button>
-          ))}
+        {/* D'où vient le booster ? */}
+        <div className="mt-7">
+          <p className="m-0 mb-2 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">D&apos;où vient-il ?</p>
+          <div className="flex flex-wrap gap-2">
+            {PROVENANCES.map((option) => (
+              <button
+                key={option.key}
+                type="button"
+                onClick={() => setProvenance(option.key)}
+                aria-pressed={provenance === option.key}
+                className={`rounded-xl border px-3 py-1.5 text-[0.85rem] transition-colors duration-200 ${
+                  provenance === option.key
+                    ? "border-accent bg-accent/10 text-mist-050"
+                    : "border-ink-600 text-mist-300 hover:text-mist-050"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+          <p className="m-0 mt-2 text-[0.82rem] text-mist-500">{chosen.hint}</p>
         </div>
-        {isLoose && (
-          <p className="prose-measure m-0 mt-3 text-[0.84rem] leading-relaxed text-mist-500">
-            À l&apos;unité, partez du principe que les meilleures cartes ont pu être écartées avant la mise en
-            vente : le calcul les retire entièrement. C&apos;est le plancher, pas une accusation.
-          </p>
+
+        {/* Où atterrit un booster */}
+        {stats && (
+          <div className="mt-7 border-t border-ink-700 pt-5">
+            <OutcomeStrip stats={stats} />
+            <div className="mt-4 grid gap-1 text-[0.9rem] text-mist-300">
+              <p className="m-0">
+                {stats.median <= 0.01
+                  ? "Un booster sur deux ne rend que du vrac — rien de revendable."
+                  : `La moitié des boosters rendent moins de ${eur.format(stats.median)}.`}
+              </p>
+              {stats.p75 > 0.01 && <p className="m-0">Trois sur quatre rendent moins de {eur.format(stats.p75)}.</p>}
+              {opening.distribution && (
+                <p className="m-0">
+                  Le jackpot : {top1?.nameFR ?? top1?.name ?? "la carte-titre"}, ~
+                  {eur0.format(opening.distribution.jackpotNet)} net.
+                </p>
+              )}
+            </div>
+          </div>
         )}
       </section>
 
@@ -114,9 +174,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening; s
         {/* ---- La carte-titre : ouvrir ou acheter ? ---- */}
         {top1 && (
           <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
-            <h3 className="display m-0 text-[1.1rem] text-mist-050">
-              Viser {top1.nameFR ?? top1.name} ?
-            </h3>
+            <h3 className="display m-0 text-[1.1rem] text-mist-050">Viser {top1.nameFR ?? top1.name} ?</h3>
             <ul className="m-0 mt-4 grid list-none gap-3 p-0 text-[0.95rem] text-mist-300">
               <li className="flex items-baseline justify-between gap-4">
                 <span>La tirer</span>
@@ -137,16 +195,14 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening; s
               {top1.perDisplay != null && (
                 <li className="flex items-baseline justify-between gap-4">
                   <span>Dans un display entier</span>
-                  <span className="tabular text-right text-mist-050">
-                    {Math.round(top1.perDisplay * 100)} % de chances
-                  </span>
+                  <span className="tabular text-right text-mist-050">{Math.round(top1.perDisplay * 100)} % de chances</span>
                 </li>
               )}
             </ul>
             <p className="display m-0 mt-5 text-[1.05rem] text-accent">{top1Verdict}</p>
-            {isLoose && (
+            {chosen.factor < 1 && (
               <p className="m-0 mt-2 text-[0.78rem] text-mist-500">
-                Ces chances valent pour un booster issu d&apos;un display scellé — à l&apos;unité, n&apos;y comptez pas.
+                Ces chances valent pour un booster aux probabilités intactes — pas pour la provenance choisie.
               </p>
             )}
           </section>
@@ -156,19 +212,22 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening; s
         <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
           <h3 className="display m-0 text-[1.1rem] text-mist-050">Ce que vous pouvez y trouver</h3>
           <ul className="m-0 mt-4 grid list-none gap-2.5 p-0">
-            {opening.topPulls.map((pull) => (
-              <li key={`${pull.number}-${pull.name}`} className="flex items-baseline justify-between gap-3 text-[0.92rem]">
-                <span className={isLoose && pull.premium ? "text-mist-500 line-through" : "text-mist-100"}>
-                  {pull.nameFR ?? pull.name}
-                  <span className="ml-1.5 text-[0.75rem] text-mist-500">{pull.number}</span>
-                </span>
-                <span className="tabular whitespace-nowrap text-right text-mist-300">
-                  1 sur {pull.oneIn} · <span className="text-mist-050">{eur.format(pull.price)}</span>
-                </span>
-              </li>
-            ))}
+            {opening.topPulls.map((pull) => {
+              const dimmed = chosen.factor === 0 && pull.premium;
+              return (
+                <li key={`${pull.number}-${pull.name}`} className="flex items-baseline justify-between gap-3 text-[0.92rem]">
+                  <span className={dimmed ? "text-mist-500 line-through" : "text-mist-100"}>
+                    {pull.nameFR ?? pull.name}
+                    <span className="ml-1.5 text-[0.75rem] text-mist-500">{pull.number}</span>
+                  </span>
+                  <span className="tabular whitespace-nowrap text-right text-mist-300">
+                    1 sur {pull.oneIn} · <span className="text-mist-050">{eur.format(pull.price)}</span>
+                  </span>
+                </li>
+              );
+            })}
           </ul>
-          {isLoose && (
+          {chosen.factor === 0 && (
             <p className="m-0 mt-3 text-[0.78rem] text-mist-500">
               Les cartes barrées sont celles qu&apos;un vendeur qui écrème retire en premier.
             </p>
@@ -176,10 +235,10 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening; s
         </section>
       </div>
 
-      {/* ---- La méthode, en petit — jamais dans le chemin ---- */}
+      {/* ---- La méthode, en petit ---- */}
       <p className="prose-measure m-0 text-[0.78rem] leading-relaxed text-mist-500">
-        Estimations communautaires par ère ({opening.confidence}) — des fourchettes, pas des promesses. Frais de
-        revente déduits, cartes sous 0,40 € comptées à zéro.
+        Estimations communautaires par ère ({opening.confidence}), adaptées à ce set — des fourchettes, pas des
+        promesses. Frais de revente déduits, cartes sous 0,40 € comptées à zéro, 20 000 ouvertures simulées.
         {opening.partialNote ? ` ${opening.partialNote}` : ""}
         {` Un contenu qui rattrape le prix du booster est aussi un signal pour le scellé de ${setName} : quand ouvrir devient rentable, l'offre scellée fond.`}
       </p>

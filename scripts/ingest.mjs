@@ -28,7 +28,7 @@ import {
 import { fetchSealedBoosterFR, fetchCardFR } from "./lib/ebay.mjs";
 import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
-import { computeOpening } from "./lib/ev.mjs";
+import { computeOpening, simulateDistribution } from "./lib/ev.mjs";
 
 // En local le token vit dans .env.local ; en CI il vient des secrets du runner.
 try {
@@ -72,7 +72,7 @@ async function loadHistory() {
 // reconnaît et remplace les blocs analytiques par une note d'explication.
 const EMPTY_BUNDLE = { top1: [], r2_5: [], r6_15: [], r16_50: [], fond: [] };
 
-async function buildJapaneseSet(set, expansionsByCode, history) {
+async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef) {
   // ---- CardTrader : scellé jp + singles + images --------------------------
   // TCGdex ne référence pas les cartes des sets japonais (coquilles vides) ;
   // les blueprints CardTrader portent une image_url sur 100 % du catalogue,
@@ -185,6 +185,50 @@ async function buildJapaneseSet(set, expansionsByCode, history) {
     bucket.sort((a, b) => a.date.localeCompare(b.date));
   }
 
+  // Ouverture japonaise : garanties PAR BOÎTE, pas hasard pur. On publie la
+  // structure du set (ses slots à lui, avec ses classes à lui — jamais un
+  // gabarit générique) et les pools de cartes valorisés ; le recalcul
+  // conditionnel (« telle garantie déjà tirée ») se fait dans le navigateur.
+  let opening = null;
+  {
+    const structure = boxStructuresRef[set.cardtrader.toLowerCase()];
+    if (structure && singles.length) {
+      const netOf = (price) => (price >= 0.4 ? price * 0.87 : 0);
+      const slots = structure.slots
+        .map((slot) => {
+          const pool = singles
+            .filter((entry) => slot.rarities.includes(entry.rarity))
+            .sort((a, b) => (b.floor10 ?? 0) - (a.floor10 ?? 0));
+          if (!pool.length) return null; // la règle ne s'applique pas à ce set
+          const meanNet = pool.reduce((sum, entry) => sum + netOf(entry.floor10 ?? 0), 0) / pool.length;
+          return {
+            key: slot.key,
+            label: slot.label,
+            countLo: slot.count[0],
+            countHi: slot.count[1],
+            poolSize: pool.length,
+            meanNet: Number(meanNet.toFixed(2)),
+            top: pool.slice(0, 6).map((entry) => ({
+              name: entry.name,
+              number: entry.collectorNumber ?? "—",
+              price: entry.floor10,
+            })),
+          };
+        })
+        .filter(Boolean);
+      if (slots.length) {
+        opening = {
+          mode: "box",
+          packsPerBox: structure.packsPerBox,
+          boosterPrice: live?.booster?.price ?? boosterFR?.floor10 ?? null,
+          confidence: structure.confidence,
+          note: structure.note,
+          slots,
+        };
+      }
+    }
+  }
+
   const ageYears = set.releaseDate
     ? (Date.now() - Date.parse(set.releaseDate)) / (365.25 * 24 * 3600 * 1000)
     : null;
@@ -232,7 +276,7 @@ async function buildJapaneseSet(set, expansionsByCode, history) {
     live,
     liveHistory: history.snapshots[set.id] ?? [],
     psa: null,
-    opening: null,
+    opening,
     picks,
   };
 }
@@ -243,6 +287,7 @@ async function main() {
   const history = await loadHistory();
   const psaManual = JSON.parse(await readFile(join(ROOT, "data", "manual-psa.json"), "utf8"));
   const pullRates = JSON.parse(await readFile(join(ROOT, "data", "pull-rates.json"), "utf8"));
+  const boxStructures = JSON.parse(await readFile(join(ROOT, "data", "jp-box-structures.json"), "utf8"));
 
   // Résolution des expansions CardTrader une seule fois pour tous les sets.
   let expansionsByCode = new Map();
@@ -265,7 +310,7 @@ async function main() {
     // (annonces jp) et eBay.fr (produits japonais vendus en France), plus le
     // catalogue TCGdex en locale ja pour les numéros et illustrations.
     if (set.jpOnly) {
-      output.push(await buildJapaneseSet(set, expansionsByCode, history));
+      output.push(await buildJapaneseSet(set, expansionsByCode, history, boxStructures));
       continue;
     }
 
@@ -452,14 +497,23 @@ async function main() {
       const era = pullRates.eras[eraKey];
       const override = pullRates.setOverrides?.[set.ptcg] ?? {};
       const referencePrice = boosterFR?.floor10 ?? live?.booster?.price ?? null;
+      // Les taux d'une ère sont un défaut, pas une loi : un set peut
+      // surcharger classe par classe (boosters atypiques, slots propres).
+      const eraClasses = { ...era?.classes, ...(override.classes ?? {}) };
       if (era && referencePrice) {
-        opening = computeOpening(cards, era.classes, {
+        opening = computeOpening(cards, eraClasses, {
           boosterPrice: referencePrice,
           fees: pullRates.fees,
           bulkThreshold: pullRates.bulkThreshold,
           boostersPerDisplay: override.boostersPerDisplay !== undefined ? override.boostersPerDisplay : era.boostersPerDisplay,
         });
         if (opening) {
+          opening.mode = "booster";
+          opening.distribution = simulateDistribution(cards, eraClasses, {
+            boosterPrice: referencePrice,
+            fees: pullRates.fees,
+            bulkThreshold: pullRates.bulkThreshold,
+          });
           opening.confidence = override.confidence ?? era.confidence;
           opening.partialNote = pullRates.partialSets?.[set.ptcg] ?? null;
           // Nom français de la carte-titre côté ouverture

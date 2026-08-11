@@ -1,0 +1,42 @@
+{
+  "_comment": "Structures de garanties PAR BOÎTE des sets japonais — estimations communautaires (agrégats d'ouvertures), les distributions japonaises étant quasi déterministes au niveau boîte. `count` est [lo, hi] par boîte ; `rarities` sont les chaînes CardTrader (pokemon_rarity). Le moteur conditionnel du site s'appuie dessus : cocher les tirages déjà faits recalcule l'espérance des boosters restants.",
+  "s4a": {
+    "packsPerBox": 10,
+    "confidence": "correcte",
+    "note": "Shiny Star V — les shinies « S » sortent par 2-3 par boîte, la SSR environ une boîte sur deux.",
+    "slots": [
+      { "key": "ssr", "label": "Shiny Ultra Rare (SSR)", "rarities": ["Shiny Ultra Rare"], "count": [0, 1] },
+      { "key": "s", "label": "Shiny (S)", "rarities": ["Shiny Holo Rare"], "count": [2, 3] },
+      { "key": "srplus", "label": "SR ou mieux", "rarities": ["Ultra Rare", "Secret Rare"], "count": [1, 2] }
+    ]
+  },
+  "s8b": {
+    "packsPerBox": 10,
+    "confidence": "correcte",
+    "note": "VMAX Climax — les CHR tombent par 4-6 par boîte, les CSR par 1-2.",
+    "slots": [
+      { "key": "chr", "label": "Character Rare (CHR)", "rarities": ["Illustration Rare"], "count": [4, 6] },
+      { "key": "csr", "label": "Character Super Rare (CSR)", "rarities": ["Ultra Rare"], "count": [1, 2] },
+      { "key": "sec", "label": "Secrète (UR)", "rarities": ["Secret Rare"], "count": [0, 1] }
+    ]
+  },
+  "sm12a": {
+    "packsPerBox": 10,
+    "confidence": "grossière",
+    "note": "Tag All Stars — environ une SR+ garantie par boîte, les secrètes au-delà sont rares.",
+    "slots": [
+      { "key": "sr", "label": "Super Rare (SR)", "rarities": ["Ultra Rare"], "count": [1, 2] },
+      { "key": "sec", "label": "HR / UR secrètes", "rarities": ["Secret Rare", "Special Illustration Rare"], "count": [0, 1] }
+    ]
+  },
+  "sv2a": {
+    "packsPerBox": 20,
+    "confidence": "correcte",
+    "note": "151 japonais — les AR sortent par 3-4 par boîte, les SAR par 1-2. Les reverses Master Ball sont des variantes hors nomenclature de rareté : non modélisées ici, la valeur réelle d'une boîte est donc plus haute.",
+    "slots": [
+      { "key": "ar", "label": "Art Rare (AR)", "rarities": ["Illustration Rare"], "count": [3, 4] },
+      { "key": "sar", "label": "Special Art Rare (SAR)", "rarities": ["Special Illustration Rare"], "count": [1, 2] },
+      { "key": "sec", "label": "UR / secrètes", "rarities": ["Secret Rare", "Ultra Rare"], "count": [0, 1] }
+    ]
+  }
+}
