@@ -114,7 +114,7 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
   let boosterFR = null;
   if (process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
     try {
-      boosterFR = await fetchSealedBoosterFR(set.nameEN, { japanese: true });
+      boosterFR = await fetchSealedBoosterFR(set.nameEN, { japanese: true, exclude: set.ebayNot ?? null });
       log(`${set.name.padEnd(20)} eBay.fr (jp) p10 ${boosterFR.floor10 ?? "—"} € · ${boosterFR.offers} offres`);
     } catch (error) {
       console.warn(`  ${set.name} : eBay.fr indisponible (${error.message})`);
@@ -478,7 +478,7 @@ async function main() {
     let boosterFR = null;
     if (!OFFLINE && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
       try {
-        boosterFR = await fetchSealedBoosterFR(set.name);
+        boosterFR = await fetchSealedBoosterFR(set.name, { exclude: set.ebayNot ?? null });
         log(
           `${set.name.padEnd(20)} eBay.fr p10 ${boosterFR.floor10 ?? "—"} € · médiane ${boosterFR.median ?? "—"} €` +
             ` · ${boosterFR.offers} offres / ${boosterFR.sellers} vendeurs`,
@@ -493,7 +493,13 @@ async function main() {
     // Ère déduite de l'identifiant pokemontcg.io.
     let opening = null;
     {
-      const eraKey = set.ptcg.startsWith("sv") ? "sv" : set.ptcg.startsWith("swsh") ? "swsh" : "sm";
+      const eraKey = set.ptcg.startsWith("sv")
+        ? "sv"
+        : set.ptcg.startsWith("swsh")
+          ? "swsh"
+          : set.ptcg.startsWith("xy")
+            ? "xy"
+            : "sm";
       const era = pullRates.eras[eraKey];
       const override = pullRates.setOverrides?.[set.ptcg] ?? {};
       const referencePrice = boosterFR?.floor10 ?? live?.booster?.price ?? null;

@@ -9,12 +9,34 @@
       "note": "Échantillons anciens, moins documentés que les ères récentes.",
       "boostersPerDisplay": 36,
       "classes": {
-        "Rare": { "lo": 0.5, "hi": 0.7 },
-        "Rare Holo": { "lo": 0.25, "hi": 0.4 },
-        "Rare Holo GX": { "lo": 0.1, "hi": 0.125, "premium": true },
-        "Rare Ultra": { "lo": 0.04, "hi": 0.07, "premium": true },
-        "Rare Rainbow": { "lo": 0.015, "hi": 0.03, "premium": true },
-        "Rare Secret": { "lo": 0.01, "hi": 0.02, "premium": true }
+        "Rare": {
+          "lo": 0.5,
+          "hi": 0.7
+        },
+        "Rare Holo": {
+          "lo": 0.25,
+          "hi": 0.4
+        },
+        "Rare Holo GX": {
+          "lo": 0.1,
+          "hi": 0.125,
+          "premium": true
+        },
+        "Rare Ultra": {
+          "lo": 0.04,
+          "hi": 0.07,
+          "premium": true
+        },
+        "Rare Rainbow": {
+          "lo": 0.015,
+          "hi": 0.03,
+          "premium": true
+        },
+        "Rare Secret": {
+          "lo": 0.01,
+          "hi": 0.02,
+          "premium": true
+        }
       }
     },
     "swsh": {
@@ -23,15 +45,47 @@
       "note": "Consensus communautaire stable sur l'ère.",
       "boostersPerDisplay": 36,
       "classes": {
-        "Rare": { "lo": 0.5, "hi": 0.7 },
-        "Rare Holo": { "lo": 0.25, "hi": 0.4 },
-        "Rare Holo V": { "lo": 0.15, "hi": 0.25 },
-        "Rare Holo VMAX": { "lo": 0.06, "hi": 0.1, "premium": true },
-        "Rare Holo VSTAR": { "lo": 0.06, "hi": 0.1, "premium": true },
-        "Radiant Rare": { "lo": 0.1, "hi": 0.15 },
-        "Rare Ultra": { "lo": 0.05, "hi": 0.08, "premium": true },
-        "Rare Rainbow": { "lo": 0.015, "hi": 0.025, "premium": true },
-        "Rare Secret": { "lo": 0.01, "hi": 0.02, "premium": true }
+        "Rare": {
+          "lo": 0.5,
+          "hi": 0.7
+        },
+        "Rare Holo": {
+          "lo": 0.25,
+          "hi": 0.4
+        },
+        "Rare Holo V": {
+          "lo": 0.15,
+          "hi": 0.25
+        },
+        "Rare Holo VMAX": {
+          "lo": 0.06,
+          "hi": 0.1,
+          "premium": true
+        },
+        "Rare Holo VSTAR": {
+          "lo": 0.06,
+          "hi": 0.1,
+          "premium": true
+        },
+        "Radiant Rare": {
+          "lo": 0.1,
+          "hi": 0.15
+        },
+        "Rare Ultra": {
+          "lo": 0.05,
+          "hi": 0.08,
+          "premium": true
+        },
+        "Rare Rainbow": {
+          "lo": 0.015,
+          "hi": 0.025,
+          "premium": true
+        },
+        "Rare Secret": {
+          "lo": 0.01,
+          "hi": 0.02,
+          "premium": true
+        }
       }
     },
     "sv": {
@@ -40,12 +94,65 @@
       "note": "Slots de rareté réguliers, les mieux documentés.",
       "boostersPerDisplay": 36,
       "classes": {
-        "Rare": { "lo": 0.6, "hi": 0.8 },
-        "Double Rare": { "lo": 0.2, "hi": 0.3 },
-        "Ultra Rare": { "lo": 0.07, "hi": 0.11, "premium": true },
-        "Illustration Rare": { "lo": 0.07, "hi": 0.11, "premium": true },
-        "Special Illustration Rare": { "lo": 0.025, "hi": 0.04, "premium": true },
-        "Hyper Rare": { "lo": 0.015, "hi": 0.025, "premium": true }
+        "Rare": {
+          "lo": 0.6,
+          "hi": 0.8
+        },
+        "Double Rare": {
+          "lo": 0.2,
+          "hi": 0.3
+        },
+        "Ultra Rare": {
+          "lo": 0.07,
+          "hi": 0.11,
+          "premium": true
+        },
+        "Illustration Rare": {
+          "lo": 0.07,
+          "hi": 0.11,
+          "premium": true
+        },
+        "Special Illustration Rare": {
+          "lo": 0.025,
+          "hi": 0.04,
+          "premium": true
+        },
+        "Hyper Rare": {
+          "lo": 0.015,
+          "hi": 0.025,
+          "premium": true
+        }
+      }
+    },
+    "xy": {
+      "label": "XY",
+      "confidence": "grossière",
+      "note": "Ère ancienne, échantillons rares.",
+      "boostersPerDisplay": 36,
+      "classes": {
+        "Rare": {
+          "lo": 0.5,
+          "hi": 0.7
+        },
+        "Rare Holo": {
+          "lo": 0.25,
+          "hi": 0.4
+        },
+        "Rare Holo EX": {
+          "lo": 0.09,
+          "hi": 0.14,
+          "premium": true
+        },
+        "Rare Ultra": {
+          "lo": 0.04,
+          "hi": 0.07,
+          "premium": true
+        },
+        "Rare Secret": {
+          "lo": 0.012,
+          "hi": 0.025,
+          "premium": true
+        }
       }
     }
   },
@@ -54,6 +161,24 @@
       "confidence": "grossière",
       "note": "Boosters de 4 cartes au tirage atypique — fourchettes très larges.",
       "boostersPerDisplay": null
+    },
+    "sv4pt5": {
+      "confidence": "correcte",
+      "classes": {
+        "Shiny Rare": {
+          "lo": 0.1,
+          "hi": 0.17,
+          "premium": true
+        },
+        "Shiny Ultra Rare": {
+          "lo": 0.02,
+          "hi": 0.04,
+          "premium": true
+        }
+      }
+    },
+    "swsh45": {
+      "confidence": "grossière"
     }
   },
   "partialSets": {
@@ -61,6 +186,7 @@
     "swsh9": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
     "swsh11": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
     "swsh12": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
-    "swsh12pt5": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
+    "swsh12pt5": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute.",
+    "swsh45": "Le Coffre des Brillants (les shiny, dont le Dracaufeu VMAX chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
   }
 }

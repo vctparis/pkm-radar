@@ -99,7 +99,9 @@ function summarize(items) {
  * scellés », l'ID propre à eBay.fr, PAS le 183454 du site américain qui ne
  * matche à peu près rien ici — puis un filtre de titre pour ce qui reste.
  */
-const NOISE = /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir/i;
+// « Pack loisir » / « échantillon » : pochettes promotionnelles de 3 cartes
+// vendues comme boosters — un plancher à 2 € qui n'en est pas un.
+const NOISE = /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir|pack loisir|booster loisir|[ée]chantillon/i;
 // Cartes à l'unité égarées dans la catégorie scellée : « Carte Pokemon X » au
 // singulier, ou un numéro de collection XXX/YYY dans le titre — signature d'un
 // single, jamais d'un booster (vécu : plancher 151 à 1,49 € qui était un
@@ -113,7 +115,8 @@ const NOT_JAPANESE = /cor[ée]en|korean|chinois|chinese|carte pok|card\b/i;
 // dont le prix ne se compare pas à l'unité.
 const MULTIPACK = /\b([2-9]|\d{2,})\s*x?\s*boosters?\b|\bx\s*([2-9]|\d{2,})\b/i;
 
-export async function fetchSealedBoosterFR(setName, { japanese = false } = {}) {
+export async function fetchSealedBoosterFR(setName, { japanese = false, exclude = null } = {}) {
+  const excludePattern = exclude ? new RegExp(exclude, "i") : null;
   const payload = await browse({
     q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
     category_ids: "183456",
@@ -128,6 +131,7 @@ export async function fetchSealedBoosterFR(setName, { japanese = false } = {}) {
   const items = (payload.itemSummaries ?? []).filter((item) => {
     const title = (item.title ?? "").toLowerCase();
     if (NOISE.test(title) || MULTIPACK.test(title) || SINGLE_IN_SEALED.test(title)) return false;
+    if (excludePattern && excludePattern.test(title)) return false;
     if (japanese && NOT_JAPANESE.test(title)) return false;
     return title.includes(needle);
   });

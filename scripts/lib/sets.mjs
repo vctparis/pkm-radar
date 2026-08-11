@@ -10,9 +10,16 @@
 // exclues des métriques de marché — elles brouillent la mesure.
 
 export const SETS = [
+  // ebayNot : « Évolutions » attrape aussi les annonces « Évolutions
+  // Prismatiques » (Prismatic Evolutions, 2025) — un booster à 2 € qui se
+  // ferait passer pour le plancher d'un set de 2016.
+  { id: "evolutions", name: "Évolutions", nameEN: "Evolutions", ptcg: "xy12", tcgdex: "xy12", cardtrader: "EVO", era: "XY", ebayNot: "prismatique|prismatic|paldea|m[ée]ga" },
   { id: "sun-moon", name: "Soleil & Lune", nameEN: "Sun & Moon", ptcg: "sm1", tcgdex: "sm1", cardtrader: "SUM", era: "Soleil & Lune" },
   { id: "burning-shadows", name: "Ombres Ardentes", nameEN: "Burning Shadows", ptcg: "sm3", tcgdex: "sm3", cardtrader: "BUS", era: "Soleil & Lune" },
   { id: "hidden-fates", name: "Destinées Occultes", nameEN: "Hidden Fates", ptcg: "sm115", tcgdex: "sm115", cardtrader: "HIF", era: "Soleil & Lune" },
+  { id: "darkness-ablaze", name: "Ténèbres Embrasées", nameEN: "Darkness Ablaze", ptcg: "swsh3", tcgdex: "swsh3", cardtrader: "DAA", era: "Épée et Bouclier" },
+  { id: "vivid-voltage", name: "Voltage Éclatant", nameEN: "Vivid Voltage", ptcg: "swsh4", tcgdex: "swsh4", cardtrader: "VIV", era: "Épée et Bouclier" },
+  { id: "shining-fates", name: "Destinées Radieuses", nameEN: "Shining Fates", ptcg: "swsh45", tcgdex: "swsh4.5", cardtrader: "SHF", era: "Épée et Bouclier" },
   { id: "evolving-skies", name: "Évolution Céleste", nameEN: "Evolving Skies", ptcg: "swsh7", tcgdex: "swsh7", cardtrader: "EVS", era: "Épée et Bouclier" },
   { id: "fusion-strike", name: "Poing de Fusion", nameEN: "Fusion Strike", ptcg: "swsh8", tcgdex: "swsh8", cardtrader: "FST", era: "Épée et Bouclier" },
   { id: "brilliant-stars", name: "Stars Étincelantes", nameEN: "Brilliant Stars", ptcg: "swsh9", tcgdex: "swsh9", cardtrader: "BRS", era: "Épée et Bouclier" },
@@ -20,6 +27,7 @@ export const SETS = [
   { id: "silver-tempest", name: "Tempête Argentée", nameEN: "Silver Tempest", ptcg: "swsh12", tcgdex: "swsh12", cardtrader: "SIT", era: "Épée et Bouclier" },
   { id: "crown-zenith", name: "Zénith Suprême", nameEN: "Crown Zenith", ptcg: "swsh12pt5", tcgdex: "swsh12.5", cardtrader: "CRZ", era: "Épée et Bouclier" },
   { id: "celebrations", name: "Célébrations", nameEN: "Celebrations", ptcg: "cel25", tcgdex: "cel25", cardtrader: "C25", era: "Épée et Bouclier" },
+  { id: "paldean-fates", name: "Destinées de Paldea", nameEN: "Paldean Fates", ptcg: "sv4pt5", tcgdex: "sv04.5", cardtrader: "PAF", era: "Écarlate et Violet" },
   { id: "s151", name: "151", nameEN: "151", ptcg: "sv3pt5", tcgdex: "sv03.5", cardtrader: "MEW", era: "Écarlate et Violet" },
 
   // Sets japonais sans équivalent occidental — d'où leur intérêt : la rareté
@@ -29,6 +37,7 @@ export const SETS = [
   { id: "tag-all-stars", name: "Tag All Stars", nameEN: "Tag Team GX: Tag All Stars", jpOnly: true, releaseDate: "2019-10-04", tcgdex: "sm12a", cardtrader: "sm12a", era: "Soleil & Lune (JP)" },
   { id: "shiny-star-v", name: "Shiny Star V", nameEN: "Shiny Star V", jpOnly: true, releaseDate: "2020-11-20", tcgdex: "s4a", cardtrader: "s4a", era: "Épée et Bouclier (JP)" },
   { id: "vmax-climax", name: "VMAX Climax", nameEN: "VMAX Climax", jpOnly: true, releaseDate: "2021-12-03", tcgdex: "s8b", cardtrader: "s8b", era: "Épée et Bouclier (JP)" },
+  { id: "eevee-heroes", name: "Eevee Heroes", nameEN: "Eevee Heroes", jpOnly: true, releaseDate: "2021-05-28", tcgdex: "s6a", cardtrader: "s6a", era: "Épée et Bouclier (JP)" },
   // Le 151 japonais coexiste avec le 151 occidental : ses reverses Master
   // Ball n'existent qu'au Japon, c'est un produit distinct.
   { id: "s151jp", name: "151 (JP)", nameEN: "Pokémon Card 151 (JP)", jpOnly: true, releaseDate: "2023-06-16", tcgdex: "sv2a", cardtrader: "sv2a", era: "Écarlate et Violet (JP)" },

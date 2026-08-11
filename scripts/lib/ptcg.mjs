@@ -10,7 +10,7 @@ const BASE = "https://api.pokemontcg.io/v2";
 const CACHE_DIR = join(process.cwd(), "data", "raw");
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
-async function fetchWithRetry(url, tries = 6) {
+async function fetchWithRetry(url, tries = 9) {
   let lastError;
   for (let attempt = 1; attempt <= tries; attempt++) {
     try {
@@ -23,7 +23,7 @@ async function fetchWithRetry(url, tries = 6) {
       lastError = error;
     }
     // Backoff linéaire : l'API se rétablit vite, inutile d'attendre longtemps.
-    if (attempt < tries) await new Promise((r) => setTimeout(r, 2000 * attempt));
+    if (attempt < tries) await new Promise((r) => setTimeout(r, 3000 * attempt));
   }
   throw new Error(`pokemontcg.io injoignable après ${tries} tentatives (${url}): ${lastError?.message}`);
 }
