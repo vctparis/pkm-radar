@@ -21,7 +21,8 @@ function toneFor(value: number | null) {
 }
 
 const growthOf = (set: SetEntry, key: string) => set.strata.find((s) => s.key === key)?.growth ?? null;
-const boosterPriceOf = (set: SetEntry) => set.boosterFR?.floor10 ?? set.live?.booster?.price ?? null;
+const boosterPriceOf = (set: SetEntry) =>
+  set.boosterFR?.median ?? set.boosterFR?.floor10 ?? set.live?.booster?.price ?? null;
 const contentRatioOf = (set: SetEntry) =>
   set.opening && set.opening.mode !== "box" ? (set.opening.ratioLo + set.opening.ratioHi) / 2 : null;
 const psaPopOf = (set: SetEntry) => set.psa?.history?.at(-1)?.total ?? null;
@@ -63,46 +64,50 @@ const COLUMNS: Column[] = [
   {
     key: "booster",
     label: "Booster",
-    hint: "le moins cher, neuf",
+    hint: "médiane des annonces, neuf",
     align: "right",
     mandatory: true,
     defaultOn: true,
     sortValue: boosterPriceOf,
     firstDir: "asc",
     render: (s) =>
-      s.boosterFR?.floor10 != null ? (
+      s.boosterFR?.median != null || s.boosterFR?.floor10 != null ? (
         <>
-          {s.boosterFR.floor10Url ? (
-            <a
-              href={s.boosterFR.floor10Url}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="underline decoration-ink-500 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
-            >
-              {eur.format(s.boosterFR.floor10)}
-            </a>
-          ) : (
-            eur.format(s.boosterFR.floor10)
-          )}
+          {eur.format((s.boosterFR!.median ?? s.boosterFR!.floor10)!)}
           <span className="mt-0.5 block text-[0.72rem] text-mist-500">
-            dès{" "}
-            {s.boosterFR.priceUrl && s.boosterFR.price != null ? (
+            plancher{" "}
+            {s.boosterFR!.floor10Url && s.boosterFR!.floor10 != null ? (
               <a
-                href={s.boosterFR.priceUrl}
+                href={s.boosterFR!.floor10Url}
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className="underline decoration-ink-500 underline-offset-2 transition-colors duration-200 hover:decoration-accent"
               >
-                {eur.format(s.boosterFR.price)}
+                {eur.format(s.boosterFR!.floor10)}
               </a>
-            ) : s.boosterFR.price != null ? (
-              eur.format(s.boosterFR.price)
+            ) : s.boosterFR!.floor10 != null ? (
+              eur.format(s.boosterFR!.floor10)
             ) : (
               "—"
             )}{" "}
-            · méd. {s.boosterFR.median != null ? eur.format(s.boosterFR.median) : "—"} · {s.jpOnly ? "JP" : "FR"} eBay
+            · dès{" "}
+            {s.boosterFR!.priceUrl && s.boosterFR!.price != null ? (
+              <a
+                href={s.boosterFR!.priceUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="underline decoration-ink-500 underline-offset-2 transition-colors duration-200 hover:decoration-accent"
+              >
+                {eur.format(s.boosterFR!.price)}
+              </a>
+            ) : s.boosterFR!.price != null ? (
+              eur.format(s.boosterFR!.price)
+            ) : (
+              "—"
+            )}{" "}
+            · {s.jpOnly ? "JP" : "FR"} eBay
           </span>
         </>
       ) : s.live?.booster?.price != null ? (

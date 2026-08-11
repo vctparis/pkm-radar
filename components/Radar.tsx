@@ -119,7 +119,7 @@ export default function Radar({ data }: { data: RadarData }) {
   // unique : tout est en %.
   const boosterGrowthPoints = (() => {
     const rows = active.liveHistory;
-    const value = (row: (typeof rows)[number]) => row.boosterFRp10 ?? row.boosterPrice ?? null;
+    const value = (row: (typeof rows)[number]) => row.boosterFRmedian ?? row.boosterFRp10 ?? row.boosterPrice ?? null;
     const base = rows.map(value).find((v) => v != null && v > 0);
     if (base == null) return [];
     return rows.map((row) => {
@@ -386,9 +386,9 @@ export default function Radar({ data }: { data: RadarData }) {
               subtitle="Paniers de composition figée, valorisés chaque jour au plancher CardTrader. Aucune source accessible ne vend 3-4 ans d'historique de prix : cette série se construit à partir d'aujourd'hui, un relevé par jour."
               series={[
                 {
-                  label: "Booster FR (eBay, p10)",
+                  label: "Booster FR (eBay, médiane)",
                   color: SERIES.fr,
-                  points: indexed(active.liveHistory, (p) => p.boosterFRp10 ?? null),
+                  points: indexed(active.liveHistory, (p) => p.boosterFRmedian ?? p.boosterFRp10 ?? null),
                 },
                 {
                   label: "Booster (CardTrader)",

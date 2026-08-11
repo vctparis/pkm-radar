@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T19:45:51.605Z",
+  "generatedAt": "2026-08-11T20:37:14.586Z",
   "sets": [
     {
       "id": "celebrations",
@@ -140,17 +140,17 @@
         "scanned": 21
       },
       "opening": {
-        "boosterPrice": 44.9,
+        "boosterPrice": 70,
         "netLo": 3,
         "netHi": 4.81,
-        "ratioLo": 0.07,
-        "ratioHi": 0.11,
+        "ratioLo": 0.04,
+        "ratioHi": 0.07,
         "looseLo": 2.95,
         "looseHi": 4.72,
-        "recoupLo": 0.04,
-        "recoupHi": 0.07,
-        "recoupLooseLo": 0.04,
-        "recoupLooseHi": 0.07,
+        "recoupLo": 0,
+        "recoupHi": 0,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
         "topPulls": [
           {
             "name": "Mew",
@@ -219,8 +219,8 @@
           "buyPrice": 73.33,
           "oneInLo": 15,
           "oneInHi": 24,
-          "expectedCostLo": 674,
-          "expectedCostHi": 1078,
+          "expectedCostLo": 1050,
+          "expectedCostHi": 1680,
           "perDisplay": null,
           "buyPriceFR": null,
           "nameFR": "Mew"
@@ -232,29 +232,29 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.85,
+              "evNet": 3.9,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
+              "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 3.93,
+              "evNet": 3.71,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
+              "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.74,
+              "evNet": 3.8,
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
+              "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
@@ -263,7 +263,7 @@
               "p25": 0,
               "median": 0,
               "p75": 0,
-              "pRecoup": 0.05,
+              "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             }
@@ -1071,15 +1071,15 @@
         "scanned": 24
       },
       "opening": {
-        "boosterPrice": 38,
+        "boosterPrice": 47,
         "netLo": 1.33,
         "netHi": 2.18,
         "ratioLo": 0.03,
-        "ratioHi": 0.06,
+        "ratioHi": 0.05,
         "looseLo": 0.54,
         "looseHi": 0.86,
-        "recoupLo": 0.01,
-        "recoupHi": 0.01,
+        "recoupLo": 0,
+        "recoupHi": 0,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -1150,8 +1150,8 @@
           "buyPrice": 44.68,
           "oneInLo": 70,
           "oneInHi": 117,
-          "expectedCostLo": 2660,
-          "expectedCostHi": 4433,
+          "expectedCostLo": 3290,
+          "expectedCostHi": 5483,
           "perDisplay": 0.34,
           "buyPriceFR": 44.9,
           "nameFR": "Dracaufeu VMAX"
@@ -1163,29 +1163,29 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.67,
+              "evNet": 1.79,
               "p25": 0,
-              "median": 0.45,
-              "p75": 1.71,
-              "pRecoup": 0.01,
+              "median": 0.48,
+              "p75": 1.72,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.79,
+              "evNet": 1.75,
               "p25": 0,
-              "median": 0.45,
+              "median": 0.48,
               "p75": 1.71,
-              "pRecoup": 0.01,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.45,
+              "evNet": 1.44,
               "p25": 0,
               "median": 0.42,
-              "p75": 1.44,
-              "pRecoup": 0.01,
+              "p75": 1.37,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
@@ -2001,7 +2001,7 @@
             "discount": 100
           },
           "nameFR": "Heatran",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Darkness-Ablaze/Heatran-DAA25",
+          "url": null,
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -2218,15 +2218,15 @@
         "scanned": 38
       },
       "opening": {
-        "boosterPrice": 23,
+        "boosterPrice": 29.99,
         "netLo": 1.14,
         "netHi": 1.86,
-        "ratioLo": 0.05,
-        "ratioHi": 0.08,
+        "ratioLo": 0.04,
+        "ratioHi": 0.06,
         "looseLo": 0.38,
         "looseHi": 0.61,
-        "recoupLo": 0.01,
-        "recoupHi": 0.01,
+        "recoupLo": 0,
+        "recoupHi": 0,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -2297,8 +2297,8 @@
           "buyPrice": 182.07,
           "oneInLo": 480,
           "oneInHi": 800,
-          "expectedCostLo": 11040,
-          "expectedCostHi": 18400,
+          "expectedCostLo": 14395,
+          "expectedCostHi": 23992,
           "perDisplay": 0.06,
           "buyPriceFR": 30,
           "nameFR": "Pikachu VMAX"
@@ -2310,29 +2310,29 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.52,
+              "evNet": 1.5,
               "p25": 0,
               "median": 0.39,
               "p75": 1.22,
-              "pRecoup": 0.01,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.56,
+              "evNet": 1.53,
               "p25": 0,
               "median": 0.39,
               "p75": 1.22,
-              "pRecoup": 0.01,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.2,
+              "evNet": 1.15,
               "p25": 0,
               "median": 0.36,
               "p75": 1.1,
-              "pRecoup": 0.01,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
@@ -2995,7 +2995,7 @@
             "price": 10,
             "priceUrl": "https://www.ebay.fr/itm/317725346766?_skw=Pikachu+VMAX+188%2F185&hash=item49f9e80bce:g:LX0AAeSw3NlpWAZu",
             "floor10": 30,
-            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1TyRvmeqxDiOGh1WcXKW%2F5DtOKS1eSx1y77ZoPshv%2BlVY178%2BTFat5OBE7mFcaXwrBNIQ0dxSgkJTUdWpAJp8o8a%2FfIMxXM8Ysyx4ssROD8beObQtkzcFGIUsF9VyoHfg3%2FdB6rDhqRIPJuy2V1GN5Gd%2F5QkE4Cdgp8CKRBXpRH%2B2w%3D%3D",
+            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy",
             "median": 299,
             "offers": 17,
             "sellers": 17,
@@ -3396,11 +3396,11 @@
         "scanned": 26
       },
       "opening": {
-        "boosterPrice": 25,
+        "boosterPrice": 69.99,
         "netLo": 1.75,
         "netHi": 3.04,
-        "ratioLo": 0.07,
-        "ratioHi": 0.12,
+        "ratioLo": 0.02,
+        "ratioHi": 0.04,
         "looseLo": 0.24,
         "looseHi": 0.39,
         "recoupLo": 0,
@@ -3475,8 +3475,8 @@
           "buyPrice": 600.79,
           "oneInLo": 433,
           "oneInHi": 867,
-          "expectedCostLo": 10833,
-          "expectedCostHi": 21667,
+          "expectedCostLo": 30329,
+          "expectedCostHi": 60658,
           "perDisplay": 0.06,
           "buyPriceFR": 119.9,
           "nameFR": "Dracaufeu GX"
@@ -3488,34 +3488,34 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.51,
+              "evNet": 2.4,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
               "pRecoup": 0,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.44,
+              "evNet": 2.56,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
               "pRecoup": 0,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.79,
+              "evNet": 1.86,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
               "pRecoup": 0,
-              "pLoseHalf": 0.98,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.3,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -4537,7 +4537,7 @@
           "rarity": "Rare Rainbow",
           "price": 40.26,
           "change30": 7.5,
-          "url": null
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Umbreon-GX-V3-SUM154"
         },
         {
           "priceFR": 18,
@@ -4568,7 +4568,7 @@
         "price": 17.95,
         "priceUrl": "https://www.ebay.fr/itm/306768696074?_skw=pokemon+booster+Soleil+%26+Lune&hash=item476cd6d30a:g:Bh4AAeSwSdFpj4hA",
         "floor10": 20,
-        "floor10Url": "https://www.ebay.fr/itm/407121208473?_skw=pokemon+booster+Soleil+%26+Lune&hash=item5eca50a499:g:wRAAAeSwlYhqcrtm",
+        "floor10Url": "https://www.ebay.fr/itm/168482350771?_skw=pokemon+booster+Soleil+%26+Lune&hash=item273a54a6b3:g:gvQAAeSwDDxqOWXl",
         "median": 99.99,
         "offers": 82,
         "sellers": 31,
@@ -4576,15 +4576,15 @@
         "scanned": 187
       },
       "opening": {
-        "boosterPrice": 20,
+        "boosterPrice": 99.99,
         "netLo": 1.27,
         "netHi": 2.07,
-        "ratioLo": 0.06,
-        "ratioHi": 0.1,
+        "ratioLo": 0.01,
+        "ratioHi": 0.02,
         "looseLo": 0.26,
         "looseHi": 0.42,
-        "recoupLo": 0.01,
-        "recoupHi": 0.02,
+        "recoupLo": 0,
+        "recoupHi": 0,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -4655,8 +4655,8 @@
           "buyPrice": 40.26,
           "oneInLo": 267,
           "oneInHi": 533,
-          "expectedCostLo": 5333,
-          "expectedCostHi": 10667,
+          "expectedCostLo": 26664,
+          "expectedCostHi": 53328,
           "perDisplay": 0.1,
           "buyPriceFR": 39.99,
           "nameFR": "Noctali GX"
@@ -4668,34 +4668,34 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.66,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.74,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 1.69,
+              "evNet": 1.73,
               "p25": 0,
               "median": 0,
               "p75": 1.08,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.96,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 1.64,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.74,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "trustedLoose": {
               "evNet": 1.29,
               "p25": 0,
               "median": 0,
-              "p75": 0.66,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
+              "p75": 0.67,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.34,
+              "evNet": 0.33,
               "p25": 0,
               "median": 0,
               "p75": 0.4,
@@ -5560,9 +5560,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Double-Colorless-Energy-V3-SUM136",
           "marketFR": {
             "price": 1.9,
-            "priceUrl": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
+            "priceUrl": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
             "floor10": 1.9,
-            "floor10Url": "https://www.ebay.fr/itm/267737712515?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e56694783:g:-hIAAeSw28hqKq6B",
+            "floor10Url": "https://www.ebay.fr/itm/267737712522?_skw=Double+%C3%89nergie+Incolore+136%2F149&hash=item3e5669478a:g:5KMAAeSwDVFqKq66",
             "median": 1.9,
             "offers": 2,
             "sellers": 1,
@@ -5765,14 +5765,14 @@
         "offers": 10,
         "sellers": 7,
         "matched": 10,
-        "scanned": 773
+        "scanned": 772
       },
       "opening": {
-        "boosterPrice": 149.9,
+        "boosterPrice": 219.99,
         "netLo": 8.77,
         "netHi": 14.18,
-        "ratioLo": 0.06,
-        "ratioHi": 0.09,
+        "ratioLo": 0.04,
+        "ratioHi": 0.06,
         "looseLo": 6.47,
         "looseHi": 10.32,
         "recoupLo": 0,
@@ -5847,8 +5847,8 @@
           "buyPrice": 166.14,
           "oneInLo": 33,
           "oneInHi": 52,
-          "expectedCostLo": 4872,
-          "expectedCostHi": 7795,
+          "expectedCostLo": 7150,
+          "expectedCostHi": 11439,
           "perDisplay": 0.6,
           "buyPriceFR": 80,
           "nameFR": "Dracaufeu"
@@ -5860,39 +5860,39 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.36,
+              "evNet": 11.35,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 11.65,
+              "evNet": 11.2,
               "p25": 0,
               "median": 0.36,
-              "p75": 5.32,
+              "p75": 5.16,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 10.49,
+              "evNet": 10.51,
               "p25": 0,
               "median": 0.35,
               "p75": 4.32,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.43,
+              "evNet": 8.27,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
               "pRecoup": 0,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             }
           }
@@ -6915,7 +6915,7 @@
       "opening": {
         "mode": "box",
         "packsPerBox": 10,
-        "boosterPrice": 30.4,
+        "boosterPrice": 15,
         "confidence": "correcte",
         "note": "Shiny Star V — les shinies « S » sortent par 2-3 par boîte, la SSR environ une boîte sur deux.",
         "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
@@ -8723,11 +8723,11 @@
         "scanned": 17
       },
       "opening": {
-        "boosterPrice": 49.99,
+        "boosterPrice": 119.9,
         "netLo": 2.2,
         "netHi": 3.54,
-        "ratioLo": 0.04,
-        "ratioHi": 0.07,
+        "ratioLo": 0.02,
+        "ratioHi": 0.03,
         "looseLo": 0.28,
         "looseHi": 0.43,
         "recoupLo": 0,
@@ -8802,8 +8802,8 @@
           "buyPrice": 39.57,
           "oneInLo": 43,
           "oneInHi": 75,
-          "expectedCostLo": 2142,
-          "expectedCostHi": 3749,
+          "expectedCostLo": 5139,
+          "expectedCostHi": 8993,
           "perDisplay": 0.49,
           "buyPriceFR": 45,
           "nameFR": "Jessie et James"
@@ -8815,34 +8815,34 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.86,
+              "evNet": 2.91,
               "p25": 0,
               "median": 0,
-              "p75": 1.15,
+              "p75": 1.23,
               "pRecoup": 0,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.89,
+              "evNet": 2.9,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
               "pRecoup": 0,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 2.18,
+              "evNet": 2.05,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
               "pRecoup": 0,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 1,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.36,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -9603,7 +9603,7 @@
             "price": 3.5,
             "priceUrl": "https://www.ebay.fr/itm/196430230760?_skw=Scarabrute-GX+6%2F68&hash=item2dbc2774e8:g:veQAAOSwU2VlhuVr",
             "floor10": 4,
-            "floor10Url": "https://www.ebay.fr/itm/800286843509?_skw=Scarabrute-GX+6%2F68&hash=itemba54d02275:g:dcoAAeSwN9RqSPQA",
+            "floor10Url": "https://www.ebay.fr/itm/196915783286?_skw=Scarabrute-GX+6%2F68&hash=item2dd9186676:g:TaEAAOSw77NnbyVM",
             "median": 5.9,
             "offers": 13,
             "sellers": 12,
@@ -9848,11 +9848,11 @@
         "scanned": 54
       },
       "opening": {
-        "boosterPrice": 40,
+        "boosterPrice": 109.99,
         "netLo": 4.7,
         "netHi": 7.72,
-        "ratioLo": 0.12,
-        "ratioHi": 0.19,
+        "ratioLo": 0.04,
+        "ratioHi": 0.07,
         "looseLo": 0.24,
         "looseHi": 0.4,
         "recoupLo": 0.01,
@@ -9927,8 +9927,8 @@
           "buyPrice": 1579.48,
           "oneInLo": 880,
           "oneInHi": 1467,
-          "expectedCostLo": 35200,
-          "expectedCostHi": 58667,
+          "expectedCostLo": 96791,
+          "expectedCostHi": 161319,
           "perDisplay": 0.03,
           "buyPriceFR": 39.99,
           "nameFR": "Noctali VMAX"
@@ -9940,34 +9940,34 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.23,
+              "evNet": 6,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.18,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 6.1,
               "p25": 0,
               "median": 0,
               "p75": 1.17,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
-              "pDouble": 0.02
-            },
-            "freshBox": {
-              "evNet": 5.82,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.16,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
-              "pDouble": 0.02
+              "pLoseHalf": 0.98,
+              "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 4.78,
+              "evNet": 4.07,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.97,
-              "pDouble": 0.01
+              "pLoseHalf": 0.99,
+              "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.32,
               "p25": 0,
               "median": 0,
               "p75": 0.38,
@@ -11023,18 +11023,18 @@
         "offers": 29,
         "sellers": 18,
         "matched": 29,
-        "scanned": 56
+        "scanned": 55
       },
       "opening": {
-        "boosterPrice": 11.37,
+        "boosterPrice": 19.9,
         "netLo": 1.47,
         "netHi": 2.39,
-        "ratioLo": 0.13,
-        "ratioHi": 0.21,
+        "ratioLo": 0.07,
+        "ratioHi": 0.12,
         "looseLo": 0.26,
         "looseHi": 0.42,
-        "recoupLo": 0.01,
-        "recoupHi": 0.02,
+        "recoupLo": 0,
+        "recoupHi": 0,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -11105,8 +11105,8 @@
           "buyPrice": 387.8,
           "oneInLo": 325,
           "oneInHi": 520,
-          "expectedCostLo": 3695,
-          "expectedCostHi": 5912,
+          "expectedCostLo": 6467,
+          "expectedCostHi": 10348,
           "perDisplay": 0.09,
           "buyPriceFR": 350,
           "nameFR": "Lugia V"
@@ -11118,39 +11118,39 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.93,
+              "evNet": 1.91,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.87,
+              "evNet": 2.11,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.51,
+              "evNet": 1.34,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.96,
+              "pRecoup": 0,
+              "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.34,
               "p25": 0,
               "median": 0,
               "p75": 0.46,
               "pRecoup": 0,
-              "pLoseHalf": 0.99,
+              "pLoseHalf": 1,
               "pDouble": 0
             }
           }
@@ -12230,11 +12230,11 @@
         "scanned": 31
       },
       "opening": {
-        "boosterPrice": 21.76,
+        "boosterPrice": 50,
         "netLo": 0.38,
         "netHi": 0.63,
-        "ratioLo": 0.02,
-        "ratioHi": 0.03,
+        "ratioLo": 0.01,
+        "ratioHi": 0.01,
         "looseLo": 0.12,
         "looseHi": 0.19,
         "recoupLo": 0,
@@ -12309,8 +12309,8 @@
           "buyPrice": 10.33,
           "oneInLo": 113,
           "oneInHi": 180,
-          "expectedCostLo": 2448,
-          "expectedCostHi": 3917,
+          "expectedCostLo": 5625,
+          "expectedCostHi": 9000,
           "perDisplay": 0.23,
           "buyPriceFR": null,
           "nameFR": "Carolina"
@@ -12322,7 +12322,7 @@
           "jackpotNet": 8.99,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 0.49,
+              "evNet": 0.52,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -12331,7 +12331,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 0.51,
+              "evNet": 0.5,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -12340,7 +12340,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 0.41,
+              "evNet": 0.4,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
@@ -13381,18 +13381,18 @@
         "offers": 62,
         "sellers": 27,
         "matched": 62,
-        "scanned": 134
+        "scanned": 135
       },
       "opening": {
-        "boosterPrice": 14,
+        "boosterPrice": 18,
         "netLo": 1.55,
         "netHi": 2.56,
-        "ratioLo": 0.11,
-        "ratioHi": 0.18,
+        "ratioLo": 0.09,
+        "ratioHi": 0.14,
         "looseLo": 0.25,
         "looseHi": 0.41,
         "recoupLo": 0.01,
-        "recoupHi": 0.02,
+        "recoupHi": 0.01,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -13463,8 +13463,8 @@
           "buyPrice": 254.06,
           "oneInLo": 263,
           "oneInHi": 420,
-          "expectedCostLo": 3675,
-          "expectedCostHi": 5880,
+          "expectedCostLo": 4725,
+          "expectedCostHi": 7560,
           "perDisplay": 0.11,
           "buyPriceFR": 189.4,
           "nameFR": "Dracaufeu V"
@@ -13476,37 +13476,37 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.95,
+              "evNet": 2.06,
               "p25": 0,
               "median": 0,
-              "p75": 1.03,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
-              "pDouble": 0.01
-            },
-            "freshBox": {
-              "evNet": 1.99,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.06,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
-              "pDouble": 0.01
-            },
-            "trustedLoose": {
-              "evNet": 1.63,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.73,
+              "p75": 1.1,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
-            "unknownLoose": {
-              "evNet": 0.31,
+            "freshBox": {
+              "evNet": 2.04,
               "p25": 0,
               "median": 0,
-              "p75": 0,
+              "p75": 1.11,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.96,
+              "pDouble": 0.01
+            },
+            "trustedLoose": {
+              "evNet": 1.54,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.73,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0.01
+            },
+            "unknownLoose": {
+              "evNet": 0.34,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.41,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -14162,7 +14162,7 @@
             "discount": 100
           },
           "nameFR": "Krabboss V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Kingler-V-BRS028",
+          "url": null,
           "marketFR": {
             "price": 5,
             "priceUrl": "https://www.ebay.fr/itm/175748706426?_skw=Krabboss+V+28%2F172&hash=item28eb70707a:g:uCkAAOSwPoRkdDj2",
@@ -14595,11 +14595,11 @@
         "scanned": 16
       },
       "opening": {
-        "boosterPrice": 25.99,
+        "boosterPrice": 30,
         "netLo": 1.57,
         "netHi": 2.63,
-        "ratioLo": 0.06,
-        "ratioHi": 0.1,
+        "ratioLo": 0.05,
+        "ratioHi": 0.09,
         "looseLo": 0.75,
         "looseHi": 1.16,
         "recoupLo": 0.01,
@@ -14674,8 +14674,8 @@
           "buyPrice": 37.74,
           "oneInLo": 50,
           "oneInHi": 100,
-          "expectedCostLo": 1300,
-          "expectedCostHi": 2599,
+          "expectedCostLo": 1500,
+          "expectedCostHi": 3000,
           "perDisplay": 0.42,
           "buyPriceFR": 6.9,
           "nameFR": "Pikachu"
@@ -14687,21 +14687,21 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.08,
+              "evNet": 2.17,
               "p25": 0,
-              "median": 0.4,
+              "median": 0.41,
               "p75": 1.49,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.1,
+              "evNet": 2.07,
               "p25": 0,
-              "median": 0.4,
+              "median": 0.41,
               "p75": 1.49,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.94,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "trustedLoose": {
@@ -14710,16 +14710,16 @@
               "median": 0.37,
               "p75": 1.2,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.93,
+              "evNet": 0.96,
               "p25": 0,
               "median": 0,
               "p75": 0.63,
               "pRecoup": 0,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 1,
               "pDouble": 0
             }
           }
@@ -15417,7 +15417,7 @@
             "discount": 100
           },
           "nameFR": "Dracaufeu VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Charizard-VSTAR-CRZ019",
+          "url": null,
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -15802,18 +15802,18 @@
         "offers": 27,
         "sellers": 17,
         "matched": 27,
-        "scanned": 42
+        "scanned": 43
       },
       "opening": {
-        "boosterPrice": 16,
+        "boosterPrice": 35,
         "netLo": 1.4,
         "netHi": 2.27,
-        "ratioLo": 0.09,
-        "ratioHi": 0.14,
+        "ratioLo": 0.04,
+        "ratioHi": 0.06,
         "looseLo": 0.17,
         "looseHi": 0.29,
-        "recoupLo": 0.02,
-        "recoupHi": 0.03,
+        "recoupLo": 0.01,
+        "recoupHi": 0.01,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -15884,8 +15884,8 @@
           "buyPrice": 99.61,
           "oneInLo": 75,
           "oneInHi": 120,
-          "expectedCostLo": 1200,
-          "expectedCostHi": 1920,
+          "expectedCostLo": 2625,
+          "expectedCostHi": 4200,
           "perDisplay": 0.32,
           "buyPriceFR": 175,
           "nameFR": "Celebi V"
@@ -15897,30 +15897,30 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.76,
+              "evNet": 1.77,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.8,
+              "evNet": 1.85,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.47,
+              "evNet": 1.38,
               "p25": 0,
               "median": 0,
-              "p75": 0.64,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.97,
+              "p75": 0.62,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.99,
               "pDouble": 0.01
             },
             "unknownLoose": {
@@ -17590,15 +17590,15 @@
         "scanned": 31
       },
       "opening": {
-        "boosterPrice": 13,
+        "boosterPrice": 45,
         "netLo": 5.08,
         "netHi": 5.74,
-        "ratioLo": 0.39,
-        "ratioHi": 0.44,
+        "ratioLo": 0.11,
+        "ratioHi": 0.13,
         "looseLo": 0.34,
         "looseHi": 0.38,
-        "recoupLo": 0.1,
-        "recoupHi": 0.11,
+        "recoupLo": 0.02,
+        "recoupHi": 0.02,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
         "topPulls": [
@@ -17669,8 +17669,8 @@
           "buyPrice": 235.71,
           "oneInLo": 212,
           "oneInHi": 241,
-          "expectedCostLo": 2758,
-          "expectedCostHi": 3138,
+          "expectedCostLo": 9545,
+          "expectedCostHi": 10862,
           "perDisplay": 0.15,
           "buyPriceFR": 400,
           "nameFR": "Dracaufeu-ex"
@@ -17682,40 +17682,40 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 5.53,
+              "evNet": 5.35,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
-              "pRecoup": 0.11,
-              "pLoseHalf": 0.82,
-              "pDouble": 0.07
+              "p75": 1.31,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.93,
+              "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 5.45,
+              "evNet": 5.36,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
-              "pRecoup": 0.11,
-              "pLoseHalf": 0.82,
-              "pDouble": 0.07
+              "p75": 1.31,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.93,
+              "pDouble": 0.01
             },
             "trustedLoose": {
               "evNet": 5.43,
               "p25": 0,
               "median": 0,
               "p75": 1.45,
-              "pRecoup": 0.11,
-              "pLoseHalf": 0.82,
-              "pDouble": 0.06
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.93,
+              "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 5.46,
+              "evNet": 5.51,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
-              "pRecoup": 0.11,
-              "pLoseHalf": 0.82,
-              "pDouble": 0.07
+              "p75": 1.45,
+              "pRecoup": 0.03,
+              "pLoseHalf": 0.93,
+              "pDouble": 0.01
             }
           }
         },
@@ -19276,14 +19276,14 @@
         "scanned": 99
       },
       "opening": {
-        "boosterPrice": 13,
+        "boosterPrice": 23.54,
         "netLo": 1.77,
         "netHi": 2.87,
-        "ratioLo": 0.14,
-        "ratioHi": 0.22,
+        "ratioLo": 0.08,
+        "ratioHi": 0.12,
         "looseLo": 0.16,
         "looseHi": 0.26,
-        "recoupLo": 0.01,
+        "recoupLo": 0,
         "recoupHi": 0.01,
         "recoupLooseLo": 0,
         "recoupLooseHi": 0,
@@ -19355,8 +19355,8 @@
           "buyPrice": 566.41,
           "oneInLo": 313,
           "oneInHi": 500,
-          "expectedCostLo": 4063,
-          "expectedCostHi": 6500,
+          "expectedCostLo": 7356,
+          "expectedCostHi": 11770,
           "perDisplay": 0.09,
           "buyPriceFR": 500,
           "nameFR": "Giratina V"
@@ -19368,29 +19368,29 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.45,
+              "evNet": 2.26,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
+              "pLoseHalf": 0.99,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.27,
+              "evNet": 2.55,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
+              "pLoseHalf": 0.99,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.6,
+              "evNet": 1.61,
               "p25": 0,
               "median": 0,
-              "p75": 0.6,
-              "pRecoup": 0.01,
+              "p75": 0.65,
+              "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
@@ -19398,7 +19398,7 @@
               "evNet": 0.21,
               "p25": 0,
               "median": 0,
-              "p75": 0.46,
+              "p75": 0.48,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -20487,11 +20487,11 @@
         "scanned": 15
       },
       "opening": {
-        "boosterPrice": 50,
+        "boosterPrice": 74.99,
         "netLo": 3.12,
         "netHi": 5.04,
-        "ratioLo": 0.06,
-        "ratioHi": 0.1,
+        "ratioLo": 0.04,
+        "ratioHi": 0.07,
         "looseLo": 0.15,
         "looseHi": 0.22,
         "recoupLo": 0.01,
@@ -20566,8 +20566,8 @@
           "buyPrice": 506.96,
           "oneInLo": 200,
           "oneInHi": 320,
-          "expectedCostLo": 10000,
-          "expectedCostHi": 16000,
+          "expectedCostLo": 14998,
+          "expectedCostHi": 23997,
           "perDisplay": 0.14,
           "buyPriceFR": null,
           "nameFR": "Mew-ex"
@@ -20579,7 +20579,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.24,
+              "evNet": 4.32,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20588,7 +20588,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 4.16,
+              "evNet": 4.26,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20597,7 +20597,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 3.93,
+              "evNet": 4.09,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20606,7 +20606,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 4.33,
+              "evNet": 4.44,
               "p25": 0,
               "median": 0,
               "p75": 0.93,

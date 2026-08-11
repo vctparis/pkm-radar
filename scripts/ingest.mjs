@@ -246,7 +246,7 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
         opening = {
           mode: "box",
           packsPerBox: structure.packsPerBox,
-          boosterPrice: live?.booster?.price ?? boosterFR?.floor10 ?? null,
+          boosterPrice: boosterFR?.median ?? boosterFR?.floor10 ?? live?.booster?.price ?? null,
           confidence: structure.confidence,
           note: structure.note,
           sample: structure.sample ?? null,
@@ -576,7 +576,9 @@ async function main() {
             : "sm";
       const era = pullRates.eras[eraKey];
       const override = pullRates.setOverrides?.[set.ptcg] ?? {};
-      const referencePrice = boosterFR?.floor10 ?? live?.booster?.price ?? null;
+      // Référence unique du site : la MÉDIANE des annonces FR — ce qu'on paie
+      // réellement. Le plancher p10 reste l'outil du chasseur, en secondaire.
+      const referencePrice = boosterFR?.median ?? boosterFR?.floor10 ?? live?.booster?.price ?? null;
       // Les taux d'une ère sont un défaut, pas une loi : un set peut
       // surcharger classe par classe (boosters atypiques, slots propres).
       const eraClasses = { ...era?.classes, ...(override.classes ?? {}) };

@@ -127,7 +127,10 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
       <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70 sm:p-8">
         <p className="m-0 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">À l&apos;ouverture</p>
         <div className="mt-4 grid gap-2">
-          <Statement>Un booster coûte {eur.format(opening.boosterPrice)}.</Statement>
+          <Statement>
+            Un booster coûte {eur.format(opening.boosterPrice)}
+            <span className="text-[0.8rem] text-mist-500"> (médiane des annonces FR)</span>.
+          </Statement>
           <Statement>
             Ce qu&apos;il contient vaut {eur.format(lo)} à {eur.format(hi)} une fois revendu.
           </Statement>
