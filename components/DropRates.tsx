@@ -61,7 +61,9 @@ export default function DropRates({ data }: { data: RadarData }) {
 
   if (!active) return null;
 
-  const boosterPrice = active.boosterFR?.floor10 ?? active.live?.booster?.price ?? null;
+  // Prix médian du booster : plus représentatif de ce qu'on paie réellement
+  // que le 10e centile, qui reste l'outil du chasseur de plancher.
+  const boosterPrice = active.boosterFR?.median ?? active.boosterFR?.floor10 ?? active.live?.booster?.price ?? null;
   const opening = active.opening && active.opening.mode !== "box" ? active.opening : null;
   const box = active.opening && active.opening.mode === "box" ? active.opening : null;
   const netMid = opening ? (opening.netLo + opening.netHi) / 2 : null;
@@ -127,7 +129,7 @@ export default function DropRates({ data }: { data: RadarData }) {
             avant les chiffres. */}
         <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4 rounded-2xl bg-ink-850 px-5 py-4 ring-1 ring-ink-700/70">
           <div>
-            <p className="m-0 text-[0.7rem] uppercase tracking-wider text-mist-500">Booster</p>
+            <p className="m-0 text-[0.7rem] uppercase tracking-wider text-mist-500">Booster · médiane</p>
             <p className="tabular m-0 mt-0.5 text-[1.35rem] font-semibold leading-none text-mist-050">
               {boosterPrice != null ? eur.format(boosterPrice) : "—"}
             </p>
@@ -191,7 +193,7 @@ export default function DropRates({ data }: { data: RadarData }) {
               <h3 className="display m-0 text-[1.1rem] text-mist-050">Ces taux de drop se traduisent en euros</h3>
               <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
                 Taux universels × prix observés : médiane Cardmarket de chaque classe
-                {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (p10 eBay.fr)` : ""}.
+                {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (médiane eBay.fr)` : ""}.
               </p>
 
               {/* D'où vient la valeur d'un booster : chaque classe, sa part. */}
