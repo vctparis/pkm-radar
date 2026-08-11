@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T13:52:25.954Z",
+  "generatedAt": "2026-08-11T14:41:06.146Z",
   "sets": [
     {
       "id": "s151",
@@ -133,7 +133,7 @@
         "offers": 15,
         "sellers": 12,
         "matched": 15,
-        "scanned": 32
+        "scanned": 31
       },
       "opening": {
         "boosterPrice": 13,
@@ -226,7 +226,7 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.44,
+              "evNet": 6.03,
               "p25": 0,
               "median": 0,
               "p75": 2.64,
@@ -235,20 +235,20 @@
               "pDouble": 0.07
             },
             "freshBox": {
-              "evNet": 6.17,
+              "evNet": 6.24,
               "p25": 0,
               "median": 0,
-              "p75": 2.64,
+              "p75": 2.86,
               "pRecoup": 0.12,
               "pLoseHalf": 0.79,
               "pDouble": 0.07
             },
             "trustedLoose": {
-              "evNet": 4.53,
+              "evNet": 4.57,
               "p25": 0,
               "median": 0,
               "p75": 1.9,
-              "pRecoup": 0.09,
+              "pRecoup": 0.08,
               "pLoseHalf": 0.84,
               "pDouble": 0.05
             },
@@ -337,6 +337,9 @@
         ],
         "grossPerBooster": 6.69,
         "confidence": "solide",
+        "eraLabel": "Écarlate et Violet",
+        "sample": "2 000 à 5 000+ boosters ouverts par set",
+        "sampleSource": "études TCGplayer Infinite",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/sv/sv03.5/logo.webp",
@@ -1278,7 +1281,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.01,
+              "evNet": 3.95,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1287,7 +1290,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 3.96,
+              "evNet": 3.99,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -1296,21 +1299,21 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.88,
-              "p25": 0,
-              "median": 0,
-              "p75": 0,
-              "pRecoup": 0.05,
-              "pLoseHalf": 0.95,
-              "pDouble": 0
-            },
-            "unknownLoose": {
-              "evNet": 3.94,
+              "evNet": 3.99,
               "p25": 0,
               "median": 0,
               "p75": 0,
               "pRecoup": 0.06,
               "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 3.86,
+              "p25": 0,
+              "median": 0,
+              "p75": 0,
+              "pRecoup": 0.05,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             }
           }
@@ -1356,6 +1359,9 @@
         ],
         "grossPerBooster": 1.06,
         "confidence": "grossière",
+        "eraLabel": "Soleil & Lune",
+        "sample": "quelques centaines de boosters",
+        "sampleSource": "ouvertures communautaires anciennes",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/cel25/logo.webp",
@@ -2160,16 +2166,16 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.72,
+              "evNet": 1.81,
               "p25": 0,
-              "median": 0.45,
+              "median": 0.48,
               "p75": 1.71,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.74,
+              "evNet": 1.75,
               "p25": 0,
               "median": 0.48,
               "p75": 1.71,
@@ -2178,10 +2184,10 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.46,
+              "evNet": 1.42,
               "p25": 0,
               "median": 0.42,
-              "p75": 1.44,
+              "p75": 1.37,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -2282,6 +2288,9 @@
         ],
         "grossPerBooster": 1.29,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh3/logo.webp",
@@ -3254,28 +3263,28 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.49,
+              "evNet": 1.6,
               "p25": 0,
               "median": 0.41,
-              "p75": 1.24,
+              "p75": 1.22,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.59,
+              "evNet": 1.48,
               "p25": 0,
-              "median": 0.41,
+              "median": 0.39,
               "p75": 1.27,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.27,
+              "evNet": 1.21,
               "p25": 0,
               "median": 0.36,
-              "p75": 1.11,
+              "p75": 1.02,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -3376,6 +3385,9 @@
         ],
         "grossPerBooster": 1.08,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh4/logo.webp",
@@ -3923,12 +3935,12 @@
             "discount": 100
           },
           "nameFR": "Pikachu VMAX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Vivid-Voltage/Pikachu-VMAX-V2-VIV188",
+          "url": null,
           "marketFR": {
             "price": 10,
             "priceUrl": "https://www.ebay.fr/itm/317725346766?_skw=Pikachu+VMAX+188%2F185&hash=item49f9e80bce:g:LX0AAeSw3NlpWAZu",
             "floor10": 30,
-            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1Tx8geu8SQ3jZ9VBDe97wdPdMnABEbUvY%2FIYPrOkw88MjF11yG%2BGeFbJxqiFLQh3v6rzV9jJ8h%2BL5oegFWT1bmSMyrZwQT4ViTydMiU922c3h8Fhuwqu4ad43ZKH1HwpIx553v%2BJ0PgUZkyMtP4WkqNv4xjO%2F5xsi48Hqbj7o0d2Rw%3D%3D",
+            "floor10Url": "https://www.ebay.fr/itm/377225980591?_skw=Pikachu+VMAX+188%2F185&hash=item57d46baaaf:g:IWsAAeSws0dqHXZy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYlo7juPFrXJiTUEShJsyZOcImoD2a4DkMeNRRl5fxw0aQNfTG1PluMiPWECT6CgMJwzCHzEobQzOxe2gyKGnRG3423viHJuvnp5Pkon9V0sIIBy47FE6SKYX%2FSMxZw1TybgpdDPMoEYDFyMIuh76A2CqqPuMA7rJO8qzYeXEPo0uB0AmhW6JYUQOqcFWVzKcG707b1HRFLzyKhWP6zKRL1KWsk8F11EqaDVFXZBluQgAU9oQ0%2FcVUeMscRT1g28WMziXiYhnmqEKUnTdD1G0N0UgW3XkrB%2B11IwZ%2BOIDvEFg%3D%3D",
             "median": 299,
             "offers": 17,
             "sellers": 17,
@@ -4275,7 +4287,7 @@
         "rarity": "Rare Rainbow",
         "price": 600.79,
         "change30": 139.8,
-        "url": null
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Burning-Shadows/Charizard-GX-V2-BUS150"
       },
       "boosterFR": {
         "price": 15,
@@ -4379,7 +4391,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.23,
+              "evNet": 2.16,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4388,7 +4400,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.58,
+              "evNet": 2.46,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -4397,7 +4409,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.76,
+              "evNet": 1.79,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -4406,7 +4418,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.3,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -4490,6 +4502,9 @@
         ],
         "grossPerBooster": 1.33,
         "confidence": "grossière",
+        "eraLabel": "Soleil & Lune",
+        "sample": "quelques centaines de boosters",
+        "sampleSource": "ouvertures communautaires anciennes",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/sm/sm3/logo.webp",
@@ -5507,16 +5522,16 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.64,
+              "evNet": 1.68,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 0.96,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.65,
+              "evNet": 1.64,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
@@ -5525,7 +5540,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.29,
+              "evNet": 1.22,
               "p25": 0,
               "median": 0,
               "p75": 0.66,
@@ -5618,6 +5633,9 @@
         ],
         "grossPerBooster": 1.54,
         "confidence": "grossière",
+        "eraLabel": "Soleil & Lune",
+        "sample": "quelques centaines de boosters",
+        "sampleSource": "ouvertures communautaires anciennes",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/sm/sm1/logo.webp",
@@ -6554,7 +6572,7 @@
         "offers": 11,
         "sellers": 7,
         "matched": 11,
-        "scanned": 772
+        "scanned": 773
       },
       "opening": {
         "boosterPrice": 149.9,
@@ -6647,16 +6665,16 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.35,
+              "evNet": 11.64,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
               "pRecoup": 0,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 11.51,
+              "evNet": 11.55,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -6665,16 +6683,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 10.48,
+              "evNet": 10.54,
               "p25": 0,
               "median": 0.35,
-              "p75": 4.32,
+              "p75": 4.29,
               "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.11,
+              "evNet": 8.22,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
@@ -6747,6 +6765,9 @@
         ],
         "grossPerBooster": 4.07,
         "confidence": "grossière",
+        "eraLabel": "XY",
+        "sample": "quelques centaines de boosters",
+        "sampleSource": "ouvertures communautaires anciennes",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/xy/xy12/logo.webp",
@@ -7659,6 +7680,8 @@
         "boosterPrice": 30.4,
         "confidence": "correcte",
         "note": "Shiny Star V — les shinies « S » sortent par 2-3 par boîte, la SSR environ une boîte sur deux.",
+        "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+        "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises",
         "slots": [
           {
             "key": "ssr",
@@ -8246,6 +8269,8 @@
         "boosterPrice": 15.11,
         "confidence": "correcte",
         "note": "VMAX Climax — les CHR tombent par 4-6 par boîte, les CSR par 1-2.",
+        "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+        "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises",
         "slots": [
           {
             "key": "chr",
@@ -8819,6 +8844,8 @@
         "boosterPrice": 19.27,
         "confidence": "grossière",
         "note": "Eevee Heroes — set principal (boîtes de 30), 2 à 3 SR+ par boîte ; les alt arts (dont Noctali VMAX) sont le chase absolu.",
+        "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+        "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises",
         "slots": [
           {
             "key": "sr",
@@ -9444,16 +9471,16 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.91,
+              "evNet": 2.88,
               "p25": 0,
               "median": 0,
-              "p75": 1.24,
+              "p75": 1.23,
               "pRecoup": 0,
               "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.85,
+              "evNet": 2.92,
               "p25": 0,
               "median": 0,
               "p75": 1.2,
@@ -9462,7 +9489,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 2.07,
+              "evNet": 2.06,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
@@ -9544,6 +9571,9 @@
         ],
         "grossPerBooster": 2.76,
         "confidence": "grossière",
+        "eraLabel": "Soleil & Lune",
+        "sample": "quelques centaines de boosters",
+        "sampleSource": "ouvertures communautaires anciennes",
         "partialNote": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation."
       },
       "logo": "https://assets.tcgdex.net/fr/sm/sm115/logo.webp",
@@ -10518,7 +10548,7 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.05,
+              "evNet": 6.65,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -10527,16 +10557,16 @@
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 5.74,
+              "evNet": 5.91,
               "p25": 0,
               "median": 0,
-              "p75": 1.17,
+              "p75": 1.18,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
-              "pDouble": 0.01
+              "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 4.23,
+              "evNet": 4.59,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -10548,7 +10578,7 @@
               "evNet": 0.32,
               "p25": 0,
               "median": 0,
-              "p75": 0.38,
+              "p75": 0.36,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -10640,6 +10670,9 @@
         ],
         "grossPerBooster": 2.71,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh7/logo.webp",
@@ -11643,7 +11676,7 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.02,
+              "evNet": 1.98,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -11652,16 +11685,16 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.89,
+              "evNet": 1.85,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
-              "pRecoup": 0.02,
+              "pRecoup": 0.01,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.38,
+              "evNet": 1.43,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -11670,10 +11703,10 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.34,
+              "evNet": 0.33,
               "p25": 0,
               "median": 0,
-              "p75": 0.5,
+              "p75": 0.46,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -11787,6 +11820,9 @@
         ],
         "grossPerBooster": 1.05,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh12/logo.webp",
@@ -12762,7 +12798,7 @@
           "jackpotNet": 8.99,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 0.5,
+              "evNet": 0.52,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -12780,7 +12816,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 0.39,
+              "evNet": 0.4,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
@@ -12873,6 +12909,9 @@
         ],
         "grossPerBooster": 0.64,
         "confidence": "grossière",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": "Le Coffre des Brillants (les shiny, dont le Dracaufeu VMAX chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh4.5/logo.webp",
@@ -13769,9 +13808,9 @@
         "floor10Url": "https://www.ebay.fr/itm/198141346245?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item2e222501c5:g:nzgAAeSw0tFpoWfC",
         "median": 18,
         "offers": 62,
-        "sellers": 27,
+        "sellers": 26,
         "matched": 62,
-        "scanned": 134
+        "scanned": 132
       },
       "opening": {
         "boosterPrice": 14,
@@ -13864,7 +13903,7 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.04,
+              "evNet": 2.11,
               "p25": 0,
               "median": 0,
               "p75": 1.11,
@@ -13873,7 +13912,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.18,
+              "evNet": 2,
               "p25": 0,
               "median": 0,
               "p75": 1.11,
@@ -13882,7 +13921,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.45,
+              "evNet": 1.53,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -13891,7 +13930,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.34,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -13997,6 +14036,9 @@
         ],
         "grossPerBooster": 1.11,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh9/logo.webp",
@@ -14368,7 +14410,7 @@
           "boosterFRp10": 14,
           "boosterFRmedian": 18,
           "boosterFRoffers": 62,
-          "boosterFRsellers": 27
+          "boosterFRsellers": 26
         }
       ],
       "psa": {
@@ -14586,15 +14628,15 @@
           "nameFR": "Dracaufeu V",
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Brilliant-Stars/Charizard-V-V2-BRS153",
           "marketFR": {
-            "price": 55.9,
-            "priceUrl": "https://www.ebay.fr/itm/287491873731?_skw=Dracaufeu+V+153%2F172&hash=item42efd9dbc3:g:fC8AAeSwGjJqapfw",
+            "price": 50,
+            "priceUrl": "https://www.ebay.fr/itm/227471627392?_skw=Dracaufeu+V+153%2F172&hash=item34f65d9480:g:b5QAAeSwCQJqezGM",
             "floor10": 59.99,
             "floor10Url": "https://www.ebay.fr/itm/336138971029?_skw=Dracaufeu+V+153%2F172&hash=item4e4371a795:g:Ee8AAeSwAuBoqBG3",
             "median": 100,
-            "offers": 19,
-            "sellers": 15,
-            "matched": 19,
-            "scanned": 19
+            "offers": 20,
+            "sellers": 16,
+            "matched": 20,
+            "scanned": 20
           }
         },
         {
@@ -14981,16 +15023,16 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.13,
+              "evNet": 2.11,
               "p25": 0,
               "median": 0.41,
-              "p75": 1.49,
-              "pRecoup": 0.02,
+              "p75": 1.51,
+              "pRecoup": 0.01,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.13,
+              "evNet": 2.1,
               "p25": 0,
               "median": 0.41,
               "p75": 1.49,
@@ -14999,19 +15041,19 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.71,
+              "evNet": 1.77,
               "p25": 0,
               "median": 0.37,
               "p75": 1.2,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.96,
+              "evNet": 0.98,
               "p25": 0,
               "median": 0,
-              "p75": 0.63,
+              "p75": 0.66,
               "pRecoup": 0,
               "pLoseHalf": 0.96,
               "pDouble": 0
@@ -15114,6 +15156,9 @@
         ],
         "grossPerBooster": 1.51,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh12.5/logo.webp",
@@ -16096,16 +16141,16 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.82,
+              "evNet": 1.77,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 0.73,
               "pRecoup": 0.02,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.4,
+              "evNet": 1.37,
               "p25": 0,
               "median": 0,
               "p75": 0.64,
@@ -16187,6 +16232,9 @@
         ],
         "grossPerBooster": 0.66,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh8/logo.webp",
@@ -17104,6 +17152,8 @@
         "boosterPrice": 8.29,
         "confidence": "correcte",
         "note": "151 japonais — les AR sortent par 3-4 par boîte, les SAR par 1-2. Les reverses Master Ball sont des variantes hors nomenclature de rareté : non modélisées ici, la valeur réelle d'une boîte est donc plus haute.",
+        "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+        "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises",
         "slots": [
           {
             "key": "ar",
@@ -17648,6 +17698,8 @@
         "boosterPrice": null,
         "confidence": "grossière",
         "note": "Tag All Stars — environ une SR+ garantie par boîte, les secrètes au-delà sont rares.",
+        "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+        "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises",
         "slots": [
           {
             "key": "sr",
@@ -18210,7 +18262,7 @@
         "offers": 56,
         "sellers": 28,
         "matched": 56,
-        "scanned": 98
+        "scanned": 97
       },
       "opening": {
         "boosterPrice": 13,
@@ -18303,30 +18355,30 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.33,
+              "evNet": 2.09,
               "p25": 0,
               "median": 0,
-              "p75": 0.78,
+              "p75": 0.77,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0.01
+              "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.3,
+              "evNet": 2.12,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0.01
+              "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.64,
+              "evNet": 1.51,
               "p25": 0,
               "median": 0,
               "p75": 0.65,
               "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
+              "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
@@ -18447,6 +18499,9 @@
         ],
         "grossPerBooster": 0.81,
         "confidence": "correcte",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
         "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute."
       },
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh11/logo.webp",
@@ -19429,7 +19484,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.35,
+              "evNet": 4.2,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -19438,7 +19493,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 3.81,
+              "evNet": 4.38,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -19447,13 +19502,13 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 2.61,
+              "evNet": 2.75,
               "p25": 0,
               "median": 0,
-              "p75": 0.6,
+              "p75": 0.58,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "unknownLoose": {
               "evNet": 0.18,
@@ -19562,6 +19617,9 @@
         ],
         "grossPerBooster": 1.56,
         "confidence": "correcte",
+        "eraLabel": "Écarlate et Violet",
+        "sample": "2 000 à 5 000+ boosters ouverts par set",
+        "sampleSource": "études TCGplayer Infinite",
         "partialNote": null
       },
       "logo": "https://assets.tcgdex.net/fr/sv/sv04.5/logo.webp",

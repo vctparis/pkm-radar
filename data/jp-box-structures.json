@@ -39,7 +39,9 @@
           2
         ]
       }
-    ]
+    ],
+    "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+    "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises"
   },
   "s8b": {
     "packsPerBox": 10,
@@ -79,7 +81,9 @@
           1
         ]
       }
-    ]
+    ],
+    "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+    "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises"
   },
   "sm12a": {
     "packsPerBox": 10,
@@ -109,7 +113,9 @@
           1
         ]
       }
-    ]
+    ],
+    "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+    "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises"
   },
   "sv2a": {
     "packsPerBox": 20,
@@ -150,7 +156,9 @@
           1
         ]
       }
-    ]
+    ],
+    "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+    "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises"
   },
   "s6a": {
     "packsPerBox": 30,
@@ -179,6 +187,8 @@
           1
         ]
       }
-    ]
+    ],
+    "sample": "dizaines d'ouvertures de boîtes documentées — distribution quasi déterministe",
+    "sampleSource": "PokéBeach et chaînes d'ouvertures japonaises"
   }
 }

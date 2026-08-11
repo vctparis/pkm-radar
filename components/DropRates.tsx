@@ -3,21 +3,48 @@
 import { useState } from "react";
 import type { RadarData, SetEntry } from "@/lib/types";
 
-// Page « Taux de drop » : la table de probabilités du moteur d'ouverture,
-// exposée telle quelle. Navigation à la PokeIndex — ères, puis vignettes de
-// sets — et pour chaque set : les taux par rareté (« n'importe laquelle » vs
-// « une carte précise »), puis leur traduction en euros.
+// Page « Taux de drop » — deux étages étanches : les probabilités (universelles,
+// indépendantes de la langue) puis leur traduction en euros (prix français).
+// La couleur suit le PALIER de rareté, identique d'un set à l'autre : l'œil
+// apprend une fois, lit partout. Le libellé porte toujours l'information —
+// la couleur est un renfort, jamais le seul canal.
 
 const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 const pctFmt = (rate: number) =>
   `${(rate * 100).toLocaleString("fr-FR", { maximumFractionDigits: rate < 0.02 ? 1 : 0 })} %`;
 
-// Regroupement d'ères pour la navigation — les sets japonais forment leur
-// propre famille quelle que soit leur ère d'origine.
+// Paliers de rareté → couleurs fixes (palette catégorielle validée, mode
+// sombre). Le mapping couvre toutes les ères : la chaîne de rareté est
+// normalisée vers un palier.
+function tierOf(rarity: string): { color: string; tier: number } {
+  const r = rarity.toLowerCase();
+  if (/(hyper|rainbow|secret)/.test(r)) return { color: "#d55181", tier: 6 };
+  if (/(special illustration|shiny ultra)/.test(r)) return { color: "#c98500", tier: 5 };
+  if (/(^ultra|rare ultra|illustration|shiny rare|radiant)/.test(r)) return { color: "#199e70", tier: 4 };
+  if (/(vmax|vstar|double|gx|ex\b|holo v$)/.test(r)) return { color: "#9085e9", tier: 3 };
+  if (/(holo)/.test(r)) return { color: "#3987e5", tier: 2 };
+  return { color: "#6b7488", tier: 1 };
+}
+
 function eraOf(set: SetEntry) {
   return set.jpOnly ? "Japonais" : set.era;
 }
 const ERA_ORDER = ["Écarlate et Violet", "Épée et Bouclier", "Soleil & Lune", "XY", "Japonais"];
+
+function Dot({ color }: { color: string }) {
+  return <span aria-hidden className="mr-2 inline-block h-2.5 w-2.5 rounded-[4px] align-[-1px]" style={{ background: color }} />;
+}
+
+// Barre de taux : pleine jusqu'au bas de la fourchette, translucide jusqu'au
+// haut — la bande EST l'incertitude, dessinée plutôt que racontée.
+function RateBar({ lo, hi, max, color }: { lo: number; hi: number; max: number; color: string }) {
+  return (
+    <span aria-hidden className="relative block h-2 w-full overflow-hidden rounded-full bg-ink-800">
+      <span className="absolute inset-y-0 left-0 rounded-full opacity-35" style={{ width: `${(hi / max) * 100}%`, background: color }} />
+      <span className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${(lo / max) * 100}%`, background: color }} />
+    </span>
+  );
+}
 
 export default function DropRates({ data }: { data: RadarData }) {
   const eras = ERA_ORDER.filter((era) => data.sets.some((set) => eraOf(set) === era));
@@ -39,6 +66,7 @@ export default function DropRates({ data }: { data: RadarData }) {
   const box = active.opening && active.opening.mode === "box" ? active.opening : null;
   const netMid = opening ? (opening.netLo + opening.netHi) / 2 : null;
   const lossPct = opening && boosterPrice && netMid != null ? Math.round((1 - netMid / boosterPrice) * 100) : null;
+  const maxRate = active.dropRates ? Math.max(...active.dropRates.classes.map((row) => row.rateHi)) : 1;
 
   return (
     <div>
@@ -96,53 +124,78 @@ export default function DropRates({ data }: { data: RadarData }) {
 
         {active.dropRates ? (
           <>
-            <p className="prose-measure m-0 mt-2 text-[0.86rem] leading-relaxed text-mist-300">
-              Ces taux sont <strong className="font-semibold text-mist-050">indépendants de la langue</strong> :
-              échantillonnés sur des ouvertures massives — surtout anglophones — ils valent pour vos boosters
-              français, car toutes les langues occidentales d&apos;un set partagent la même structure
-              d&apos;impression. Les prix n&apos;interviennent qu&apos;à l&apos;étape suivante.
+            {/* Provenance et taille d'échantillon — en tête, pas en note de bas de page. */}
+            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 rounded-xl bg-ink-850 px-4 py-2.5 text-[0.8rem] ring-1 ring-ink-700/70">
+              <span className="text-mist-300">
+                <strong className="font-semibold text-mist-050">Échantillon :</strong> {active.dropRates.sample ?? "—"}
+              </span>
+              <span className="text-mist-500">{active.dropRates.sampleSource}</span>
+              <span
+                className={`ml-auto rounded-md px-2 py-0.5 text-[0.72rem] font-semibold uppercase tracking-wide ${
+                  active.dropRates.confidence === "solide"
+                    ? "bg-[#199e70]/15 text-[color:var(--color-good)]"
+                    : active.dropRates.confidence === "correcte"
+                      ? "bg-accent/15 text-accent"
+                      : "bg-[#c98500]/15 text-[color:var(--color-warn)]"
+                }`}
+              >
+                {active.dropRates.confidence}
+              </span>
+            </div>
+            <p className="prose-measure m-0 mt-3 text-[0.84rem] leading-relaxed text-mist-500">
+              Taux <strong className="font-semibold text-mist-300">indépendants de la langue</strong>{" "}— la structure
+              d&apos;impression est identique pour toutes les langues occidentales : ils valent pour vos boosters
+              français. Les prix n&apos;interviennent qu&apos;à l&apos;étape 2.
             </p>
-            <div className="mt-5 overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
-              <table className="w-full min-w-[640px] border-collapse text-[0.88rem]">
+
+            {/* ---- Étage 1 : les taux, purs ---- */}
+            <div className="mt-4 overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
+              <table className="w-full min-w-[680px] border-collapse text-[0.86rem]">
                 <caption className="sr-only">Taux de drop par rareté pour {active.name}</caption>
                 <thead className="bg-ink-800 text-left">
                   <tr>
-                    <th scope="col" className="px-4 py-3 font-medium text-mist-100">Rareté</th>
-                    <th scope="col" className="px-4 py-3 text-right font-medium text-mist-100">
-                      Cartes
-                      <span className="mt-0.5 block text-[0.7rem] font-normal text-mist-500">dans ce set</span>
+                    <th scope="col" className="px-4 py-2 font-medium text-mist-100">Rareté</th>
+                    <th scope="col" className="w-[30%] px-4 py-2 font-medium text-mist-100">
+                      <span className="sr-only">Barre de probabilité</span>
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right font-medium text-mist-100">
+                    <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
                       N&apos;importe laquelle
-                      <span className="mt-0.5 block text-[0.7rem] font-normal text-mist-500">par booster</span>
+                      <span className="block text-[0.68rem] font-normal text-mist-500">par booster · fourchette</span>
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right font-medium text-mist-100">
-                      Une carte précise
-                      <span className="mt-0.5 block text-[0.7rem] font-normal text-mist-500">par booster</span>
+                    <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
+                      Une précise
+                      <span className="block text-[0.68rem] font-normal text-mist-500">parmi N cartes</span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   {active.dropRates.classes.map((row) => {
                     const rateMid = (row.rateLo + row.rateHi) / 2;
+                    const { color } = tierOf(row.rarity);
                     return (
-                      <tr key={row.rarity} className="border-t border-ink-700/70">
-                        <th scope="row" className="px-4 py-3 text-left font-medium text-mist-050">
+                      <tr key={row.rarity} className="border-t border-ink-700/60">
+                        <th scope="row" className="whitespace-nowrap px-4 py-1.5 text-left font-medium text-mist-050">
+                          <Dot color={color} />
                           {row.rarity}
                           {row.premium && (
-                            <span className="ml-2 rounded bg-ink-700 px-1.5 py-0.5 text-[0.68rem] font-normal uppercase tracking-wide text-[color:var(--color-warn)]">
+                            <span className="ml-2 rounded bg-ink-700 px-1.5 py-0.5 text-[0.66rem] font-normal uppercase tracking-wide text-[color:var(--color-warn)]">
                               chase
                             </span>
                           )}
                         </th>
-                        <td className="tabular px-4 py-3 text-right text-mist-300">{row.count}</td>
-                        <td className="tabular px-4 py-3 text-right text-mist-050">
+                        <td className="px-4 py-1.5">
+                          <RateBar lo={row.rateLo} hi={row.rateHi} max={maxRate} color={color} />
+                        </td>
+                        <td className="tabular whitespace-nowrap px-4 py-1.5 text-right text-mist-050">
                           1/{row.oneInAny} · {pctFmt(rateMid)}
-                          <span className="mt-0.5 block text-[0.7rem] text-mist-500">
-                            fourchette {pctFmt(row.rateLo)} – {pctFmt(row.rateHi)}
+                          <span className="ml-1.5 text-[0.72rem] text-mist-500">
+                            ({pctFmt(row.rateLo)}–{pctFmt(row.rateHi)})
                           </span>
                         </td>
-                        <td className="tabular px-4 py-3 text-right text-mist-300">1/{row.oneInSpecific}</td>
+                        <td className="tabular whitespace-nowrap px-4 py-1.5 text-right text-mist-300">
+                          1/{row.oneInSpecific}
+                          <span className="ml-1.5 text-[0.72rem] text-mist-500">· {row.count} cartes</span>
+                        </td>
                       </tr>
                     );
                   })}
@@ -150,27 +203,40 @@ export default function DropRates({ data }: { data: RadarData }) {
               </table>
             </div>
 
-            {/* ---- La traduction en euros ---- */}
+            {/* ---- Étage 2 : la traduction en euros ---- */}
             <section className="mt-6 rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
               <p className="m-0 text-[0.74rem] uppercase tracking-[0.14em] text-mist-500">Étape 2 — appliquer les prix</p>
               <h3 className="display m-0 mt-2 text-[1.1rem] text-mist-050">Ces taux de drop se traduisent en euros</h3>
               <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
-                Taux universels × prix observés : médiane Cardmarket de chaque classe, et booster français
-                {boosterPrice != null ? ` à ${eur.format(boosterPrice)} (p10 eBay.fr)` : ""}. Médiane × taux =
-                contribution par booster ; la valeur nette déduit les frais de revente et compte le bulk à zéro.
+                Taux universels × prix observés : médiane Cardmarket de chaque classe
+                {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (p10 eBay.fr)` : ""}.
               </p>
-              <ul className="m-0 mt-4 grid list-none gap-2 p-0">
-                {active.dropRates.classes.map((row) => (
-                  <li key={row.rarity} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 text-[0.88rem]">
-                    <span className="text-mist-300">{row.rarity}</span>
-                    <span className="tabular text-right text-mist-100">
-                      méd. {eur.format(row.median)} × 1/{row.oneInAny} ={" "}
-                      <strong className="text-mist-050">{eur.format(row.contribution)}</strong>
-                      <span className="text-mist-500"> / booster</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* D'où vient la valeur d'un booster : chaque classe, sa part. */}
+              <div className="mt-5">
+                <div className="flex h-4 w-full overflow-hidden rounded-full" role="img"
+                  aria-label={`Composition de la valeur brute d'un booster : ${active.dropRates.classes.map((r) => `${r.rarity} ${eur.format(r.contribution)}`).join(", ")}`}>
+                  {active.dropRates.classes.map((row) => (
+                    <span
+                      key={row.rarity}
+                      className="h-full border-r-2 border-ink-850 last:border-r-0"
+                      style={{ width: `${(row.contribution / active.dropRates!.grossPerBooster) * 100}%`, background: tierOf(row.rarity).color }}
+                    />
+                  ))}
+                </div>
+                <ul className="m-0 mt-3 grid list-none gap-1 p-0">
+                  {active.dropRates.classes.map((row) => (
+                    <li key={row.rarity} className="flex flex-wrap items-baseline justify-between gap-x-4 text-[0.86rem]">
+                      <span className="text-mist-300"><Dot color={tierOf(row.rarity).color} />{row.rarity}</span>
+                      <span className="tabular text-right text-mist-100">
+                        méd. {eur.format(row.median)} × 1/{row.oneInAny} ={" "}
+                        <strong className="text-mist-050">{eur.format(row.contribution)}</strong>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="mt-5 grid gap-3 border-t border-ink-700 pt-4 sm:grid-cols-3">
                 <div>
                   <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Valeur brute / booster</p>
@@ -181,7 +247,7 @@ export default function DropRates({ data }: { data: RadarData }) {
                 {opening && (
                   <div>
                     <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Nette une fois revendu</p>
-                    <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-mist-050">
+                    <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-accent">
                       {eur.format(opening.netLo)} – {eur.format(opening.netHi)}
                     </p>
                   </div>
@@ -204,57 +270,70 @@ export default function DropRates({ data }: { data: RadarData }) {
               </div>
             </section>
 
-            <p className="prose-measure m-0 mt-4 text-[0.78rem] leading-relaxed text-mist-500">
-              Estimations communautaires ({active.dropRates.confidence}) — fourchettes, pas des promesses.
-              {active.dropRates.partialNote ? ` ${active.dropRates.partialNote}` : ""}
-            </p>
+            {active.dropRates.partialNote && (
+              <p className="prose-measure m-0 mt-4 text-[0.78rem] leading-relaxed text-mist-500">{active.dropRates.partialNote}</p>
+            )}
           </>
         ) : box ? (
           <>
-            {/* Sets japonais : des garanties par boîte, pas des probabilités par booster. */}
-            <div className="mt-5 overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
-              <table className="w-full min-w-[560px] border-collapse text-[0.88rem]">
+            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 rounded-xl bg-ink-850 px-4 py-2.5 text-[0.8rem] ring-1 ring-ink-700/70">
+              <span className="text-mist-300">
+                <strong className="font-semibold text-mist-050">Échantillon :</strong> {box.sample ?? "—"}
+              </span>
+              <span className="text-mist-500">{box.sampleSource}</span>
+              <span className="ml-auto rounded-md bg-accent/15 px-2 py-0.5 text-[0.72rem] font-semibold uppercase tracking-wide text-accent">
+                {box.confidence}
+              </span>
+            </div>
+            <div className="mt-4 overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
+              <table className="w-full min-w-[560px] border-collapse text-[0.86rem]">
                 <caption className="sr-only">Garanties par boîte pour {active.name}</caption>
                 <thead className="bg-ink-800 text-left">
                   <tr>
-                    <th scope="col" className="px-4 py-3 font-medium text-mist-100">Garantie</th>
-                    <th scope="col" className="px-4 py-3 text-right font-medium text-mist-100">
+                    <th scope="col" className="px-4 py-2 font-medium text-mist-100">Garantie</th>
+                    <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
                       Par boîte
-                      <span className="mt-0.5 block text-[0.7rem] font-normal text-mist-500">de {box.packsPerBox} boosters</span>
+                      <span className="block text-[0.68rem] font-normal text-mist-500">de {box.packsPerBox} boosters</span>
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right font-medium text-mist-100">Pool</th>
-                    <th scope="col" className="px-4 py-3 text-right font-medium text-mist-100">
+                    <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">Pool</th>
+                    <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
                       Valeur nette moyenne
-                      <span className="mt-0.5 block text-[0.7rem] font-normal text-mist-500">du hit</span>
+                      <span className="block text-[0.68rem] font-normal text-mist-500">du hit</span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {box.slots.map((slot) => (
-                    <tr key={slot.key} className="border-t border-ink-700/70">
-                      <th scope="row" className="px-4 py-3 text-left font-medium text-mist-050">{slot.label}</th>
-                      <td className="tabular px-4 py-3 text-right text-mist-050">
+                  {box.slots.map((slot, index) => (
+                    <tr key={slot.key} className="border-t border-ink-700/60">
+                      <th scope="row" className="px-4 py-1.5 text-left font-medium text-mist-050">
+                        <Dot color={["#c98500", "#9085e9", "#d55181"][index % 3]} />
+                        {slot.label}
+                      </th>
+                      <td className="tabular px-4 py-1.5 text-right text-mist-050">
                         ×{slot.countLo === slot.countHi ? slot.countLo : `${slot.countLo}-${slot.countHi}`}
                       </td>
-                      <td className="tabular px-4 py-3 text-right text-mist-300">{slot.poolSize} cartes</td>
-                      <td className="tabular px-4 py-3 text-right text-mist-050">{eur.format(slot.meanNet)}</td>
+                      <td className="tabular px-4 py-1.5 text-right text-mist-300">{slot.poolSize} cartes</td>
+                      <td className="tabular px-4 py-1.5 text-right text-mist-050">{eur.format(slot.meanNet)}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <section className="mt-6 rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
-              <h3 className="display m-0 text-[1.1rem] text-mist-050">Ces garanties se traduisent en euros</h3>
-              <ul className="m-0 mt-4 grid list-none gap-2 p-0">
-                {box.slots.map((slot) => {
+              <p className="m-0 text-[0.74rem] uppercase tracking-[0.14em] text-mist-500">Étape 2 — appliquer les prix</p>
+              <h3 className="display m-0 mt-2 text-[1.1rem] text-mist-050">Ces garanties se traduisent en euros</h3>
+              <ul className="m-0 mt-4 grid list-none gap-1 p-0">
+                {box.slots.map((slot, index) => {
                   const mid = (slot.countLo + slot.countHi) / 2;
                   return (
-                    <li key={slot.key} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 text-[0.88rem]">
-                      <span className="text-mist-300">{slot.label}</span>
+                    <li key={slot.key} className="flex flex-wrap items-baseline justify-between gap-x-4 text-[0.86rem]">
+                      <span className="text-mist-300">
+                        <Dot color={["#c98500", "#9085e9", "#d55181"][index % 3]} />
+                        {slot.label}
+                      </span>
                       <span className="tabular text-right text-mist-100">
                         {eur.format(slot.meanNet)} × {mid.toLocaleString("fr-FR")} ={" "}
                         <strong className="text-mist-050">{eur.format(slot.meanNet * mid)}</strong>
-                        <span className="text-mist-500"> / boîte</span>
                       </span>
                     </li>
                   );
@@ -262,7 +341,7 @@ export default function DropRates({ data }: { data: RadarData }) {
               </ul>
               <div className="mt-5 border-t border-ink-700 pt-4">
                 <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Espérance nette par boîte</p>
-                <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-mist-050">
+                <p className="tabular m-0 mt-1 text-[1.5rem] font-semibold leading-none text-accent">
                   {eur.format(box.slots.reduce((sum, slot) => sum + slot.meanNet * ((slot.countLo + slot.countHi) / 2), 0))}
                   {box.boosterPrice != null && (
                     <span className="ml-2 text-[0.85rem] font-normal text-mist-500">
@@ -272,9 +351,7 @@ export default function DropRates({ data }: { data: RadarData }) {
                 </p>
               </div>
             </section>
-            <p className="prose-measure m-0 mt-4 text-[0.78rem] leading-relaxed text-mist-500">
-              Garanties estimées par la communauté ({box.confidence}). {box.note}
-            </p>
+            <p className="prose-measure m-0 mt-4 text-[0.78rem] leading-relaxed text-mist-500">{box.note}</p>
           </>
         ) : (
           <p className="mt-6 rounded-xl border border-dashed border-ink-600 px-5 py-8 text-[0.88rem] text-mist-500">

@@ -23,7 +23,7 @@ export default function GrowthBars({ strata }: { strata: Stratum[] }) {
   const bound = Math.max(...usable.map((s) => Math.abs(s.growth as number)), 5);
 
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-2">
       {strata.map((stratum) => {
         const value = stratum.growth;
         if (value == null) {

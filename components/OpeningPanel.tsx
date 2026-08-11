@@ -175,7 +175,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
         {top1 && (
           <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
             <h3 className="display m-0 text-[1.1rem] text-mist-050">Viser {top1.nameFR ?? top1.name} ?</h3>
-            <ul className="m-0 mt-4 grid list-none gap-3 p-0 text-[0.95rem] text-mist-300">
+            <ul className="m-0 mt-4 grid list-none gap-2 p-0 text-[0.95rem] text-mist-300">
               <li className="flex items-baseline justify-between gap-4">
                 <span>La tirer</span>
                 <span className="tabular text-right text-mist-050">
@@ -211,7 +211,7 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
         {/* ---- Les pioches qui comptent ---- */}
         <section className="rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
           <h3 className="display m-0 text-[1.1rem] text-mist-050">Ce que vous pouvez y trouver</h3>
-          <ul className="m-0 mt-4 grid list-none gap-3 p-0">
+          <ul className="m-0 mt-4 grid list-none gap-1.5 p-0">
             {opening.topPulls.map((pull) => {
               const dimmed = chosen.factor === 0 && pull.premium;
               // Les cotes suivent la provenance : à −30 % de chances premium,

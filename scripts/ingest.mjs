@@ -225,6 +225,8 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
           boosterPrice: live?.booster?.price ?? boosterFR?.floor10 ?? null,
           confidence: structure.confidence,
           note: structure.note,
+          sample: structure.sample ?? null,
+          sampleSource: structure.sampleSource ?? null,
           slots,
         };
       }
@@ -574,6 +576,9 @@ async function main() {
           classes: rows,
           grossPerBooster: Number(rows.reduce((sum, row) => sum + row.contribution, 0).toFixed(2)),
           confidence: override.confidence ?? era.confidence,
+          eraLabel: era.label,
+          sample: era.sample ?? null,
+          sampleSource: era.sampleSource ?? null,
           partialNote: pullRates.partialSets?.[set.ptcg] ?? null,
         };
       }

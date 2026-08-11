@@ -60,16 +60,16 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
 function SegmentRow({ name, segment, hint }: { name: string; segment: Segment; hint: string }) {
   return (
     <tr className="border-t border-ink-700/70">
-      <th scope="row" className="py-2.5 pr-3 text-left align-top font-medium text-mist-050">
+      <th scope="row" className="py-1.5 pr-3 text-left align-top font-medium text-mist-050">
         {name}
         <span className="mt-0.5 block text-[0.72rem] font-normal leading-snug text-mist-500">{hint}</span>
       </th>
-      <td className="tabular py-2.5 text-right text-mist-300">{segment.cards}</td>
-      <td className={`tabular py-2.5 text-right ${toneFor(segment.changeMovers)}`}>{pct(segment.changeMovers)}</td>
-      <td className={`tabular py-2.5 text-right ${toneFor(segment.diffusion != null ? segment.diffusion - 50 : null)}`}>
+      <td className="tabular py-1.5 text-right text-mist-300">{segment.cards}</td>
+      <td className={`tabular py-1.5 text-right ${toneFor(segment.changeMovers)}`}>{pct(segment.changeMovers)}</td>
+      <td className={`tabular py-1.5 text-right ${toneFor(segment.diffusion != null ? segment.diffusion - 50 : null)}`}>
         {segment.diffusion == null ? "—" : `${segment.diffusion.toFixed(0)} %`}
       </td>
-      <td className="tabular py-2.5 text-right text-mist-500">{segment.stale == null ? "—" : `${segment.stale} %`}</td>
+      <td className="tabular py-1.5 text-right text-mist-500">{segment.stale == null ? "—" : `${segment.stale} %`}</td>
     </tr>
   );
 }

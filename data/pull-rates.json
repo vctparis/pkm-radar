@@ -37,7 +37,9 @@
           "hi": 0.02,
           "premium": true
         }
-      }
+      },
+      "sample": "quelques centaines de boosters",
+      "sampleSource": "ouvertures communautaires anciennes"
     },
     "swsh": {
       "label": "Épée et Bouclier",
@@ -86,7 +88,9 @@
           "hi": 0.02,
           "premium": true
         }
-      }
+      },
+      "sample": "plusieurs milliers de boosters sur l'ère",
+      "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)"
     },
     "sv": {
       "label": "Écarlate et Violet",
@@ -122,7 +126,9 @@
           "hi": 0.025,
           "premium": true
         }
-      }
+      },
+      "sample": "2 000 à 5 000+ boosters ouverts par set",
+      "sampleSource": "études TCGplayer Infinite"
     },
     "xy": {
       "label": "XY",
@@ -153,7 +159,9 @@
           "hi": 0.025,
           "premium": true
         }
-      }
+      },
+      "sample": "quelques centaines de boosters",
+      "sampleSource": "ouvertures communautaires anciennes"
     }
   },
   "setOverrides": {

@@ -503,7 +503,7 @@ export default function RankingTable({
                       <button
                         type="button"
                         onClick={() => headerClick(column)}
-                        className={`block w-full px-4 py-3 font-medium transition-colors duration-200 hover:text-mist-050 ${
+                        className={`block w-full px-4 py-2.5 font-medium transition-colors duration-200 hover:text-mist-050 ${
                           column.align === "right" ? "text-right" : "text-left"
                         } ${active ? "text-mist-050" : "text-mist-100"}`}
                       >
@@ -542,14 +542,14 @@ export default function RankingTable({
                         <th
                           key={column.key}
                           scope="row"
-                          className={`sticky left-0 z-10 px-4 py-3 text-left font-medium text-mist-050 ${
+                          className={`sticky left-0 z-10 px-4 py-2 text-left font-medium text-mist-050 ${
                             selected ? "bg-[#161c2e]" : "bg-ink-850"
                           }`}
                         >
                           {column.render(set, selected)}
                         </th>
                       ) : (
-                        <td key={column.key} className={`px-4 py-3 ${column.align === "right" ? "text-right" : "text-left"} ${column.key === "booster" ? "tabular text-mist-100" : ""}`}>
+                        <td key={column.key} className={`px-4 py-2 ${column.align === "right" ? "text-right" : "text-left"} ${column.key === "booster" ? "tabular text-mist-100" : ""}`}>
                           {column.render(set, selected)}
                         </td>
                       ),

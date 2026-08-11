@@ -88,6 +88,8 @@ export type BoxOpening = {
   boosterPrice: number | null;
   confidence: string;
   note: string;
+  sample?: string | null;
+  sampleSource?: string | null;
   slots: {
     key: string;
     label: string;
@@ -147,6 +149,9 @@ export type DropRates = {
   }[];
   grossPerBooster: number;
   confidence: string;
+  eraLabel?: string;
+  sample?: string | null;
+  sampleSource?: string | null;
   partialNote: string | null;
 } | null;
 
