@@ -42,6 +42,37 @@ export type DropV2Conflict = {
   sourceOffers: { ebayFR: number; cardTraderFR: number };
 };
 
+export type DropV2BoosterHistoryPoint = {
+  date: string;
+  cardmarketTrend?: number | null;
+  cardmarketAvg?: number | null;
+  cardmarketLow?: number | null;
+  cardmarketSourceCreatedAt?: string | null;
+  ebayP10?: number | null;
+  ebayMedian?: number | null;
+  ebayOffers?: number | null;
+  ebaySellers?: number | null;
+  ebayTrusted?: number | null;
+  ebayReview?: number | null;
+  ebayQuarantined?: number | null;
+  ebayComplete?: boolean | null;
+};
+
+export type DropV2BoosterMarketHistory = {
+  windowDays: number;
+  from: string;
+  to: string;
+  observations: DropV2BoosterHistoryPoint[];
+  coverage: {
+    cardmarketDays: number;
+    ebayDays: number;
+    bothDays: number;
+    firstObserved: string | null;
+    lastObserved: string | null;
+  };
+  doctrine: { cardmarket: string; ebay: string };
+};
+
 export type DropV2Set = {
   id: string;
   name: string;
@@ -94,6 +125,7 @@ export type DropV2Set = {
       missing: number;
     };
   };
+  boosterMarketHistory: DropV2BoosterMarketHistory;
   classes: DropV2Class[];
   cards: DropV2Card[];
 };

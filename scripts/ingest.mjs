@@ -325,6 +325,10 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
       boosterFRmedian: boosterFR?.median ?? null,
       boosterFRoffers: boosterFR?.offers ?? null,
       boosterFRsellers: boosterFR?.sellers ?? null,
+      boosterFRtrusted: boosterFR?.trusted ?? null,
+      boosterFRreview: boosterFR?.review ?? null,
+      boosterFRquarantined: boosterFR?.quarantined ?? null,
+      boosterFRcomplete: boosterFR?.complete ?? null,
     };
     if (existing) Object.assign(existing, point);
     else bucket.push(point);
@@ -938,6 +942,10 @@ async function main() {
         boosterFRmedian: boosterFR?.median ?? null,
         boosterFRoffers: boosterFR?.offers ?? null,
         boosterFRsellers: boosterFR?.sellers ?? null,
+        boosterFRtrusted: boosterFR?.trusted ?? null,
+        boosterFRreview: boosterFR?.review ?? null,
+        boosterFRquarantined: boosterFR?.quarantined ?? null,
+        boosterFRcomplete: boosterFR?.complete ?? null,
       };
       if (existing) Object.assign(existing, point);
       else bucket.push(point);

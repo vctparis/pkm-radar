@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { KeyboardEvent } from "react";
+import type { KeyboardEvent, MouseEvent as ReactMouseEvent } from "react";
 import type { DropV2Card, DropV2Data, DropV2Set } from "@/lib/drop-v2-types";
 
 const GREEN = "#176b5b";
@@ -402,6 +402,181 @@ function CoverageComposition({ set }: { set: DropV2Set }) {
   );
 }
 
+function BoosterPriceHistory({ set }: { set: DropV2Set }) {
+  const history = set.boosterMarketHistory;
+  const points = history.observations;
+  const [selectedDate, setSelectedDate] = useState(points.at(-1)?.date ?? null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const priceScrollerRef = useRef<HTMLDivElement>(null);
+  const width = 920;
+  const height = 320;
+  const margin = { left: 58, right: 28, top: 26, bottom: 48 };
+  const plotWidth = width - margin.left - margin.right;
+  const plotHeight = height - margin.top - margin.bottom;
+  const fromMs = Date.parse(`${history.from}T00:00:00Z`);
+  const toMs = Date.parse(`${history.to}T00:00:00Z`);
+  const timeSpan = Math.max(1, toMs - fromMs);
+  const x = (date: string) => margin.left + ((Date.parse(`${date}T00:00:00Z`) - fromMs) / timeSpan) * plotWidth;
+  const values = points.flatMap((point) => [point.cardmarketTrend, point.ebayP10, point.ebayMedian]).filter((value): value is number => typeof value === "number" && value > 0);
+  const rawMin = values.length ? Math.min(...values) : 0;
+  const rawMax = values.length ? Math.max(...values) : 1;
+  const spread = Math.max(rawMax - rawMin, rawMax * 0.12, 1);
+  const yMin = Math.max(0, rawMin - spread * 0.16);
+  const yMax = rawMax + spread * 0.16;
+  const y = (value: number) => margin.top + (1 - (value - yMin) / Math.max(1, yMax - yMin)) * plotHeight;
+  const selected = points.find((point) => point.date === selectedDate) ?? points.at(-1) ?? null;
+  const cardmarket = points.filter((point) => point.cardmarketTrend != null);
+  const ebayP10 = points.filter((point) => point.ebayP10 != null);
+  const ebayMedian = points.filter((point) => point.ebayMedian != null);
+  const hasCardmarketLine = cardmarket.length >= 8;
+  const hasEbayLine = ebayP10.length >= 8;
+
+  useEffect(() => {
+    const scroller = priceScrollerRef.current;
+    if (!scroller || scroller.scrollWidth <= scroller.clientWidth) return;
+    scroller.scrollLeft = scroller.scrollWidth - scroller.clientWidth;
+  }, [set.id]);
+
+  const pathFor = (rows: typeof points, valueOf: (point: typeof points[number]) => number | null | undefined) => {
+    let previousDate: string | null = null;
+    return rows.map((point) => {
+      const value = valueOf(point);
+      if (value == null) return "";
+      const gap = previousDate == null ? Infinity : (Date.parse(point.date) - Date.parse(previousDate)) / 86_400_000;
+      previousDate = point.date;
+      return `${gap > 3 ? "M" : "L"} ${x(point.date).toFixed(1)} ${y(value).toFixed(1)}`;
+    }).join(" ");
+  };
+
+  const changeFor = (days: number) => {
+    if (cardmarket.length < 2) return null;
+    const latest = cardmarket.at(-1)!;
+    const target = Date.parse(`${latest.date}T00:00:00Z`) - days * 86_400_000;
+    const prior = cardmarket
+      .filter((point) => Math.abs(Date.parse(`${point.date}T00:00:00Z`) - target) <= 7 * 86_400_000)
+      .sort((first, second) => Math.abs(Date.parse(`${first.date}T00:00:00Z`) - target) - Math.abs(Date.parse(`${second.date}T00:00:00Z`) - target))[0];
+    if (!prior?.cardmarketTrend || !latest.cardmarketTrend) return null;
+    return latest.cardmarketTrend / prior.cardmarketTrend - 1;
+  };
+  const change30 = changeFor(30);
+  const change365 = changeFor(365);
+  const dateFormatter = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short", year: "2-digit", timeZone: "UTC" });
+  const fullDateFormatter = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const dateLabel = (date: string) => dateFormatter.format(new Date(`${date}T00:00:00Z`));
+  const ticks = Array.from({ length: 5 }, (_, index) => {
+    const date = new Date(fromMs + (timeSpan * index) / 4);
+    return date.toISOString().slice(0, 10);
+  });
+  const yTicks = Array.from({ length: 4 }, (_, index) => yMin + ((yMax - yMin) * index) / 3);
+
+  const selectNearest = (clientX: number) => {
+    const svg = svgRef.current;
+    if (!svg || !points.length) return;
+    const rect = svg.getBoundingClientRect();
+    const cursorX = ((clientX - rect.left) / rect.width) * width;
+    const nearest = [...points].sort((first, second) => Math.abs(x(first.date) - cursorX) - Math.abs(x(second.date) - cursorX))[0];
+    setSelectedDate(nearest.date);
+  };
+  const handleMouseMove = (event: ReactMouseEvent<SVGSVGElement>) => selectNearest(event.clientX);
+  const handleKeyboard = (event: KeyboardEvent<SVGSVGElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const current = Math.max(0, points.findIndex((point) => point.date === selected?.date));
+    const next = clamp(current + (event.key === "ArrowRight" ? 1 : -1), 0, points.length - 1);
+    setSelectedDate(points[next]?.date ?? null);
+  };
+  const latestCardmarket = cardmarket.at(-1) ?? null;
+  const latestEbay = [...points].reverse().find((point) => point.ebayP10 != null || point.ebayMedian != null) ?? null;
+
+  return (
+    <section className="border-t border-[#d3cfc3] py-12" aria-labelledby="booster-history-title">
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-end">
+        <div>
+          <p className="m-0 text-[0.72rem] font-semibold uppercase tracking-[0.15em] text-[#176b5b]">Tendance du scellé</p>
+          <h2 id="booster-history-title" className="m-0 mt-2 text-[1.75rem] font-semibold tracking-[-0.04em]">Le prix du booster monte-t-il ou baisse-t-il&nbsp;?</h2>
+          <p className="m-0 mt-3 max-w-[74ch] text-[0.84rem] leading-6 text-[#59615d]">Vue fixe sur 365 jours. Cardmarket décrit la tendance européenne&nbsp;; eBay.fr montre la fourchette des prix demandés après contrôle des annonces. Les deux sources ne sont jamais fusionnées.</p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 border-l-2 border-[#d3cfc3] pl-5">
+          <div><span className="block text-[0.66rem] uppercase tracking-[0.1em] text-[#69716d]">Variation 30 j</span><b className="mt-1 block text-[1rem] tabular-nums">{change30 == null ? "—" : pct(change30)}</b></div>
+          <div><span className="block text-[0.66rem] uppercase tracking-[0.1em] text-[#69716d]">Variation 1 an</span><b className="mt-1 block text-[1rem] tabular-nums">{change365 == null ? "—" : pct(change365)}</b></div>
+        </div>
+      </div>
+
+      <div className="mt-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-8">
+        <div className="min-w-0 border-y border-[#d3cfc3] bg-[#f7f4ed] py-3">
+          <div className="flex flex-wrap gap-x-5 gap-y-2 px-3 text-[0.7rem] text-[#59615d]">
+            <span className="inline-flex items-center gap-2"><i className="h-[3px] w-6 bg-[#176b5b]" /> Cardmarket · Trend Price</span>
+            <span className="inline-flex items-center gap-2"><i className="h-0 w-6 border-t-2 border-dashed border-[#b87516]" /> eBay.fr · p10</span>
+            <span className="inline-flex items-center gap-2"><i className="h-2.5 w-6 bg-[#ead8b7]" /> eBay.fr · p10 à médiane</span>
+          </div>
+          <div ref={priceScrollerRef} className="overflow-x-auto">
+            <div className="min-w-[680px]">
+              <svg
+                ref={svgRef}
+                viewBox={`0 0 ${width} ${height}`}
+                className="mt-2 block h-auto w-full touch-auto outline-none"
+                role="img"
+                tabIndex={0}
+                aria-label={`Historique du booster ${set.name} sur 365 jours. ${history.coverage.cardmarketDays} jours Cardmarket et ${history.coverage.ebayDays} jours eBay observés.`}
+                onMouseMove={handleMouseMove}
+                onTouchStart={(event) => selectNearest(event.touches[0]?.clientX ?? 0)}
+                onKeyDown={handleKeyboard}
+              >
+                <title>{`Prix du booster ${set.name} sur 365 jours`}</title>
+                {yTicks.map((tick) => (
+                  <g key={`price-y-${tick}`}>
+                    <line x1={margin.left} x2={width - margin.right} y1={y(tick)} y2={y(tick)} stroke={GRID} strokeWidth="1" />
+                    <text x={margin.left - 10} y={y(tick) + 4} textAnchor="end" fill={MUTED} fontSize="11">{eur.format(tick)}</text>
+                  </g>
+                ))}
+                {ticks.map((tick) => (
+                  <g key={`price-x-${tick}`}>
+                    <line x1={x(tick)} x2={x(tick)} y1={margin.top} y2={height - margin.bottom} stroke={GRID} strokeWidth="1" />
+                    <text x={x(tick)} y={height - 20} textAnchor="middle" fill={MUTED} fontSize="11">{dateLabel(tick)}</text>
+                  </g>
+                ))}
+                {hasEbayLine ? (
+                  <path d={pathFor(points, (point) => point.ebayMedian)} fill="none" stroke={AMBER_LIGHT} strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" opacity="0.72" />
+                ) : null}
+                {hasEbayLine ? <path d={pathFor(points, (point) => point.ebayP10)} fill="none" stroke={AMBER} strokeWidth="2" strokeDasharray="6 5" /> : null}
+                {hasCardmarketLine ? <path d={pathFor(points, (point) => point.cardmarketTrend)} fill="none" stroke={GREEN} strokeWidth="3" strokeLinejoin="round" /> : null}
+                {cardmarket.map((point) => <circle key={`cm-${point.date}`} cx={x(point.date)} cy={y(point.cardmarketTrend!)} r={hasCardmarketLine ? 2.6 : 5} fill={GREEN} stroke="#f7f4ed" strokeWidth="2" />)}
+                {ebayMedian.map((point) => <circle key={`em-${point.date}`} cx={x(point.date)} cy={y(point.ebayMedian!)} r={hasEbayLine ? 2.3 : 4} fill={AMBER_LIGHT} stroke={AMBER} strokeWidth="1.5" />)}
+                {ebayP10.map((point) => <path key={`ep-${point.date}`} d={`M ${x(point.date)} ${y(point.ebayP10!) - 5} L ${x(point.date) + 5} ${y(point.ebayP10!)} L ${x(point.date)} ${y(point.ebayP10!) + 5} L ${x(point.date) - 5} ${y(point.ebayP10!)} Z`} fill={AMBER} />)}
+                {selected ? (
+                  <g pointerEvents="none">
+                    <line x1={x(selected.date)} x2={x(selected.date)} y1={margin.top} y2={height - margin.bottom} stroke={INK} strokeWidth="1" strokeDasharray="3 4" />
+                    <text x={clamp(x(selected.date), 104, width - 104)} y={margin.top + 15} textAnchor="middle" fill={INK} fontSize="11" fontWeight="700" paintOrder="stroke" stroke="#f7f4ed" strokeWidth="4">{fullDateFormatter.format(new Date(`${selected.date}T00:00:00Z`))}</text>
+                  </g>
+                ) : null}
+              </svg>
+              <div className="flex flex-wrap justify-between gap-2 px-3 pb-1 text-[0.66rem] text-[#69716d]">
+                <span>Échelle prix resserrée · jours absents laissés vides</span>
+                <span className="tabular-nums">CM {history.coverage.cardmarketDays}/365 · eBay {history.coverage.ebayDays}/365</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside className="self-start bg-[#e5ebe6] p-5">
+          <p className="m-0 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[#53615b]">Point sélectionné</p>
+          <h3 className="m-0 mt-2 text-[1rem] font-semibold">{selected ? fullDateFormatter.format(new Date(`${selected.date}T00:00:00Z`)) : "Aucune observation"}</h3>
+          <dl className="m-0 mt-5 grid gap-3 text-[0.75rem]">
+            <div className="border-b border-[#bdc8c0] pb-3"><dt className="text-[#627069]">Cardmarket · tendance EU</dt><dd className="m-0 mt-1 text-[1.35rem] font-semibold text-[#176b5b] tabular-nums">{selected?.cardmarketTrend ? eur.format(selected.cardmarketTrend) : "—"}</dd>{selected?.cardmarketAvg ? <small className="text-[#627069]">moyenne publiée {eur.format(selected.cardmarketAvg)}</small> : null}</div>
+            <div><dt className="text-[#627069]">eBay.fr · demandes retenues</dt><dd className="m-0 mt-1 font-semibold tabular-nums">{selected?.ebayP10 ? eur.format(selected.ebayP10) : "—"}{selected?.ebayMedian ? ` – ${eur.format(selected.ebayMedian)}` : ""}</dd><small className="text-[#627069]">{selected?.ebayOffers ?? 0} offres · {selected?.ebaySellers ?? 0} vendeurs</small></div>
+          </dl>
+          {!hasCardmarketLine ? <p className="m-0 mt-5 border-l-2 border-[#b87516] pl-3 text-[0.7rem] leading-5 text-[#73541f]">Historique en construction. La tendance ne sera tracée qu’à partir de 8 observations&nbsp;; aucun point n’est inventé.</p> : null}
+        </aside>
+      </div>
+
+      <div className="mt-4 flex flex-wrap justify-between gap-3 text-[0.7rem] leading-5 text-[#69716d]">
+        <span>Cardmarket&nbsp;: marché européen, langues confondues · eBay&nbsp;: annonces actives françaises, pas ventes conclues.</span>
+        <span className="tabular-nums">Derniers points&nbsp;: CM {latestCardmarket?.date ?? "—"} · eBay {latestEbay?.date ?? "—"}</span>
+      </div>
+    </section>
+  );
+}
+
 function RarityDrivers({ set }: { set: DropV2Set }) {
   const rows = [...set.classes].sort((a, b) => b.centralContribution - a.centralContribution);
   const max = Math.max(...rows.flatMap((row) => [row.baselineContribution, row.centralContribution, row.quickContribution]), 0.01);
@@ -606,7 +781,7 @@ export default function DropRateV2({ data }: { data: DropV2Data }) {
       <main id="contenu" className="mx-auto max-w-[1160px] px-4 pb-24 sm:px-7">
         <header className="grid gap-5 py-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:py-10">
           <div>
-            <p className="m-0 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#176b5b]">Drop rate v2.3 · bêta</p>
+            <p className="m-0 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#176b5b]">Drop rate v2.4 · bêta</p>
             <h1 className="m-0 mt-3 max-w-[24ch] text-[clamp(2rem,4.2vw,3.45rem)] font-semibold leading-[0.98] tracking-[-0.05em]">Ouvrir un booster&nbsp;: combien de valeur reste-t-il vraiment&nbsp;?</h1>
           </div>
           <p className="m-0 text-[0.88rem] leading-6 text-[#59615d]">Prix français EX+ uniquement. {data.sets.length} sets comparés, dont {reliableCount} avec une confiance au moins moyenne. La fragilité reste visible.</p>
@@ -636,6 +811,7 @@ export default function DropRateV2({ data }: { data: DropV2Data }) {
           </aside>
         ) : null}
 
+        <BoosterPriceHistory key={`history-${active.id}`} set={active} />
         <RarityDrivers set={active} />
         <CardContributions key={active.id} set={active} />
         <EvidencePanel data={data} set={active} />

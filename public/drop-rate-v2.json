@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-12T14:57:59.659Z",
-  "modelVersion": "drop-rate-v2.3",
+  "modelVersion": "drop-rate-v2.4",
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
     "conditions": [
@@ -70,6 +70,39 @@
           "incomplete": 0,
           "error": 0,
           "missing": 1
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 43.47,
+            "cardmarketAvg": 45.95,
+            "cardmarketLow": 20,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 80,
+            "ebayMedian": 124.5,
+            "ebayOffers": 6,
+            "ebaySellers": 6,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -269,6 +302,39 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 14.28,
+            "cardmarketAvg": 6.98,
+            "cardmarketLow": 3.5,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 11.9,
+            "ebayMedian": 28.68,
+            "ebayOffers": 20,
+            "ebaySellers": 14,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -453,6 +519,61 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 44.9,
+            "ebayMedian": 70,
+            "ebayOffers": 2,
+            "ebaySellers": 2,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 44.9,
+            "ebayMedian": 70,
+            "ebayOffers": 2,
+            "ebaySellers": 2,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 28.08,
+            "cardmarketAvg": 26.59,
+            "cardmarketLow": 22,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 47.41,
+            "ebayMedian": 57.45,
+            "ebayOffers": 2,
+            "ebaySellers": 2,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -623,6 +744,50 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-11",
+            "ebayP10": 38,
+            "ebayMedian": 47,
+            "ebayOffers": 15,
+            "ebaySellers": 6,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 10.17,
+            "cardmarketAvg": 8.97,
+            "cardmarketLow": 5,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 199.99,
+            "ebayMedian": 199.99,
+            "ebayOffers": 1,
+            "ebaySellers": 1,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 2,
+          "bothDays": 1,
+          "firstObserved": "2026-08-11",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -1109,6 +1274,50 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-11",
+            "ebayP10": 23,
+            "ebayMedian": 29.99,
+            "ebayOffers": 25,
+            "ebaySellers": 12,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 9.28,
+            "cardmarketAvg": 8.74,
+            "cardmarketLow": 5.99,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 23,
+            "ebayMedian": 26.98,
+            "ebayOffers": 22,
+            "ebaySellers": 9,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 2,
+          "bothDays": 1,
+          "firstObserved": "2026-08-11",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -1394,6 +1603,61 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 25,
+            "ebayMedian": 40.2,
+            "ebayOffers": 15,
+            "ebaySellers": 11,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 25,
+            "ebayMedian": 69.99,
+            "ebayOffers": 16,
+            "ebaySellers": 12,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 16.62,
+            "cardmarketAvg": 18.09,
+            "cardmarketLow": 12.99,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 29,
+            "ebayMedian": 34,
+            "ebayOffers": 9,
+            "ebaySellers": 6,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -1811,6 +2075,39 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 6.64,
+            "cardmarketAvg": 7.93,
+            "cardmarketLow": 4.5,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 10,
+            "ebayMedian": 16,
+            "ebayOffers": 51,
+            "ebaySellers": 26,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2109,6 +2406,61 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 19.9,
+            "ebayMedian": 72,
+            "ebayOffers": 82,
+            "ebaySellers": 32,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 20,
+            "ebayMedian": 99.99,
+            "ebayOffers": 81,
+            "ebaySellers": 31,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 18.3,
+            "cardmarketAvg": 18.87,
+            "cardmarketLow": 9,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 20,
+            "ebayMedian": 44.95,
+            "ebayOffers": 18,
+            "ebaySellers": 10,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2369,6 +2721,50 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-11",
+            "ebayP10": 149.9,
+            "ebayMedian": 219.99,
+            "ebayOffers": 10,
+            "ebaySellers": 7,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 59.35,
+            "cardmarketAvg": 58.79,
+            "cardmarketLow": 49.9,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 82.69,
+            "ebayMedian": 140,
+            "ebayOffers": 20,
+            "ebaySellers": 16,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 2,
+          "bothDays": 1,
+          "firstObserved": "2026-08-11",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -2742,6 +3138,39 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 8.41,
+            "cardmarketAvg": 8.38,
+            "cardmarketLow": 6,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 12,
+            "ebayMedian": 15,
+            "ebayOffers": 15,
+            "ebaySellers": 8,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2990,6 +3419,61 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 49.99,
+            "ebayMedian": 110,
+            "ebayOffers": 13,
+            "ebaySellers": 9,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 49.99,
+            "ebayMedian": 119.9,
+            "ebayOffers": 14,
+            "ebaySellers": 9,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 30.54,
+            "cardmarketAvg": 30.56,
+            "cardmarketLow": 22,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 49.95,
+            "ebayMedian": 54.99,
+            "ebayOffers": 7,
+            "ebaySellers": 6,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3160,6 +3644,61 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 34.99,
+            "ebayMedian": 59,
+            "ebayOffers": 9,
+            "ebaySellers": 9,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 40,
+            "ebayMedian": 109.99,
+            "ebayOffers": 14,
+            "ebaySellers": 9,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 27.07,
+            "cardmarketAvg": 29.6,
+            "cardmarketLow": 17,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 30.46,
+            "ebayMedian": 44.9,
+            "ebayOffers": 12,
+            "ebaySellers": 11,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -3446,6 +3985,61 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 11.37,
+            "ebayMedian": 19.9,
+            "ebayOffers": 29,
+            "ebaySellers": 18,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 11.37,
+            "ebayMedian": 19.9,
+            "ebayOffers": 29,
+            "ebaySellers": 18,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 7.74,
+            "cardmarketAvg": 9.2,
+            "cardmarketLow": 4.49,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 13.97,
+            "ebayMedian": 19.95,
+            "ebayOffers": 26,
+            "ebaySellers": 15,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -3841,6 +4435,50 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-11",
+            "ebayP10": 21.76,
+            "ebayMedian": 50,
+            "ebayOffers": 19,
+            "ebaySellers": 11,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 14.35,
+            "cardmarketAvg": 12.5,
+            "cardmarketLow": 8.95,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 25,
+            "ebayMedian": 50,
+            "ebayOffers": 17,
+            "ebaySellers": 9,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 2,
+          "bothDays": 1,
+          "firstObserved": "2026-08-11",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3970,6 +4608,39 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 14.06,
+            "cardmarketAvg": 13.11,
+            "cardmarketLow": 5.99,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 13.5,
+            "ebayMedian": 15,
+            "ebayOffers": 6,
+            "ebaySellers": 6,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -4162,6 +4833,61 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 13.5,
+            "ebayMedian": 18,
+            "ebayOffers": 62,
+            "ebaySellers": 29,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 14,
+            "ebayMedian": 18,
+            "ebayOffers": 62,
+            "ebaySellers": 27,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 9.56,
+            "cardmarketAvg": 9.41,
+            "cardmarketLow": 5.49,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 13.5,
+            "ebayMedian": 18,
+            "ebayOffers": 63,
+            "ebaySellers": 27,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -4546,6 +5272,61 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 25.99,
+            "ebayMedian": 30,
+            "ebayOffers": 5,
+            "ebaySellers": 5,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 25.99,
+            "ebayMedian": 30,
+            "ebayOffers": 5,
+            "ebaySellers": 5,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 22.85,
+            "cardmarketAvg": 23.39,
+            "cardmarketLow": 11.99,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 27.39,
+            "ebayMedian": 30,
+            "ebayOffers": 8,
+            "ebaySellers": 8,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -4754,6 +5535,61 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 7.19,
+            "ebayMedian": 25,
+            "ebayOffers": 29,
+            "ebaySellers": 19,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 16,
+            "ebayMedian": 35,
+            "ebayOffers": 27,
+            "ebaySellers": 17,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 9.57,
+            "cardmarketAvg": 12.37,
+            "cardmarketLow": 7.95,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 16,
+            "ebayMedian": 25,
+            "ebayOffers": 21,
+            "ebaySellers": 14,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -4931,6 +5767,61 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 13,
+            "ebayMedian": 35,
+            "ebayOffers": 13,
+            "ebaySellers": 11,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 13,
+            "ebayMedian": 45,
+            "ebayOffers": 15,
+            "ebaySellers": 12,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 24.64,
+            "cardmarketAvg": 24.3,
+            "cardmarketLow": 16.94,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 11.05,
+            "ebayMedian": 24.99,
+            "ebayOffers": 8,
+            "ebaySellers": 8,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -5215,6 +6106,39 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 7.11,
+            "cardmarketAvg": 6.1,
+            "cardmarketLow": 4.28,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 8.3,
+            "ebayMedian": 13.49,
+            "ebayOffers": 57,
+            "ebaySellers": 35,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -5477,6 +6401,50 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-11",
+            "ebayP10": 10.99,
+            "ebayMedian": 19.99,
+            "ebayOffers": 6,
+            "ebaySellers": 5,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 9.98,
+            "cardmarketAvg": 7.97,
+            "cardmarketLow": 6.9,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 11.59,
+            "ebayMedian": 14.99,
+            "ebayOffers": 4,
+            "ebaySellers": 4,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 2,
+          "bothDays": 1,
+          "firstObserved": "2026-08-11",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -5685,6 +6653,61 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-10",
+            "ebayP10": 12.07,
+            "ebayMedian": 23.54,
+            "ebayOffers": 58,
+            "ebaySellers": 28,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-11",
+            "ebayP10": 13,
+            "ebayMedian": 23.54,
+            "ebayOffers": 57,
+            "ebaySellers": 29,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 9.3,
+            "cardmarketAvg": 11.4,
+            "cardmarketLow": 7,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 13.69,
+            "ebayMedian": 23.54,
+            "ebayOffers": 48,
+            "ebaySellers": 21,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 3,
+          "bothDays": 1,
+          "firstObserved": "2026-08-10",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -5890,6 +6913,39 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 6.22,
+            "cardmarketAvg": 6.16,
+            "cardmarketLow": 4,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 12,
+            "ebayMedian": 15,
+            "ebayOffers": 44,
+            "ebaySellers": 28,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [
@@ -6154,6 +7210,50 @@
           "missing": 0
         }
       },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-11",
+            "ebayP10": 50,
+            "ebayMedian": 74.99,
+            "ebayOffers": 7,
+            "ebaySellers": 5,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          },
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 17.88,
+            "cardmarketAvg": 17.98,
+            "cardmarketLow": 7.5,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 53,
+            "ebayMedian": 67.5,
+            "ebayOffers": 4,
+            "ebaySellers": 3,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 2,
+          "bothDays": 1,
+          "firstObserved": "2026-08-11",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -6307,6 +7407,39 @@
           "incomplete": 0,
           "error": 0,
           "missing": 0
+        }
+      },
+      "boosterMarketHistory": {
+        "windowDays": 365,
+        "from": "2025-08-13",
+        "to": "2026-08-12",
+        "observations": [
+          {
+            "date": "2026-08-12",
+            "cardmarketTrend": 9.06,
+            "cardmarketAvg": 9.4,
+            "cardmarketLow": 6.2,
+            "cardmarketSourceCreatedAt": "2026-08-12T00:43:55.000Z",
+            "ebayP10": 7.12,
+            "ebayMedian": 10.99,
+            "ebayOffers": 3,
+            "ebaySellers": 3,
+            "ebayTrusted": null,
+            "ebayReview": null,
+            "ebayQuarantined": null,
+            "ebayComplete": null
+          }
+        ],
+        "coverage": {
+          "cardmarketDays": 1,
+          "ebayDays": 1,
+          "bothDays": 1,
+          "firstObserved": "2026-08-12",
+          "lastObserved": "2026-08-12"
+        },
+        "doctrine": {
+          "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+          "ebay": "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité"
         }
       },
       "classes": [

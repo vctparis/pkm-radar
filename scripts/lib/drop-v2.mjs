@@ -10,7 +10,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 
-export const DROP_V2_MODEL_VERSION = "drop-rate-v2.3";
+export const DROP_V2_MODEL_VERSION = "drop-rate-v2.4";
 export const FRESH_PULL_CONDITIONS = new Set(["Near Mint", "Slightly Played"]);
 
 const DEFAULT_FEES = 0.13;
@@ -23,6 +23,66 @@ const MAX_REFERENCE_RATIO = 5;
 
 const round2 = (value) => Number(value.toFixed(2));
 const round3 = (value) => Number(value.toFixed(3));
+
+const positiveOrNull = (value) => (Number(value) > 0 ? round2(Number(value)) : null);
+const finiteOrNull = (value) => (value == null || value === "" ? null : Number.isFinite(Number(value)) ? Number(value) : null);
+
+export function buildBoosterMarketHistory(cardmarketRows, marketplaceRows, generatedAt, windowDays = 365) {
+  const end = new Date(generatedAt);
+  if (!Number.isFinite(end.getTime())) throw new Error("date de génération invalide pour l'historique booster");
+  const endDate = end.toISOString().slice(0, 10);
+  const start = new Date(`${endDate}T00:00:00.000Z`);
+  start.setUTCDate(start.getUTCDate() - (windowDays - 1));
+  const startDate = start.toISOString().slice(0, 10);
+  const byDate = new Map();
+  const pointOf = (date) => {
+    if (!byDate.has(date)) byDate.set(date, { date });
+    return byDate.get(date);
+  };
+  for (const row of cardmarketRows ?? []) {
+    if (row.date < startDate || row.date > endDate) continue;
+    const point = pointOf(row.date);
+    point.cardmarketTrend = positiveOrNull(row.trend);
+    point.cardmarketAvg = positiveOrNull(row.avg);
+    point.cardmarketLow = positiveOrNull(row.low);
+    point.cardmarketSourceCreatedAt = row.sourceCreatedAt ?? null;
+  }
+  for (const row of marketplaceRows ?? []) {
+    if (row.date < startDate || row.date > endDate) continue;
+    const point = pointOf(row.date);
+    point.ebayP10 = positiveOrNull(row.boosterFRp10);
+    point.ebayMedian = positiveOrNull(row.boosterFRmedian);
+    point.ebayOffers = finiteOrNull(row.boosterFRoffers);
+    point.ebaySellers = finiteOrNull(row.boosterFRsellers);
+    point.ebayTrusted = finiteOrNull(row.boosterFRtrusted);
+    point.ebayReview = finiteOrNull(row.boosterFRreview);
+    point.ebayQuarantined = finiteOrNull(row.boosterFRquarantined);
+    point.ebayComplete = typeof row.boosterFRcomplete === "boolean" ? row.boosterFRcomplete : null;
+  }
+  const observations = [...byDate.values()]
+    .filter((point) => point.cardmarketTrend != null || point.cardmarketAvg != null || point.ebayP10 != null || point.ebayMedian != null)
+    .sort((a, b) => a.date.localeCompare(b.date));
+  const cardmarketDays = observations.filter((point) => point.cardmarketTrend != null).length;
+  const ebayDays = observations.filter((point) => point.ebayP10 != null || point.ebayMedian != null).length;
+  const bothDays = observations.filter((point) => point.cardmarketTrend != null && (point.ebayP10 != null || point.ebayMedian != null)).length;
+  return {
+    windowDays,
+    from: startDate,
+    to: endDate,
+    observations,
+    coverage: {
+      cardmarketDays,
+      ebayDays,
+      bothDays,
+      firstObserved: observations[0]?.date ?? null,
+      lastObserved: observations.at(-1)?.date ?? null,
+    },
+    doctrine: {
+      cardmarket: "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
+      ebay: "p10 et médiane des annonces actives eBay.fr retenues après matching et contrôle d'intégrité",
+    },
+  };
+}
 
 export function quantile(values, p) {
   if (!values.length) return null;
@@ -377,6 +437,7 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
       sourceOffers: { ebayFR: ebayOffers, cardTraderFR: cardTraderOffers },
       crawlHealth,
     },
+    boosterMarketHistory: options.boosterMarketHistory ?? buildBoosterMarketHistory([], [], generatedAt),
     classes: [...classState.values()].map((row) => ({
       rarity: row.rarity,
       count: row.count,
@@ -403,6 +464,27 @@ export async function buildDropV2Artifact(root, radarPayload) {
       if (!referencesBySet.has(card.s)) referencesBySet.set(card.s, new Map());
       referencesBySet.get(card.s).set(normalizeCollectorNumber(card.num), price);
     }
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+
+  const cardmarketHistoryBySet = new Map();
+  try {
+    const cardmarketHistory = JSON.parse(await readFile(join(root, "data", "cardmarket", "history.json"), "utf8"));
+    if (cardmarketHistory.schemaVersion !== 1 || !Array.isArray(cardmarketHistory.observations)) {
+      throw new Error("historique Cardmarket invalide");
+    }
+    for (const row of cardmarketHistory.observations) {
+      if (!cardmarketHistoryBySet.has(row.setId)) cardmarketHistoryBySet.set(row.setId, []);
+      cardmarketHistoryBySet.get(row.setId).push(row);
+    }
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+
+  let marketplaceHistory = { snapshots: {} };
+  try {
+    marketplaceHistory = JSON.parse(await readFile(join(root, "data", "history.json"), "utf8"));
   } catch (error) {
     if (error?.code !== "ENOENT") throw error;
   }
@@ -439,6 +521,11 @@ export async function buildDropV2Artifact(root, radarPayload) {
     const built = buildDropV2Set(set, ledger, radarPayload.generatedAt, {
       crawls: crawlsBySet.get(set.id),
       referenceByNumber: referencesBySet.get(set.id),
+      boosterMarketHistory: buildBoosterMarketHistory(
+        cardmarketHistoryBySet.get(set.id) ?? [],
+        marketplaceHistory.snapshots?.[set.id] ?? [],
+        radarPayload.generatedAt,
+      ),
     });
     if (built) sets.push(built);
   }

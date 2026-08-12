@@ -1,4 +1,4 @@
-import { buildDropV2Set, summarizeFreshPullMarket } from "../lib/drop-v2.mjs";
+import { buildBoosterMarketHistory, buildDropV2Set, summarizeFreshPullMarket } from "../lib/drop-v2.mjs";
 
 let failures = 0;
 const check = (label, actual, expected) => {
@@ -127,6 +127,31 @@ check("composition de couverture explicite", v2.coverageBreakdown, {
   trackedFallbackUnavailable: 0,
   untracked: 0,
 });
+
+const boosterHistory = buildBoosterMarketHistory(
+  [
+    { date: "2026-08-11", trend: 14, avg: 13, low: 9, sourceCreatedAt: "2026-08-11T00:30:00Z" },
+    { date: "2026-08-12", trend: 15, avg: 14, low: 10, sourceCreatedAt: "2026-08-12T00:30:00Z" },
+  ],
+  [
+    { date: "2026-08-10", boosterFRp10: 18, boosterFRmedian: 25, boosterFRoffers: 12, boosterFRsellers: 8 },
+    { date: "2026-08-12", boosterFRp10: 19, boosterFRmedian: 26, boosterFRoffers: 14, boosterFRsellers: 9, boosterFRcomplete: true },
+  ],
+  generatedAt,
+);
+check("fenêtre booster réellement fixée à 365 jours", [boosterHistory.from, boosterHistory.to, boosterHistory.windowDays], ["2025-08-13", "2026-08-12", 365]);
+check("Cardmarket et eBay restent deux séries séparées", boosterHistory.coverage, {
+  cardmarketDays: 2,
+  ebayDays: 2,
+  bothDays: 1,
+  firstObserved: "2026-08-10",
+  lastObserved: "2026-08-12",
+});
+check(
+  "le point commun conserve prix vendus indicatifs et demandes sans fusion",
+  [boosterHistory.observations.at(-1).cardmarketTrend, boosterHistory.observations.at(-1).ebayP10, boosterHistory.observations.at(-1).ebayMedian],
+  [15, 19, 26],
+);
 
 const thinLedger = {
   listings: {

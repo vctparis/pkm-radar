@@ -28,6 +28,7 @@ let unreconciledDropV2 = 0;
 let leakingDropV2 = 0;
 let invalidDropV2Coverage = 0;
 let invalidDropV2Conflicts = 0;
+let invalidBoosterHistory = 0;
 for (const set of dropV2.sets ?? []) {
   if (!(set.coverage >= 0 && set.coverage <= 1) || set.grossQuick > set.grossCentral || set.netCentralLo > set.netCentralHi) {
     invalidDropV2++;
@@ -38,6 +39,14 @@ for (const set of dropV2.sets ?? []) {
   const coverageTotal = Object.values(set.coverageBreakdown ?? {}).reduce((sum, value) => sum + value, 0);
   if (Math.abs(coverageTotal - 1) > 0.012) invalidDropV2Coverage++;
   if (set.blockingConflicts > set.conflicts || set.conflictDetails?.length !== set.conflicts) invalidDropV2Conflicts++;
+  const marketHistory = set.boosterMarketHistory;
+  const sortedDates = marketHistory?.observations?.map((row) => row.date) ?? [];
+  if (
+    marketHistory?.windowDays !== 365 ||
+    new Set(sortedDates).size !== sortedDates.length ||
+    sortedDates.some((date, index) => index > 0 && date < sortedDates[index - 1]) ||
+    sortedDates.some((date) => date < marketHistory.from || date > marketHistory.to)
+  ) invalidBoosterHistory++;
 }
 check("drop v2 porte une version de modèle", typeof dropV2.modelVersion, "string");
 check("drop v2 : domaines métriques valides", invalidDropV2, 0);
@@ -45,6 +54,15 @@ check("drop v2 : classes réconciliées avec la valeur brute", unreconciledDropV
 check("drop v2 ne publie aucune annonce brute", leakingDropV2, 0);
 check("drop v2 : composition de couverture réconciliée", invalidDropV2Coverage, 0);
 check("drop v2 : conflits détaillés réconciliés", invalidDropV2Conflicts, 0);
+check("drop v2 : historique booster borné, trié et unique", invalidBoosterHistory, 0);
+
+const cardmarketMap = JSON.parse(await readFile(join(root, "data", "cardmarket", "product-map.json"), "utf8"));
+const cardmarketHistory = JSON.parse(await readFile(join(root, "data", "cardmarket", "history.json"), "utf8"));
+const cardmarketKeys = cardmarketHistory.observations.map((row) => `${row.date}:${row.idProduct}`);
+check("historique Cardmarket en schéma append-only v1", cardmarketHistory.schemaVersion, 1);
+check("historique Cardmarket sans doublon jour-produit", new Set(cardmarketKeys).size, cardmarketKeys.length);
+check("chaque observation Cardmarket vient d'un produit mappé", cardmarketHistory.observations.filter((row) => !cardmarketMap.products.some((product) => product.idProduct === row.idProduct && product.setId === row.setId)).length, 0);
+check("chaque observation Cardmarket garde l'empreinte brute", cardmarketHistory.observations.filter((row) => !/^[a-f0-9]{64}$/.test(row.rawSha256 ?? "")).length, 0);
 
 const ledgerDir = join(root, "data", "ledger");
 const files = (await readdir(ledgerDir)).filter((file) => file.endsWith(".json"));

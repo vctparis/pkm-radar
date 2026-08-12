@@ -1,9 +1,7 @@
 name: Relevé quotidien
 
-# CardTrader n'expose aucun historique : la seule façon d'obtenir une série de
-# prix scellés est d'en relever un point par jour. Le job commite le résultat,
-# ce qui déclenche automatiquement un redéploiement Vercel et laisse une piste
-# d'audit versionnée de chaque relevé.
+# Cardmarket et les marketplaces n'exposent pas ici 365 jours rétrospectifs :
+# le job archive un point officiel par jour et laisse une piste d'audit.
 
 on:
   schedule:
@@ -33,12 +31,20 @@ jobs:
       - name: Vérifier les invariants avant relevé
         run: npm run test:data
 
-      - name: Relever les sources
+      - name: Relever les marketplaces
         env:
           CARDTRADER_API_TOKEN: ${{ secrets.CARDTRADER_API_TOKEN }}
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: node scripts/ingest.mjs
+
+      # Une indisponibilité Cardmarket ne doit pas nous faire perdre le relevé
+      # eBay/CardTrader du jour. On conserve le résultat partiel, puis on fait
+      # échouer le job après le commit afin que l'alerte reste visible.
+      - name: Relever le guide public Cardmarket
+        id: cardmarket
+        continue-on-error: true
+        run: node scripts/ingest-cardmarket.mjs
 
       - name: Vérifier les artefacts du relevé
         run: npm run test:data
@@ -47,7 +53,7 @@ jobs:
         run: |
           git config user.name "pkm-radar-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/history.json data/ledger public/radar-data.json public/cards-index.json
+          git add data/history.json data/cardmarket data/ledger public/radar-data.json public/cards-index.json public/drop-rate-v2.json
           # Sans changement, `git commit` sort en erreur et ferait échouer le
           # job : une journée sans mouvement de prix est un cas normal.
           if git diff --staged --quiet; then
@@ -56,3 +62,7 @@ jobs:
             git commit -m "Relevé du $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      - name: Signaler une indisponibilité Cardmarket
+        if: steps.cardmarket.outcome != 'success'
+        run: exit 1
