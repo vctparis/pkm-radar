@@ -5,6 +5,19 @@ import { join } from "node:path";
 import type { Metadata } from "next";
 import type { FRBoosterQuote, RadarData } from "@/lib/types";
 import { FAMILIES, familyOf } from "@/lib/families";
+import { SETS } from "@/scripts/lib/sets.mjs";
+
+// Fin d'impression : ESTIMATION éditoriale (rotations de blocs, vagues de
+// réimpression observées) — TPC ne publie jamais cette date. Affichée avec
+// « ≈ » et une note de méthode, jamais comme un fait.
+const PRINT_END = new Map(SETS.map((set) => [set.id, set.printEnd]));
+const printEndLabel = (id: string) => {
+  const status = PRINT_END.get(id);
+  if (status === "ongoing") return { text: "en cours", tone: "text-[color:var(--color-good)]" };
+  if (status === "unknown") return { text: "incertaine", tone: "text-mist-500" };
+  if (typeof status === "number") return { text: `≈ ${status}`, tone: "text-mist-300" };
+  return { text: "—", tone: "text-mist-500" };
+};
 
 export const metadata: Metadata = {
   title: "Marché · bêta",
@@ -191,6 +204,10 @@ export default async function MarchePage() {
                   <span className="block text-[0.68rem] font-normal text-mist-500">date d&apos;édition</span>
                 </th>
                 <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
+                  Fin d&apos;impression
+                  <span className="block text-[0.68rem] font-normal text-mist-500">estimation, jamais officielle</span>
+                </th>
+                <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
                   Médiane retenue
                   <span className="block text-[0.68rem] font-normal text-mist-500">la référence du site</span>
                 </th>
@@ -216,7 +233,7 @@ export default async function MarchePage() {
               {families.map((family) => (
                 <Fragment key={family.name}>
                   <tr className="border-t border-ink-600 bg-ink-800/60">
-                    <th scope="colgroup" colSpan={7} className="px-4 py-1.5 text-left text-[0.78rem] font-semibold uppercase tracking-wider text-mist-300">
+                    <th scope="colgroup" colSpan={8} className="px-4 py-1.5 text-left text-[0.78rem] font-semibold uppercase tracking-wider text-mist-300">
                       {family.name}
                       <span className="ml-2.5 font-normal normal-case tracking-normal text-mist-500">{family.years}</span>
                     </th>
@@ -242,6 +259,9 @@ export default async function MarchePage() {
                       </span>
                     </th>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-300">{releaseLabel(set.releaseDate)}</td>
+                    <td className={`tabular whitespace-nowrap px-4 py-2 text-right ${printEndLabel(set.id).tone}`}>
+                      {printEndLabel(set.id).text}
+                    </td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-050">
                       {quote.median != null ? (
                         eur.format(quote.median)
@@ -291,6 +311,13 @@ export default async function MarchePage() {
             </tbody>
           </table>
         </div>
+
+        <p className="prose-measure m-0 mt-3 text-[0.78rem] leading-relaxed text-mist-500">
+          Fin d&apos;impression : The Pokémon Company ne publie jamais cette date. « ≈ AAAA » est une estimation
+          éditoriale d&apos;après la rotation des blocs et les vagues de réimpression observées ; « en cours » = le
+          produit sort encore des usines ; « incertaine » = réimpressions imprévisibles (le 151 en a reçu plusieurs
+          vagues surprises). Un ordre de grandeur pour raisonner l&apos;offre — pas un fait.
+        </p>
 
         {/* ---- Pourquoi des annonces sont écartées ---- */}
         <h2 className="display mb-3 mt-10 text-[1.2rem] text-mist-050">Pourquoi une annonce est écartée</h2>
