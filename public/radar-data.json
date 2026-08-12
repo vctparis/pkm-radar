@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T21:29:28.593Z",
+  "generatedAt": "2026-08-12T08:04:36.940Z",
   "sets": [
     {
       "id": "celebrations",
@@ -232,7 +232,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.78,
+              "evNet": 3.95,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -241,16 +241,16 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 4.06,
+              "evNet": 3.9,
               "p25": 0,
               "median": 0,
               "p75": 0,
               "pRecoup": 0,
-              "pLoseHalf": 0.94,
+              "pLoseHalf": 0.95,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.62,
+              "evNet": 3.82,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -259,7 +259,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 3.86,
+              "evNet": 3.65,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -537,6 +537,20 @@
         },
         {
           "date": "2026-08-11",
+          "boosterPrice": 45.64,
+          "boosterOffers": 1,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 4095,
+          "top5Value": 76.23,
+          "top12ex5Value": 6.58,
+          "boosterFRp10": 44.9,
+          "boosterFRmedian": 70,
+          "boosterFRoffers": 2,
+          "boosterFRsellers": 2
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 45.64,
           "boosterOffers": 1,
           "boosterLanguage": "en",
@@ -1163,18 +1177,18 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.67,
+              "evNet": 1.78,
               "p25": 0,
-              "median": 0.45,
+              "median": 0.48,
               "p75": 1.71,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.72,
+              "evNet": 1.78,
               "p25": 0,
-              "median": 0.45,
+              "median": 0.48,
               "p75": 1.71,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
@@ -1636,6 +1650,20 @@
       "liveHistory": [
         {
           "date": "2026-08-11",
+          "boosterPrice": 8.65,
+          "boosterOffers": 7,
+          "boosterLanguage": "en",
+          "boxPrice": 799.64,
+          "singlesOffers": 19992,
+          "top5Value": 76.19,
+          "top12ex5Value": 27.74,
+          "boosterFRp10": 38,
+          "boosterFRmedian": 47,
+          "boosterFRoffers": 15,
+          "boosterFRsellers": 6
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 8.65,
           "boosterOffers": 7,
           "boosterLanguage": "en",
@@ -2310,34 +2338,34 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.51,
+              "evNet": 1.53,
               "p25": 0,
-              "median": 0.39,
-              "p75": 1.27,
+              "median": 0.41,
+              "p75": 1.22,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.46,
+              "evNet": 1.56,
               "p25": 0,
-              "median": 0.39,
+              "median": 0.41,
               "p75": 1.27,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.17,
+              "evNet": 1.21,
               "p25": 0,
-              "median": 0,
-              "p75": 1.07,
+              "median": 0.38,
+              "p75": 1.11,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.5,
+              "evNet": 0.49,
               "p25": 0,
               "median": 0,
               "p75": 0.68,
@@ -2790,6 +2818,20 @@
       "liveHistory": [
         {
           "date": "2026-08-11",
+          "boosterPrice": 8.29,
+          "boosterOffers": 7,
+          "boosterLanguage": "en",
+          "boxPrice": 369.64,
+          "singlesOffers": 20402,
+          "top5Value": 203.6,
+          "top12ex5Value": 51.54,
+          "boosterFRp10": 23,
+          "boosterFRmedian": 29.99,
+          "boosterFRoffers": 25,
+          "boosterFRsellers": 12
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 8.29,
           "boosterOffers": 7,
           "boosterLanguage": "en",
@@ -3488,7 +3530,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.1,
+              "evNet": 2.32,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -3497,7 +3539,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.4,
+              "evNet": 2.18,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -3506,7 +3548,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.67,
+              "evNet": 1.97,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -3515,7 +3557,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.32,
               "p25": 0,
               "median": 0,
               "p75": 0.35,
@@ -3980,6 +4022,20 @@
           "boosterFRmedian": 69.99,
           "boosterFRoffers": 16,
           "boosterFRsellers": 12
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 8.15,
+          "boosterOffers": 7,
+          "boosterLanguage": "it",
+          "boxPrice": 1299.99,
+          "singlesOffers": 9003,
+          "top5Value": 423.34,
+          "top12ex5Value": 66.08,
+          "boosterFRp10": 25,
+          "boosterFRmedian": 69.99,
+          "boosterFRoffers": 16,
+          "boosterFRsellers": 12
         }
       ],
       "psa": {
@@ -4222,10 +4278,10 @@
             "floor10": 1.5,
             "floor10Url": "https://www.ebay.fr/itm/267225419552?_skw=Salam%C3%A8che+18%2F147&hash=item3e37e04f20:g:mR0AAOSwXbJoA1a~",
             "median": 2.99,
-            "offers": 18,
-            "sellers": 15,
-            "matched": 18,
-            "scanned": 22
+            "offers": 17,
+            "sellers": 14,
+            "matched": 17,
+            "scanned": 21
           }
         },
         {
@@ -4570,9 +4626,9 @@
         "floor10": 20,
         "floor10Url": "https://www.ebay.fr/itm/407121208473?_skw=pokemon+booster+Soleil+%26+Lune&hash=item5eca50a499:g:wRAAAeSwlYhqcrtm",
         "median": 99.99,
-        "offers": 81,
+        "offers": 80,
         "sellers": 31,
-        "matched": 81,
+        "matched": 80,
         "scanned": 188
       },
       "opening": {
@@ -4668,7 +4724,7 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.64,
+              "evNet": 1.67,
               "p25": 0,
               "median": 0,
               "p75": 0.74,
@@ -4680,7 +4736,7 @@
               "evNet": 1.67,
               "p25": 0,
               "median": 0,
-              "p75": 0.88,
+              "p75": 0.74,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -4689,7 +4745,7 @@
               "evNet": 1.26,
               "p25": 0,
               "median": 0,
-              "p75": 0.66,
+              "p75": 0.67,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -5150,8 +5206,8 @@
           "language": "en"
         },
         "boosterBox": {
-          "price": 1286.74,
-          "floor10": 1286.74,
+          "price": 1289.38,
+          "floor10": 1289.38,
           "offers": 1,
           "quantity": 1,
           "sellers": 1,
@@ -5189,6 +5245,20 @@
           "boosterFRp10": 20,
           "boosterFRmedian": 99.99,
           "boosterFRoffers": 81,
+          "boosterFRsellers": 31
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 25.39,
+          "boosterOffers": 1,
+          "boosterLanguage": "en",
+          "boxPrice": 1289.38,
+          "singlesOffers": 9631,
+          "top5Value": 119.23,
+          "top12ex5Value": 53.8,
+          "boosterFRp10": 20,
+          "boosterFRmedian": 99.99,
+          "boosterFRoffers": 80,
           "boosterFRsellers": 31
         }
       ],
@@ -5265,7 +5335,7 @@
             "price": 2.8,
             "priceUrl": "https://www.ebay.fr/itm/267737712549?_skw=Sharpedo+82%2F149&hash=item3e566947a5:g:13QAAeSwIB1qKq85",
             "floor10": 2.8,
-            "floor10Url": "https://www.ebay.fr/itm/267737712560?_skw=Sharpedo+82%2F149&hash=item3e566947b0:g:9YAAAeSwkxVqKq6C",
+            "floor10Url": "https://www.ebay.fr/itm/267737698792?_skw=Sharpedo+82%2F149&hash=item3e566911e8:g:tDEAAeSw7E1oW9LK",
             "median": 2.85,
             "offers": 10,
             "sellers": 5,
@@ -5716,12 +5786,12 @@
         "change30": -27.7,
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolutions/Charizard-V1-EVO11",
         "priceFR": 80,
-        "offersFR": 50
+        "offersFR": 49
       },
       "podium": [
         {
           "priceFR": 80,
-          "offersFR": 50,
+          "offersFR": 49,
           "name": "Charizard",
           "nameFR": "Dracaufeu",
           "image": "https://assets.tcgdex.net/fr/xy/xy12/11/low.webp",
@@ -5761,18 +5831,18 @@
         "priceUrl": "https://www.ebay.fr/itm/227241959373?_skw=pokemon+booster+%C3%89volutions&hash=item34e8ad1fcd:g:DkgAAeSwcUppqEFE",
         "floor10": 149.9,
         "floor10Url": "https://www.ebay.fr/itm/127746088379?_skw=pokemon+booster+%C3%89volutions&hash=item1dbe429dbb:g:biMAAeSw6HNptvoK",
-        "median": 219.99,
-        "offers": 10,
-        "sellers": 7,
-        "matched": 10,
+        "median": 200,
+        "offers": 12,
+        "sellers": 8,
+        "matched": 12,
         "scanned": 775
       },
       "opening": {
-        "boosterPrice": 219.99,
+        "boosterPrice": 200,
         "netLo": 8.77,
         "netHi": 14.18,
         "ratioLo": 0.04,
-        "ratioHi": 0.06,
+        "ratioHi": 0.07,
         "looseLo": 6.47,
         "looseHi": 10.32,
         "recoupLo": 0,
@@ -5847,8 +5917,8 @@
           "buyPrice": 166.14,
           "oneInLo": 33,
           "oneInHi": 52,
-          "expectedCostLo": 7150,
-          "expectedCostHi": 11439,
+          "expectedCostLo": 6500,
+          "expectedCostHi": 10400,
           "perDisplay": 0.6,
           "buyPriceFR": 80,
           "nameFR": "Dracaufeu"
@@ -5860,7 +5930,7 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.36,
+              "evNet": 10.92,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -5869,7 +5939,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 11.34,
+              "evNet": 11.72,
               "p25": 0,
               "median": 0.36,
               "p75": 5.16,
@@ -5878,16 +5948,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 10.61,
+              "evNet": 10.57,
               "p25": 0,
               "median": 0.35,
-              "p75": 4.65,
+              "p75": 4.28,
               "pRecoup": 0,
               "pLoseHalf": 0.97,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.36,
+              "evNet": 8.12,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
@@ -6331,7 +6401,7 @@
           "price": 36.03,
           "floor10": 36.03,
           "offers": 3,
-          "quantity": 5,
+          "quantity": 4,
           "sellers": 3,
           "language": "en"
         },
@@ -6361,6 +6431,20 @@
           "boosterFRmedian": 219.99,
           "boosterFRoffers": 10,
           "boosterFRsellers": 7
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 36.03,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 5658,
+          "top5Value": 269.38,
+          "top12ex5Value": 209.19,
+          "boosterFRp10": 149.9,
+          "boosterFRmedian": 200,
+          "boosterFRoffers": 12,
+          "boosterFRsellers": 8
         }
       ],
       "psa": null,
@@ -6585,15 +6669,15 @@
           "nameFR": "Roucarnage EX",
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolutions/Pidgeot-EX-EVO64",
           "marketFR": {
-            "price": 7.36,
-            "priceUrl": "https://www.ebay.fr/itm/365190192776?_skw=Roucarnage+EX+64%2F108&hash=item5507081e88:g:OwIAAOSw7PJnFrBk",
+            "price": 7,
+            "priceUrl": "https://www.ebay.fr/itm/237000257588?_skw=Roucarnage+EX+64%2F108&hash=item372e50f034:g:s4UAAeSwls1qe6UZ",
             "floor10": 7.36,
             "floor10Url": "https://www.ebay.fr/itm/365190192776?_skw=Roucarnage+EX+64%2F108&hash=item5507081e88:g:OwIAAOSw7PJnFrBk",
             "median": 12.99,
-            "offers": 9,
-            "sellers": 8,
-            "matched": 9,
-            "scanned": 10
+            "offers": 10,
+            "sellers": 9,
+            "matched": 10,
+            "scanned": 11
           }
         },
         {
@@ -6898,6 +6982,20 @@
         },
         {
           "date": "2026-08-11",
+          "boosterPrice": 30.4,
+          "boosterOffers": 1,
+          "boosterLanguage": "jp",
+          "boxPrice": 150.64,
+          "singlesOffers": 4585,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": 15,
+          "boosterFRmedian": 15,
+          "boosterFRoffers": 1,
+          "boosterFRsellers": 1
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 30.4,
           "boosterOffers": 1,
           "boosterLanguage": "jp",
@@ -7530,6 +7628,20 @@
           "boosterFRmedian": null,
           "boosterFRoffers": 0,
           "boosterFRsellers": 0
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 15.11,
+          "boosterOffers": 2,
+          "boosterLanguage": "jp",
+          "boxPrice": 199.64,
+          "singlesOffers": 5755,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": null,
+          "boosterFRmedian": null,
+          "boosterFRoffers": 0,
+          "boosterFRsellers": 0
         }
       ],
       "psa": null,
@@ -8126,6 +8238,20 @@
       "liveHistory": [
         {
           "date": "2026-08-11",
+          "boosterPrice": 19.27,
+          "boosterOffers": 2,
+          "boosterLanguage": "jp",
+          "boxPrice": 790.64,
+          "singlesOffers": 2458,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": null,
+          "boosterFRmedian": null,
+          "boosterFRoffers": 0,
+          "boosterFRsellers": 0
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 19.27,
           "boosterOffers": 2,
           "boosterLanguage": "jp",
@@ -8815,7 +8941,7 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.91,
+              "evNet": 2.88,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
@@ -8824,7 +8950,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.87,
+              "evNet": 2.81,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
@@ -8833,7 +8959,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 2.15,
+              "evNet": 2.08,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
@@ -8842,7 +8968,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.36,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -9266,6 +9392,20 @@
         },
         {
           "date": "2026-08-11",
+          "boosterPrice": 45.64,
+          "boosterOffers": 2,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 7431,
+          "top5Value": 174.63,
+          "top12ex5Value": 19.89,
+          "boosterFRp10": 49.99,
+          "boosterFRmedian": 119.9,
+          "boosterFRoffers": 14,
+          "boosterFRsellers": 9
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 45.64,
           "boosterOffers": 2,
           "boosterLanguage": "en",
@@ -9845,7 +9985,7 @@
         "offers": 14,
         "sellers": 9,
         "matched": 14,
-        "scanned": 56
+        "scanned": 55
       },
       "opening": {
         "boosterPrice": 109.99,
@@ -9940,28 +10080,28 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.19,
+              "evNet": 6.33,
               "p25": 0,
               "median": 0,
-              "p75": 1.17,
+              "p75": 1.18,
               "pRecoup": 0.02,
               "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 6.27,
+              "evNet": 6.2,
               "p25": 0,
               "median": 0,
-              "p75": 1.17,
+              "p75": 1.18,
               "pRecoup": 0.02,
               "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 4.38,
+              "evNet": 4.28,
               "p25": 0,
               "median": 0,
-              "p75": 0.84,
+              "p75": 0.82,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -10401,8 +10541,8 @@
       ],
       "live": {
         "booster": {
-          "price": 64.14,
-          "floor10": 64.14,
+          "price": 64.27,
+          "floor10": 64.27,
           "offers": 3,
           "quantity": 53,
           "sellers": 3,
@@ -10439,6 +10579,20 @@
         {
           "date": "2026-08-11",
           "boosterPrice": 64.14,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": 2300.64,
+          "singlesOffers": 26368,
+          "top5Value": 3118.07,
+          "top12ex5Value": 1481.26,
+          "boosterFRp10": 40,
+          "boosterFRmedian": 109.99,
+          "boosterFRoffers": 14,
+          "boosterFRsellers": 9
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 64.27,
           "boosterOffers": 3,
           "boosterLanguage": "en",
           "boxPrice": 2300.64,
@@ -11118,16 +11272,16 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.25,
+              "evNet": 1.82,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
-              "pRecoup": 0.01,
+              "pRecoup": 0,
               "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.89,
+              "evNet": 1.97,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -11136,7 +11290,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.44,
+              "evNet": 1.33,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -11145,10 +11299,10 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.33,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
-              "p75": 0.43,
+              "p75": 0.46,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -11647,6 +11801,20 @@
         },
         {
           "date": "2026-08-11",
+          "boosterPrice": 12.01,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": 390.64,
+          "singlesOffers": 39253,
+          "top5Value": 417.52,
+          "top12ex5Value": 53.55,
+          "boosterFRp10": 11.37,
+          "boosterFRmedian": 19.9,
+          "boosterFRoffers": 29,
+          "boosterFRsellers": 18
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 12.01,
           "boosterOffers": 3,
           "boosterLanguage": "en",
@@ -12322,15 +12490,6 @@
           "jackpotNet": 8.99,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 0.5,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.7,
-              "pRecoup": 0,
-              "pLoseHalf": 1,
-              "pDouble": 0
-            },
-            "freshBox": {
               "evNet": 0.52,
               "p25": 0,
               "median": 0,
@@ -12339,8 +12498,17 @@
               "pLoseHalf": 1,
               "pDouble": 0
             },
+            "freshBox": {
+              "evNet": 0.51,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.7,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            },
             "trustedLoose": {
-              "evNet": 0.4,
+              "evNet": 0.42,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
@@ -12807,6 +12975,20 @@
           "boosterFRmedian": 50,
           "boosterFRoffers": 19,
           "boosterFRsellers": 11
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 12.26,
+          "boosterOffers": 4,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 14454,
+          "top5Value": 19.07,
+          "top12ex5Value": 14.42,
+          "boosterFRp10": 21.76,
+          "boosterFRmedian": 50,
+          "boosterFRoffers": 19,
+          "boosterFRsellers": 11
         }
       ],
       "psa": null,
@@ -13210,6 +13392,1242 @@
       ]
     },
     {
+      "id": "crown-zenith",
+      "name": "Zénith Suprême",
+      "nameEN": "Crown Zenith",
+      "era": "Épée et Bouclier",
+      "releaseDate": "2023/01/20",
+      "ageYears": 3.6,
+      "score": 54,
+      "components": {
+        "breadth": 18,
+        "scarcity": 91,
+        "psaResistance": 50,
+        "spread": 80,
+        "maturity": 40
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 20,
+      "cardsTracked": 160,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-21",
+            "sample": 35,
+            "momentum": 0,
+            "diffusion": 34.3
+          },
+          {
+            "date": "2025-12-07",
+            "sample": 13,
+            "momentum": 0,
+            "diffusion": 23.1
+          },
+          {
+            "date": "2025-12-12",
+            "sample": 8,
+            "momentum": 6.64,
+            "diffusion": 75
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 16,
+            "momentum": 0,
+            "diffusion": 43.8
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 11,
+            "momentum": 0,
+            "diffusion": 36.4
+          },
+          {
+            "date": "2026-01-21",
+            "sample": 13,
+            "momentum": 25,
+            "diffusion": 76.9
+          },
+          {
+            "date": "2026-02-19",
+            "sample": 14,
+            "momentum": 0,
+            "diffusion": 35.7
+          },
+          {
+            "date": "2026-03-11",
+            "sample": 8,
+            "momentum": 10.34,
+            "diffusion": 50
+          },
+          {
+            "date": "2026-07-01",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 33.3
+          }
+        ],
+        "window": {
+          "from": "2025-11-21",
+          "to": "2026-07-01"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 96.82
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": -1.4,
+          "changeMovers": -2.5,
+          "stale": 3,
+          "diffusion": 43.3
+        },
+        "mid": {
+          "cards": 59,
+          "change30": 3.6,
+          "changeMovers": 6.7,
+          "stale": 10,
+          "diffusion": 52.5
+        },
+        "commons": {
+          "cards": 71,
+          "change30": 0,
+          "changeMovers": 25,
+          "stale": 46,
+          "diffusion": 31
+        }
+      },
+      "bestCard": {
+        "name": "Pikachu",
+        "nameFR": "Pikachu",
+        "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/160/low.webp",
+        "number": "160",
+        "rarity": "Rare Secret",
+        "price": 37.74,
+        "change30": -4.6,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Pikachu-CRZ160",
+        "priceFR": 6.9,
+        "offersFR": 9
+      },
+      "podium": [
+        {
+          "priceFR": 6.9,
+          "offersFR": 9,
+          "name": "Pikachu",
+          "nameFR": "Pikachu",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/160/low.webp",
+          "number": "160",
+          "rarity": "Rare Secret",
+          "price": 37.74,
+          "change30": -4.6,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Pikachu-CRZ160"
+        },
+        {
+          "priceFR": 32,
+          "offersFR": 5,
+          "name": "Elesa's Sparkle",
+          "nameFR": "Éclat d'Inezia",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/147/low.webp",
+          "number": "147",
+          "rarity": "Rare Ultra",
+          "price": 18.09,
+          "change30": 1.9,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Elesas-Sparkle-CRZ147"
+        },
+        {
+          "priceFR": 79,
+          "offersFR": 4,
+          "name": "Radiant Charizard",
+          "nameFR": "Dracaufeu Radieux",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/020/low.webp",
+          "number": "20",
+          "rarity": "Radiant Rare",
+          "price": 15.61,
+          "change30": 23.9,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Radiant-Charizard-CRZ020"
+        }
+      ],
+      "boosterFR": {
+        "price": 25.99,
+        "priceUrl": "https://www.ebay.fr/itm/358579046632?_skw=pokemon+booster+Z%C3%A9nith+Supr%C3%AAme&hash=item537cfa08e8:g:yhsAAeSwFd5qDksI",
+        "floor10": 25.99,
+        "floor10Url": "https://www.ebay.fr/itm/358579046632?_skw=pokemon+booster+Z%C3%A9nith+Supr%C3%AAme&hash=item537cfa08e8:g:yhsAAeSwFd5qDksI",
+        "median": 30,
+        "offers": 5,
+        "sellers": 5,
+        "matched": 5,
+        "scanned": 16
+      },
+      "opening": {
+        "boosterPrice": 30,
+        "netLo": 1.57,
+        "netHi": 2.63,
+        "ratioLo": 0.05,
+        "ratioHi": 0.09,
+        "looseLo": 0.75,
+        "looseHi": 1.16,
+        "recoupLo": 0.01,
+        "recoupHi": 0.02,
+        "recoupLooseLo": 0,
+        "recoupLooseHi": 0,
+        "topPulls": [
+          {
+            "name": "Pikachu",
+            "number": "160",
+            "rarity": "Rare Secret",
+            "price": 37.74,
+            "oneIn": 67,
+            "contribution": 0.49,
+            "premium": true,
+            "nameFR": "Pikachu"
+          },
+          {
+            "name": "Elesa's Sparkle",
+            "number": "147",
+            "rarity": "Rare Ultra",
+            "price": 18.09,
+            "oneIn": 200,
+            "contribution": 0.08,
+            "premium": true,
+            "nameFR": "Éclat d'Inezia"
+          },
+          {
+            "name": "Radiant Charizard",
+            "number": "20",
+            "rarity": "Radiant Rare",
+            "price": 15.61,
+            "oneIn": 24,
+            "contribution": 0.57,
+            "premium": false,
+            "nameFR": "Dracaufeu Radieux"
+          },
+          {
+            "name": "Charizard VSTAR",
+            "number": "19",
+            "rarity": "Rare Holo VSTAR",
+            "price": 10.12,
+            "oneIn": 100,
+            "contribution": 0.09,
+            "premium": true,
+            "nameFR": "Dracaufeu VSTAR"
+          },
+          {
+            "name": "Friends in Sinnoh",
+            "number": "149",
+            "rarity": "Rare Ultra",
+            "price": 8.01,
+            "oneIn": 200,
+            "contribution": 0.03,
+            "premium": true,
+            "nameFR": "Amis de Sinnoh"
+          },
+          {
+            "name": "Friends in Hisui",
+            "number": "148",
+            "rarity": "Rare Ultra",
+            "price": 6.28,
+            "oneIn": 200,
+            "contribution": 0.03,
+            "premium": true,
+            "nameFR": "Amis de Hisui"
+          }
+        ],
+        "top1": {
+          "name": "Pikachu",
+          "number": "160",
+          "buyPrice": 37.74,
+          "oneInLo": 50,
+          "oneInHi": 100,
+          "expectedCostLo": 1500,
+          "expectedCostHi": 3000,
+          "perDisplay": 0.42,
+          "buyPriceFR": 6.9,
+          "nameFR": "Pikachu"
+        },
+        "boostersPerDisplay": 36,
+        "looseModel": "mappable",
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 32.83,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.09,
+              "p25": 0,
+              "median": 0.41,
+              "p75": 1.51,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.04,
+              "p25": 0,
+              "median": 0.4,
+              "p75": 1.48,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.81,
+              "p25": 0,
+              "median": 0.37,
+              "p75": 1.2,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.98,
+              "pDouble": 0
+            },
+            "unknownLoose": {
+              "evNet": 0.95,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.63,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            }
+          }
+        },
+        "confidence": "correcte",
+        "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
+      },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 22,
+            "rateLo": 0.5,
+            "rateHi": 0.7,
+            "oneInAny": 2,
+            "oneInSpecific": 37,
+            "median": 0.11,
+            "mean": 0.11,
+            "contribution": 0.06,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo",
+            "count": 20,
+            "rateLo": 0.25,
+            "rateHi": 0.4,
+            "oneInAny": 3,
+            "oneInSpecific": 62,
+            "median": 0.46,
+            "mean": 0.5,
+            "contribution": 0.16,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo V",
+            "count": 17,
+            "rateLo": 0.15,
+            "rateHi": 0.25,
+            "oneInAny": 5,
+            "oneInSpecific": 85,
+            "median": 0.96,
+            "mean": 1.5,
+            "contribution": 0.3,
+            "premium": false
+          },
+          {
+            "rarity": "Radiant Rare",
+            "count": 3,
+            "rateLo": 0.1,
+            "rateHi": 0.15,
+            "oneInAny": 8,
+            "oneInSpecific": 24,
+            "median": 0.53,
+            "mean": 5.41,
+            "contribution": 0.68,
+            "premium": false
+          },
+          {
+            "rarity": "Rare Holo VMAX",
+            "count": 5,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 63,
+            "median": 2.08,
+            "mean": 3.04,
+            "contribution": 0.24,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Holo VSTAR",
+            "count": 8,
+            "rateLo": 0.06,
+            "rateHi": 0.1,
+            "oneInAny": 13,
+            "oneInSpecific": 100,
+            "median": 1.62,
+            "mean": 2.77,
+            "contribution": 0.22,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Ultra",
+            "count": 13,
+            "rateLo": 0.05,
+            "rateHi": 0.08,
+            "oneInAny": 15,
+            "oneInSpecific": 200,
+            "median": 2.44,
+            "mean": 4.41,
+            "contribution": 0.29,
+            "premium": true
+          },
+          {
+            "rarity": "Rare Secret",
+            "count": 1,
+            "rateLo": 0.01,
+            "rateHi": 0.02,
+            "oneInAny": 67,
+            "oneInSpecific": 67,
+            "median": 37.74,
+            "mean": 37.74,
+            "contribution": 0.57,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 2.52,
+        "confidence": "correcte",
+        "looseModel": "mappable",
+        "eraLabel": "Épée et Bouclier",
+        "sample": "plusieurs milliers de boosters sur l'ère",
+        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
+        "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
+      },
+      "logo": "https://assets.tcgdex.net/fr/swsh/swsh12.5/logo.webp",
+      "strata": [
+        {
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -4.62,
+          "cards": 1,
+          "basketValue": 33.23,
+          "driver": {
+            "name": "Pikachu",
+            "number": "160",
+            "change": -4.6,
+            "share": 1
+          }
+        },
+        {
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": 8.3,
+          "cards": 4,
+          "basketValue": 52.95,
+          "driver": {
+            "name": "Radiant Charizard",
+            "number": "20",
+            "change": 23.9,
+            "share": 0.77
+          }
+        },
+        {
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -2.03,
+          "cards": 10,
+          "basketValue": 39.59,
+          "driver": null
+        },
+        {
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": -3.26,
+          "cards": 35,
+          "basketValue": 47.75,
+          "driver": null
+        },
+        {
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": 3.89,
+          "cards": 110,
+          "basketValue": 11.49,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
+        "monthly": {
+          "top1": [
+            {
+              "date": "2025-11-15",
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 2,
+              "growth": -0.86,
+              "basketValue": 26.62
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 2,
+              "growth": -0.86,
+              "basketValue": 26.62
+            },
+            {
+              "date": "2026-04-15",
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
+            },
+            {
+              "date": "2026-06-15",
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 16,
+              "growth": -7.13,
+              "basketValue": 23.7
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 23,
+              "growth": -4.38,
+              "basketValue": 32.97
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 25,
+              "growth": -2.29,
+              "basketValue": 29.82
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 15,
+              "growth": -0.62,
+              "basketValue": 19.33
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 9,
+              "growth": -1.97,
+              "basketValue": 11.42
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 36,
+              "growth": 4.61,
+              "basketValue": 4.31
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 71,
+              "growth": 7.29,
+              "basketValue": 8.24
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 60,
+              "growth": 4.61,
+              "basketValue": 6.35
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 57,
+              "growth": 4.72,
+              "basketValue": 5.77
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 24,
+              "growth": -5.37,
+              "basketValue": 1.94
+            },
+            {
+              "date": "2026-04-15",
+              "sample": 12,
+              "growth": 8.11,
+              "basketValue": 1.2
+            },
+            {
+              "date": "2026-06-15",
+              "sample": 15,
+              "growth": -1.5,
+              "basketValue": 1.31
+            },
+            {
+              "date": "2026-07-15",
+              "sample": 14,
+              "growth": -2.13,
+              "basketValue": 0.92
+            }
+          ]
+        },
+        "quarterly": {
+          "top1": [
+            {
+              "date": "2025-11-15",
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 1,
+              "growth": -4.62,
+              "basketValue": 33.23
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 2,
+              "growth": -0.86,
+              "basketValue": 26.62
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 4,
+              "growth": 8.3,
+              "basketValue": 52.95
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 2,
+              "growth": 19.46,
+              "basketValue": 26.33
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 8,
+              "growth": -1.49,
+              "basketValue": 31.77
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 23,
+              "growth": -4.38,
+              "basketValue": 32.97
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 33,
+              "growth": -3.52,
+              "basketValue": 45.25
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 12,
+              "growth": -0.67,
+              "basketValue": 14.78
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 71,
+              "growth": 7.29,
+              "basketValue": 8.24
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 96,
+              "growth": 4.45,
+              "basketValue": 10.57
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 39,
+              "growth": -3.85,
+              "basketValue": 3.25
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 14,
+              "growth": -2.13,
+              "basketValue": 0.92
+            }
+          ]
+        }
+      },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 63,
+          "growth": -3.2,
+          "basketValue": 119.63
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 105,
+          "growth": -2.4,
+          "basketValue": 132.83
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 88,
+          "growth": -0.73,
+          "basketValue": 50.35
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 72,
+          "growth": 0.56,
+          "basketValue": 25.1
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 33,
+          "growth": -2.48,
+          "basketValue": 13.36
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 16,
+          "growth": 18.62,
+          "basketValue": 29.75
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 16,
+          "growth": 12.06,
+          "basketValue": 39.78
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 22,
+          "growth": 11.68,
+          "basketValue": 38.82
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 18,
+          "growth": -2.77,
+          "basketValue": 11.24
+        }
+      ],
+      "live": {
+        "booster": {
+          "price": 31.72,
+          "floor10": 31.72,
+          "offers": 2,
+          "quantity": 54,
+          "sellers": 2,
+          "language": "en"
+        },
+        "boosterBox": null,
+        "singles": {
+          "tracked": 239,
+          "offers": 27190
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-10",
+          "boosterPrice": 32.03,
+          "boosterOffers": 2,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 27430,
+          "top5Value": 86.42,
+          "top12ex5Value": 28.34,
+          "boosterFRp10": 25.99,
+          "boosterFRmedian": 30,
+          "boosterFRoffers": 5,
+          "boosterFRsellers": 5
+        },
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 31.72,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 27190,
+          "top5Value": 86.42,
+          "top12ex5Value": 29.19,
+          "boosterFRp10": 25.99,
+          "boosterFRmedian": 30,
+          "boosterFRoffers": 5,
+          "boosterFRsellers": 5
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 31.72,
+          "boosterOffers": 2,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 27190,
+          "top5Value": 86.42,
+          "top12ex5Value": 29.19,
+          "boosterFRp10": 25.99,
+          "boosterFRmedian": 30,
+          "boosterFRoffers": 5,
+          "boosterFRsellers": 5
+        }
+      ],
+      "psa": null,
+      "picks": [
+        {
+          "id": "swsh12pt5-20",
+          "name": "Radiant Charizard",
+          "number": "20",
+          "rarity": "Radiant Rare",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/020/low.webp",
+          "price": 15.61,
+          "momentum30": 23.9,
+          "relativeStrength": 23.9,
+          "sellers": 73,
+          "offers": 76,
+          "marketFloor": 5.11,
+          "score": 72,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Dracaufeu Radieux",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Radiant-Charizard-CRZ020",
+          "marketFR": {
+            "price": 79,
+            "priceUrl": "https://www.ebay.fr/itm/317987940565?_skw=Dracaufeu+Radieux+20%2F159&hash=item4a098ee8d5:g:8GYAAeSwwRlpsgEx",
+            "floor10": 79,
+            "floor10Url": "https://www.ebay.fr/itm/317987940565?_skw=Dracaufeu+Radieux+20%2F159&hash=item4a098ee8d5:g:8GYAAeSwwRlpsgEx",
+            "median": 89,
+            "offers": 4,
+            "sellers": 3,
+            "matched": 4,
+            "scanned": 4
+          }
+        },
+        {
+          "id": "swsh12pt5-95",
+          "name": "Zacian V",
+          "number": "95",
+          "rarity": "Rare Holo V",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/095/low.webp",
+          "price": 1.14,
+          "momentum30": 21.1,
+          "relativeStrength": 21.1,
+          "sellers": 77,
+          "offers": 81,
+          "marketFloor": 0.6,
+          "score": 71,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Zacian V",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Zacian-V-CRZ095",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "swsh12pt5-99",
+          "name": "Zamazenta VSTAR",
+          "number": "99",
+          "rarity": "Rare Holo VSTAR",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/099/low.webp",
+          "price": 1.7,
+          "momentum30": 21.2,
+          "relativeStrength": 21.2,
+          "sellers": 45,
+          "offers": 48,
+          "marketFloor": 0.84,
+          "score": 71,
+          "components": {
+            "relative": 100,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Zamazenta VSTAR",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Zamazenta-VSTAR-CRZ099",
+          "marketFR": {
+            "price": 89,
+            "priceUrl": "https://www.ebay.fr/itm/317997219808?_skw=Zamazenta+VSTAR+99%2F159&hash=item4a0a1c7fe0:g:EoQAAeSw-RRps-Au",
+            "floor10": 89,
+            "floor10Url": "https://www.ebay.fr/itm/317997219808?_skw=Zamazenta+VSTAR+99%2F159&hash=item4a0a1c7fe0:g:EoQAAeSw-RRps-Au",
+            "median": 89,
+            "offers": 1,
+            "sellers": 1,
+            "matched": 1,
+            "scanned": 1
+          }
+        },
+        {
+          "id": "swsh12pt5-23",
+          "name": "Simisear VSTAR",
+          "number": "23",
+          "rarity": "Rare Holo VSTAR",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/023/low.webp",
+          "price": 1.26,
+          "momentum30": 17.2,
+          "relativeStrength": 17.2,
+          "sellers": 65,
+          "offers": 68,
+          "marketFloor": 0.85,
+          "score": 68,
+          "components": {
+            "relative": 93,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Flamoutan VSTAR",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Simisear-VSTAR-V1-CRZ023",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "swsh12pt5-156",
+          "name": "Psychic Energy",
+          "number": "156",
+          "rarity": "Rare Ultra",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/156/low.webp",
+          "price": 2.44,
+          "momentum30": 6.1,
+          "relativeStrength": 6.1,
+          "sellers": 21,
+          "offers": 21,
+          "marketFloor": 3.12,
+          "score": 68,
+          "components": {
+            "relative": 65,
+            "tightness": 48,
+            "liquidity": 82,
+            "discount": 100
+          },
+          "nameFR": "Énergie Psy",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Psychic-Energy-V2-CRZ156",
+          "marketFR": {
+            "price": 39,
+            "priceUrl": "https://www.ebay.fr/itm/318034857555?_skw=%C3%89nergie+Psy+156%2F159&hash=item4a0c5ace53:g:KbYAAeSwQiVpvX0N",
+            "floor10": 39,
+            "floor10Url": "https://www.ebay.fr/itm/318034857555?_skw=%C3%89nergie+Psy+156%2F159&hash=item4a0c5ace53:g:KbYAAeSwQiVpvX0N",
+            "median": 39,
+            "offers": 1,
+            "sellers": 1,
+            "matched": 1,
+            "scanned": 2
+          }
+        },
+        {
+          "id": "swsh12pt5-19",
+          "name": "Charizard VSTAR",
+          "number": "19",
+          "rarity": "Rare Holo VSTAR",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/019/low.webp",
+          "price": 10.12,
+          "momentum30": 12.9,
+          "relativeStrength": 12.9,
+          "sellers": 48,
+          "offers": 49,
+          "marketFloor": 4.11,
+          "score": 64,
+          "components": {
+            "relative": 82,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Dracaufeu VSTAR",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Charizard-VSTAR-CRZ019",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "swsh12pt5-103",
+          "name": "Duraludon V",
+          "number": "103",
+          "rarity": "Rare Holo V",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/103/low.webp",
+          "price": 0.82,
+          "momentum30": 12.7,
+          "relativeStrength": 12.7,
+          "sellers": 94,
+          "offers": 101,
+          "marketFloor": 0.11,
+          "score": 64,
+          "components": {
+            "relative": 82,
+            "tightness": 0,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Duralugon V",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Duraludon-V-CRZ103",
+          "marketFR": {
+            "price": 2,
+            "priceUrl": "https://www.ebay.fr/itm/256347886622?_skw=Duralugon+V+103%2F159&hash=item3baf86541e:g:T18AAOSwmjJlgd7q",
+            "floor10": 2.4,
+            "floor10Url": "https://www.ebay.fr/itm/336721729271?_skw=Duralugon+V+103%2F159&hash=item4e662dd6f7:g:5goAAeSw3mlqb19o",
+            "median": 3.99,
+            "offers": 13,
+            "sellers": 13,
+            "matched": 13,
+            "scanned": 13
+          }
+        },
+        {
+          "id": "swsh12pt5-158",
+          "name": "Darkness Energy",
+          "number": "158",
+          "rarity": "Rare Ultra",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/158/low.webp",
+          "price": 3.13,
+          "momentum30": 2,
+          "relativeStrength": 2,
+          "sellers": 17,
+          "offers": 17,
+          "marketFloor": 3.59,
+          "score": 64,
+          "components": {
+            "relative": 55,
+            "tightness": 58,
+            "liquidity": 64,
+            "discount": 100
+          },
+          "nameFR": "Énergie Obscurité",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Darkness-Energy-V2-CRZ158",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 1
+          }
+        },
+        {
+          "id": "swsh12pt5-101",
+          "name": "Rayquaza VMAX",
+          "number": "101",
+          "rarity": "Rare Holo VMAX",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/101/low.webp",
+          "price": 4.62,
+          "momentum30": 0.4,
+          "relativeStrength": 0.4,
+          "sellers": 21,
+          "offers": 22,
+          "marketFloor": 3.18,
+          "score": 63,
+          "components": {
+            "relative": 51,
+            "tightness": 48,
+            "liquidity": 82,
+            "discount": 100
+          },
+          "nameFR": "Rayquaza VMAX",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Rayquaza-VMAX-V1-CRZ101",
+          "marketFR": {
+            "price": 9.99,
+            "priceUrl": "https://www.ebay.fr/itm/406098875793?_skw=Rayquaza+VMAX+101%2F159&hash=item5e8d611591:g:lmQAAeSwctRojgYx",
+            "floor10": 9.99,
+            "floor10Url": "https://www.ebay.fr/itm/406098875793?_skw=Rayquaza+VMAX+101%2F159&hash=item5e8d611591:g:lmQAAeSwctRojgYx",
+            "median": 27,
+            "offers": 5,
+            "sellers": 5,
+            "matched": 5,
+            "scanned": 5
+          }
+        },
+        {
+          "id": "swsh12pt5-152",
+          "name": "Grass Energy",
+          "number": "152",
+          "rarity": "Rare Ultra",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/152/low.webp",
+          "price": 2.25,
+          "momentum30": 5.1,
+          "relativeStrength": 5.1,
+          "sellers": 32,
+          "offers": 32,
+          "marketFloor": 2.6,
+          "score": 62,
+          "components": {
+            "relative": 63,
+            "tightness": 20,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Énergie Plante",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Grass-Energy-V2-CRZ152",
+          "marketFR": {
+            "price": 6,
+            "priceUrl": "https://www.ebay.fr/itm/285438369304?_skw=%C3%89nergie+Plante+152%2F159&hash=item427573de18:g:79gAAOSwgzFk4bu2",
+            "floor10": 6,
+            "floor10Url": "https://www.ebay.fr/itm/285438369304?_skw=%C3%89nergie+Plante+152%2F159&hash=item427573de18:g:79gAAOSwgzFk4bu2",
+            "median": 11.9,
+            "offers": 2,
+            "sellers": 2,
+            "matched": 2,
+            "scanned": 4
+          }
+        },
+        {
+          "id": "swsh12pt5-54",
+          "name": "Zeraora VMAX",
+          "number": "54",
+          "rarity": "Rare Holo VMAX",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/054/low.webp",
+          "price": 2.08,
+          "momentum30": 5.8,
+          "relativeStrength": 5.8,
+          "sellers": 35,
+          "offers": 36,
+          "marketFloor": 2,
+          "score": 61,
+          "components": {
+            "relative": 64,
+            "tightness": 13,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Zeraora VMAX",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Zeraora-VMAX-V1-CRZ054",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "swsh12pt5-102",
+          "name": "Rayquaza VMAX",
+          "number": "102",
+          "rarity": "Rare Holo VMAX",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/102/low.webp",
+          "price": 6.06,
+          "momentum30": 4.9,
+          "relativeStrength": 4.9,
+          "sellers": 20,
+          "offers": 21,
+          "marketFloor": 10,
+          "score": 61,
+          "components": {
+            "relative": 62,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 61
+          },
+          "nameFR": "Rayquaza VMAX",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Rayquaza-VMAX-V2-CRZ102",
+          "marketFR": {
+            "price": 32.95,
+            "priceUrl": "https://www.ebay.fr/itm/298455199379?_skw=Rayquaza+VMAX+102%2F159&hash=item457d50ee93:g:2OIAAeSwTLhqPq01",
+            "floor10": 32.95,
+            "floor10Url": "https://www.ebay.fr/itm/298455199379?_skw=Rayquaza+VMAX+102%2F159&hash=item457d50ee93:g:2OIAAeSwTLhqPq01",
+            "median": 34.99,
+            "offers": 2,
+            "sellers": 2,
+            "matched": 2,
+            "scanned": 2
+          }
+        }
+      ]
+    },
+    {
       "id": "brilliant-stars",
       "name": "Stars Étincelantes",
       "nameEN": "Brilliant Stars",
@@ -13379,7 +14797,7 @@
         "floor10Url": "https://www.ebay.fr/itm/198141346245?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item2e222501c5:g:nzgAAeSw0tFpoWfC",
         "median": 18,
         "offers": 62,
-        "sellers": 27,
+        "sellers": 28,
         "matched": 62,
         "scanned": 135
       },
@@ -13476,25 +14894,25 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.94,
+              "evNet": 2.23,
               "p25": 0,
               "median": 0,
-              "p75": 1.05,
+              "p75": 1.06,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.06,
+              "evNet": 2.17,
               "p25": 0,
               "median": 0,
-              "p75": 1.11,
+              "p75": 1.1,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.68,
+              "evNet": 1.54,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -13503,10 +14921,10 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.35,
+              "evNet": 0.33,
               "p25": 0,
               "median": 0,
-              "p75": 0.41,
+              "p75": 0,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -13993,6 +15411,20 @@
           "boosterFRmedian": 18,
           "boosterFRoffers": 62,
           "boosterFRsellers": 27
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 9.99,
+          "boosterOffers": 4,
+          "boosterLanguage": "en",
+          "boxPrice": 460.64,
+          "singlesOffers": 32059,
+          "top5Value": 320.36,
+          "top12ex5Value": 51.36,
+          "boosterFRp10": 14,
+          "boosterFRmedian": 18,
+          "boosterFRoffers": 62,
+          "boosterFRsellers": 28
         }
       ],
       "psa": {
@@ -14133,13 +15565,13 @@
           "marketFR": {
             "price": 7.5,
             "priceUrl": "https://www.ebay.fr/itm/227312562332?_skw=Bassin+de+Magma+185%2F172&hash=item34ece2709c:g:uDIAAeSwUMRpfhXC",
-            "floor10": 10.4,
-            "floor10Url": "https://www.ebay.fr/itm/336713218841?_skw=Bassin+de+Magma+185%2F172&hash=item4e65abfb19:g:gTEAAeSwxhdqaMB7",
-            "median": 14,
-            "offers": 10,
-            "sellers": 10,
-            "matched": 10,
-            "scanned": 11
+            "floor10": 8.2,
+            "floor10Url": "https://www.ebay.fr/itm/357834480029?_skw=Bassin+de+Magma+185%2F172&hash=item535098d99d:g:oZ8AAeSwBY9pAzgK",
+            "median": 13,
+            "offers": 11,
+            "sellers": 11,
+            "matched": 11,
+            "scanned": 12
           }
         },
         {
@@ -14404,1228 +15836,6 @@
             "sellers": 16,
             "matched": 17,
             "scanned": 17
-          }
-        }
-      ]
-    },
-    {
-      "id": "crown-zenith",
-      "name": "Zénith Suprême",
-      "nameEN": "Crown Zenith",
-      "era": "Épée et Bouclier",
-      "releaseDate": "2023/01/20",
-      "ageYears": 3.6,
-      "score": 53,
-      "components": {
-        "breadth": 18,
-        "scarcity": 86,
-        "psaResistance": 50,
-        "spread": 80,
-        "maturity": 40
-      },
-      "verdict": "Hausse non diffusée",
-      "concentration": 20,
-      "cardsTracked": 160,
-      "history": {
-        "points": [
-          {
-            "date": "2025-11-21",
-            "sample": 35,
-            "momentum": 0,
-            "diffusion": 34.3
-          },
-          {
-            "date": "2025-12-07",
-            "sample": 13,
-            "momentum": 0,
-            "diffusion": 23.1
-          },
-          {
-            "date": "2025-12-12",
-            "sample": 8,
-            "momentum": 6.64,
-            "diffusion": 75
-          },
-          {
-            "date": "2026-01-16",
-            "sample": 16,
-            "momentum": 0,
-            "diffusion": 43.8
-          },
-          {
-            "date": "2026-01-19",
-            "sample": 11,
-            "momentum": 0,
-            "diffusion": 36.4
-          },
-          {
-            "date": "2026-01-21",
-            "sample": 13,
-            "momentum": 25,
-            "diffusion": 76.9
-          },
-          {
-            "date": "2026-02-19",
-            "sample": 14,
-            "momentum": 0,
-            "diffusion": 35.7
-          },
-          {
-            "date": "2026-03-11",
-            "sample": 8,
-            "momentum": 10.34,
-            "diffusion": 50
-          },
-          {
-            "date": "2026-07-01",
-            "sample": 9,
-            "momentum": 0,
-            "diffusion": 33.3
-          }
-        ],
-        "window": {
-          "from": "2025-11-21",
-          "to": "2026-07-01"
-        },
-        "path": [
-          {
-            "label": "J-30",
-            "offset": -30,
-            "value": 100
-          },
-          {
-            "label": "J-7",
-            "offset": -7,
-            "value": 100
-          },
-          {
-            "label": "J-1",
-            "offset": -1,
-            "value": 96.82
-          },
-          {
-            "label": "tendance",
-            "offset": 0,
-            "value": 100
-          }
-        ]
-      },
-      "segments": {
-        "chase": {
-          "cards": 30,
-          "change30": -1.4,
-          "changeMovers": -2.5,
-          "stale": 3,
-          "diffusion": 43.3
-        },
-        "mid": {
-          "cards": 59,
-          "change30": 3.6,
-          "changeMovers": 6.7,
-          "stale": 10,
-          "diffusion": 52.5
-        },
-        "commons": {
-          "cards": 71,
-          "change30": 0,
-          "changeMovers": 25,
-          "stale": 46,
-          "diffusion": 31
-        }
-      },
-      "bestCard": {
-        "name": "Pikachu",
-        "nameFR": "Pikachu",
-        "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/160/low.webp",
-        "number": "160",
-        "rarity": "Rare Secret",
-        "price": 37.74,
-        "change30": -4.6,
-        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Pikachu-CRZ160",
-        "priceFR": 6.9,
-        "offersFR": 9
-      },
-      "podium": [
-        {
-          "priceFR": 6.9,
-          "offersFR": 9,
-          "name": "Pikachu",
-          "nameFR": "Pikachu",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/160/low.webp",
-          "number": "160",
-          "rarity": "Rare Secret",
-          "price": 37.74,
-          "change30": -4.6,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Pikachu-CRZ160"
-        },
-        {
-          "priceFR": 32,
-          "offersFR": 5,
-          "name": "Elesa's Sparkle",
-          "nameFR": "Éclat d'Inezia",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/147/low.webp",
-          "number": "147",
-          "rarity": "Rare Ultra",
-          "price": 18.09,
-          "change30": 1.9,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Elesas-Sparkle-CRZ147"
-        },
-        {
-          "priceFR": 79,
-          "offersFR": 4,
-          "name": "Radiant Charizard",
-          "nameFR": "Dracaufeu Radieux",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/020/low.webp",
-          "number": "20",
-          "rarity": "Radiant Rare",
-          "price": 15.61,
-          "change30": 23.9,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Radiant-Charizard-CRZ020"
-        }
-      ],
-      "boosterFR": {
-        "price": 25.99,
-        "priceUrl": "https://www.ebay.fr/itm/358579046632?_skw=pokemon+booster+Z%C3%A9nith+Supr%C3%AAme&hash=item537cfa08e8:g:yhsAAeSwFd5qDksI",
-        "floor10": 25.99,
-        "floor10Url": "https://www.ebay.fr/itm/358579046632?_skw=pokemon+booster+Z%C3%A9nith+Supr%C3%AAme&hash=item537cfa08e8:g:yhsAAeSwFd5qDksI",
-        "median": 30,
-        "offers": 5,
-        "sellers": 5,
-        "matched": 5,
-        "scanned": 16
-      },
-      "opening": {
-        "boosterPrice": 30,
-        "netLo": 1.57,
-        "netHi": 2.63,
-        "ratioLo": 0.05,
-        "ratioHi": 0.09,
-        "looseLo": 0.75,
-        "looseHi": 1.16,
-        "recoupLo": 0.01,
-        "recoupHi": 0.02,
-        "recoupLooseLo": 0,
-        "recoupLooseHi": 0,
-        "topPulls": [
-          {
-            "name": "Pikachu",
-            "number": "160",
-            "rarity": "Rare Secret",
-            "price": 37.74,
-            "oneIn": 67,
-            "contribution": 0.49,
-            "premium": true,
-            "nameFR": "Pikachu"
-          },
-          {
-            "name": "Elesa's Sparkle",
-            "number": "147",
-            "rarity": "Rare Ultra",
-            "price": 18.09,
-            "oneIn": 200,
-            "contribution": 0.08,
-            "premium": true,
-            "nameFR": "Éclat d'Inezia"
-          },
-          {
-            "name": "Radiant Charizard",
-            "number": "20",
-            "rarity": "Radiant Rare",
-            "price": 15.61,
-            "oneIn": 24,
-            "contribution": 0.57,
-            "premium": false,
-            "nameFR": "Dracaufeu Radieux"
-          },
-          {
-            "name": "Charizard VSTAR",
-            "number": "19",
-            "rarity": "Rare Holo VSTAR",
-            "price": 10.12,
-            "oneIn": 100,
-            "contribution": 0.09,
-            "premium": true,
-            "nameFR": "Dracaufeu VSTAR"
-          },
-          {
-            "name": "Friends in Sinnoh",
-            "number": "149",
-            "rarity": "Rare Ultra",
-            "price": 8.01,
-            "oneIn": 200,
-            "contribution": 0.03,
-            "premium": true,
-            "nameFR": "Amis de Sinnoh"
-          },
-          {
-            "name": "Friends in Hisui",
-            "number": "148",
-            "rarity": "Rare Ultra",
-            "price": 6.28,
-            "oneIn": 200,
-            "contribution": 0.03,
-            "premium": true,
-            "nameFR": "Amis de Hisui"
-          }
-        ],
-        "top1": {
-          "name": "Pikachu",
-          "number": "160",
-          "buyPrice": 37.74,
-          "oneInLo": 50,
-          "oneInHi": 100,
-          "expectedCostLo": 1500,
-          "expectedCostHi": 3000,
-          "perDisplay": 0.42,
-          "buyPriceFR": 6.9,
-          "nameFR": "Pikachu"
-        },
-        "boostersPerDisplay": 36,
-        "looseModel": "mappable",
-        "mode": "booster",
-        "distribution": {
-          "jackpotNet": 32.83,
-          "byProvenance": {
-            "sealedBox": {
-              "evNet": 2.12,
-              "p25": 0,
-              "median": 0.41,
-              "p75": 1.49,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.97,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 2.09,
-              "p25": 0,
-              "median": 0.41,
-              "p75": 1.49,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.97,
-              "pDouble": 0
-            },
-            "trustedLoose": {
-              "evNet": 1.72,
-              "p25": 0,
-              "median": 0.37,
-              "p75": 1.2,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
-              "pDouble": 0
-            },
-            "unknownLoose": {
-              "evNet": 0.93,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.63,
-              "pRecoup": 0,
-              "pLoseHalf": 1,
-              "pDouble": 0
-            }
-          }
-        },
-        "confidence": "correcte",
-        "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
-      },
-      "dropRates": {
-        "classes": [
-          {
-            "rarity": "Rare",
-            "count": 22,
-            "rateLo": 0.5,
-            "rateHi": 0.7,
-            "oneInAny": 2,
-            "oneInSpecific": 37,
-            "median": 0.11,
-            "mean": 0.11,
-            "contribution": 0.06,
-            "premium": false
-          },
-          {
-            "rarity": "Rare Holo",
-            "count": 20,
-            "rateLo": 0.25,
-            "rateHi": 0.4,
-            "oneInAny": 3,
-            "oneInSpecific": 62,
-            "median": 0.46,
-            "mean": 0.5,
-            "contribution": 0.16,
-            "premium": false
-          },
-          {
-            "rarity": "Rare Holo V",
-            "count": 17,
-            "rateLo": 0.15,
-            "rateHi": 0.25,
-            "oneInAny": 5,
-            "oneInSpecific": 85,
-            "median": 0.96,
-            "mean": 1.5,
-            "contribution": 0.3,
-            "premium": false
-          },
-          {
-            "rarity": "Radiant Rare",
-            "count": 3,
-            "rateLo": 0.1,
-            "rateHi": 0.15,
-            "oneInAny": 8,
-            "oneInSpecific": 24,
-            "median": 0.53,
-            "mean": 5.41,
-            "contribution": 0.68,
-            "premium": false
-          },
-          {
-            "rarity": "Rare Holo VMAX",
-            "count": 5,
-            "rateLo": 0.06,
-            "rateHi": 0.1,
-            "oneInAny": 13,
-            "oneInSpecific": 63,
-            "median": 2.08,
-            "mean": 3.04,
-            "contribution": 0.24,
-            "premium": true
-          },
-          {
-            "rarity": "Rare Holo VSTAR",
-            "count": 8,
-            "rateLo": 0.06,
-            "rateHi": 0.1,
-            "oneInAny": 13,
-            "oneInSpecific": 100,
-            "median": 1.62,
-            "mean": 2.77,
-            "contribution": 0.22,
-            "premium": true
-          },
-          {
-            "rarity": "Rare Ultra",
-            "count": 13,
-            "rateLo": 0.05,
-            "rateHi": 0.08,
-            "oneInAny": 15,
-            "oneInSpecific": 200,
-            "median": 2.44,
-            "mean": 4.41,
-            "contribution": 0.29,
-            "premium": true
-          },
-          {
-            "rarity": "Rare Secret",
-            "count": 1,
-            "rateLo": 0.01,
-            "rateHi": 0.02,
-            "oneInAny": 67,
-            "oneInSpecific": 67,
-            "median": 37.74,
-            "mean": 37.74,
-            "contribution": 0.57,
-            "premium": true
-          }
-        ],
-        "grossPerBooster": 2.52,
-        "confidence": "correcte",
-        "looseModel": "mappable",
-        "eraLabel": "Épée et Bouclier",
-        "sample": "plusieurs milliers de boosters sur l'ère",
-        "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
-        "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute."
-      },
-      "logo": "https://assets.tcgdex.net/fr/swsh/swsh12.5/logo.webp",
-      "strata": [
-        {
-          "key": "top1",
-          "label": "Carte-titre",
-          "growth": -4.62,
-          "cards": 1,
-          "basketValue": 33.23,
-          "driver": {
-            "name": "Pikachu",
-            "number": "160",
-            "change": -4.6,
-            "share": 1
-          }
-        },
-        {
-          "key": "r2_5",
-          "label": "Rangs 2-5",
-          "growth": 8.3,
-          "cards": 4,
-          "basketValue": 52.95,
-          "driver": {
-            "name": "Radiant Charizard",
-            "number": "20",
-            "change": 23.9,
-            "share": 0.77
-          }
-        },
-        {
-          "key": "r6_15",
-          "label": "Rangs 6-15",
-          "growth": -2.03,
-          "cards": 10,
-          "basketValue": 39.59,
-          "driver": null
-        },
-        {
-          "key": "r16_50",
-          "label": "Rangs 16-50",
-          "growth": -3.26,
-          "cards": 35,
-          "basketValue": 47.75,
-          "driver": null
-        },
-        {
-          "key": "fond",
-          "label": "Fond du set (51+)",
-          "growth": 3.89,
-          "cards": 110,
-          "basketValue": 11.49,
-          "driver": null
-        }
-      ],
-      "growthSeries": {
-        "monthly": {
-          "top1": [
-            {
-              "date": "2025-11-15",
-              "sample": 1,
-              "growth": -4.62,
-              "basketValue": 33.23
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 1,
-              "growth": -4.62,
-              "basketValue": 33.23
-            }
-          ],
-          "r2_5": [
-            {
-              "date": "2025-11-15",
-              "sample": 2,
-              "growth": -0.86,
-              "basketValue": 26.62
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 2,
-              "growth": -0.86,
-              "basketValue": 26.62
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 2,
-              "growth": 19.46,
-              "basketValue": 26.33
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 2,
-              "growth": 19.46,
-              "basketValue": 26.33
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 2,
-              "growth": 19.46,
-              "basketValue": 26.33
-            }
-          ],
-          "r6_15": [
-            {
-              "date": "2025-11-15",
-              "sample": 8,
-              "growth": -1.49,
-              "basketValue": 31.77
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 8,
-              "growth": -1.49,
-              "basketValue": 31.77
-            }
-          ],
-          "r16_50": [
-            {
-              "date": "2025-11-15",
-              "sample": 16,
-              "growth": -7.13,
-              "basketValue": 23.7
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 23,
-              "growth": -4.38,
-              "basketValue": 32.97
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 25,
-              "growth": -2.29,
-              "basketValue": 29.82
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 15,
-              "growth": -0.62,
-              "basketValue": 19.33
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 9,
-              "growth": -1.97,
-              "basketValue": 11.42
-            }
-          ],
-          "fond": [
-            {
-              "date": "2025-11-15",
-              "sample": 36,
-              "growth": 4.61,
-              "basketValue": 4.31
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 71,
-              "growth": 7.29,
-              "basketValue": 8.24
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 60,
-              "growth": 4.61,
-              "basketValue": 6.35
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 57,
-              "growth": 4.72,
-              "basketValue": 5.77
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 24,
-              "growth": -5.37,
-              "basketValue": 1.94
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 12,
-              "growth": 8.11,
-              "basketValue": 1.2
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 15,
-              "growth": -1.5,
-              "basketValue": 1.31
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 14,
-              "growth": -2.13,
-              "basketValue": 0.92
-            }
-          ]
-        },
-        "quarterly": {
-          "top1": [
-            {
-              "date": "2025-11-15",
-              "sample": 1,
-              "growth": -4.62,
-              "basketValue": 33.23
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 1,
-              "growth": -4.62,
-              "basketValue": 33.23
-            }
-          ],
-          "r2_5": [
-            {
-              "date": "2025-11-15",
-              "sample": 2,
-              "growth": -0.86,
-              "basketValue": 26.62
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 4,
-              "growth": 8.3,
-              "basketValue": 52.95
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 2,
-              "growth": 19.46,
-              "basketValue": 26.33
-            }
-          ],
-          "r6_15": [
-            {
-              "date": "2025-11-15",
-              "sample": 8,
-              "growth": -1.49,
-              "basketValue": 31.77
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 8,
-              "growth": -1.49,
-              "basketValue": 31.77
-            }
-          ],
-          "r16_50": [
-            {
-              "date": "2025-11-15",
-              "sample": 23,
-              "growth": -4.38,
-              "basketValue": 32.97
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 33,
-              "growth": -3.52,
-              "basketValue": 45.25
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 12,
-              "growth": -0.67,
-              "basketValue": 14.78
-            }
-          ],
-          "fond": [
-            {
-              "date": "2025-11-15",
-              "sample": 71,
-              "growth": 7.29,
-              "basketValue": 8.24
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 96,
-              "growth": 4.45,
-              "basketValue": 10.57
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 39,
-              "growth": -3.85,
-              "basketValue": 3.25
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 14,
-              "growth": -2.13,
-              "basketValue": 0.92
-            }
-          ]
-        }
-      },
-      "contentValue": [
-        {
-          "date": "2025-11-15",
-          "sample": 63,
-          "growth": -3.2,
-          "basketValue": 119.63
-        },
-        {
-          "date": "2025-12-15",
-          "sample": 105,
-          "growth": -2.4,
-          "basketValue": 132.83
-        },
-        {
-          "date": "2026-01-15",
-          "sample": 88,
-          "growth": -0.73,
-          "basketValue": 50.35
-        },
-        {
-          "date": "2026-02-15",
-          "sample": 72,
-          "growth": 0.56,
-          "basketValue": 25.1
-        },
-        {
-          "date": "2026-03-15",
-          "sample": 33,
-          "growth": -2.48,
-          "basketValue": 13.36
-        },
-        {
-          "date": "2026-04-15",
-          "sample": 16,
-          "growth": 18.62,
-          "basketValue": 29.75
-        },
-        {
-          "date": "2026-05-15",
-          "sample": 16,
-          "growth": 12.06,
-          "basketValue": 39.78
-        },
-        {
-          "date": "2026-06-15",
-          "sample": 22,
-          "growth": 11.68,
-          "basketValue": 38.82
-        },
-        {
-          "date": "2026-07-15",
-          "sample": 18,
-          "growth": -2.77,
-          "basketValue": 11.24
-        }
-      ],
-      "live": {
-        "booster": {
-          "price": 31.72,
-          "floor10": 31.72,
-          "offers": 3,
-          "quantity": 79,
-          "sellers": 3,
-          "language": "en"
-        },
-        "boosterBox": null,
-        "singles": {
-          "tracked": 239,
-          "offers": 27190
-        }
-      },
-      "liveHistory": [
-        {
-          "date": "2026-08-10",
-          "boosterPrice": 32.03,
-          "boosterOffers": 2,
-          "boosterLanguage": "en",
-          "boxPrice": null,
-          "singlesOffers": 27430,
-          "top5Value": 86.42,
-          "top12ex5Value": 28.34,
-          "boosterFRp10": 25.99,
-          "boosterFRmedian": 30,
-          "boosterFRoffers": 5,
-          "boosterFRsellers": 5
-        },
-        {
-          "date": "2026-08-11",
-          "boosterPrice": 31.72,
-          "boosterOffers": 3,
-          "boosterLanguage": "en",
-          "boxPrice": null,
-          "singlesOffers": 27190,
-          "top5Value": 86.42,
-          "top12ex5Value": 29.19,
-          "boosterFRp10": 25.99,
-          "boosterFRmedian": 30,
-          "boosterFRoffers": 5,
-          "boosterFRsellers": 5
-        }
-      ],
-      "psa": null,
-      "picks": [
-        {
-          "id": "swsh12pt5-20",
-          "name": "Radiant Charizard",
-          "number": "20",
-          "rarity": "Radiant Rare",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/020/low.webp",
-          "price": 15.61,
-          "momentum30": 23.9,
-          "relativeStrength": 23.9,
-          "sellers": 73,
-          "offers": 76,
-          "marketFloor": 5.11,
-          "score": 72,
-          "components": {
-            "relative": 100,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Dracaufeu Radieux",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Radiant-Charizard-CRZ020",
-          "marketFR": {
-            "price": 79,
-            "priceUrl": "https://www.ebay.fr/itm/317987940565?_skw=Dracaufeu+Radieux+20%2F159&hash=item4a098ee8d5:g:8GYAAeSwwRlpsgEx",
-            "floor10": 79,
-            "floor10Url": "https://www.ebay.fr/itm/317987940565?_skw=Dracaufeu+Radieux+20%2F159&hash=item4a098ee8d5:g:8GYAAeSwwRlpsgEx",
-            "median": 89,
-            "offers": 4,
-            "sellers": 3,
-            "matched": 4,
-            "scanned": 4
-          }
-        },
-        {
-          "id": "swsh12pt5-95",
-          "name": "Zacian V",
-          "number": "95",
-          "rarity": "Rare Holo V",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/095/low.webp",
-          "price": 1.14,
-          "momentum30": 21.1,
-          "relativeStrength": 21.1,
-          "sellers": 77,
-          "offers": 81,
-          "marketFloor": 0.6,
-          "score": 71,
-          "components": {
-            "relative": 100,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Zacian V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Zacian-V-CRZ095",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "swsh12pt5-99",
-          "name": "Zamazenta VSTAR",
-          "number": "99",
-          "rarity": "Rare Holo VSTAR",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/099/low.webp",
-          "price": 1.7,
-          "momentum30": 21.2,
-          "relativeStrength": 21.2,
-          "sellers": 45,
-          "offers": 48,
-          "marketFloor": 0.84,
-          "score": 71,
-          "components": {
-            "relative": 100,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Zamazenta VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Zamazenta-VSTAR-CRZ099",
-          "marketFR": {
-            "price": 89,
-            "priceUrl": "https://www.ebay.fr/itm/317997219808?_skw=Zamazenta+VSTAR+99%2F159&hash=item4a0a1c7fe0:g:EoQAAeSw-RRps-Au",
-            "floor10": 89,
-            "floor10Url": "https://www.ebay.fr/itm/317997219808?_skw=Zamazenta+VSTAR+99%2F159&hash=item4a0a1c7fe0:g:EoQAAeSw-RRps-Au",
-            "median": 89,
-            "offers": 1,
-            "sellers": 1,
-            "matched": 1,
-            "scanned": 1
-          }
-        },
-        {
-          "id": "swsh12pt5-23",
-          "name": "Simisear VSTAR",
-          "number": "23",
-          "rarity": "Rare Holo VSTAR",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/023/low.webp",
-          "price": 1.26,
-          "momentum30": 17.2,
-          "relativeStrength": 17.2,
-          "sellers": 65,
-          "offers": 68,
-          "marketFloor": 0.85,
-          "score": 68,
-          "components": {
-            "relative": 93,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Flamoutan VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Simisear-VSTAR-V1-CRZ023",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "swsh12pt5-156",
-          "name": "Psychic Energy",
-          "number": "156",
-          "rarity": "Rare Ultra",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/156/low.webp",
-          "price": 2.44,
-          "momentum30": 6.1,
-          "relativeStrength": 6.1,
-          "sellers": 21,
-          "offers": 21,
-          "marketFloor": 3.12,
-          "score": 68,
-          "components": {
-            "relative": 65,
-            "tightness": 48,
-            "liquidity": 82,
-            "discount": 100
-          },
-          "nameFR": "Énergie Psy",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Psychic-Energy-V2-CRZ156",
-          "marketFR": {
-            "price": 39,
-            "priceUrl": "https://www.ebay.fr/itm/318034857555?_skw=%C3%89nergie+Psy+156%2F159&hash=item4a0c5ace53:g:KbYAAeSwQiVpvX0N",
-            "floor10": 39,
-            "floor10Url": "https://www.ebay.fr/itm/318034857555?_skw=%C3%89nergie+Psy+156%2F159&hash=item4a0c5ace53:g:KbYAAeSwQiVpvX0N",
-            "median": 39,
-            "offers": 1,
-            "sellers": 1,
-            "matched": 1,
-            "scanned": 2
-          }
-        },
-        {
-          "id": "swsh12pt5-19",
-          "name": "Charizard VSTAR",
-          "number": "19",
-          "rarity": "Rare Holo VSTAR",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/019/low.webp",
-          "price": 10.12,
-          "momentum30": 12.9,
-          "relativeStrength": 12.9,
-          "sellers": 48,
-          "offers": 49,
-          "marketFloor": 4.11,
-          "score": 64,
-          "components": {
-            "relative": 82,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Dracaufeu VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Charizard-VSTAR-CRZ019",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "swsh12pt5-103",
-          "name": "Duraludon V",
-          "number": "103",
-          "rarity": "Rare Holo V",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/103/low.webp",
-          "price": 0.82,
-          "momentum30": 12.7,
-          "relativeStrength": 12.7,
-          "sellers": 94,
-          "offers": 101,
-          "marketFloor": 0.11,
-          "score": 64,
-          "components": {
-            "relative": 82,
-            "tightness": 0,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Duralugon V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Duraludon-V-CRZ103",
-          "marketFR": {
-            "price": 2,
-            "priceUrl": "https://www.ebay.fr/itm/256347886622?_skw=Duralugon+V+103%2F159&hash=item3baf86541e:g:T18AAOSwmjJlgd7q",
-            "floor10": 2.4,
-            "floor10Url": "https://www.ebay.fr/itm/336721729271?_skw=Duralugon+V+103%2F159&hash=item4e662dd6f7:g:5goAAeSw3mlqb19o",
-            "median": 3.99,
-            "offers": 13,
-            "sellers": 13,
-            "matched": 13,
-            "scanned": 13
-          }
-        },
-        {
-          "id": "swsh12pt5-158",
-          "name": "Darkness Energy",
-          "number": "158",
-          "rarity": "Rare Ultra",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/158/low.webp",
-          "price": 3.13,
-          "momentum30": 2,
-          "relativeStrength": 2,
-          "sellers": 17,
-          "offers": 17,
-          "marketFloor": 3.59,
-          "score": 64,
-          "components": {
-            "relative": 55,
-            "tightness": 58,
-            "liquidity": 64,
-            "discount": 100
-          },
-          "nameFR": "Énergie Obscurité",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Darkness-Energy-V2-CRZ158",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 1
-          }
-        },
-        {
-          "id": "swsh12pt5-101",
-          "name": "Rayquaza VMAX",
-          "number": "101",
-          "rarity": "Rare Holo VMAX",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/101/low.webp",
-          "price": 4.62,
-          "momentum30": 0.4,
-          "relativeStrength": 0.4,
-          "sellers": 21,
-          "offers": 22,
-          "marketFloor": 3.18,
-          "score": 63,
-          "components": {
-            "relative": 51,
-            "tightness": 48,
-            "liquidity": 82,
-            "discount": 100
-          },
-          "nameFR": "Rayquaza VMAX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Rayquaza-VMAX-V1-CRZ101",
-          "marketFR": {
-            "price": 9.99,
-            "priceUrl": "https://www.ebay.fr/itm/406098875793?_skw=Rayquaza+VMAX+101%2F159&hash=item5e8d611591:g:lmQAAeSwctRojgYx",
-            "floor10": 9.99,
-            "floor10Url": "https://www.ebay.fr/itm/406098875793?_skw=Rayquaza+VMAX+101%2F159&hash=item5e8d611591:g:lmQAAeSwctRojgYx",
-            "median": 27,
-            "offers": 5,
-            "sellers": 5,
-            "matched": 5,
-            "scanned": 5
-          }
-        },
-        {
-          "id": "swsh12pt5-152",
-          "name": "Grass Energy",
-          "number": "152",
-          "rarity": "Rare Ultra",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/152/low.webp",
-          "price": 2.25,
-          "momentum30": 5.1,
-          "relativeStrength": 5.1,
-          "sellers": 32,
-          "offers": 32,
-          "marketFloor": 2.6,
-          "score": 62,
-          "components": {
-            "relative": 63,
-            "tightness": 20,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Énergie Plante",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Grass-Energy-V2-CRZ152",
-          "marketFR": {
-            "price": 6,
-            "priceUrl": "https://www.ebay.fr/itm/285438369304?_skw=%C3%89nergie+Plante+152%2F159&hash=item427573de18:g:79gAAOSwgzFk4bu2",
-            "floor10": 6,
-            "floor10Url": "https://www.ebay.fr/itm/285438369304?_skw=%C3%89nergie+Plante+152%2F159&hash=item427573de18:g:79gAAOSwgzFk4bu2",
-            "median": 11.9,
-            "offers": 2,
-            "sellers": 2,
-            "matched": 2,
-            "scanned": 4
-          }
-        },
-        {
-          "id": "swsh12pt5-54",
-          "name": "Zeraora VMAX",
-          "number": "54",
-          "rarity": "Rare Holo VMAX",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/054/low.webp",
-          "price": 2.08,
-          "momentum30": 5.8,
-          "relativeStrength": 5.8,
-          "sellers": 35,
-          "offers": 36,
-          "marketFloor": 2,
-          "score": 61,
-          "components": {
-            "relative": 64,
-            "tightness": 13,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Zeraora VMAX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Zeraora-VMAX-V1-CRZ054",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "swsh12pt5-102",
-          "name": "Rayquaza VMAX",
-          "number": "102",
-          "rarity": "Rare Holo VMAX",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/102/low.webp",
-          "price": 6.06,
-          "momentum30": 4.9,
-          "relativeStrength": 4.9,
-          "sellers": 20,
-          "offers": 21,
-          "marketFloor": 10,
-          "score": 61,
-          "components": {
-            "relative": 62,
-            "tightness": 50,
-            "liquidity": 77,
-            "discount": 61
-          },
-          "nameFR": "Rayquaza VMAX",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Rayquaza-VMAX-V2-CRZ102",
-          "marketFR": {
-            "price": 32.95,
-            "priceUrl": "https://www.ebay.fr/itm/298455199379?_skw=Rayquaza+VMAX+102%2F159&hash=item457d50ee93:g:2OIAAeSwTLhqPq01",
-            "floor10": 32.95,
-            "floor10Url": "https://www.ebay.fr/itm/298455199379?_skw=Rayquaza+VMAX+102%2F159&hash=item457d50ee93:g:2OIAAeSwTLhqPq01",
-            "median": 34.99,
-            "offers": 2,
-            "sellers": 2,
-            "matched": 2,
-            "scanned": 2
           }
         }
       ]
@@ -15897,7 +16107,7 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.88,
+              "evNet": 1.83,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -15906,19 +16116,19 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.89,
+              "evNet": 1.84,
               "p25": 0,
               "median": 0,
-              "p75": 0.73,
+              "p75": 0.74,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.37,
+              "evNet": 1.38,
               "p25": 0,
               "median": 0,
-              "p75": 0.62,
+              "p75": 0.64,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0.01
@@ -16337,8 +16547,8 @@
       ],
       "live": {
         "booster": {
-          "price": 28.82,
-          "floor10": 28.82,
+          "price": 28.89,
+          "floor10": 28.89,
           "offers": 1,
           "quantity": 42,
           "sellers": 1,
@@ -16375,6 +16585,20 @@
         {
           "date": "2026-08-11",
           "boosterPrice": 28.82,
+          "boosterOffers": 1,
+          "boosterLanguage": "en",
+          "boxPrice": 800.63,
+          "singlesOffers": 35505,
+          "top5Value": 135.83,
+          "top12ex5Value": 11.62,
+          "boosterFRp10": 16,
+          "boosterFRmedian": 35,
+          "boosterFRoffers": 27,
+          "boosterFRsellers": 17
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 28.89,
           "boosterOffers": 1,
           "boosterLanguage": "en",
           "boxPrice": 800.63,
@@ -16935,6 +17159,20 @@
         },
         {
           "date": "2026-08-11",
+          "boosterPrice": 8.29,
+          "boosterOffers": 8,
+          "boosterLanguage": "jp",
+          "boxPrice": 265.63,
+          "singlesOffers": 10227,
+          "top5Value": null,
+          "top12ex5Value": null,
+          "boosterFRp10": null,
+          "boosterFRmedian": null,
+          "boosterFRoffers": 0,
+          "boosterFRsellers": 0
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 8.29,
           "boosterOffers": 8,
           "boosterLanguage": "jp",
@@ -17587,7 +17825,7 @@
         "offers": 15,
         "sellers": 12,
         "matched": 15,
-        "scanned": 31
+        "scanned": 30
       },
       "opening": {
         "boosterPrice": 45,
@@ -17682,16 +17920,25 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 5.68,
+              "evNet": 5.4,
               "p25": 0,
               "median": 0,
               "p75": 1.31,
-              "pRecoup": 0.03,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.93,
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 5.44,
+              "evNet": 5.62,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.45,
+              "pRecoup": 0.03,
+              "pLoseHalf": 0.93,
+              "pDouble": 0.01
+            },
+            "trustedLoose": {
+              "evNet": 5.3,
               "p25": 0,
               "median": 0,
               "p75": 1.45,
@@ -17699,17 +17946,8 @@
               "pLoseHalf": 0.93,
               "pDouble": 0.01
             },
-            "trustedLoose": {
-              "evNet": 5.55,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.45,
-              "pRecoup": 0.03,
-              "pLoseHalf": 0.93,
-              "pDouble": 0.01
-            },
             "unknownLoose": {
-              "evNet": 5.45,
+              "evNet": 5.53,
               "p25": 0,
               "median": 0,
               "p75": 1.45,
@@ -18144,6 +18382,20 @@
         },
         {
           "date": "2026-08-11",
+          "boosterPrice": 29.3,
+          "boosterOffers": 1,
+          "boosterLanguage": "fr",
+          "boxPrice": null,
+          "singlesOffers": 32522,
+          "top5Value": 758.8,
+          "top12ex5Value": 352.59,
+          "boosterFRp10": 13,
+          "boosterFRmedian": 45,
+          "boosterFRoffers": 15,
+          "boosterFRsellers": 12
+        },
+        {
+          "date": "2026-08-12",
           "boosterPrice": 29.3,
           "boosterOffers": 1,
           "boosterLanguage": "fr",
@@ -19096,1183 +19348,6 @@
       ]
     },
     {
-      "id": "white-flare",
-      "name": "Flamme Blanche",
-      "nameEN": "White Flare",
-      "era": "Écarlate et Violet",
-      "releaseDate": "2025/07/18",
-      "ageYears": 1.1,
-      "score": 45,
-      "components": {
-        "breadth": 0,
-        "scarcity": 89,
-        "psaResistance": 50,
-        "spread": 79,
-        "maturity": 12
-      },
-      "verdict": "Hausse non diffusée",
-      "concentration": 21,
-      "cardsTracked": 172,
-      "history": {
-        "points": [
-          {
-            "date": "2025-11-21",
-            "sample": 45,
-            "momentum": -2.08,
-            "diffusion": 28.9
-          },
-          {
-            "date": "2026-01-16",
-            "sample": 19,
-            "momentum": 2.79,
-            "diffusion": 63.2
-          },
-          {
-            "date": "2026-01-19",
-            "sample": 16,
-            "momentum": 0,
-            "diffusion": 31.3
-          },
-          {
-            "date": "2026-02-04",
-            "sample": 12,
-            "momentum": -4.88,
-            "diffusion": 16.7
-          },
-          {
-            "date": "2026-02-19",
-            "sample": 8,
-            "momentum": 0,
-            "diffusion": 12.5
-          },
-          {
-            "date": "2026-02-21",
-            "sample": 8,
-            "momentum": -13.12,
-            "diffusion": 12.5
-          },
-          {
-            "date": "2026-06-17",
-            "sample": 9,
-            "momentum": 0,
-            "diffusion": 22.2
-          },
-          {
-            "date": "2026-07-01",
-            "sample": 10,
-            "momentum": -25,
-            "diffusion": 0
-          }
-        ],
-        "window": {
-          "from": "2025-11-21",
-          "to": "2026-07-01"
-        },
-        "path": [
-          {
-            "label": "J-30",
-            "offset": -30,
-            "value": 100
-          },
-          {
-            "label": "J-7",
-            "offset": -7,
-            "value": 100
-          },
-          {
-            "label": "J-1",
-            "offset": -1,
-            "value": 96.58
-          },
-          {
-            "label": "tendance",
-            "offset": 0,
-            "value": 100
-          }
-        ]
-      },
-      "segments": {
-        "chase": {
-          "cards": 30,
-          "change30": -0.5,
-          "changeMovers": -0.5,
-          "stale": 0,
-          "diffusion": 43.3
-        },
-        "mid": {
-          "cards": 71,
-          "change30": -1.7,
-          "changeMovers": -2.1,
-          "stale": 4,
-          "diffusion": 39.4
-        },
-        "commons": {
-          "cards": 71,
-          "change30": 0,
-          "changeMovers": -25,
-          "stale": 44,
-          "diffusion": 15.7
-        }
-      },
-      "bestCard": {
-        "name": "Reshiram ex",
-        "nameFR": "Reshiram-ex",
-        "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/173/low.webp",
-        "number": "173",
-        "rarity": "Black White Rare",
-        "price": 269.65,
-        "change30": -7.5,
-        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V4-WHT173",
-        "priceFR": null,
-        "offersFR": 0
-      },
-      "podium": [
-        {
-          "priceFR": null,
-          "offersFR": 0,
-          "name": "Reshiram ex",
-          "nameFR": "Reshiram-ex",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/173/low.webp",
-          "number": "173",
-          "rarity": "Black White Rare",
-          "price": 269.65,
-          "change30": -7.5,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V4-WHT173"
-        },
-        {
-          "priceFR": null,
-          "offersFR": 0,
-          "name": "Reshiram ex",
-          "nameFR": "Reshiram-ex",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/166/low.webp",
-          "number": "166",
-          "rarity": "Special Illustration Rare",
-          "price": 146.18,
-          "change30": -0.5,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V3-WHT166"
-        },
-        {
-          "priceFR": null,
-          "offersFR": 0,
-          "name": "Hydreigon ex",
-          "nameFR": "Trioxhydre-ex",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/169/low.webp",
-          "number": "169",
-          "rarity": "Special Illustration Rare",
-          "price": 61.63,
-          "change30": 2.6,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Hydreigon-ex-V3-WHT169"
-        }
-      ],
-      "boosterFR": {
-        "price": 10.99,
-        "priceUrl": "https://www.ebay.fr/itm/396938661397?_skw=pokemon+booster+Flamme+Blanche&hash=item5c6b634e15:g:wMMAAeSwS6holHvo",
-        "floor10": 10.99,
-        "floor10Url": "https://www.ebay.fr/itm/396938661397?_skw=pokemon+booster+Flamme+Blanche&hash=item5c6b634e15:g:wMMAAeSwS6holHvo",
-        "median": 19.99,
-        "offers": 6,
-        "sellers": 5,
-        "matched": 6,
-        "scanned": 135
-      },
-      "opening": {
-        "boosterPrice": 19.99,
-        "netLo": 2.42,
-        "netHi": 2.87,
-        "ratioLo": 0.12,
-        "ratioHi": 0.14,
-        "looseLo": 1.36,
-        "looseHi": 1.53,
-        "recoupLo": 0.02,
-        "recoupHi": 0.02,
-        "recoupLooseLo": 0.01,
-        "recoupLooseHi": 0.01,
-        "topPulls": [
-          {
-            "name": "Reshiram ex",
-            "number": "173",
-            "rarity": "Black White Rare",
-            "price": 269.65,
-            "oneIn": 400,
-            "contribution": 0.59,
-            "premium": true,
-            "nameFR": "Reshiram-ex"
-          },
-          {
-            "name": "Reshiram ex",
-            "number": "166",
-            "rarity": "Special Illustration Rare",
-            "price": 146.18,
-            "oneIn": 560,
-            "contribution": 0.23,
-            "premium": true,
-            "nameFR": "Reshiram-ex"
-          },
-          {
-            "name": "Hydreigon ex",
-            "number": "169",
-            "rarity": "Special Illustration Rare",
-            "price": 61.63,
-            "oneIn": 560,
-            "contribution": 0.1,
-            "premium": true,
-            "nameFR": "Trioxhydre-ex"
-          },
-          {
-            "name": "Keldeo ex",
-            "number": "167",
-            "rarity": "Special Illustration Rare",
-            "price": 41.9,
-            "oneIn": 560,
-            "contribution": 0.07,
-            "premium": true,
-            "nameFR": "Keldeo-ex"
-          },
-          {
-            "name": "Zoroark",
-            "number": "143",
-            "rarity": "Illustration Rare",
-            "price": 40.61,
-            "oneIn": 418,
-            "contribution": 0.08,
-            "premium": false,
-            "nameFR": "Zoroark"
-          },
-          {
-            "name": "Hilda",
-            "number": "171",
-            "rarity": "Special Illustration Rare",
-            "price": 31.83,
-            "oneIn": 560,
-            "contribution": 0.05,
-            "premium": true,
-            "nameFR": "Ludvina"
-          }
-        ],
-        "top1": {
-          "name": "Reshiram ex",
-          "number": "173",
-          "buyPrice": 269.65,
-          "oneInLo": 357,
-          "oneInHi": 455,
-          "expectedCostLo": 7139,
-          "expectedCostHi": 9086,
-          "perDisplay": 0.09,
-          "buyPriceFR": null,
-          "nameFR": "Reshiram-ex"
-        },
-        "boostersPerDisplay": 36,
-        "looseModel": "independent",
-        "mode": "booster",
-        "distribution": {
-          "jackpotNet": 234.6,
-          "byProvenance": {
-            "sealedBox": {
-              "evNet": 2.6,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.43,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.94,
-              "pDouble": 0.01
-            },
-            "freshBox": {
-              "evNet": 2.54,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.43,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.94,
-              "pDouble": 0.01
-            },
-            "trustedLoose": {
-              "evNet": 2.7,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.43,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.94,
-              "pDouble": 0.01
-            },
-            "unknownLoose": {
-              "evNet": 2.43,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.43,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
-              "pDouble": 0.01
-            }
-          }
-        },
-        "confidence": "correcte",
-        "partialNote": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation."
-      },
-      "dropRates": {
-        "classes": [
-          {
-            "rarity": "Rare",
-            "count": 10,
-            "rateLo": 0.7,
-            "rateHi": 0.76,
-            "oneInAny": 1,
-            "oneInSpecific": 14,
-            "median": 0.08,
-            "mean": 0.07,
-            "contribution": 0.05,
-            "premium": false
-          },
-          {
-            "rarity": "Double Rare",
-            "count": 6,
-            "rateLo": 0.2,
-            "rateHi": 0.22,
-            "oneInAny": 5,
-            "oneInSpecific": 29,
-            "median": 0.36,
-            "mean": 0.39,
-            "contribution": 0.08,
-            "premium": false
-          },
-          {
-            "rarity": "Illustration Rare",
-            "count": 69,
-            "rateLo": 0.155,
-            "rateHi": 0.175,
-            "oneInAny": 6,
-            "oneInSpecific": 418,
-            "median": 7.13,
-            "mean": 9.86,
-            "contribution": 1.63,
-            "premium": false
-          },
-          {
-            "rarity": "Ultra Rare",
-            "count": 8,
-            "rateLo": 0.055,
-            "rateHi": 0.062,
-            "oneInAny": 17,
-            "oneInSpecific": 137,
-            "median": 1.07,
-            "mean": 1.79,
-            "contribution": 0.1,
-            "premium": true
-          },
-          {
-            "rarity": "Special Illustration Rare",
-            "count": 7,
-            "rateLo": 0.011,
-            "rateHi": 0.014,
-            "oneInAny": 80,
-            "oneInSpecific": 560,
-            "median": 31.83,
-            "mean": 48.22,
-            "contribution": 0.6,
-            "premium": true
-          },
-          {
-            "rarity": "Black White Rare",
-            "count": 1,
-            "rateLo": 0.0022,
-            "rateHi": 0.0028,
-            "oneInAny": 400,
-            "oneInSpecific": 400,
-            "median": 269.65,
-            "mean": 269.65,
-            "contribution": 0.67,
-            "premium": true
-          }
-        ],
-        "grossPerBooster": 3.13,
-        "confidence": "correcte",
-        "looseModel": "independent",
-        "eraLabel": "Écarlate et Violet",
-        "sample": "700+ boosters (TCGplayer Infinite) ; Black White Rare estimée par la communauté",
-        "sampleSource": "étude dédiée Flamme Blanche — l'IR y est ~2× plus fréquente que dans le reste de l'ère",
-        "partialNote": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation."
-      },
-      "logo": "https://assets.tcgdex.net/fr/sv/sv10.5w/logo.webp",
-      "strata": [
-        {
-          "key": "top1",
-          "label": "Carte-titre",
-          "growth": -7.5,
-          "cards": 1,
-          "basketValue": 260.92,
-          "driver": {
-            "name": "Reshiram ex",
-            "number": "173",
-            "change": -7.5,
-            "share": 1
-          }
-        },
-        {
-          "key": "r2_5",
-          "label": "Rangs 2-5",
-          "growth": -0.13,
-          "cards": 4,
-          "basketValue": 294.27,
-          "driver": {
-            "name": "Hydreigon ex",
-            "number": "169",
-            "change": 2.6,
-            "share": 1
-          }
-        },
-        {
-          "key": "r6_15",
-          "label": "Rangs 6-15",
-          "growth": -3.08,
-          "cards": 10,
-          "basketValue": 234.01,
-          "driver": null
-        },
-        {
-          "key": "r16_50",
-          "label": "Rangs 16-50",
-          "growth": 0.4,
-          "cards": 35,
-          "basketValue": 351.59,
-          "driver": {
-            "name": "Gigalith",
-            "number": "129",
-            "change": 13.8,
-            "share": 1
-          }
-        },
-        {
-          "key": "fond",
-          "label": "Fond du set (51+)",
-          "growth": -1.88,
-          "cards": 121,
-          "basketValue": 168.18,
-          "driver": null
-        }
-      ],
-      "growthSeries": {
-        "monthly": {
-          "top1": [
-            {
-              "date": "2025-11-15",
-              "sample": 1,
-              "growth": -7.5,
-              "basketValue": 260.92
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 1,
-              "growth": -7.5,
-              "basketValue": 260.92
-            }
-          ],
-          "r2_5": [
-            {
-              "date": "2025-11-15",
-              "sample": 4,
-              "growth": -0.13,
-              "basketValue": 294.27
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 4,
-              "growth": -0.13,
-              "basketValue": 294.27
-            }
-          ],
-          "r6_15": [
-            {
-              "date": "2025-11-15",
-              "sample": 6,
-              "growth": -2.22,
-              "basketValue": 140.06
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 10,
-              "growth": -3.08,
-              "basketValue": 234.01
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 5,
-              "growth": -3.49,
-              "basketValue": 120.6
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 4,
-              "growth": -4.33,
-              "basketValue": 93.95
-            }
-          ],
-          "r16_50": [
-            {
-              "date": "2025-11-15",
-              "sample": 25,
-              "growth": 0.1,
-              "basketValue": 252.89
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 35,
-              "growth": 0.4,
-              "basketValue": 351.59
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 16,
-              "growth": 1.9,
-              "basketValue": 156.22
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 10,
-              "growth": 1.17,
-              "basketValue": 98.7
-            }
-          ],
-          "fond": [
-            {
-              "date": "2025-11-15",
-              "sample": 36,
-              "growth": -2.67,
-              "basketValue": 140.13
-            },
-            {
-              "date": "2025-12-15",
-              "sample": 57,
-              "growth": -1.75,
-              "basketValue": 164.01
-            },
-            {
-              "date": "2026-01-15",
-              "sample": 59,
-              "growth": 0.52,
-              "basketValue": 50.1
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 58,
-              "growth": 3.3,
-              "basketValue": 26.31
-            },
-            {
-              "date": "2026-03-15",
-              "sample": 37,
-              "growth": -3.19,
-              "basketValue": 2.43
-            },
-            {
-              "date": "2026-04-15",
-              "sample": 12,
-              "growth": 7.35,
-              "basketValue": 0.73
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 15,
-              "growth": -10.28,
-              "basketValue": 0.96
-            },
-            {
-              "date": "2026-06-15",
-              "sample": 27,
-              "growth": -11.68,
-              "basketValue": 1.74
-            },
-            {
-              "date": "2026-07-15",
-              "sample": 23,
-              "growth": -11.83,
-              "basketValue": 1.64
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 10,
-              "growth": -17.57,
-              "basketValue": 0.61
-            }
-          ]
-        },
-        "quarterly": {
-          "top1": [
-            {
-              "date": "2025-11-15",
-              "sample": 1,
-              "growth": -7.5,
-              "basketValue": 260.92
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 1,
-              "growth": -7.5,
-              "basketValue": 260.92
-            }
-          ],
-          "r2_5": [
-            {
-              "date": "2025-11-15",
-              "sample": 4,
-              "growth": -0.13,
-              "basketValue": 294.27
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 4,
-              "growth": -0.13,
-              "basketValue": 294.27
-            }
-          ],
-          "r6_15": [
-            {
-              "date": "2025-11-15",
-              "sample": 10,
-              "growth": -3.08,
-              "basketValue": 234.01
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 10,
-              "growth": -3.08,
-              "basketValue": 234.01
-            }
-          ],
-          "r16_50": [
-            {
-              "date": "2025-11-15",
-              "sample": 35,
-              "growth": 0.4,
-              "basketValue": 351.59
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 35,
-              "growth": 0.4,
-              "basketValue": 351.59
-            }
-          ],
-          "fond": [
-            {
-              "date": "2025-11-15",
-              "sample": 69,
-              "growth": -1.78,
-              "basketValue": 164.77
-            },
-            {
-              "date": "2026-02-15",
-              "sample": 98,
-              "growth": -1.78,
-              "basketValue": 166.54
-            },
-            {
-              "date": "2026-05-15",
-              "sample": 52,
-              "growth": -6.83,
-              "basketValue": 3.41
-            },
-            {
-              "date": "2026-08-15",
-              "sample": 23,
-              "growth": -11.83,
-              "basketValue": 1.64
-            }
-          ]
-        }
-      },
-      "contentValue": [
-        {
-          "date": "2025-11-15",
-          "sample": 72,
-          "growth": -2.53,
-          "basketValue": 1088.27
-        },
-        {
-          "date": "2025-12-15",
-          "sample": 107,
-          "growth": -2.28,
-          "basketValue": 1304.8
-        },
-        {
-          "date": "2026-01-15",
-          "sample": 80,
-          "growth": -0.36,
-          "basketValue": 326.92
-        },
-        {
-          "date": "2026-02-15",
-          "sample": 72,
-          "growth": -1.03,
-          "basketValue": 218.96
-        },
-        {
-          "date": "2026-03-15",
-          "sample": 37,
-          "growth": -3.19,
-          "basketValue": 2.43
-        },
-        {
-          "date": "2026-04-15",
-          "sample": 12,
-          "growth": 7.35,
-          "basketValue": 0.73
-        },
-        {
-          "date": "2026-05-15",
-          "sample": 15,
-          "growth": -10.28,
-          "basketValue": 0.96
-        },
-        {
-          "date": "2026-06-15",
-          "sample": 27,
-          "growth": -11.68,
-          "basketValue": 1.74
-        },
-        {
-          "date": "2026-07-15",
-          "sample": 23,
-          "growth": -11.83,
-          "basketValue": 1.64
-        },
-        {
-          "date": "2026-08-15",
-          "sample": 10,
-          "growth": -17.57,
-          "basketValue": 0.61
-        }
-      ],
-      "live": {
-        "booster": {
-          "price": 12.21,
-          "floor10": 12.21,
-          "offers": 2,
-          "quantity": 65,
-          "sellers": 2,
-          "language": "en"
-        },
-        "boosterBox": null,
-        "singles": {
-          "tracked": 173,
-          "offers": 20679
-        }
-      },
-      "liveHistory": [
-        {
-          "date": "2026-08-11",
-          "boosterPrice": 12.21,
-          "boosterOffers": 2,
-          "boosterLanguage": "en",
-          "boxPrice": null,
-          "singlesOffers": 20679,
-          "top5Value": 571.69,
-          "top12ex5Value": 184.38,
-          "boosterFRp10": 10.99,
-          "boosterFRmedian": 19.99,
-          "boosterFRoffers": 6,
-          "boosterFRsellers": 5
-        }
-      ],
-      "psa": null,
-      "picks": [
-        {
-          "id": "rsv10pt5-129",
-          "name": "Gigalith",
-          "number": "129",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/129/low.webp",
-          "price": 15.57,
-          "momentum30": 13.8,
-          "relativeStrength": 14,
-          "sellers": 13,
-          "offers": 13,
-          "marketFloor": 20.25,
-          "score": 75,
-          "components": {
-            "relative": 85,
-            "tightness": 68,
-            "liquidity": 45,
-            "discount": 100
-          },
-          "nameFR": "Gigalithe",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Gigalith-V2-WHT129",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-137",
-          "name": "Liepard",
-          "number": "137",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/137/low.webp",
-          "price": 21.8,
-          "momentum30": 9.4,
-          "relativeStrength": 9.6,
-          "sellers": 10,
-          "offers": 10,
-          "marketFloor": 26.39,
-          "score": 70,
-          "components": {
-            "relative": 74,
-            "tightness": 75,
-            "liquidity": 32,
-            "discount": 100
-          },
-          "nameFR": "Léopardus",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Liepard-V2-WHT137",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-99",
-          "name": "Pansear",
-          "number": "99",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/099/low.webp",
-          "price": 6.86,
-          "momentum30": 7.1,
-          "relativeStrength": 7.2,
-          "sellers": 27,
-          "offers": 27,
-          "marketFloor": 4.61,
-          "score": 68,
-          "components": {
-            "relative": 68,
-            "tightness": 33,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Flamajou",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Pansear-V2-WHT099",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-156",
-          "name": "Stoutland",
-          "number": "156",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/156/low.webp",
-          "price": 16.28,
-          "momentum30": 10,
-          "relativeStrength": 10.2,
-          "sellers": 12,
-          "offers": 12,
-          "marketFloor": 13.21,
-          "score": 68,
-          "components": {
-            "relative": 75,
-            "tightness": 70,
-            "liquidity": 41,
-            "discount": 80
-          },
-          "nameFR": "Mastouffe",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Stoutland-V2-WHT156",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-100",
-          "name": "Simisear",
-          "number": "100",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/100/low.webp",
-          "price": 7.44,
-          "momentum30": 5.5,
-          "relativeStrength": 5.6,
-          "sellers": 21,
-          "offers": 21,
-          "marketFloor": 5.11,
-          "score": 67,
-          "components": {
-            "relative": 64,
-            "tightness": 48,
-            "liquidity": 82,
-            "discount": 97
-          },
-          "nameFR": "Flamoutan",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Simisear-V2-WHT100",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-109",
-          "name": "Ducklett",
-          "number": "109",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/109/low.webp",
-          "price": 8.02,
-          "momentum30": 3,
-          "relativeStrength": 3.1,
-          "sellers": 14,
-          "offers": 14,
-          "marketFloor": 4.3,
-          "score": 65,
-          "components": {
-            "relative": 58,
-            "tightness": 65,
-            "liquidity": 50,
-            "discount": 100
-          },
-          "nameFR": "Couaneton",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Ducklett-V2-WHT109",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-87",
-          "name": "Sewaddle",
-          "number": "87",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/087/low.webp",
-          "price": 7.39,
-          "momentum30": 2.5,
-          "relativeStrength": 2.6,
-          "sellers": 13,
-          "offers": 13,
-          "marketFloor": 6.14,
-          "score": 64,
-          "components": {
-            "relative": 57,
-            "tightness": 68,
-            "liquidity": 45,
-            "discount": 100
-          },
-          "nameFR": "Larveyette",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Sewaddle-V2-WHT087",
-          "marketFR": {
-            "price": 15,
-            "priceUrl": "https://www.ebay.fr/itm/287321811427?_skw=Larveyette+87%2F86&hash=item42e5b6e9e3:g:uscAAeSw3YRp~0Wt",
-            "floor10": 15,
-            "floor10Url": "https://www.ebay.fr/itm/287321811427?_skw=Larveyette+87%2F86&hash=item42e5b6e9e3:g:uscAAeSw3YRp~0Wt",
-            "median": 15,
-            "offers": 1,
-            "sellers": 1,
-            "matched": 1,
-            "scanned": 1
-          }
-        },
-        {
-          "id": "rsv10pt5-108",
-          "name": "Basculin",
-          "number": "108",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/108/low.webp",
-          "price": 4.34,
-          "momentum30": 0.9,
-          "relativeStrength": 1.1,
-          "sellers": 25,
-          "offers": 27,
-          "marketFloor": 4.11,
-          "score": 63,
-          "components": {
-            "relative": 53,
-            "tightness": 38,
-            "liquidity": 100,
-            "discount": 100
-          },
-          "nameFR": "Bargantua",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Basculin-V2-WHT108",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-118",
-          "name": "Stunfisk",
-          "number": "118",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/118/low.webp",
-          "price": 3.92,
-          "momentum30": 4.9,
-          "relativeStrength": 5,
-          "sellers": 31,
-          "offers": 31,
-          "marketFloor": 2.6,
-          "score": 63,
-          "components": {
-            "relative": 63,
-            "tightness": 23,
-            "liquidity": 100,
-            "discount": 98
-          },
-          "nameFR": "Limonde",
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-94",
-          "name": "Accelgor",
-          "number": "94",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/094/low.webp",
-          "price": 9.51,
-          "momentum30": 10,
-          "relativeStrength": 10.2,
-          "sellers": 16,
-          "offers": 16,
-          "marketFloor": 10.15,
-          "score": 62,
-          "components": {
-            "relative": 76,
-            "tightness": 60,
-            "liquidity": 59,
-            "discount": 35
-          },
-          "nameFR": "Limaspeed",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Accelgor-V2-WHT094",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-111",
-          "name": "Vanillite",
-          "number": "111",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/111/low.webp",
-          "price": 6.66,
-          "momentum30": 2.9,
-          "relativeStrength": 3,
-          "sellers": 20,
-          "offers": 20,
-          "marketFloor": 4.11,
-          "score": 61,
-          "components": {
-            "relative": 58,
-            "tightness": 50,
-            "liquidity": 77,
-            "discount": 75
-          },
-          "nameFR": "Sorbébé",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Vanillite-V2-WHT111",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        },
-        {
-          "id": "rsv10pt5-141",
-          "name": "Garbodor",
-          "number": "141",
-          "rarity": "Illustration Rare",
-          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/141/low.webp",
-          "price": 9.64,
-          "momentum30": 2.1,
-          "relativeStrength": 2.2,
-          "sellers": 23,
-          "offers": 23,
-          "marketFloor": 7.7,
-          "score": 61,
-          "components": {
-            "relative": 56,
-            "tightness": 43,
-            "liquidity": 91,
-            "discount": 77
-          },
-          "nameFR": "Miasmax",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Garbodor-V2-WHT141",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "matched": 0,
-            "scanned": 0
-          }
-        }
-      ]
-    },
-    {
       "id": "lost-origin",
       "name": "Origine Perdue",
       "nameEN": "Lost Origin",
@@ -20447,10 +19522,10 @@
         "floor10": 13,
         "floor10Url": "https://www.ebay.fr/itm/198139818463?_skw=pokemon+booster+Origine+Perdue&hash=item2e220db1df:g:Ea8AAeSwvEFpoI~C",
         "median": 23.54,
-        "offers": 57,
-        "sellers": 29,
-        "matched": 57,
-        "scanned": 99
+        "offers": 58,
+        "sellers": 28,
+        "matched": 58,
+        "scanned": 101
       },
       "opening": {
         "boosterPrice": 23.54,
@@ -20545,16 +19620,7 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.95,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.78,
-              "pRecoup": 0,
-              "pLoseHalf": 0.99,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 2.56,
+              "evNet": 2.67,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
@@ -20562,11 +19628,20 @@
               "pLoseHalf": 0.99,
               "pDouble": 0.01
             },
-            "trustedLoose": {
-              "evNet": 1.64,
+            "freshBox": {
+              "evNet": 2.09,
               "p25": 0,
               "median": 0,
-              "p75": 0.6,
+              "p75": 0.78,
+              "pRecoup": 0,
+              "pLoseHalf": 0.99,
+              "pDouble": 0
+            },
+            "trustedLoose": {
+              "evNet": 1.79,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.65,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -21068,6 +20143,20 @@
           "boosterFRmedian": 23.54,
           "boosterFRoffers": 57,
           "boosterFRsellers": 29
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 12.21,
+          "boosterOffers": 4,
+          "boosterLanguage": "en",
+          "boxPrice": 501.81,
+          "singlesOffers": 37223,
+          "top5Value": 760.74,
+          "top12ex5Value": 29.74,
+          "boosterFRp10": 13,
+          "boosterFRmedian": 23.54,
+          "boosterFRoffers": 58,
+          "boosterFRsellers": 28
         }
       ],
       "psa": {
@@ -21468,7 +20557,7 @@
             "discount": 100
           },
           "nameFR": "Goupelin V",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Lost-Origin/Delphox-V-V1-LOR027",
           "marketFR": {
             "price": 2.99,
             "priceUrl": "https://www.ebay.fr/itm/165914830370?_skw=Goupelin+V+27%2F196&hash=item26a14b6622:g:Ti8AAOSwVnlj2JJB",
@@ -21756,7 +20845,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.16,
+              "evNet": 4.09,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -21765,7 +20854,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 3.74,
+              "evNet": 4.28,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -21774,7 +20863,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 4.12,
+              "evNet": 4.13,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -21783,7 +20872,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 4.11,
+              "evNet": 4.39,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -22230,8 +21319,8 @@
       ],
       "live": {
         "booster": {
-          "price": 28.82,
-          "floor10": 28.82,
+          "price": 28.87,
+          "floor10": 28.87,
           "offers": 5,
           "quantity": 177,
           "sellers": 5,
@@ -22247,6 +21336,20 @@
         {
           "date": "2026-08-11",
           "boosterPrice": 28.82,
+          "boosterOffers": 5,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 32195,
+          "top5Value": 594.06,
+          "top12ex5Value": 62.3,
+          "boosterFRp10": 50,
+          "boosterFRmedian": 74.99,
+          "boosterFRoffers": 7,
+          "boosterFRsellers": 5
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 28.87,
           "boosterOffers": 5,
           "boosterLanguage": "en",
           "boxPrice": null,
@@ -22611,7 +21714,7 @@
             "discount": 100
           },
           "nameFR": "Trousselin",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Paldean-Fates/Klefki-PAF159",
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -22645,6 +21748,1197 @@
           },
           "nameFR": "Motorizard",
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Paldean-Fates/Cyclizar-V2-PAF195",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "white-flare",
+      "name": "Flamme Blanche",
+      "nameEN": "White Flare",
+      "era": "Écarlate et Violet",
+      "releaseDate": "2025/07/18",
+      "ageYears": 1.1,
+      "score": 39,
+      "components": {
+        "breadth": 0,
+        "scarcity": 62,
+        "psaResistance": 50,
+        "spread": 79,
+        "maturity": 12
+      },
+      "verdict": "Hausse non diffusée",
+      "concentration": 21,
+      "cardsTracked": 172,
+      "history": {
+        "points": [
+          {
+            "date": "2025-11-21",
+            "sample": 45,
+            "momentum": -2.08,
+            "diffusion": 28.9
+          },
+          {
+            "date": "2026-01-16",
+            "sample": 19,
+            "momentum": 2.79,
+            "diffusion": 63.2
+          },
+          {
+            "date": "2026-01-19",
+            "sample": 16,
+            "momentum": 0,
+            "diffusion": 31.3
+          },
+          {
+            "date": "2026-02-04",
+            "sample": 12,
+            "momentum": -4.88,
+            "diffusion": 16.7
+          },
+          {
+            "date": "2026-02-19",
+            "sample": 8,
+            "momentum": 0,
+            "diffusion": 12.5
+          },
+          {
+            "date": "2026-02-21",
+            "sample": 8,
+            "momentum": -13.12,
+            "diffusion": 12.5
+          },
+          {
+            "date": "2026-06-17",
+            "sample": 9,
+            "momentum": 0,
+            "diffusion": 22.2
+          },
+          {
+            "date": "2026-07-01",
+            "sample": 10,
+            "momentum": -25,
+            "diffusion": 0
+          }
+        ],
+        "window": {
+          "from": "2025-11-21",
+          "to": "2026-07-01"
+        },
+        "path": [
+          {
+            "label": "J-30",
+            "offset": -30,
+            "value": 100
+          },
+          {
+            "label": "J-7",
+            "offset": -7,
+            "value": 100
+          },
+          {
+            "label": "J-1",
+            "offset": -1,
+            "value": 96.58
+          },
+          {
+            "label": "tendance",
+            "offset": 0,
+            "value": 100
+          }
+        ]
+      },
+      "segments": {
+        "chase": {
+          "cards": 30,
+          "change30": -0.5,
+          "changeMovers": -0.5,
+          "stale": 0,
+          "diffusion": 43.3
+        },
+        "mid": {
+          "cards": 71,
+          "change30": -1.7,
+          "changeMovers": -2.1,
+          "stale": 4,
+          "diffusion": 39.4
+        },
+        "commons": {
+          "cards": 71,
+          "change30": 0,
+          "changeMovers": -25,
+          "stale": 44,
+          "diffusion": 15.7
+        }
+      },
+      "bestCard": {
+        "name": "Reshiram ex",
+        "nameFR": "Reshiram-ex",
+        "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/173/low.webp",
+        "number": "173",
+        "rarity": "Black White Rare",
+        "price": 269.65,
+        "change30": -7.5,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V4-WHT173",
+        "priceFR": null,
+        "offersFR": 0
+      },
+      "podium": [
+        {
+          "priceFR": null,
+          "offersFR": 0,
+          "name": "Reshiram ex",
+          "nameFR": "Reshiram-ex",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/173/low.webp",
+          "number": "173",
+          "rarity": "Black White Rare",
+          "price": 269.65,
+          "change30": -7.5,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V4-WHT173"
+        },
+        {
+          "priceFR": null,
+          "offersFR": 0,
+          "name": "Reshiram ex",
+          "nameFR": "Reshiram-ex",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/166/low.webp",
+          "number": "166",
+          "rarity": "Special Illustration Rare",
+          "price": 146.18,
+          "change30": -0.5,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V3-WHT166"
+        },
+        {
+          "priceFR": null,
+          "offersFR": 0,
+          "name": "Hydreigon ex",
+          "nameFR": "Trioxhydre-ex",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/169/low.webp",
+          "number": "169",
+          "rarity": "Special Illustration Rare",
+          "price": 61.63,
+          "change30": 2.6,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Hydreigon-ex-V3-WHT169"
+        }
+      ],
+      "boosterFR": {
+        "price": 10.99,
+        "priceUrl": "https://www.ebay.fr/itm/396938661397?_skw=pokemon+booster+Flamme+Blanche&hash=item5c6b634e15:g:wMMAAeSwS6holHvo",
+        "floor10": 10.99,
+        "floor10Url": "https://www.ebay.fr/itm/396938661397?_skw=pokemon+booster+Flamme+Blanche&hash=item5c6b634e15:g:wMMAAeSwS6holHvo",
+        "median": 19.99,
+        "offers": 6,
+        "sellers": 5,
+        "matched": 6,
+        "scanned": 135
+      },
+      "opening": {
+        "boosterPrice": 19.99,
+        "netLo": 2.42,
+        "netHi": 2.87,
+        "ratioLo": 0.12,
+        "ratioHi": 0.14,
+        "looseLo": 1.36,
+        "looseHi": 1.53,
+        "recoupLo": 0.02,
+        "recoupHi": 0.02,
+        "recoupLooseLo": 0.01,
+        "recoupLooseHi": 0.01,
+        "topPulls": [
+          {
+            "name": "Reshiram ex",
+            "number": "173",
+            "rarity": "Black White Rare",
+            "price": 269.65,
+            "oneIn": 400,
+            "contribution": 0.59,
+            "premium": true,
+            "nameFR": "Reshiram-ex"
+          },
+          {
+            "name": "Reshiram ex",
+            "number": "166",
+            "rarity": "Special Illustration Rare",
+            "price": 146.18,
+            "oneIn": 560,
+            "contribution": 0.23,
+            "premium": true,
+            "nameFR": "Reshiram-ex"
+          },
+          {
+            "name": "Hydreigon ex",
+            "number": "169",
+            "rarity": "Special Illustration Rare",
+            "price": 61.63,
+            "oneIn": 560,
+            "contribution": 0.1,
+            "premium": true,
+            "nameFR": "Trioxhydre-ex"
+          },
+          {
+            "name": "Keldeo ex",
+            "number": "167",
+            "rarity": "Special Illustration Rare",
+            "price": 41.9,
+            "oneIn": 560,
+            "contribution": 0.07,
+            "premium": true,
+            "nameFR": "Keldeo-ex"
+          },
+          {
+            "name": "Zoroark",
+            "number": "143",
+            "rarity": "Illustration Rare",
+            "price": 40.61,
+            "oneIn": 418,
+            "contribution": 0.08,
+            "premium": false,
+            "nameFR": "Zoroark"
+          },
+          {
+            "name": "Hilda",
+            "number": "171",
+            "rarity": "Special Illustration Rare",
+            "price": 31.83,
+            "oneIn": 560,
+            "contribution": 0.05,
+            "premium": true,
+            "nameFR": "Ludvina"
+          }
+        ],
+        "top1": {
+          "name": "Reshiram ex",
+          "number": "173",
+          "buyPrice": 269.65,
+          "oneInLo": 357,
+          "oneInHi": 455,
+          "expectedCostLo": 7139,
+          "expectedCostHi": 9086,
+          "perDisplay": 0.09,
+          "buyPriceFR": null,
+          "nameFR": "Reshiram-ex"
+        },
+        "boostersPerDisplay": 36,
+        "looseModel": "independent",
+        "mode": "booster",
+        "distribution": {
+          "jackpotNet": 234.6,
+          "byProvenance": {
+            "sealedBox": {
+              "evNet": 2.56,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.4,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.94,
+              "pDouble": 0.01
+            },
+            "freshBox": {
+              "evNet": 2.66,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.43,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.94,
+              "pDouble": 0.01
+            },
+            "trustedLoose": {
+              "evNet": 2.62,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.43,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.94,
+              "pDouble": 0.01
+            },
+            "unknownLoose": {
+              "evNet": 2.72,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.43,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.94,
+              "pDouble": 0.01
+            }
+          }
+        },
+        "confidence": "correcte",
+        "partialNote": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation."
+      },
+      "dropRates": {
+        "classes": [
+          {
+            "rarity": "Rare",
+            "count": 10,
+            "rateLo": 0.7,
+            "rateHi": 0.76,
+            "oneInAny": 1,
+            "oneInSpecific": 14,
+            "median": 0.08,
+            "mean": 0.07,
+            "contribution": 0.05,
+            "premium": false
+          },
+          {
+            "rarity": "Double Rare",
+            "count": 6,
+            "rateLo": 0.2,
+            "rateHi": 0.22,
+            "oneInAny": 5,
+            "oneInSpecific": 29,
+            "median": 0.36,
+            "mean": 0.39,
+            "contribution": 0.08,
+            "premium": false
+          },
+          {
+            "rarity": "Illustration Rare",
+            "count": 69,
+            "rateLo": 0.155,
+            "rateHi": 0.175,
+            "oneInAny": 6,
+            "oneInSpecific": 418,
+            "median": 7.13,
+            "mean": 9.86,
+            "contribution": 1.63,
+            "premium": false
+          },
+          {
+            "rarity": "Ultra Rare",
+            "count": 8,
+            "rateLo": 0.055,
+            "rateHi": 0.062,
+            "oneInAny": 17,
+            "oneInSpecific": 137,
+            "median": 1.07,
+            "mean": 1.79,
+            "contribution": 0.1,
+            "premium": true
+          },
+          {
+            "rarity": "Special Illustration Rare",
+            "count": 7,
+            "rateLo": 0.011,
+            "rateHi": 0.014,
+            "oneInAny": 80,
+            "oneInSpecific": 560,
+            "median": 31.83,
+            "mean": 48.22,
+            "contribution": 0.6,
+            "premium": true
+          },
+          {
+            "rarity": "Black White Rare",
+            "count": 1,
+            "rateLo": 0.0022,
+            "rateHi": 0.0028,
+            "oneInAny": 400,
+            "oneInSpecific": 400,
+            "median": 269.65,
+            "mean": 269.65,
+            "contribution": 0.67,
+            "premium": true
+          }
+        ],
+        "grossPerBooster": 3.13,
+        "confidence": "correcte",
+        "looseModel": "independent",
+        "eraLabel": "Écarlate et Violet",
+        "sample": "700+ boosters (TCGplayer Infinite) ; Black White Rare estimée par la communauté",
+        "sampleSource": "étude dédiée Flamme Blanche — l'IR y est ~2× plus fréquente que dans le reste de l'ère",
+        "partialNote": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation."
+      },
+      "logo": "https://assets.tcgdex.net/fr/sv/sv10.5w/logo.webp",
+      "strata": [
+        {
+          "key": "top1",
+          "label": "Carte-titre",
+          "growth": -7.5,
+          "cards": 1,
+          "basketValue": 260.92,
+          "driver": {
+            "name": "Reshiram ex",
+            "number": "173",
+            "change": -7.5,
+            "share": 1
+          }
+        },
+        {
+          "key": "r2_5",
+          "label": "Rangs 2-5",
+          "growth": -0.13,
+          "cards": 4,
+          "basketValue": 294.27,
+          "driver": {
+            "name": "Hydreigon ex",
+            "number": "169",
+            "change": 2.6,
+            "share": 1
+          }
+        },
+        {
+          "key": "r6_15",
+          "label": "Rangs 6-15",
+          "growth": -3.08,
+          "cards": 10,
+          "basketValue": 234.01,
+          "driver": null
+        },
+        {
+          "key": "r16_50",
+          "label": "Rangs 16-50",
+          "growth": 0.4,
+          "cards": 35,
+          "basketValue": 351.59,
+          "driver": {
+            "name": "Gigalith",
+            "number": "129",
+            "change": 13.8,
+            "share": 1
+          }
+        },
+        {
+          "key": "fond",
+          "label": "Fond du set (51+)",
+          "growth": -1.88,
+          "cards": 121,
+          "basketValue": 168.18,
+          "driver": null
+        }
+      ],
+      "growthSeries": {
+        "monthly": {
+          "top1": [
+            {
+              "date": "2025-11-15",
+              "sample": 1,
+              "growth": -7.5,
+              "basketValue": 260.92
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 1,
+              "growth": -7.5,
+              "basketValue": 260.92
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -0.13,
+              "basketValue": 294.27
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 4,
+              "growth": -0.13,
+              "basketValue": 294.27
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 6,
+              "growth": -2.22,
+              "basketValue": 140.06
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 10,
+              "growth": -3.08,
+              "basketValue": 234.01
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 5,
+              "growth": -3.49,
+              "basketValue": 120.6
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 4,
+              "growth": -4.33,
+              "basketValue": 93.95
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 25,
+              "growth": 0.1,
+              "basketValue": 252.89
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 35,
+              "growth": 0.4,
+              "basketValue": 351.59
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 16,
+              "growth": 1.9,
+              "basketValue": 156.22
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 10,
+              "growth": 1.17,
+              "basketValue": 98.7
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 36,
+              "growth": -2.67,
+              "basketValue": 140.13
+            },
+            {
+              "date": "2025-12-15",
+              "sample": 57,
+              "growth": -1.75,
+              "basketValue": 164.01
+            },
+            {
+              "date": "2026-01-15",
+              "sample": 59,
+              "growth": 0.52,
+              "basketValue": 50.1
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 58,
+              "growth": 3.3,
+              "basketValue": 26.31
+            },
+            {
+              "date": "2026-03-15",
+              "sample": 37,
+              "growth": -3.19,
+              "basketValue": 2.43
+            },
+            {
+              "date": "2026-04-15",
+              "sample": 12,
+              "growth": 7.35,
+              "basketValue": 0.73
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 15,
+              "growth": -10.28,
+              "basketValue": 0.96
+            },
+            {
+              "date": "2026-06-15",
+              "sample": 27,
+              "growth": -11.68,
+              "basketValue": 1.74
+            },
+            {
+              "date": "2026-07-15",
+              "sample": 23,
+              "growth": -11.83,
+              "basketValue": 1.64
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 10,
+              "growth": -17.57,
+              "basketValue": 0.61
+            }
+          ]
+        },
+        "quarterly": {
+          "top1": [
+            {
+              "date": "2025-11-15",
+              "sample": 1,
+              "growth": -7.5,
+              "basketValue": 260.92
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 1,
+              "growth": -7.5,
+              "basketValue": 260.92
+            }
+          ],
+          "r2_5": [
+            {
+              "date": "2025-11-15",
+              "sample": 4,
+              "growth": -0.13,
+              "basketValue": 294.27
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 4,
+              "growth": -0.13,
+              "basketValue": 294.27
+            }
+          ],
+          "r6_15": [
+            {
+              "date": "2025-11-15",
+              "sample": 10,
+              "growth": -3.08,
+              "basketValue": 234.01
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 10,
+              "growth": -3.08,
+              "basketValue": 234.01
+            }
+          ],
+          "r16_50": [
+            {
+              "date": "2025-11-15",
+              "sample": 35,
+              "growth": 0.4,
+              "basketValue": 351.59
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 35,
+              "growth": 0.4,
+              "basketValue": 351.59
+            }
+          ],
+          "fond": [
+            {
+              "date": "2025-11-15",
+              "sample": 69,
+              "growth": -1.78,
+              "basketValue": 164.77
+            },
+            {
+              "date": "2026-02-15",
+              "sample": 98,
+              "growth": -1.78,
+              "basketValue": 166.54
+            },
+            {
+              "date": "2026-05-15",
+              "sample": 52,
+              "growth": -6.83,
+              "basketValue": 3.41
+            },
+            {
+              "date": "2026-08-15",
+              "sample": 23,
+              "growth": -11.83,
+              "basketValue": 1.64
+            }
+          ]
+        }
+      },
+      "contentValue": [
+        {
+          "date": "2025-11-15",
+          "sample": 72,
+          "growth": -2.53,
+          "basketValue": 1088.27
+        },
+        {
+          "date": "2025-12-15",
+          "sample": 107,
+          "growth": -2.28,
+          "basketValue": 1304.8
+        },
+        {
+          "date": "2026-01-15",
+          "sample": 80,
+          "growth": -0.36,
+          "basketValue": 326.92
+        },
+        {
+          "date": "2026-02-15",
+          "sample": 72,
+          "growth": -1.03,
+          "basketValue": 218.96
+        },
+        {
+          "date": "2026-03-15",
+          "sample": 37,
+          "growth": -3.19,
+          "basketValue": 2.43
+        },
+        {
+          "date": "2026-04-15",
+          "sample": 12,
+          "growth": 7.35,
+          "basketValue": 0.73
+        },
+        {
+          "date": "2026-05-15",
+          "sample": 15,
+          "growth": -10.28,
+          "basketValue": 0.96
+        },
+        {
+          "date": "2026-06-15",
+          "sample": 27,
+          "growth": -11.68,
+          "basketValue": 1.74
+        },
+        {
+          "date": "2026-07-15",
+          "sample": 23,
+          "growth": -11.83,
+          "basketValue": 1.64
+        },
+        {
+          "date": "2026-08-15",
+          "sample": 10,
+          "growth": -17.57,
+          "basketValue": 0.61
+        }
+      ],
+      "live": {
+        "booster": {
+          "price": 12.21,
+          "floor10": 12.21,
+          "offers": 3,
+          "quantity": 265,
+          "sellers": 3,
+          "language": "en"
+        },
+        "boosterBox": null,
+        "singles": {
+          "tracked": 173,
+          "offers": 20679
+        }
+      },
+      "liveHistory": [
+        {
+          "date": "2026-08-11",
+          "boosterPrice": 12.21,
+          "boosterOffers": 2,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 20679,
+          "top5Value": 571.69,
+          "top12ex5Value": 184.38,
+          "boosterFRp10": 10.99,
+          "boosterFRmedian": 19.99,
+          "boosterFRoffers": 6,
+          "boosterFRsellers": 5
+        },
+        {
+          "date": "2026-08-12",
+          "boosterPrice": 12.21,
+          "boosterOffers": 3,
+          "boosterLanguage": "en",
+          "boxPrice": null,
+          "singlesOffers": 20679,
+          "top5Value": 571.69,
+          "top12ex5Value": 184.38,
+          "boosterFRp10": 10.99,
+          "boosterFRmedian": 19.99,
+          "boosterFRoffers": 6,
+          "boosterFRsellers": 5
+        }
+      ],
+      "psa": null,
+      "picks": [
+        {
+          "id": "rsv10pt5-129",
+          "name": "Gigalith",
+          "number": "129",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/129/low.webp",
+          "price": 15.57,
+          "momentum30": 13.8,
+          "relativeStrength": 14,
+          "sellers": 13,
+          "offers": 13,
+          "marketFloor": 20.25,
+          "score": 75,
+          "components": {
+            "relative": 85,
+            "tightness": 68,
+            "liquidity": 45,
+            "discount": 100
+          },
+          "nameFR": "Gigalithe",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Gigalith-V2-WHT129",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-137",
+          "name": "Liepard",
+          "number": "137",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/137/low.webp",
+          "price": 21.8,
+          "momentum30": 9.4,
+          "relativeStrength": 9.6,
+          "sellers": 10,
+          "offers": 10,
+          "marketFloor": 26.39,
+          "score": 70,
+          "components": {
+            "relative": 74,
+            "tightness": 75,
+            "liquidity": 32,
+            "discount": 100
+          },
+          "nameFR": "Léopardus",
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-99",
+          "name": "Pansear",
+          "number": "99",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/099/low.webp",
+          "price": 6.86,
+          "momentum30": 7.1,
+          "relativeStrength": 7.2,
+          "sellers": 27,
+          "offers": 27,
+          "marketFloor": 4.61,
+          "score": 68,
+          "components": {
+            "relative": 68,
+            "tightness": 33,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Flamajou",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Pansear-V2-WHT099",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-156",
+          "name": "Stoutland",
+          "number": "156",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/156/low.webp",
+          "price": 16.28,
+          "momentum30": 10,
+          "relativeStrength": 10.2,
+          "sellers": 12,
+          "offers": 12,
+          "marketFloor": 13.21,
+          "score": 68,
+          "components": {
+            "relative": 75,
+            "tightness": 70,
+            "liquidity": 41,
+            "discount": 80
+          },
+          "nameFR": "Mastouffe",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Stoutland-V2-WHT156",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-100",
+          "name": "Simisear",
+          "number": "100",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/100/low.webp",
+          "price": 7.44,
+          "momentum30": 5.5,
+          "relativeStrength": 5.6,
+          "sellers": 21,
+          "offers": 21,
+          "marketFloor": 5.11,
+          "score": 67,
+          "components": {
+            "relative": 64,
+            "tightness": 48,
+            "liquidity": 82,
+            "discount": 97
+          },
+          "nameFR": "Flamoutan",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Simisear-V2-WHT100",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-109",
+          "name": "Ducklett",
+          "number": "109",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/109/low.webp",
+          "price": 8.02,
+          "momentum30": 3,
+          "relativeStrength": 3.1,
+          "sellers": 14,
+          "offers": 14,
+          "marketFloor": 4.3,
+          "score": 65,
+          "components": {
+            "relative": 58,
+            "tightness": 65,
+            "liquidity": 50,
+            "discount": 100
+          },
+          "nameFR": "Couaneton",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Ducklett-V2-WHT109",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-87",
+          "name": "Sewaddle",
+          "number": "87",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/087/low.webp",
+          "price": 7.39,
+          "momentum30": 2.5,
+          "relativeStrength": 2.6,
+          "sellers": 13,
+          "offers": 13,
+          "marketFloor": 6.14,
+          "score": 64,
+          "components": {
+            "relative": 57,
+            "tightness": 68,
+            "liquidity": 45,
+            "discount": 100
+          },
+          "nameFR": "Larveyette",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Sewaddle-V2-WHT087",
+          "marketFR": {
+            "price": 15,
+            "priceUrl": "https://www.ebay.fr/itm/287321811427?_skw=Larveyette+87%2F86&hash=item42e5b6e9e3:g:uscAAeSw3YRp~0Wt",
+            "floor10": 15,
+            "floor10Url": "https://www.ebay.fr/itm/287321811427?_skw=Larveyette+87%2F86&hash=item42e5b6e9e3:g:uscAAeSw3YRp~0Wt",
+            "median": 15,
+            "offers": 1,
+            "sellers": 1,
+            "matched": 1,
+            "scanned": 1
+          }
+        },
+        {
+          "id": "rsv10pt5-108",
+          "name": "Basculin",
+          "number": "108",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/108/low.webp",
+          "price": 4.34,
+          "momentum30": 0.9,
+          "relativeStrength": 1.1,
+          "sellers": 25,
+          "offers": 27,
+          "marketFloor": 4.11,
+          "score": 63,
+          "components": {
+            "relative": 53,
+            "tightness": 38,
+            "liquidity": 100,
+            "discount": 100
+          },
+          "nameFR": "Bargantua",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Basculin-V2-WHT108",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-118",
+          "name": "Stunfisk",
+          "number": "118",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/118/low.webp",
+          "price": 3.92,
+          "momentum30": 4.9,
+          "relativeStrength": 5,
+          "sellers": 31,
+          "offers": 31,
+          "marketFloor": 2.6,
+          "score": 63,
+          "components": {
+            "relative": 63,
+            "tightness": 23,
+            "liquidity": 100,
+            "discount": 98
+          },
+          "nameFR": "Limonde",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Stunfisk-V2-WHT118",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-94",
+          "name": "Accelgor",
+          "number": "94",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/094/low.webp",
+          "price": 9.51,
+          "momentum30": 10,
+          "relativeStrength": 10.2,
+          "sellers": 16,
+          "offers": 16,
+          "marketFloor": 10.15,
+          "score": 62,
+          "components": {
+            "relative": 76,
+            "tightness": 60,
+            "liquidity": 59,
+            "discount": 35
+          },
+          "nameFR": "Limaspeed",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Accelgor-V2-WHT094",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-111",
+          "name": "Vanillite",
+          "number": "111",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/111/low.webp",
+          "price": 6.66,
+          "momentum30": 2.9,
+          "relativeStrength": 3,
+          "sellers": 20,
+          "offers": 20,
+          "marketFloor": 4.11,
+          "score": 61,
+          "components": {
+            "relative": 58,
+            "tightness": 50,
+            "liquidity": 77,
+            "discount": 75
+          },
+          "nameFR": "Sorbébé",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Vanillite-V2-WHT111",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "matched": 0,
+            "scanned": 0
+          }
+        },
+        {
+          "id": "rsv10pt5-141",
+          "name": "Garbodor",
+          "number": "141",
+          "rarity": "Illustration Rare",
+          "image": "https://assets.tcgdex.net/fr/sv/sv10.5w/141/low.webp",
+          "price": 9.64,
+          "momentum30": 2.1,
+          "relativeStrength": 2.2,
+          "sellers": 23,
+          "offers": 23,
+          "marketFloor": 7.7,
+          "score": 61,
+          "components": {
+            "relative": 56,
+            "tightness": 43,
+            "liquidity": 91,
+            "discount": 77
+          },
+          "nameFR": "Miasmax",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Garbodor-V2-WHT141",
           "marketFR": {
             "price": null,
             "priceUrl": null,
