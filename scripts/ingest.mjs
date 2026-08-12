@@ -1142,7 +1142,7 @@ async function main() {
 
   console.log(`\n${mergedSets.length} sets écrits dans public/radar-data.json`);
   console.log(`Drop rate v2 écrit dans public/drop-rate-v2.json`);
-  console.log(`Tracker cartes écrit dans public/card-tracker.json`);
+  console.log(`Tracker cartes écrit (index + détails par set)`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
 }
 

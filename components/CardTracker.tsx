@@ -7,6 +7,7 @@ import type {
   TrackerHistoryPoint,
   TrackerMarketSummary,
   TrackerSet,
+  TrackerSetDetail,
 } from "@/lib/card-tracker-types";
 
 const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
@@ -49,15 +50,15 @@ function searchCards(data: CardTrackerData, query: string) {
     .sort((a, b) => {
       const exactA = [normalize(a.nameFR ?? ""), normalize(a.nameEN)].includes(parsed.terms.join(" ")) ? 1 : 0;
       const exactB = [normalize(b.nameFR ?? ""), normalize(b.nameEN)].includes(parsed.terms.join(" ")) ? 1 : 0;
-      const marketA = data.markets[a.id]?.rawFR ? 1 : 0;
-      const marketB = data.markets[b.id]?.rawFR ? 1 : 0;
-      return exactB - exactA || marketB - marketA || b.reference.price - a.reference.price;
+      const marketA = a.followed ? 1 : 0;
+      const marketB = b.followed ? 1 : 0;
+      return exactB - exactA || marketB - marketA || b.price - a.price;
     })
     .slice(0, 80);
 }
 
 function confidenceClass(confidence: TrackerMarketSummary["confidence"]) {
-  if (confidence === "forte") return "border-[#287a61] bg-[#15382f] text-[#8ed5bd]";
+  if (confidence === "élevée") return "border-[#287a61] bg-[#15382f] text-[#8ed5bd]";
   if (confidence === "moyenne") return "border-[#9d711e] bg-[#352b18] text-[#e3bd6a]";
   return "border-ink-500 bg-ink-800 text-mist-300";
 }
@@ -107,7 +108,7 @@ function SourceCard({ summary, label }: { summary: TrackerMarketSummary | null; 
     <article className="border-t border-ink-500 pt-4">
       <div className="flex items-start justify-between gap-3">
         <div><p className="m-0 text-[0.73rem] uppercase tracking-[0.11em] text-mist-500">{label}</p><p className="m-0 mt-1 text-[0.76rem] text-mist-300">Offres actives · FR · EX+</p></div>
-        {summary ? <span className={`rounded-full border px-2 py-1 text-[0.66rem] ${confidenceClass(summary.confidence)}`}>preuve {summary.confidence}</span> : null}
+        {summary ? <span className={`rounded-full border px-2 py-1 text-[0.66rem] ${confidenceClass(summary.confidence)}`}>confiance {summary.confidence}</span> : null}
       </div>
       {summary ? <><p className="tabular m-0 mt-5 text-[1.8rem] font-semibold text-mist-050">{eur.format(summary.median)}</p><p className="m-0 mt-1 text-[0.74rem] text-mist-500">médiane · rapide {eur.format(summary.floor10)}</p><p className="m-0 mt-4 text-[0.76rem] text-mist-300">{summary.offers} offres · {summary.sellers} vendeurs · {summary.excluded} écartées</p></> : <p className="m-0 mt-5 text-[0.82rem] leading-6 text-mist-500">Aucune cotation comparable active dans le dernier périmètre fiable.</p>}
     </article>
@@ -121,10 +122,14 @@ export default function CardTracker() {
   const [language, setLanguage] = useState<"fr" | "en">("fr");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [showResults, setShowResults] = useState(false);
+  // Détails (image, référence, marché, historique) chargés PAR SET à la
+  // sélection : l'index de recherche reste léger, le monolithe de 2,9 Mo
+  // ne traverse plus le réseau à chaque visite.
+  const [details, setDetails] = useState<Record<string, TrackerSetDetail>>({});
 
   useEffect(() => {
     let cancelled = false;
-    fetch("/card-tracker.json", { cache: "no-store" })
+    fetch("/card-tracker-index.json", { cache: "no-store" })
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
@@ -136,12 +141,30 @@ export default function CardTracker() {
 
   const results = useMemo(() => data ? searchCards(data, query) : [], [data, query]);
   const selected = data?.cards.find((card) => card.id === selectedId) ?? results[0] ?? null;
-  const market = selected && data ? data.markets[selected.id] ?? null : null;
+  const selectedSetId = selected?.setId ?? null;
+
+  useEffect(() => {
+    if (!selectedSetId || details[selectedSetId]) return;
+    let cancelled = false;
+    fetch(`/card-tracker/${selectedSetId}.json`, { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((payload) => { if (!cancelled) setDetails((current) => ({ ...current, [selectedSetId]: payload })); })
+      .catch(() => { /* la carte reste consultable via l'index */ });
+    return () => { cancelled = true; };
+  }, [selectedSetId, details]);
+
+  const detail = selectedSetId ? details[selectedSetId] ?? null : null;
+  const detailCard = selected && detail ? detail.cards[selected.id] ?? null : null;
+  const reference = detailCard?.reference ?? null;
+  const market = selected && detail ? detail.markets[selected.id] ?? null : null;
   const set = selected && data ? data.sets[selected.setId] : null;
   const primaryName = selected ? displayName(selected, language) : "";
   const secondaryName = selected ? displayName(selected, language === "fr" ? "en" : "fr") : "";
-  const referenceChange = selected?.reference.avg30 && selected.reference.avg30 > 0
-    ? ((selected.reference.price / selected.reference.avg30) - 1) * 100
+  const referenceChange = reference?.avg30 && reference.avg30 > 0
+    ? ((reference.price / reference.avg30) - 1) * 100
     : null;
   const gradeOf = (grade: number) => market?.grades[`PSA:${grade}`] ?? null;
 
@@ -167,9 +190,9 @@ export default function CardTracker() {
         {showResults && query.trim().length >= 2 ? <div className="absolute left-0 right-0 top-full z-20 max-h-[26rem] overflow-y-auto border-b border-ink-600 bg-ink-850 shadow-2xl">
           {results.length ? results.slice(0, 14).map((card) => {
             const cardSet = data.sets[card.setId];
-            const hasMarket = Boolean(data.markets[card.id]?.rawFR);
+            const hasMarket = card.followed;
             const active = card.id === selected?.id;
-            return <button key={card.id} type="button" onClick={() => { setSelectedId(card.id); setQuery(`${displayName(card, language)} ${cardSet.aliases.find((alias) => /^[a-z]+\d/i.test(alias)) ?? card.setId}`); setShowResults(false); }} className={`grid w-full grid-cols-[1fr_auto] gap-4 border-0 border-t border-ink-700 px-5 py-3 text-left ${active ? "bg-accent-soft" : "bg-ink-850 hover:bg-ink-800"}`}><span><b className="block text-[0.88rem] text-mist-050">{displayName(card, language)}</b><small className="text-[0.72rem] text-mist-500">{cardSet.nameFR} · #{card.number} · {card.rarity ?? "rareté non renseignée"}</small></span><span className="text-right"><b className="tabular block text-[0.84rem] text-mist-100">{eur.format(card.reference.price)}</b><small className={hasMarket ? "text-[#63c29f]" : "text-mist-500"}>{hasMarket ? "marché FR suivi" : "repère catalogue"}</small></span></button>;
+            return <button key={card.id} type="button" onClick={() => { setSelectedId(card.id); setQuery(`${displayName(card, language)} ${cardSet.aliases.find((alias) => /^[a-z]+\d/i.test(alias)) ?? card.setId}`); setShowResults(false); }} className={`grid w-full grid-cols-[1fr_auto] gap-4 border-0 border-t border-ink-700 px-5 py-3 text-left ${active ? "bg-accent-soft" : "bg-ink-850 hover:bg-ink-800"}`}><span><b className="block text-[0.88rem] text-mist-050">{displayName(card, language)}</b><small className="text-[0.72rem] text-mist-500">{cardSet.nameFR} · #{card.number} · {card.rarity ?? "rareté non renseignée"}</small></span><span className="text-right"><b className="tabular block text-[0.84rem] text-mist-100">{eur.format(card.price)}</b><small className={hasMarket ? "text-[#63c29f]" : "text-mist-500"}>{hasMarket ? "marché FR suivi" : "repère catalogue"}</small></span></button>;
           }) : <p className="m-0 px-5 py-6 text-[0.84rem] text-mist-500">Aucune impression reconnue. Vérifiez le code du set ou cherchez seulement le nom.</p>}
         </div> : null}
       </section>
@@ -178,11 +201,11 @@ export default function CardTracker() {
         <section className="grid gap-9 py-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-14">
           <div className="self-start">
             <div className="flex aspect-[0.72] items-center justify-center overflow-hidden rounded-xl bg-ink-800 ring-1 ring-ink-600">
-              {selected.image ? (
+              {detailCard?.image ? (
                 // Sources multiples et historiques : certaines images ne
                 // passent pas par un domaine stable compatible next/image.
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={selected.image} alt={`Carte ${primaryName}`} className="h-full w-full object-contain" />
+                <img src={detailCard.image} alt={`Carte ${primaryName}`} className="h-full w-full object-contain" />
               ) : <span className="px-5 text-center text-[0.8rem] text-mist-500">Illustration non disponible pour cette impression</span>}
             </div>
             <p className="m-0 mt-4 text-[0.72rem] leading-5 text-mist-500">Identité canonique&nbsp;: {selected.setId} · #{selected.number}. La langue reste une dimension de marché, jamais une simple traduction.</p>
@@ -191,8 +214,8 @@ export default function CardTracker() {
             <div className="flex flex-wrap items-start justify-between gap-4 border-b border-ink-600 pb-6"><div><p className="m-0 text-[0.76rem] text-mist-500">{set.nameFR} · #{selected.number} · {selected.rarity}</p><h2 className="display m-0 mt-2 text-[clamp(2rem,4vw,3.3rem)]">{primaryName}</h2>{secondaryName !== primaryName ? <p className="m-0 mt-2 text-[0.92rem] text-mist-500">{secondaryName}</p> : null}</div><span className="rounded-full border border-ink-500 px-3 py-1.5 text-[0.72rem] text-mist-300">Ungraded · EX+</span></div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
-              <article className="md:col-span-2 border-t-2 border-accent pt-5"><p className="m-0 text-[0.72rem] uppercase tracking-[0.12em] text-mist-500">Marché français comparable</p>{market?.rawFR ? <><div className="mt-3 flex flex-wrap items-end gap-x-4 gap-y-2"><strong className="tabular text-[2.7rem] leading-none text-mist-050">{eur.format(market.rawFR.median)}</strong><span className={`rounded-full border px-2 py-1 text-[0.68rem] ${confidenceClass(market.rawFR.confidence)}`}>preuve {market.rawFR.confidence}</span></div><p className="m-0 mt-3 text-[0.8rem] leading-6 text-mist-300">Médiane de {market.rawFR.offers} offres actives auprès de {market.rawFR.sellers} vendeurs. Achat rapide observé autour de <strong className="text-mist-100">{eur.format(market.rawFR.floor10)}</strong>.</p></> : <><p className="m-0 mt-4 text-[1.35rem] text-mist-100">Pas encore de marché FR assez comparable</p><p className="m-0 mt-3 text-[0.8rem] leading-6 text-mist-500">La carte reste consultable grâce au repère européen, mais aucun prix français EX+ n’est promu.</p></>}</article>
-              <article className="border-t border-ink-500 pt-5"><p className="m-0 text-[0.72rem] uppercase tracking-[0.12em] text-mist-500">{selected.reference.source === "cardmarket_guide" ? "Repère Cardmarket Europe" : "Plancher CardTrader"}</p><p className="tabular m-0 mt-3 text-[1.75rem] font-semibold">{eur.format(selected.reference.price)}</p><p className={`m-0 mt-2 text-[0.76rem] ${referenceChange != null && referenceChange > 0 ? "text-[#63c29f]" : referenceChange != null && referenceChange < 0 ? "text-[#e3bd6a]" : "text-mist-500"}`}>{referenceChange == null ? "historique indisponible" : `${referenceChange >= 0 ? "+" : ""}${referenceChange.toFixed(1)} % vs moyenne 30 j`}</p><p className="m-0 mt-3 text-[0.7rem] leading-5 text-mist-500">Indice de plateforme séparé des offres FR ; ce n’est pas une vente confirmée.</p></article>
+              <article className="md:col-span-2 border-t-2 border-accent pt-5"><p className="m-0 text-[0.72rem] uppercase tracking-[0.12em] text-mist-500">Marché français comparable</p>{market?.rawFR ? <><div className="mt-3 flex flex-wrap items-end gap-x-4 gap-y-2"><strong className="tabular text-[2.7rem] leading-none text-mist-050">{eur.format(market.rawFR.median)}</strong><span className={`rounded-full border px-2 py-1 text-[0.68rem] ${confidenceClass(market.rawFR.confidence)}`}>confiance {market.rawFR.confidence}</span></div><p className="m-0 mt-3 text-[0.8rem] leading-6 text-mist-300">Médiane de {market.rawFR.offers} offres actives auprès de {market.rawFR.sellers} vendeurs. Achat rapide observé autour de <strong className="text-mist-100">{eur.format(market.rawFR.floor10)}</strong>.</p></> : <><p className="m-0 mt-4 text-[1.35rem] text-mist-100">Pas encore de marché FR assez comparable</p><p className="m-0 mt-3 text-[0.8rem] leading-6 text-mist-500">La carte reste consultable grâce au repère européen, mais aucun prix français EX+ n’est promu.</p></>}</article>
+              <article className="border-t border-ink-500 pt-5"><p className="m-0 text-[0.72rem] uppercase tracking-[0.12em] text-mist-500">{(reference?.source ?? "cardmarket_guide") === "cardmarket_guide" ? "Repère Cardmarket Europe" : "Plancher CardTrader"}</p><p className="tabular m-0 mt-3 text-[1.75rem] font-semibold">{reference ? eur.format(reference.price) : eur.format(selected.price)}</p><p className={`m-0 mt-2 text-[0.76rem] ${referenceChange != null && referenceChange > 0 ? "text-[#63c29f]" : referenceChange != null && referenceChange < 0 ? "text-[#e3bd6a]" : "text-mist-500"}`}>{referenceChange == null ? "historique indisponible" : `${referenceChange >= 0 ? "+" : ""}${referenceChange.toFixed(1)} % vs moyenne 30 j`}</p><p className="m-0 mt-3 text-[0.7rem] leading-5 text-mist-500">Indice de plateforme séparé des offres FR ; ce n’est pas une vente confirmée.</p></article>
             </div>
 
             <div className="mt-9 grid gap-5 sm:grid-cols-2"><SourceCard summary={market?.ebayFR ?? null} label="eBay.fr" /><SourceCard summary={market?.cardTraderFR ?? null} label="CardTrader FR" /></div>

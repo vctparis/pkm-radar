@@ -12,7 +12,19 @@ const check = (label, actual, expected) => {
 };
 
 const root = process.cwd();
-const artifact = JSON.parse(await readFile(join(root, "public", "card-tracker.json"), "utf8"));
+const artifact = JSON.parse(await readFile(join(root, "public", "card-tracker-index.json"), "utf8"));
+// Les marchés vivent dans les fichiers de détail par set.
+const { readdir } = await import("node:fs/promises");
+const detailFiles = (await readdir(join(root, "public", "card-tracker"))).filter((f) => f.endsWith(".json"));
+artifact.markets = {};
+for (const file of detailFiles) {
+  const detail = JSON.parse(await readFile(join(root, "public", "card-tracker", file), "utf8"));
+  Object.assign(artifact.markets, detail.markets);
+}
+check("index léger : ni image ni preuves dans le fichier de recherche",
+  artifact.cards.filter((card) => "image" in card || "reference" in card).length, 0);
+check("confiance au vocabulaire du site (élevée, pas forte)",
+  Object.values(artifact.markets).some((m) => [m.rawFR, m.ebayFR, m.cardTraderFR].filter(Boolean).some((s) => s.confidence === "forte")), false);
 const index = JSON.parse(await readFile(join(root, "public", "cards-index.json"), "utf8"));
 const gradeStore = JSON.parse(await readFile(join(root, "data", "manual-card-grades.json"), "utf8"));
 check("tracker porte une version", typeof artifact.modelVersion, "string");

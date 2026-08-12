@@ -1,3 +1,14 @@
+export type TrackerReference = {
+  source: "cardmarket_guide" | "cardtrader_floor";
+  price: number;
+  avg30: number | null;
+  avg7: number | null;
+  avg1: number | null;
+  currency: "EUR";
+};
+
+/** Entrée de l'index de recherche — volontairement légère (pas d'image,
+ *  pas de référence détaillée : elles vivent dans le détail par set). */
 export type TrackerCard = {
   id: string;
   nameEN: string;
@@ -5,15 +16,13 @@ export type TrackerCard = {
   number: string;
   rarity: string | null;
   setId: string;
+  price: number;
+  followed: boolean;
+};
+
+export type TrackerCardDetail = {
   image: string | null;
-  reference: {
-    source: "cardmarket_guide" | "cardtrader_floor";
-    price: number;
-    avg30: number | null;
-    avg7: number | null;
-    avg1: number | null;
-    currency: "EUR";
-  };
+  reference: TrackerReference;
 };
 
 export type TrackerSet = {
@@ -45,7 +54,7 @@ export type TrackerMarketSummary = {
   excluded: number;
   latestSeen: string;
   complete: boolean | null;
-  confidence: "forte" | "moyenne" | "faible";
+  confidence: "élevée" | "moyenne" | "faible";
   evidence: TrackerEvidence[];
 };
 
@@ -86,7 +95,6 @@ export type CardTrackerData = {
   };
   sets: Record<string, TrackerSet>;
   cards: TrackerCard[];
-  markets: Record<string, TrackerCardMarket>;
   sources: Array<{
     id: "ebay" | "cardmarket" | "cardtrader" | "tcgplayer" | "leboncoin" | "psa";
     label: string;
@@ -94,4 +102,11 @@ export type CardTrackerData = {
     role: string;
     limit: string;
   }>;
+};
+
+/** Fichier public/card-tracker/<setId>.json — chargé à la sélection. */
+export type TrackerSetDetail = {
+  generatedAt: string;
+  cards: Record<string, TrackerCardDetail>;
+  markets: Record<string, TrackerCardMarket>;
 };

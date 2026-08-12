@@ -6,18 +6,19 @@
 // ledger ; seules quelques preuves publiques sans identifiant vendeur sortent
 // dans l'artefact de consultation.
 
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.1";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.2";
 
 const round2 = (value) => Number(value.toFixed(2));
 
+// Même vocabulaire que le reste du site (drop v2, taux) : élevée/moyenne/faible.
 function confidenceOf(offers, sellers) {
-  if (offers >= 10 && sellers >= 5) return "forte";
+  if (offers >= 10 && sellers >= 5) return "élevée";
   if (offers >= 5 && sellers >= 3) return "moyenne";
   return "faible";
 }
@@ -309,6 +310,38 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
       { id: "psa", label: "PSA", status: "partial", role: "prix et population par grade", limit: "source carte-niveau autorisée à connecter" },
     ],
   };
-  await writeFile(join(root, "public", "card-tracker.json"), `${JSON.stringify(artifact)}\n`);
+  // Découpage pour le client : un index de recherche léger (ni image, ni
+  // référence détaillée, ni preuves — ~5× plus petit que le monolithe) et un
+  // fichier de détail PAR SET chargé à la sélection. Le monolithe de 2,9 Mo
+  // pénalisait chaque visite pour servir 13 % de cartes cotées.
+  const indexArtifact = {
+    generatedAt: artifact.generatedAt,
+    modelVersion: artifact.modelVersion,
+    definitions: artifact.definitions,
+    sources: artifact.sources,
+    sets: artifact.sets,
+    cards: artifact.cards.map((card) => ({
+      id: card.id,
+      nameEN: card.nameEN,
+      nameFR: card.nameFR,
+      number: card.number,
+      rarity: card.rarity,
+      setId: card.setId,
+      price: card.reference.price,
+      followed: Boolean(artifact.markets[card.id]?.rawFR),
+    })),
+  };
+  await writeFile(join(root, "public", "card-tracker-index.json"), `${JSON.stringify(indexArtifact)}\n`);
+
+  await mkdir(join(root, "public", "card-tracker"), { recursive: true });
+  for (const set of SETS) {
+    const detail = { generatedAt: artifact.generatedAt, cards: {}, markets: {} };
+    for (const card of artifact.cards) {
+      if (card.setId !== set.id) continue;
+      detail.cards[card.id] = { image: card.image, reference: card.reference };
+      if (artifact.markets[card.id]) detail.markets[card.id] = artifact.markets[card.id];
+    }
+    await writeFile(join(root, "public", "card-tracker", `${set.id}.json`), `${JSON.stringify(detail)}\n`);
+  }
   return artifact;
 }
