@@ -27,6 +27,7 @@ export default async function DropRateV2Page() {
               <li><Link href="/" className="block px-2.5 py-1.5 text-[#59615d] hover:text-[#1d2521]">Radar</Link></li>
               <li><Link href="/taux-de-drop" className="block px-2.5 py-1.5 text-[#59615d] hover:text-[#1d2521]">Taux v1</Link></li>
               <li><span aria-current="page" className="block border-b-2 border-[#176b5b] px-2.5 py-1.5 font-semibold">Drop rate v2 <sup className="text-[0.6rem] text-[#176b5b]">bêta</sup></span></li>
+              <li><Link href="/cartes" className="block px-2.5 py-1.5 text-[#59615d] hover:text-[#1d2521]">Cartes <sup className="text-[0.6rem] text-[#176b5b]">bêta</sup></Link></li>
               <li><Link href="/marche" className="block px-2.5 py-1.5 text-[#59615d] hover:text-[#1d2521]">Marché</Link></li>
             </ul>
           </nav>

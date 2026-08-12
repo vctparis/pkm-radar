@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "_comment": "Observations carte-niveau vérifiées uniquement. Grain : cardId + organisme + grade. Ne jamais extrapoler depuis la population agrégée d'un set.",
+  "observations": []
+}

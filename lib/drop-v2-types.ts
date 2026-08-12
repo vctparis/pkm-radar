@@ -22,6 +22,8 @@ export type DropV2Card = {
   sellers: number;
   latestSeen: string;
   floorIndicative: boolean;
+  sourceOffers: { ebayFR: number; cardTraderFR: number };
+  conditionMix: { mint: number; nearMint: number; slightlyPlayed: number; ebayUnspecified: number };
   contribution: number;
 };
 

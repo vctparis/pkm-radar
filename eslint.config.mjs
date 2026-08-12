@@ -9,6 +9,10 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    // Les worktrees locaux portent leurs propres dépendances et sorties de
+    // build : les relinter depuis la racine du projet produit des milliers de
+    // faux positifs sur du code généré.
+    ".worktrees/**",
     "out/**",
     "build/**",
     "next-env.d.ts",

@@ -47,7 +47,7 @@ check("Mint est dans la liste blanche EX+ (mieux que NM ≠ exclu)",
   ).offers,
   3);
 const market = summarizeFreshPullMarket(marketRows, generatedAt);
-check("EX+ retient NM et Slightly Played, jamais MP", market.conditionMix, { nearMint: 3, slightlyPlayed: 2, ebayFR: 0 });
+check("EX+ retient Mint, NM et Slightly Played, jamais MP", market.conditionMix, { mint: 0, nearMint: 3, slightlyPlayed: 2, ebayFR: 0 });
 check("prix au grain vendeur", [market.offers, market.sellers, market.median, market.floor10], [5, 4, 13.5, 10.6]);
 check("marché assez profond et frais", [market.adequate, market.ageDays], [true, 0]);
 // ---- Doctrine de langue : FR uniquement, deux sources ----

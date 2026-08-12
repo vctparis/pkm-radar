@@ -31,6 +31,7 @@ import { createRunContext, recordObservations, recordCrawl, recordRun } from "./
 import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
 import { buildDropV2Artifact } from "./lib/drop-v2.mjs";
+import { buildCardTrackerArtifact } from "./lib/card-tracker.mjs";
 
 // Date du relevé, pour le ledger d'annonces (first_seen / last_seen).
 const RUN_CONTEXT = createRunContext();
@@ -998,6 +999,9 @@ async function main() {
         num: card.number,
         r: card.rarity,
         s: set.id,
+        // Le tracker doit pouvoir illustrer une impression exacte sans
+        // reconstruire une URL à partir d'un identifiant parfois atypique.
+        im: frOf(card.number)?.image ?? card.image ?? null,
         p: Number(card.reference.toFixed(2)),
         a30: card.prices.avg30 > 0 ? Number(card.prices.avg30.toFixed(2)) : null,
         a7: card.prices.avg7 > 0 ? Number(card.prices.avg7.toFixed(2)) : null,
@@ -1120,20 +1124,25 @@ async function main() {
     ],
   };
   await writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`);
-  await buildDropV2Artifact(ROOT, payload);
+  // L'index de prix est une dépendance du moteur v2 : il doit être publié
+  // AVANT son recalcul. L'ordre inverse faisait lire les références du relevé
+  // précédent pour les cartes sans ancre directe dans opening.evCoverage.
   await writeFile(
     join(ROOT, "public", "cards-index.json"),
     JSON.stringify({
       generatedAt: new Date().toISOString(),
-      sets: Object.fromEntries(mergedSets.map((entry) => [entry.id, { name: entry.name, jp: Boolean(entry.jpOnly) }])),
+      sets: Object.fromEntries(SETS.map((entry) => [entry.id, { name: entry.name, jp: Boolean(entry.jpOnly) }])),
       cards: mergedIndex,
     }),
   );
+  await buildDropV2Artifact(ROOT, payload);
+  await buildCardTrackerArtifact(ROOT, payload);
 
   await recordRun(RUN_CONTEXT, { status: "completed" });
 
   console.log(`\n${mergedSets.length} sets écrits dans public/radar-data.json`);
   console.log(`Drop rate v2 écrit dans public/drop-rate-v2.json`);
+  console.log(`Tracker cartes écrit dans public/card-tracker.json`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
 }
 

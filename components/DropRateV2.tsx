@@ -673,7 +673,7 @@ function CardContributions({ set }: { set: DropV2Set }) {
           </div>
 
           <aside className="self-start border-t-2 border-[#176b5b] bg-[#f7f4ed] p-5 lg:sticky lg:top-5">
-            <p className="m-0 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[#69716d]">Carte observée</p>
+            <p className="m-0 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[#69716d]">Carte observée · offres actives</p>
             <h3 className="m-0 mt-2 text-[1.12rem] font-semibold leading-6">{selected.name}</h3>
             <p className="m-0 mt-1 text-[0.74rem] text-[#69716d]">#{selected.number} · {selected.rarity}</p>
             <strong className="mt-5 block text-[1.75rem] text-[#176b5b] tabular-nums">{eur.format(selected.contribution)}</strong>
@@ -683,7 +683,11 @@ function CardContributions({ set }: { set: DropV2Set }) {
               <div className="flex justify-between gap-4"><dt className="text-[#69716d]">Vente rapide</dt><dd className="m-0 font-semibold tabular-nums">{eur.format(selected.floor10)}</dd></div>
               <div className="flex justify-between gap-4"><dt className="text-[#69716d]">Chance</dt><dd className="m-0 font-semibold tabular-nums">1/{selected.oneIn}</dd></div>
               <div className="flex justify-between gap-4"><dt className="text-[#69716d]">Marché</dt><dd className="m-0 font-semibold tabular-nums">{selected.offers} offres · {selected.sellers} vendeurs</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#69716d]">Sources</dt><dd className="m-0 text-right font-semibold tabular-nums">eBay {selected.sourceOffers.ebayFR} · CT {selected.sourceOffers.cardTraderFR}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#69716d]">État déclaré</dt><dd className="m-0 text-right font-semibold tabular-nums">M {selected.conditionMix.mint} · NM {selected.conditionMix.nearMint} · EX {selected.conditionMix.slightlyPlayed}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#69716d]">Relevé</dt><dd className="m-0 font-semibold tabular-nums">{new Intl.DateTimeFormat("fr-FR", { dateStyle: "medium", timeZone: "Europe/Paris" }).format(new Date(`${selected.latestSeen}T12:00:00Z`))}</dd></div>
             </dl>
+            {selected.conditionMix.ebayUnspecified ? <p className="m-0 mt-3 text-[0.68rem] leading-5 text-[#69716d]">eBay&nbsp;: {selected.conditionMix.ebayUnspecified} offre(s) dont l’état EX+ est validé par le filtre et le titre, sans grade fin comparable à CardTrader.</p> : null}
             {selected.floorIndicative ? <p className="m-0 mt-4 border-l-2 border-[#b87516] pl-3 text-[0.7rem] leading-5 text-[#7b561f]">P10 indicatif : moins de 10 vendeurs.</p> : null}
           </aside>
         </div>
@@ -781,7 +785,7 @@ export default function DropRateV2({ data }: { data: DropV2Data }) {
       <main id="contenu" className="mx-auto max-w-[1160px] px-4 pb-24 sm:px-7">
         <header className="grid gap-5 py-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:py-10">
           <div>
-            <p className="m-0 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#176b5b]">Drop rate v2.4 · bêta</p>
+            <p className="m-0 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#176b5b]">{data.modelVersion.replace("drop-rate-", "Drop rate ")} · bêta</p>
             <h1 className="m-0 mt-3 max-w-[24ch] text-[clamp(2rem,4.2vw,3.45rem)] font-semibold leading-[0.98] tracking-[-0.05em]">Ouvrir un booster&nbsp;: combien de valeur reste-t-il vraiment&nbsp;?</h1>
           </div>
           <p className="m-0 text-[0.88rem] leading-6 text-[#59615d]">Prix français EX+ uniquement. {data.sets.length} sets comparés, dont {reliableCount} avec une confiance au moins moyenne. La fragilité reste visible.</p>

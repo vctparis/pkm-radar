@@ -56,6 +56,11 @@ check("drop v2 : composition de couverture réconciliée", invalidDropV2Coverage
 check("drop v2 : conflits détaillés réconciliés", invalidDropV2Conflicts, 0);
 check("drop v2 : historique booster borné, trié et unique", invalidBoosterHistory, 0);
 
+const tracker = JSON.parse(await readFile(join(root, "public", "card-tracker.json"), "utf8"));
+const cardsIndex = JSON.parse(await readFile(join(root, "public", "cards-index.json"), "utf8"));
+check("tracker de cartes porte une version de modèle", typeof tracker.modelVersion, "string");
+check("tracker et index ont le même grain carte", tracker.cards.length, cardsIndex.cards.length);
+
 const cardmarketMap = JSON.parse(await readFile(join(root, "data", "cardmarket", "product-map.json"), "utf8"));
 const cardmarketHistory = JSON.parse(await readFile(join(root, "data", "cardmarket", "history.json"), "utf8"));
 const cardmarketKeys = cardmarketHistory.observations.map((row) => `${row.date}:${row.idProduct}`);

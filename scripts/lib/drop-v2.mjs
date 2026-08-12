@@ -10,7 +10,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 
-export const DROP_V2_MODEL_VERSION = "drop-rate-v2.4";
+export const DROP_V2_MODEL_VERSION = "drop-rate-v2.5";
 // Mint > Near Mint : l'oublier excluait paradoxalement les annonces les
 // mieux conservées (bug latent — aucune annonce CT-FR « Mint » à ce jour,
 // mais la liste blanche doit couvrir tout l'EX+).
@@ -190,6 +190,7 @@ export function summarizeFreshPullMarket(entries, generatedAt, crawls = null) {
     adequate: offers >= MIN_OFFERS && sellers >= MIN_SELLERS && ageDays != null && ageDays <= MAX_AGE_DAYS,
     floorIndicative: sellers < 10,
     conditionMix: {
+      mint: active.filter(({ row }) => row.condition === "Mint").length,
       nearMint: active.filter(({ row }) => row.condition === "Near Mint").length,
       slightlyPlayed: active.filter(({ row }) => row.condition === "Slightly Played").length,
       ebayFR: active.filter(({ row }) => row.source === "ebay").length,
@@ -385,6 +386,16 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
       sellers: market.sellers,
       latestSeen: market.latestSeen,
       floorIndicative: market.floorIndicative,
+      sourceOffers: {
+        ebayFR: market.conditionMix.ebayFR,
+        cardTraderFR: Math.max(0, market.offers - market.conditionMix.ebayFR),
+      },
+      conditionMix: {
+        mint: market.conditionMix.mint,
+        nearMint: market.conditionMix.nearMint,
+        slightlyPlayed: market.conditionMix.slightlyPlayed,
+        ebayUnspecified: market.conditionMix.ebayFR,
+      },
       contribution: round2(centralGrossContribution),
     });
   }
