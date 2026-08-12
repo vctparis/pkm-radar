@@ -17,6 +17,7 @@
 // pour Browse. Le jeton est mis en cache et renouvelé avant expiration.
 
 import { assessIntegrity, preliminaryReference } from "./integrity.mjs";
+import { normalizeCollectorNumber } from "./identifiers.mjs";
 
 const AUTH_URL = "https://api.ebay.com/identity/v1/oauth2/token";
 const BROWSE_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search";
@@ -86,14 +87,16 @@ async function browse(params, tries = 3) {
 async function browseAll(params, maxPages) {
   const items = [];
   let total = 0;
+  let pages = 0;
   for (let page = 0; page < maxPages; page++) {
     const payload = await browse({ ...params, limit: "200", offset: String(page * 200) });
+    pages++;
     total = payload.total ?? 0;
     const batch = payload.itemSummaries ?? [];
     items.push(...batch);
     if (items.length >= total || batch.length < 200) break;
   }
-  return { items, total, complete: items.length >= total };
+  return { items, total, pages, complete: items.length >= total };
 }
 
 // Observation brute d'une annonce, prête pour le ledger.
@@ -107,26 +110,45 @@ function observationOf(item) {
     sellerId: item.seller?.username ?? null,
     sellerScore: item.seller?.feedbackScore != null ? Number(item.seller.feedbackScore) : null,
     sellerPct: item.seller?.feedbackPercentage != null ? Number(item.seller.feedbackPercentage) : null,
+    condition: item.conditionId ?? item.condition ?? null,
   };
 }
 
-function summarize(items) {
+function quantile(sorted, q) {
+  if (!sorted.length) return null;
+  const position = (sorted.length - 1) * q;
+  const lo = Math.floor(position);
+  const hi = Math.ceil(position);
+  if (lo === hi) return Number(sorted[lo].price.value);
+  const weight = position - lo;
+  return Number(sorted[lo].price.value) * (1 - weight) + Number(sorted[hi].price.value) * weight;
+}
+
+export function summarize(items) {
   const sorted = items
     .filter((item) => Number(item.price?.value) > 0)
     .sort((a, b) => Number(a.price.value) - Number(b.price.value));
   if (!sorted.length) return { price: null, priceUrl: null, floor10: null, floor10Url: null, median: null, offers: 0, sellers: 0 };
-  const p10 = sorted[Math.floor(sorted.length * 0.1)];
+  const p10Value = quantile(sorted, 0.1);
+  const p10 = sorted.reduce((best, item) =>
+    Math.abs(Number(item.price.value) - p10Value) < Math.abs(Number(best.price.value) - p10Value) ? item : best,
+  );
+  const middle = Math.floor(sorted.length / 2);
+  const median = sorted.length % 2
+    ? Number(sorted[middle].price.value)
+    : (Number(sorted[middle - 1].price.value) + Number(sorted[middle].price.value)) / 2;
   return {
     price: Number(sorted[0].price.value),
     // Lien vers l'annonce réelle : un prix affiché doit être vérifiable en un clic.
     priceUrl: sorted[0].itemWebUrl ?? null,
     // Le 10e centile décrit mieux le prix réellement payable que le plancher
     // brut, manipulable par une annonce fantaisiste.
-    floor10: Number(p10.price.value),
+    floor10: Number(p10Value.toFixed(2)),
     floor10Url: p10.itemWebUrl ?? null,
-    median: Number(sorted[Math.floor(sorted.length / 2)].price.value),
+    median: Number(median.toFixed(2)),
     offers: sorted.length,
     sellers: new Set(sorted.map((item) => item.seller?.username).filter(Boolean)).size,
+    sampleSufficient: sorted.length >= 10,
   };
 }
 
@@ -159,7 +181,7 @@ const NOISE =
 // Booster gradé (CA/PSA…) : un objet de collection scellé-noté, pas le
 // produit qu'on ouvre — son prix contaminerait la référence et ferait passer
 // les vrais boosters pour des anomalies basses.
-const GRADED = /grad[ée]|\bpsa\b|\bpca\b|\bbgs\b|\bcgc\b|\bca ?10\b|\bca ?9\b|slab/i;
+const GRADED = /grad[ée]|grading|\b(?:psa|pca|bgs|cgc)\s*[\d.,]*|\bca\s?[\d.,]+|slab/i;
 // Cartes à l'unité égarées dans la catégorie scellée : « Carte Pokemon X » au
 // singulier, ou un numéro de collection XXX/YYY dans le titre.
 const SINGLE_IN_SEALED = /(?:^|[^a-zà-ÿ])carte\s|\b\d{1,3}\/\d{2,3}\b/i;
@@ -195,11 +217,11 @@ export function classifySealedTitle(title, { phrase, excludePattern = null, japa
 // contrefaçon relève lui de l'INTÉGRITÉ — assessIntegrity le porte, pour que
 // ces annonces soient ledgerisées comme suspectes, pas éliminées en silence.
 const SINGLES_MISMATCH = /\blots?\b|au[x]? choix|coffret|display|jumbo/i;
-const SINGLES_GRADED = /\bpsa\b|\bpca\b|\bbgs\b|\bcgc\b|grad[ée]e?\b|graded|slab/i;
+const SINGLES_GRADED = /\b(?:psa|pca|bgs|cgc)\s*[\d.,]*|grad[ée]e?\b|graded|grading|slab/i;
 const SINGLES_VARIANT = /\breverse\b/i;
 
 /** Matching d'une annonce de carte à l'unité. Pur : (title, ctx) → motifs. */
-export function classifySingleTitle(title, { collectorNumber }) {
+export function classifySingleTitle(title, { collectorNumber, officialCount = null }) {
   const raw = (title ?? "").toLowerCase();
   const reasons = [];
   if (SINGLES_MISMATCH.test(raw)) reasons.push("lot_ou_choix");
@@ -207,7 +229,15 @@ export function classifySingleTitle(title, { collectorNumber }) {
   if (SINGLES_VARIANT.test(raw)) reasons.push("variante_reverse");
   // Le numéro de collection doit apparaître : sans lui, on ne sait pas si
   // l'annonce décrit cette carte ou une autre du même Pokémon.
-  if (!raw.includes(String(collectorNumber).toLowerCase())) reasons.push("numero_absent");
+  const expected = normalizeCollectorNumber(collectorNumber);
+  const expectedTotal = normalizeCollectorNumber(officialCount);
+  const fractions = [...raw.matchAll(/(?:^|[^0-9a-z])([a-z]*0*\d+[a-z]*)\s*\/\s*([a-z]*0*\d+[a-z]*)(?=[^0-9a-z]|$)/gi)];
+  const fractionMatch = fractions.some((match) =>
+    normalizeCollectorNumber(match[1]) === expected &&
+    (expectedTotal == null || normalizeCollectorNumber(match[2]) === expectedTotal));
+  const standaloneMatch = expectedTotal == null && [...raw.matchAll(/(?:^|[^0-9a-z])([a-z]*0*\d+[a-z]*)(?=[^0-9a-z]|$)/gi)]
+    .some((match) => normalizeCollectorNumber(match[1]) === expected);
+  if (!expected || (!fractionMatch && !standaloneMatch)) reasons.push("numero_absent");
   return reasons;
 }
 
@@ -228,9 +258,22 @@ function classifyCapture(scanned, matchReasonsOf) {
   const reference = preliminaryReference(eligible.map((o) => o.obs));
   for (const o of observations) {
     const verdict =
-      o.obs.matching === "exact" ? assessIntegrity(o.obs, reference) : { status: "high_risk", reasons: [] };
+      o.obs.matching === "exact"
+        ? assessIntegrity(o.obs, reference)
+        : {
+            status: "unassessed",
+            reasons: [],
+            sellerTrust: "unassessed",
+            sellerReasons: [],
+            listingQuality: "unassessed",
+            listingReasons: [],
+          };
     o.obs.integrity = verdict.status;
     o.obs.integrityReasons = verdict.reasons;
+    o.obs.sellerTrust = verdict.sellerTrust;
+    o.obs.sellerReasons = verdict.sellerReasons;
+    o.obs.listingQuality = verdict.listingQuality;
+    o.obs.listingReasons = verdict.listingReasons;
   }
   const included = eligible.filter((o) => o.obs.integrity !== "high_risk");
   const observedPrices = eligible.map((o) => o.obs.price).filter((v) => v > 0).sort((a, b) => a - b);
@@ -256,7 +299,7 @@ function classifyCapture(scanned, matchReasonsOf) {
 export async function fetchSealedBoosterFR(setName, { japanese = false, exclude = null } = {}) {
   const excludePattern = exclude ? new RegExp(exclude, "i") : null;
   const phrase = normalizeTitle(setName);
-  const { items: scanned, total, complete } = await browseAll(
+  const { items: scanned, total, pages, complete } = await browseAll(
     {
       q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
       category_ids: "183456",
@@ -284,7 +327,9 @@ export async function fetchSealedBoosterFR(setName, { japanese = false, exclude 
     matched: counts.eligible,
     scanned: scanned.length,
     totalAvailable: total,
+    pages,
     complete,
+    scope: { marketplace: "EBAY_FR", product: "sealed", language: japanese ? "Japonais" : "Français" },
     referenceBasis,
     observations,
   };
@@ -299,7 +344,7 @@ const SINGLES_CATEGORY = "183454"; // « JCC : cartes à l'unité » sur eBay.fr
  */
 export async function fetchCardFR(cardName, collectorNumber, officialCount, { language = "Français" } = {}) {
   const numberTag = officialCount ? `${collectorNumber}/${officialCount}` : collectorNumber;
-  const { items: scanned, total, complete } = await browseAll(
+  const { items: scanned, total, pages, complete } = await browseAll(
     {
       q: `${cardName} ${numberTag}`,
       category_ids: SINGLES_CATEGORY,
@@ -311,7 +356,7 @@ export async function fetchCardFR(cardName, collectorNumber, officialCount, { la
 
   const { observations, includedItems, counts, observedFloor, referenceBasis } = classifyCapture(
     scanned,
-    (title) => classifySingleTitle(title, { collectorNumber }),
+    (title) => classifySingleTitle(title, { collectorNumber, officialCount }),
   );
 
   return {
@@ -323,7 +368,9 @@ export async function fetchCardFR(cardName, collectorNumber, officialCount, { la
     matched: counts.eligible,
     scanned: scanned.length,
     totalAvailable: total,
+    pages,
     complete,
+    scope: { marketplace: "EBAY_FR", product: "single", language, collectorNumber, officialCount },
     referenceBasis,
     observations,
   };

@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
 import type { RadarData, SetEntry } from "@/lib/types";
+import { FAMILIES, familyOf } from "@/lib/families";
 
 export const metadata: Metadata = {
   title: "Sets",
@@ -18,14 +19,6 @@ const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" 
 
 // Années des blocs occidentaux — des faits d'édition, pas des données de
 // relevé : le bloc existe même là où le radar ne suit que quelques sets.
-const FAMILIES: { name: string; years: string }[] = [
-  { name: "Écarlate et Violet", years: "2023 – aujourd'hui" },
-  { name: "Épée et Bouclier", years: "2020 – 2023" },
-  { name: "Soleil & Lune", years: "2017 – 2019" },
-  { name: "XY", years: "2014 – 2016" },
-];
-
-const familyOf = (set: SetEntry) => set.era.replace(" (JP)", "");
 const yearOf = (set: SetEntry) => (set.releaseDate ? set.releaseDate.slice(0, 4) : "—");
 
 export default async function SetsPage() {
@@ -67,6 +60,11 @@ export default async function SetsPage() {
               <li>
                 <Link href="/portefeuille" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
                   Portefeuille
+                </Link>
+              </li>
+              <li>
+                <Link href="/marche" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
+                  Marché <sup className="text-[0.62rem] text-accent">bêta</sup>
                 </Link>
               </li>
               <li>

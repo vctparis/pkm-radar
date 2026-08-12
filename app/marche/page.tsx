@@ -1,19 +1,21 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
 import type { RadarData } from "@/lib/types";
+import { FAMILIES, familyOf } from "@/lib/families";
 
 export const metadata: Metadata = {
   title: "Marché · bêta",
   description:
-    "La couche qualité des données : prix observé vs prix fiable, annonces écartées et pourquoi — avant toute métrique.",
+    "La couche qualité des données : prix observé vs périmètre retenu, annonces écartées et pourquoi — avant toute métrique.",
 };
 
 // Page « Marché (bêta) » — Layer 0 rendu visible.
 //
 // Tout ce que les autres pages consomment (médiane, plancher, EV) est calculé
-// sur la population Trusted. Ici on montre l'envers : ce qui a été observé,
+// sur la population retenue (trusted + review). Ici on montre l'envers : ce qui a été observé,
 // ce qui a été écarté, et pourquoi. Règle de la plateforme : collect
 // everything, trust selectively, delete nothing, predict nothing until
 // validated.
@@ -73,15 +75,23 @@ async function loadLedgerStats(): Promise<Map<string, LedgerStats>> {
   return stats;
 }
 
+const releaseLabel = (date?: string | null) =>
+  date
+    ? new Date(date.replace(/\//g, "-")).toLocaleDateString("fr-FR", { month: "short", year: "numeric" })
+    : "—";
+
 export default async function MarchePage() {
   const raw = await readFile(join(process.cwd(), "public", "radar-data.json"), "utf8");
   const data = JSON.parse(raw) as RadarData;
   const ledger = await loadLedgerStats();
 
-  const rows = data.sets
-    .filter((set) => set.boosterFR)
-    .map((set) => ({ set, quote: set.boosterFR!, stats: ledger.get(set.id) ?? null }))
-    .sort((a, b) => (b.quote.quarantined ?? 0) - (a.quote.quarantined ?? 0));
+  const families = FAMILIES.map((family) => ({
+    ...family,
+    rows: data.sets
+      .filter((set) => set.boosterFR && familyOf(set) === family.name)
+      .map((set) => ({ set, quote: set.boosterFR!, stats: ledger.get(set.id) ?? null }))
+      .sort((a, b) => (b.set.releaseDate ?? "").localeCompare(a.set.releaseDate ?? "")),
+  })).filter((family) => family.rows.length);
 
   const totalTracked = [...ledger.values()].reduce((sum, s) => sum + s.tracked, 0);
   const totalHighRisk = [...ledger.values()].reduce((sum, s) => sum + s.highRisk, 0);
@@ -98,6 +108,11 @@ export default async function MarchePage() {
               <li>
                 <Link href="/" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
                   Radar
+                </Link>
+              </li>
+              <li>
+                <Link href="/sets" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
+                  Sets
                 </Link>
               </li>
               <li>
@@ -140,8 +155,9 @@ export default async function MarchePage() {
           </h1>
           <p className="prose-measure mt-4 text-[1.02rem] leading-relaxed text-mist-300">
             Tous les prix du site sont calculés sur les annonces <strong className="font-semibold text-mist-050">retenues</strong> :
-            bon produit, vendeur crédible, prix dans la distribution normale. Cette page montre l&apos;envers — le
-            plancher <em>observé</em> à côté du plancher <em>fiable</em>, les annonces écartées et pourquoi. Une annonce
+            bon produit, puis absence de combinaison de signaux à haut risque. « Retenue » ne veut pas dire certifiée :
+            les annonces à suivre restent visibles et comptées séparément. Cette page montre le plancher <em>observé</em>
+            à côté du plancher <em>retenu</em>, les annonces écartées et pourquoi. Une annonce
             45&nbsp;% sous le marché chez un vendeur sans historique n&apos;est pas une bonne affaire&nbsp;: c&apos;est un
             risque d&apos;intégrité. On ne la supprime pas — on la met en quarantaine, on la trace, et elle ne pollue
             aucun calcul.
@@ -168,20 +184,24 @@ export default async function MarchePage() {
         </div>
 
         {/* ---- Set par set ---- */}
-        <h2 className="display mb-3 mt-10 text-[1.2rem] text-mist-050">Boosters scellés — observé vs fiable</h2>
+        <h2 className="display mb-3 mt-10 text-[1.2rem] text-mist-050">Boosters scellés — observé vs retenu</h2>
         <div className="overflow-x-auto rounded-2xl ring-1 ring-ink-700/70">
           <table className="w-full min-w-[860px] border-collapse text-[0.86rem]">
-            <caption className="sr-only">Prix observés et fiables des boosters, annonces écartées par set</caption>
+            <caption className="sr-only">Prix observés et retenus des boosters, annonces écartées par set</caption>
             <thead className="bg-ink-800 text-left">
               <tr>
                 <th scope="col" className="px-4 py-2 font-medium text-mist-100">Set</th>
                 <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
-                  Médiane fiable
+                  Sortie
+                  <span className="block text-[0.68rem] font-normal text-mist-500">date d&apos;édition</span>
+                </th>
+                <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
+                  Médiane retenue
                   <span className="block text-[0.68rem] font-normal text-mist-500">la référence du site</span>
                 </th>
                 <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
-                  Plancher fiable
-                  <span className="block text-[0.68rem] font-normal text-mist-500">p10 des annonces crédibles</span>
+                  Plancher retenu
+                  <span className="block text-[0.68rem] font-normal text-mist-500">p10 des annonces non quarantainées</span>
                 </th>
                 <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
                   Plancher observé
@@ -198,7 +218,15 @@ export default async function MarchePage() {
               </tr>
             </thead>
             <tbody>
-              {rows.map(({ set, quote, stats }) => {
+              {families.map((family) => (
+                <Fragment key={family.name}>
+                  <tr className="border-t border-ink-600 bg-ink-800/60">
+                    <th scope="colgroup" colSpan={7} className="px-4 py-1.5 text-left text-[0.78rem] font-semibold uppercase tracking-wider text-mist-300">
+                      {family.name}
+                      <span className="ml-2.5 font-normal normal-case tracking-normal text-mist-500">{family.years}</span>
+                    </th>
+                  </tr>
+                  {family.rows.map(({ set, quote, stats }) => {
                 const gap =
                   quote.observedFloor != null && quote.floor10 != null && quote.observedFloor < quote.floor10;
                 return (
@@ -207,17 +235,23 @@ export default async function MarchePage() {
                       {set.name}
                       <span className="ml-2 text-[0.72rem] font-normal text-mist-500">{set.jpOnly ? "JP" : "FR"}</span>
                     </th>
+                    <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-300">{releaseLabel(set.releaseDate)}</td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-050">
                       {quote.median != null ? eur.format(quote.median) : "—"}
                     </td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-100">
                       {quote.floor10 != null ? eur.format(quote.floor10) : "—"}
+                      {quote.sampleSufficient === false && (
+                        <span className="ml-1 text-[0.68rem] text-[color:var(--color-warn)]" title="Moins de 10 annonces retenues : quantile indicatif.">
+                          indicatif
+                        </span>
+                      )}
                     </td>
                     <td className={`tabular whitespace-nowrap px-4 py-2 text-right ${gap ? "text-[color:var(--color-warn)]" : "text-mist-300"}`}>
                       {quote.observedFloor != null ? eur.format(quote.observedFloor) : "—"}
                     </td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-300">
-                      {/* retenues = fiables + à suivre : c'est LA population des
+                      {/* retenues = sans signal + à suivre : c'est LA population des
                           métriques — pas de double comptage entre colonnes. */}
                       {(quote.offers ?? 0).toLocaleString("fr-FR")}
                       <span className="text-mist-500"> (dont {quote.review ?? 0})</span> ·{" "}
@@ -231,12 +265,14 @@ export default async function MarchePage() {
                       )}
                     </td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-300">
-                      {stats ? stats.tracked.toLocaleString("fr-FR") : "—"}
+                      {stats ? stats.sealed.toLocaleString("fr-FR") : "—"}
                       {stats?.since && <span className="ml-1.5 text-[0.72rem] text-mist-500">depuis {stats.since}</span>}
                     </td>
                   </tr>
                 );
               })}
+                </Fragment>
+              ))}
             </tbody>
           </table>
         </div>
@@ -294,8 +330,9 @@ export default async function MarchePage() {
             <em>Collect everything. Trust selectively. Delete nothing. Predict nothing until validated.</em>
           </p>
           <p className="prose-measure m-0 mt-3 text-[0.85rem] leading-relaxed text-mist-500">
-            Le ledger enregistre chaque annonce observée — identifiant, vendeur, prix, première et dernière
-            apparition — sur le scellé et sur les cartes qui portent 80&nbsp;% de l&apos;espérance de chaque booster.
+            Le ledger enregistre chaque annonce observée — identifiant, vendeur, prix, quantité et périmètre — sur le
+            scellé et sur les cartes qui portent 80&nbsp;% de l&apos;espérance des boosters occidentaux. Pour les boxes
+            japonaises sans EV carte par carte comparable, le périmètre est explicitement le top 12 en valeur.
             À J+30, il débloquera les flux (nouvelles annonces, sorties — jamais appelées « ventes »&nbsp;: une annonce
             disparue peut être retirée ou relistée). Puis la vitesse d&apos;offre, et l&apos;absorption — le prix
             résiste-t-il à l&apos;arrivée de supply&nbsp;? Aucune de ces couches ne produira de prédiction en euros tant

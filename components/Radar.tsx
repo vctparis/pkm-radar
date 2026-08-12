@@ -595,7 +595,7 @@ export default function Radar({ data }: { data: RadarData }) {
             Quelles cartes dans {active.name}
           </h2>
           <p className="prose-measure mt-2 text-[0.92rem] leading-relaxed text-mist-500">
-            Les 12 meilleures, classées par force relative au set, tension de l&apos;offre et liquidité. Le bulk
+            Les 12 meilleures, classées par force relative au set, tension de l&apos;offre et étendue du marché observé. Le bulk
             sous 40 centimes est écarté : les frais d&apos;envoi y dépassent toute plus-value envisageable. Le
             plancher et les offres affichés sont ceux des annonces <strong className="font-medium">françaises</strong>{" "}
             sur eBay.fr — les autres langues sont exclues de la lecture. Chaque nom renvoie à sa fiche Cardmarket.

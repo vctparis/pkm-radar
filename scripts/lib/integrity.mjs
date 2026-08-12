@@ -32,7 +32,9 @@
 //      reverse) ; référence = médiane PAR VENDEUR établi, ≥ 3 vendeurs,
 //      sans fallback silencieux (référence insuffisante → pas de règle prix) ;
 //      lexique contrefaçon exclu du calcul de la référence.
-export const ANALYSIS_VERSION = 3;
+// v4 : grading compact (PSA10/PCA9,5), numéros préfixés/suffixés, médiane
+//      conventionnelle ; signaux vendeur et qualité d'annonce séparés.
+export const ANALYSIS_VERSION = 4;
 
 // Lexique contrefaçon / hors-marché-authentique, multilingue.
 export const SUSPICIOUS_KW =
@@ -50,7 +52,9 @@ const MIN_ESTABLISHED_SELLERS = 3;
 
 const median = (values) => {
   const sorted = [...values].sort((a, b) => a - b);
-  return sorted.length ? sorted[Math.floor(sorted.length / 2)] : null;
+  if (!sorted.length) return null;
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
 };
 
 /**
@@ -79,23 +83,32 @@ export function preliminaryReference(observations) {
  * @returns {{ status: "trusted"|"review"|"high_risk", reasons: string[] }}
  */
 export function assessIntegrity({ price, sellerScore, title }, reference) {
-  const reasons = [];
-  if (title != null && SUSPICIOUS_KW.test(title)) reasons.push("lexique_contrefacon");
-  if (sellerScore != null && sellerScore < LOW_HISTORY_SCORE) reasons.push("vendeur_sans_historique");
+  const sellerReasons = [];
+  const listingReasons = [];
+  if (title != null && SUSPICIOUS_KW.test(title)) listingReasons.push("lexique_contrefacon");
+  if (sellerScore == null || sellerScore < LOW_HISTORY_SCORE) sellerReasons.push("vendeur_sans_historique");
   if (
     reference?.basis === "established" &&
     reference.value > 0 &&
     price > 0 &&
     price / reference.value < PRICE_OUTLIER_RATIO
   ) {
-    reasons.push("prix_tres_sous_marche");
+    listingReasons.push("prix_tres_sous_marche");
   }
-  const status = reasons.includes("lexique_contrefacon")
+  const reasons = [...sellerReasons, ...listingReasons];
+  const status = listingReasons.includes("lexique_contrefacon")
     ? "high_risk"
-    : reasons.includes("prix_tres_sous_marche") && reasons.includes("vendeur_sans_historique")
+    : listingReasons.includes("prix_tres_sous_marche") && sellerReasons.includes("vendeur_sans_historique")
       ? "high_risk"
       : reasons.length
         ? "review"
         : "trusted";
-  return { status, reasons };
+  return {
+    status,
+    reasons,
+    sellerTrust: sellerReasons.length ? "review" : "trusted",
+    sellerReasons,
+    listingQuality: listingReasons.length ? "review" : "trusted",
+    listingReasons,
+  };
 }

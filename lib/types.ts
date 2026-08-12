@@ -35,7 +35,7 @@ export type Pick = {
   offers: number | null;
   marketFloor: number | null;
   score: number | null;
-  components: { relative: number; tightness: number; liquidity: number; discount: number } | null;
+  components: { relative: number; tightness: number; marketBreadth: number; discount: number } | null;
   url?: string | null;
 };
 
@@ -59,7 +59,7 @@ export type FRBoosterQuote = {
   sellers: number;
   matched: number;
   scanned: number;
-  /** Plancher toutes annonces éligibles (y compris à risque) — la transparence à côté du fiable. */
+  /** Plancher toutes annonces éligibles (y compris à risque) — transparence à côté du périmètre retenu. */
   observedFloor?: number | null;
   /** Annonces écartées des métriques (risque d'intégrité élevé). */
   quarantined?: number;
@@ -70,6 +70,10 @@ export type FRBoosterQuote = {
   /** La capture a-t-elle couvert tout le résultat annoncé par l'API ? */
   complete?: boolean;
   totalAvailable?: number;
+  /** Le p10 est descriptif mais fragile en dessous de 10 annonces retenues. */
+  sampleSufficient?: boolean;
+  /** Référence d'intégrité disponible ou non pour cette capture. */
+  referenceBasis?: "established" | "insufficient";
 } | null;
 
 export type BestCard = {

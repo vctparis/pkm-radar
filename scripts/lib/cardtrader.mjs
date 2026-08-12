@@ -2,6 +2,8 @@
 // de l'offre). Aucun historique n'est disponible côté API — cette couche
 // produit un point par jour, que le pipeline accumule.
 
+import { normalizeCollectorNumber } from "./identifiers.mjs";
+
 const BASE = "https://api.cardtrader.com/api/v2";
 
 // Catégories Pokémon renvoyées par /categories?game_id=5
@@ -71,7 +73,7 @@ export async function resolveSealedBlueprints(expansionId) {
 
 // `sealed` : un produit scellé n'a pas de condition (son properties_hash ne
 // contient que la langue). Appliquer le filtre Near Mint le ferait disparaître.
-function summarizeOffers(products, { sealed = false } = {}) {
+export function summarizeOffers(products, { sealed = false } = {}) {
   const clean = products.filter(
     (product) =>
       !product.graded &&
@@ -82,14 +84,32 @@ function summarizeOffers(products, { sealed = false } = {}) {
   if (!clean.length) return { price: null, offers: 0, quantity: 0, sellers: 0 };
 
   const prices = clean.map((product) => product.price_cents / 100).sort((a, b) => a - b);
+  const position = (prices.length - 1) * 0.1;
+  const lo = Math.floor(position);
+  const hi = Math.ceil(position);
+  const floor10 = prices[lo] * (1 - (position - lo)) + prices[hi] * (position - lo);
   return {
     // Le plancher brut est manipulable par une annonce isolée ; le 10e centile
     // décrit mieux le prix auquel on peut réellement acheter.
     price: prices[0],
-    floor10: prices[Math.floor(prices.length * 0.1)],
+    floor10: Number(floor10.toFixed(2)),
     offers: clean.length,
     quantity: clean.reduce((sum, product) => sum + (product.quantity ?? 1), 0),
-    sellers: new Set(clean.map((product) => product.user?.id)).size,
+    sellers: new Set(clean.map((product) => product.user?.id).filter((id) => id != null)).size,
+  };
+}
+
+export function observationOfProduct(p) {
+  return {
+    id: p.id,
+    price: p.price_cents / 100,
+    quantity: p.quantity ?? 1,
+    sellerId: p.user?.id != null ? String(p.user.id) : null,
+    title: p.name_en ?? null,
+    language: p.properties_hash?.pokemon_language ?? null,
+    condition: p.properties_hash?.condition ?? null,
+    graded: Boolean(p.graded),
+    onVacation: Boolean(p.on_vacation),
   };
 }
 
@@ -111,15 +131,8 @@ export async function fetchBlueprintMarket(blueprintId, options = {}) {
   // avant que l'objet ne parte dans radar-data.json.
   const rawRows = keepRaw
     ? products
-        .filter((p) => p.price_cents > 0 && !p.on_vacation)
-        .map((p) => ({
-          id: p.id,
-          price: p.price_cents / 100,
-          quantity: p.quantity ?? 1,
-          sellerId: p.user?.id != null ? String(p.user.id) : null,
-          title: p.name_en ?? null,
-          language: p.properties_hash?.pokemon_language ?? null,
-        }))
+        .filter((p) => p.price_cents > 0)
+        .map(observationOfProduct)
     : null;
 
   for (const language of languages) {
@@ -158,19 +171,11 @@ export async function fetchExpansionSingles(expansionId) {
     if (!singles.length) continue;
     const number = singles[0].properties_hash?.collector_number ?? null;
     if (number != null) {
-      const key = String(number).replace(/^0+(?=\d)/, "");
+      const key = normalizeCollectorNumber(number);
       const rows = singles
-        .filter((p) => p.price_cents > 0 && !p.on_vacation && !p.graded)
-        .map((p) => ({
-          id: p.id,
-          price: p.price_cents / 100,
-          quantity: p.quantity ?? 1,
-          sellerId: p.user?.id != null ? String(p.user.id) : null,
-          title: p.name_en ?? null,
-          language: p.properties_hash?.pokemon_language ?? null,
-          condition: p.properties_hash?.condition ?? null,
-        }));
-      if (rows.length) rawByNumber.set(key, [...(rawByNumber.get(key) ?? []), ...rows]);
+        .filter((p) => p.price_cents > 0)
+        .map(observationOfProduct);
+      if (key && rows.length) rawByNumber.set(key, [...(rawByNumber.get(key) ?? []), ...rows]);
     }
     const summary = summarizeOffers(singles);
     if (!summary.offers) continue;
