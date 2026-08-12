@@ -15,6 +15,7 @@ const listing = (key, seller, price, condition, extra = {}) => ({
   key,
   row: {
     source: "cardtrader",
+    language: "fr",
     subject: "card:1",
     matching: "exact",
     integrity: "unassessed",
@@ -40,9 +41,34 @@ const marketRows = [
 ];
 
 const market = summarizeFreshPullMarket(marketRows, generatedAt);
-check("EX+ retient NM et Slightly Played, jamais MP", market.conditionMix, { nearMint: 3, slightlyPlayed: 2 });
+check("EX+ retient NM et Slightly Played, jamais MP", market.conditionMix, { nearMint: 3, slightlyPlayed: 2, ebayFR: 0 });
 check("prix au grain vendeur", [market.offers, market.sellers, market.median, market.floor10], [5, 4, 13.5, 10.6]);
 check("marché assez profond et frais", [market.adequate, market.ageDays], [true, 0]);
+// ---- Doctrine de langue : FR uniquement, deux sources ----
+check(
+  "CardTrader hors-FR : exclue de la cotation",
+  summarizeFreshPullMarket([listing("en1", "x", 5, "Near Mint", { language: "en" }), listing("en2", "y", 6, "Near Mint", { language: "en" })], generatedAt),
+  null,
+);
+const withEbay = summarizeFreshPullMarket(
+  [
+    ...marketRows,
+    listing("e1", "ebay-v1", 18, null, { source: "ebay", language: null }),
+    listing("e2", "ebay-v2", 22, null, { source: "ebay", language: null }),
+  ],
+  generatedAt,
+);
+check("eBay.fr compte sans condition structurée (état sous EX déjà écarté au matching)",
+  [withEbay.sellers, withEbay.conditionMix.ebayFR], [6, 2]);
+check(
+  "manifeste par source : la source sans crawl valide n'admet rien",
+  summarizeFreshPullMarket(
+    [listing("e1", "ebay-v1", 18, null, { source: "ebay", language: null })],
+    generatedAt,
+    { ebay: { status: "error", complete: false, captured: 0, date: "2026-08-12" } },
+  ),
+  null,
+);
 check(
   "crawl complet à zéro : aucune ancienne annonce ne redevient active",
   summarizeFreshPullMarket(marketRows, generatedAt, { status: "ok", complete: true, captured: 0, date: "2026-08-12" }),

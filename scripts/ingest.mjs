@@ -796,6 +796,28 @@ async function main() {
       }
     }
 
+    // ---- Cotations FR de l'univers d'EV : eBay.fr carte par carte ----------
+    // Le podium n'en couvrait que trois : le modèle drop frais v2 exige une
+    // cotation FRANÇAISE pour chaque carte qui porte l'espérance. CardTrader
+    // (marketplace italienne, ~0,2 % d'annonces FR) ne peut pas la fournir.
+    if (!OFFLINE && opening?.evCoverage?.length && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
+      const alreadyQuoted = new Set(podium.map((card) => normalizeNumber(card.number)));
+      for (const coverage of opening.evCoverage) {
+        const key = normalizeNumber(coverage.number);
+        if (!key || alreadyQuoted.has(key)) continue;
+        alreadyQuoted.add(key);
+        const frName = frOf(coverage.number)?.name ?? coverage.name;
+        try {
+          const marketFR = await fetchCardFR(frName, collectorNumberForSearch(coverage.number), frCatalog?.officialCount);
+          await ledgerize(set.id, marketFR, "ebay", `card:${key}`);
+        } catch (error) {
+          if (error.isLedgerFailure) throw error;
+          await recordSourceError(set.id, "ebay", `card:${key}`, error);
+        }
+        await new Promise((r) => setTimeout(r, 250));
+      }
+    }
+
     // ---- Ledger CT : l'univers de couverture d'EV --------------------------
     // Le suivi longitudinal d'annonces porte sur les cartes qui portent l'EV
     // du booster (80 %, effectif variable par set) — c'est ce qui rendra

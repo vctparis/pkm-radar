@@ -259,7 +259,7 @@ export default function DropRateV2({ data }: { data: DropV2Data }) {
               </div>
               <div className="text-[0.82rem] leading-6 text-[#59615d]">
                 <p className="m-0"><strong className="text-[#1d2521]">Échantillon de taux.</strong> {active.sample ?? "non documenté"}.</p>
-                <p className="m-0 mt-3"><strong className="text-[#1d2521]">Prix.</strong> Near Mint + Slightly Played, annonces CardTrader actives, minimum par vendeur puis médiane/p10.</p>
+                <p className="m-0 mt-3"><strong className="text-[#1d2521]">Prix.</strong> Cotations françaises uniquement — eBay.fr (état sous EX écarté) + CardTrader restreint au FR — Near Mint / Slightly Played, annonces actives, minimum par vendeur puis médiane/p10.</p>
                 <p className="m-0 mt-3"><strong className="text-[#1d2521]">Fallback.</strong> Les cartes sans {data.definition.minimumSellers} vendeurs et {data.definition.minimumOffers} offres gardent l’ancre Cardmarket ; leur part est incluse dans la couverture affichée.</p>
                 <p className="m-0 mt-3"><strong className="text-[#1d2521]">Version.</strong> {data.modelVersion}, générée le {new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeZone: "Europe/Paris" }).format(new Date(data.generatedAt))}.</p>
               </div>

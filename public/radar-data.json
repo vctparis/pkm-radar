@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T13:58:55.402Z",
+  "generatedAt": "2026-08-12T14:57:59.659Z",
   "sets": [
     {
       "id": "cosmic-eclipse",
@@ -16,6 +16,7 @@
         "spread": 87,
         "maturity": 75
       },
+      "priceBasis": "cardmarket",
       "verdict": "Structure large",
       "concentration": 13,
       "cardsTracked": 250,
@@ -128,7 +129,7 @@
         "rarity": "Rare Ultra",
         "price": 406.2,
         "change30": 40.5,
-        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Cosmic-Eclipse/Togepi-Cleffa-Igglybuff-GX-V2",
+        "url": null,
         "priceFR": null,
         "offersFR": null
       },
@@ -453,34 +454,34 @@
           "jackpotNet": 353.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 7.03,
+              "evNet": 7.07,
               "p25": 0,
-              "median": 0.57,
-              "p75": 2.35,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 7.02,
-              "p25": 0,
-              "median": 0.57,
+              "median": 0.68,
               "p75": 2.35,
               "pRecoup": 0.01,
               "pLoseHalf": 0.97,
               "pDouble": 0
             },
+            "freshBox": {
+              "evNet": 7.18,
+              "p25": 0,
+              "median": 0.57,
+              "p75": 2.28,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
             "trustedLoose": {
-              "evNet": 5.08,
+              "evNet": 5.26,
               "p25": 0,
               "median": 0.37,
-              "p75": 1.63,
+              "p75": 1.58,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.7,
+              "evNet": 0.71,
               "p25": 0,
               "median": 0,
               "p75": 0.97,
@@ -1510,6 +1511,7 @@
         "spread": 77,
         "maturity": 13
       },
+      "priceBasis": "cardmarket",
       "verdict": "Structure large",
       "concentration": 23,
       "cardsTracked": 244,
@@ -1610,7 +1612,7 @@
         "rarity": "Special Illustration Rare",
         "price": 570.89,
         "change30": -13.4,
-        "url": null,
+        "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Destined-Rivals/Team-Rockets-Mewtwo-ex-V3-DRI231",
         "priceFR": 600,
         "offersFR": 1
       },
@@ -1649,7 +1651,7 @@
           "rarity": "Special Illustration Rare",
           "price": 275.08,
           "change30": 16.5,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Destined-Rivals/Team-Rockets-Moltres-ex-V3-DRI229"
+          "url": null
         }
       ],
       "boosterFR": {
@@ -1869,7 +1871,7 @@
           "jackpotNet": 496.67,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.61,
+              "evNet": 6.53,
               "p25": 0,
               "median": 0,
               "p75": 0.71,
@@ -1878,7 +1880,7 @@
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 6.61,
+              "evNet": 6.53,
               "p25": 0,
               "median": 0,
               "p75": 0.71,
@@ -1887,7 +1889,7 @@
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 6.61,
+              "evNet": 6.53,
               "p25": 0,
               "median": 0,
               "p75": 0.71,
@@ -1896,7 +1898,7 @@
               "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 6.61,
+              "evNet": 6.53,
               "p25": 0,
               "median": 0,
               "p75": 0.71,
@@ -2573,7 +2575,7 @@
             "discount": 100
           },
           "nameFR": "Nostenfer-ex de la Team Rocket",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Destined-Rivals/Team-Rockets-Crobat-ex-V3-DRI234",
           "marketFR": {
             "price": 105,
             "priceUrl": "https://www.ebay.fr/itm/800080974371?_skw=Nostenfer-ex+de+la+Team+Rocket+234%2F182&hash=itemba488ad223:g:nPIAAeSwiwRqF2Lv",
@@ -2719,7 +2721,7 @@
             "discount": 100
           },
           "nameFR": "Balbalèze-ex",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Destined-Rivals/Cetitan-ex-V2-DRI210",
+          "url": null,
           "marketFR": {
             "price": 6,
             "priceUrl": "https://www.ebay.fr/itm/287519208123?_skw=Balbal%C3%A8ze-ex+210%2F182&hash=item42f17af2bb:g:RDQAAeSw5fZqe3V~",
@@ -2817,7 +2819,7 @@
             "discount": 63
           },
           "nameFR": "Métalosse-ex de Pierre",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Destined-Rivals/Stevens-Metagross-ex-DRI145",
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -2829,10 +2831,10 @@
             "observedFloor": 1.97,
             "trusted": 0,
             "review": 0,
-            "quarantined": 8,
-            "matched": 8,
-            "scanned": 11,
-            "totalAvailable": 11,
+            "quarantined": 9,
+            "matched": 9,
+            "scanned": 12,
+            "totalAvailable": 12,
             "pages": 1,
             "complete": true,
             "scope": {
@@ -2960,6 +2962,7 @@
         "spread": 32,
         "maturity": 54
       },
+      "priceBasis": "cardmarket",
       "verdict": "Structure large",
       "concentration": 68,
       "cardsTracked": 25,
@@ -3199,7 +3202,7 @@
           "jackpotNet": 63.8,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.77,
+              "evNet": 3.92,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -3208,7 +3211,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 3.94,
+              "evNet": 3.8,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -3217,7 +3220,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 3.71,
+              "evNet": 3.85,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -3226,7 +3229,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 3.77,
+              "evNet": 3.86,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -4032,6 +4035,7 @@
         "spread": 83,
         "maturity": 67
       },
+      "priceBasis": "cardmarket",
       "verdict": "Structure large",
       "concentration": 17,
       "cardsTracked": 200,
@@ -4511,15 +4515,6 @@
           "jackpotNet": 38.87,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.78,
-              "p25": 0,
-              "median": 0.48,
-              "p75": 1.71,
-              "pRecoup": 0,
-              "pLoseHalf": 1,
-              "pDouble": 0
-            },
-            "freshBox": {
               "evNet": 1.73,
               "p25": 0,
               "median": 0.48,
@@ -4528,8 +4523,17 @@
               "pLoseHalf": 1,
               "pDouble": 0
             },
+            "freshBox": {
+              "evNet": 1.76,
+              "p25": 0,
+              "median": 0.48,
+              "p75": 1.71,
+              "pRecoup": 0,
+              "pLoseHalf": 1,
+              "pDouble": 0
+            },
             "trustedLoose": {
-              "evNet": 1.46,
+              "evNet": 1.47,
               "p25": 0,
               "median": 0.42,
               "p75": 1.44,
@@ -4538,7 +4542,7 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.69,
+              "evNet": 0.71,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -4978,7 +4982,7 @@
         },
         "singles": {
           "tracked": 201,
-          "offers": 19992
+          "offers": 19549
         }
       },
       "liveHistory": [
@@ -5002,9 +5006,9 @@
           "boosterOffers": 7,
           "boosterLanguage": "en",
           "boxPrice": 799.64,
-          "singlesOffers": 19992,
+          "singlesOffers": 19549,
           "top5Value": 76.19,
-          "top12ex5Value": 27.74,
+          "top12ex5Value": 27.33,
           "boosterFRp10": 199.99,
           "boosterFRmedian": 199.99,
           "boosterFRoffers": 1,
@@ -5023,7 +5027,7 @@
           "momentum30": 53.5,
           "relativeStrength": 53.5,
           "sellers": 18,
-          "offers": 20,
+          "offers": 21,
           "marketFloor": 1.04,
           "score": 82,
           "components": {
@@ -5071,14 +5075,14 @@
           "price": 11.21,
           "momentum30": 34.2,
           "relativeStrength": 34.2,
-          "sellers": 23,
-          "offers": 23,
+          "sellers": 24,
+          "offers": 24,
           "marketFloor": 9.15,
           "score": 82,
           "components": {
             "relative": 100,
-            "tightness": 43,
-            "marketBreadth": 91,
+            "tightness": 40,
+            "marketBreadth": 95,
             "discount": 100
           },
           "nameFR": "Cizayox VMAX",
@@ -5106,54 +5110,6 @@
               "product": "single",
               "language": "Français",
               "collectorNumber": "193",
-              "officialCount": 189
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
-          "id": "swsh3-24",
-          "name": "Blaziken",
-          "number": "24",
-          "rarity": "Rare Holo",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh3/24/low.webp",
-          "price": 0.69,
-          "momentum30": 38.6,
-          "relativeStrength": 38.6,
-          "sellers": 32,
-          "offers": 34,
-          "marketFloor": 0.32,
-          "score": 78,
-          "components": {
-            "relative": 100,
-            "tightness": 20,
-            "marketBreadth": 100,
-            "discount": 100
-          },
-          "nameFR": "Braségali",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Darkness-Ablaze/Blaziken-DAA24",
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "observedFloor": null,
-            "trusted": 0,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 0,
-            "scanned": 0,
-            "totalAvailable": 0,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Français",
-              "collectorNumber": "24",
               "officialCount": 189
             },
             "referenceBasis": "insufficient"
@@ -5202,6 +5158,54 @@
               "product": "single",
               "language": "Français",
               "collectorNumber": "123",
+              "officialCount": 189
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
+          "id": "swsh3-24",
+          "name": "Blaziken",
+          "number": "24",
+          "rarity": "Rare Holo",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh3/24/low.webp",
+          "price": 0.69,
+          "momentum30": 38.6,
+          "relativeStrength": 38.6,
+          "sellers": 33,
+          "offers": 36,
+          "marketFloor": 0.32,
+          "score": 77,
+          "components": {
+            "relative": 100,
+            "tightness": 18,
+            "marketBreadth": 100,
+            "discount": 100
+          },
+          "nameFR": "Braségali",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Darkness-Ablaze/Blaziken-DAA24",
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "observedFloor": null,
+            "trusted": 0,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 0,
+            "scanned": 0,
+            "totalAvailable": 0,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Français",
+              "collectorNumber": "24",
               "officialCount": 189
             },
             "referenceBasis": "insufficient"
@@ -5313,9 +5317,9 @@
           "price": 0.55,
           "momentum30": 59,
           "relativeStrength": 59,
-          "sellers": 56,
-          "offers": 73,
-          "marketFloor": 0.23,
+          "sellers": 55,
+          "offers": 72,
+          "marketFloor": 0.24,
           "score": 72,
           "components": {
             "relative": 100,
@@ -5409,8 +5413,8 @@
           "price": 0.65,
           "momentum30": 36,
           "relativeStrength": 36,
-          "sellers": 53,
-          "offers": 63,
+          "sellers": 54,
+          "offers": 64,
           "marketFloor": 0.34,
           "score": 72,
           "components": {
@@ -5507,8 +5511,8 @@
           "price": 0.44,
           "momentum30": 21.6,
           "relativeStrength": 21.6,
-          "sellers": 48,
-          "offers": 63,
+          "sellers": 45,
+          "offers": 60,
           "marketFloor": 0.39,
           "score": 71,
           "components": {
@@ -5555,13 +5559,13 @@
           "price": 1.96,
           "momentum30": 16.1,
           "relativeStrength": 16.1,
-          "sellers": 36,
-          "offers": 39,
+          "sellers": 38,
+          "offers": 41,
           "marketFloor": 1.45,
-          "score": 70,
+          "score": 69,
           "components": {
             "relative": 90,
-            "tightness": 10,
+            "tightness": 5,
             "marketBreadth": 100,
             "discount": 100
           },
@@ -5611,6 +5615,7 @@
         "spread": 67,
         "maturity": 64
       },
+      "priceBasis": "cardmarket",
       "verdict": "Structure large",
       "concentration": 33,
       "cardsTracked": 203,
@@ -6102,10 +6107,10 @@
           "jackpotNet": 158.4,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.59,
+              "evNet": 1.57,
               "p25": 0,
-              "median": 0.39,
-              "p75": 1.22,
+              "median": 0.41,
+              "p75": 1.27,
               "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -6120,16 +6125,16 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.19,
+              "evNet": 1.22,
               "p25": 0,
-              "median": 0,
-              "p75": 1.09,
+              "median": 0.36,
+              "p75": 1.1,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.5,
+              "evNet": 0.49,
               "p25": 0,
               "median": 0,
               "p75": 0.68,
@@ -7211,6 +7216,7 @@
         "spread": 47,
         "maturity": 100
       },
+      "priceBasis": "cardmarket",
       "verdict": "Diffusion sélective",
       "concentration": 53,
       "cardsTracked": 177,
@@ -7666,7 +7672,7 @@
           "jackpotNet": 522.69,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.51,
+              "evNet": 2.07,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -7675,7 +7681,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 2.3,
+              "evNet": 2.16,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -7684,7 +7690,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.65,
+              "evNet": 1.68,
               "p25": 0,
               "median": 0,
               "p75": 0.62,
@@ -8716,6 +8722,7 @@
         "spread": 84,
         "maturity": 47
       },
+      "priceBasis": "cardmarket",
       "verdict": "Diffusion sélective",
       "concentration": 16,
       "cardsTracked": 215,
@@ -8867,17 +8874,17 @@
       "boosterFR": {
         "price": 8,
         "priceUrl": "https://www.ebay.fr/itm/398199661981?_skw=pokemon+booster+Astres+Radieux&hash=item5cb68ca59d:g:jgwAAeSwNwVqX4pd",
-        "floor10": 10.1,
+        "floor10": 10,
         "floor10Url": "https://www.ebay.fr/itm/335761395691?_skw=pokemon+booster+Astres+Radieux&hash=item4e2cf04feb:g:XAQAAOSwlFpnfarm",
         "median": 16,
-        "offers": 52,
-        "sellers": 27,
+        "offers": 51,
+        "sellers": 26,
         "sampleSufficient": true,
         "observedFloor": 8,
-        "trusted": 41,
+        "trusted": 40,
         "review": 11,
         "quarantined": 0,
-        "matched": 52,
+        "matched": 51,
         "scanned": 89,
         "totalAvailable": 89,
         "pages": 1,
@@ -9213,7 +9220,16 @@
           "jackpotNet": 93,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.58,
+              "evNet": 1.55,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.27,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0.01
+            },
+            "freshBox": {
+              "evNet": 1.52,
               "p25": 0,
               "median": 0,
               "p75": 1.27,
@@ -9221,26 +9237,17 @@
               "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
-            "freshBox": {
-              "evNet": 1.54,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.3,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
-              "pDouble": 0.01
-            },
             "trustedLoose": {
-              "evNet": 1.26,
+              "evNet": 1.16,
               "p25": 0,
               "median": 0,
-              "p75": 0.93,
+              "p75": 0.91,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
-              "pDouble": 0.01
+              "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.28,
+              "evNet": 0.27,
               "p25": 0,
               "median": 0,
               "p75": 0.41,
@@ -9705,7 +9712,7 @@
         },
         "singles": {
           "tracked": 247,
-          "offers": 33769
+          "offers": 33760
         }
       },
       "liveHistory": [
@@ -9715,13 +9722,13 @@
           "boosterOffers": 10,
           "boosterLanguage": "en",
           "boxPrice": 380.63,
-          "singlesOffers": 33769,
-          "top5Value": 301.64,
-          "top12ex5Value": 58.13,
-          "boosterFRp10": 10.1,
+          "singlesOffers": 33760,
+          "top5Value": 300.63,
+          "top12ex5Value": 57.27,
+          "boosterFRp10": 10,
           "boosterFRmedian": 16,
-          "boosterFRoffers": 52,
-          "boosterFRsellers": 27
+          "boosterFRoffers": 51,
+          "boosterFRsellers": 26
         }
       ],
       "psa": null,
@@ -9736,7 +9743,7 @@
           "momentum30": 163,
           "relativeStrength": 163,
           "sellers": 233,
-          "offers": 271,
+          "offers": 269,
           "marketFloor": 0.11,
           "score": 72,
           "components": {
@@ -9832,13 +9839,13 @@
           "price": 2.15,
           "momentum30": 16.5,
           "relativeStrength": 16.5,
-          "sellers": 38,
-          "offers": 41,
+          "sellers": 39,
+          "offers": 42,
           "marketFloor": 0.97,
-          "score": 69,
+          "score": 68,
           "components": {
             "relative": 91,
-            "tightness": 5,
+            "tightness": 3,
             "marketBreadth": 100,
             "discount": 100
           },
@@ -9881,13 +9888,13 @@
           "price": 10.78,
           "momentum30": 9.1,
           "relativeStrength": 9.1,
-          "sellers": 30,
-          "offers": 30,
+          "sellers": 31,
+          "offers": 31,
           "marketFloor": 9.15,
-          "score": 68,
+          "score": 67,
           "components": {
             "relative": 73,
-            "tightness": 25,
+            "tightness": 23,
             "marketBreadth": 100,
             "discount": 100
           },
@@ -9919,55 +9926,6 @@
               "officialCount": 189
             },
             "referenceBasis": "insufficient"
-          }
-        },
-        {
-          "id": "swsh10-210",
-          "name": "Origin Forme Dialga VSTAR",
-          "number": "210",
-          "rarity": "Rare Secret",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh10/210/low.webp",
-          "price": 11.13,
-          "momentum30": 7.1,
-          "relativeStrength": 7.1,
-          "sellers": 30,
-          "offers": 30,
-          "marketFloor": 4.61,
-          "score": 66,
-          "components": {
-            "relative": 68,
-            "tightness": 25,
-            "marketBreadth": 100,
-            "discount": 100
-          },
-          "nameFR": "Dialga Originel VSTAR",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Astral-Radiance/Origin-Forme-Dialga-VSTAR-V3-ASR210",
-          "marketFR": {
-            "price": 18,
-            "priceUrl": "https://www.ebay.fr/itm/298421458496?_skw=Dialga+Originel+VSTAR+210%2F189&hash=item457b4e1640:g:0ZAAAeSwGN5qK9NR",
-            "floor10": 20.8,
-            "floor10Url": "https://www.ebay.fr/itm/298421458496?_skw=Dialga+Originel+VSTAR+210%2F189&hash=item457b4e1640:g:0ZAAAeSwGN5qK9NR",
-            "median": 29.9,
-            "offers": 5,
-            "sellers": 4,
-            "sampleSufficient": false,
-            "observedFloor": 18,
-            "trusted": 5,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 5,
-            "scanned": 5,
-            "totalAvailable": 5,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Français",
-              "collectorNumber": "210",
-              "officialCount": 189
-            },
-            "referenceBasis": "established"
           }
         },
         {
@@ -10019,6 +9977,55 @@
           }
         },
         {
+          "id": "swsh10-210",
+          "name": "Origin Forme Dialga VSTAR",
+          "number": "210",
+          "rarity": "Rare Secret",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh10/210/low.webp",
+          "price": 11.13,
+          "momentum30": 7.1,
+          "relativeStrength": 7.1,
+          "sellers": 31,
+          "offers": 31,
+          "marketFloor": 4.61,
+          "score": 65,
+          "components": {
+            "relative": 68,
+            "tightness": 23,
+            "marketBreadth": 100,
+            "discount": 100
+          },
+          "nameFR": "Dialga Originel VSTAR",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Astral-Radiance/Origin-Forme-Dialga-VSTAR-V3-ASR210",
+          "marketFR": {
+            "price": 18,
+            "priceUrl": "https://www.ebay.fr/itm/298421458496?_skw=Dialga+Originel+VSTAR+210%2F189&hash=item457b4e1640:g:0ZAAAeSwGN5qK9NR",
+            "floor10": 20.8,
+            "floor10Url": "https://www.ebay.fr/itm/298421458496?_skw=Dialga+Originel+VSTAR+210%2F189&hash=item457b4e1640:g:0ZAAAeSwGN5qK9NR",
+            "median": 29.9,
+            "offers": 5,
+            "sellers": 4,
+            "sampleSufficient": false,
+            "observedFloor": 18,
+            "trusted": 5,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 5,
+            "scanned": 5,
+            "totalAvailable": 5,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Français",
+              "collectorNumber": "210",
+              "officialCount": 189
+            },
+            "referenceBasis": "established"
+          }
+        },
+        {
           "id": "swsh10-101",
           "name": "Hisuian Samurott V",
           "number": "101",
@@ -10027,8 +10034,8 @@
           "price": 1.04,
           "momentum30": 17.1,
           "relativeStrength": 17.1,
-          "sellers": 80,
-          "offers": 89,
+          "sellers": 83,
+          "offers": 92,
           "marketFloor": 0.59,
           "score": 64,
           "components": {
@@ -10065,6 +10072,55 @@
               "officialCount": 189
             },
             "referenceBasis": "established"
+          }
+        },
+        {
+          "id": "swsh10-214",
+          "name": "Temple of Sinnoh",
+          "number": "214",
+          "rarity": "Rare Secret",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh10/214/low.webp",
+          "price": 6.29,
+          "momentum30": 11.2,
+          "relativeStrength": 11.2,
+          "sellers": 22,
+          "offers": 24,
+          "marketFloor": 4.61,
+          "score": 64,
+          "components": {
+            "relative": 78,
+            "tightness": 45,
+            "marketBreadth": 86,
+            "discount": 37
+          },
+          "nameFR": "Temple de Sinnoh",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Astral-Radiance/Temple-of-Sinnoh-V2-ASR214",
+          "marketFR": {
+            "price": 18,
+            "priceUrl": "https://www.ebay.fr/itm/298541653841?_skw=Temple+de+Sinnoh+214%2F189&hash=item4582781f51:g:hdcAAeSwgUdqZN6b",
+            "floor10": 18,
+            "floor10Url": "https://www.ebay.fr/itm/298541653841?_skw=Temple+de+Sinnoh+214%2F189&hash=item4582781f51:g:hdcAAeSwgUdqZN6b",
+            "median": 18,
+            "offers": 1,
+            "sellers": 1,
+            "sampleSufficient": false,
+            "observedFloor": 18,
+            "trusted": 1,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 1,
+            "scanned": 1,
+            "totalAvailable": 1,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Français",
+              "collectorNumber": "214",
+              "officialCount": 189
+            },
+            "referenceBasis": "insufficient"
           }
         },
         {
@@ -10117,55 +10173,6 @@
           }
         },
         {
-          "id": "swsh10-214",
-          "name": "Temple of Sinnoh",
-          "number": "214",
-          "rarity": "Rare Secret",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh10/214/low.webp",
-          "price": 6.29,
-          "momentum30": 11.2,
-          "relativeStrength": 11.2,
-          "sellers": 21,
-          "offers": 23,
-          "marketFloor": 4.61,
-          "score": 63,
-          "components": {
-            "relative": 78,
-            "tightness": 48,
-            "marketBreadth": 82,
-            "discount": 37
-          },
-          "nameFR": "Temple de Sinnoh",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Astral-Radiance/Temple-of-Sinnoh-V2-ASR214",
-          "marketFR": {
-            "price": 18,
-            "priceUrl": "https://www.ebay.fr/itm/298541653841?_skw=Temple+de+Sinnoh+214%2F189&hash=item4582781f51:g:hdcAAeSwgUdqZN6b",
-            "floor10": 18,
-            "floor10Url": "https://www.ebay.fr/itm/298541653841?_skw=Temple+de+Sinnoh+214%2F189&hash=item4582781f51:g:hdcAAeSwgUdqZN6b",
-            "median": 18,
-            "offers": 1,
-            "sellers": 1,
-            "sampleSufficient": false,
-            "observedFloor": 18,
-            "trusted": 1,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 1,
-            "scanned": 1,
-            "totalAvailable": 1,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Français",
-              "collectorNumber": "214",
-              "officialCount": 189
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
           "id": "swsh10-84",
           "name": "Hisuian Decidueye VSTAR",
           "number": "84",
@@ -10174,8 +10181,8 @@
           "price": 3.07,
           "momentum30": 14.1,
           "relativeStrength": 14.1,
-          "sellers": 67,
-          "offers": 74,
+          "sellers": 68,
+          "offers": 75,
           "marketFloor": 0.65,
           "score": 62,
           "components": {
@@ -10222,8 +10229,8 @@
           "price": 0.88,
           "momentum30": 8.6,
           "relativeStrength": 8.6,
-          "sellers": 86,
-          "offers": 93,
+          "sellers": 87,
+          "offers": 94,
           "marketFloor": 0.4,
           "score": 60,
           "components": {
@@ -10233,7 +10240,7 @@
             "discount": 100
           },
           "nameFR": "Farfurex de Hisui V",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Astral-Radiance/Hisuian-Sneasler-V-V1-ASR094",
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -10327,6 +10334,7 @@
         "spread": 91,
         "maturity": 100
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 9,
       "cardsTracked": 164,
@@ -10457,8 +10465,8 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Sun-Moon/Umbreon-GX-V3-SUM154"
         },
         {
-          "priceFR": 20.1,
-          "offersFR": 4,
+          "priceFR": 26.39,
+          "offersFR": 3,
           "name": "Umbreon-GX",
           "nameFR": "Noctali GX",
           "image": "https://assets.tcgdex.net/fr/sm/sm1/142/low.webp",
@@ -10770,10 +10778,10 @@
           "jackpotNet": 35.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.73,
+              "evNet": 1.71,
               "p25": 0,
               "median": 0,
-              "p75": 0.99,
+              "p75": 0.74,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
@@ -10782,25 +10790,25 @@
               "evNet": 1.65,
               "p25": 0,
               "median": 0,
-              "p75": 0.74,
+              "p75": 0.76,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.29,
+              "evNet": 1.32,
               "p25": 0,
               "median": 0,
-              "p75": 0.66,
+              "p75": 0.67,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.34,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
-              "p75": 0.4,
+              "p75": 0.41,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -11901,6 +11909,7 @@
         "spread": 82,
         "maturity": 100
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 18,
       "cardsTracked": 112,
@@ -12218,16 +12227,7 @@
           "jackpotNet": 144.54,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 11.48,
-              "p25": 0,
-              "median": 0.36,
-              "p75": 5.45,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.94,
-              "pDouble": 0
-            },
-            "freshBox": {
-              "evNet": 11.73,
+              "evNet": 11.66,
               "p25": 0,
               "median": 0.36,
               "p75": 5.32,
@@ -12235,17 +12235,26 @@
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
+            "freshBox": {
+              "evNet": 11.42,
+              "p25": 0,
+              "median": 0.36,
+              "p75": 5.16,
+              "pRecoup": 0.03,
+              "pLoseHalf": 0.94,
+              "pDouble": 0
+            },
             "trustedLoose": {
-              "evNet": 10.54,
+              "evNet": 10.48,
               "p25": 0,
               "median": 0.35,
-              "p75": 4.28,
+              "p75": 4.56,
               "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 8.27,
+              "evNet": 8.49,
               "p25": 0,
               "median": 0,
               "p75": 3.47,
@@ -12808,21 +12817,21 @@
           "nameFR": "M-Tortank EX",
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Evolutions/MBlastoise-EX-EVO102",
           "marketFR": {
-            "price": 49.99,
-            "priceUrl": "https://www.ebay.fr/itm/188322680145?_skw=M-Tortank+EX+102%2F108&hash=item2bd8e80d51:g:qbkAAeSwY5xp7714",
-            "floor10": 49.99,
+            "price": 39.99,
+            "priceUrl": "https://www.ebay.fr/itm/336738823315?_skw=M-Tortank+EX+102%2F108&hash=item4e6732ac93:g:gKgAAeSwL~NqfH24",
+            "floor10": 46.99,
             "floor10Url": "https://www.ebay.fr/itm/188322680145?_skw=M-Tortank+EX+102%2F108&hash=item2bd8e80d51:g:qbkAAeSwY5xp7714",
-            "median": 90,
-            "offers": 7,
+            "median": 80,
+            "offers": 8,
             "sellers": 6,
             "sampleSufficient": false,
-            "observedFloor": 49.99,
+            "observedFloor": 39.99,
             "trusted": 6,
-            "review": 1,
+            "review": 2,
             "quarantined": 0,
-            "matched": 7,
-            "scanned": 8,
-            "totalAvailable": 8,
+            "matched": 8,
+            "scanned": 9,
+            "totalAvailable": 9,
             "pages": 1,
             "complete": true,
             "scope": {
@@ -13153,19 +13162,19 @@
           "marketFR": {
             "price": 14.99,
             "priceUrl": "https://www.ebay.fr/itm/236749857333?_skw=Tartard+25%2F108&hash=item371f642235:g:wUIAAeSweDNp2fCV",
-            "floor10": 16.19,
+            "floor10": 16.49,
             "floor10Url": "https://www.ebay.fr/itm/236749857333?_skw=Tartard+25%2F108&hash=item371f642235:g:wUIAAeSweDNp2fCV",
-            "median": 19,
-            "offers": 5,
+            "median": 19.5,
+            "offers": 6,
             "sellers": 5,
             "sampleSufficient": false,
             "observedFloor": 14.99,
-            "trusted": 3,
+            "trusted": 4,
             "review": 2,
             "quarantined": 0,
-            "matched": 5,
-            "scanned": 13,
-            "totalAvailable": 13,
+            "matched": 6,
+            "scanned": 14,
+            "totalAvailable": 14,
             "pages": 1,
             "complete": true,
             "scope": {
@@ -14291,7 +14300,7 @@
         },
         "singles": {
           "tracked": 293,
-          "offers": 5755
+          "offers": 5753
         }
       },
       "liveHistory": [
@@ -14329,7 +14338,7 @@
           "boosterOffers": 2,
           "boosterLanguage": "jp",
           "boxPrice": 199.64,
-          "singlesOffers": 5755,
+          "singlesOffers": 5753,
           "top5Value": null,
           "top12ex5Value": null,
           "boosterFRp10": null,
@@ -14354,7 +14363,7 @@
             "countLo": 4,
             "countHi": 6,
             "poolSize": 70,
-            "meanNet": 15.58,
+            "meanNet": 15.67,
             "top": [
               {
                 "name": "Rayquaza VMAX",
@@ -14369,22 +14378,22 @@
               {
                 "name": "Pikachu V",
                 "number": "222",
-                "price": 92.91
-              },
-              {
-                "name": "Umbreon V",
-                "number": "244",
-                "price": 72.13
+                "price": 86.52
               },
               {
                 "name": "Umbreon VMAX",
                 "number": "245",
-                "price": 71.78
+                "price": 79.46
+              },
+              {
+                "name": "Umbreon V",
+                "number": "244",
+                "price": 72.12
               },
               {
                 "name": "Sylveon VMAX",
                 "number": "232",
-                "price": 51.49
+                "price": 63.64
               }
             ]
           },
@@ -14394,17 +14403,17 @@
             "countLo": 1,
             "countHi": 2,
             "poolSize": 67,
-            "meanNet": 2.91,
+            "meanNet": 2.78,
             "top": [
               {
                 "name": "Gloria",
                 "number": "276",
-                "price": 31.46
+                "price": 31.44
               },
               {
                 "name": "Acerola's Premonition",
                 "number": "255",
-                "price": 24.62
+                "price": 24.38
               },
               {
                 "name": "Friends in Galar",
@@ -14412,19 +14421,19 @@
                 "price": 17.58
               },
               {
-                "name": "Nessa",
-                "number": "277",
-                "price": 16.59
-              },
-              {
                 "name": "Bea",
                 "number": "261",
                 "price": 15.22
               },
               {
-                "name": "Allister",
-                "number": "256",
-                "price": 14.96
+                "name": "Nessa",
+                "number": "277",
+                "price": 14.51
+              },
+              {
+                "name": "Professor's Research - Professor Juniper",
+                "number": "266",
+                "price": 11.86
               }
             ]
           },
@@ -14434,7 +14443,7 @@
             "countLo": 0,
             "countHi": 1,
             "poolSize": 8,
-            "meanNet": 34.49,
+            "meanNet": 34.48,
             "top": [
               {
                 "name": "Mew VMAX",
@@ -14457,14 +14466,14 @@
                 "price": 10.85
               },
               {
+                "name": "Ice Rider Calyrex VMAX",
+                "number": "278",
+                "price": 10.27
+              },
+              {
                 "name": "Single Strike Urshifu VMAX",
                 "number": "282",
                 "price": 9.19
-              },
-              {
-                "name": "Ice Rider Calyrex VMAX",
-                "number": "278",
-                "price": 8.98
               }
             ]
           }
@@ -14610,12 +14619,12 @@
           "number": "222",
           "rarity": "Illustration Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/233081/preview_pikachu-v-secret-rare-222-184-vmax-climax.png",
-          "price": 92.91,
+          "price": 86.52,
           "momentum30": null,
           "relativeStrength": null,
-          "sellers": 4,
-          "offers": 4,
-          "marketFloor": 92.91,
+          "sellers": 5,
+          "offers": 5,
+          "marketFloor": 86.52,
           "score": null,
           "components": null,
           "url": null,
@@ -14648,18 +14657,61 @@
           }
         },
         {
+          "id": "vmax-climax-245",
+          "name": "Umbreon VMAX",
+          "nameFR": null,
+          "number": "245",
+          "rarity": "Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/233104/preview_umbreon-vmax-secret-rare-245-184-vmax-climax.png",
+          "price": 79.46,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 3,
+          "offers": 3,
+          "marketFloor": 79.46,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "observedFloor": null,
+            "trusted": 0,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 0,
+            "scanned": 2,
+            "totalAvailable": 2,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Japonais",
+              "collectorNumber": "245",
+              "officialCount": null
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
           "id": "vmax-climax-244",
           "name": "Umbreon V",
           "nameFR": null,
           "number": "244",
           "rarity": "Illustration Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/233103/preview_umbreon-v-secret-rare-244-184-vmax-climax.png",
-          "price": 72.13,
+          "price": 72.12,
           "momentum30": null,
           "relativeStrength": null,
           "sellers": 4,
           "offers": 4,
-          "marketFloor": 72.13,
+          "marketFloor": 72.12,
           "score": null,
           "components": null,
           "url": null,
@@ -14686,49 +14738,6 @@
               "product": "single",
               "language": "Japonais",
               "collectorNumber": "244",
-              "officialCount": null
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
-          "id": "vmax-climax-245",
-          "name": "Umbreon VMAX",
-          "nameFR": null,
-          "number": "245",
-          "rarity": "Illustration Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/233104/preview_umbreon-vmax-secret-rare-245-184-vmax-climax.png",
-          "price": 71.78,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 4,
-          "offers": 4,
-          "marketFloor": 71.78,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "observedFloor": null,
-            "trusted": 0,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 0,
-            "scanned": 2,
-            "totalAvailable": 2,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Japonais",
-              "collectorNumber": "245",
               "officialCount": null
             },
             "referenceBasis": "insufficient"
@@ -14779,6 +14788,49 @@
           }
         },
         {
+          "id": "vmax-climax-232",
+          "name": "Sylveon VMAX",
+          "nameFR": null,
+          "number": "232",
+          "rarity": "Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/233091/preview_sylveon-vmax-secret-rare-232-184-vmax-climax.png",
+          "price": 63.64,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 4,
+          "offers": 5,
+          "marketFloor": 63.64,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "observedFloor": null,
+            "trusted": 0,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 0,
+            "scanned": 8,
+            "totalAvailable": 8,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Japonais",
+              "collectorNumber": "232",
+              "officialCount": null
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
           "id": "vmax-climax-279",
           "name": "Pikachu VMAX",
           "nameFR": null,
@@ -14817,49 +14869,6 @@
               "product": "single",
               "language": "Japonais",
               "collectorNumber": "279",
-              "officialCount": null
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
-          "id": "vmax-climax-232",
-          "name": "Sylveon VMAX",
-          "nameFR": null,
-          "number": "232",
-          "rarity": "Illustration Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/233091/preview_sylveon-vmax-secret-rare-232-184-vmax-climax.png",
-          "price": 51.49,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 5,
-          "offers": 6,
-          "marketFloor": 51.49,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "observedFloor": null,
-            "trusted": 0,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 0,
-            "scanned": 8,
-            "totalAvailable": 8,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Japonais",
-              "collectorNumber": "232",
               "officialCount": null
             },
             "referenceBasis": "insufficient"
@@ -14915,12 +14924,12 @@
           "number": "234",
           "rarity": "Illustration Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/233093/preview_mimikyu-vmax-secret-rare-234-184-vmax-climax.png",
-          "price": 42.49,
+          "price": 37.34,
           "momentum30": null,
           "relativeStrength": null,
-          "sellers": 5,
-          "offers": 5,
-          "marketFloor": 42.49,
+          "sellers": 6,
+          "offers": 6,
+          "marketFloor": 37.34,
           "score": null,
           "components": null,
           "url": null,
@@ -15079,12 +15088,12 @@
           "url": null
         },
         {
-          "name": "Umbreon V",
+          "name": "Espeon V",
           "nameFR": null,
-          "image": "https://cardtrader.com/uploads/blueprints/image/234736/preview_umbreon-v-secret-rare-085-069-eevee-heroes.jpg",
-          "number": "085",
+          "image": "https://cardtrader.com/uploads/blueprints/image/234732/preview_espeon-v-secret-rare-081-069-eevee-heroes.jpg",
+          "number": "081",
           "rarity": "Illustration Rare",
-          "price": 160.6,
+          "price": 159.82,
           "change30": null,
           "url": null
         }
@@ -15126,7 +15135,7 @@
         },
         "singles": {
           "tracked": 101,
-          "offers": 2458
+          "offers": 2446
         }
       },
       "liveHistory": [
@@ -15150,7 +15159,7 @@
           "boosterOffers": 2,
           "boosterLanguage": "jp",
           "boxPrice": 790.64,
-          "singlesOffers": 2458,
+          "singlesOffers": 2446,
           "top5Value": null,
           "top12ex5Value": null,
           "boosterFRp10": null,
@@ -15175,7 +15184,7 @@
             "countLo": 2,
             "countHi": 3,
             "poolSize": 23,
-            "meanNet": 4.49,
+            "meanNet": 4.45,
             "top": [
               {
                 "name": "Umbreon V",
@@ -15240,12 +15249,12 @@
               {
                 "name": "Umbreon VMAX",
                 "number": "094",
-                "price": 50.49
+                "price": 50.54
               },
               {
                 "name": "Darkness Energy",
                 "number": "101",
-                "price": 17.23
+                "price": 17.47
               }
             ]
           }
@@ -15341,49 +15350,6 @@
           }
         },
         {
-          "id": "eevee-heroes-085",
-          "name": "Umbreon V",
-          "nameFR": null,
-          "number": "085",
-          "rarity": "Illustration Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/234736/preview_umbreon-v-secret-rare-085-069-eevee-heroes.jpg",
-          "price": 160.6,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 5,
-          "offers": 5,
-          "marketFloor": 160.6,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "observedFloor": null,
-            "trusted": 0,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 0,
-            "scanned": 2,
-            "totalAvailable": 2,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Japonais",
-              "collectorNumber": "085",
-              "officialCount": null
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
           "id": "eevee-heroes-081",
           "name": "Espeon V",
           "nameFR": null,
@@ -15464,6 +15430,49 @@
               "product": "single",
               "language": "Japonais",
               "collectorNumber": "089",
+              "officialCount": null
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
+          "id": "eevee-heroes-085",
+          "name": "Umbreon V",
+          "nameFR": null,
+          "number": "085",
+          "rarity": "Illustration Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/234736/preview_umbreon-v-secret-rare-085-069-eevee-heroes.jpg",
+          "price": 145.6,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 4,
+          "offers": 4,
+          "marketFloor": 145.6,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "observedFloor": null,
+            "trusted": 0,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 0,
+            "scanned": 2,
+            "totalAvailable": 2,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Japonais",
+              "collectorNumber": "085",
               "officialCount": null
             },
             "referenceBasis": "insufficient"
@@ -15649,12 +15658,12 @@
           "number": "094",
           "rarity": "Secret Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/234745/preview_umbreon-vmax-secret-rare-094-069-eevee-heroes.jpg",
-          "price": 50.49,
+          "price": 50.54,
           "momentum30": null,
           "relativeStrength": null,
           "sellers": 4,
           "offers": 4,
-          "marketFloor": 50.49,
+          "marketFloor": 50.54,
           "score": null,
           "components": null,
           "url": null,
@@ -15791,6 +15800,7 @@
         "spread": 81,
         "maturity": 57
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 19,
       "cardsTracked": 233,
@@ -16299,20 +16309,20 @@
               "median": 0,
               "p75": 1.03,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.95,
+              "pLoseHalf": 0.96,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 2.46,
+              "evNet": 2.38,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 0.95,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 1.83,
+              "evNet": 1.91,
               "p25": 0,
               "median": 0,
               "p75": 0.85,
@@ -16772,7 +16782,7 @@
         },
         "singles": {
           "tracked": 234,
-          "offers": 23695
+          "offers": 23224
         }
       },
       "liveHistory": [
@@ -16782,9 +16792,9 @@
           "boosterOffers": 1,
           "boosterLanguage": "en",
           "boxPrice": 500.54,
-          "singlesOffers": 23695,
-          "top5Value": 674.04,
-          "top12ex5Value": 472.14,
+          "singlesOffers": 23224,
+          "top5Value": 669.07,
+          "top12ex5Value": 468.75,
           "boosterFRp10": 12,
           "boosterFRmedian": 15,
           "boosterFRoffers": 15,
@@ -16816,9 +16826,9 @@
           "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Chilling-Reign/Porygon-Z-CRE118",
           "marketFR": {
             "price": 1.9,
-            "priceUrl": "https://www.ebay.fr/itm/267737705024?_skw=Porygon-Z+118%2F198&hash=item3e56692a40:g:3YoAAeSwI2Fouv4u",
+            "priceUrl": "https://www.ebay.fr/itm/267737707127?_skw=Porygon-Z+118%2F198&hash=item3e56693277:g:A20AAeSw8hNo2uI4",
             "floor10": 1.9,
-            "floor10Url": "https://www.ebay.fr/itm/267737705024?_skw=Porygon-Z+118%2F198&hash=item3e56692a40:g:3YoAAeSwI2Fouv4u",
+            "floor10Url": "https://www.ebay.fr/itm/267737707127?_skw=Porygon-Z+118%2F198&hash=item3e56693277:g:A20AAeSw8hNo2uI4",
             "median": 4,
             "offers": 6,
             "sellers": 5,
@@ -16851,14 +16861,14 @@
           "price": 8.09,
           "momentum30": 24.1,
           "relativeStrength": 24.1,
-          "sellers": 22,
-          "offers": 22,
-          "marketFloor": 6.58,
+          "sellers": 23,
+          "offers": 23,
+          "marketFloor": 6.52,
           "score": 82,
           "components": {
             "relative": 100,
-            "tightness": 45,
-            "marketBreadth": 86,
+            "tightness": 43,
+            "marketBreadth": 91,
             "discount": 100
           },
           "nameFR": "Sylveroy Cavalier d'Effroi V",
@@ -16951,7 +16961,7 @@
           "relativeStrength": 28.2,
           "sellers": 21,
           "offers": 21,
-          "marketFloor": 32.32,
+          "marketFloor": 30.2,
           "score": 82,
           "components": {
             "relative": 100,
@@ -16998,18 +17008,18 @@
           "price": 6.34,
           "momentum30": 14.1,
           "relativeStrength": 14.1,
-          "sellers": 20,
-          "offers": 20,
+          "sellers": 21,
+          "offers": 21,
           "marketFloor": 3.52,
-          "score": 75,
+          "score": 76,
           "components": {
             "relative": 85,
-            "tightness": 50,
-            "marketBreadth": 77,
+            "tightness": 48,
+            "marketBreadth": 82,
             "discount": 100
           },
           "nameFR": "Leuphorie V",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Chilling-Reign/Blissey-V-V2-CRE182",
+          "url": null,
           "marketFR": {
             "price": 18.9,
             "priceUrl": "https://www.ebay.fr/itm/398145312558?_skw=Leuphorie+V+182%2F198&hash=item5cb34f572e:g:fw4AAeSwRfZqS3Ok",
@@ -17033,55 +17043,6 @@
               "product": "single",
               "language": "Français",
               "collectorNumber": "182",
-              "officialCount": 198
-            },
-            "referenceBasis": "established"
-          }
-        },
-        {
-          "id": "swsh6-188",
-          "name": "Brawly",
-          "number": "188",
-          "rarity": "Rare Ultra",
-          "image": "https://assets.tcgdex.net/fr/swsh/swsh6/188/low.webp",
-          "price": 3.26,
-          "momentum30": 51,
-          "relativeStrength": 51,
-          "sellers": 36,
-          "offers": 38,
-          "marketFloor": 1.92,
-          "score": 75,
-          "components": {
-            "relative": 100,
-            "tightness": 10,
-            "marketBreadth": 100,
-            "discount": 100
-          },
-          "nameFR": "Bastien",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Chilling-Reign/Brawly-V2",
-          "marketFR": {
-            "price": 8,
-            "priceUrl": "https://www.ebay.fr/itm/266254101085?_skw=Bastien+188%2F198&hash=item3dfdfb2a5d:g:bE4AAOSwRxNkXKmk",
-            "floor10": 8.69,
-            "floor10Url": "https://www.ebay.fr/itm/187447985069?_skw=Bastien+188%2F198&hash=item2ba4c543ad:g:yY8AAOSw4cdoA8ZW",
-            "median": 11.5,
-            "offers": 8,
-            "sellers": 7,
-            "sampleSufficient": false,
-            "observedFloor": 8,
-            "trusted": 7,
-            "review": 1,
-            "quarantined": 0,
-            "matched": 8,
-            "scanned": 9,
-            "totalAvailable": 9,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Français",
-              "collectorNumber": "188",
               "officialCount": 198
             },
             "referenceBasis": "established"
@@ -17133,6 +17094,55 @@
               "officialCount": 198
             },
             "referenceBasis": "insufficient"
+          }
+        },
+        {
+          "id": "swsh6-188",
+          "name": "Brawly",
+          "number": "188",
+          "rarity": "Rare Ultra",
+          "image": "https://assets.tcgdex.net/fr/swsh/swsh6/188/low.webp",
+          "price": 3.26,
+          "momentum30": 51,
+          "relativeStrength": 51,
+          "sellers": 37,
+          "offers": 39,
+          "marketFloor": 1.99,
+          "score": 74,
+          "components": {
+            "relative": 100,
+            "tightness": 8,
+            "marketBreadth": 100,
+            "discount": 100
+          },
+          "nameFR": "Bastien",
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Chilling-Reign/Brawly-V2",
+          "marketFR": {
+            "price": 8,
+            "priceUrl": "https://www.ebay.fr/itm/266254101085?_skw=Bastien+188%2F198&hash=item3dfdfb2a5d:g:bE4AAOSwRxNkXKmk",
+            "floor10": 8.69,
+            "floor10Url": "https://www.ebay.fr/itm/187447985069?_skw=Bastien+188%2F198&hash=item2ba4c543ad:g:yY8AAOSw4cdoA8ZW",
+            "median": 11.5,
+            "offers": 8,
+            "sellers": 7,
+            "sampleSufficient": false,
+            "observedFloor": 8,
+            "trusted": 7,
+            "review": 1,
+            "quarantined": 0,
+            "matched": 8,
+            "scanned": 9,
+            "totalAvailable": 9,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Français",
+              "collectorNumber": "188",
+              "officialCount": 198
+            },
+            "referenceBasis": "established"
           }
         },
         {
@@ -17244,7 +17254,7 @@
           "relativeStrength": 13,
           "sellers": 32,
           "offers": 33,
-          "marketFloor": 2.87,
+          "marketFloor": 2.86,
           "score": 70,
           "components": {
             "relative": 82,
@@ -17291,14 +17301,14 @@
           "price": 13.74,
           "momentum30": 8.5,
           "relativeStrength": 8.5,
-          "sellers": 16,
-          "offers": 16,
+          "sellers": 17,
+          "offers": 17,
           "marketFloor": 15.06,
           "score": 70,
           "components": {
             "relative": 71,
-            "tightness": 60,
-            "marketBreadth": 59,
+            "tightness": 58,
+            "marketBreadth": 64,
             "discount": 100
           },
           "nameFR": "Adriane",
@@ -17340,13 +17350,13 @@
           "price": 2.23,
           "momentum30": 16.4,
           "relativeStrength": 16.4,
-          "sellers": 40,
-          "offers": 41,
-          "marketFloor": 2.11,
+          "sellers": 39,
+          "offers": 40,
+          "marketFloor": 2.15,
           "score": 68,
           "components": {
             "relative": 91,
-            "tightness": 0,
+            "tightness": 3,
             "marketBreadth": 100,
             "discount": 100
           },
@@ -17397,6 +17407,7 @@
         "spread": 79,
         "maturity": 77
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 21,
       "cardsTracked": 69,
@@ -17678,7 +17689,16 @@
           "jackpotNet": 34.43,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.78,
+              "evNet": 2.79,
+              "p25": 0,
+              "median": 0,
+              "p75": 1.15,
+              "pRecoup": 0,
+              "pLoseHalf": 0.96,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.92,
               "p25": 0,
               "median": 0,
               "p75": 1.24,
@@ -17686,26 +17706,17 @@
               "pLoseHalf": 0.96,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 2.91,
-              "p25": 0,
-              "median": 0,
-              "p75": 1.2,
-              "pRecoup": 0,
-              "pLoseHalf": 0.96,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 2.09,
+              "evNet": 2.14,
               "p25": 0,
               "median": 0,
               "p75": 0.76,
               "pRecoup": 0,
-              "pLoseHalf": 0.97,
+              "pLoseHalf": 0.98,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.36,
+              "evNet": 0.35,
               "p25": 0,
               "median": 0,
               "p75": 0.57,
@@ -18761,6 +18772,7 @@
         "spread": 71,
         "maturity": 55
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 29,
       "cardsTracked": 237,
@@ -19162,7 +19174,7 @@
           "jackpotNet": 1374.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 6.25,
+              "evNet": 6.28,
               "p25": 0,
               "median": 0,
               "p75": 1.18,
@@ -19171,19 +19183,19 @@
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 6.22,
+              "evNet": 6.2,
               "p25": 0,
               "median": 0,
-              "p75": 1.18,
+              "p75": 1.17,
               "pRecoup": 0.02,
-              "pLoseHalf": 0.96,
+              "pLoseHalf": 0.97,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 4.88,
+              "evNet": 4.43,
               "p25": 0,
               "median": 0,
-              "p75": 0.82,
+              "p75": 0.84,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
               "pDouble": 0.01
@@ -20292,6 +20304,7 @@
         "spread": 48,
         "maturity": 42
       },
+      "priceBasis": "cardmarket",
       "verdict": "Diffusion sélective",
       "concentration": 52,
       "cardsTracked": 215,
@@ -20699,7 +20712,7 @@
           "jackpotNet": 337.39,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.88,
+              "evNet": 1.84,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -20708,7 +20721,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.89,
+              "evNet": 2.01,
               "p25": 0,
               "median": 0,
               "p75": 0.84,
@@ -20717,7 +20730,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 1.41,
+              "evNet": 1.52,
               "p25": 0,
               "median": 0,
               "p75": 0.77,
@@ -21538,19 +21551,19 @@
           "marketFR": {
             "price": 30,
             "priceUrl": "https://www.ebay.fr/itm/306199420142?_skw=Lugia+V+185%2F195&hash=item474ae85cee:g:XY0AAeSwkMtn4aHX",
-            "floor10": 32,
+            "floor10": 30,
             "floor10Url": "https://www.ebay.fr/itm/306199420142?_skw=Lugia+V+185%2F195&hash=item474ae85cee:g:XY0AAeSwkMtn4aHX",
-            "median": 40,
-            "offers": 2,
-            "sellers": 2,
+            "median": 30,
+            "offers": 1,
+            "sellers": 1,
             "sampleSufficient": false,
             "observedFloor": 30,
-            "trusted": 2,
+            "trusted": 1,
             "review": 0,
             "quarantined": 0,
-            "matched": 2,
-            "scanned": 3,
-            "totalAvailable": 3,
+            "matched": 1,
+            "scanned": 2,
+            "totalAvailable": 2,
             "pages": 1,
             "complete": true,
             "scope": {
@@ -21874,6 +21887,7 @@
         "spread": 85,
         "maturity": 61
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 15,
       "cardsTracked": 73,
@@ -22230,7 +22244,7 @@
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 0.53,
+              "evNet": 0.49,
               "p25": 0,
               "median": 0,
               "p75": 0.7,
@@ -22239,7 +22253,7 @@
               "pDouble": 0
             },
             "trustedLoose": {
-              "evNet": 0.4,
+              "evNet": 0.41,
               "p25": 0,
               "median": 0,
               "p75": 0.58,
@@ -23661,7 +23675,7 @@
           "jackpotNet": 748.74,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.99,
+              "evNet": 2.21,
               "p25": 0,
               "median": 0,
               "p75": 0.38,
@@ -23670,7 +23684,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.99,
+              "evNet": 2.21,
               "p25": 0,
               "median": 0,
               "p75": 0.38,
@@ -23679,7 +23693,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.99,
+              "evNet": 2.21,
               "p25": 0,
               "median": 0,
               "p75": 0.38,
@@ -23688,7 +23702,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 1.99,
+              "evNet": 2.21,
               "p25": 0,
               "median": 0,
               "p75": 0.38,
@@ -23876,6 +23890,7 @@
         "spread": 58,
         "maturity": 50
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 42,
       "cardsTracked": 185,
@@ -24030,14 +24045,14 @@
         "floor10": 13.5,
         "floor10Url": "https://www.ebay.fr/itm/358886979923?_skw=pokemon+booster+Stars+%C3%89tincelantes&hash=item538f54b953:g:rhAAAeSwFO1p6PrA",
         "median": 18,
-        "offers": 64,
-        "sellers": 28,
+        "offers": 63,
+        "sellers": 27,
         "sampleSufficient": true,
         "observedFloor": 12,
-        "trusted": 59,
+        "trusted": 58,
         "review": 5,
         "quarantined": 0,
-        "matched": 64,
+        "matched": 63,
         "scanned": 139,
         "totalAvailable": 139,
         "pages": 1,
@@ -24253,7 +24268,7 @@
           "jackpotNet": 221.03,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.02,
+              "evNet": 1.84,
               "p25": 0,
               "median": 0,
               "p75": 1.1,
@@ -24262,10 +24277,10 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.18,
+              "evNet": 2.11,
               "p25": 0,
               "median": 0,
-              "p75": 1.05,
+              "p75": 1.01,
               "pRecoup": 0.01,
               "pLoseHalf": 0.96,
               "pDouble": 0.01
@@ -24280,7 +24295,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.32,
+              "evNet": 0.34,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -24782,8 +24797,8 @@
           "top12ex5Value": 51.36,
           "boosterFRp10": 13.5,
           "boosterFRmedian": 18,
-          "boosterFRoffers": 64,
-          "boosterFRsellers": 28
+          "boosterFRoffers": 63,
+          "boosterFRsellers": 27
         }
       ],
       "psa": {
@@ -25070,17 +25085,17 @@
           "marketFR": {
             "price": 50,
             "priceUrl": "https://www.ebay.fr/itm/227471627392?_skw=Dracaufeu+V+153%2F172&hash=item34f65d9480:g:b5QAAeSwCQJqezGM",
-            "floor10": 57.13,
+            "floor10": 56.72,
             "floor10Url": "https://www.ebay.fr/itm/287491873731?_skw=Dracaufeu+V+153%2F172&hash=item42efd9dbc3:g:fC8AAeSwGjJqapfw",
-            "median": 102.5,
-            "offers": 14,
-            "sellers": 11,
+            "median": 79.99,
+            "offers": 13,
+            "sellers": 10,
             "sampleSufficient": true,
             "observedFloor": 50,
             "trusted": 10,
-            "review": 4,
+            "review": 3,
             "quarantined": 0,
-            "matched": 14,
+            "matched": 13,
             "scanned": 20,
             "totalAvailable": 20,
             "pages": 1,
@@ -25405,6 +25420,7 @@
         "spread": 80,
         "maturity": 40
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 20,
       "cardsTracked": 160,
@@ -25524,13 +25540,13 @@
         "price": 37.74,
         "change30": -4.6,
         "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Crown-Zenith/Pikachu-CRZ160",
-        "priceFR": 9.72,
-        "offersFR": 5
+        "priceFR": 10.43,
+        "offersFR": 6
       },
       "podium": [
         {
-          "priceFR": 9.72,
-          "offersFR": 5,
+          "priceFR": 10.43,
+          "offersFR": 6,
           "name": "Pikachu",
           "nameFR": "Pikachu",
           "image": "https://assets.tcgdex.net/fr/swsh/swsh12.5/160/low.webp",
@@ -25673,7 +25689,7 @@
           "expectedCostLo": 1500,
           "expectedCostHi": 3000,
           "perDisplay": 0.42,
-          "buyPriceFR": 9.72,
+          "buyPriceFR": 10.43,
           "nameFR": "Pikachu"
         },
         "evCoverage": [
@@ -25788,7 +25804,16 @@
           "jackpotNet": 32.83,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.1,
+              "evNet": 2.19,
+              "p25": 0,
+              "median": 0.43,
+              "p75": 1.51,
+              "pRecoup": 0.02,
+              "pLoseHalf": 0.97,
+              "pDouble": 0
+            },
+            "freshBox": {
+              "evNet": 2.07,
               "p25": 0,
               "median": 0.41,
               "p75": 1.49,
@@ -25796,17 +25821,8 @@
               "pLoseHalf": 0.97,
               "pDouble": 0
             },
-            "freshBox": {
-              "evNet": 2.14,
-              "p25": 0,
-              "median": 0.4,
-              "p75": 1.49,
-              "pRecoup": 0.02,
-              "pLoseHalf": 0.97,
-              "pDouble": 0
-            },
             "trustedLoose": {
-              "evNet": 1.74,
+              "evNet": 1.78,
               "p25": 0,
               "median": 0.37,
               "p75": 1.2,
@@ -25815,10 +25831,10 @@
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.91,
+              "evNet": 0.93,
               "p25": 0,
               "median": 0,
-              "p75": 0.6,
+              "p75": 0.63,
               "pRecoup": 0,
               "pLoseHalf": 1,
               "pDouble": 0
@@ -26944,6 +26960,7 @@
         "spread": 54,
         "maturity": 53
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 46,
       "cardsTracked": 249,
@@ -27097,15 +27114,15 @@
         "priceUrl": "https://www.ebay.fr/itm/188123553811?_skw=pokemon+booster+Poing+de+Fusion&hash=item2bcd09a013:g:l10AAeSwMD1pqY8h",
         "floor10": 16,
         "floor10Url": "https://www.ebay.fr/itm/198141359194?_skw=pokemon+booster+Poing+de+Fusion&hash=item2e2225345a:g:iwMAAeSw8PVpoWnv",
-        "median": 30,
+        "median": 25,
         "offers": 21,
         "sellers": 14,
         "sampleSufficient": true,
         "observedFloor": 13.5,
-        "trusted": 10,
-        "review": 11,
-        "quarantined": 2,
-        "matched": 23,
+        "trusted": 11,
+        "review": 10,
+        "quarantined": 1,
+        "matched": 22,
         "scanned": 43,
         "totalAvailable": 43,
         "pages": 1,
@@ -27118,11 +27135,11 @@
         "referenceBasis": "established"
       },
       "opening": {
-        "boosterPrice": 30,
+        "boosterPrice": 25,
         "netLo": 1.4,
         "netHi": 2.27,
-        "ratioLo": 0.05,
-        "ratioHi": 0.08,
+        "ratioLo": 0.06,
+        "ratioHi": 0.09,
         "looseLo": 0.17,
         "looseHi": 0.29,
         "recoupLo": 0.01,
@@ -27197,8 +27214,8 @@
           "buyPrice": 99.61,
           "oneInLo": 75,
           "oneInHi": 120,
-          "expectedCostLo": 2250,
-          "expectedCostHi": 3600,
+          "expectedCostLo": 1875,
+          "expectedCostHi": 3000,
           "perDisplay": 0.32,
           "buyPriceFR": 175,
           "nameFR": "Celebi V"
@@ -27243,7 +27260,16 @@
           "jackpotNet": 86.66,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.7,
+              "evNet": 1.86,
+              "p25": 0,
+              "median": 0,
+              "p75": 0.73,
+              "pRecoup": 0.01,
+              "pLoseHalf": 0.97,
+              "pDouble": 0.01
+            },
+            "freshBox": {
+              "evNet": 1.72,
               "p25": 0,
               "median": 0,
               "p75": 0.73,
@@ -27251,26 +27277,17 @@
               "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
-            "freshBox": {
-              "evNet": 1.89,
-              "p25": 0,
-              "median": 0,
-              "p75": 0.74,
-              "pRecoup": 0.01,
-              "pLoseHalf": 0.98,
-              "pDouble": 0.01
-            },
             "trustedLoose": {
-              "evNet": 1.37,
+              "evNet": 1.34,
               "p25": 0,
               "median": 0,
-              "p75": 0.62,
+              "p75": 0.64,
               "pRecoup": 0.01,
               "pLoseHalf": 0.98,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 0.23,
+              "evNet": 0.24,
               "p25": 0,
               "median": 0,
               "p75": 0,
@@ -27742,7 +27759,7 @@
           "top5Value": 135.83,
           "top12ex5Value": 11.62,
           "boosterFRp10": 16,
-          "boosterFRmedian": 30,
+          "boosterFRmedian": 25,
           "boosterFRoffers": 21,
           "boosterFRsellers": 14
         }
@@ -28983,19 +29000,19 @@
           "components": null,
           "url": null,
           "marketFR": {
-            "price": 2.4,
-            "priceUrl": "https://www.ebay.fr/itm/205838760207?_skw=Pikachu+173&hash=item2fecf2390f:g:jT8AAeSw~JFpEhJt",
-            "floor10": 4.65,
+            "price": 4.9,
+            "priceUrl": "https://www.ebay.fr/itm/206398276476?_skw=Pikachu+173&hash=item300e4bc37c:g:4DoAAeSwHbVqS8Ww",
+            "floor10": 4.9,
             "floor10Url": "https://www.ebay.fr/itm/206398276476?_skw=Pikachu+173&hash=item300e4bc37c:g:4DoAAeSwHbVqS8Ww",
-            "median": 47.4,
-            "offers": 10,
+            "median": 49.9,
+            "offers": 9,
             "sellers": 7,
-            "sampleSufficient": true,
-            "observedFloor": 2.4,
+            "sampleSufficient": false,
+            "observedFloor": 4.9,
             "trusted": 5,
-            "review": 5,
+            "review": 4,
             "quarantined": 0,
-            "matched": 10,
+            "matched": 9,
             "scanned": 18,
             "totalAvailable": 18,
             "pages": 1,
@@ -29599,37 +29616,37 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 5.26,
+              "evNet": 5.32,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
+              "p75": 1.31,
               "pRecoup": 0.06,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 5.26,
+              "evNet": 5.32,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
+              "p75": 1.31,
               "pRecoup": 0.06,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 5.26,
+              "evNet": 5.32,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
+              "p75": 1.31,
               "pRecoup": 0.06,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 5.26,
+              "evNet": 5.32,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
+              "p75": 1.31,
               "pRecoup": 0.06,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
@@ -29650,10 +29667,7 @@
             "oneInSpecific": 31,
             "median": 0.21,
             "mean": 0.22,
-            "meanNM": 0.16,
-            "nmCoverage": 1,
             "contribution": 0.18,
-            "contributionNM": 0.12,
             "premium": false
           },
           {
@@ -29665,10 +29679,7 @@
             "oneInSpecific": 91,
             "median": 2.18,
             "mean": 2.99,
-            "meanNM": 2.28,
-            "nmCoverage": 1,
             "contribution": 0.4,
-            "contributionNM": 0.3,
             "premium": false
           },
           {
@@ -29680,10 +29691,7 @@
             "oneInSpecific": 188,
             "median": 26.89,
             "mean": 26.57,
-            "meanNM": 35.46,
-            "nmCoverage": 1,
             "contribution": 2.26,
-            "contributionNM": 3.01,
             "premium": true
           },
           {
@@ -29695,10 +29703,7 @@
             "oneInSpecific": 250,
             "median": 10.13,
             "mean": 13.26,
-            "meanNM": 14.37,
-            "nmCoverage": 1,
             "contribution": 0.85,
-            "contributionNM": 0.92,
             "premium": true
           },
           {
@@ -29710,10 +29715,7 @@
             "oneInSpecific": 226,
             "median": 79.37,
             "mean": 82.1,
-            "meanNM": 122.91,
-            "nmCoverage": 1,
             "contribution": 2.55,
-            "contributionNM": 3.81,
             "premium": true
           },
           {
@@ -29725,15 +29727,11 @@
             "oneInSpecific": 154,
             "median": 4.14,
             "mean": 8.02,
-            "meanNM": 7.63,
-            "nmCoverage": 1,
             "contribution": 0.16,
-            "contributionNM": 0.15,
             "premium": true
           }
         ],
         "grossPerBooster": 6.4,
-        "grossPerBoosterNM": 8.31,
         "confidence": "solide",
         "looseModel": "independent",
         "eraLabel": "Écarlate et Violet",
@@ -30716,7 +30714,7 @@
       },
       "verdict": "Japonais · mesure partielle",
       "concentration": null,
-      "cardsTracked": 221,
+      "cardsTracked": 223,
       "history": {
         "points": [],
         "window": null,
@@ -30769,22 +30767,22 @@
           "url": null
         },
         {
-          "name": "Mewtwo & Mew GX",
-          "nameFR": null,
-          "image": "https://cardtrader.com/uploads/blueprints/image/260575/preview_mewtwo-mew-gx-ultra-rare-222-173-tag-team-gx-tag-all-stars.jpg",
-          "number": "222",
-          "rarity": "Secret Rare",
-          "price": 1390.64,
-          "change30": null,
-          "url": null
-        },
-        {
           "name": "Sightseer",
           "nameFR": null,
           "image": "https://cardtrader.com/uploads/blueprints/image/260538/preview_sightseer-secret-rare-192-173-tag-team-gx-tag-all-stars.jpg",
           "number": "192",
           "rarity": "Secret Rare",
-          "price": 965.92,
+          "price": 968.4,
+          "change30": null,
+          "url": null
+        },
+        {
+          "name": "Moltres & Zapdos & Articuno GX",
+          "nameFR": null,
+          "image": "https://cardtrader.com/uploads/blueprints/image/260569/preview_moltres-zapdos-articuno-gx-ultra-rare-226-173-tag-team-gx-tag-all-stars.jpg",
+          "number": "226",
+          "rarity": "Ultra Rare",
+          "price": 610.63,
           "change30": null,
           "url": null
         }
@@ -30811,8 +30809,8 @@
         "booster": null,
         "boosterBox": null,
         "singles": {
-          "tracked": 221,
-          "offers": 1491
+          "tracked": 223,
+          "offers": 1480
         }
       },
       "liveHistory": [],
@@ -30831,8 +30829,8 @@
             "label": "Super Rare (SR)",
             "countLo": 1,
             "countHi": 2,
-            "poolSize": 32,
-            "meanNet": 48.55,
+            "poolSize": 33,
+            "meanNet": 52.54,
             "top": [
               {
                 "name": "Moltres & Zapdos & Articuno GX",
@@ -30843,6 +30841,11 @@
                 "name": "Umbreon & Darkrai GX",
                 "number": "182",
                 "price": 244.94
+              },
+              {
+                "name": "Mewtwo & Mew GX",
+                "number": "222",
+                "price": 209.5
               },
               {
                 "name": "Umbreon & Darkrai GX",
@@ -30858,11 +30861,6 @@
                 "name": "Garchomp & Giratina GX",
                 "number": "225",
                 "price": 82.14
-              },
-              {
-                "name": "Dedenne GX",
-                "number": "175",
-                "price": 80.54
               }
             ]
           },
@@ -30872,7 +30870,7 @@
             "countLo": 0,
             "countHi": 1,
             "poolSize": 32,
-            "meanNet": 378.36,
+            "meanNet": 351.51,
             "top": [
               {
                 "name": "Misty & Lorelei",
@@ -30880,19 +30878,19 @@
                 "price": 10000.64
               },
               {
-                "name": "Mewtwo & Mew GX",
-                "number": "222",
-                "price": 1390.64
-              },
-              {
                 "name": "Sightseer",
                 "number": "192",
-                "price": 965.92
+                "price": 968.4
+              },
+              {
+                "name": "Blue's Tactics",
+                "number": "193",
+                "price": 400.64
               },
               {
                 "name": "Erika's Hospitality",
                 "number": "190",
-                "price": 328.59
+                "price": 328.57
               },
               {
                 "name": "Espeon & Deoxys GX",
@@ -30956,61 +30954,18 @@
           }
         },
         {
-          "id": "tag-all-stars-222",
-          "name": "Mewtwo & Mew GX",
-          "nameFR": null,
-          "number": "222",
-          "rarity": "Secret Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/260575/preview_mewtwo-mew-gx-ultra-rare-222-173-tag-team-gx-tag-all-stars.jpg",
-          "price": 1390.64,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 1,
-          "offers": 1,
-          "marketFloor": 1390.64,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "observedFloor": null,
-            "trusted": 0,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 0,
-            "scanned": 1,
-            "totalAvailable": 1,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Japonais",
-              "collectorNumber": "222",
-              "officialCount": null
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
           "id": "tag-all-stars-192",
           "name": "Sightseer",
           "nameFR": null,
           "number": "192",
           "rarity": "Secret Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/260538/preview_sightseer-secret-rare-192-173-tag-team-gx-tag-all-stars.jpg",
-          "price": 965.92,
+          "price": 968.4,
           "momentum30": null,
           "relativeStrength": null,
           "sellers": 1,
           "offers": 1,
-          "marketFloor": 965.92,
+          "marketFloor": 968.4,
           "score": null,
           "components": null,
           "url": null,
@@ -31085,18 +31040,61 @@
           }
         },
         {
+          "id": "tag-all-stars-193",
+          "name": "Blue's Tactics",
+          "nameFR": null,
+          "number": "193",
+          "rarity": "Secret Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/260503/preview_blue-s-tactics-secret-rare-193-173-tag-team-gx-tag-all-stars.jpg",
+          "price": 400.64,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 1,
+          "offers": 1,
+          "marketFloor": 400.64,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "observedFloor": null,
+            "trusted": 0,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 0,
+            "scanned": 0,
+            "totalAvailable": 0,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Japonais",
+              "collectorNumber": "193",
+              "officialCount": null
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
           "id": "tag-all-stars-190",
           "name": "Erika's Hospitality",
           "nameFR": null,
           "number": "190",
           "rarity": "Secret Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/260493/preview_erika-s-hospitality-secret-rare-190-173-tag-team-gx-tag-all-stars.jpg",
-          "price": 328.59,
+          "price": 328.57,
           "momentum30": null,
           "relativeStrength": null,
           "sellers": 2,
           "offers": 2,
-          "marketFloor": 328.59,
+          "marketFloor": 328.57,
           "score": null,
           "components": null,
           "url": null,
@@ -31208,6 +31206,49 @@
               "product": "single",
               "language": "Japonais",
               "collectorNumber": "182",
+              "officialCount": null
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
+          "id": "tag-all-stars-222",
+          "name": "Mewtwo & Mew GX",
+          "nameFR": null,
+          "number": "222",
+          "rarity": "Ultra Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/260575/preview_mewtwo-mew-gx-ultra-rare-222-173-tag-team-gx-tag-all-stars.jpg",
+          "price": 209.5,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 2,
+          "offers": 2,
+          "marketFloor": 209.5,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": null,
+            "priceUrl": null,
+            "floor10": null,
+            "floor10Url": null,
+            "median": null,
+            "offers": 0,
+            "sellers": 0,
+            "observedFloor": null,
+            "trusted": 0,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 0,
+            "scanned": 1,
+            "totalAvailable": 1,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Japonais",
+              "collectorNumber": "222",
               "officialCount": null
             },
             "referenceBasis": "insufficient"
@@ -31384,49 +31425,6 @@
             },
             "referenceBasis": "insufficient"
           }
-        },
-        {
-          "id": "tag-all-stars-198",
-          "name": "Mina",
-          "nameFR": null,
-          "number": "198",
-          "rarity": "Secret Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/260563/preview_mina-secret-rare-198-173-tag-team-gx-tag-all-stars.jpg",
-          "price": 97.14,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 2,
-          "offers": 2,
-          "marketFloor": 97.14,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": null,
-            "priceUrl": null,
-            "floor10": null,
-            "floor10Url": null,
-            "median": null,
-            "offers": 0,
-            "sellers": 0,
-            "observedFloor": null,
-            "trusted": 0,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 0,
-            "scanned": 4,
-            "totalAvailable": 4,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Japonais",
-              "collectorNumber": "198",
-              "officialCount": null
-            },
-            "referenceBasis": "insufficient"
-          }
         }
       ]
     },
@@ -31445,6 +31443,7 @@
         "spread": 75,
         "maturity": 33
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 25,
       "cardsTracked": 229,
@@ -31608,17 +31607,17 @@
       "boosterFR": {
         "price": 1.99,
         "priceUrl": "https://www.ebay.fr/itm/376174413823?_skw=pokemon+booster+Flammes+Obsidiennes&hash=item5795be07ff:g:gUEAAOSwWYdn~xiy",
-        "floor10": 8.35,
+        "floor10": 8.3,
         "floor10Url": "https://www.ebay.fr/itm/358360998848?_skw=pokemon+booster+Flammes+Obsidiennes&hash=item536ffae3c0:g:eMYAAOSwas5lfrCo",
         "median": 13.49,
-        "offers": 58,
-        "sellers": 36,
+        "offers": 57,
+        "sellers": 35,
         "sampleSufficient": true,
         "observedFloor": 1.99,
-        "trusted": 41,
+        "trusted": 40,
         "review": 17,
         "quarantined": 0,
-        "matched": 58,
+        "matched": 57,
         "scanned": 221,
         "totalAvailable": 220,
         "pages": 2,
@@ -31858,40 +31857,40 @@
           "jackpotNet": 68.32,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.7,
+              "evNet": 1.83,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
               "pRecoup": 0.03,
               "pLoseHalf": 0.93,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.7,
+              "evNet": 1.83,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
               "pRecoup": 0.03,
               "pLoseHalf": 0.93,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.7,
+              "evNet": 1.83,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
               "pRecoup": 0.03,
               "pLoseHalf": 0.93,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 1.7,
+              "evNet": 1.83,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
               "pRecoup": 0.03,
               "pLoseHalf": 0.93,
-              "pDouble": 0
+              "pDouble": 0.01
             }
           }
         },
@@ -32326,7 +32325,7 @@
         },
         "singles": {
           "tracked": 230,
-          "offers": 42818
+          "offers": 42724
         }
       },
       "liveHistory": [
@@ -32336,13 +32335,13 @@
           "boosterOffers": 6,
           "boosterLanguage": "en",
           "boxPrice": 220.63,
-          "singlesOffers": 42818,
+          "singlesOffers": 42724,
           "top5Value": 103.78,
-          "top12ex5Value": 38.52,
-          "boosterFRp10": 8.35,
+          "top12ex5Value": 38.1,
+          "boosterFRp10": 8.3,
           "boosterFRmedian": 13.49,
-          "boosterFRoffers": 58,
-          "boosterFRsellers": 36
+          "boosterFRoffers": 57,
+          "boosterFRsellers": 35
         }
       ],
       "psa": null,
@@ -32357,8 +32356,8 @@
           "momentum30": 24.5,
           "relativeStrength": 24.5,
           "sellers": 44,
-          "offers": 44,
-          "marketFloor": 1.08,
+          "offers": 46,
+          "marketFloor": 1.09,
           "score": 72,
           "components": {
             "relative": 100,
@@ -32404,8 +32403,8 @@
           "price": 0.49,
           "momentum30": 266.7,
           "relativeStrength": 266.7,
-          "sellers": 114,
-          "offers": 132,
+          "sellers": 115,
+          "offers": 133,
           "marketFloor": 0.11,
           "score": 72,
           "components": {
@@ -32453,8 +32452,8 @@
           "price": 22.37,
           "momentum30": 50.1,
           "relativeStrength": 50.1,
-          "sellers": 198,
-          "offers": 234,
+          "sellers": 195,
+          "offers": 227,
           "marketFloor": 0.11,
           "score": 69,
           "components": {
@@ -32501,13 +32500,13 @@
           "price": 0.91,
           "momentum30": 8.8,
           "relativeStrength": 8.8,
-          "sellers": 36,
-          "offers": 37,
+          "sellers": 38,
+          "offers": 39,
           "marketFloor": 0.65,
-          "score": 63,
+          "score": 62,
           "components": {
             "relative": 72,
-            "tightness": 10,
+            "tightness": 5,
             "marketBreadth": 100,
             "discount": 100
           },
@@ -32550,8 +32549,8 @@
           "price": 0.94,
           "momentum30": 9.9,
           "relativeStrength": 9.9,
-          "sellers": 56,
-          "offers": 58,
+          "sellers": 57,
+          "offers": 59,
           "marketFloor": 0.11,
           "score": 61,
           "components": {
@@ -32601,7 +32600,7 @@
           "relativeStrength": 9.3,
           "sellers": 60,
           "offers": 61,
-          "marketFloor": 0.9,
+          "marketFloor": 0.84,
           "score": 61,
           "components": {
             "relative": 73,
@@ -32648,8 +32647,8 @@
           "price": 1.31,
           "momentum30": 9.9,
           "relativeStrength": 9.9,
-          "sellers": 106,
-          "offers": 111,
+          "sellers": 101,
+          "offers": 106,
           "marketFloor": 0.11,
           "score": 61,
           "components": {
@@ -32745,8 +32744,8 @@
           "price": 2.81,
           "momentum30": 7.8,
           "relativeStrength": 7.8,
-          "sellers": 66,
-          "offers": 68,
+          "sellers": 67,
+          "offers": 69,
           "marketFloor": 1.29,
           "score": 59,
           "components": {
@@ -32794,8 +32793,8 @@
           "price": 1.85,
           "momentum30": 17.8,
           "relativeStrength": 17.8,
-          "sellers": 87,
-          "offers": 92,
+          "sellers": 83,
+          "offers": 88,
           "marketFloor": 0.6,
           "score": 58,
           "components": {
@@ -32811,17 +32810,17 @@
             "priceUrl": "https://www.ebay.fr/itm/316678762184?_skw=Apireine-ex+212%2F197&hash=item49bb866ec8:g:o94AAOSwTEhoAmxp",
             "floor10": 5,
             "floor10Url": "https://www.ebay.fr/itm/227303601331?_skw=Apireine-ex+212%2F197&hash=item34ec59b4b3:g:rRMAAOSw-YBmEtRb",
-            "median": 7.49,
-            "offers": 18,
-            "sellers": 17,
+            "median": 6.99,
+            "offers": 19,
+            "sellers": 18,
             "sampleSufficient": true,
             "observedFloor": 4.9,
-            "trusted": 18,
+            "trusted": 19,
             "review": 0,
             "quarantined": 0,
-            "matched": 18,
-            "scanned": 18,
-            "totalAvailable": 18,
+            "matched": 19,
+            "scanned": 19,
+            "totalAvailable": 19,
             "pages": 1,
             "complete": true,
             "scope": {
@@ -32843,7 +32842,7 @@
           "price": 1.11,
           "momentum30": 10.1,
           "relativeStrength": 10.1,
-          "sellers": 91,
+          "sellers": 90,
           "offers": 94,
           "marketFloor": 0.11,
           "score": 55,
@@ -32892,8 +32891,8 @@
           "price": 1.31,
           "momentum30": 2.6,
           "relativeStrength": 2.6,
-          "sellers": 49,
-          "offers": 54,
+          "sellers": 47,
+          "offers": 52,
           "marketFloor": 0.11,
           "score": 54,
           "components": {
@@ -32949,6 +32948,7 @@
         "spread": 79,
         "maturity": 12
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 21,
       "cardsTracked": 172,
@@ -33076,7 +33076,7 @@
           "rarity": "Black White Rare",
           "price": 269.65,
           "change30": -7.5,
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Reshiram-ex-V4-WHT173"
+          "url": null
         },
         {
           "priceFR": null,
@@ -33464,7 +33464,7 @@
           "jackpotNet": 234.6,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.51,
+              "evNet": 2.74,
               "p25": 0,
               "median": 0,
               "p75": 0.43,
@@ -33473,7 +33473,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.51,
+              "evNet": 2.74,
               "p25": 0,
               "median": 0,
               "p75": 0.43,
@@ -33482,7 +33482,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 2.51,
+              "evNet": 2.74,
               "p25": 0,
               "median": 0,
               "p75": 0.43,
@@ -33491,7 +33491,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 2.51,
+              "evNet": 2.74,
               "p25": 0,
               "median": 0,
               "p75": 0.43,
@@ -34004,7 +34004,7 @@
             "discount": 100
           },
           "nameFR": "Gigalithe",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Gigalith-V2-WHT129",
+          "url": null,
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -34100,7 +34100,7 @@
             "discount": 80
           },
           "nameFR": "Mastouffe",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Stoutland-V2-WHT156",
+          "url": null,
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -34244,7 +34244,7 @@
             "discount": 100
           },
           "nameFR": "Couaneton",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Ducklett-V2-WHT109",
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -34389,7 +34389,7 @@
             "discount": 35
           },
           "nameFR": "Limaspeed",
-          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Accelgor-V2-WHT094",
+          "url": null,
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -34437,7 +34437,7 @@
             "discount": 98
           },
           "nameFR": "Limonde",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Stunfisk-V2-WHT118",
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -34485,7 +34485,7 @@
             "discount": 75
           },
           "nameFR": "Sorbébé",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/White-Flare/Vanillite-V2-WHT111",
           "marketFR": {
             "price": null,
             "priceUrl": null,
@@ -34578,6 +34578,7 @@
         "spread": 39,
         "maturity": 44
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 61,
       "cardsTracked": 217,
@@ -34913,34 +34914,34 @@
           "jackpotNet": 492.78,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 2.03,
+              "evNet": 2.25,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
-              "pRecoup": 0,
+              "pRecoup": 0.01,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "freshBox": {
-              "evNet": 1.96,
+              "evNet": 2.32,
               "p25": 0,
               "median": 0,
               "p75": 0.78,
-              "pRecoup": 0,
+              "pRecoup": 0.01,
               "pLoseHalf": 0.99,
-              "pDouble": 0
+              "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.7,
+              "evNet": 1.62,
               "p25": 0,
               "median": 0,
-              "p75": 0.6,
+              "p75": 0.65,
               "pRecoup": 0,
               "pLoseHalf": 0.99,
               "pDouble": 0
             },
             "unknownLoose": {
-              "evNet": 0.21,
+              "evNet": 0.2,
               "p25": 0,
               "median": 0,
               "p75": 0.46,
@@ -35491,19 +35492,19 @@
           "marketFR": {
             "price": 20,
             "priceUrl": "https://www.ebay.fr/itm/235500453392?_skw=Zoroark+de+Hisui+VSTAR+203%2F196&hash=item36d4ebbe10:g:HJ0AAOSw9almClHB",
-            "floor10": 22.1,
+            "floor10": 22.8,
             "floor10Url": "https://www.ebay.fr/itm/235500453392?_skw=Zoroark+de+Hisui+VSTAR+203%2F196&hash=item36d4ebbe10:g:HJ0AAOSw9almClHB",
-            "median": 28.49,
-            "offers": 4,
-            "sellers": 4,
+            "median": 29.99,
+            "offers": 5,
+            "sellers": 5,
             "sampleSufficient": false,
             "observedFloor": 20,
-            "trusted": 2,
+            "trusted": 3,
             "review": 2,
             "quarantined": 0,
-            "matched": 4,
-            "scanned": 5,
-            "totalAvailable": 5,
+            "matched": 5,
+            "scanned": 6,
+            "totalAvailable": 6,
             "pages": 1,
             "complete": true,
             "scope": {
@@ -36071,6 +36072,7 @@
         "spread": 74,
         "maturity": 20
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 26,
       "cardsTracked": 250,
@@ -36223,12 +36225,12 @@
         "sellers": 28,
         "sampleSufficient": true,
         "observedFloor": 9.99,
-        "trusted": 32,
-        "review": 12,
-        "quarantined": 1,
-        "matched": 45,
-        "scanned": 159,
-        "totalAvailable": 159,
+        "trusted": 31,
+        "review": 13,
+        "quarantined": 0,
+        "matched": 44,
+        "scanned": 157,
+        "totalAvailable": 157,
         "pages": 1,
         "complete": true,
         "scope": {
@@ -36460,37 +36462,37 @@
           "jackpotNet": 237.56,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3,
+              "evNet": 3.31,
               "p25": 0,
               "median": 0,
-              "p75": 0.83,
+              "p75": 1.05,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 3,
+              "evNet": 3.31,
               "p25": 0,
               "median": 0,
-              "p75": 0.83,
+              "p75": 1.05,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 3,
+              "evNet": 3.31,
               "p25": 0,
               "median": 0,
-              "p75": 0.83,
+              "p75": 1.05,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 3,
+              "evNet": 3.31,
               "p25": 0,
               "median": 0,
-              "p75": 0.83,
+              "p75": 1.05,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
@@ -37539,6 +37541,7 @@
         "spread": 65,
         "maturity": 28
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 35,
       "cardsTracked": 245,
@@ -37696,17 +37699,17 @@
       "boosterFR": {
         "price": 50,
         "priceUrl": "https://www.ebay.fr/itm/298179003501?_skw=pokemon+booster+Destin%C3%A9es+de+Paldea&hash=item456cda846d:g:RmYAAeSw1Vppy72Y",
-        "floor10": 54,
+        "floor10": 53,
         "floor10Url": "https://www.ebay.fr/itm/298179003501?_skw=pokemon+booster+Destin%C3%A9es+de+Paldea&hash=item456cda846d:g:RmYAAeSw1Vppy72Y",
-        "median": 74.99,
-        "offers": 5,
-        "sellers": 4,
+        "median": 67.5,
+        "offers": 4,
+        "sellers": 3,
         "sampleSufficient": false,
         "observedFloor": 50,
-        "trusted": 3,
+        "trusted": 2,
         "review": 2,
         "quarantined": 0,
-        "matched": 5,
+        "matched": 4,
         "scanned": 15,
         "totalAvailable": 15,
         "pages": 1,
@@ -37719,10 +37722,10 @@
         "referenceBasis": "insufficient"
       },
       "opening": {
-        "boosterPrice": 74.99,
+        "boosterPrice": 67.5,
         "netLo": 3.12,
         "netHi": 5.04,
-        "ratioLo": 0.04,
+        "ratioLo": 0.05,
         "ratioHi": 0.07,
         "looseLo": 3.12,
         "looseHi": 5.04,
@@ -37798,8 +37801,8 @@
           "buyPrice": 506.96,
           "oneInLo": 200,
           "oneInHi": 320,
-          "expectedCostLo": 14998,
-          "expectedCostHi": 23997,
+          "expectedCostLo": 13500,
+          "expectedCostHi": 21600,
           "perDisplay": 0.14,
           "buyPriceFR": null,
           "nameFR": "Mew-ex"
@@ -37880,7 +37883,7 @@
           "jackpotNet": 441.06,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 4.24,
+              "evNet": 4.08,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -37889,7 +37892,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 4.24,
+              "evNet": 4.08,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -37898,7 +37901,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 4.24,
+              "evNet": 4.08,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -37907,7 +37910,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 4.24,
+              "evNet": 4.08,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -38391,10 +38394,10 @@
           "singlesOffers": 32101,
           "top5Value": 599.07,
           "top12ex5Value": 62.68,
-          "boosterFRp10": 54,
-          "boosterFRmedian": 74.99,
-          "boosterFRoffers": 5,
-          "boosterFRsellers": 4
+          "boosterFRp10": 53,
+          "boosterFRmedian": 67.5,
+          "boosterFRoffers": 4,
+          "boosterFRsellers": 3
         }
       ],
       "psa": null,
@@ -38992,6 +38995,7 @@
         "spread": 67,
         "maturity": 12
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 33,
       "cardsTracked": 171,
@@ -39113,7 +39117,7 @@
           "rarity": "Special Illustration Rare",
           "price": 180.61,
           "change30": 1.7,
-          "url": null
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Black-Bolt/Zekrom-ex-V3-BLK166"
         },
         {
           "priceFR": null,
@@ -39131,17 +39135,17 @@
       "boosterFR": {
         "price": 6.15,
         "priceUrl": "https://www.ebay.fr/itm/278178390145?_skw=pokemon+booster+Foudre+Noire&hash=item40c4b96081:g:AXgAAeSwNRxqVSGx",
-        "floor10": 8.09,
+        "floor10": 7.12,
         "floor10Url": "https://www.ebay.fr/itm/278178390145?_skw=pokemon+booster+Foudre+Noire&hash=item40c4b96081:g:AXgAAeSwNRxqVSGx",
-        "median": 16.99,
-        "offers": 5,
-        "sellers": 4,
+        "median": 10.99,
+        "offers": 3,
+        "sellers": 3,
         "sampleSufficient": false,
         "observedFloor": 6.15,
-        "trusted": 4,
+        "trusted": 2,
         "review": 1,
         "quarantined": 0,
-        "matched": 5,
+        "matched": 3,
         "scanned": 159,
         "totalAvailable": 159,
         "pages": 1,
@@ -39154,17 +39158,17 @@
         "referenceBasis": "established"
       },
       "opening": {
-        "boosterPrice": 16.99,
+        "boosterPrice": 10.99,
         "netLo": 3.13,
         "netHi": 3.77,
-        "ratioLo": 0.18,
-        "ratioHi": 0.22,
+        "ratioLo": 0.28,
+        "ratioHi": 0.34,
         "looseLo": 3.13,
         "looseHi": 3.77,
-        "recoupLo": 0.02,
-        "recoupHi": 0.03,
-        "recoupLooseLo": 0.02,
-        "recoupLooseHi": 0.03,
+        "recoupLo": 0.05,
+        "recoupHi": 0.06,
+        "recoupLooseLo": 0.05,
+        "recoupLooseHi": 0.06,
         "topPulls": [
           {
             "name": "Zekrom ex",
@@ -39233,8 +39237,8 @@
           "buyPrice": 551.9,
           "oneInLo": 357,
           "oneInHi": 455,
-          "expectedCostLo": 6068,
-          "expectedCostHi": 7723,
+          "expectedCostLo": 3925,
+          "expectedCostHi": 4995,
           "perDisplay": 0.09,
           "buyPriceFR": null,
           "nameFR": "Zekrom-ex"
@@ -39441,40 +39445,40 @@
           "jackpotNet": 480.15,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.37,
+              "evNet": 3.32,
               "p25": 0,
               "median": 0,
               "p75": 0.5,
-              "pRecoup": 0.03,
-              "pLoseHalf": 0.93,
-              "pDouble": 0.01
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.89,
+              "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 3.37,
+              "evNet": 3.32,
               "p25": 0,
               "median": 0,
               "p75": 0.5,
-              "pRecoup": 0.03,
-              "pLoseHalf": 0.93,
-              "pDouble": 0.01
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.89,
+              "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 3.37,
+              "evNet": 3.32,
               "p25": 0,
               "median": 0,
               "p75": 0.5,
-              "pRecoup": 0.03,
-              "pLoseHalf": 0.93,
-              "pDouble": 0.01
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.89,
+              "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 3.37,
+              "evNet": 3.32,
               "p25": 0,
               "median": 0,
               "p75": 0.5,
-              "pRecoup": 0.03,
-              "pLoseHalf": 0.93,
-              "pDouble": 0.01
+              "pRecoup": 0.06,
+              "pLoseHalf": 0.89,
+              "pDouble": 0.02
             }
           }
         },
@@ -39908,10 +39912,10 @@
           "singlesOffers": 20769,
           "top5Value": 608.83,
           "top12ex5Value": 199.86,
-          "boosterFRp10": 8.09,
-          "boosterFRmedian": 16.99,
-          "boosterFRoffers": 5,
-          "boosterFRsellers": 4
+          "boosterFRp10": 7.12,
+          "boosterFRmedian": 10.99,
+          "boosterFRoffers": 3,
+          "boosterFRsellers": 3
         }
       ],
       "psa": null,
@@ -40272,7 +40276,7 @@
             "discount": 69
           },
           "nameFR": "Trompignon",
-          "url": null,
+          "url": "https://cardmarket.com/fr/Pokemon/Products/Singles/Black-Bolt/Foongus-V2-BLK095",
           "marketFR": {
             "price": null,
             "priceUrl": null,

@@ -10,7 +10,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 
-export const DROP_V2_MODEL_VERSION = "drop-rate-v2.1";
+export const DROP_V2_MODEL_VERSION = "drop-rate-v2.2";
 export const FRESH_PULL_CONDITIONS = new Set(["Near Mint", "Slightly Played"]);
 
 const DEFAULT_FEES = 0.13;
@@ -46,10 +46,15 @@ function daysBetween(laterIso, earlierDate) {
  * Un vendeur qui duplique dix annonces ne pèse pas dix fois plus : on garde
  * son offre la moins chère, puis on calcule médiane et p10 entre vendeurs.
  */
-export function summarizeFreshPullMarket(entries, generatedAt, crawl = null) {
+export function summarizeFreshPullMarket(entries, generatedAt, crawls = null) {
+  // Doctrine de langue du site : le français quand il existe, jamais le
+  // toutes-langues. Les cotations viennent d'eBay.fr (français par
+  // construction — aspect Langue + matching, l'état sous EX déjà écarté) et
+  // de CardTrader restreint aux annonces FR. Un vendeur = une voix, les deux
+  // sources confondues.
   const structural = entries.filter(
     ({ row }) =>
-      row.source === "cardtrader" &&
+      (row.source === "cardtrader" ? row.language === "fr" : row.source === "ebay") &&
       row.matching === "exact" &&
       row.integrity !== "high_risk" &&
       !row.graded &&
@@ -59,16 +64,42 @@ export function summarizeFreshPullMarket(entries, generatedAt, crawl = null) {
   if (!structural.length) return null;
 
   // Une annonce sortie du dernier crawl ne doit pas rester dans la cotation.
-  // Le manifeste est l'autorité sur la fenêtre observée. Un crawl complet à
-  // zéro signifie réellement « aucune annonce vue » ; un crawl en erreur ou
-  // incomplet ne doit jamais ressusciter silencieusement le snapshot précédent.
-  if (crawl && (crawl.status !== "ok" || crawl.complete !== true || crawl.captured === 0)) return null;
-  const latestSeen =
-    crawl?.date ?? structural.map(({ row }) => row.last_seen).filter(Boolean).sort().at(-1) ?? null;
+  // Le manifeste est l'autorité sur la fenêtre observée, SOURCE PAR SOURCE :
+  // un crawl complet à zéro signifie réellement « aucune annonce vue » ; un
+  // crawl en erreur, incomplet ou absent n'admet aucune annonce de sa source
+  // — jamais de résurrection silencieuse du snapshot précédent.
+  const legacyCrawl = crawls && typeof crawls.status === "string" ? { cardtrader: crawls } : null;
+  const bySource = legacyCrawl ?? crawls ?? null;
+  const active = [];
+  const windows = [];
+  for (const source of ["ebay", "cardtrader"]) {
+    const crawl = bySource?.[source] ?? null;
+    if (bySource != null || source === "cardtrader") {
+      // mode strict dès qu'un manifeste est fourni ; compat : sans manifeste,
+      // CardTrader retombe sur la dernière date vue (fixtures historiques).
+      if (bySource != null && (!crawl || crawl.status !== "ok" || crawl.complete !== true || crawl.captured === 0)) {
+        continue;
+      }
+    }
+    const fallbackDate =
+      structural.filter(({ row }) => row.source === source).map(({ row }) => row.last_seen).filter(Boolean).sort().at(-1) ?? null;
+    const windowDate = crawl?.date ?? fallbackDate;
+    if (!windowDate) continue;
+    const rows = structural.filter(
+      ({ row }) =>
+        row.source === source &&
+        row.last_seen === windowDate &&
+        // CardTrader déclare la condition ; eBay ne la structure pas — le
+        // matching a déjà écarté l'explicitement sous EX (etat_sous_ex).
+        (source === "ebay" || FRESH_PULL_CONDITIONS.has(row.condition)),
+    );
+    if (rows.length) {
+      active.push(...rows);
+      windows.push(windowDate);
+    }
+  }
+  const latestSeen = windows.sort().at(-1) ?? null;
   if (!latestSeen) return null;
-  const active = structural.filter(
-    ({ row }) => row.last_seen === latestSeen && FRESH_PULL_CONDITIONS.has(row.condition),
-  );
 
   const bySeller = new Map();
   for (const { key, row } of active) {
@@ -95,6 +126,7 @@ export function summarizeFreshPullMarket(entries, generatedAt, crawl = null) {
     conditionMix: {
       nearMint: active.filter(({ row }) => row.condition === "Near Mint").length,
       slightlyPlayed: active.filter(({ row }) => row.condition === "Slightly Played").length,
+      ebayFR: active.filter(({ row }) => row.source === "ebay").length,
     },
   };
 }
@@ -264,11 +296,15 @@ export async function buildDropV2Artifact(root, radarPayload) {
     for (const line of manifest.split("\n")) {
       if (!line.trim()) continue;
       const row = JSON.parse(line);
-      if (row.type !== "crawl" || row.source !== "cardtrader" || !row.subject?.startsWith("card:")) continue;
+      if (row.type !== "crawl" || !row.subject?.startsWith("card:")) continue;
+      if (row.source !== "cardtrader" && row.source !== "ebay") continue;
       if (!crawlsBySet.has(row.set)) crawlsBySet.set(row.set, new Map());
-      const current = crawlsBySet.get(row.set).get(row.subject);
+      const subjectMap = crawlsBySet.get(row.set);
+      if (!subjectMap.has(row.subject)) subjectMap.set(row.subject, {});
+      const bucket = subjectMap.get(row.subject);
+      const current = bucket[row.source];
       if (!current || String(row.observed_at ?? row.date) > String(current.observed_at ?? current.date)) {
-        crawlsBySet.get(row.set).set(row.subject, row);
+        bucket[row.source] = row;
       }
     }
   } catch (error) {
@@ -291,6 +327,8 @@ export async function buildDropV2Artifact(root, radarPayload) {
     generatedAt: radarPayload.generatedAt,
     modelVersion: DROP_V2_MODEL_VERSION,
     definition: {
+      languageDoctrine:
+        "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
       conditions: [...FRESH_PULL_CONDITIONS],
       priceGrain: "minimum par vendeur, puis médiane et p10 entre vendeurs",
       minimumOffers: MIN_OFFERS,
