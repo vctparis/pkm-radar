@@ -40,6 +40,12 @@ const marketRows = [
   listing("old", "g", 3, "Near Mint", { last_seen: "2026-08-11" }),
 ];
 
+check("Mint est dans la liste blanche EX+ (mieux que NM ≠ exclu)",
+  summarizeFreshPullMarket(
+    [listing("m1", "a", 20, "Mint"), listing("m2", "b", 22, "Mint"), listing("m3", "c", 24, "Mint")],
+    generatedAt,
+  ).offers,
+  3);
 const market = summarizeFreshPullMarket(marketRows, generatedAt);
 check("EX+ retient NM et Slightly Played, jamais MP", market.conditionMix, { nearMint: 3, slightlyPlayed: 2, ebayFR: 0 });
 check("prix au grain vendeur", [market.offers, market.sellers, market.median, market.floor10], [5, 4, 13.5, 10.6]);

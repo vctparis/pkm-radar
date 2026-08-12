@@ -11,7 +11,10 @@ import { join } from "node:path";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 
 export const DROP_V2_MODEL_VERSION = "drop-rate-v2.4";
-export const FRESH_PULL_CONDITIONS = new Set(["Near Mint", "Slightly Played"]);
+// Mint > Near Mint : l'oublier excluait paradoxalement les annonces les
+// mieux conservées (bug latent — aucune annonce CT-FR « Mint » à ce jour,
+// mais la liste blanche doit couvrir tout l'EX+).
+export const FRESH_PULL_CONDITIONS = new Set(["Mint", "Near Mint", "Slightly Played"]);
 
 const DEFAULT_FEES = 0.13;
 const DEFAULT_BULK_THRESHOLD = 0.4;

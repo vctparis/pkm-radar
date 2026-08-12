@@ -4,6 +4,7 @@
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
     "conditions": [
+      "Mint",
       "Near Mint",
       "Slightly Played"
     ],
