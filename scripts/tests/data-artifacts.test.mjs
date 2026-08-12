@@ -26,6 +26,8 @@ const dropV2 = JSON.parse(await readFile(join(root, "public", "drop-rate-v2.json
 let invalidDropV2 = 0;
 let unreconciledDropV2 = 0;
 let leakingDropV2 = 0;
+let invalidDropV2Coverage = 0;
+let invalidDropV2Conflicts = 0;
 for (const set of dropV2.sets ?? []) {
   if (!(set.coverage >= 0 && set.coverage <= 1) || set.grossQuick > set.grossCentral || set.netCentralLo > set.netCentralHi) {
     invalidDropV2++;
@@ -33,11 +35,16 @@ for (const set of dropV2.sets ?? []) {
   const classTotal = set.classes.reduce((sum, row) => sum + row.centralContribution, 0);
   if (Math.abs(classTotal - set.grossCentral) > 0.08) unreconciledDropV2++;
   if (Object.hasOwn(set, "listings") || Object.hasOwn(set, "history")) leakingDropV2++;
+  const coverageTotal = Object.values(set.coverageBreakdown ?? {}).reduce((sum, value) => sum + value, 0);
+  if (Math.abs(coverageTotal - 1) > 0.012) invalidDropV2Coverage++;
+  if (set.blockingConflicts > set.conflicts || set.conflictDetails?.length !== set.conflicts) invalidDropV2Conflicts++;
 }
 check("drop v2 porte une version de modèle", typeof dropV2.modelVersion, "string");
 check("drop v2 : domaines métriques valides", invalidDropV2, 0);
 check("drop v2 : classes réconciliées avec la valeur brute", unreconciledDropV2, 0);
 check("drop v2 ne publie aucune annonce brute", leakingDropV2, 0);
+check("drop v2 : composition de couverture réconciliée", invalidDropV2Coverage, 0);
+check("drop v2 : conflits détaillés réconciliés", invalidDropV2Conflicts, 0);
 
 const ledgerDir = join(root, "data", "ledger");
 const files = (await readdir(ledgerDir)).filter((file) => file.endsWith(".json"));

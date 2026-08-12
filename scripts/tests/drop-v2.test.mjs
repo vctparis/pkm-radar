@@ -60,6 +60,11 @@ const withEbay = summarizeFreshPullMarket(
 );
 check("eBay.fr compte sans condition structurée (état sous EX déjà écarté au matching)",
   [withEbay.sellers, withEbay.conditionMix.ebayFR], [6, 2]);
+const crossSourceHomonym = summarizeFreshPullMarket(
+  [...marketRows, listing("e-homonym", "a", 18, null, { source: "ebay", language: null })],
+  generatedAt,
+);
+check("un même identifiant vendeur sur deux sources reste deux voix", crossSourceHomonym.sellers, 5);
 check(
   "manifeste par source : la source sans crawl valide n'admet rien",
   summarizeFreshPullMarket(
@@ -89,7 +94,8 @@ const set = {
     boosterPrice: 20,
     netLo: 8.7,
     netHi: 8.7,
-    evCoverage: [{ number: "001", name: "Carte test", rarity: "Rare", share: 1 }],
+    evCoverage: [{ number: "001", name: "Carte test", rarity: "Rare", share: 1, referenceGross: 10 }],
+    evCoverageTruncated: false,
   },
   dropRates: {
     confidence: "solide",
@@ -113,6 +119,14 @@ const v2 = buildDropV2Set(set, ledger, generatedAt);
 check("la valeur EX+ remplace seulement la contribution couverte", [v2.grossCentral, v2.grossQuick], [13.5, 10.6]);
 check("frais appliqués après la valeur brute", [v2.netCentralMid, v2.netQuickMid], [11.74, 9.22]);
 check("couverture et confiance explicites", [v2.coverage, v2.confidence], [1, "élevée"]);
+check("volume d'étude explicite", [v2.study.trackedCards, v2.study.repricedCards, v2.study.observedOffers], [1, 1, 5]);
+check("composition de couverture explicite", v2.coverageBreakdown, {
+  repriced: 1,
+  trackedFallbackThin: 0,
+  trackedFallbackConflict: 0,
+  trackedFallbackUnavailable: 0,
+  untracked: 0,
+});
 
 const thinLedger = {
   listings: {
@@ -125,6 +139,49 @@ check("échantillon insuffisant : ancre historique conservée", [fallback.grossC
 const conflictRows = marketRows.map(({ key, row }) => [key, { ...row, price_last: row.condition === "Moderately Played" ? row.price_last : row.price_last * 10 }]);
 const conflict = buildDropV2Set(set, { listings: Object.fromEntries(conflictRows) }, generatedAt);
 check("écart de source extrême : cotation mise en revue, pas injectée", [conflict.grossCentral, conflict.conflicts], [10, 1]);
+check(
+  "conflit traçable sans annonce brute",
+  {
+    card: conflict.conflictDetails[0].number,
+    anchor: conflict.conflictDetails[0].anchorGross,
+    method: conflict.conflictDetails[0].anchorMethod,
+    blocking: conflict.conflictDetails[0].blocking,
+    sellers: conflict.conflictDetails[0].sellers,
+  },
+  { card: "001", anchor: 10, method: "opening_reference", blocking: true, sellers: 4 },
+);
+
+const lowConflictRows = marketRows.map(({ key, row }) => [key, {
+  ...row,
+  price_last: row.condition === "Moderately Played" ? row.price_last : row.price_last * 0.05,
+}]);
+const lowConflict = buildDropV2Set(set, { listings: Object.fromEntries(lowConflictRows) }, generatedAt);
+check("écart extrême sous l'ancre : même quarantaine traçable", [lowConflict.conflicts, lowConflict.conflictDetails[0].direction], [1, "below"]);
+
+const boundaryLedger = (multiplier) => ({
+  listings: Object.fromEntries(marketRows.map(({ key, row }) => [key, {
+    ...row,
+    price_last: row.condition === "Moderately Played" ? row.price_last : 10 * multiplier,
+  }])),
+});
+check("borne 0,2× incluse", buildDropV2Set(set, boundaryLedger(0.2), generatedAt).conflicts, 0);
+check("borne 5× incluse", buildDropV2Set(set, boundaryLedger(5), generatedAt).conflicts, 0);
+
+const crawlAware = buildDropV2Set(set, ledger, generatedAt, {
+  crawls: new Map([["card:1", {
+    cardtrader: { status: "ok", complete: true, captured: 5, date: "2026-08-12" },
+    ebay: { status: "error", complete: false, captured: 0, date: "2026-08-12" },
+  }]]),
+});
+check("santé des crawls séparée du volume de marché", crawlAware.study.crawlHealth, {
+  available: true,
+  expected: 2,
+  complete: 1,
+  completeZero: 0,
+  incomplete: 0,
+  error: 1,
+  missing: 0,
+});
 
 if (failures) process.exit(1);
 console.log("\nDrop rate v2 : invariants tenus.");

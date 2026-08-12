@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-12T14:57:59.659Z",
-  "modelVersion": "drop-rate-v2.2",
+  "modelVersion": "drop-rate-v2.3",
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
     "conditions": [
@@ -11,6 +11,8 @@
     "minimumOffers": 5,
     "minimumSellers": 3,
     "maximumAgeDays": 30,
+    "minimumReferenceRatio": 0.2,
+    "maximumReferenceRatio": 5,
     "fees": 0.13,
     "bulkThreshold": 0.4
   },
@@ -22,13 +24,13 @@
       "era": "Soleil & Lune",
       "logo": "https://assets.tcgdex.net/fr/sm/sm12/logo.webp",
       "boosterPrice": 124.5,
-      "grossCentral": 8.55,
+      "grossCentral": 8.54,
       "grossQuick": 8.18,
       "netCentralLo": 5.59,
       "netCentralHi": 9.12,
       "netCentralMid": 7.36,
       "netQuickLo": 5.32,
-      "netQuickHi": 8.76,
+      "netQuickHi": 8.75,
       "netQuickMid": 7.04,
       "lossPct": 94,
       "quickLossPct": 94,
@@ -38,9 +40,38 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "quelques centaines de boosters",
       "sampleSource": "ouvertures communautaires anciennes",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.13,
+        "trackedFallbackThin": 0.281,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.395,
+        "untracked": 0.194
+      },
+      "study": {
+        "trackedCards": 27,
+        "repricedCards": 5,
+        "observedOffers": 54,
+        "sellerCardVoices": 49,
+        "sourceOffers": {
+          "ebayFR": 51,
+          "cardTraderFR": 3
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 54,
+          "complete": 46,
+          "completeZero": 7,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 1
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -88,7 +119,7 @@
           "premium": true,
           "baselineContribution": 4.91,
           "centralContribution": 4.87,
-          "quickContribution": 4.79
+          "quickContribution": 4.78
         },
         {
           "rarity": "Rare Rainbow",
@@ -191,13 +222,13 @@
       "logo": "https://assets.tcgdex.net/fr/sv/sv10/logo.webp",
       "boosterPrice": 28.68,
       "grossCentral": 7.8,
-      "grossQuick": 7.49,
+      "grossQuick": 7.48,
       "netCentralLo": 5.19,
       "netCentralHi": 8.3,
-      "netCentralMid": 6.75,
-      "netQuickLo": 4.98,
+      "netCentralMid": 6.74,
+      "netQuickLo": 4.97,
       "netQuickHi": 7.96,
-      "netQuickMid": 6.47,
+      "netQuickMid": 6.46,
       "lossPct": 76,
       "quickLossPct": 77,
       "coverage": 0.168,
@@ -206,9 +237,38 @@
       "confidence": "faible",
       "rateConfidence": "solide",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "2 000 à 5 000+ boosters ouverts par set",
       "sampleSource": "études TCGplayer Infinite",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.168,
+        "trackedFallbackThin": 0.622,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.014,
+        "untracked": 0.196
+      },
+      "study": {
+        "trackedCards": 16,
+        "repricedCards": 4,
+        "observedOffers": 57,
+        "sellerCardVoices": 56,
+        "sourceOffers": {
+          "ebayFR": 55,
+          "cardTraderFR": 2
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 32,
+          "complete": 31,
+          "completeZero": 1,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -255,7 +315,7 @@
           "oneInSpecific": 256,
           "premium": true,
           "baselineContribution": 0.92,
-          "centralContribution": 1.04,
+          "centralContribution": 1.03,
           "quickContribution": 1
         },
         {
@@ -361,9 +421,38 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "quelques centaines de boosters",
       "sampleSource": "ouvertures communautaires anciennes",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0,
+        "trackedFallbackThin": 0,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.884,
+        "untracked": 0.116
+      },
+      "study": {
+        "trackedCards": 1,
+        "repricedCards": 0,
+        "observedOffers": 0,
+        "sellerCardVoices": 0,
+        "sourceOffers": {
+          "ebayFR": 0,
+          "cardTraderFR": 0
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 2,
+          "complete": 1,
+          "completeZero": 1,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -411,11 +500,11 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh3/logo.webp",
       "boosterPrice": 199.99,
-      "grossCentral": 3.44,
-      "grossQuick": 2.72,
+      "grossCentral": 3.45,
+      "grossQuick": 2.73,
       "netCentralLo": 2.19,
-      "netCentralHi": 3.62,
-      "netCentralMid": 2.9,
+      "netCentralHi": 3.63,
+      "netCentralMid": 2.91,
       "netQuickLo": 1.72,
       "netQuickHi": 2.84,
       "netQuickMid": 2.28,
@@ -427,9 +516,115 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 4,
+      "blockingConflicts": 1,
+      "conflictDetails": [
+        {
+          "number": "144",
+          "name": "Salamence VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 3.31,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 22.5,
+          "ratio": 6.8,
+          "direction": "above",
+          "blocking": false,
+          "offers": 4,
+          "sellers": 4,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 4,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "190",
+          "name": "Butterfree VMAX",
+          "rarity": "Rare Rainbow",
+          "anchorGross": 11.4,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 69.9,
+          "ratio": 6.13,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "116",
+          "name": "Eternatus V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.41,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 7.99,
+          "ratio": 5.67,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "182",
+          "name": "Crobat V",
+          "rarity": "Rare Ultra",
+          "anchorGross": 3.32,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 16.74,
+          "ratio": 5.04,
+          "direction": "above",
+          "blocking": true,
+          "offers": 6,
+          "sellers": 6,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 6,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.418,
+        "trackedFallbackThin": 0.196,
+        "trackedFallbackConflict": 0.008,
+        "trackedFallbackUnavailable": 0.187,
+        "untracked": 0.191
+      },
+      "study": {
+        "trackedCards": 33,
+        "repricedCards": 13,
+        "observedOffers": 126,
+        "sellerCardVoices": 117,
+        "sourceOffers": {
+          "ebayFR": 119,
+          "cardTraderFR": 7
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 66,
+          "complete": 60,
+          "completeZero": 6,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -672,9 +867,248 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 11,
+      "blockingConflicts": 3,
+      "conflictDetails": [
+        {
+          "number": "25",
+          "name": "Charizard",
+          "rarity": "Rare",
+          "anchorGross": 1.97,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 24.9,
+          "ratio": 12.64,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "141",
+          "name": "Togekiss VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.83,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 12,
+          "ratio": 6.56,
+          "direction": "above",
+          "blocking": true,
+          "offers": 11,
+          "sellers": 11,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 11,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "132",
+          "name": "Lugia",
+          "rarity": "Rare Holo",
+          "anchorGross": 1.28,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 12.06,
+          "ratio": 9.42,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "198",
+          "name": "Galarian Obstagoon",
+          "rarity": "Rare Secret",
+          "anchorGross": 7.98,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 53,
+          "ratio": 6.64,
+          "direction": "above",
+          "blocking": false,
+          "offers": 4,
+          "sellers": 4,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 4,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "37",
+          "name": "Galarian Darmanitan VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.48,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 10,
+          "ratio": 6.76,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "98",
+          "name": "Coalossal V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.07,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 10.9,
+          "ratio": 10.19,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "48",
+          "name": "Zapdos",
+          "rarity": "Rare Holo",
+          "anchorGross": 1.11,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 8.9,
+          "ratio": 8.02,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "99",
+          "name": "Coalossal VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.36,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 15,
+          "ratio": 11.03,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "127",
+          "name": "Aegislash VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.3,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 10,
+          "ratio": 7.69,
+          "direction": "above",
+          "blocking": true,
+          "offers": 17,
+          "sellers": 17,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 17,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "140",
+          "name": "Togekiss V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 0.83,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 4.95,
+          "ratio": 5.96,
+          "direction": "above",
+          "blocking": true,
+          "offers": 16,
+          "sellers": 16,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 14,
+            "cardTraderFR": 2
+          }
+        },
+        {
+          "number": "20",
+          "name": "Orbeetle V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 0.78,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 5,
+          "ratio": 6.41,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.285,
+        "trackedFallbackThin": 0.287,
+        "trackedFallbackConflict": 0.033,
+        "trackedFallbackUnavailable": 0.197,
+        "untracked": 0.198
+      },
+      "study": {
+        "trackedCards": 38,
+        "repricedCards": 8,
+        "observedOffers": 138,
+        "sellerCardVoices": 130,
+        "sourceOffers": {
+          "ebayFR": 131,
+          "cardTraderFR": 7
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 76,
+          "complete": 69,
+          "completeZero": 7,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -733,7 +1167,7 @@
           "oneInSpecific": 308,
           "premium": true,
           "baselineContribution": 0.45,
-          "centralContribution": 0.54,
+          "centralContribution": 0.53,
           "quickContribution": 0.5
         },
         {
@@ -891,9 +1325,77 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 2,
+      "blockingConflicts": 1,
+      "conflictDetails": [
+        {
+          "number": "168",
+          "name": "Darkness Energy",
+          "rarity": "Rare Secret",
+          "anchorGross": 23.38,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 3,
+          "ratio": 0.13,
+          "direction": "below",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "28",
+          "name": "Alolan Ninetales",
+          "rarity": "Rare",
+          "anchorGross": 0.98,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 5.7,
+          "ratio": 5.82,
+          "direction": "above",
+          "blocking": true,
+          "offers": 5,
+          "sellers": 4,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 5,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "quelques centaines de boosters",
       "sampleSource": "ouvertures communautaires anciennes",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.548,
+        "trackedFallbackThin": 0.208,
+        "trackedFallbackConflict": 0.009,
+        "trackedFallbackUnavailable": 0.035,
+        "untracked": 0.2
+      },
+      "study": {
+        "trackedCards": 28,
+        "repricedCards": 11,
+        "observedOffers": 134,
+        "sellerCardVoices": 127,
+        "sourceOffers": {
+          "ebayFR": 132,
+          "cardTraderFR": 2
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 56,
+          "complete": 54,
+          "completeZero": 2,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -941,7 +1443,7 @@
           "premium": true,
           "baselineContribution": 0.39,
           "centralContribution": 0.4,
-          "quickContribution": 0.37
+          "quickContribution": 0.36
         },
         {
           "rarity": "Rare Rainbow",
@@ -1108,9 +1610,9 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh10/logo.webp",
       "boosterPrice": 16,
-      "grossCentral": 2.31,
+      "grossCentral": 2.3,
       "grossQuick": 2.14,
-      "netCentralLo": 1.43,
+      "netCentralLo": 1.42,
       "netCentralHi": 2.33,
       "netCentralMid": 1.88,
       "netQuickLo": 1.31,
@@ -1124,9 +1626,191 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 8,
+      "blockingConflicts": 4,
+      "conflictDetails": [
+        {
+          "number": "73",
+          "name": "Machamp VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 3.25,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 25.4,
+          "ratio": 7.82,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "46",
+          "name": "Radiant Greninja",
+          "rarity": "Radiant Rare",
+          "anchorGross": 1.03,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 7.13,
+          "ratio": 6.92,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 2
+          }
+        },
+        {
+          "number": "114",
+          "name": "Origin Forme Dialga VSTAR",
+          "rarity": "Rare Holo VSTAR",
+          "anchorGross": 1.9,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 12.21,
+          "ratio": 6.43,
+          "direction": "above",
+          "blocking": true,
+          "offers": 9,
+          "sellers": 9,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 7,
+            "cardTraderFR": 2
+          }
+        },
+        {
+          "number": "27",
+          "name": "Radiant Heatran",
+          "rarity": "Radiant Rare",
+          "anchorGross": 0.44,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 5.05,
+          "ratio": 11.48,
+          "direction": "above",
+          "blocking": true,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 3,
+            "cardTraderFR": 2
+          }
+        },
+        {
+          "number": "54",
+          "name": "Hisuian Typhlosion VSTAR",
+          "rarity": "Rare Holo VSTAR",
+          "anchorGross": 1.52,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 15.21,
+          "ratio": 10.01,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "102",
+          "name": "Hisuian Samurott VSTAR",
+          "rarity": "Rare Holo VSTAR",
+          "anchorGross": 1.32,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 9.38,
+          "ratio": 7.11,
+          "direction": "above",
+          "blocking": true,
+          "offers": 10,
+          "sellers": 10,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 9,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "113",
+          "name": "Origin Forme Dialga V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.36,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 7.05,
+          "ratio": 5.18,
+          "direction": "above",
+          "blocking": true,
+          "offers": 9,
+          "sellers": 9,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 9,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "18",
+          "name": "Hisuian Lilligant VSTAR",
+          "rarity": "Rare Holo VSTAR",
+          "anchorGross": 1.1,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 15.21,
+          "ratio": 13.83,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.167,
+        "trackedFallbackThin": 0.474,
+        "trackedFallbackConflict": 0.038,
+        "trackedFallbackUnavailable": 0.119,
+        "untracked": 0.202
+      },
+      "study": {
+        "trackedCards": 38,
+        "repricedCards": 10,
+        "observedOffers": 129,
+        "sellerCardVoices": 123,
+        "sourceOffers": {
+          "ebayFR": 113,
+          "cardTraderFR": 16
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 76,
+          "complete": 64,
+          "completeZero": 12,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -1234,7 +1918,7 @@
           "premium": true,
           "baselineContribution": 0.09,
           "centralContribution": 0.12,
-          "quickContribution": 0.11
+          "quickContribution": 0.1
         }
       ],
       "cards": [
@@ -1393,9 +2077,38 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "quelques centaines de boosters",
       "sampleSource": "ouvertures communautaires anciennes",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.559,
+        "trackedFallbackThin": 0.251,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0,
+        "untracked": 0.19
+      },
+      "study": {
+        "trackedCards": 28,
+        "repricedCards": 20,
+        "observedOffers": 177,
+        "sellerCardVoices": 164,
+        "sourceOffers": {
+          "ebayFR": 171,
+          "cardTraderFR": 6
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 56,
+          "complete": 56,
+          "completeZero": 0,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -1612,7 +2325,7 @@
       "boosterPrice": 140,
       "grossCentral": 11.85,
       "grossQuick": 7.96,
-      "netCentralLo": 7.83,
+      "netCentralLo": 7.82,
       "netCentralHi": 12.65,
       "netCentralMid": 10.24,
       "netQuickLo": 5.24,
@@ -1626,9 +2339,38 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "quelques centaines de boosters",
       "sampleSource": "ouvertures communautaires anciennes",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.79,
+        "trackedFallbackThin": 0.019,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0,
+        "untracked": 0.191
+      },
+      "study": {
+        "trackedCards": 10,
+        "repricedCards": 9,
+        "observedOffers": 115,
+        "sellerCardVoices": 107,
+        "sourceOffers": {
+          "ebayFR": 114,
+          "cardTraderFR": 1
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 20,
+          "complete": 20,
+          "completeZero": 0,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -1652,7 +2394,7 @@
           "premium": false,
           "baselineContribution": 9.46,
           "centralContribution": 8.14,
-          "quickContribution": 4.89
+          "quickContribution": 4.88
         },
         {
           "rarity": "Rare Holo EX",
@@ -1820,7 +2562,7 @@
       "boosterPrice": 15,
       "grossCentral": 3.07,
       "grossQuick": 2.54,
-      "netCentralLo": 1.94,
+      "netCentralLo": 1.93,
       "netCentralHi": 3.19,
       "netCentralMid": 2.56,
       "netQuickLo": 1.58,
@@ -1834,9 +2576,172 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 7,
+      "blockingConflicts": 2,
+      "conflictDetails": [
+        {
+          "number": "166",
+          "name": "Zeraora V",
+          "rarity": "Rare Ultra",
+          "anchorGross": 80.83,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 499.9,
+          "ratio": 6.18,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "8",
+          "name": "Celebi VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 3.21,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 35,
+          "ratio": 10.9,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "80",
+          "name": "Galarian Zapdos V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.23,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 6.55,
+          "ratio": 5.33,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "100",
+          "name": "Galarian Slowking VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.63,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 8.9,
+          "ratio": 5.46,
+          "direction": "above",
+          "blocking": true,
+          "offers": 16,
+          "sellers": 15,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 16,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "58",
+          "name": "Galarian Articuno V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.18,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 6.5,
+          "ratio": 5.51,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "119",
+          "name": "Blissey V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.17,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 6.9,
+          "ratio": 5.9,
+          "direction": "above",
+          "blocking": true,
+          "offers": 11,
+          "sellers": 11,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 11,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "173",
+          "name": "Galarian Zapdos V",
+          "rarity": "Rare Ultra",
+          "anchorGross": 8.87,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 47.99,
+          "ratio": 5.41,
+          "direction": "above",
+          "blocking": false,
+          "offers": 3,
+          "sellers": 3,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 3,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.384,
+        "trackedFallbackThin": 0.286,
+        "trackedFallbackConflict": 0.012,
+        "trackedFallbackUnavailable": 0.119,
+        "untracked": 0.199
+      },
+      "study": {
+        "trackedCards": 40,
+        "repricedCards": 8,
+        "observedOffers": 119,
+        "sellerCardVoices": 111,
+        "sourceOffers": {
+          "ebayFR": 114,
+          "cardTraderFR": 5
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 80,
+          "complete": 78,
+          "completeZero": 2,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -1908,7 +2813,7 @@
           "premium": true,
           "baselineContribution": 0.57,
           "centralContribution": 0.52,
-          "quickContribution": 0.35
+          "quickContribution": 0.34
         },
         {
           "rarity": "Rare Secret",
@@ -2040,11 +2945,11 @@
       "grossCentral": 5.12,
       "grossQuick": 4.32,
       "netCentralLo": 3.39,
-      "netCentralHi": 5.31,
+      "netCentralHi": 5.3,
       "netCentralMid": 4.35,
       "netQuickLo": 2.83,
       "netQuickHi": 4.48,
-      "netQuickMid": 3.66,
+      "netQuickMid": 3.65,
       "lossPct": 92,
       "quickLossPct": 93,
       "coverage": 0.552,
@@ -2053,9 +2958,38 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "quelques centaines de boosters",
       "sampleSource": "ouvertures communautaires anciennes",
       "partialNote": "Le Coffre des Brillants (cartes shiny, dont le Dracaufeu chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est plus haute que l'estimation.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.552,
+        "trackedFallbackThin": 0.255,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0,
+        "untracked": 0.193
+      },
+      "study": {
+        "trackedCards": 6,
+        "repricedCards": 4,
+        "observedOffers": 52,
+        "sellerCardVoices": 50,
+        "sourceOffers": {
+          "ebayFR": 52,
+          "cardTraderFR": 0
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 12,
+          "complete": 12,
+          "completeZero": 0,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2196,9 +3130,38 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.035,
+        "trackedFallbackThin": 0.551,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.218,
+        "untracked": 0.196
+      },
+      "study": {
+        "trackedCards": 23,
+        "repricedCards": 5,
+        "observedOffers": 59,
+        "sellerCardVoices": 57,
+        "sourceOffers": {
+          "ebayFR": 58,
+          "cardTraderFR": 1
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 46,
+          "complete": 45,
+          "completeZero": 1,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2258,7 +3221,7 @@
           "premium": true,
           "baselineContribution": 2.94,
           "centralContribution": 3.08,
-          "quickContribution": 2.99
+          "quickContribution": 3
         },
         {
           "rarity": "Rare Rainbow",
@@ -2376,9 +3339,115 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 4,
+      "blockingConflicts": 1,
+      "conflictDetails": [
+        {
+          "number": "138",
+          "name": "Lugia V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 9.28,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 79.9,
+          "ratio": 8.61,
+          "direction": "above",
+          "blocking": false,
+          "offers": 4,
+          "sellers": 4,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 4,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "58",
+          "name": "Regieleki VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 0.97,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 8.15,
+          "ratio": 8.4,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "120",
+          "name": "Radiant Jirachi",
+          "rarity": "Radiant Rare",
+          "anchorGross": 0.61,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 4,
+          "ratio": 6.56,
+          "direction": "above",
+          "blocking": true,
+          "offers": 12,
+          "sellers": 12,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 11,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "16",
+          "name": "Radiant Tsareena",
+          "rarity": "Radiant Rare",
+          "anchorGross": 0.49,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 5,
+          "ratio": 10.2,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.12,
+        "trackedFallbackThin": 0.657,
+        "trackedFallbackConflict": 0.011,
+        "trackedFallbackUnavailable": 0.014,
+        "untracked": 0.198
+      },
+      "study": {
+        "trackedCards": 23,
+        "repricedCards": 7,
+        "observedOffers": 88,
+        "sellerCardVoices": 87,
+        "sourceOffers": {
+          "ebayFR": 77,
+          "cardTraderFR": 11
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 46,
+          "complete": 42,
+          "completeZero": 4,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2606,9 +3675,172 @@
       "confidence": "faible",
       "rateConfidence": "grossière",
       "conflicts": 7,
+      "blockingConflicts": 0,
+      "conflictDetails": [
+        {
+          "number": "19",
+          "name": "Cinderace VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 2.16,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 19.65,
+          "ratio": 9.1,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "51",
+          "name": "Ditto VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.98,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 12.95,
+          "ratio": 6.54,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "38",
+          "name": "Morpeko VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.93,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 11.5,
+          "ratio": 5.96,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "37",
+          "name": "Morpeko V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 0.92,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 8.95,
+          "ratio": 9.73,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "44",
+          "name": "Crobat V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 0.8,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 9.4,
+          "ratio": 11.75,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "45",
+          "name": "Crobat VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.42,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 15.21,
+          "ratio": 10.71,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "54",
+          "name": "Cramorant V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 0.74,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 6.44,
+          "ratio": 8.7,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 1
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": "Le Coffre des Brillants (les shiny, dont le Dracaufeu VMAX chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0,
+        "trackedFallbackThin": 0.377,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.427,
+        "untracked": 0.196
+      },
+      "study": {
+        "trackedCards": 16,
+        "repricedCards": 0,
+        "observedOffers": 15,
+        "sellerCardVoices": 15,
+        "sourceOffers": {
+          "ebayFR": 11,
+          "cardTraderFR": 4
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 32,
+          "complete": 24,
+          "completeZero": 8,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2697,7 +3929,7 @@
       "netCentralLo": 2.17,
       "netCentralHi": 2.81,
       "netCentralMid": 2.49,
-      "netQuickLo": 2.06,
+      "netQuickLo": 2.05,
       "netQuickHi": 2.66,
       "netQuickMid": 2.36,
       "lossPct": 83,
@@ -2708,9 +3940,38 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "1 200 boosters (TCGplayer Infinite) — set spécial, échantillon réduit",
       "sampleSource": "étude dédiée Évolutions Prismatiques — la SIR y tombe 2× plus souvent que la norme SV",
       "partialNote": "Les reverses Poké Ball (~1 booster sur 3) et Master Ball (~1 sur 20) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est nettement plus haute. Par ailleurs Cardmarket n'a pas encore relié ce set : les prix par carte sont des planchers CardTrader — l'espérance est une borne basse. Les 6 ACE SPEC ne sont pas modélisées.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.148,
+        "trackedFallbackThin": 0.507,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.145,
+        "untracked": 0.2
+      },
+      "study": {
+        "trackedCards": 22,
+        "repricedCards": 4,
+        "observedOffers": 48,
+        "sellerCardVoices": 48,
+        "sourceOffers": {
+          "ebayFR": 46,
+          "cardTraderFR": 2
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 44,
+          "complete": 37,
+          "completeZero": 7,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -2769,7 +4030,7 @@
           "oneInSpecific": 1455,
           "premium": true,
           "baselineContribution": 1.82,
-          "centralContribution": 2.07,
+          "centralContribution": 2.06,
           "quickContribution": 1.95
         }
       ],
@@ -2851,9 +4112,58 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 1,
+      "blockingConflicts": 0,
+      "conflictDetails": [
+        {
+          "number": "69",
+          "name": "Mimikyu VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 2.3,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 50.64,
+          "ratio": 22.02,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.321,
+        "trackedFallbackThin": 0.407,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.079,
+        "untracked": 0.193
+      },
+      "study": {
+        "trackedCards": 18,
+        "repricedCards": 11,
+        "observedOffers": 101,
+        "sellerCardVoices": 95,
+        "sourceOffers": {
+          "ebayFR": 95,
+          "cardTraderFR": 6
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 36,
+          "complete": 31,
+          "completeZero": 5,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3092,13 +4402,13 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh12.5/logo.webp",
       "boosterPrice": 30,
-      "grossCentral": 3.45,
+      "grossCentral": 3.46,
       "grossQuick": 2.27,
       "netCentralLo": 2.13,
-      "netCentralHi": 3.69,
+      "netCentralHi": 3.7,
       "netCentralMid": 2.91,
       "netQuickLo": 1.44,
-      "netQuickHi": 2.32,
+      "netQuickHi": 2.33,
       "netQuickMid": 1.88,
       "lossPct": 90,
       "quickLossPct": 94,
@@ -3108,9 +4418,134 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 5,
+      "blockingConflicts": 2,
+      "conflictDetails": [
+        {
+          "number": "102",
+          "name": "Rayquaza VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 6.06,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 33.97,
+          "ratio": 5.61,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "101",
+          "name": "Rayquaza VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 4.62,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 26.45,
+          "ratio": 5.73,
+          "direction": "above",
+          "blocking": false,
+          "offers": 4,
+          "sellers": 4,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 4,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "59",
+          "name": "Mewtwo",
+          "rarity": "Rare Holo",
+          "anchorGross": 1.49,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 10.15,
+          "ratio": 6.81,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "105",
+          "name": "Radiant Eternatus",
+          "rarity": "Radiant Rare",
+          "anchorGross": 0.53,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 4,
+          "ratio": 7.55,
+          "direction": "above",
+          "blocking": true,
+          "offers": 10,
+          "sellers": 9,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 10,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "100",
+          "name": "Rayquaza V",
+          "rarity": "Rare Holo V",
+          "anchorGross": 1.73,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 8.9,
+          "ratio": 5.14,
+          "direction": "above",
+          "blocking": true,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 5,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.295,
+        "trackedFallbackThin": 0.114,
+        "trackedFallbackConflict": 0.017,
+        "trackedFallbackUnavailable": 0.378,
+        "untracked": 0.196
+      },
+      "study": {
+        "trackedCards": 17,
+        "repricedCards": 4,
+        "observedOffers": 61,
+        "sellerCardVoices": 57,
+        "sourceOffers": {
+          "ebayFR": 59,
+          "cardTraderFR": 2
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 34,
+          "complete": 28,
+          "completeZero": 6,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3193,7 +4628,7 @@
           "oneInSpecific": 200,
           "premium": true,
           "baselineContribution": 0.29,
-          "centralContribution": 0.43,
+          "centralContribution": 0.44,
           "quickContribution": 0.4
         },
         {
@@ -3287,9 +4722,38 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.168,
+        "trackedFallbackThin": 0.643,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0,
+        "untracked": 0.189
+      },
+      "study": {
+        "trackedCards": 5,
+        "repricedCards": 3,
+        "observedOffers": 27,
+        "sellerCardVoices": 26,
+        "sourceOffers": {
+          "ebayFR": 25,
+          "cardTraderFR": 2
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 10,
+          "complete": 10,
+          "completeZero": 0,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3401,14 +4865,14 @@
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv03.5/logo.webp",
       "boosterPrice": 24.99,
-      "grossCentral": 12.03,
-      "grossQuick": 10.23,
+      "grossCentral": 12.04,
+      "grossQuick": 10.24,
       "netCentralLo": 9.68,
-      "netCentralHi": 10.94,
+      "netCentralHi": 10.95,
       "netCentralMid": 10.31,
       "netQuickLo": 8.21,
       "netQuickHi": 9.28,
-      "netQuickMid": 8.74,
+      "netQuickMid": 8.75,
       "lossPct": 59,
       "quickLossPct": 65,
       "coverage": 0.581,
@@ -3417,9 +4881,58 @@
       "confidence": "moyenne",
       "rateConfidence": "solide",
       "conflicts": 1,
+      "blockingConflicts": 0,
+      "conflictDetails": [
+        {
+          "number": "175",
+          "name": "Psyduck",
+          "rarity": "Illustration Rare",
+          "anchorGross": 23.66,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 138.95,
+          "ratio": 5.87,
+          "direction": "above",
+          "blocking": false,
+          "offers": 3,
+          "sellers": 3,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 3,
+            "cardTraderFR": 0
+          }
+        }
+      ],
       "sample": "1 500+ boosters (TCGplayer Infinite), recoupés sur ~700 boosters communautaires",
       "sampleSource": "étude dédiée 151 — taux empiriques par booster",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.581,
+        "trackedFallbackThin": 0.208,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.013,
+        "untracked": 0.198
+      },
+      "study": {
+        "trackedCards": 22,
+        "repricedCards": 16,
+        "observedOffers": 134,
+        "sellerCardVoices": 133,
+        "sourceOffers": {
+          "ebayFR": 126,
+          "cardTraderFR": 8
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 44,
+          "complete": 43,
+          "completeZero": 1,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3454,7 +4967,7 @@
           "oneInSpecific": 188,
           "premium": true,
           "baselineContribution": 2.26,
-          "centralContribution": 5.12,
+          "centralContribution": 5.13,
           "quickContribution": 4.16
         },
         {
@@ -3479,7 +4992,7 @@
           "premium": true,
           "baselineContribution": 2.55,
           "centralContribution": 4.53,
-          "quickContribution": 3.98
+          "quickContribution": 3.99
         },
         {
           "rarity": "Hyper Rare",
@@ -3650,9 +5163,58 @@
       "confidence": "élevée",
       "rateConfidence": "solide",
       "conflicts": 1,
+      "blockingConflicts": 0,
+      "conflictDetails": [
+        {
+          "number": "66",
+          "name": "Tyranitar ex",
+          "rarity": "Double Rare",
+          "anchorGross": 1.79,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 15.21,
+          "ratio": 8.5,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        }
+      ],
       "sample": "2 000 à 5 000+ boosters ouverts par set",
       "sampleSource": "études TCGplayer Infinite",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.787,
+        "trackedFallbackThin": 0.021,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0,
+        "untracked": 0.192
+      },
+      "study": {
+        "trackedCards": 22,
+        "repricedCards": 20,
+        "observedOffers": 352,
+        "sellerCardVoices": 307,
+        "sourceOffers": {
+          "ebayFR": 336,
+          "cardTraderFR": 16
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 44,
+          "complete": 42,
+          "completeZero": 2,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3699,7 +5261,7 @@
           "oneInSpecific": 133,
           "premium": true,
           "baselineContribution": 0.66,
-          "centralContribution": 1.64,
+          "centralContribution": 1.65,
           "quickContribution": 1.26
         },
         {
@@ -3883,9 +5445,38 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "700+ boosters (TCGplayer Infinite) ; Black White Rare estimée par la communauté",
       "sampleSource": "étude dédiée Flamme Blanche — l'IR y est ~2× plus fréquente que dans le reste de l'ère",
       "partialNote": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation.",
+      "evCoverageTruncated": true,
+      "coverageBreakdown": {
+        "repriced": 0,
+        "trackedFallbackThin": 0,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.794,
+        "untracked": 0.206
+      },
+      "study": {
+        "trackedCards": 40,
+        "repricedCards": 0,
+        "observedOffers": 0,
+        "sellerCardVoices": 0,
+        "sourceOffers": {
+          "ebayFR": 0,
+          "cardTraderFR": 0
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 80,
+          "complete": 40,
+          "completeZero": 40,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -3985,9 +5576,115 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 4,
+      "blockingConflicts": 2,
+      "conflictDetails": [
+        {
+          "number": "49",
+          "name": "Kyurem VMAX",
+          "rarity": "Rare Holo VMAX",
+          "anchorGross": 1.4,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 15.21,
+          "ratio": 10.86,
+          "direction": "above",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "69",
+          "name": "Radiant Gardevoir",
+          "rarity": "Radiant Rare",
+          "anchorGross": 0.69,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 3.55,
+          "ratio": 5.14,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 2,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "124",
+          "name": "Radiant Steelix",
+          "rarity": "Radiant Rare",
+          "anchorGross": 0.57,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 3.89,
+          "ratio": 6.82,
+          "direction": "above",
+          "blocking": true,
+          "offers": 34,
+          "sellers": 31,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 34,
+            "cardTraderFR": 0
+          }
+        },
+        {
+          "number": "131",
+          "name": "Giratina VSTAR",
+          "rarity": "Rare Holo VSTAR",
+          "anchorGross": 1.67,
+          "anchorMethod": "cards_index_reference",
+          "marketMedian": 10,
+          "ratio": 5.99,
+          "direction": "above",
+          "blocking": true,
+          "offers": 22,
+          "sellers": 22,
+          "latestSeen": "2026-08-12",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 20,
+            "cardTraderFR": 2
+          }
+        }
+      ],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.05,
+        "trackedFallbackThin": 0.731,
+        "trackedFallbackConflict": 0.017,
+        "trackedFallbackUnavailable": 0.009,
+        "untracked": 0.193
+      },
+      "study": {
+        "trackedCards": 10,
+        "repricedCards": 3,
+        "observedOffers": 83,
+        "sellerCardVoices": 79,
+        "sourceOffers": {
+          "ebayFR": 79,
+          "cardTraderFR": 4
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 20,
+          "complete": 19,
+          "completeZero": 1,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -4163,9 +5860,38 @@
       "confidence": "moyenne",
       "rateConfidence": "solide",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "2 000 à 5 000+ boosters ouverts par set",
       "sampleSource": "études TCGplayer Infinite",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0.608,
+        "trackedFallbackThin": 0.16,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.037,
+        "untracked": 0.195
+      },
+      "study": {
+        "trackedCards": 21,
+        "repricedCards": 13,
+        "observedOffers": 133,
+        "sellerCardVoices": 132,
+        "sourceOffers": {
+          "ebayFR": 130,
+          "cardTraderFR": 3
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 42,
+          "complete": 41,
+          "completeZero": 1,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -4395,10 +6121,39 @@
       "freshnessDays": 0,
       "confidence": "faible",
       "rateConfidence": "correcte",
-      "conflicts": 1,
+      "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "2 000 à 5 000+ boosters ouverts par set",
       "sampleSource": "études TCGplayer Infinite",
       "partialNote": null,
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0,
+        "trackedFallbackThin": 0.007,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.8,
+        "untracked": 0.193
+      },
+      "study": {
+        "trackedCards": 11,
+        "repricedCards": 0,
+        "observedOffers": 2,
+        "sellerCardVoices": 2,
+        "sourceOffers": {
+          "ebayFR": 1,
+          "cardTraderFR": 1
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 22,
+          "complete": 13,
+          "completeZero": 9,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",
@@ -4522,9 +6277,38 @@
       "confidence": "faible",
       "rateConfidence": "correcte",
       "conflicts": 0,
+      "blockingConflicts": 0,
+      "conflictDetails": [],
       "sample": "700+ boosters (TCGplayer Infinite) ; Black White Rare estimée par la communauté",
       "sampleSource": "étude dédiée Flamme Blanche — l'IR y est ~2× plus fréquente que dans le reste de l'ère",
       "partialNote": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation.",
+      "evCoverageTruncated": false,
+      "coverageBreakdown": {
+        "repriced": 0,
+        "trackedFallbackThin": 0.05,
+        "trackedFallbackConflict": 0,
+        "trackedFallbackUnavailable": 0.755,
+        "untracked": 0.195
+      },
+      "study": {
+        "trackedCards": 32,
+        "repricedCards": 0,
+        "observedOffers": 4,
+        "sellerCardVoices": 4,
+        "sourceOffers": {
+          "ebayFR": 0,
+          "cardTraderFR": 4
+        },
+        "crawlHealth": {
+          "available": true,
+          "expected": 64,
+          "complete": 33,
+          "completeZero": 31,
+          "incomplete": 0,
+          "error": 0,
+          "missing": 0
+        }
+      },
       "classes": [
         {
           "rarity": "Rare",

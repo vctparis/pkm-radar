@@ -10,7 +10,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 
-export const DROP_V2_MODEL_VERSION = "drop-rate-v2.2";
+export const DROP_V2_MODEL_VERSION = "drop-rate-v2.3";
 export const FRESH_PULL_CONDITIONS = new Set(["Near Mint", "Slightly Played"]);
 
 const DEFAULT_FEES = 0.13;
@@ -103,7 +103,10 @@ export function summarizeFreshPullMarket(entries, generatedAt, crawls = null) {
 
   const bySeller = new Map();
   for (const { key, row } of active) {
-    const sellerKey = row.seller_id ? `seller:${row.seller_id}` : `listing:${key}`;
+    // Un identifiant vendeur n'est canonique qu'à l'intérieur de sa source.
+    // Sans ce préfixe, un compte eBay et un compte CardTrader homonymes
+    // deviennent artificiellement une seule voix.
+    const sellerKey = row.seller_id ? `seller:${row.source}:${row.seller_id}` : `listing:${key}`;
     const previous = bySeller.get(sellerKey);
     if (previous == null || row.price_last < previous) bySeller.set(sellerKey, row.price_last);
   }
@@ -180,21 +183,71 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
   let quickNetHi = netBaseHi;
   let refreshedShare = 0;
   let freshnessDays = 0;
-  let conflicts = 0;
+  const conflictDetails = [];
   const cards = [];
+  let repricedCards = 0;
+  let observedOffers = 0;
+  let sellerCardVoices = 0;
+  let ebayOffers = 0;
+  let cardTraderOffers = 0;
+  let trackedFallbackThin = 0;
+  let trackedFallbackConflict = 0;
+  let trackedFallbackUnavailable = 0;
+
+  const crawlHealth = {
+    available: options.crawls instanceof Map,
+    expected: 0,
+    complete: 0,
+    completeZero: 0,
+    incomplete: 0,
+    error: 0,
+    missing: 0,
+  };
+
+  if (crawlHealth.available) {
+    for (const coverage of opening.evCoverage) {
+      const subject = `card:${normalizeCollectorNumber(coverage.number)}`;
+      const bySource = options.crawls.get(subject) ?? {};
+      for (const source of ["ebay", "cardtrader"]) {
+        crawlHealth.expected++;
+        const crawl = bySource[source];
+        if (!crawl) crawlHealth.missing++;
+        else if (crawl.status !== "ok") crawlHealth.error++;
+        else if (crawl.complete !== true) crawlHealth.incomplete++;
+        else if (crawl.captured === 0) crawlHealth.completeZero++;
+        else crawlHealth.complete++;
+      }
+    }
+  }
 
   for (const coverage of opening.evCoverage) {
     const row = classState.get(coverage.rarity);
-    if (!row || !(row.count > 0)) continue;
+    if (!row || !(row.count > 0)) {
+      trackedFallbackUnavailable += coverage.share;
+      continue;
+    }
     const rateMid = (row.rateLo + row.rateHi) / 2;
     const pMid = rateMid / row.count;
     const pLo = row.rateLo / row.count;
     const pHi = row.rateHi / row.count;
-    if (!(pMid > 0)) continue;
+    if (!(pMid > 0)) {
+      trackedFallbackUnavailable += coverage.share;
+      continue;
+    }
 
     const oldNetContributionMid = coverage.share * netBaseMid;
-    const oldNetValue = oldNetContributionMid / pMid;
-    const oldGrossValue = oldNetValue / (1 - fees);
+    const reconstructedOldNetValue = oldNetContributionMid / pMid;
+    const reconstructedOldGrossValue = reconstructedOldNetValue / (1 - fees);
+    const openingReference = Number(coverage.referenceGross);
+    const indexedReference = Number(options.referenceByNumber?.get(normalizeCollectorNumber(coverage.number)));
+    const directReference = openingReference > 0 ? openingReference : indexedReference;
+    const oldGrossValue = directReference > 0 ? directReference : reconstructedOldGrossValue;
+    const oldNetValue = netOf(oldGrossValue, fees, bulkThreshold);
+    const anchorMethod = openingReference > 0
+      ? "opening_reference"
+      : indexedReference > 0
+        ? "cards_index_reference"
+        : "reconstructed_from_rounded_share";
     const subject = `card:${normalizeCollectorNumber(coverage.number)}`;
     const market = summarizeFreshPullMarket(
       entriesBySubject.get(subject) ?? [],
@@ -202,11 +255,44 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
       options.crawls?.get(subject) ?? null,
     );
     const ratio = market?.median && oldGrossValue > 0 ? market.median / oldGrossValue : null;
+    if (market) {
+      observedOffers += market.offers;
+      sellerCardVoices += market.sellers;
+      ebayOffers += market.conditionMix.ebayFR;
+      cardTraderOffers += Math.max(0, market.offers - market.conditionMix.ebayFR);
+    }
     const conflict = ratio != null && (ratio < MIN_REFERENCE_RATIO || ratio > MAX_REFERENCE_RATIO);
-    if (conflict) conflicts++;
+    if (conflict) {
+      conflictDetails.push({
+        number: coverage.number,
+        name: coverage.name,
+        rarity: coverage.rarity,
+        anchorGross: round2(oldGrossValue),
+        anchorMethod,
+        marketMedian: market.median,
+        ratio: round2(ratio),
+        direction: ratio < MIN_REFERENCE_RATIO ? "below" : "above",
+        blocking: market.adequate,
+        offers: market.offers,
+        sellers: market.sellers,
+        latestSeen: market.latestSeen,
+        ageDays: market.ageDays,
+        sourceOffers: {
+          ebayFR: market.conditionMix.ebayFR,
+          cardTraderFR: Math.max(0, market.offers - market.conditionMix.ebayFR),
+        },
+      });
+    }
     const usable = Boolean(market?.adequate && market.median != null && market.floor10 != null && !conflict);
 
-    if (!usable) continue;
+    if (!usable) {
+      if (!market || market.median == null) trackedFallbackUnavailable += coverage.share;
+      else if (market.adequate && conflict) trackedFallbackConflict += coverage.share;
+      else trackedFallbackThin += coverage.share;
+      continue;
+    }
+
+    repricedCards++;
 
     const centralNetValue = netOf(market.median, fees, bulkThreshold);
     const quickNetValue = netOf(market.floor10, fees, bulkThreshold);
@@ -269,10 +355,28 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
     freshnessDays,
     confidence,
     rateConfidence,
-    conflicts,
+    conflicts: conflictDetails.length,
+    blockingConflicts: conflictDetails.filter((conflict) => conflict.blocking).length,
+    conflictDetails,
     sample: dropRates.sample ?? null,
     sampleSource: dropRates.sampleSource ?? null,
     partialNote: dropRates.partialNote ?? null,
+    evCoverageTruncated: Boolean(opening.evCoverageTruncated),
+    coverageBreakdown: {
+      repriced: round3(coverage),
+      trackedFallbackThin: round3(trackedFallbackThin),
+      trackedFallbackConflict: round3(trackedFallbackConflict),
+      trackedFallbackUnavailable: round3(trackedFallbackUnavailable),
+      untracked: round3(Math.max(0, 1 - Math.min(1, opening.evCoverage.reduce((sum, item) => sum + item.share, 0)))),
+    },
+    study: {
+      trackedCards: opening.evCoverage.length,
+      repricedCards,
+      observedOffers,
+      sellerCardVoices,
+      sourceOffers: { ebayFR: ebayOffers, cardTraderFR: cardTraderOffers },
+      crawlHealth,
+    },
     classes: [...classState.values()].map((row) => ({
       rarity: row.rarity,
       count: row.count,
@@ -290,6 +394,19 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
 }
 
 export async function buildDropV2Artifact(root, radarPayload) {
+  const referencesBySet = new Map();
+  try {
+    const cardIndex = JSON.parse(await readFile(join(root, "public", "cards-index.json"), "utf8"));
+    for (const card of cardIndex.cards ?? []) {
+      const price = Number(card.p);
+      if (!card.s || !card.num || !(price > 0)) continue;
+      if (!referencesBySet.has(card.s)) referencesBySet.set(card.s, new Map());
+      referencesBySet.get(card.s).set(normalizeCollectorNumber(card.num), price);
+    }
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+
   const crawlsBySet = new Map();
   try {
     const manifest = await readFile(join(root, "data", "ledger", "_manifest.jsonl"), "utf8");
@@ -319,7 +436,10 @@ export async function buildDropV2Artifact(root, radarPayload) {
     } catch (error) {
       if (error?.code !== "ENOENT") throw error;
     }
-    const built = buildDropV2Set(set, ledger, radarPayload.generatedAt, { crawls: crawlsBySet.get(set.id) });
+    const built = buildDropV2Set(set, ledger, radarPayload.generatedAt, {
+      crawls: crawlsBySet.get(set.id),
+      referenceByNumber: referencesBySet.get(set.id),
+    });
     if (built) sets.push(built);
   }
 
@@ -334,6 +454,8 @@ export async function buildDropV2Artifact(root, radarPayload) {
       minimumOffers: MIN_OFFERS,
       minimumSellers: MIN_SELLERS,
       maximumAgeDays: MAX_AGE_DAYS,
+      minimumReferenceRatio: MIN_REFERENCE_RATIO,
+      maximumReferenceRatio: MAX_REFERENCE_RATIO,
       fees: DEFAULT_FEES,
       bulkThreshold: DEFAULT_BULK_THRESHOLD,
     },

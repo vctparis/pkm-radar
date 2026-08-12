@@ -126,6 +126,9 @@ export function computeOpening(cards, eraClasses, options) {
         name: entry.card.name,
         rarity: entry.card.rarity,
         share: Number((contribution / totalMid).toFixed(3)),
+        // L'ancre directe doit voyager avec la part d'EV. La reconstruire plus
+        // tard depuis `share` (arrondie) amplifie l'erreur sur les cartes rares.
+        referenceGross: round2(entry.card.reference),
       });
     }
   }

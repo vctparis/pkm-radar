@@ -25,6 +25,23 @@ export type DropV2Card = {
   contribution: number;
 };
 
+export type DropV2Conflict = {
+  number: string;
+  name: string;
+  rarity: string;
+  anchorGross: number;
+  anchorMethod: "opening_reference" | "cards_index_reference" | "reconstructed_from_rounded_share";
+  marketMedian: number;
+  ratio: number;
+  direction: "below" | "above";
+  blocking: boolean;
+  offers: number;
+  sellers: number;
+  latestSeen: string;
+  ageDays: number;
+  sourceOffers: { ebayFR: number; cardTraderFR: number };
+};
+
 export type DropV2Set = {
   id: string;
   name: string;
@@ -48,9 +65,35 @@ export type DropV2Set = {
   confidence: "élevée" | "moyenne" | "faible";
   rateConfidence: string;
   conflicts: number;
+  blockingConflicts: number;
+  conflictDetails: DropV2Conflict[];
   sample: string | null;
   sampleSource: string | null;
   partialNote: string | null;
+  evCoverageTruncated: boolean;
+  coverageBreakdown: {
+    repriced: number;
+    trackedFallbackThin: number;
+    trackedFallbackConflict: number;
+    trackedFallbackUnavailable: number;
+    untracked: number;
+  };
+  study: {
+    trackedCards: number;
+    repricedCards: number;
+    observedOffers: number;
+    sellerCardVoices: number;
+    sourceOffers: { ebayFR: number; cardTraderFR: number };
+    crawlHealth: {
+      available: boolean;
+      expected: number;
+      complete: number;
+      completeZero: number;
+      incomplete: number;
+      error: number;
+      missing: number;
+    };
+  };
   classes: DropV2Class[];
   cards: DropV2Card[];
 };
@@ -59,11 +102,14 @@ export type DropV2Data = {
   generatedAt: string;
   modelVersion: string;
   definition: {
+    languageDoctrine: string;
     conditions: string[];
     priceGrain: string;
     minimumOffers: number;
     minimumSellers: number;
     maximumAgeDays: number;
+    minimumReferenceRatio: number;
+    maximumReferenceRatio: number;
     fees: number;
     bulkThreshold: number;
   };
