@@ -65,12 +65,25 @@ export default function Portfolio() {
 
   // L'index est volumineux : chargé à la demande, jamais dans le bundle.
   useEffect(() => {
+    let cancelled = false;
     fetch("/cards-index.json", { cache: "no-store" })
       .then((response) => response.json())
-      .then(setIndex)
-      .catch(() => setIndex(null));
-    setHoldings(load<Holding[]>(HOLDINGS_KEY, []));
-    setSnapshots(load<Snapshot[]>(SNAPSHOTS_KEY, []));
+      .then((payload) => {
+        if (!cancelled) setIndex(payload);
+      })
+      .catch(() => {
+        if (!cancelled) setIndex(null);
+      });
+    // localStorage est un système externe : lecture après le montage, puis
+    // publication asynchrone pour ne pas provoquer un rendu en cascade.
+    Promise.resolve().then(() => {
+      if (cancelled) return;
+      setHoldings(load<Holding[]>(HOLDINGS_KEY, []));
+      setSnapshots(load<Snapshot[]>(SNAPSHOTS_KEY, []));
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const byId = useMemo(() => new Map((index?.cards ?? []).map((card) => [card.i, card])), [index]);
@@ -117,12 +130,19 @@ export default function Portfolio() {
   useEffect(() => {
     if (!holdings || !index || rows.length === 0) return;
     const today = iso(new Date());
-    if (snapshots.at(-1)?.date === today) return;
-    const next = [...snapshots.filter((snap) => snap.date !== today), { date: today, value: Number(totals.value.toFixed(2)) }].slice(-400);
-    setSnapshots(next);
-    save(SNAPSHOTS_KEY, next);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows.length, index]);
+    const timer = window.setTimeout(() => {
+      setSnapshots((current) => {
+        if (current.at(-1)?.date === today) return current;
+        const next = [
+          ...current.filter((snap) => snap.date !== today),
+          { date: today, value: Number(totals.value.toFixed(2)) },
+        ].slice(-400);
+        save(SNAPSHOTS_KEY, next);
+        return next;
+      });
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [holdings, index, rows.length, totals.value]);
 
   const updateHoldings = (next: Holding[]) => {
     setHoldings(next);

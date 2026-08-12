@@ -50,6 +50,14 @@ export default async function OffrePage() {
               </li>
               <li>
                 <Link
+                  href="/drop-rate-v2"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Drop rate v2 <sup className="text-[0.62rem] text-accent">bêta</sup>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/portefeuille"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >

@@ -30,6 +30,7 @@ import { collectorNumberForSearch, normalizeCollectorNumber } from "./lib/identi
 import { createRunContext, recordObservations, recordCrawl, recordRun } from "./lib/ledger.mjs";
 import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
+import { buildDropV2Artifact } from "./lib/drop-v2.mjs";
 
 // Date du relevé, pour le ledger d'annonces (first_seen / last_seen).
 const RUN_CONTEXT = createRunContext();
@@ -1089,6 +1090,7 @@ async function main() {
     ],
   };
   await writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`);
+  await buildDropV2Artifact(ROOT, payload);
   await writeFile(
     join(ROOT, "public", "cards-index.json"),
     JSON.stringify({
@@ -1101,6 +1103,7 @@ async function main() {
   await recordRun(RUN_CONTEXT, { status: "completed" });
 
   console.log(`\n${mergedSets.length} sets écrits dans public/radar-data.json`);
+  console.log(`Drop rate v2 écrit dans public/drop-rate-v2.json`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
 }
 
