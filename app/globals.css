@@ -90,6 +90,19 @@ body::before {
   text-wrap: pretty;
 }
 
+/*
+  Drop rate v2 adopte une lecture éditoriale : une seule famille système,
+  chiffres tabulaires sans police « code », fond chaud et séparateurs plutôt
+  qu'une mosaïque de cartes. Le scope évite de repeindre le radar historique.
+*/
+.drop-v2-shell {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.drop-v2-shell ::selection {
+  background: #bfd9cf;
+  color: #14201b;
+}
+
 /* Accessibilité clavier : un anneau visible partout, jamais supprimé. */
 :where(a, button, select, input, [tabindex]):focus-visible {
   outline: 2px solid var(--color-accent);
