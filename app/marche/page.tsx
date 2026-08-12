@@ -3,7 +3,7 @@ import Link from "next/link";
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
-import type { RadarData } from "@/lib/types";
+import type { FRBoosterQuote, RadarData } from "@/lib/types";
 import { FAMILIES, familyOf } from "@/lib/families";
 
 export const metadata: Metadata = {
@@ -88,8 +88,8 @@ export default async function MarchePage() {
   const families = FAMILIES.map((family) => ({
     ...family,
     rows: data.sets
-      .filter((set) => set.boosterFR && familyOf(set) === family.name)
-      .map((set) => ({ set, quote: set.boosterFR!, stats: ledger.get(set.id) ?? null }))
+      .filter((set) => (set.boosterFR || set.live?.booster) && familyOf(set) === family.name)
+      .map((set) => ({ set, quote: (set.boosterFR ?? {}) as Partial<NonNullable<FRBoosterQuote>>, stats: ledger.get(set.id) ?? null }))
       .sort((a, b) => (b.set.releaseDate ?? "").localeCompare(a.set.releaseDate ?? "")),
   })).filter((family) => family.rows.length);
 
@@ -108,11 +108,6 @@ export default async function MarchePage() {
               <li>
                 <Link href="/" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
                   Radar
-                </Link>
-              </li>
-              <li>
-                <Link href="/sets" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
-                  Sets
                 </Link>
               </li>
               <li>
@@ -232,12 +227,32 @@ export default async function MarchePage() {
                 return (
                   <tr key={set.id} className="border-t border-ink-700/60">
                     <th scope="row" className="whitespace-nowrap px-4 py-2 text-left font-medium text-mist-050">
-                      {set.name}
-                      <span className="ml-2 text-[0.72rem] font-normal text-mist-500">{set.jpOnly ? "JP" : "FR"}</span>
+                      <span className="flex items-center gap-2.5">
+                        {set.logo ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={set.logo} alt="" loading="lazy" className="h-5 w-12 object-contain object-left" />
+                        ) : (
+                          <span aria-hidden className="w-12" />
+                        )}
+                        {set.name}
+                        <span className="text-[0.72rem] font-normal text-mist-500">{set.jpOnly ? "JP" : "FR"}</span>
+                        {set.nameEN && set.nameEN !== set.name && (
+                          <span className="text-[0.74rem] font-normal text-mist-500 max-lg:hidden">{set.nameEN}</span>
+                        )}
+                      </span>
                     </th>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-300">{releaseLabel(set.releaseDate)}</td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-050">
-                      {quote.median != null ? eur.format(quote.median) : "—"}
+                      {quote.median != null ? (
+                        eur.format(quote.median)
+                      ) : set.live?.booster?.price != null ? (
+                        <>
+                          {eur.format(set.live.booster.price)}
+                          <span className="ml-1.5 text-[0.68rem] text-mist-500">CardTrader</span>
+                        </>
+                      ) : (
+                        "—"
+                      )}
                     </td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-100">
                       {quote.floor10 != null ? eur.format(quote.floor10) : "—"}

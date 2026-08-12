@@ -458,7 +458,13 @@ async function main() {
   // au navigateur.
   const cardIndex = [];
 
+  // Relance ciblée : ONLY=black-bolt,prismatic-evolutions ne retraite que ces
+  // sets et FUSIONNE avec les artefacts existants — pour réparer un set tombé
+  // (orage de 500) sans repayer 35 minutes et le quota des 29 autres.
+  const ONLY = process.env.ONLY ? new Set(process.env.ONLY.split(",")) : null;
+  if (ONLY) console.log(`relance ciblée : ${[...ONLY].join(", ")}\n`);
   for (const set of SETS) {
+    if (ONLY && !ONLY.has(set.id)) continue;
     // ---- Sets japonais : pipeline dédié -----------------------------------
     // Pas de catalogue pokemontcg.io (anglais uniquement), donc ni historique
     // Cardmarket, ni strates, ni croissance. Tout vient du live : CardTrader
@@ -470,7 +476,51 @@ async function main() {
     }
 
     const rawCards = await fetchSetCards(set.ptcg);
-    const cards = normalizeSet(rawCards);
+    let cards = normalizeSet(rawCards);
+    // Repli quand Cardmarket n'a pas relié le set (vécu : Évolutions
+    // Prismatiques — 180 cartes, zéro prix) : l'IDENTITÉ (nom, numéro,
+    // rareté) reste celle du catalogue pokemontcg.io, seuls les PRIX viennent
+    // des planchers CardTrader, appariés par numéro. Une borne basse honnête
+    // et étiquetée (priceBasis) plutôt qu'un set fantôme.
+    let singlesPrefetch = null;
+    let ctPriced = false;
+    {
+      const expansionEarly = expansionsByCode.get(set.cardtrader.toLowerCase());
+      if (!cards.length && rawCards.length && expansionEarly) {
+        singlesPrefetch = await fetchExpansionSingles(expansionEarly.id);
+        const floorByNumber = new Map();
+        for (const entry of singlesPrefetch.values()) {
+          const key = normalizeNumber(entry.collectorNumber);
+          if (key && !floorByNumber.has(key)) floorByNumber.set(key, entry);
+        }
+        cards = rawCards
+          .map((card) => {
+            const market = floorByNumber.get(normalizeNumber(card.number));
+            const reference = market?.floor10 ?? market?.price ?? 0;
+            if (!(reference > 0)) return null;
+            return {
+              id: card.id,
+              name: card.name,
+              number: card.number,
+              rarity: card.rarity ?? "Inconnue",
+              isCommon: card.rarity === "Common" || card.rarity === "Uncommon",
+              image: card.images?.small ?? null,
+              cardmarketUrl: null,
+              updatedAt: Date.parse(`${RUN_CONTEXT.date}T12:00:00Z`),
+              prices: { avg30: 0, avg7: 0, avg1: 0 },
+              reference,
+              change30: null,
+            };
+          })
+          .filter(Boolean);
+        ctPriced = Boolean(cards.length);
+        if (ctPriced) {
+          console.warn(
+            `  ${set.name} : prix Cardmarket absents — repli planchers CardTrader (${cards.length}/${rawCards.length} cartes cotées)`,
+          );
+        }
+      }
+    }
     if (!cards.length) {
       console.warn(`  ${set.name} : aucune carte exploitable, set ignoré`);
       continue;
@@ -654,7 +704,7 @@ async function main() {
         if (boosterBox) await ledgerizeCT(set.id, boosterBox.rawRows, "sealed-box");
         if (booster) delete booster.rawRows;
         if (boosterBox) delete boosterBox.rawRows;
-        singlesMarket = await fetchExpansionSingles(expansion.id);
+        singlesMarket = singlesPrefetch ?? (await fetchExpansionSingles(expansion.id));
 
         const singleOffers = [...singlesMarket.values()];
         live = {
@@ -957,6 +1007,9 @@ async function main() {
       ageYears: ageYears ? Number(ageYears.toFixed(1)) : null,
       score,
       components,
+      // "cardmarket" (tendances 30 j) ou "cardtrader_floor" (planchers du
+      // jour — borne basse, pas de séries de croissance possibles).
+      priceBasis: ctPriced ? "cardtrader_floor" : "cardmarket",
       verdict: verdictFor(score, latest?.diffusion ?? null),
       concentration,
       cardsTracked: cards.length,
@@ -985,9 +1038,23 @@ async function main() {
   await mkdir(join(ROOT, "data"), { recursive: true });
   await writeFile(HISTORY_PATH, `${JSON.stringify(history, null, 2)}\n`);
 
+  // Fusion en mode ciblé : les sets non retraités gardent leur état publié.
+  let mergedSets = output;
+  let mergedIndex = cardIndex;
+  if (ONLY) {
+    const previous = JSON.parse(await readFile(OUTPUT_PATH, "utf8"));
+    const fresh = new Map(output.map((entry) => [entry.id, entry]));
+    mergedSets = [
+      ...previous.sets.filter((entry) => !fresh.has(entry.id)),
+      ...output,
+    ];
+    const previousIndex = JSON.parse(await readFile(join(ROOT, "public", "cards-index.json"), "utf8"));
+    mergedIndex = [...previousIndex.cards.filter((card) => !ONLY.has(card.s)), ...cardIndex];
+  }
+
   const payload = {
     generatedAt: new Date().toISOString(),
-    sets: output.sort((a, b) => b.score - a.score),
+    sets: mergedSets.sort((a, b) => b.score - a.score),
     sources: [
       {
         id: "cardmarket",
@@ -1026,14 +1093,14 @@ async function main() {
     join(ROOT, "public", "cards-index.json"),
     JSON.stringify({
       generatedAt: new Date().toISOString(),
-      sets: Object.fromEntries(output.map((entry) => [entry.id, { name: entry.name, jp: Boolean(entry.jpOnly) }])),
-      cards: cardIndex,
+      sets: Object.fromEntries(mergedSets.map((entry) => [entry.id, { name: entry.name, jp: Boolean(entry.jpOnly) }])),
+      cards: mergedIndex,
     }),
   );
 
   await recordRun(RUN_CONTEXT, { status: "completed" });
 
-  console.log(`\n${output.length} sets écrits dans public/radar-data.json`);
+  console.log(`\n${mergedSets.length} sets écrits dans public/radar-data.json`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
 }
 

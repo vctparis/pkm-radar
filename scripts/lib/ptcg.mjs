@@ -43,6 +43,12 @@ export async function fetchSetCards(ptcgId, { useCache = true } = {}) {
 }
 
 const COMMON_RARITIES = new Set(["Common", "Uncommon"]);
+// Classes structurellement bon marché : au-dessus de 25 €, c'est un produit
+// mal relié chez Cardmarket, pas une carte chère (vécu : Charmander commun à
+// 140 €, Rare non-holo de Foudre Noire à ~370 € dans une classe à 0,07 € de
+// médiane — contribution EV gonflée de 25 €/booster). Le « Rare Holo »
+// vintage n'y est PAS : ses Dracaufeu à 250 € sont légitimes.
+const CHEAP_RARITIES = new Set(["Common", "Uncommon", "Rare"]);
 
 // Normalise une carte brute en un objet exploitable par les indices.
 export function normalizeCard(card) {
@@ -62,7 +68,7 @@ export function normalizeCard(card) {
   // commune « à 140 € » (vécu : Charmander n°4 du 151, trend 140 €, plancher
   // 58 €) est un produit Cardmarket mal relié, pas une carte chère. La garder
   // empoisonnerait podium, strates et espérances.
-  if (COMMON_RARITIES.has(card.rarity) && reference > 25) return null;
+  if (CHEAP_RARITIES.has(card.rarity) && reference > 25) return null;
 
   return {
     id: card.id,

@@ -192,6 +192,8 @@ export type SetEntry = {
   releaseDate: string | null;
   ageYears: number | null;
   score: number;
+  /** "cardmarket" (tendances 30 j) ou "cardtrader_floor" (planchers du jour — borne basse). */
+  priceBasis?: "cardmarket" | "cardtrader_floor";
   components: { breadth: number; scarcity: number; psaResistance: number; spread: number; maturity: number };
   verdict: string;
   concentration: number | null;

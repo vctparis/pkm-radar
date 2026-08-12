@@ -177,7 +177,7 @@ export const normalizeTitle = (s) =>
 // « Pack loisir » / « échantillon » : pochettes promotionnelles de 3 cartes.
 // Tins, tripacks, duopacks, decks : d'autres produits, d'autres prix.
 const NOISE =
-  /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir|pack loisir|booster loisir|[ée]chantillon|\btins?\b|mini.?tin|tri.?pack|duo.?pack|\bdecks?\b|portfolio|classeur|jumbo/i;
+  /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir|pack loisir|booster loisir|[ée]chantillon|\btins?\b|mini.?tin|tri.?pack|duo.?pack|\bdecks?\b|portfolio|classeur|jumbo|bundle|collection|premium|\bspc\b|surprise|pochette|classeur/i;
 // Booster gradé (CA/PSA…) : un objet de collection scellé-noté, pas le
 // produit qu'on ouvre — son prix contaminerait la référence et ferait passer
 // les vrais boosters pour des anomalies basses.

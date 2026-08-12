@@ -211,13 +211,13 @@
         "boosterOffers": 4,
         "boosterLanguage": "en",
         "boxPrice": 501.81,
-        "singlesOffers": 37223,
-        "top5Value": 760.74,
-        "top12ex5Value": 29.74,
-        "boosterFRp10": 13.59,
+        "singlesOffers": 37158,
+        "top5Value": 760.73,
+        "top12ex5Value": 29.75,
+        "boosterFRp10": 13.69,
         "boosterFRmedian": 23.54,
-        "boosterFRoffers": 47,
-        "boosterFRsellers": 20
+        "boosterFRoffers": 48,
+        "boosterFRsellers": 21
       }
     ],
     "silver-tempest": [
@@ -824,6 +824,134 @@
         "boosterFRmedian": 14.99,
         "boosterFRoffers": 4,
         "boosterFRsellers": 4
+      }
+    ],
+    "cosmic-eclipse": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 68.96,
+        "boosterOffers": 2,
+        "boosterLanguage": "en",
+        "boxPrice": 2999.96,
+        "singlesOffers": 10560,
+        "top5Value": 1144.7,
+        "top12ex5Value": 875.28,
+        "boosterFRp10": 80,
+        "boosterFRmedian": 124.5,
+        "boosterFRoffers": 6,
+        "boosterFRsellers": 6
+      }
+    ],
+    "chilling-reign": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 12.67,
+        "boosterOffers": 1,
+        "boosterLanguage": "en",
+        "boxPrice": 500.54,
+        "singlesOffers": 23695,
+        "top5Value": 674.04,
+        "top12ex5Value": 472.14,
+        "boosterFRp10": 12,
+        "boosterFRmedian": 15,
+        "boosterFRoffers": 15,
+        "boosterFRsellers": 8
+      }
+    ],
+    "astral-radiance": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 8.06,
+        "boosterOffers": 10,
+        "boosterLanguage": "en",
+        "boxPrice": 380.63,
+        "singlesOffers": 33769,
+        "top5Value": 301.64,
+        "top12ex5Value": 58.13,
+        "boosterFRp10": 10.1,
+        "boosterFRmedian": 16,
+        "boosterFRoffers": 52,
+        "boosterFRsellers": 27
+      }
+    ],
+    "obsidian-flames": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 5.9,
+        "boosterOffers": 6,
+        "boosterLanguage": "en",
+        "boxPrice": 220.63,
+        "singlesOffers": 42818,
+        "top5Value": 103.78,
+        "top12ex5Value": 38.52,
+        "boosterFRp10": 8.35,
+        "boosterFRmedian": 13.49,
+        "boosterFRoffers": 58,
+        "boosterFRsellers": 36
+      }
+    ],
+    "surging-sparks": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 7.09,
+        "boosterOffers": 7,
+        "boosterLanguage": "en",
+        "boxPrice": 250.64,
+        "singlesOffers": 42397,
+        "top5Value": 541.84,
+        "top12ex5Value": 108.19,
+        "boosterFRp10": 12,
+        "boosterFRmedian": 15,
+        "boosterFRoffers": 44,
+        "boosterFRsellers": 28
+      }
+    ],
+    "destined-rivals": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 6.14,
+        "boosterOffers": 1,
+        "boosterLanguage": "fr",
+        "boxPrice": 401.57,
+        "singlesOffers": 42678,
+        "top5Value": 1060.37,
+        "top12ex5Value": 214.82,
+        "boosterFRp10": 11.9,
+        "boosterFRmedian": 28.68,
+        "boosterFRoffers": 20,
+        "boosterFRsellers": 14
+      }
+    ],
+    "black-bolt": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 11.72,
+        "boosterOffers": 4,
+        "boosterLanguage": "en",
+        "boxPrice": null,
+        "singlesOffers": 20769,
+        "top5Value": 608.83,
+        "top12ex5Value": 199.86,
+        "boosterFRp10": 8.09,
+        "boosterFRmedian": 16.99,
+        "boosterFRoffers": 5,
+        "boosterFRsellers": 4
+      }
+    ],
+    "prismatic-evolutions": [
+      {
+        "date": "2026-08-12",
+        "boosterPrice": 17.07,
+        "boosterOffers": 5,
+        "boosterLanguage": "en",
+        "boxPrice": null,
+        "singlesOffers": 30723,
+        "top5Value": 1268.1,
+        "top12ex5Value": 595.42,
+        "boosterFRp10": 13.5,
+        "boosterFRmedian": 15,
+        "boosterFRoffers": 6,
+        "boosterFRsellers": 6
       }
     ]
   }

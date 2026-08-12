@@ -32,6 +32,15 @@ has("booster gradé CA 9 → produit_grade",
 has("booster gradé CA 10 → produit_grade",
   classifySealedTitle("Booster Pokémon Gradé Écarlate et Violet EV3.5 - 151 - Mew - CA 10 - FR", ctx151),
   "produit_grade");
+has("Super Premium Collection → hors_produit",
+  classifySealedTitle("SPC - Super Premium Collection - EV8.5 Évolutions Prismatiques - NEUF FR", { phrase: normalizeTitle("Évolutions Prismatiques") }),
+  "hors_produit");
+has("Boîte Surprise → hors_produit",
+  classifySealedTitle("Boîte Surprise - EV08.5 Évolutions Prismatiques (NEUF) FR", { phrase: normalizeTitle("Évolutions Prismatiques") }),
+  "hors_produit");
+has("booster bundle (boîte de 6) → hors_produit",
+  classifySealedTitle("Pokémon Évolutions Prismatiques Booster Bundle 6 boosters FR", { phrase: normalizeTitle("Évolutions Prismatiques") }),
+  "hors_produit");
 has("mini-tin → hors_produit",
   classifySealedTitle("Mini tin série 151 Pokemon Edition Fr neuves scellé d'origine N°3", ctx151),
   "hors_produit");
