@@ -6,11 +6,11 @@ La page répond d'abord à une décision : **quel booster conserve le plus de va
 
 | Section | Question | Forme | Données et garde-fou |
 | --- | --- | --- | --- |
-| Vue de décision | Quels sets combinent valeur et preuve ? | Scatter, un point par set | X = EV nette / prix du booster ; Y = part d'EV repricée ; forme = confiance ; contour = omission structurelle. 25 points de même grain. |
+| Vue de décision | Quels sets combinent valeur et preuve ? | Scatter directement annoté, un point par set | X = EV nette / prix du booster ; Y = part d'EV repricée ; forme = confiance ; contour = omission structurelle. Les points qui peuvent changer la décision sont nommés sans survol, avec placement anti-collision. 25 points de même grain. |
 | Scénarios | Que reste-t-il du prix payé ? | Bullet / intervalle horizontal | Booster, brut, fourchette nette et vente rapide sur une échelle commune. Aucun waterfall : les scénarios ne sont pas additifs. |
 | Couverture | Quelle part repose vraiment sur le marché actuel ? | Barre empilée à dénominateur fixe | Repricée, fallback mince, fallback conflit, absence de marché frais, queue non suivie. Les omissions catalogue restent hors de la barre. |
 | Raretés | Quelles raretés portent l'EV ? | Barres avec repère et point | Barre actuelle, repère historique, point vente rapide. Une seule couleur de donnée par statut. |
-| Cartes | Quelles cartes font la moyenne ? | Barres horizontales interactives | Contribution en euros par booster, détail prix × probabilité × volume au focus/survol. |
+| Cartes | Quelles cartes font la moyenne ? | Barres horizontales interactives avec équation directe | Chaque ligne lit « prix de la carte × chance = contribution par booster ». Seule la contribution pilote la longueur ; le prix, d'une autre unité, reste un nombre directement visible. Détail du scénario rapide et du volume au focus/survol. |
 
 ## Palette et formes
 
@@ -20,7 +20,7 @@ La page répond d'abord à une décision : **quel booster conserve le plus de va
 - Terracotta : alerte structurelle seulement.
 - Cercle plein : confiance élevée ; carré : moyenne ; losange ouvert : faible.
 
-La couleur n'est jamais le seul canal. Toutes les interactions au survol existent aussi au focus clavier et au toucher.
+La couleur n'est jamais le seul canal. L'identité d'un point important ne dépend jamais du survol : le tooltip enrichit, il n'identifie pas. Toutes les interactions au survol existent aussi au focus clavier et au toucher.
 
 ## Provenance minimale
 

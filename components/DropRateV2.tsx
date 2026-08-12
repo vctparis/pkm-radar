@@ -92,10 +92,96 @@ function DecisionMap({
   const hoveredX = hovered ? x(retained(hovered)) : 0;
   const hoveredY = hovered ? y(hovered.coverage) : 0;
   const activeX = x(retained(active));
-  const activeY = y(active.coverage);
   const orderedSets = [...data.sets].sort(
     (first, second) => Number(first.id === active.id) - Number(second.id === active.id),
   );
+  const paretoIds = new Set(
+    data.sets
+      .filter(
+        (candidate) =>
+          !data.sets.some(
+            (other) =>
+              other.id !== candidate.id &&
+              retained(other) >= retained(candidate) &&
+              other.coverage >= candidate.coverage &&
+              (retained(other) > retained(candidate) || other.coverage > candidate.coverage),
+          ),
+      )
+      .map((set) => set.id),
+  );
+  const labelPriority = (set: DropV2Set) =>
+    (set.id === active.id ? 100 : 0) +
+    (set.confidence === "élevée" ? 80 : set.confidence === "moyenne" ? 55 : 0) +
+    (paretoIds.has(set.id) ? 70 : 0) +
+    (set.coverage >= 0.7 ? 45 : 0) +
+    (retained(set) >= 0.25 ? 25 : 0);
+  const labelCandidates = data.sets
+    .filter(
+      (set) =>
+        set.id === active.id ||
+        set.confidence !== "faible" ||
+        paretoIds.has(set.id) ||
+        set.coverage >= 0.7 ||
+        retained(set) >= 0.25,
+    )
+    .sort((first, second) => labelPriority(second) - labelPriority(first));
+  const occupied: Array<{ left: number; right: number; top: number; bottom: number }> = [];
+  const allPointBoxes = data.sets.map((set) => {
+    const pointX = x(retained(set));
+    const pointY = y(set.coverage);
+    return { id: set.id, left: pointX - 9, right: pointX + 9, top: pointY - 9, bottom: pointY + 9 };
+  });
+  const intersects = (
+    first: { left: number; right: number; top: number; bottom: number },
+    second: { left: number; right: number; top: number; bottom: number },
+    padding = 3,
+  ) =>
+    first.left < second.right + padding &&
+    first.right > second.left - padding &&
+    first.top < second.bottom + padding &&
+    first.bottom > second.top - padding;
+  const alternatives: Array<{ dx: number; dy: number; anchor: "start" | "middle" | "end" }> = [
+    { dx: 14, dy: -14, anchor: "start" },
+    { dx: -14, dy: -14, anchor: "end" },
+    { dx: 14, dy: 25, anchor: "start" },
+    { dx: -14, dy: 25, anchor: "end" },
+    { dx: 0, dy: -27, anchor: "middle" },
+    { dx: 0, dy: 34, anchor: "middle" },
+    { dx: 28, dy: 5, anchor: "start" },
+    { dx: -28, dy: 5, anchor: "end" },
+    { dx: 30, dy: -34, anchor: "start" },
+    { dx: -30, dy: -34, anchor: "end" },
+    { dx: 30, dy: 42, anchor: "start" },
+    { dx: -30, dy: 42, anchor: "end" },
+  ];
+  const directLabels = labelCandidates.map((set) => {
+    const pointX = x(retained(set));
+    const pointY = y(set.coverage);
+    const labelWidth = clamp(set.name.length * 6.4 + 10, 48, 158);
+    const labelHeight = 17;
+    const placement = alternatives.find((alternative) => {
+      const textX = pointX + alternative.dx;
+      const textY = pointY + alternative.dy;
+      const left = alternative.anchor === "start" ? textX : alternative.anchor === "end" ? textX - labelWidth : textX - labelWidth / 2;
+      const box = { left, right: left + labelWidth, top: textY - 13, bottom: textY - 13 + labelHeight };
+      const inside = box.left >= margin.left + 3 && box.right <= width - margin.right - 3 && box.top >= margin.top + 2 && box.bottom <= height - margin.bottom - 2;
+      const clearsLabels = occupied.every((other) => !intersects(box, other, 5));
+      const clearsPoints = allPointBoxes.every((point) => point.id === set.id || !intersects(box, point, 2));
+      if (inside && clearsLabels && clearsPoints) {
+        occupied.push(box);
+        return true;
+      }
+      return false;
+    }) ?? alternatives[0];
+    return {
+      set,
+      pointX,
+      pointY,
+      textX: pointX + placement.dx,
+      textY: pointY + placement.dy,
+      anchor: placement.anchor,
+    };
+  });
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -114,7 +200,7 @@ function DecisionMap({
           </h2>
         </div>
         <p className="m-0 text-[0.86rem] leading-6 text-[#59615d]">
-          Plus un point est haut et à droite, plus l’estimation est couverte et le contenu valorisé. Cliquez sur un set pour l’analyser.
+          Plus un point est haut et à droite, plus l’estimation est couverte et le contenu valorisé. Les candidats qui changent la décision sont nommés directement.
         </p>
       </div>
 
@@ -167,20 +253,32 @@ function DecisionMap({
                 </g>
               );
             })}
-            <text
-              x={activeX + (activeX > width - 190 ? -17 : 17)}
-              y={activeY + (activeY < 48 ? 23 : -13)}
-              textAnchor={activeX > width - 190 ? "end" : "start"}
-              fill={INK}
-              fontSize="13"
-              fontWeight="700"
-              paintOrder="stroke"
-              stroke="#f7f4ed"
-              strokeWidth="4"
-              strokeLinejoin="round"
-            >
-              {active.name}
-            </text>
+            {directLabels.map(({ set, pointX, pointY, textX, textY, anchor }) => (
+              <g key={`label-${set.id}`} pointerEvents="none">
+                <line
+                  x1={pointX}
+                  y1={pointY}
+                  x2={textX + (anchor === "start" ? -4 : anchor === "end" ? 4 : 0)}
+                  y2={textY - 4}
+                  stroke={set.id === active.id ? INK : "#9a9d97"}
+                  strokeWidth={set.id === active.id ? 1.3 : 0.9}
+                />
+                <text
+                  x={textX}
+                  y={textY}
+                  textAnchor={anchor}
+                  fill={set.confidence === "faible" && set.id !== active.id ? "#535b57" : INK}
+                  fontSize={set.id === active.id ? 13 : 11.5}
+                  fontWeight={set.id === active.id || set.confidence !== "faible" ? 700 : 600}
+                  paintOrder="stroke"
+                  stroke="#f7f4ed"
+                  strokeWidth="4"
+                  strokeLinejoin="round"
+                >
+                  {set.name}
+                </text>
+              </g>
+            ))}
           </svg>
 
           {hovered ? (
@@ -366,7 +464,7 @@ function CardContributions({ set }: { set: DropV2Set }) {
     <section className="border-t border-[#d3cfc3] py-12" aria-labelledby="cards-title">
       <p className="m-0 text-[0.72rem] font-semibold uppercase tracking-[0.15em] text-[#176b5b]">Concentration de l’EV</p>
       <h2 id="cards-title" className="m-0 mt-2 text-[1.75rem] font-semibold tracking-[-0.04em]">Quelles cartes font réellement la moyenne&nbsp;?</h2>
-      <p className="m-0 mt-3 max-w-[72ch] text-[0.84rem] leading-6 text-[#59615d]">La contribution combine prix et probabilité. Une carte chère mais presque impossible à tirer peut peser moins qu’une carte plus fréquente.</p>
+      <p className="m-0 mt-3 max-w-[72ch] text-[0.84rem] leading-6 text-[#59615d]">Prix de la carte × chance de tirage = contribution par booster. La longueur représente uniquement cette contribution, jamais le prix seul.</p>
 
       {set.cards.length && selected ? (
         <div className="mt-7 grid gap-8 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-14">
@@ -380,12 +478,20 @@ function CardContributions({ set }: { set: DropV2Set }) {
                   onMouseEnter={() => setSelectedKey(keyOf(card))}
                   onFocus={() => setSelectedKey(keyOf(card))}
                   onClick={() => setSelectedKey(keyOf(card))}
-                  className={`grid grid-cols-[minmax(9rem,0.9fr)_minmax(7rem,1.1fr)_4.8rem] items-center gap-4 border-0 px-0 py-2 text-left text-[#1d2521] ${active ? "bg-[#e7ece7]" : "bg-transparent"}`}
-                  aria-label={`${card.name}, contribution ${eur.format(card.contribution)} par booster, chance une sur ${card.oneIn}`}
+                  className={`grid grid-cols-[minmax(8rem,0.95fr)_minmax(5rem,1.05fr)_5.4rem] items-center gap-3 border-0 px-0 py-2.5 text-left text-[#1d2521] sm:gap-4 ${active ? "bg-[#e7ece7]" : "bg-transparent"}`}
+                  aria-label={`${card.name}, prix ${eur.format(card.median)}, chance une sur ${card.oneIn}, contribution ${eur.format(card.contribution)} par booster`}
                 >
-                  <span className="min-w-0 pl-2"><b className="block truncate text-[0.84rem] font-medium">{card.name}</b><small className="text-[0.68rem] text-[#737b76]">#{card.number} · 1/{card.oneIn}</small></span>
+                  <span className="min-w-0 pl-2">
+                    <b className="block truncate text-[0.84rem] font-medium">{card.name}</b>
+                    <small className="mt-0.5 block whitespace-nowrap text-[0.67rem] text-[#737b76]">
+                      <span className="font-semibold text-[#4f5853] tabular-nums">{eur.format(card.median)}</span> la carte × 1/{card.oneIn}
+                    </small>
+                  </span>
                   <span className="h-2 bg-[#ddd9cf]"><i className={`block h-full ${active ? "bg-[#176b5b]" : "bg-[#79a397]"}`} style={{ width: `${Math.max(2, (card.contribution / max) * 100)}%` }} /></span>
-                  <strong className="pr-2 text-right text-[0.82rem] tabular-nums">{eur.format(card.contribution)}</strong>
+                  <span className="pr-2 text-right">
+                    <strong className="block text-[0.82rem] tabular-nums">{eur.format(card.contribution)}</strong>
+                    <small className="block text-[0.62rem] text-[#737b76]">par booster</small>
+                  </span>
                 </button>
               );
             })}
