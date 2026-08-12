@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T13:03:37.998Z",
+  "generatedAt": "2026-08-12T13:58:55.402Z",
   "sets": [
     {
       "id": "cosmic-eclipse",
@@ -29203,6 +29203,7 @@
         "spread": 82,
         "maturity": 32
       },
+      "priceBasis": "cardmarket",
       "verdict": "Hausse non diffusée",
       "concentration": 18,
       "cardsTracked": 205,
@@ -29598,39 +29599,39 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 5.22,
+              "evNet": 5.26,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.06,
-              "pLoseHalf": 0.9,
+              "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 5.22,
+              "evNet": 5.26,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.06,
-              "pLoseHalf": 0.9,
+              "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 5.22,
+              "evNet": 5.26,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.06,
-              "pLoseHalf": 0.9,
+              "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 5.22,
+              "evNet": 5.26,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.06,
-              "pLoseHalf": 0.9,
+              "pLoseHalf": 0.89,
               "pDouble": 0.02
             }
           }
@@ -29649,7 +29650,10 @@
             "oneInSpecific": 31,
             "median": 0.21,
             "mean": 0.22,
+            "meanNM": 0.16,
+            "nmCoverage": 1,
             "contribution": 0.18,
+            "contributionNM": 0.12,
             "premium": false
           },
           {
@@ -29661,7 +29665,10 @@
             "oneInSpecific": 91,
             "median": 2.18,
             "mean": 2.99,
+            "meanNM": 2.28,
+            "nmCoverage": 1,
             "contribution": 0.4,
+            "contributionNM": 0.3,
             "premium": false
           },
           {
@@ -29673,7 +29680,10 @@
             "oneInSpecific": 188,
             "median": 26.89,
             "mean": 26.57,
+            "meanNM": 35.46,
+            "nmCoverage": 1,
             "contribution": 2.26,
+            "contributionNM": 3.01,
             "premium": true
           },
           {
@@ -29685,7 +29695,10 @@
             "oneInSpecific": 250,
             "median": 10.13,
             "mean": 13.26,
+            "meanNM": 14.37,
+            "nmCoverage": 1,
             "contribution": 0.85,
+            "contributionNM": 0.92,
             "premium": true
           },
           {
@@ -29697,7 +29710,10 @@
             "oneInSpecific": 226,
             "median": 79.37,
             "mean": 82.1,
+            "meanNM": 122.91,
+            "nmCoverage": 1,
             "contribution": 2.55,
+            "contributionNM": 3.81,
             "premium": true
           },
           {
@@ -29709,11 +29725,15 @@
             "oneInSpecific": 154,
             "median": 4.14,
             "mean": 8.02,
+            "meanNM": 7.63,
+            "nmCoverage": 1,
             "contribution": 0.16,
+            "contributionNM": 0.15,
             "premium": true
           }
         ],
         "grossPerBooster": 6.4,
+        "grossPerBoosterNM": 8.31,
         "confidence": "solide",
         "looseModel": "independent",
         "eraLabel": "Écarlate et Violet",
@@ -30357,19 +30377,19 @@
           "marketFR": {
             "price": 35,
             "priceUrl": "https://www.ebay.fr/itm/306959649172?_skw=Feunard-ex+186%2F165&hash=item4778388994:g:6GsAAeSwT05qEzZj",
-            "floor10": 39.01,
+            "floor10": 38.9,
             "floor10Url": "https://www.ebay.fr/itm/406932178700?_skw=Feunard-ex+186%2F165&hash=item5ebf0c470c:g:mssAAeSwPmNqCYHU",
-            "median": 48.99,
-            "offers": 12,
-            "sellers": 11,
+            "median": 48,
+            "offers": 11,
+            "sellers": 10,
             "sampleSufficient": true,
             "observedFloor": 35,
-            "trusted": 10,
+            "trusted": 9,
             "review": 2,
             "quarantined": 0,
-            "matched": 12,
-            "scanned": 13,
-            "totalAvailable": 13,
+            "matched": 11,
+            "scanned": 12,
+            "totalAvailable": 12,
             "pages": 1,
             "complete": true,
             "scope": {

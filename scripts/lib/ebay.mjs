@@ -217,14 +217,25 @@ export function classifySealedTitle(title, { phrase, excludePattern = null, japa
 // contrefaçon relève lui de l'INTÉGRITÉ — assessIntegrity le porte, pour que
 // ces annonces soient ledgerisées comme suspectes, pas éliminées en silence.
 const SINGLES_MISMATCH = /\blots?\b|au[x]? choix|coffret|display|jumbo/i;
+// Une carte TIRÉE d'un booster est Near Mint : les annonces qui se déclarent
+// sous EX (played, abîmée…) décrivent un autre marché — elles tireraient le
+// p10 vers le bas sans correspondre à la valeur d'un drop. eBay : ids de
+// condition 5000/6000/7000 = bon/acceptable/pour pièces ; 4000 (très bon
+// état ≈ EX) reste retenu — le filtre vise l'explicitement dégradé, pas la
+// prudence des vendeurs, pour ne pas assécher l'échantillon.
+const SINGLES_LOW_GRADE = /\bplayed\b|\bpl\b|\bhp\b|heavily|abîm|abim|damaged|\bpoor\b|[ée]tat moyen|moyen [ée]tat|tr[èe]s jou[ée]e?/i;
+const LOW_GRADE_CONDITION_IDS = new Set(["5000", "6000", "7000"]);
 const SINGLES_GRADED = /\b(?:psa|pca|bgs|cgc)\s*[\d.,]*|grad[ée]e?\b|graded|grading|slab/i;
 const SINGLES_VARIANT = /\breverse\b/i;
 
 /** Matching d'une annonce de carte à l'unité. Pur : (title, ctx) → motifs. */
-export function classifySingleTitle(title, { collectorNumber, officialCount = null }) {
+export function classifySingleTitle(title, { collectorNumber, officialCount = null, conditionId = null }) {
   const raw = (title ?? "").toLowerCase();
   const reasons = [];
   if (SINGLES_MISMATCH.test(raw)) reasons.push("lot_ou_choix");
+  if (SINGLES_LOW_GRADE.test(raw) || (conditionId != null && LOW_GRADE_CONDITION_IDS.has(String(conditionId)))) {
+    reasons.push("etat_sous_ex");
+  }
   if (SINGLES_GRADED.test(raw)) reasons.push("produit_grade");
   if (SINGLES_VARIANT.test(raw)) reasons.push("variante_reverse");
   // Le numéro de collection doit apparaître : sans lui, on ne sait pas si
@@ -249,7 +260,7 @@ function classifyCapture(scanned, matchReasonsOf) {
   const observations = [];
   for (const item of scanned) {
     const obs = observationOf(item);
-    const why = matchReasonsOf(obs.title);
+    const why = matchReasonsOf(obs.title, obs);
     obs.matching = why.length ? "wrong" : "exact";
     obs.matchingReasons = why;
     observations.push({ obs, item });
@@ -356,7 +367,7 @@ export async function fetchCardFR(cardName, collectorNumber, officialCount, { la
 
   const { observations, includedItems, counts, observedFloor, referenceBasis } = classifyCapture(
     scanned,
-    (title) => classifySingleTitle(title, { collectorNumber, officialCount }),
+    (title, obs) => classifySingleTitle(title, { collectorNumber, officialCount, conditionId: obs.condition }),
   );
 
   return {

@@ -99,6 +99,14 @@ has("numéro absent → numero_absent",
   "numero_absent");
 clean("carte brute avec numéro → exact",
   classifySingleTitle("Dracaufeu ex 199/165 - 151 EV03.5 FR 🇫🇷", ctxZard));
+has("annonce « played / état moyen » → etat_sous_ex",
+  classifySingleTitle("Dracaufeu ex 199/165 played état moyen", ctxZard),
+  "etat_sous_ex");
+has("condition eBay 5000 (bon état) → etat_sous_ex",
+  classifySingleTitle("Dracaufeu ex 199/165 - 151 FR", { ...ctxZard, conditionId: "5000" }),
+  "etat_sous_ex");
+clean("condition 4000 (très bon état ≈ EX) → retenue",
+  classifySingleTitle("Dracaufeu ex 199/165 - 151 FR", { ...ctxZard, conditionId: "4000" }));
 has("PSA10 compact → produit_grade",
   classifySingleTitle("Dracaufeu ex 199/165 PSA10", ctxZard),
   "produit_grade");
