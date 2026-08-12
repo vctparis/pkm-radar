@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>PKM Radar — Nouveautés et moteurs</title>
+<style>
+:root{
+  --bg:#f7f7f4;--ink:#1d232b;--muted:#5b6572;--line:#dcdfd9;
+  --accent:#2b5d9e;--accent-ink:#24507f;--chipbg:#e7edf5;
+  --card:#fff;--good:#1e7d5a;--warn:#9a6a12;--railw:2px;
+  --v1:#7d8793;--v2:#2b5d9e;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#14171c;--ink:#e6e9ee;--muted:#98a2b0;--line:#2a3038;
+  --accent:#7aa7dd;--accent-ink:#a7c6ea;--chipbg:#1f2a38;
+  --card:#1a1e25;--good:#54b98d;--warn:#d9a94e;--v1:#7f8996;--v2:#7aa7dd;
+}}
+:root[data-theme="dark"]{
+  --bg:#14171c;--ink:#e6e9ee;--muted:#98a2b0;--line:#2a3038;
+  --accent:#7aa7dd;--accent-ink:#a7c6ea;--chipbg:#1f2a38;
+  --card:#1a1e25;--good:#54b98d;--warn:#d9a94e;--v1:#7f8996;--v2:#7aa7dd;
+}
+:root[data-theme="light"]{
+  --bg:#f7f7f4;--ink:#1d232b;--muted:#5b6572;--line:#dcdfd9;
+  --accent:#2b5d9e;--accent-ink:#24507f;--chipbg:#e7edf5;
+  --card:#fff;--good:#1e7d5a;--warn:#9a6a12;--v1:#7d8793;--v2:#2b5d9e;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+button{font:inherit}
+.wrap{max-width:52rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+header{margin-bottom:1.6rem;border-bottom:1px solid var(--line);padding-bottom:1.6rem}
+header h1,h2,h3,.tab,.fgroup{font-family:"Avenir Next","Futura","Segoe UI",sans-serif}
+header h1{font-weight:600;font-size:clamp(1.7rem,4vw,2.3rem);letter-spacing:-.015em;margin:0 0 .3rem;text-wrap:balance}
+header .sub{color:var(--muted);max-width:68ch;margin:0}
+.legend{font-size:.8rem;color:var(--muted);margin-top:1rem}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.85em;background:var(--chipbg);padding:.05em .35em;border-radius:4px}
+
+.tabs{display:flex;gap:.4rem;margin:0 0 2.4rem;flex-wrap:wrap}
+.tab{font-size:.9rem;font-weight:600;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.4rem 1.05rem;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.tab:hover{color:var(--ink);border-color:var(--muted)}
+.tab.active{color:#fff;background:var(--accent);border-color:var(--accent)}
+@media(prefers-color-scheme:dark){.tab.active{color:#0e1420}}
+:root[data-theme="dark"] .tab.active{color:#0e1420}
+:root[data-theme="light"] .tab.active{color:#fff}
+.tab:focus-visible,.showmore:focus-visible,.morelink:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.page[hidden],.details[hidden]{display:none}
+
+.pitch{font-size:1.08rem;color:var(--ink);margin:.2rem 0 1.3rem;max-width:66ch;line-height:1.55}
+.facts,.stats,.run{display:flex;flex-wrap:wrap;gap:.5rem}
+.fact{background:var(--chipbg);color:var(--accent-ink);border-radius:999px;padding:.32rem .9rem;font-size:.82rem;font-weight:600}
+.fgroup{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);margin:2rem 0 .8rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:.8rem}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.fcard h3{font-size:.98rem;font-weight:600;margin:0 0 .35rem}
+.fcard p{margin:0;font-size:.89rem;color:var(--muted);line-height:1.5}
+.recent{margin-top:2.8rem;border-top:1px solid var(--line);padding-top:1.4rem}
+.note{border-left:3px solid var(--accent);background:var(--card);border-radius:0 6px 6px 0;padding:.7rem 1rem;font-size:.9rem;color:var(--muted);margin-top:1rem}
+.note b{color:var(--ink)}
+.note.warn{border-left-color:var(--warn)}
+.note.good{border-left-color:var(--good)}
+
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:"";position:absolute;left:.42rem;top:.5rem;bottom:.5rem;width:var(--railw);background:var(--line)}
+.release{position:relative;margin-bottom:2.4rem}
+.release::before{content:"";position:absolute;left:-2rem;top:.42rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.release.past::before{border-color:var(--muted)}
+.release.beta::before{border-color:var(--warn);border-style:dashed}
+.vrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0 0 .2rem}
+.vchip{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;font-weight:600;background:var(--chipbg);color:var(--accent-ink);padding:.14rem .55rem;border-radius:4px;letter-spacing:.02em}
+.vchip.beta{background:transparent;border:1px dashed var(--warn);color:var(--warn)}
+.vdate{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+h2{font-weight:600;font-size:1.32rem;margin:.1rem 0 .8rem;letter-spacing:-.01em;text-wrap:balance}
+.theme{color:var(--muted);font-style:italic;margin:-.4rem 0 .8rem;font-size:.95rem}
+ul.feats{list-style:none;margin:0 0 1rem;padding:0;display:flex;flex-direction:column;gap:.55rem}
+ul.feats li{padding-left:1.15rem;position:relative}
+ul.feats li::before{content:"";position:absolute;left:0;top:.62em;width:.42rem;height:.42rem;border-radius:1px;background:var(--accent);opacity:.75}
+ul.feats b{font-weight:600}
+.stats{margin-top:1rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.45rem .8rem;font-size:.8rem;color:var(--muted)}
+.stat b{display:block;font-size:1.05rem;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;font-family:ui-monospace,Menlo,monospace}
+.stat.good b{color:var(--good)}.stat.warn b{color:var(--warn)}
+.showmore,.morelink{display:inline-block;margin-top:.15rem;font-weight:600;color:var(--accent-ink);background:none;border:none;cursor:pointer;font-size:.88rem;padding:0}
+.showmore:hover,.morelink:hover{text-decoration:underline}
+.showmore::after{content:" ▾";font-size:.8em}.showmore[aria-expanded="true"]::after{content:" ▴"}
+
+.compare-head{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.35rem 1.5rem;margin-bottom:1.4rem;position:relative;overflow:hidden}
+.compare-head::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(var(--v1),var(--v2))}
+.compare-head .eyebrow{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--accent-ink);margin:0 0 .35rem}
+.compare-head p{margin:.45rem 0 0;color:var(--muted);font-size:.95rem}
+.compare-head p b{color:var(--ink)}
+.run{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line)}
+.pill{font-size:.76rem;color:var(--muted);background:var(--chipbg);border-radius:999px;padding:.22rem .7rem;white-space:nowrap}
+.pill b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;font-family:ui-monospace,Menlo,monospace}
+.engine-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0 2rem}
+.engine{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.1rem}
+.engine.v2{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.engine .kicker{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}
+.engine h2{font-size:1.12rem;margin:.25rem 0 .35rem}
+.engine p{font-size:.88rem;color:var(--muted);margin:0}
+.engine ul{font-size:.84rem;color:var(--muted);padding-left:1.1rem;margin:.75rem 0 0}
+
+.chart-shell{margin:1rem 0 2.2rem;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.chart-title{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;margin-bottom:.9rem}
+.chart-title h2{font-size:1.05rem;margin:0}.chart-title span{font-size:.76rem;color:var(--muted)}
+.axis-note{display:flex;justify-content:space-between;margin:0 0 .4rem 13rem;font-size:.7rem;color:var(--muted)}
+.delta-chart{display:flex;flex-direction:column;gap:.34rem}
+.drow{display:grid;grid-template-columns:12rem 1fr 4rem;align-items:center;gap:.75rem;min-height:1.45rem}
+.dname{font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+.dtrack{height:.72rem;background:linear-gradient(90deg,transparent calc(50% - .5px),var(--line) calc(50% - .5px),var(--line) calc(50% + .5px),transparent calc(50% + .5px));position:relative}
+.dbar{position:absolute;height:100%;border-radius:2px;min-width:1px}
+.dbar.up{left:50%;background:var(--v2)}
+.dbar.down{right:50%;background:var(--warn)}
+.dbar.flat{left:calc(50% - 1px);width:2px!important;background:var(--muted)}
+.dvalue{font-family:ui-monospace,Menlo,monospace;font-size:.76rem;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.source-line{font-size:.75rem;color:var(--muted);margin:.9rem 0 0;border-top:1px solid var(--line);padding-top:.7rem}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card);margin:1rem 0 2rem}
+table{border-collapse:collapse;width:100%;font-size:.78rem;min-width:700px}
+th,td{text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;background:var(--chipbg)}
+tr:last-child td{border-bottom:0}
+td.num{text-align:right;font-family:ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.confidence{font-weight:600}.confidence.high{color:var(--good)}.confidence.mid{color:var(--warn)}
+.delta-up{color:var(--accent-ink)}.delta-down{color:var(--warn)}
+
+.doctrine{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:1rem 0 2rem}
+.doctrine .stat{padding:.7rem}.doctrine .stat b{font-size:.9rem;margin-bottom:.12rem}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+@media(max-width:700px){
+  .wrap{padding:2rem 1rem 3rem}.timeline{padding-left:1.5rem}.release::before{left:-1.5rem}
+  .engine-grid,.doctrine{grid-template-columns:1fr}.drow{grid-template-columns:8.2rem 1fr 3.5rem;gap:.45rem}.axis-note{margin-left:8.65rem}.chart-shell{padding:.9rem .75rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>PKM Radar — comprendre le marché, sans fabriquer de certitude</h1>
+  <p class="sub">Ce que le produit mesure, comment il évolue et ce qui distingue aujourd’hui ses deux moteurs de taux de drop.</p>
+  <p class="legend">Lignée : <code>Radar sets &amp; cartes</code> → <code>Ouverture V1</code> → <code>Intégrité + ledger</code> → <code>Drop rate V2</code></p>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button class="tab active" data-page="page-produit">Le produit</button>
+  <button class="tab" data-page="page-versions">Versions</button>
+  <button class="tab" data-page="page-moteurs">Moteurs V1 ↔ V2</button>
+</nav>
+
+<main>
+<div class="page" id="page-produit">
+  <p class="pitch"><b>PKM Radar</b> relie la structure d’un set, ses taux de tirage et son marché observable pour répondre à une question simple : <b>qu’est-ce que j’achète réellement, et avec quel niveau de preuve ?</b></p>
+  <div class="facts">
+    <span class="fact">30 sets suivis</span>
+    <span class="fact">Marché FR prioritaire</span>
+    <span class="fact">Ledger annonce par annonce</span>
+    <span class="fact">2 moteurs de drop</span>
+  </div>
+
+  <div class="fgroup">Décider</div>
+  <div class="features">
+    <article class="fcard"><h3>Le prix avant le score</h3><p>Prix du booster, EV brute, valeur nette et scénario prudent sont posés sur une même échelle.</p></article>
+    <article class="fcard"><h3>Comparer sans fausse précision</h3><p>La couverture et la confiance restent visibles : un classement ne doit jamais masquer un marché trop mince.</p></article>
+    <article class="fcard"><h3>Lire le set comme une histoire</h3><p>Concentration de l’EV, cartes motrices, raretés et tendance du scellé répondent chacune à une question.</p></article>
+  </div>
+
+  <div class="fgroup">Mesurer honnêtement</div>
+  <div class="features">
+    <article class="fcard"><h3>Offre observable, pas print run</h3><p>Le produit mesure la pression d’offre à partir d’annonces, vendeurs, profondeur, concentration et évolution dans le temps.</p></article>
+    <article class="fcard"><h3>Liquidité, pas simple dispersion</h3><p>Le p10 et la médiane décrivent les prix demandés ; la liquidité exige aussi profondeur, fréquence et sorties d’annonces.</p></article>
+    <article class="fcard"><h3>Brut conservé, confiance séparée</h3><p>Chaque annonce reste dans le ledger avec son matching, son intégrité, sa source et l’état du crawl.</p></article>
+  </div>
+
+  <div class="fgroup">Versionner ce qui change vraiment</div>
+  <div class="doctrine">
+    <div class="stat"><b>v0.6.0-beta.1</b>produit proposé</div>
+    <div class="stat warn"><b>drop-v2.5</b>modèle à publier</div>
+    <div class="stat"><b>v4</b>intégrité</div>
+    <div class="stat"><b>schema 4</b>ledger</div>
+  </div>
+  <div class="note warn"><b>Point de gouvernance.</b> Le paquet du site annonce encore <code>0.1.0</code> et l’artefact V2 encore <code>drop-rate-v2.4</code>. Le correctif Mint a changé la population EX+ : le modèle doit donc être incrémenté, même si l’impact du jour est nul.</div>
+
+  <div class="recent">
+    <div class="fgroup" style="margin-top:0">Dernier jalon</div>
+    <div class="vrow"><span class="vchip">v0.6.0-beta.1</span><span class="vchip beta">PROPOSITION</span><span class="vdate">12–13 août 2026</span></div>
+    <h2 style="font-size:1.15rem;margin:.1rem 0 .5rem">La valeur du drop rejoint enfin le marché observable</h2>
+    <p class="theme" style="margin:0">Prix FR EX+, grain vendeur, couverture, conflits, scénario rapide et historique du booster — sans effacer le fallback historique.</p>
+    <button class="morelink" data-page="page-versions">Voir toutes les versions →</button>
+  </div>
+</div>
+
+<div class="page" id="page-versions" hidden>
+<div class="timeline">
+  <section class="release beta">
+    <div class="vrow"><span class="vchip">v0.6.0-beta.1</span><span class="vchip beta">PROPOSÉ — BÊTA</span><span class="vdate">12–13 août 2026</span></div>
+    <h2>Drop rate V2 — la doctrine de prix devient vérifiable</h2>
+    <p class="theme">Les probabilités restent celles de la V1 ; la valeur des cartes est actualisée par le marché français EX+, avec sa couverture et ses fragilités.</p>
+    <div class="details">
+      <ul class="feats">
+        <li><b>Prix au grain vendeur.</b> Une boutique qui duplique dix annonces ne reçoit pas dix voix : son offre la moins chère est retenue, puis la médiane et le p10 sont calculés entre vendeurs.</li>
+        <li><b>Population de drop réaliste.</b> Mint, Near Mint et Slightly Played/EX sont admis ; le gradé, le reverse et l’explicitement sous EX sont d’autres marchés.</li>
+        <li><b>Fallback visible.</b> Une carte sans marché assez profond conserve son ancre historique au lieu de disparaître du calcul.</li>
+        <li><b>Dashboard de décision.</b> Carte comparative, échelle commune, couverture segmentée, concentration de l’EV, prix des cartes et historique booster sur une fenêtre de 365 jours.</li>
+      </ul>
+      <div class="stats"><div class="stat"><b>25</b>sets occidentaux</div><div class="stat"><b>2 208</b>offres étudiées</div><div class="stat warn"><b>22/25</b>confiance faible</div><div class="stat"><b>55</b>conflits écartés</div></div>
+      <div class="note warn"><b>À corriger avant de figer la release :</b> le modèle publié porte toujours l’identifiant <code>drop-rate-v2.4</code> après le correctif Mint. Nom cible : <code>drop-rate-v2.5</code>.</div>
+    </div>
+    <button class="showmore" aria-expanded="true">Réduire</button>
+  </section>
+
+  <section class="release beta past">
+    <div class="vrow"><span class="vchip">v0.5.0-beta.1</span><span class="vchip beta">BÊTA</span><span class="vdate">12 août 2026</span></div>
+    <h2>Le marché devient recomputable</h2>
+    <p class="theme">Intégrité, ledger-journal et onglet Marché posent la matière première nécessaire à la liquidité et à la pression d’offre.</p>
+    <div class="details" hidden>
+      <ul class="feats">
+        <li><b>Annonce par annonce.</b> Identifiant, vendeur, prix, quantité, première et dernière observation, langue, état et source sont historisés.</li>
+        <li><b>Raw et trusted séparés.</b> Les annonces rejetées ne sont pas supprimées : la classification et ses motifs restent auditables.</li>
+        <li><b>Censure de fenêtre explicitée.</b> Les crawls incomplets, absents ou en erreur ne ressuscitent jamais silencieusement un ancien snapshot.</li>
+      </ul>
+      <div class="stats"><div class="stat"><b>schema 4</b>ledger</div><div class="stat"><b>integrity 4</b>règles</div><div class="stat good"><b>recomputable</b>journal d’événements</div></div>
+    </div>
+    <button class="showmore" aria-expanded="false">Voir plus</button>
+  </section>
+
+  <section class="release past">
+    <div class="vrow"><span class="vchip">v0.4.0</span><span class="vdate">11 août 2026</span></div>
+    <h2>Taux de drop V1 — les euros passent avant les pourcentages</h2>
+    <p class="theme">Une page dédiée relie raretés, cartes phares, coût du booster, valeur brute, valeur nette et scénario loose.</p>
+    <div class="details" hidden>
+      <ul class="feats"><li><b>Une lecture orientée décision.</b> Carte d’identité du set, trois cartes principales et comparaison scellé/loose.</li><li><b>Probabilités isolées des prix.</b> Le taux de tirage reste une hypothèse distincte de la valeur marchande.</li><li><b>Portefeuille.</b> Les cartes suivies sont présentées comme des positions, pas comme une galerie.</li></ul>
+    </div>
+    <button class="showmore" aria-expanded="false">Voir plus</button>
+  </section>
+
+  <section class="release past">
+    <div class="vrow"><span class="vchip">v0.3.0</span><span class="vdate">11 août 2026</span></div>
+    <h2>Le premier moteur d’ouverture</h2>
+    <p class="theme">Espérance en fourchettes, frais de 13 %, seuil bulk, distribution et moteur conditionnel des boîtes japonaises.</p>
+    <div class="details" hidden><ul class="feats"><li><b>Une moyenne de classe, pas une médiane.</b> L’EV additionne toutes les issues possibles pondérées par leurs probabilités.</li><li><b>Net séparé du brut.</b> Les frais et le seuil bulk interviennent après la valeur brute.</li><li><b>Boîtes japonaises.</b> Le calcul s’appuie sur leurs garanties propres plutôt que sur un faux modèle de booster occidental.</li></ul></div>
+    <button class="showmore" aria-expanded="false">Voir plus</button>
+  </section>
+
+  <section class="release past">
+    <div class="vrow"><span class="vchip">v0.2.0</span><span class="vdate">10 août 2026</span></div>
+    <h2>Le socle marché français</h2>
+    <p class="theme">TCGdex fournit les identités françaises ; eBay.fr et CardTrader apportent prix et profondeur.</p>
+    <div class="details" hidden><ul class="feats"><li><b>Langue nommée.</b> Une cotation italienne ou anglaise ne se fait plus passer pour une valeur française.</li><li><b>Scellé et singles séparés.</b> Un booster, une display, une carte brute et une carte gradée ne partagent pas le même marché.</li></ul></div>
+    <button class="showmore" aria-expanded="false">Voir plus</button>
+  </section>
+
+  <section class="release past">
+    <div class="vrow"><span class="vchip">v0.1.0</span><span class="vdate">10 août 2026</span></div>
+    <h2>Le radar initial</h2>
+    <p class="theme">Premier classement de sets et de cartes, alimenté par un pipeline quotidien.</p>
+    <div class="details" hidden><ul class="feats"><li><b>La fondation.</b> Sets, cartes fortes, momentum, concentration et données historiques réunis dans une première interface.</li></ul></div>
+    <button class="showmore" aria-expanded="false">Voir plus</button>
+  </section>
+</div>
+</div>
+
+<div class="page" id="page-moteurs" hidden>
+  <section class="compare-head">
+    <p class="eyebrow">Comparatif en ligne · snapshot commun</p>
+    <h2>La V2 ne remplace pas les taux de drop : elle remplace progressivement leur prix</h2>
+    <p>Les deux pages partagent <b>le même socle probabiliste</b>. L’écart visible vient principalement du repricing des cartes en FR EX+ et des règles de profondeur, pas d’une seconde estimation indépendante des probabilités.</p>
+    <div class="run">
+      <span class="pill"><b>25</b> sets comparables</span>
+      <span class="pill"><b>12 août · 16:57</b> Paris</span>
+      <span class="pill"><b>2 208</b> offres</span>
+      <span class="pill"><b>2 076</b> voix vendeur-carte</span>
+      <span class="pill"><b>55</b> conflits écartés</span>
+      <span class="pill"><b>16</b> conflits bloquants</span>
+    </div>
+  </section>
+
+  <div class="stats" style="margin-bottom:1.4rem">
+    <div class="stat good"><b>+17,9 %</b>écart médian V2 / V1</div>
+    <div class="stat warn"><b>16,8 %</b>couverture V2 médiane</div>
+    <div class="stat warn"><b>22/25</b>sets en confiance faible</div>
+    <div class="stat"><b>15</b>écarts d’au moins 10 %</div>
+  </div>
+
+  <div class="engine-grid">
+    <article class="engine v1"><span class="kicker">Moteur V1 · historique</span><h2>Expliquer ce que l’on peut tirer</h2><p>Lecture complète des taux, raretés et scénarios d’ouverture.</p><ul><li>30 sets, dont les boîtes japonaises</li><li>moyennes de classe Cardmarket historiques</li><li>brut, net et scénario loose</li><li>pas de profondeur de marché dans le prix de classe</li></ul></article>
+    <article class="engine v2"><span class="kicker">Moteur V2 · bêta</span><h2>Estimer ce que vaut le drop aujourd’hui</h2><p>Repricing du périmètre couvert par le marché FR EX+.</p><ul><li>25 sets occidentaux</li><li>médiane et p10 au grain vendeur</li><li>central et vente rapide</li><li>couverture, conflits et fallback visibles</li></ul></article>
+  </div>
+
+  <div class="note"><b>Lecture juste.</b> Une barre positive ne signifie pas que le set « droppe mieux ». Elle signifie que la partie de son EV actuellement repricée par la V2 vaut davantage que son ancre V1.</div>
+
+  <section class="chart-shell" aria-labelledby="delta-title">
+    <div class="chart-title"><h2 id="delta-title">Écart d’EV brute — V2 contre V1</h2><span>trié du plus positif au plus négatif</span></div>
+    <div class="axis-note"><span>V2 plus basse</span><span>0</span><span>V2 plus haute</span></div>
+    <div class="delta-chart" id="delta-chart"></div>
+    <p class="source-line">Source : <code>public/radar-data.json</code> + <code>public/drop-rate-v2.json</code> · écart = V2 / V1 − 1 · chaque nom reste visible sans mouse-over.</p>
+  </section>
+
+  <div class="fgroup">Ce que les deux moteurs mesurent</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Moteur V1</th><th>Moteur V2</th></tr></thead>
+      <tbody>
+        <tr><td><b>Question</b></td><td>Que puis-je tirer, à quelle fréquence ?</td><td>Que vaut aujourd’hui mon ouverture FR EX+ ?</td></tr>
+        <tr><td><b>Taux</b></td><td>Estimations communautaires par ère et par set</td><td>Les mêmes taux hérités de la V1</td></tr>
+        <tr><td><b>Prix</b></td><td>Moyennes de classe, références historiques toutes langues</td><td>Médiane et p10 FR EX+ ; fallback historique sur l’EV non couverte</td></tr>
+        <tr><td><b>Admission</b></td><td>Pas de seuil de profondeur relié au prix de classe</td><td>5 offres, 3 vendeurs, fraîcheur ≤ 30 jours, contrôle de cohérence</td></tr>
+        <tr><td><b>États</b></td><td>Non reliés directement à la moyenne de classe</td><td>Mint, Near Mint, Slightly Played/EX ; sous-EX rejeté quand détecté</td></tr>
+        <tr><td><b>Scénarios</b></td><td>Brut, net, loose, boîtes japonaises</td><td>Central, vente rapide, boosters occidentaux</td></tr>
+        <tr><td><b>Décision</b></td><td>Excellente lecture probabiliste et fonctionnelle</td><td>Meilleure doctrine économique, encore limitée par sa couverture</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fgroup">Détail des 25 sets</div>
+  <div class="table-wrap">
+    <table id="sets-table">
+      <thead><tr><th>Set</th><th>Brut V1</th><th>Brut V2</th><th>Écart</th><th>Net V1</th><th>Net V2</th><th>Couverture</th><th>Confiance</th><th>Offres</th><th>Conflits</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="note warn"><b>Conclusion opérationnelle.</b> La V2 est le meilleur moteur économique cible, mais elle n’est pas encore le moteur unique : 22 sets sur 25 restent en confiance faible et cinq conservent intégralement la valeur V1 faute de couverture admissible.</div>
+</div>
+</main>
+
+<footer>Sources : artefacts publics PKM Radar et historique Git · Snapshot comparé : 12 août 2026, 16:57 Europe/Paris · Ce fichier propose le versionnage ; il ne modifie pas encore les identifiants du produit.</footer>
+</div>
+
+<script>
+(function(){
+  var rows=[
+    ["Flammes Obsidiennes",2.04,4.36,113.7,1.74,3.75,78.7,"élevée",352,1],
+    ["Étincelles Déferlantes",3.65,7.07,93.7,3.13,6.11,60.8,"moyenne",133,0],
+    ["151",6.40,12.04,88.1,5.41,10.31,58.1,"moyenne",134,1],
+    ["Ténèbres Embrasées",2.12,3.45,62.7,1.76,2.91,41.8,"faible",126,4],
+    ["Soleil & Lune",2.04,3.10,52.0,1.67,2.59,55.9,"faible",177,0],
+    ["Stars Étincelantes",2.49,3.76,51.0,2.06,3.16,32.1,"faible",101,1],
+    ["Destinées Occultes",3.42,5.12,49.7,2.87,4.35,55.2,"faible",52,0],
+    ["Zénith Suprême",2.52,3.46,37.3,2.10,2.91,29.5,"faible",61,5],
+    ["Poing de Fusion",2.25,2.93,30.2,1.83,2.43,16.8,"faible",27,0],
+    ["Tempête Argentée",2.35,2.97,26.4,1.93,2.47,12.0,"faible",88,4],
+    ["Évolutions Prismatiques",2.47,2.97,20.2,2.05,2.49,14.8,"faible",48,0],
+    ["Voltage Éclatant",1.84,2.21,20.1,1.50,1.82,28.5,"faible",138,11],
+    ["Astres Radieux",1.95,2.30,17.9,1.57,1.88,16.7,"faible",129,8],
+    ["Origine Perdue",2.82,3.10,9.9,2.32,2.56,5.0,"faible",83,4],
+    ["Règne de Glace",2.91,3.07,5.5,2.42,2.56,38.4,"faible",119,7],
+    ["Éclipse Cosmique",8.24,8.54,3.6,7.09,7.36,13.0,"faible",54,0],
+    ["Évolution Céleste",7.24,7.42,2.5,6.21,6.37,3.5,"faible",59,0],
+    ["Célébrations",4.66,4.66,0,3.90,3.90,0,"faible",0,0],
+    ["Destinées Radieuses",0.73,0.73,0,0.51,0.51,0,"faible",15,7],
+    ["Flamme Blanche",3.13,3.13,0,2.65,2.65,0,"faible",0,0],
+    ["Destinées de Paldea",4.76,4.76,0,4.08,4.08,0,"faible",2,0],
+    ["Foudre Noire",4.05,4.05,0,3.45,3.45,0,"faible",4,0],
+    ["Rivalités Destinées",7.82,7.80,-0.3,6.76,6.74,16.8,"faible",57,0],
+    ["Ombres Ardentes",2.89,2.58,-10.7,2.40,2.13,54.8,"faible",134,2],
+    ["Évolutions",13.27,11.85,-10.7,11.47,10.24,79.0,"faible",115,0]
+  ];
+  var euro=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',minimumFractionDigits:2});
+  function signed(v){return(v>0?'+':'')+v.toLocaleString('fr-FR',{maximumFractionDigits:1})+' %'}
+  var chart=document.getElementById('delta-chart');
+  rows.forEach(function(r){
+    var row=document.createElement('div');row.className='drow';
+    var name=document.createElement('span');name.className='dname';name.textContent=r[0];name.title=r[0];
+    var track=document.createElement('span');track.className='dtrack';
+    var bar=document.createElement('span');bar.className='dbar '+(r[3]>0?'up':r[3]<0?'down':'flat');
+    bar.style.width=Math.min(50,Math.abs(r[3])/120*50)+'%';bar.title=r[0]+' : '+signed(r[3]);track.appendChild(bar);
+    var value=document.createElement('span');value.className='dvalue';value.textContent=signed(r[3]);
+    row.append(name,track,value);chart.appendChild(row);
+  });
+  var tbody=document.querySelector('#sets-table tbody');
+  rows.forEach(function(r){
+    var tr=document.createElement('tr');
+    var confidenceClass=r[7]==='élevée'?'high':r[7]==='moyenne'?'mid':'';
+    var cells=[
+      '<td><b>'+r[0]+'</b></td>',
+      '<td class="num">'+euro.format(r[1])+'</td>',
+      '<td class="num">'+euro.format(r[2])+'</td>',
+      '<td class="num '+(r[3]>0?'delta-up':r[3]<0?'delta-down':'')+'">'+signed(r[3])+'</td>',
+      '<td class="num">'+euro.format(r[4])+'</td>',
+      '<td class="num">'+euro.format(r[5])+'</td>',
+      '<td class="num">'+r[6].toLocaleString('fr-FR',{maximumFractionDigits:1})+' %</td>',
+      '<td class="confidence '+confidenceClass+'">'+r[7]+'</td>',
+      '<td class="num">'+r[8].toLocaleString('fr-FR')+'</td>',
+      '<td class="num">'+r[9].toLocaleString('fr-FR')+'</td>'
+    ];
+    tr.innerHTML=cells.join('');tbody.appendChild(tr);
+  });
+
+  var tabs=document.querySelectorAll('.tab');
+  function show(id){
+    document.querySelectorAll('.page').forEach(function(p){p.hidden=p.id!==id});
+    tabs.forEach(function(t){t.classList.toggle('active',t.dataset.page===id)});
+    if(history.replaceState)history.replaceState(null,'','#'+id);
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll('[data-page]').forEach(function(t){t.addEventListener('click',function(){show(t.dataset.page)})});
+  var start=(location.hash||'').replace('#','');
+  if(start==='page-produit'||start==='page-versions'||start==='page-moteurs')show(start);
+  document.querySelectorAll('.showmore').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var details=btn.parentElement.querySelector('.details');if(!details)return;
+      var open=details.hidden;details.hidden=!open;btn.setAttribute('aria-expanded',String(open));btn.textContent=open?'Réduire':'Voir plus';
+    });
+  });
+})();
+</script>
+</body>
+</html>

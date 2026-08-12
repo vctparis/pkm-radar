@@ -737,9 +737,14 @@ export default function Radar({ data }: { data: RadarData }) {
           <p className="m-0">
             Outil d&apos;analyse personnel. Aucune de ces mesures ne constitue un conseil d&apos;investissement.
           </p>
-          <Link href="/dossier" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
-            Dossier de marché →
-          </Link>
+          <span className="flex flex-wrap gap-4">
+            <Link href="/nouveautes" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
+              Nouveautés v0.6 →
+            </Link>
+            <Link href="/dossier" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
+              Dossier de marché →
+            </Link>
+          </span>
         </div>
       </footer>
     </div>

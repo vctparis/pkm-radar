@@ -393,6 +393,9 @@ export default async function MarchePage() {
           <Link href="/" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
             ← Retour au radar
           </Link>
+          <Link href="/nouveautes" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
+            Nouveautés v0.6 →
+          </Link>
           <span className="flex flex-wrap gap-4">
             <Link href="/taux-de-drop" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
               Taux de drop →
