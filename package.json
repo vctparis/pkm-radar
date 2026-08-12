@@ -12,7 +12,7 @@
     "lint": "eslint . --ignore-pattern .next",
     "ingest": "node scripts/ingest.mjs",
     "inspect": "node scripts/inspect.mjs",
-    "test:data": "node scripts/tests/integrity.test.mjs"
+    "test:data": "node scripts/tests/identifiers.test.mjs && node scripts/tests/integrity.test.mjs && node scripts/tests/cardtrader.test.mjs && node scripts/tests/ledger.test.mjs && node scripts/tests/data-artifacts.test.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

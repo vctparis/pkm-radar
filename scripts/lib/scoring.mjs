@@ -106,9 +106,10 @@ export function scoreCard(card, market, context) {
   const sellers = market?.sellers ?? null;
   const tightness = sellers == null ? 45 : clamp(100 - (sellers / 40) * 100);
 
-  // Liquidité : il faut pouvoir sortir. Trop peu de vendeurs signale aussi un
-  // marché étroit où la revente prend des mois — d'où la pénalité basse.
-  const liquidity = sellers == null ? 40 : sellers < 3 ? 20 : scale(sellers, 3, 25);
+  // Étendue du marché observé : le nombre de vendeurs est un proxy de largeur,
+  // PAS une mesure de liquidité. La liquidité exigera des flux d'annonces, des
+  // sorties, un spread et une stabilité de prix sur plusieurs relevés complets.
+  const marketBreadth = sellers == null ? 40 : sellers < 3 ? 20 : scale(sellers, 3, 25);
 
   // Décote court terme : le spot sous la moyenne 7 jours est un point
   // d'entrée, pas un signal de faiblesse, tant que la tendance tient.
@@ -117,7 +118,7 @@ export function scoreCard(card, market, context) {
   const score =
     0.3 * clamp(50 + relative * 250) +
     0.28 * tightness +
-    0.17 * liquidity +
+    0.17 * marketBreadth +
     0.15 * discount +
     0.1 * clamp(50 + momentum * 200);
 
@@ -137,7 +138,7 @@ export function scoreCard(card, market, context) {
     components: {
       relative: Math.round(clamp(50 + relative * 250)),
       tightness: Math.round(tightness),
-      liquidity: Math.round(liquidity),
+      marketBreadth: Math.round(marketBreadth),
       discount: Math.round(discount),
     },
   };

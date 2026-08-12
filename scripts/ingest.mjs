@@ -26,12 +26,26 @@ import {
   fetchExpansionSingles,
 } from "./lib/cardtrader.mjs";
 import { fetchSealedBoosterFR, fetchCardFR } from "./lib/ebay.mjs";
-import { recordObservations, recordCrawl } from "./lib/ledger.mjs";
+import { collectorNumberForSearch, normalizeCollectorNumber } from "./lib/identifiers.mjs";
+import { createRunContext, recordObservations, recordCrawl, recordRun } from "./lib/ledger.mjs";
 import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
 
 // Date du relevé, pour le ledger d'annonces (first_seen / last_seen).
-const RUN_DATE = new Date().toISOString().slice(0, 10);
+const RUN_CONTEXT = createRunContext();
+
+function ledgerFailure(error) {
+  error.isLedgerFailure = true;
+  return error;
+}
+
+async function recordSourceError(setId, source, subject, error) {
+  await recordCrawl(
+    setId,
+    { source, subject, status: "error", captured: 0, complete: false, error: error?.message ?? error },
+    RUN_CONTEXT,
+  );
+}
 
 // Verse les observations d'un fetch au ledger puis les retire de l'objet :
 // le brut vit dans data/ledger/, jamais dans radar-data.json. Les erreurs de
@@ -40,22 +54,35 @@ const RUN_DATE = new Date().toISOString().slice(0, 10);
 // été parcouru et si la capture était complète.
 async function ledgerize(setId, result, source, subject) {
   if (!result) return;
-  if (result.observations?.length) {
-    await recordObservations(
-      setId,
-      result.observations.map((obs) => ({ ...obs, source, subject })),
-      { date: RUN_DATE },
-    );
-  }
-  await recordCrawl(setId, {
-    date: RUN_DATE,
-    source,
-    subject,
-    captured: result.observations?.length ?? 0,
-    totalAvailable: result.totalAvailable ?? null,
-    complete: result.complete ?? true,
-  });
+  // Détacher le brut AVANT toute écriture : même si le disque échoue, il ne
+  // doit jamais pouvoir tomber par accident dans l'artefact public.
+  const observations = result.observations ?? [];
   delete result.observations;
+  try {
+    const stored = observations.length
+      ? await recordObservations(
+          setId,
+          observations.map((obs) => ({ ...obs, source, subject, sourceConfidence: "marketplace_metadata" })),
+          RUN_CONTEXT,
+        )
+      : { events: 0 };
+    await recordCrawl(
+      setId,
+      {
+        source,
+        subject,
+        captured: observations.length,
+        stored: stored.events,
+        totalAvailable: result.totalAvailable ?? null,
+        pages: result.pages ?? null,
+        complete: result.complete ?? true,
+        scope: result.scope ?? null,
+      },
+      RUN_CONTEXT,
+    );
+  } catch (error) {
+    throw ledgerFailure(error);
+  }
 }
 
 // Lignes CardTrader : matching structurel (le catalogue CT identifie le
@@ -63,19 +90,40 @@ async function ledgerize(setId, result, source, subject) {
 // « unassessed », pas « trusted » : on ne déclare pas une confiance qu'on
 // n'a pas mesurée. Ces lignes ne participent à aucun comptage de confiance.
 async function ledgerizeCT(setId, rows, subject) {
-  if (!rows?.length) return;
-  await recordObservations(
-    setId,
-    rows.map((row) => ({ ...row, source: "cardtrader", subject, matching: "exact", integrity: "unassessed" })),
-    { date: RUN_DATE },
-  );
-  await recordCrawl(setId, {
-    date: RUN_DATE,
-    source: "cardtrader",
-    subject,
-    captured: rows.length,
-    complete: true, // l'API CT renvoie la page marché entière du blueprint
-  });
+  const captured = rows ?? [];
+  try {
+    const stored = captured.length
+      ? await recordObservations(
+          setId,
+          captured.map((row) => ({
+            ...row,
+            source: "cardtrader",
+            subject,
+            matching: "exact",
+            integrity: "unassessed",
+            sellerTrust: "unassessed",
+            listingQuality: "unassessed",
+            sourceConfidence: "catalogue_exact_integrity_unassessed",
+          })),
+          RUN_CONTEXT,
+        )
+      : { events: 0 };
+    await recordCrawl(
+      setId,
+      {
+        source: "cardtrader",
+        subject,
+        captured: captured.length,
+        stored: stored.events,
+        totalAvailable: captured.length,
+        complete: true,
+        scope: { marketplace: "cardtrader", product: subject.startsWith("card:") ? "single" : subject },
+      },
+      RUN_CONTEXT,
+    );
+  } catch (error) {
+    throw ledgerFailure(error);
+  }
 }
 import { computeOpening, simulateDistribution } from "./lib/ev.mjs";
 
@@ -102,9 +150,7 @@ const LANGUAGE_PREFERENCE = ["fr", "jp", "en"];
 // CardTrader écrit "036/149", pokemontcg.io écrit "36" : on ramène les deux
 // à un entier pour pouvoir apparier les deux catalogues.
 function normalizeNumber(value) {
-  if (!value) return null;
-  const digits = String(value).split("/")[0].replace(/\D/g, "");
-  return digits ? String(Number(digits)) : null;
+  return normalizeCollectorNumber(value);
 }
 
 async function loadHistory() {
@@ -147,20 +193,21 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
           ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: ["jp"], keepRaw: true })
           : null,
       ]);
-      await ledgerizeCT(set.id, booster?.rawRows, "sealed");
-      await ledgerizeCT(set.id, boosterBox?.rawRows, "sealed-box");
+      if (booster) await ledgerizeCT(set.id, booster.rawRows, "sealed");
+      if (boosterBox) await ledgerizeCT(set.id, boosterBox.rawRows, "sealed-box");
       if (booster) delete booster.rawRows;
       if (boosterBox) delete boosterBox.rawRows;
       const market = await fetchExpansionSingles(expansion.id);
       singles = [...market.values()].filter((entry) => entry.price != null);
-      // Ledger CT : les 12 plus grosses cartes du set (le périmètre EV côté jp).
+      // Ledger CT : les 12 plus grosses cartes du set. Sans modèle EV carte par
+      // carte pour ces boxes, ce périmètre est nommé top-value, jamais « 80 % EV ».
       const jpTop = [...singles]
         .filter((entry) => entry.floor10 != null && entry.collectorNumber != null)
         .sort((a, b) => b.floor10 - a.floor10)
         .slice(0, 12);
       for (const entry of jpTop) {
-        const key = String(entry.collectorNumber).replace(/^0+(?=\d)/, "");
-        await ledgerizeCT(set.id, market.rawByNumber?.get(key), `card:${entry.collectorNumber}`);
+        const key = normalizeNumber(entry.collectorNumber);
+        await ledgerizeCT(set.id, market.rawByNumber?.get(key) ?? [], `card:${key}`);
       }
       live = {
         booster,
@@ -172,6 +219,8 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
           ` · ${singles.length} singles jp suivis`,
       );
     } catch (error) {
+      if (error.isLedgerFailure) throw error;
+      await recordSourceError(set.id, "cardtrader", "source-run", error);
       console.warn(`  ${set.name} : couche live indisponible (${error.message})`);
     }
   }
@@ -184,6 +233,8 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
       await ledgerize(set.id, boosterFR, "ebay", "sealed");
       log(`${set.name.padEnd(20)} eBay.fr (jp) p10 ${boosterFR.floor10 ?? "—"} € · ${boosterFR.offers} offres`);
     } catch (error) {
+      if (error.isLedgerFailure) throw error;
+      await recordSourceError(set.id, "ebay", "sealed", error);
       console.warn(`  ${set.name} : eBay.fr indisponible (${error.message})`);
     }
   }
@@ -202,8 +253,10 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
     if (process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET && entry.collectorNumber) {
       try {
         marketFR = await fetchCardFR(entry.name, entry.collectorNumber, null, { language: "Japonais" });
-        await ledgerize(set.id, marketFR, "ebay", `card:${entry.collectorNumber}`);
-      } catch {
+        await ledgerize(set.id, marketFR, "ebay", `card:${normalizeNumber(entry.collectorNumber)}`);
+      } catch (error) {
+        if (error.isLedgerFailure) throw error;
+        await recordSourceError(set.id, "ebay", `card:${normalizeNumber(entry.collectorNumber)}`, error);
         // Marché fin : l'absence de résultat est une information, pas une erreur.
       }
       await new Promise((r) => setTimeout(r, 250));
@@ -379,6 +432,7 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
 }
 
 async function main() {
+  await recordRun(RUN_CONTEXT, { status: "started" });
   console.log(`\nRelevé du ${TODAY}${OFFLINE ? " (mode hors-ligne)" : ""}\n`);
 
   const history = await loadHistory();
@@ -531,9 +585,11 @@ async function main() {
       const frName = frOf(card.number)?.name;
       if (!OFFLINE && frName && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
         try {
-          marketFR = await fetchCardFR(frName, normalizeNumber(card.number), frCatalog?.officialCount);
+          marketFR = await fetchCardFR(frName, collectorNumberForSearch(card.number), frCatalog?.officialCount);
           await ledgerize(set.id, marketFR, "ebay", `card:${normalizeNumber(card.number)}`);
-        } catch {
+        } catch (error) {
+          if (error.isLedgerFailure) throw error;
+          await recordSourceError(set.id, "ebay", `card:${normalizeNumber(card.number)}`, error);
           // marché fin : l'absence est une information
         }
         await new Promise((r) => setTimeout(r, 250));
@@ -594,8 +650,8 @@ async function main() {
             ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: LANGUAGE_PREFERENCE, keepRaw: true })
             : null,
         ]);
-        await ledgerizeCT(set.id, booster?.rawRows, "sealed");
-        await ledgerizeCT(set.id, boosterBox?.rawRows, "sealed-box");
+        if (booster) await ledgerizeCT(set.id, booster.rawRows, "sealed");
+        if (boosterBox) await ledgerizeCT(set.id, boosterBox.rawRows, "sealed-box");
         if (booster) delete booster.rawRows;
         if (boosterBox) delete boosterBox.rawRows;
         singlesMarket = await fetchExpansionSingles(expansion.id);
@@ -614,6 +670,8 @@ async function main() {
             ` · ${singleOffers.length} singles suivis`,
         );
       } catch (error) {
+        if (error.isLedgerFailure) throw error;
+        await recordSourceError(set.id, "cardtrader", "source-run", error);
         console.warn(`  ${set.name} : couche live indisponible (${error.message})`);
       }
     }
@@ -632,6 +690,8 @@ async function main() {
             ` · ${boosterFR.offers} offres / ${boosterFR.sellers} vendeurs`,
         );
       } catch (error) {
+        if (error.isLedgerFailure) throw error;
+        await recordSourceError(set.id, "ebay", "sealed", error);
         console.warn(`  ${set.name} : eBay.fr indisponible (${error.message})`);
       }
     }
@@ -692,7 +752,7 @@ async function main() {
     if (opening?.evCoverage?.length && singlesMarket.rawByNumber) {
       for (const coverage of opening.evCoverage) {
         const key = normalizeNumber(coverage.number);
-        await ledgerizeCT(set.id, singlesMarket.rawByNumber.get(key), `card:${key}`);
+        await ledgerizeCT(set.id, singlesMarket.rawByNumber.get(key) ?? [], `card:${key}`);
       }
     }
 
@@ -830,8 +890,11 @@ async function main() {
       let marketFR = null;
       if (!OFFLINE && fr?.name && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
         try {
-          marketFR = await fetchCardFR(fr.name, normalizeNumber(pick.number), frCatalog?.officialCount);
+          marketFR = await fetchCardFR(fr.name, collectorNumberForSearch(pick.number), frCatalog?.officialCount);
+          await ledgerize(set.id, marketFR, "ebay", `card:${normalizeNumber(pick.number)}`);
         } catch (error) {
+          if (error.isLedgerFailure) throw error;
+          await recordSourceError(set.id, "ebay", `card:${normalizeNumber(pick.number)}`, error);
           console.warn(`  ${set.name} · ${pick.name} : marché FR indisponible (${error.message})`);
         }
         // L'API Browse tient 5 requêtes/s sans broncher ; on reste large.
@@ -968,11 +1031,17 @@ async function main() {
     }),
   );
 
+  await recordRun(RUN_CONTEXT, { status: "completed" });
+
   console.log(`\n${output.length} sets écrits dans public/radar-data.json`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
 }
 
 main().catch((error) => {
-  console.error(`\nÉchec de l'ingestion : ${error.message}\n`);
-  process.exit(1);
+  recordRun(RUN_CONTEXT, { status: "failed", error: error.message })
+    .catch((manifestError) => console.error(`\nManifeste d'échec illisible : ${manifestError.message}`))
+    .finally(() => {
+      console.error(`\nÉchec de l'ingestion : ${error.message}\n`);
+      process.exit(1);
+    });
 });

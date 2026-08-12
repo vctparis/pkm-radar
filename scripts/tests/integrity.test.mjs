@@ -5,7 +5,7 @@
 // Ces invariants sont méthodologiques, pas cosmétiques : une régression ici
 // contamine la référence de prix, donc toutes les métriques aval.
 
-import { classifySealedTitle, classifySingleTitle, normalizeTitle } from "../lib/ebay.mjs";
+import { classifySealedTitle, classifySingleTitle, normalizeTitle, summarize } from "../lib/ebay.mjs";
 import { assessIntegrity, preliminaryReference } from "../lib/integrity.mjs";
 
 let failures = 0;
@@ -90,6 +90,30 @@ has("numéro absent → numero_absent",
   "numero_absent");
 clean("carte brute avec numéro → exact",
   classifySingleTitle("Dracaufeu ex 199/165 - 151 EV03.5 FR 🇫🇷", ctxZard));
+has("PSA10 compact → produit_grade",
+  classifySingleTitle("Dracaufeu ex 199/165 PSA10", ctxZard),
+  "produit_grade");
+has("PCA9,5 compact → produit_grade",
+  classifySingleTitle("Dracaufeu ex 199/165 PCA9,5", ctxZard),
+  "produit_grade");
+has("numéro 88 ne matche pas 188",
+  classifySingleTitle("Carte Pokémon 188/198", { collectorNumber: "88" }),
+  "numero_absent");
+clean("suffixe 88a conservé",
+  classifySingleTitle("Darkrai GX 88a/147", { collectorNumber: "88a", officialCount: "147" }));
+clean("préfixe TG et zéro initial conservés",
+  classifySingleTitle("Umbreon V TG22/TG30", { collectorNumber: "TG022", officialCount: "TG30" }));
+
+const ebayItem = (price, seller = "s") => ({ price: { value: String(price) }, seller: { username: seller } });
+check("médiane paire conventionnelle",
+  summarize([ebayItem(10), ebayItem(20), ebayItem(30), ebayItem(40)]).median,
+  25);
+check("p10 interpolé n'est pas automatiquement le minimum",
+  summarize([ebayItem(10), ebayItem(20), ebayItem(30), ebayItem(40)]).floor10,
+  13);
+check("p10 signalé indicatif sous 10 annonces",
+  summarize([ebayItem(10), ebayItem(20)]).sampleSufficient,
+  false);
 
 // ---------------------------------------------------------------------------
 // Référence de prix — jamais de fallback silencieux, une voix par vendeur
