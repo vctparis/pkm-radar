@@ -40,6 +40,14 @@ export default async function DossierPage() {
               </li>
               <li>
                 <Link
+                  href="/sets"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Sets
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/taux-de-drop"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >
@@ -52,6 +60,11 @@ export default async function DossierPage() {
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >
                   Portefeuille
+                </Link>
+              </li>
+              <li>
+                <Link href="/marche" className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050">
+                  Marché <sup className="text-[0.62rem] text-accent">bêta</sup>
                 </Link>
               </li>
               <li>

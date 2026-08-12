@@ -99,6 +99,37 @@ export function computeOpening(cards, eraClasses, options) {
       premium: entry.premium,
     }));
 
+  // Univers de couverture d'EV : les cartes, par contribution décroissante,
+  // jusqu'à porter 80 % de l'espérance (effectif variable par set — 6 cartes
+  // ici, 18 là). C'est le périmètre du suivi longitudinal d'annonces, et
+  // demain les poids de l'EV-weighted Supply Pressure : la supply qui menace
+  // l'EV est celle des cartes qui la portent, pas celle des communes.
+  const totalMid = (evLo + evHi) / 2;
+  const evCoverage = [];
+  // Garde-fou à 40 cartes — s'il se déclenche avant les 80 %, on le DIT
+  // (evCoverageTruncated) au lieu de laisser croire à une couverture pleine.
+  let evCoverageTruncated = false;
+  if (totalMid > 0) {
+    let covered = 0;
+    for (const entry of [...perCard].sort(
+      (a, b) => (b.pLo + b.pHi) * b.net - (a.pLo + a.pHi) * a.net,
+    )) {
+      const contribution = ((entry.pLo + entry.pHi) / 2) * entry.net;
+      if (contribution <= 0 || covered >= 0.8 * totalMid) break;
+      if (evCoverage.length >= 40) {
+        evCoverageTruncated = true;
+        break;
+      }
+      covered += contribution;
+      evCoverage.push({
+        number: entry.card.number,
+        name: entry.card.name,
+        rarity: entry.card.rarity,
+        share: Number((contribution / totalMid).toFixed(3)),
+      });
+    }
+  }
+
   // La carte-titre : coût espéré pour la tirer vs l'acheter directement.
   const headline = [...perCard].sort((a, b) => b.card.reference - a.card.reference)[0] ?? null;
   const top1 =
@@ -133,6 +164,8 @@ export function computeOpening(cards, eraClasses, options) {
     recoupLooseHi: round2(recoup((entry) => entry.pHi, { excludePremium: !independent })),
     topPulls,
     top1,
+    evCoverage,
+    evCoverageTruncated,
     boostersPerDisplay,
     // "mappable" : le worst-case « lot trié » (looseLo/Hi) est crédible sur
     // cette ère. "independent" : aucun quota par produit documenté — les taux

@@ -59,6 +59,17 @@ export type FRBoosterQuote = {
   sellers: number;
   matched: number;
   scanned: number;
+  /** Plancher toutes annonces éligibles (y compris à risque) — la transparence à côté du fiable. */
+  observedFloor?: number | null;
+  /** Annonces écartées des métriques (risque d'intégrité élevé). */
+  quarantined?: number;
+  /** Annonces à signal faible, conservées dans les métriques mais suivies. */
+  review?: number;
+  /** Annonces sans aucun signal. Retenues (= métriques) = trusted + review. */
+  trusted?: number;
+  /** La capture a-t-elle couvert tout le résultat annoncé par l'API ? */
+  complete?: boolean;
+  totalAvailable?: number;
 } | null;
 
 export type BestCard = {
@@ -123,6 +134,9 @@ export type Opening = {
   recoupLooseLo?: number;
   recoupLooseHi?: number;
   topPulls: { name: string; nameFR?: string | null; number: string; rarity: string; price: number; oneIn: number; contribution?: number; premium: boolean }[];
+  /** Cartes portant 80 % de l'EV — périmètre du ledger et poids du futur EV-weighted Supply Pressure. */
+  evCoverage?: { number: string; name: string; rarity: string; share: number }[];
+  evCoverageTruncated?: boolean;
   top1: {
     name: string;
     nameFR?: string | null;

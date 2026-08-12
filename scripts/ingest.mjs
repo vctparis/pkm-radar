@@ -26,8 +26,57 @@ import {
   fetchExpansionSingles,
 } from "./lib/cardtrader.mjs";
 import { fetchSealedBoosterFR, fetchCardFR } from "./lib/ebay.mjs";
+import { recordObservations, recordCrawl } from "./lib/ledger.mjs";
 import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
+
+// Date du relevé, pour le ledger d'annonces (first_seen / last_seen).
+const RUN_DATE = new Date().toISOString().slice(0, 10);
+
+// Verse les observations d'un fetch au ledger puis les retire de l'objet :
+// le brut vit dans data/ledger/, jamais dans radar-data.json. Les erreurs de
+// ledger REMONTENT — un jour de données perdu en silence coûte plus cher
+// qu'un relevé en échec ; le manifeste de crawl consigne ce qui a réellement
+// été parcouru et si la capture était complète.
+async function ledgerize(setId, result, source, subject) {
+  if (!result) return;
+  if (result.observations?.length) {
+    await recordObservations(
+      setId,
+      result.observations.map((obs) => ({ ...obs, source, subject })),
+      { date: RUN_DATE },
+    );
+  }
+  await recordCrawl(setId, {
+    date: RUN_DATE,
+    source,
+    subject,
+    captured: result.observations?.length ?? 0,
+    totalAvailable: result.totalAvailable ?? null,
+    complete: result.complete ?? true,
+  });
+  delete result.observations;
+}
+
+// Lignes CardTrader : matching structurel (le catalogue CT identifie le
+// produit), mais l'API n'expose pas de métriques vendeur — l'intégrité est
+// « unassessed », pas « trusted » : on ne déclare pas une confiance qu'on
+// n'a pas mesurée. Ces lignes ne participent à aucun comptage de confiance.
+async function ledgerizeCT(setId, rows, subject) {
+  if (!rows?.length) return;
+  await recordObservations(
+    setId,
+    rows.map((row) => ({ ...row, source: "cardtrader", subject, matching: "exact", integrity: "unassessed" })),
+    { date: RUN_DATE },
+  );
+  await recordCrawl(setId, {
+    date: RUN_DATE,
+    source: "cardtrader",
+    subject,
+    captured: rows.length,
+    complete: true, // l'API CT renvoie la page marché entière du blueprint
+  });
+}
 import { computeOpening, simulateDistribution } from "./lib/ev.mjs";
 
 // En local le token vit dans .env.local ; en CI il vient des secrets du runner.
@@ -93,11 +142,26 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
       );
       const sealed = pickSealedFrom(blueprints);
       const [booster, boosterBox] = await Promise.all([
-        sealed.booster ? fetchBlueprintMarket(sealed.booster.id, { sealed: true, languages: ["jp"] }) : null,
-        sealed.boosterBox ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: ["jp"] }) : null,
+        sealed.booster ? fetchBlueprintMarket(sealed.booster.id, { sealed: true, languages: ["jp"], keepRaw: true }) : null,
+        sealed.boosterBox
+          ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: ["jp"], keepRaw: true })
+          : null,
       ]);
+      await ledgerizeCT(set.id, booster?.rawRows, "sealed");
+      await ledgerizeCT(set.id, boosterBox?.rawRows, "sealed-box");
+      if (booster) delete booster.rawRows;
+      if (boosterBox) delete boosterBox.rawRows;
       const market = await fetchExpansionSingles(expansion.id);
       singles = [...market.values()].filter((entry) => entry.price != null);
+      // Ledger CT : les 12 plus grosses cartes du set (le périmètre EV côté jp).
+      const jpTop = [...singles]
+        .filter((entry) => entry.floor10 != null && entry.collectorNumber != null)
+        .sort((a, b) => b.floor10 - a.floor10)
+        .slice(0, 12);
+      for (const entry of jpTop) {
+        const key = String(entry.collectorNumber).replace(/^0+(?=\d)/, "");
+        await ledgerizeCT(set.id, market.rawByNumber?.get(key), `card:${entry.collectorNumber}`);
+      }
       live = {
         booster,
         boosterBox,
@@ -117,6 +181,7 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
   if (process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
     try {
       boosterFR = await fetchSealedBoosterFR(set.nameEN, { japanese: true, exclude: set.ebayNot ?? null });
+      await ledgerize(set.id, boosterFR, "ebay", "sealed");
       log(`${set.name.padEnd(20)} eBay.fr (jp) p10 ${boosterFR.floor10 ?? "—"} € · ${boosterFR.offers} offres`);
     } catch (error) {
       console.warn(`  ${set.name} : eBay.fr indisponible (${error.message})`);
@@ -137,6 +202,7 @@ async function buildJapaneseSet(set, expansionsByCode, history, boxStructuresRef
     if (process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET && entry.collectorNumber) {
       try {
         marketFR = await fetchCardFR(entry.name, entry.collectorNumber, null, { language: "Japonais" });
+        await ledgerize(set.id, marketFR, "ebay", `card:${entry.collectorNumber}`);
       } catch {
         // Marché fin : l'absence de résultat est une information, pas une erreur.
       }
@@ -466,6 +532,7 @@ async function main() {
       if (!OFFLINE && frName && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
         try {
           marketFR = await fetchCardFR(frName, normalizeNumber(card.number), frCatalog?.officialCount);
+          await ledgerize(set.id, marketFR, "ebay", `card:${normalizeNumber(card.number)}`);
         } catch {
           // marché fin : l'absence est une information
         }
@@ -520,11 +587,17 @@ async function main() {
       try {
         const sealed = await resolveSealedBlueprints(expansion.id);
         const [booster, boosterBox] = await Promise.all([
-          sealed.booster ? fetchBlueprintMarket(sealed.booster.id, { sealed: true, languages: LANGUAGE_PREFERENCE }) : null,
+          sealed.booster
+            ? fetchBlueprintMarket(sealed.booster.id, { sealed: true, languages: LANGUAGE_PREFERENCE, keepRaw: true })
+            : null,
           sealed.boosterBox
-            ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: LANGUAGE_PREFERENCE })
+            ? fetchBlueprintMarket(sealed.boosterBox.id, { sealed: true, languages: LANGUAGE_PREFERENCE, keepRaw: true })
             : null,
         ]);
+        await ledgerizeCT(set.id, booster?.rawRows, "sealed");
+        await ledgerizeCT(set.id, boosterBox?.rawRows, "sealed-box");
+        if (booster) delete booster.rawRows;
+        if (boosterBox) delete boosterBox.rawRows;
         singlesMarket = await fetchExpansionSingles(expansion.id);
 
         const singleOffers = [...singlesMarket.values()];
@@ -553,6 +626,7 @@ async function main() {
     if (!OFFLINE && process.env.EBAY_CLIENT_ID && process.env.EBAY_CLIENT_SECRET) {
       try {
         boosterFR = await fetchSealedBoosterFR(set.name, { exclude: set.ebayNot ?? null });
+        await ledgerize(set.id, boosterFR, "ebay", "sealed");
         log(
           `${set.name.padEnd(20)} eBay.fr p10 ${boosterFR.floor10 ?? "—"} € · médiane ${boosterFR.median ?? "—"} €` +
             ` · ${boosterFR.offers} offres / ${boosterFR.sellers} vendeurs`,
@@ -608,6 +682,17 @@ async function main() {
           if (opening.top1) opening.top1.nameFR = frOf(opening.top1.number)?.name ?? null;
           for (const pull of opening.topPulls) pull.nameFR = frOf(pull.number)?.name ?? null;
         }
+      }
+    }
+
+    // ---- Ledger CT : l'univers de couverture d'EV --------------------------
+    // Le suivi longitudinal d'annonces porte sur les cartes qui portent l'EV
+    // du booster (80 %, effectif variable par set) — c'est ce qui rendra
+    // possible l'EV-weighted Supply Pressure sans exploser les quotas.
+    if (opening?.evCoverage?.length && singlesMarket.rawByNumber) {
+      for (const coverage of opening.evCoverage) {
+        const key = normalizeNumber(coverage.number);
+        await ledgerizeCT(set.id, singlesMarket.rawByNumber.get(key), `card:${key}`);
       }
     }
 

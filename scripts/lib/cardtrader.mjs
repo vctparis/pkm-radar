@@ -104,26 +104,40 @@ function summarizeOffers(products, { sealed = false } = {}) {
  * pour que l'interface puisse l'afficher plutôt que de laisser croire.
  */
 export async function fetchBlueprintMarket(blueprintId, options = {}) {
-  const { languages = [], ...rest } = options;
+  const { languages = [], keepRaw = false, ...rest } = options;
   const payload = await get(`/marketplace/products?blueprint_id=${blueprintId}`);
   const products = Object.values(payload).flat();
+  // Niveau annonce pour le ledger — à extraire puis RETIRER par l'appelant
+  // avant que l'objet ne parte dans radar-data.json.
+  const rawRows = keepRaw
+    ? products
+        .filter((p) => p.price_cents > 0 && !p.on_vacation)
+        .map((p) => ({
+          id: p.id,
+          price: p.price_cents / 100,
+          quantity: p.quantity ?? 1,
+          sellerId: p.user?.id != null ? String(p.user.id) : null,
+          title: p.name_en ?? null,
+          language: p.properties_hash?.pokemon_language ?? null,
+        }))
+    : null;
 
   for (const language of languages) {
     const subset = products.filter((p) => p.properties_hash?.pokemon_language === language);
     if (subset.length) {
       const summary = summarizeOffers(subset, rest);
-      if (summary.offers) return { ...summary, language };
+      if (summary.offers) return { ...summary, language, ...(rawRows ? { rawRows } : {}) };
     }
   }
 
   // Aucune langue préférée disponible : on retombe sur le marché entier, en
   // nommant la langue effectivement la moins chère.
   const summary = summarizeOffers(products, rest);
-  if (!summary.offers) return { ...summary, language: null };
+  if (!summary.offers) return { ...summary, language: null, ...(rawRows ? { rawRows } : {}) };
   const cheapest = products
     .filter((p) => p.price_cents > 0 && !p.graded && !p.on_vacation)
     .sort((a, b) => a.price_cents - b.price_cents)[0];
-  return { ...summary, language: cheapest?.properties_hash?.pokemon_language ?? null };
+  return { ...summary, language: cheapest?.properties_hash?.pokemon_language ?? null, ...(rawRows ? { rawRows } : {}) };
 }
 
 /**
@@ -133,18 +147,40 @@ export async function fetchBlueprintMarket(blueprintId, options = {}) {
 export async function fetchExpansionSingles(expansionId) {
   const payload = await get(`/marketplace/products?expansion_id=${expansionId}`);
   const byBlueprint = new Map();
+  // Niveau annonce par numéro de collection, pour le ledger (périmètre :
+  // les cartes qui portent l'EV — l'appelant filtre). Propriété attachée à
+  // la Map pour ne pas casser les usages existants ; elle ne part jamais
+  // dans radar-data (la Map n'y est pas sérialisée).
+  const rawByNumber = new Map();
 
   for (const [blueprintId, products] of Object.entries(payload)) {
     const singles = products.filter((product) => product.properties_hash?.condition);
     if (!singles.length) continue;
+    const number = singles[0].properties_hash?.collector_number ?? null;
+    if (number != null) {
+      const key = String(number).replace(/^0+(?=\d)/, "");
+      const rows = singles
+        .filter((p) => p.price_cents > 0 && !p.on_vacation && !p.graded)
+        .map((p) => ({
+          id: p.id,
+          price: p.price_cents / 100,
+          quantity: p.quantity ?? 1,
+          sellerId: p.user?.id != null ? String(p.user.id) : null,
+          title: p.name_en ?? null,
+          language: p.properties_hash?.pokemon_language ?? null,
+          condition: p.properties_hash?.condition ?? null,
+        }));
+      if (rows.length) rawByNumber.set(key, [...(rawByNumber.get(key) ?? []), ...rows]);
+    }
     const summary = summarizeOffers(singles);
     if (!summary.offers) continue;
     byBlueprint.set(Number(blueprintId), {
       name: singles[0].name_en,
-      collectorNumber: singles[0].properties_hash?.collector_number ?? null,
+      collectorNumber: number,
       rarity: singles[0].properties_hash?.pokemon_rarity ?? null,
       ...summary,
     });
   }
+  byBlueprint.rawByNumber = rawByNumber;
   return byBlueprint;
 }

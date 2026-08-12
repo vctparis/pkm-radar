@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint . --ignore-pattern .next",
     "ingest": "node scripts/ingest.mjs",
-    "inspect": "node scripts/inspect.mjs"
+    "inspect": "node scripts/inspect.mjs",
+    "test:data": "node scripts/tests/integrity.test.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

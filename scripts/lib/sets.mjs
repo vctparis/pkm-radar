@@ -14,7 +14,10 @@ export const SETS = [
   // Prismatiques » (Prismatic Evolutions, 2025) — un booster à 2 € qui se
   // ferait passer pour le plancher d'un set de 2016.
   { id: "evolutions", name: "Évolutions", nameEN: "Evolutions", ptcg: "xy12", tcgdex: "xy12", cardtrader: "EVO", era: "XY", ebayNot: "prismatique|prismatic|paldea|m[ée]ga" },
-  { id: "sun-moon", name: "Soleil & Lune", nameEN: "Sun & Moon", ptcg: "sm1", tcgdex: "sm1", cardtrader: "SUM", era: "Soleil & Lune" },
+  // ebayNot : « Soleil & Lune » apparaît dans les titres de TOUS les sets de
+  // l'ère (« Booster SL05 Ultra-Prisme Soleil et Lune ») — la phrase complète
+  // ne suffit pas, il faut rejeter les voisins nommément.
+  { id: "sun-moon", name: "Soleil & Lune", nameEN: "Sun & Moon", ptcg: "sm1", tcgdex: "sm1", cardtrader: "SUM", era: "Soleil & Lune", ebayNot: "prisme|gardien|invasion|carmin|tonnerre|choc|alli|harmonie|[ée]clipse|c[ée]leste|majest|brillant|occulte|perdu|ardente" },
   { id: "burning-shadows", name: "Ombres Ardentes", nameEN: "Burning Shadows", ptcg: "sm3", tcgdex: "sm3", cardtrader: "BUS", era: "Soleil & Lune" },
   { id: "hidden-fates", name: "Destinées Occultes", nameEN: "Hidden Fates", ptcg: "sm115", tcgdex: "sm115", cardtrader: "HIF", era: "Soleil & Lune" },
   { id: "darkness-ablaze", name: "Ténèbres Embrasées", nameEN: "Darkness Ablaze", ptcg: "swsh3", tcgdex: "swsh3", cardtrader: "DAA", era: "Épée et Bouclier" },

@@ -153,6 +153,14 @@ export default function Radar({ data }: { data: RadarData }) {
               </li>
               <li>
                 <a
+                  href="/sets"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Sets
+                </a>
+              </li>
+              <li>
+                <a
                   href="/taux-de-drop"
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >
@@ -165,6 +173,14 @@ export default function Radar({ data }: { data: RadarData }) {
                   className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
                 >
                   Portefeuille
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/marche"
+                  className="rounded-lg px-3 py-1.5 text-[0.85rem] text-mist-300 transition-colors duration-200 hover:bg-ink-800 hover:text-mist-050"
+                >
+                  Marché <sup className="text-[0.62rem] text-accent">bêta</sup>
                 </a>
               </li>
               <li>

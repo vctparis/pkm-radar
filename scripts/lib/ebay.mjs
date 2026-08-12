@@ -1,14 +1,22 @@
 // Source eBay Browse API : annonces actives sur eBay.fr.
 //
-// C'est la pièce qui manquait à CardTrader : le marché FRANÇAIS. CardTrader
-// (marketplace italienne) n'a aucun booster scellé français ; eBay.fr en
-// regorge. On y lit des prix demandés — comme partout ailleurs — mais dans la
-// bonne langue et avec la profondeur d'offre du premier marché généraliste.
+// C'est la pièce qui manquait à CardTrader : le marché FRANÇAIS. On y lit des
+// prix demandés — comme partout ailleurs — mais dans la bonne langue et avec
+// la profondeur d'offre du premier marché généraliste.
+//
+// Rien n'est supprimé : chaque annonce observée est CLASSIFIÉE (matching
+// produit, puis intégrité) et versée au ledger. Les métriques se calculent
+// sur la population RETENUE (trusted + review) ; high_risk est exclue mais
+// tracée. Les classifieurs sont des fonctions pures exportées : les fixtures
+// de scripts/tests/integrity.test.mjs les tiennent sur les faux positifs
+// réellement observés (booster gradé CA 9, mini-tin, tripack d'un set voisin).
 //
 // Authentification : OAuth « client credentials ». Pas d'utilisateur, pas de
 // consentement — l'application échange son couple App ID / Cert ID contre un
 // jeton d'application valable 2 h, portée basique `api_scope`, suffisante
 // pour Browse. Le jeton est mis en cache et renouvelé avant expiration.
+
+import { assessIntegrity, preliminaryReference } from "./integrity.mjs";
 
 const AUTH_URL = "https://api.ebay.com/identity/v1/oauth2/token";
 const BROWSE_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search";
@@ -70,6 +78,38 @@ async function browse(params, tries = 3) {
   throw new Error(`Browse eBay: ${lastError?.message}`);
 }
 
+// Pagination avec aveu de complétude : les flux du ledger (entrées/sorties
+// d'annonces) ne sont interprétables que sur une capture COMPLÈTE — une
+// annonce qui glisse hors d'une fenêtre « best match » ressemblerait à une
+// sortie de marché. `complete` dit la vérité ; le manifeste de crawl la
+// consigne, et les futurs flux ne compteront que les jours complets.
+async function browseAll(params, maxPages) {
+  const items = [];
+  let total = 0;
+  for (let page = 0; page < maxPages; page++) {
+    const payload = await browse({ ...params, limit: "200", offset: String(page * 200) });
+    total = payload.total ?? 0;
+    const batch = payload.itemSummaries ?? [];
+    items.push(...batch);
+    if (items.length >= total || batch.length < 200) break;
+  }
+  return { items, total, complete: items.length >= total };
+}
+
+// Observation brute d'une annonce, prête pour le ledger.
+function observationOf(item) {
+  return {
+    id: item.itemId,
+    title: item.title ?? null,
+    url: item.itemWebUrl ?? null,
+    price: Number(item.price?.value) || 0,
+    currency: item.price?.currency ?? "EUR",
+    sellerId: item.seller?.username ?? null,
+    sellerScore: item.seller?.feedbackScore != null ? Number(item.seller.feedbackScore) : null,
+    sellerPct: item.seller?.feedbackPercentage != null ? Number(item.seller.feedbackPercentage) : null,
+  };
+}
+
 function summarize(items) {
   const sorted = items
     .filter((item) => Number(item.price?.value) > 0)
@@ -80,8 +120,8 @@ function summarize(items) {
     price: Number(sorted[0].price.value),
     // Lien vers l'annonce réelle : un prix affiché doit être vérifiable en un clic.
     priceUrl: sorted[0].itemWebUrl ?? null,
-    // Comme pour CardTrader : le 10e centile décrit mieux le prix réellement
-    // payable que le plancher brut, manipulable par une annonce fantaisiste.
+    // Le 10e centile décrit mieux le prix réellement payable que le plancher
+    // brut, manipulable par une annonce fantaisiste.
     floor10: Number(p10.price.value),
     floor10Url: p10.itemWebUrl ?? null,
     median: Number(sorted[Math.floor(sorted.length / 2)].price.value),
@@ -90,87 +130,203 @@ function summarize(items) {
   };
 }
 
-/**
- * Marché du booster scellé d'un set sur eBay.fr.
- *
- * Le bruit est le vrai adversaire : la même recherche remonte des lots de dix,
- * des displays, des artsets, des kits d'avant-première et des cartes à code
- * pour le jeu en ligne. Deux remparts : la catégorie 183456 — « JCC : boosters
- * scellés », l'ID propre à eBay.fr, PAS le 183454 du site américain qui ne
- * matche à peu près rien ici — puis un filtre de titre pour ce qui reste.
- */
-// « Pack loisir » / « échantillon » : pochettes promotionnelles de 3 cartes
-// vendues comme boosters — un plancher à 2 € qui n'en est pas un.
-const NOISE = /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir|pack loisir|booster loisir|[ée]chantillon/i;
+// ---------------------------------------------------------------------------
+// Identité produit — classifieurs purs.
+//
+// L'intégrité ne peut pas réparer une population qui compare des produits
+// différents : le matching est le rempart n°1. Vécu, dans l'ordre : plancher
+// 151 à 1,49 € (un Leveinard holo en catégorie scellée), booster chinois à
+// 5,99 €, « Pack Loisir » de 3 cartes, mini-tins à 69 €, boosters gradés
+// CA 9/10 à 45-120 €, et tripacks d'Ultra-Prisme comptés dans Soleil & Lune.
+// ---------------------------------------------------------------------------
+
+// Diacritiques et esperluettes : « Évolution Céleste » doit matcher
+// « evolution celeste » — les vendeurs écrivent les deux.
+export const normalizeTitle = (s) =>
+  s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/\s*&\s*/g, " et ")
+    .replace(/[-'’]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+// « Pack loisir » / « échantillon » : pochettes promotionnelles de 3 cartes.
+// Tins, tripacks, duopacks, decks : d'autres produits, d'autres prix.
+const NOISE =
+  /display|coffret|lot\b|artset|art set|kit|code|avant.premi|ouvert|vide|empty|présentoir|pack loisir|booster loisir|[ée]chantillon|\btins?\b|mini.?tin|tri.?pack|duo.?pack|\bdecks?\b|portfolio|classeur|jumbo/i;
+// Booster gradé (CA/PSA…) : un objet de collection scellé-noté, pas le
+// produit qu'on ouvre — son prix contaminerait la référence et ferait passer
+// les vrais boosters pour des anomalies basses.
+const GRADED = /grad[ée]|\bpsa\b|\bpca\b|\bbgs\b|\bcgc\b|\bca ?10\b|\bca ?9\b|slab/i;
 // Cartes à l'unité égarées dans la catégorie scellée : « Carte Pokemon X » au
-// singulier, ou un numéro de collection XXX/YYY dans le titre — signature d'un
-// single, jamais d'un booster (vécu : plancher 151 à 1,49 € qui était un
-// Leveinard holo, puis un booster chinois à 5,99 €).
+// singulier, ou un numéro de collection XXX/YYY dans le titre.
 const SINGLE_IN_SEALED = /(?:^|[^a-zà-ÿ])carte\s|\b\d{1,3}\/\d{2,3}\b/i;
 // Le marché des produits japonais vendus en France est pollué par des boosters
-// coréens ou chinois visuellement identiques, et par des cartes à l'unité mal
-// catégorisées en scellé.
+// coréens ou chinois visuellement identiques.
 const NOT_JAPANESE = /cor[ée]en|korean|chinois|chinese|carte pok|card\b/i;
-// « 5 Booster Pokémon… » : une quantité ≥ 2 devant « booster » signale un lot,
-// dont le prix ne se compare pas à l'unité.
+// « 5 Booster Pokémon… » : une quantité ≥ 2 devant « booster » signale un lot.
 const MULTIPACK = /\b([2-9]|\d{2,})\s*x?\s*boosters?\b|\bx\s*([2-9]|\d{2,})\b/i;
 
-export async function fetchSealedBoosterFR(setName, { japanese = false, exclude = null } = {}) {
-  const excludePattern = exclude ? new RegExp(exclude, "i") : null;
-  const payload = await browse({
-    q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
-    category_ids: "183456",
-    filter: "conditions:{NEW},buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
-    // L'aspect de langue est le vrai rempart : sans lui, un booster chinois à
-    // 5,99 € devient le « plancher français » du set (vécu sur 151).
-    aspect_filter: `categoryId:183456,Langue:{${japanese ? "Japonais" : "Français"}}`,
-    limit: "100",
-  });
+/**
+ * Matching d'une annonce scellée. Pur : (title, ctx) → motifs de rejet.
+ * L'identité exige la PHRASE COMPLÈTE du set (normalisée), pas son premier
+ * mot — « soleil » acceptait toute l'ère Soleil & Lune. Les sets dont le nom
+ * apparaît dans les titres des sets voisins portent en plus un `exclude`
+ * (ebayNot) listant les voisins.
+ */
+export function classifySealedTitle(title, { phrase, excludePattern = null, japanese = false }) {
+  const raw = (title ?? "").toLowerCase();
+  const reasons = [];
+  if (NOISE.test(raw)) reasons.push("hors_produit");
+  if (GRADED.test(raw)) reasons.push("produit_grade");
+  if (MULTIPACK.test(raw)) reasons.push("lot_multiple");
+  if (SINGLE_IN_SEALED.test(raw)) reasons.push("carte_a_l_unite");
+  if (excludePattern && excludePattern.test(raw)) reasons.push("set_voisin");
+  if (japanese && NOT_JAPANESE.test(raw)) reasons.push("langue_incoherente");
+  if (!normalizeTitle(raw).includes(phrase)) reasons.push("identite_set_absente");
+  return reasons;
+}
 
-  const needle = setName.toLowerCase().split(" ")[0];
-  const items = (payload.itemSummaries ?? []).filter((item) => {
-    const title = (item.title ?? "").toLowerCase();
-    if (NOISE.test(title) || MULTIPACK.test(title) || SINGLE_IN_SEALED.test(title)) return false;
-    if (excludePattern && excludePattern.test(title)) return false;
-    if (japanese && NOT_JAPANESE.test(title)) return false;
-    return title.includes(needle);
-  });
+// Lots et « au choix » : mauvais matching produit. Le gradé et le reverse
+// sont d'AUTRES marchés que la carte brute (un slab PSA 10 à 1 500 € comme
+// référence fait passer la brute à 400 € pour une anomalie). Le lexique
+// contrefaçon relève lui de l'INTÉGRITÉ — assessIntegrity le porte, pour que
+// ces annonces soient ledgerisées comme suspectes, pas éliminées en silence.
+const SINGLES_MISMATCH = /\blots?\b|au[x]? choix|coffret|display|jumbo/i;
+const SINGLES_GRADED = /\bpsa\b|\bpca\b|\bbgs\b|\bcgc\b|grad[ée]e?\b|graded|slab/i;
+const SINGLES_VARIANT = /\breverse\b/i;
 
-  return { ...summarize(items), matched: items.length, scanned: payload.total ?? 0 };
+/** Matching d'une annonce de carte à l'unité. Pur : (title, ctx) → motifs. */
+export function classifySingleTitle(title, { collectorNumber }) {
+  const raw = (title ?? "").toLowerCase();
+  const reasons = [];
+  if (SINGLES_MISMATCH.test(raw)) reasons.push("lot_ou_choix");
+  if (SINGLES_GRADED.test(raw)) reasons.push("produit_grade");
+  if (SINGLES_VARIANT.test(raw)) reasons.push("variante_reverse");
+  // Le numéro de collection doit apparaître : sans lui, on ne sait pas si
+  // l'annonce décrit cette carte ou une autre du même Pokémon.
+  if (!raw.includes(String(collectorNumber).toLowerCase())) reasons.push("numero_absent");
+  return reasons;
+}
+
+// Classification complète d'une capture : matching, puis intégrité mesurée
+// contre la référence des vendeurs établis (jamais contre le minimum, qui
+// est la valeur que le faux manipule). Population des métriques = retenues
+// (trusted + review) ; high_risk exclue mais tracée.
+function classifyCapture(scanned, matchReasonsOf) {
+  const observations = [];
+  for (const item of scanned) {
+    const obs = observationOf(item);
+    const why = matchReasonsOf(obs.title);
+    obs.matching = why.length ? "wrong" : "exact";
+    obs.matchingReasons = why;
+    observations.push({ obs, item });
+  }
+  const eligible = observations.filter((o) => o.obs.matching === "exact");
+  const reference = preliminaryReference(eligible.map((o) => o.obs));
+  for (const o of observations) {
+    const verdict =
+      o.obs.matching === "exact" ? assessIntegrity(o.obs, reference) : { status: "high_risk", reasons: [] };
+    o.obs.integrity = verdict.status;
+    o.obs.integrityReasons = verdict.reasons;
+  }
+  const included = eligible.filter((o) => o.obs.integrity !== "high_risk");
+  const observedPrices = eligible.map((o) => o.obs.price).filter((v) => v > 0).sort((a, b) => a - b);
+  return {
+    observations: observations.map((o) => o.obs),
+    includedItems: included.map((o) => o.item),
+    counts: {
+      trusted: eligible.filter((o) => o.obs.integrity === "trusted").length,
+      review: eligible.filter((o) => o.obs.integrity === "review").length,
+      quarantined: eligible.filter((o) => o.obs.integrity === "high_risk").length,
+      eligible: eligible.length,
+    },
+    observedFloor: observedPrices[0] ?? null,
+    referenceBasis: reference.basis,
+  };
 }
 
 /**
- * Marché français d'UNE carte sur eBay.fr — les vendeurs réels.
- *
- * La requête « {nom français} {numéro}/{total} » est très discriminante : le
- * numéro de collection est unique dans le set et les vendeurs français
- * l'écrivent systématiquement dans leurs titres. L'aspect Langue:Français
- * fait le tri des versions étrangères, et le filtre de titre écarte les
- * annonces « au choix » des boutiques (leur prix ne décrit pas cette carte)
- * ainsi que les lots.
+ * Marché du booster scellé d'un set sur eBay.fr.
+ * Catégorie 183456 (« JCC : boosters scellés », l'ID propre à eBay.fr) puis
+ * classification de chaque annonce — jamais de suppression silencieuse.
  */
-const SINGLES_CATEGORY = "183454"; // « JCC : cartes à l'unité » sur eBay.fr
-const SINGLES_NOISE = /\blots?\b|au[x]? choix|coffret|display|proxy|fake|custom|métal|metal/i;
+export async function fetchSealedBoosterFR(setName, { japanese = false, exclude = null } = {}) {
+  const excludePattern = exclude ? new RegExp(exclude, "i") : null;
+  const phrase = normalizeTitle(setName);
+  const { items: scanned, total, complete } = await browseAll(
+    {
+      q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
+      category_ids: "183456",
+      filter: "conditions:{NEW},buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
+      // L'aspect de langue est le vrai rempart : sans lui, un booster chinois à
+      // 5,99 € devient le « plancher français » du set (vécu sur 151).
+      aspect_filter: `categoryId:183456,Langue:{${japanese ? "Japonais" : "Français"}}`,
+    },
+    6,
+  );
 
+  const { observations, includedItems, counts, observedFloor, referenceBasis } = classifyCapture(
+    scanned,
+    (title) => classifySealedTitle(title, { phrase, excludePattern, japanese }),
+  );
+
+  return {
+    ...summarize(includedItems),
+    // Le plancher OBSERVÉ (toutes annonces éligibles, y compris à risque)
+    // reste affiché à côté du fiable : la transparence, pas la censure.
+    observedFloor,
+    trusted: counts.trusted,
+    review: counts.review,
+    quarantined: counts.quarantined,
+    matched: counts.eligible,
+    scanned: scanned.length,
+    totalAvailable: total,
+    complete,
+    referenceBasis,
+    observations,
+  };
+}
+
+const SINGLES_CATEGORY = "183454"; // « JCC : cartes à l'unité » sur eBay.fr
+
+/**
+ * Marché français d'UNE carte (brute — le gradé et le reverse sont d'autres
+ * marchés). La requête « {nom français} {numéro}/{total} » est très
+ * discriminante : le numéro de collection est unique dans le set.
+ */
 export async function fetchCardFR(cardName, collectorNumber, officialCount, { language = "Français" } = {}) {
   const numberTag = officialCount ? `${collectorNumber}/${officialCount}` : collectorNumber;
-  const payload = await browse({
-    q: `${cardName} ${numberTag}`,
-    category_ids: SINGLES_CATEGORY,
-    filter: "buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
-    aspect_filter: `categoryId:${SINGLES_CATEGORY},Langue:{${language}}`,
-    limit: "50",
-  });
+  const { items: scanned, total, complete } = await browseAll(
+    {
+      q: `${cardName} ${numberTag}`,
+      category_ids: SINGLES_CATEGORY,
+      filter: "buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
+      aspect_filter: `categoryId:${SINGLES_CATEGORY},Langue:{${language}}`,
+    },
+    2,
+  );
 
-  const items = (payload.itemSummaries ?? []).filter((item) => {
-    const title = (item.title ?? "") .toLowerCase();
-    if (SINGLES_NOISE.test(title)) return false;
-    // Le numéro de collection doit apparaître : sans lui, on ne sait pas si
-    // l'annonce décrit cette carte ou une autre du même Pokémon.
-    return title.includes(String(collectorNumber).toLowerCase());
-  });
+  const { observations, includedItems, counts, observedFloor, referenceBasis } = classifyCapture(
+    scanned,
+    (title) => classifySingleTitle(title, { collectorNumber }),
+  );
 
-  return { ...summarize(items), matched: items.length, scanned: payload.total ?? 0 };
+  return {
+    ...summarize(includedItems),
+    observedFloor,
+    trusted: counts.trusted,
+    review: counts.review,
+    quarantined: counts.quarantined,
+    matched: counts.eligible,
+    scanned: scanned.length,
+    totalAvailable: total,
+    complete,
+    referenceBasis,
+    observations,
+  };
 }
 
 // Test de bout en bout : jeton + une recherche.
