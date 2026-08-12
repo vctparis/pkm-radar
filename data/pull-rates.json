@@ -260,6 +260,57 @@
           "premium": true
         }
       }
+    },
+    "zsv10pt5": {
+      "confidence": "correcte",
+      "sample": "700+ boosters (TCGplayer Infinite) ; Black White Rare estimée par la communauté",
+      "sampleSource": "étude dédiée Flamme Blanche — l'IR y est ~2× plus fréquente que dans le reste de l'ère",
+      "classes": {
+        "Rare": {
+          "lo": 0.7,
+          "hi": 0.76
+        },
+        "Double Rare": {
+          "lo": 0.2,
+          "hi": 0.22
+        },
+        "Ultra Rare": {
+          "lo": 0.055,
+          "hi": 0.062,
+          "premium": true
+        },
+        "Illustration Rare": {
+          "lo": 0.155,
+          "hi": 0.175
+        },
+        "Special Illustration Rare": {
+          "lo": 0.011,
+          "hi": 0.014,
+          "premium": true
+        },
+        "Black White Rare": {
+          "lo": 0.0022,
+          "hi": 0.0028,
+          "premium": true
+        }
+      }
+    },
+    "sv8pt5": {
+      "confidence": "correcte",
+      "sample": "1 200 boosters (TCGplayer Infinite) — set spécial, échantillon réduit",
+      "sampleSource": "étude dédiée Évolutions Prismatiques — la SIR y tombe 2× plus souvent que la norme SV",
+      "classes": {
+        "Ultra Rare": {
+          "lo": 0.07,
+          "hi": 0.082,
+          "premium": true
+        },
+        "Special Illustration Rare": {
+          "lo": 0.02,
+          "hi": 0.024,
+          "premium": true
+        }
+      }
     }
   },
   "partialSets": {
@@ -269,6 +320,8 @@
     "swsh12": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
     "swsh12pt5": "La Galerie de Galar (le vrai chase du set) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute.",
     "swsh45": "Le Coffre des Brillants (les shiny, dont le Dracaufeu VMAX chasse) est un sous-catalogue séparé : la valeur d'ouverture réelle est nettement plus haute.",
-    "rsv10pt5": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation."
+    "rsv10pt5": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation.",
+    "zsv10pt5": "Les reverses Poké Ball (~30 % des boosters) et Master Ball (~5 %) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est plus haute que l'estimation.",
+    "sv8pt5": "Les reverses Poké Ball (~1 booster sur 3) et Master Ball (~1 sur 20) sont des variantes non cataloguées ici : la valeur d'ouverture réelle est nettement plus haute que l'estimation."
   }
 }

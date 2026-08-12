@@ -1,8 +1,10 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
 import type { RadarData } from "@/lib/types";
+import { FAMILIES, familyOf } from "@/lib/families";
 
 export const metadata: Metadata = {
   title: "Marché · bêta",
@@ -73,15 +75,23 @@ async function loadLedgerStats(): Promise<Map<string, LedgerStats>> {
   return stats;
 }
 
+const releaseLabel = (date?: string | null) =>
+  date
+    ? new Date(date.replace(/\//g, "-")).toLocaleDateString("fr-FR", { month: "short", year: "numeric" })
+    : "—";
+
 export default async function MarchePage() {
   const raw = await readFile(join(process.cwd(), "public", "radar-data.json"), "utf8");
   const data = JSON.parse(raw) as RadarData;
   const ledger = await loadLedgerStats();
 
-  const rows = data.sets
-    .filter((set) => set.boosterFR)
-    .map((set) => ({ set, quote: set.boosterFR!, stats: ledger.get(set.id) ?? null }))
-    .sort((a, b) => (b.quote.quarantined ?? 0) - (a.quote.quarantined ?? 0));
+  const families = FAMILIES.map((family) => ({
+    ...family,
+    rows: data.sets
+      .filter((set) => set.boosterFR && familyOf(set) === family.name)
+      .map((set) => ({ set, quote: set.boosterFR!, stats: ledger.get(set.id) ?? null }))
+      .sort((a, b) => (b.set.releaseDate ?? "").localeCompare(a.set.releaseDate ?? "")),
+  })).filter((family) => family.rows.length);
 
   const totalTracked = [...ledger.values()].reduce((sum, s) => sum + s.tracked, 0);
   const totalHighRisk = [...ledger.values()].reduce((sum, s) => sum + s.highRisk, 0);
@@ -182,6 +192,10 @@ export default async function MarchePage() {
               <tr>
                 <th scope="col" className="px-4 py-2 font-medium text-mist-100">Set</th>
                 <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
+                  Sortie
+                  <span className="block text-[0.68rem] font-normal text-mist-500">date d&apos;édition</span>
+                </th>
+                <th scope="col" className="px-4 py-2 text-right font-medium text-mist-100">
                   Médiane retenue
                   <span className="block text-[0.68rem] font-normal text-mist-500">la référence du site</span>
                 </th>
@@ -204,7 +218,15 @@ export default async function MarchePage() {
               </tr>
             </thead>
             <tbody>
-              {rows.map(({ set, quote, stats }) => {
+              {families.map((family) => (
+                <Fragment key={family.name}>
+                  <tr className="border-t border-ink-600 bg-ink-800/60">
+                    <th scope="colgroup" colSpan={7} className="px-4 py-1.5 text-left text-[0.78rem] font-semibold uppercase tracking-wider text-mist-300">
+                      {family.name}
+                      <span className="ml-2.5 font-normal normal-case tracking-normal text-mist-500">{family.years}</span>
+                    </th>
+                  </tr>
+                  {family.rows.map(({ set, quote, stats }) => {
                 const gap =
                   quote.observedFloor != null && quote.floor10 != null && quote.observedFloor < quote.floor10;
                 return (
@@ -213,6 +235,7 @@ export default async function MarchePage() {
                       {set.name}
                       <span className="ml-2 text-[0.72rem] font-normal text-mist-500">{set.jpOnly ? "JP" : "FR"}</span>
                     </th>
+                    <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-300">{releaseLabel(set.releaseDate)}</td>
                     <td className="tabular whitespace-nowrap px-4 py-2 text-right text-mist-050">
                       {quote.median != null ? eur.format(quote.median) : "—"}
                     </td>
@@ -248,6 +271,8 @@ export default async function MarchePage() {
                   </tr>
                 );
               })}
+                </Fragment>
+              ))}
             </tbody>
           </table>
         </div>
