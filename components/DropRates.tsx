@@ -51,11 +51,12 @@ export default function DropRates({ data }: { data: RadarData }) {
   const [era, setEra] = useState(eras[0]);
   const setsOfEra = data.sets.filter((set) => eraOf(set) === era);
   const [activeId, setActiveId] = useState(setsOfEra[0]?.id);
-  // Provenance : produit scellé ou loose d'origine inconnue. Deux risques très
-  // différents selon l'ère (looseModel) : "mappable" (pré-SV) — le worst-case
-  // « lot trié » est crédible, classes premium comptées à zéro ; "independent"
-  // (SV) — aucun quota par produit documenté, les taux restent valides, le
-  // risque de sélection est réel mais non quantifié (pas de décote automatique).
+  // Provenance : produit scellé ou loose d'origine inconnue. Le toggle n'existe
+  // que sur les ères "mappable" (pré-SV), où le worst-case « lot trié » est
+  // crédible — classes premium comptées à zéro. En "independent" (SV), aucun
+  // quota par produit n'est documenté : les chiffres seraient identiques dans
+  // les deux positions, donc pas de toggle — une note statique porte le risque
+  // (réel mais non quantifié, pas de décote automatique).
   const [loose, setLoose] = useState(false);
   const active = setsOfEra.find((set) => set.id === activeId) ?? setsOfEra[0];
 
@@ -216,44 +217,47 @@ export default function DropRates({ data }: { data: RadarData }) {
             <section className="mt-5 rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <h3 className="display m-0 text-[1.1rem] text-mist-050">Ces taux de drop se traduisent en euros</h3>
-                <div role="group" aria-label="Provenance du booster" className="flex rounded-xl border border-ink-600 p-0.5">
-                  {(
-                    [
-                      { key: false, label: "Issu d'un produit scellé" },
-                      { key: true, label: "Loose — origine inconnue" },
-                    ] as const
-                  ).map((option) => (
-                    <button
-                      key={String(option.key)}
-                      type="button"
-                      onClick={() => setLoose(option.key)}
-                      aria-pressed={loose === option.key}
-                      className={`rounded-[10px] px-3 py-1.5 text-[0.82rem] transition-colors duration-200 ${
-                        loose === option.key ? "bg-ink-600 text-mist-050" : "text-mist-300 hover:text-mist-050"
-                      }`}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
+                {mappable && (
+                  <div role="group" aria-label="Provenance du booster" className="flex rounded-xl border border-ink-600 p-0.5">
+                    {(
+                      [
+                        { key: false, label: "Issu d'un produit scellé" },
+                        { key: true, label: "Loose — origine inconnue" },
+                      ] as const
+                    ).map((option) => (
+                      <button
+                        key={String(option.key)}
+                        type="button"
+                        onClick={() => setLoose(option.key)}
+                        aria-pressed={loose === option.key}
+                        className={`rounded-[10px] px-3 py-1.5 text-[0.82rem] transition-colors duration-200 ${
+                          loose === option.key ? "bg-ink-600 text-mist-050" : "text-mist-300 hover:text-mist-050"
+                        }`}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-              {loose &&
-                (mappable ? (
+              {mappable ? (
+                loose && (
                   <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
                     Worst-case : lot présumé trié. Sur cette ère, tous les boosters ne contiennent pas de hit — un
                     mappeur peut repérer les boosters à hit (sans voir <em>lequel</em> contient quoi) et les retirer
                     en bloc avant de revendre. Les classes chase sont donc comptées à zéro : un plancher crédible,
                     pas le cas typique.
                   </p>
-                ) : (
-                  <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
-                    Risque de sélection : réel, mais non quantifié — les chiffres restent ceux du scellé. Aucun quota
-                    de chase par produit n&apos;est documenté sur ce set : même si le vendeur a tiré sa grosse carte,
-                    un booster ne « sait » pas ce que les autres ont donné — les taux par booster restent la meilleure
-                    estimation. Aucun coefficient fiable ne permet d&apos;écrémer automatiquement les IR/UR/SIR/HR ;
-                    le risque (tri, manipulation, provenance) se gère par le choix du vendeur.
-                  </p>
-                ))}
+                )
+              ) : (
+                <p className="prose-measure m-0 mt-2 text-[0.8rem] leading-relaxed text-[color:var(--color-warn)]">
+                  Scellé ou loose : mêmes chiffres sur cette ère. Aucun quota de chase par produit n&apos;est
+                  documenté : même si le vendeur a tiré sa grosse carte, un booster ne « sait » pas ce que les autres
+                  ont donné — les taux par booster restent la meilleure estimation. Le risque de sélection en loose
+                  (tri, manipulation, provenance) est réel mais non quantifié : aucun coefficient fiable ne permet
+                  d&apos;écrémer automatiquement les IR/UR/SIR/HR — il se gère par le choix du vendeur.
+                </p>
+              )}
               <p className="prose-measure m-0 mt-1 text-[0.82rem] leading-relaxed text-mist-500">
                 Taux universels × prix observés : moyenne Cardmarket de chaque classe — c&apos;est elle que l&apos;espérance exige, et les cartes-titres y pèsent lourd ; la médiane indique le hit typique
                 {boosterPrice != null ? `, booster français à ${eur.format(boosterPrice)} (médiane eBay.fr)` : ""}. Les

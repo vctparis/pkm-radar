@@ -17833,12 +17833,12 @@
         "netHi": 5.74,
         "ratioLo": 0.11,
         "ratioHi": 0.13,
-        "looseLo": 0.34,
-        "looseHi": 0.38,
+        "looseLo": 5.08,
+        "looseHi": 5.74,
         "recoupLo": 0.02,
         "recoupHi": 0.02,
-        "recoupLooseLo": 0,
-        "recoupLooseHi": 0,
+        "recoupLooseLo": 0.02,
+        "recoupLooseHi": 0.02,
         "topPulls": [
           {
             "name": "Charizard ex",
@@ -17929,29 +17929,29 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 5.62,
+              "evNet": 5.4,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
-              "pRecoup": 0.03,
+              "p75": 1.31,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.93,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 5.3,
+              "evNet": 5.4,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
+              "p75": 1.31,
               "pRecoup": 0.02,
               "pLoseHalf": 0.93,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 5.53,
+              "evNet": 5.4,
               "p25": 0,
               "median": 0,
-              "p75": 1.45,
-              "pRecoup": 0.03,
+              "p75": 1.31,
+              "pRecoup": 0.02,
               "pLoseHalf": 0.93,
               "pDouble": 0.01
             }
@@ -20758,12 +20758,12 @@
         "netHi": 5.04,
         "ratioLo": 0.04,
         "ratioHi": 0.07,
-        "looseLo": 0.15,
-        "looseHi": 0.22,
+        "looseLo": 3.12,
+        "looseHi": 5.04,
         "recoupLo": 0.01,
         "recoupHi": 0.01,
-        "recoupLooseLo": 0,
-        "recoupLooseHi": 0,
+        "recoupLooseLo": 0.01,
+        "recoupLooseHi": 0.01,
         "topPulls": [
           {
             "name": "Mew ex",
@@ -20854,7 +20854,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 4.28,
+              "evNet": 4.09,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20863,7 +20863,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 4.13,
+              "evNet": 4.09,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -20872,7 +20872,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 4.39,
+              "evNet": 4.09,
               "p25": 0,
               "median": 0,
               "p75": 0.93,
@@ -21948,12 +21948,12 @@
         "netHi": 2.87,
         "ratioLo": 0.12,
         "ratioHi": 0.14,
-        "looseLo": 1.36,
-        "looseHi": 1.53,
+        "looseLo": 2.42,
+        "looseHi": 2.87,
         "recoupLo": 0.02,
         "recoupHi": 0.02,
-        "recoupLooseLo": 0.01,
-        "recoupLooseHi": 0.01,
+        "recoupLooseLo": 0.02,
+        "recoupLooseHi": 0.02,
         "topPulls": [
           {
             "name": "Reshiram ex",
@@ -22044,28 +22044,28 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 2.66,
+              "evNet": 2.56,
               "p25": 0,
               "median": 0,
-              "p75": 0.43,
+              "p75": 0.4,
               "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 2.62,
+              "evNet": 2.56,
               "p25": 0,
               "median": 0,
-              "p75": 0.43,
+              "p75": 0.4,
               "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 2.72,
+              "evNet": 2.56,
               "p25": 0,
               "median": 0,
-              "p75": 0.43,
+              "p75": 0.4,
               "pRecoup": 0.02,
               "pLoseHalf": 0.94,
               "pDouble": 0.01

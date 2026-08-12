@@ -88,14 +88,12 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
 
   const chosen = PROVENANCES.find((p) => p.key === provenance)!;
   // En ère SV (looseModel "independent"), aucun quota par produit n'est
-  // documenté : les facteurs de décote ne s'appliquent pas — le risque de
-  // sélection existe mais n'est pas quantifiable, on ne l'invente pas.
+  // documenté : les facteurs de décote ne s'appliquent pas — toutes les
+  // provenances donneraient les mêmes chiffres, donc pas de sélecteur. Le
+  // risque de sélection existe mais n'est pas quantifiable, on ne l'invente
+  // pas : une note statique le porte.
   const independent = opening.looseModel === "independent";
   const effFactor = independent ? 1 : chosen.factor;
-  const hint =
-    independent && chosen.factor < 1
-      ? "Taux inchangés : aucun quota par produit n'est documenté sur ce set — aucune décote automatique n'est défendable. Le risque de sélection est réel mais non quantifié : il se gère par le choix du vendeur."
-      : chosen.hint;
   const stats = opening.distribution?.byProvenance[provenance] ?? null;
 
   // Fourchette d'espérance du niveau choisi : interpolation entre le plancher
@@ -140,24 +138,34 @@ export default function OpeningPanel({ opening, setName }: { opening: Opening | 
         {/* D'où vient le booster ? */}
         <div className="mt-7">
           <p className="m-0 mb-2 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">D&apos;où vient-il ?</p>
-          <div className="flex flex-wrap gap-2">
-            {PROVENANCES.map((option) => (
-              <button
-                key={option.key}
-                type="button"
-                onClick={() => setProvenance(option.key)}
-                aria-pressed={provenance === option.key}
-                className={`rounded-xl border px-3 py-1.5 text-[0.85rem] transition-colors duration-200 ${
-                  provenance === option.key
-                    ? "border-accent bg-accent/10 text-mist-050"
-                    : "border-ink-600 text-mist-300 hover:text-mist-050"
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-          <p className="m-0 mt-2 text-[0.82rem] text-mist-500">{hint}</p>
+          {independent ? (
+            <p className="prose-measure m-0 text-[0.82rem] leading-relaxed text-mist-500">
+              Peu importe pour les chiffres : aucun quota par produit n&apos;est documenté sur cette ère — aucune
+              décote automatique n&apos;est défendable, scellé ou loose. Le risque de sélection est réel mais non
+              quantifié : il se gère par le choix du vendeur.
+            </p>
+          ) : (
+            <>
+              <div className="flex flex-wrap gap-2">
+                {PROVENANCES.map((option) => (
+                  <button
+                    key={option.key}
+                    type="button"
+                    onClick={() => setProvenance(option.key)}
+                    aria-pressed={provenance === option.key}
+                    className={`rounded-xl border px-3 py-1.5 text-[0.85rem] transition-colors duration-200 ${
+                      provenance === option.key
+                        ? "border-accent bg-accent/10 text-mist-050"
+                        : "border-ink-600 text-mist-300 hover:text-mist-050"
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+              <p className="m-0 mt-2 text-[0.82rem] text-mist-500">{chosen.hint}</p>
+            </>
+          )}
         </div>
 
         {/* Où atterrit un booster */}

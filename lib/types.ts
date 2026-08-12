@@ -115,6 +115,7 @@ export type Opening = {
   netHi: number;
   ratioLo: number;
   ratioHi: number;
+  /** Plancher « lot trié » (premium à zéro). En modèle "independent", égal à netLo/netHi : pas de décote défendable. */
   looseLo: number;
   looseHi: number;
   recoupLo: number;
@@ -137,7 +138,7 @@ export type Opening = {
   boostersPerDisplay: number | null;
   confidence: string;
   partialNote: string | null;
-  /** "mappable" : worst-case « lot trié » crédible ; "independent" : taux valides en loose, risque non quantifié. */
+  /** "mappable" : worst-case « lot trié » crédible (toggle loose affiché) ; "independent" : taux valides en loose, risque non quantifié — mêmes chiffres, note statique. */
   looseModel?: "independent" | "mappable";
 } | null;
 
@@ -160,7 +161,7 @@ export type DropRates = {
   sample?: string | null;
   sampleSource?: string | null;
   partialNote: string | null;
-  /** "mappable" : worst-case « lot trié » crédible ; "independent" : taux valides en loose, risque non quantifié. */
+  /** "mappable" : worst-case « lot trié » crédible (toggle loose affiché) ; "independent" : taux valides en loose, risque non quantifié — mêmes chiffres, note statique. */
   looseModel?: "independent" | "mappable";
 } | null;
 

@@ -45,6 +45,11 @@ export function computeOpening(cards, eraClasses, options) {
   let evHi = 0;
   let looseLo = 0;
   let looseHi = 0;
+  // En modèle "independent" (SV), le worst-case « lot trié » n'est pas
+  // crédible : aucune décote n'est défendable, le plancher loose EST le
+  // nominal — les champs loose* dupliquent net* plutôt que de publier un
+  // chiffre que le modèle lui-même désavoue.
+  const independent = looseModel === "independent";
   const perCard = []; // { card, pLo, pHi, net }
 
   for (const [rarity, group] of byClass) {
@@ -120,18 +125,19 @@ export function computeOpening(cards, eraClasses, options) {
     // rare, et signal d'arbitrage pour le scellé.
     ratioLo: round2(evLo / boosterPrice),
     ratioHi: round2(evHi / boosterPrice),
-    looseLo: round2(looseLo),
-    looseHi: round2(looseHi),
+    looseLo: round2(independent ? evLo : looseLo),
+    looseHi: round2(independent ? evHi : looseHi),
     recoupLo: round2(recoup((entry) => entry.pLo)),
     recoupHi: round2(recoup((entry) => entry.pHi)),
-    recoupLooseLo: round2(recoup((entry) => entry.pLo, { excludePremium: true })),
-    recoupLooseHi: round2(recoup((entry) => entry.pHi, { excludePremium: true })),
+    recoupLooseLo: round2(recoup((entry) => entry.pLo, { excludePremium: !independent })),
+    recoupLooseHi: round2(recoup((entry) => entry.pHi, { excludePremium: !independent })),
     topPulls,
     top1,
     boostersPerDisplay,
     // "mappable" : le worst-case « lot trié » (looseLo/Hi) est crédible sur
     // cette ère. "independent" : aucun quota par produit documenté — les taux
-    // restent valides en loose, le risque de sélection est non quantifié.
+    // restent valides en loose (loose* = net*), le risque de sélection est
+    // non quantifié.
     looseModel,
   };
 }
@@ -207,10 +213,12 @@ export function simulateDistribution(cards, eraClasses, options) {
     };
   };
 
+  // En "independent", toutes les provenances partagent les mêmes chiffres :
+  // une seule simulation, réutilisée — quatre tirages séparés ne divergeraient
+  // que par le bruit d'échantillonnage.
+  const shared = looseModel === "independent" ? runFor(1) : null;
   return {
     jackpotNet: round2(jackpotNet),
-    byProvenance: Object.fromEntries(
-      PROVENANCES.map((p) => [p.key, runFor(looseModel === "independent" ? 1 : p.factor)]),
-    ),
+    byProvenance: Object.fromEntries(PROVENANCES.map((p) => [p.key, shared ?? runFor(p.factor)])),
   };
 }
