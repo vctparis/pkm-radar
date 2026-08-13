@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T08:22:18.509Z",
+  "generatedAt": "2026-08-13T14:21:38.538Z",
   "modelVersion": "drop-rate-v2.5",
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
@@ -95,6 +95,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 42.95,
+            "cardmarketAvg": 45.95,
+            "cardmarketLow": 20,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 80,
             "ebayMedian": 124.5,
             "ebayOffers": 6,
@@ -106,9 +110,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -386,6 +390,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 14,
+            "cardmarketAvg": 6.98,
+            "cardmarketLow": 3.5,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 11.8,
             "ebayMedian": 28.68,
             "ebayOffers": 19,
@@ -397,9 +405,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -676,6 +684,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 29.32,
+            "cardmarketAvg": 26.59,
+            "cardmarketLow": 22,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 47.41,
             "ebayMedian": 57.45,
             "ebayOffers": 2,
@@ -687,9 +699,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -903,6 +915,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 10.16,
+            "cardmarketAvg": 9.66,
+            "cardmarketLow": 5,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 199.99,
             "ebayMedian": 199.99,
             "ebayOffers": 1,
@@ -914,9 +930,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 3,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-11",
           "lastObserved": "2026-08-13"
         },
@@ -1542,6 +1558,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 9.39,
+            "cardmarketAvg": 8.47,
+            "cardmarketLow": 6.5,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 23,
             "ebayMedian": 26.98,
             "ebayOffers": 22,
@@ -1553,9 +1573,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 3,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-11",
           "lastObserved": "2026-08-13"
         },
@@ -1975,6 +1995,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 17.31,
+            "cardmarketAvg": 18.09,
+            "cardmarketLow": 12.99,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 29,
             "ebayMedian": 34,
             "ebayOffers": 9,
@@ -1986,9 +2010,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -2515,6 +2539,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 6.52,
+            "cardmarketAvg": 7.93,
+            "cardmarketLow": 4.5,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 10,
             "ebayMedian": 16,
             "ebayOffers": 51,
@@ -2526,9 +2554,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -2979,6 +3007,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 17.22,
+            "cardmarketAvg": 18.87,
+            "cardmarketLow": 9,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 20,
             "ebayMedian": 44.95,
             "ebayOffers": 18,
@@ -2990,9 +3022,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -3396,6 +3428,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 59.35,
+            "cardmarketAvg": 58.79,
+            "cardmarketLow": 49.9,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 82.69,
             "ebayMedian": 140,
             "ebayOffers": 20,
@@ -3407,9 +3443,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 3,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-11",
           "lastObserved": "2026-08-13"
         },
@@ -3901,6 +3937,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 8.55,
+            "cardmarketAvg": 8.38,
+            "cardmarketLow": 6,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 12,
             "ebayMedian": 15.5,
             "ebayOffers": 14,
@@ -3912,9 +3952,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -4295,6 +4335,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 30.68,
+            "cardmarketAvg": 30.56,
+            "cardmarketLow": 22,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 49.95,
             "ebayMedian": 54.99,
             "ebayOffers": 7,
@@ -4306,9 +4350,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -4573,6 +4617,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 28.19,
+            "cardmarketAvg": 29.6,
+            "cardmarketLow": 17,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 30.46,
             "ebayMedian": 44.9,
             "ebayOffers": 12,
@@ -4584,9 +4632,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -4975,6 +5023,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 7.68,
+            "cardmarketAvg": 9.2,
+            "cardmarketLow": 4.49,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 13.97,
             "ebayMedian": 19.95,
             "ebayOffers": 26,
@@ -4986,9 +5038,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -5493,6 +5545,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 14.37,
+            "cardmarketAvg": 12.5,
+            "cardmarketLow": 8.95,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 25,
             "ebayMedian": 50,
             "ebayOffers": 17,
@@ -5504,9 +5560,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 3,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-11",
           "lastObserved": "2026-08-13"
         },
@@ -5668,6 +5724,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 13.75,
+            "cardmarketAvg": 13.11,
+            "cardmarketLow": 5.99,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 13.5,
             "ebayMedian": 15,
             "ebayOffers": 6,
@@ -5679,9 +5739,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -6023,6 +6083,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 22.52,
+            "cardmarketAvg": 23.39,
+            "cardmarketLow": 12.4,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 27.39,
             "ebayMedian": 30,
             "ebayOffers": 8,
@@ -6034,9 +6098,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -6380,6 +6444,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 9.2,
+            "cardmarketAvg": 9.41,
+            "cardmarketLow": 5.49,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 13.5,
             "ebayMedian": 18,
             "ebayOffers": 63,
@@ -6391,9 +6459,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -6832,6 +6900,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 9.44,
+            "cardmarketAvg": 12.37,
+            "cardmarketLow": 7.99,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 16,
             "ebayMedian": 27.5,
             "ebayOffers": 20,
@@ -6843,9 +6915,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -7107,6 +7179,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 24.74,
+            "cardmarketAvg": 25.26,
+            "cardmarketLow": 16.94,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 11.05,
             "ebayMedian": 24.99,
             "ebayOffers": 8,
@@ -7118,9 +7194,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -7533,6 +7609,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 7.16,
+            "cardmarketAvg": 6.1,
+            "cardmarketLow": 4.28,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 8.2,
             "ebayMedian": 13.49,
             "ebayOffers": 58,
@@ -7544,9 +7624,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -8038,6 +8118,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 8.94,
+            "cardmarketAvg": 11.4,
+            "cardmarketLow": 7,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 13.69,
             "ebayMedian": 23.54,
             "ebayOffers": 48,
@@ -8049,9 +8133,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 4,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-10",
           "lastObserved": "2026-08-13"
         },
@@ -8319,6 +8403,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 6.17,
+            "cardmarketAvg": 6.16,
+            "cardmarketLow": 4,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 12,
             "ebayMedian": 15,
             "ebayOffers": 44,
@@ -8330,9 +8418,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },
@@ -8736,6 +8824,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 28.31,
+            "cardmarketAvg": 17.98,
+            "cardmarketLow": 7.5,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 53,
             "ebayMedian": 67.5,
             "ebayOffers": 4,
@@ -8747,9 +8839,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 3,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-11",
           "lastObserved": "2026-08-13"
         },
@@ -8946,6 +9038,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 10.47,
+            "cardmarketAvg": 7.97,
+            "cardmarketLow": 6.9,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 11.59,
             "ebayMedian": 14.99,
             "ebayOffers": 4,
@@ -8957,9 +9053,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 3,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-11",
           "lastObserved": "2026-08-13"
         },
@@ -9121,6 +9217,10 @@
           },
           {
             "date": "2026-08-13",
+            "cardmarketTrend": 9.46,
+            "cardmarketAvg": 9.4,
+            "cardmarketLow": 6.2,
+            "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
             "ebayP10": 7.12,
             "ebayMedian": 10.99,
             "ebayOffers": 3,
@@ -9132,9 +9232,9 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 1,
+          "cardmarketDays": 2,
           "ebayDays": 2,
-          "bothDays": 1,
+          "bothDays": 2,
           "firstObserved": "2026-08-12",
           "lastObserved": "2026-08-13"
         },

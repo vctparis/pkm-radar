@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T08:22:18.509Z",
+  "generatedAt": "2026-08-13T14:21:38.538Z",
   "sets": [
     {
       "id": "cosmic-eclipse",
@@ -13804,7 +13804,7 @@
           "image": "https://cardtrader.com/uploads/blueprints/image/225205/preview_marnie-shiny-rare-198-190-shiny-star-v.jpg",
           "number": "198",
           "rarity": "Shiny Holo Rare",
-          "price": 54.14,
+          "price": 55.63,
           "change30": null,
           "url": null
         }
@@ -13846,7 +13846,7 @@
         },
         "singles": {
           "tracked": 330,
-          "offers": 4572
+          "offers": 4621
         }
       },
       "liveHistory": [
@@ -13898,7 +13898,7 @@
           "boosterOffers": 1,
           "boosterLanguage": "jp",
           "boxPrice": 150.64,
-          "singlesOffers": 4572,
+          "singlesOffers": 4621,
           "top5Value": null,
           "top12ex5Value": null,
           "boosterFRp10": 15,
@@ -13927,7 +13927,7 @@
             "countLo": 0,
             "countHi": 1,
             "poolSize": 10,
-            "meanNet": 18.51,
+            "meanNet": 18.47,
             "top": [
               {
                 "name": "Charizard VMAX",
@@ -13937,7 +13937,7 @@
               {
                 "name": "Ditto VMAX",
                 "number": "324",
-                "price": 9.21
+                "price": 8.56
               },
               {
                 "name": "Lapras VMAX",
@@ -13947,12 +13947,12 @@
               {
                 "name": "Crobat VMAX",
                 "number": "320",
-                "price": 5.79
+                "price": 5.73
               },
               {
                 "name": "Toxtricity VMAX",
                 "number": "315",
-                "price": 4.51
+                "price": 4.73
               },
               {
                 "name": "Dragapult VMAX",
@@ -13967,12 +13967,12 @@
             "countLo": 2,
             "countHi": 3,
             "poolSize": 112,
-            "meanNet": 2.53,
+            "meanNet": 2.55,
             "top": [
               {
                 "name": "Marnie",
                 "number": "198",
-                "price": 54.14
+                "price": 55.63
               },
               {
                 "name": "Skyla",
@@ -13992,7 +13992,7 @@
               {
                 "name": "Morpeko",
                 "number": "243",
-                "price": 6.01
+                "price": 6.02
               },
               {
                 "name": "Yamper",
@@ -14007,7 +14007,7 @@
             "countLo": 1,
             "countHi": 2,
             "poolSize": 42,
-            "meanNet": 5.54,
+            "meanNet": 5.56,
             "top": [
               {
                 "name": "Charizard V",
@@ -14017,7 +14017,7 @@
               {
                 "name": "Zamazenta V",
                 "number": "330",
-                "price": 17.48
+                "price": 17.67
               },
               {
                 "name": "Zacian V",
@@ -14141,12 +14141,12 @@
           "number": "198",
           "rarity": "Shiny Holo Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/225205/preview_marnie-shiny-rare-198-190-shiny-star-v.jpg",
-          "price": 54.14,
+          "price": 55.63,
           "momentum30": null,
           "relativeStrength": null,
-          "sellers": 15,
-          "offers": 16,
-          "marketFloor": 54.14,
+          "sellers": 13,
+          "offers": 14,
+          "marketFloor": 55.63,
           "score": null,
           "components": null,
           "url": null,
@@ -14228,12 +14228,12 @@
           "number": "330",
           "rarity": "Secret Rare",
           "image": "https://cardtrader.com/uploads/blueprints/image/225789/preview_zamazenta-v-gold-secret-rare-330-190-shiny-star-v.jpg",
-          "price": 17.48,
+          "price": 17.67,
           "momentum30": null,
           "relativeStrength": null,
           "sellers": 5,
           "offers": 5,
-          "marketFloor": 17.48,
+          "marketFloor": 17.67,
           "score": null,
           "components": null,
           "url": null,
@@ -14275,26 +14275,26 @@
           "price": 15.18,
           "momentum30": null,
           "relativeStrength": null,
-          "sellers": 16,
-          "offers": 16,
+          "sellers": 17,
+          "offers": 17,
           "marketFloor": 15.18,
           "score": null,
           "components": null,
           "url": null,
           "marketFR": {
-            "price": 8,
-            "priceUrl": "https://www.ebay.fr/itm/147417698088?_skw=Gengar+071&hash=item2252c78f28:g:kZ0AAeSwbJRqSkTJ",
-            "floor10": 12.4,
-            "floor10Url": "https://www.ebay.fr/itm/147417698088?_skw=Gengar+071&hash=item2252c78f28:g:kZ0AAeSwbJRqSkTJ",
+            "price": 30,
+            "priceUrl": "https://www.ebay.fr/itm/147417747326?_skw=Gengar+071&hash=item2252c84f7e:g:jsUAAeSwC9tqSkpk",
+            "floor10": 30,
+            "floor10Url": "https://www.ebay.fr/itm/147417747326?_skw=Gengar+071&hash=item2252c84f7e:g:jsUAAeSwC9tqSkpk",
             "median": 30,
-            "offers": 3,
-            "sellers": 2,
+            "offers": 1,
+            "sellers": 1,
             "sampleSufficient": false,
-            "observedFloor": 8,
-            "trusted": 2,
-            "review": 1,
+            "observedFloor": 30,
+            "trusted": 1,
+            "review": 0,
             "quarantined": 0,
-            "matched": 3,
+            "matched": 1,
             "scanned": 4,
             "totalAvailable": 4,
             "pages": 1,
@@ -14397,50 +14397,6 @@
           }
         },
         {
-          "id": "shiny-star-v-324",
-          "name": "Ditto VMAX",
-          "nameFR": null,
-          "number": "324",
-          "rarity": "Shiny Ultra Rare",
-          "image": "https://cardtrader.com/uploads/blueprints/image/225514/preview_ditto-vmax-shiny-ultra-rare-324-190-shiny-star-v.jpg",
-          "price": 9.21,
-          "momentum30": null,
-          "relativeStrength": null,
-          "sellers": 12,
-          "offers": 12,
-          "marketFloor": 9.21,
-          "score": null,
-          "components": null,
-          "url": null,
-          "marketFR": {
-            "price": 12.89,
-            "priceUrl": "https://www.ebay.fr/itm/226706351240?_skw=Ditto+VMAX+324&hash=item34c8c06488:g:vXsAAOSwPSBkgdSo",
-            "floor10": 12.89,
-            "floor10Url": "https://www.ebay.fr/itm/226706351240?_skw=Ditto+VMAX+324&hash=item34c8c06488:g:vXsAAOSwPSBkgdSo",
-            "median": 12.89,
-            "offers": 1,
-            "sellers": 1,
-            "sampleSufficient": false,
-            "observedFloor": 12.89,
-            "trusted": 1,
-            "review": 0,
-            "quarantined": 0,
-            "matched": 1,
-            "scanned": 1,
-            "totalAvailable": 1,
-            "pages": 1,
-            "complete": true,
-            "scope": {
-              "marketplace": "EBAY_FR",
-              "product": "single",
-              "language": "Japonais",
-              "collectorNumber": "324",
-              "officialCount": null
-            },
-            "referenceBasis": "insufficient"
-          }
-        },
-        {
           "id": "shiny-star-v-327",
           "name": "Eternatus V",
           "nameFR": null,
@@ -14478,6 +14434,50 @@
               "product": "single",
               "language": "Japonais",
               "collectorNumber": "327",
+              "officialCount": null
+            },
+            "referenceBasis": "insufficient"
+          }
+        },
+        {
+          "id": "shiny-star-v-324",
+          "name": "Ditto VMAX",
+          "nameFR": null,
+          "number": "324",
+          "rarity": "Shiny Ultra Rare",
+          "image": "https://cardtrader.com/uploads/blueprints/image/225514/preview_ditto-vmax-shiny-ultra-rare-324-190-shiny-star-v.jpg",
+          "price": 8.56,
+          "momentum30": null,
+          "relativeStrength": null,
+          "sellers": 13,
+          "offers": 13,
+          "marketFloor": 8.56,
+          "score": null,
+          "components": null,
+          "url": null,
+          "marketFR": {
+            "price": 12.89,
+            "priceUrl": "https://www.ebay.fr/itm/226706351240?_skw=Ditto+VMAX+324&hash=item34c8c06488:g:vXsAAOSwPSBkgdSo",
+            "floor10": 12.89,
+            "floor10Url": "https://www.ebay.fr/itm/226706351240?_skw=Ditto+VMAX+324&hash=item34c8c06488:g:vXsAAOSwPSBkgdSo",
+            "median": 12.89,
+            "offers": 1,
+            "sellers": 1,
+            "sampleSufficient": false,
+            "observedFloor": 12.89,
+            "trusted": 1,
+            "review": 0,
+            "quarantined": 0,
+            "matched": 1,
+            "scanned": 1,
+            "totalAvailable": 1,
+            "pages": 1,
+            "complete": true,
+            "scope": {
+              "marketplace": "EBAY_FR",
+              "product": "single",
+              "language": "Japonais",
+              "collectorNumber": "324",
               "officialCount": null
             },
             "referenceBasis": "insufficient"
