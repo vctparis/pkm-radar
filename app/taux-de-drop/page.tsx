@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
 import DropRates from "@/components/DropRates";
+import ScopeNote from "@/components/ScopeNote";
 import type { RadarData } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -76,6 +77,7 @@ export default async function TauxDeDropPage() {
         </div>
 
         <DropRates data={data} />
+        <ScopeNote className="mt-6" />
 
         {/* ---- Sources ---- */}
         <section className="mt-14 rounded-2xl border border-ink-600 p-6">

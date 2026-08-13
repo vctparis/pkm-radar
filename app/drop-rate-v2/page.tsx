@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 import DropRateV2 from "@/components/DropRateV2";
+import ScopeNote from "@/components/ScopeNote";
 import type { DropV2Data } from "@/lib/drop-v2-types";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default async function DropRateV2Page() {
         </div>
       </header>
       <DropRateV2 data={data} />
+      <div className="mx-auto max-w-[1180px] px-6 pb-16"><ScopeNote /></div>
     </div>
   );
 }

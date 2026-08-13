@@ -5,6 +5,7 @@ import { join } from "node:path";
 import type { Metadata } from "next";
 import type { FRBoosterQuote, RadarData } from "@/lib/types";
 import { FAMILIES, familyOf } from "@/lib/families";
+import { SELLER_ZONE_LABEL } from "@/lib/scope";
 import { SETS } from "@/scripts/lib/sets.mjs";
 
 // Fin d'impression : ESTIMATION éditoriale (rotations de blocs, vagues de
@@ -323,6 +324,32 @@ export default async function MarchePage() {
           produit sort encore des usines ; « incertaine » = réimpressions imprévisibles (le 151 en a reçu plusieurs
           vagues surprises). Un ordre de grandeur pour raisonner l&apos;offre — pas un fait.
         </p>
+
+        {/* ---- Le périmètre, en toutes lettres ---- */}
+        <section className="mt-10 rounded-2xl bg-ink-850 p-6 ring-1 ring-ink-700/70">
+          <h2 className="display m-0 text-[1.1rem] text-mist-050">Quelles annonces font un prix</h2>
+          <div className="mt-3 grid gap-4 lg:grid-cols-2">
+            <div>
+              <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">La langue de la carte</p>
+              <p className="prose-measure m-0 mt-1.5 text-[0.88rem] leading-relaxed text-mist-300">
+                La carte en <strong className="font-semibold text-mist-050">français</strong> ; en{" "}
+                <strong className="font-semibold text-mist-050">japonais</strong> si et seulement si elle n&apos;existe
+                pas en français — l&apos;existence parallèle de versions coréennes ou chinoises n&apos;y change rien.
+                Ces annonces-là sont collectées et conservées, mais leur prix ne cote jamais : ce n&apos;est pas notre
+                marché.
+              </p>
+            </div>
+            <div>
+              <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Le pays du vendeur</p>
+              <p className="prose-measure m-0 mt-1.5 text-[0.88rem] leading-relaxed text-mist-300">
+                {SELLER_ZONE_LABEL} — la France et ses voisins de l&apos;Union européenne, où le port et les délais
+                restent comparables à un achat français. La Suisse et le Royaume-Uni en sont exclus malgré la
+                proximité : hors UE, leurs droits de douane rendraient le prix affiché faux. Une annonce hors zone est{" "}
+                <em>tracée et comptée</em>, jamais chiffrée.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* ---- Pourquoi des annonces sont écartées ---- */}
         <h2 className="display mb-3 mt-10 text-[1.2rem] text-mist-050">Pourquoi une annonce est écartée</h2>

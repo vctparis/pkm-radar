@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ScopeNote from "./ScopeNote";
 import { useState } from "react";
 import LineChart from "./LineChart";
 import GrowthBars from "./GrowthBars";
@@ -734,9 +735,12 @@ export default function Radar({ data }: { data: RadarData }) {
 
       <footer className="border-t border-ink-700/70">
         <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-4 py-8 sm:px-6 text-[0.8rem] text-mist-500">
-          <p className="m-0">
-            Outil d&apos;analyse personnel. Aucune de ces mesures ne constitue un conseil d&apos;investissement.
-          </p>
+          <span className="max-w-[62ch]">
+            <ScopeNote className="mb-2" />
+            <p className="m-0">
+              Outil d&apos;analyse personnel. Aucune de ces mesures ne constitue un conseil d&apos;investissement.
+            </p>
+          </span>
           <span className="flex flex-wrap gap-4">
             <Link href="/nouveautes" className="text-mist-300 transition-colors duration-200 hover:text-mist-050">
               Nouveautés v0.6 →

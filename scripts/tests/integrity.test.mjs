@@ -113,6 +113,14 @@ has("gradation CollectAura Gem Mint → produit_grade",
 has("annonce expédiée du Japon → hors_zone",
   classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "JP" }),
   "hors_zone");
+clean("vendeur néerlandais → retenu",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "NL" }));
+has("vendeur suisse → hors_zone (hors UE, droits de douane)",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "CH" }),
+  "hors_zone");
+has("vendeur britannique → hors_zone (hors UE)",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "GB" }),
+  "hors_zone");
 clean("vendeur allemand → retenu (limitrophe, premier marché européen)",
   classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "DE" }));
 has("vendeur américain → hors_zone",
@@ -208,3 +216,13 @@ if (failures) {
   process.exit(1);
 }
 console.log("\nTous les invariants tiennent.");
+
+// L'écran et le moteur doivent nommer la même zone : deux listes divergent
+// toujours avec le temps.
+const { SELLER_ZONE } = await import("../lib/ebay.mjs");
+const uiZone = (await import("node:fs/promises"))
+  .readFile;
+const scopeSource = await (await import("node:fs/promises")).readFile("lib/scope.ts", "utf8");
+const uiCodes = JSON.parse(scopeSource.match(/SELLER_ZONE_CODES = (\[[^\]]*\])/)[1].replace(/'/g, '"'));
+check("zone affichée = zone appliquée", uiCodes.sort(), [...SELLER_ZONE].sort());
+void uiZone;
