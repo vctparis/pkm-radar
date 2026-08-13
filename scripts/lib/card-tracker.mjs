@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.8";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.9";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -111,6 +111,12 @@ export function parseGradeFromTitle(title) {
  * On ne retient que celles dont le SEUL défaut d'appariement est le grading :
  * une annonce qui rate aussi le numéro décrit une autre carte.
  */
+// Les grades qui comptent : 8, 9, 10 (et le 9.5 des maisons françaises, très
+// répandu). En dessous, l'exemplaire est joué et se compare mal ; au-dessus,
+// il n'y a rien. Le reste est conservé au ledger mais n'entre pas dans
+// l'échelle publiée.
+const LIQUID_GRADES = new Set([8, 8.5, 9, 9.5, 10]);
+
 function gradedAsksOf(rows, windowDate) {
   const byGrade = new Map();
   for (const row of rows) {
@@ -119,7 +125,7 @@ function gradedAsksOf(rows, windowDate) {
     if (reasons.length !== 1 || reasons[0] !== "produit_grade") continue;
     if (windowDate && row.last_seen !== windowDate) continue;
     const parsed = parseGradeFromTitle(row.title);
-    if (!parsed || !(Number(row.price_last) > 0)) continue;
+    if (!parsed || !LIQUID_GRADES.has(parsed.grade) || !(Number(row.price_last) > 0)) continue;
     const key = `${parsed.company}:${parsed.grade}`;
     if (!byGrade.has(key)) byGrade.set(key, { ...parsed, rows: new Map() });
     // Une voix par vendeur, son offre la moins chère.
@@ -291,6 +297,23 @@ function combine(summaries, language = "fr") {
   };
 }
 
+/**
+ * Ajoute à chaque grade son multiple par rapport à la carte brute.
+ *
+ * C'est le seul chiffre qui rend l'échelle actionnable : « PSA 10 à 3 290 € »
+ * ne dit rien, « ×37 la brute » dit tout. Calculé uniquement quand les deux
+ * côtés existent le même jour — jamais reconstitué.
+ */
+function withRawMultiple(grades, rawSummary) {
+  const raw = rawSummary?.bestAsk;
+  if (!raw || !(raw > 0)) return grades;
+  for (const row of Object.values(grades)) {
+    row.rawBestAsk = round2(raw);
+    row.multipleVsRaw = Number((row.bestAsk / raw).toFixed(1));
+  }
+  return grades;
+}
+
 function publicSummary(summary) {
   if (!summary) return null;
   const { _prices, ...safe } = summary;
@@ -415,7 +438,10 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
               ...(completeDays.get(`${set.id}:${subject}:cardtrader`) ?? []),
             ],
           ),
-          gradedAsks: gradedAsksOf(rows, crawls.get(`${set.id}:${subject}:ebay`)?.date ?? null),
+          gradedAsks: withRawMultiple(
+            gradedAsksOf(rows, crawls.get(`${set.id}:${subject}:ebay`)?.date ?? null),
+            combine([ebay, cardtrader], language),
+          ),
           grades: gradesByCard.get(card.i) ?? {},
         };
       }
@@ -452,7 +478,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
       history: "instantanés quotidiens du ledger uniquement ; une sortie d'annonce n'est jamais assimilée à une vente",
       cardmarketGuide: "repère produit Cardmarket (guide public) : « le moins cher » toutes conditions et toutes langues, tendance des ventes — jamais fusionné avec nos cotations EX+ par langue",
       flow: "rotation du carnet : annonces entrées et sorties entre deux crawls complets, remises en ligne probables déduites par signature vendeur+titre — une sortie n'est jamais assimilée à une vente",
-      gradedAsks: "demandes actives par maison de gradation et par grade, relevées sur eBay.fr — des prix demandés, jamais des ventes conclues, et un marché distinct de la carte brute",
+      gradedAsks: "demandes actives par maison et par grade (8 à 10, les seuls liquides), avec leur multiple par rapport à la carte brute du jour, relevées sur eBay.fr — des prix demandés, jamais des ventes conclues, et un marché distinct de la carte brute",
       grades: "prix et populations PSA séparés par grade ; aucune estimation n'est publiée sans source carte-niveau autorisée",
     },
     sets: Object.fromEntries(SETS.map((set) => [set.id, {

@@ -86,6 +86,9 @@ export type TrackerCardmarketGuide = {
 };
 
 export type TrackerGradedAsk = {
+  /** Multiple observé par rapport à la carte brute, le même jour. */
+  multipleVsRaw?: number;
+  rawBestAsk?: number;
   company: string;
   grade: number;
   priceType: "active_ask";
