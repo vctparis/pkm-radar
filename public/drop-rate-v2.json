@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T15:04:08.641Z",
+  "generatedAt": "2026-08-13T15:09:43.235Z",
   "modelVersion": "drop-rate-v2.5",
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
@@ -2915,14 +2915,14 @@
       "era": "Soleil & Lune",
       "logo": "https://assets.tcgdex.net/fr/sm/sm1/logo.webp",
       "boosterPrice": 44.95,
-      "grossCentral": 3.16,
-      "grossQuick": 2.54,
-      "netCentralLo": 2.05,
-      "netCentralHi": 3.24,
+      "grossCentral": 3.15,
+      "grossQuick": 2.53,
+      "netCentralLo": 2.04,
+      "netCentralHi": 3.23,
       "netCentralMid": 2.64,
-      "netQuickLo": 1.63,
-      "netQuickHi": 2.59,
-      "netQuickMid": 2.11,
+      "netQuickLo": 1.62,
+      "netQuickHi": 2.58,
+      "netQuickMid": 2.1,
       "lossPct": 94,
       "quickLossPct": 95,
       "coverage": 0.559,
@@ -2947,10 +2947,10 @@
       "study": {
         "trackedCards": 28,
         "repricedCards": 20,
-        "observedOffers": 181,
-        "sellerCardVoices": 167,
+        "observedOffers": 183,
+        "sellerCardVoices": 169,
         "sourceOffers": {
-          "ebayFR": 175,
+          "ebayFR": 177,
           "cardTraderFR": 6
         },
         "crawlHealth": {
@@ -3056,7 +3056,7 @@
           "premium": false,
           "baselineContribution": 0.38,
           "centralContribution": 0.32,
-          "quickContribution": 0.31
+          "quickContribution": 0.3
         },
         {
           "rarity": "Rare Holo GX",
@@ -3379,10 +3379,10 @@
       "study": {
         "trackedCards": 10,
         "repricedCards": 9,
-        "observedOffers": 115,
-        "sellerCardVoices": 107,
+        "observedOffers": 116,
+        "sellerCardVoices": 108,
         "sourceOffers": {
-          "ebayFR": 114,
+          "ebayFR": 115,
           "cardTraderFR": 1
         },
         "crawlHealth": {
@@ -3524,19 +3524,19 @@
           "oneIn": 40,
           "median": 200,
           "floor10": 100,
-          "offers": 28,
-          "sellers": 28,
+          "offers": 29,
+          "sellers": 29,
           "latestSeen": "2026-08-13",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 28,
+            "ebayFR": 29,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 28
+            "ebayUnspecified": 29
           },
           "contribution": 5
         },
@@ -7067,14 +7067,14 @@
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv03.5/logo.webp",
       "boosterPrice": 24.99,
-      "grossCentral": 12.08,
-      "grossQuick": 10.24,
-      "netCentralLo": 9.71,
-      "netCentralHi": 10.98,
-      "netCentralMid": 10.35,
-      "netQuickLo": 8.21,
-      "netQuickHi": 9.29,
-      "netQuickMid": 8.75,
+      "grossCentral": 11.95,
+      "grossQuick": 10.12,
+      "netCentralLo": 9.61,
+      "netCentralHi": 10.87,
+      "netCentralMid": 10.24,
+      "netQuickLo": 8.11,
+      "netQuickHi": 9.18,
+      "netQuickMid": 8.65,
       "lossPct": 59,
       "quickLossPct": 65,
       "coverage": 0.581,
@@ -7119,10 +7119,10 @@
       "study": {
         "trackedCards": 22,
         "repricedCards": 16,
-        "observedOffers": 133,
-        "sellerCardVoices": 132,
+        "observedOffers": 134,
+        "sellerCardVoices": 133,
         "sourceOffers": {
-          "ebayFR": 125,
+          "ebayFR": 126,
           "cardTraderFR": 8
         },
         "crawlHealth": {
@@ -7239,8 +7239,8 @@
           "oneInSpecific": 188,
           "premium": true,
           "baselineContribution": 2.26,
-          "centralContribution": 5.13,
-          "quickContribution": 4.16
+          "centralContribution": 5.03,
+          "quickContribution": 4.04
         },
         {
           "rarity": "Ultra Rare",
@@ -7275,7 +7275,7 @@
           "oneInSpecific": 154,
           "premium": true,
           "baselineContribution": 0.16,
-          "centralContribution": 0.41,
+          "centralContribution": 0.38,
           "quickContribution": 0.34
         }
       ],
@@ -7423,23 +7423,23 @@
           "name": "Charmeleon",
           "rarity": "Illustration Rare",
           "oneIn": 188,
-          "median": 109.99,
-          "floor10": 99.99,
-          "offers": 6,
-          "sellers": 6,
+          "median": 99.99,
+          "floor10": 87.59,
+          "offers": 7,
+          "sellers": 7,
           "latestSeen": "2026-08-13",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 6,
+            "ebayFR": 7,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 6
+            "ebayUnspecified": 7
           },
-          "contribution": 0.58
+          "contribution": 0.53
         },
         {
           "number": "171",

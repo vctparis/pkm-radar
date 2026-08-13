@@ -110,6 +110,13 @@ clean("la vraie carte 071/190 reste exacte",
 has("gradation CollectAura Gem Mint → produit_grade",
   classifySingleTitle("Pokémon Gengar 071/190 JP – CollectAura Gem Mint 10", { collectorNumber: "71" }),
   "produit_grade");
+has("annonce expédiée du Japon → hors_zone",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "JP" }),
+  "hors_zone");
+clean("vendeur belge → retenu (zone d'achat)",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "BE" }));
+clean("pays inconnu → retenu, faute de preuve du contraire",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: null }));
 clean("carte brute avec numéro → exact",
   classifySingleTitle("Dracaufeu ex 199/165 - 151 EV03.5 FR 🇫🇷", ctxZard));
 has("annonce « played / état moyen » → etat_sous_ex",

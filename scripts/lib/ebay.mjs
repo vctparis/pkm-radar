@@ -100,11 +100,15 @@ async function browseAll(params, maxPages) {
 }
 
 // Observation brute d'une annonce, prête pour le ledger.
-// « Livrable en France » plutôt que « vendeur en France » : sur les cartes
-// japonaises, la seconde formulation nous coupait du marché (1 offre à 30 €
-// au lieu de 3, dont une à 20,11 € expédiée du Japon). La contrepartie est
-// qu'une offre lointaine porte des frais de port et parfois des droits : on
-// capture le port et le pays pour que l'écran puisse le dire.
+// Zone d'achat réaliste : France et pays limitrophes/proches où le port, les
+// délais et les recours restent comparables à un achat français. Une carte
+// expédiée du Japon coûte son port, ses droits et trois semaines d'attente —
+// elle ne se compare pas à une offre française, et n'a rien à faire dans la
+// même cotation. La requête reste large (« livrable en France ») et ce qui
+// sort de la zone est CLASSÉ « hors_zone », donc tracé et comptabilisé, pas
+// silencieusement perdu.
+export const SELLER_ZONE = new Set(["FR", "BE", "IT", "ES", "GB"]);
+
 function observationOf(item) {
   const shipping = (item.shippingOptions ?? []).find((option) => option.shippingCost?.value != null);
   return {
@@ -206,9 +210,10 @@ const MULTIPACK = /\b([2-9]|\d{2,})\s*x?\s*boosters?\b|\bx\s*([2-9]|\d{2,})\b/i;
  * apparaît dans les titres des sets voisins portent en plus un `exclude`
  * (ebayNot) listant les voisins.
  */
-export function classifySealedTitle(title, { phrase, excludePattern = null, japanese = false }) {
+export function classifySealedTitle(title, { phrase, excludePattern = null, japanese = false, country = null }) {
   const raw = (title ?? "").toLowerCase();
   const reasons = [];
+  if (outOfZone(country)) reasons.push("hors_zone");
   if (NOISE.test(raw)) reasons.push("hors_produit");
   if (GRADED.test(raw)) reasons.push("produit_grade");
   if (MULTIPACK.test(raw)) reasons.push("lot_multiple");
@@ -241,9 +246,15 @@ const SINGLES_GRADED =
 const SINGLES_VARIANT = /\breverse\b/i;
 
 /** Matching d'une annonce de carte à l'unité. Pur : (title, ctx) → motifs. */
-export function classifySingleTitle(title, { collectorNumber, officialCount = null, conditionId = null }) {
+/** Vrai quand l'annonce sort de la zone d'achat (pays inconnu = accepté). */
+export function outOfZone(country) {
+  return Boolean(country) && !SELLER_ZONE.has(String(country).toUpperCase());
+}
+
+export function classifySingleTitle(title, { collectorNumber, officialCount = null, conditionId = null, country = null }) {
   const raw = (title ?? "").toLowerCase();
   const reasons = [];
+  if (outOfZone(country)) reasons.push("hors_zone");
   if (SINGLES_MISMATCH.test(raw)) reasons.push("lot_ou_choix");
   if (SINGLES_LOW_GRADE.test(raw) || (conditionId != null && LOW_GRADE_CONDITION_IDS.has(String(conditionId)))) {
     reasons.push("etat_sous_ex");
@@ -341,7 +352,7 @@ export async function fetchSealedBoosterFR(setName, { japanese = false, exclude 
 
   const { observations, includedItems, counts, observedFloor, referenceBasis } = classifyCapture(
     scanned,
-    (title) => classifySealedTitle(title, { phrase, excludePattern, japanese }),
+    (title, obs) => classifySealedTitle(title, { phrase, excludePattern, japanese, country: obs.country }),
   );
 
   return {
@@ -384,7 +395,7 @@ export async function fetchCardFR(cardName, collectorNumber, officialCount, { la
 
   const { observations, includedItems, counts, observedFloor, referenceBasis } = classifyCapture(
     scanned,
-    (title, obs) => classifySingleTitle(title, { collectorNumber, officialCount, conditionId: obs.condition }),
+    (title, obs) => classifySingleTitle(title, { collectorNumber, officialCount, conditionId: obs.condition, country: obs.country }),
   );
 
   return {
