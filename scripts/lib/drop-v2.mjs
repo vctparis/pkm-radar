@@ -400,6 +400,21 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
     });
   }
 
+  // Ce que le moteur de cartes a appris : une médiane de demandes n'est pas un
+  // prix. Pour VENDRE une carte tirée il faut passer sous le carnet — le
+  // scénario « rapide » est le réaliste, le « central » suppose d'attendre.
+  // Combien de temps ? Le journal le sait : chaque annonce sortie porte sa
+  // durée de présence, mise en commun sur les cartes qui portent l'espérance.
+  const pooled = options.flowPooled ?? null;
+  const liquidity = pooled?.exits
+    ? {
+        medianDaysListed: pooled.medianDaysListed,
+        cardsObserved: pooled.cardsObserved,
+        exits: pooled.exits,
+        active: pooled.active,
+      }
+    : null;
+
   const coverage = Math.min(1, refreshedShare);
   const boosterPrice = opening.boosterPrice;
   const centralNetMid = (centralNetLo + centralNetHi) / 2;
@@ -425,6 +440,7 @@ export function buildDropV2Set(set, ledger, generatedAt, options = {}) {
     lossPct: boosterPrice > 0 ? Math.round((1 - centralNetMid / boosterPrice) * 100) : null,
     quickLossPct: boosterPrice > 0 ? Math.round((1 - quickNetMid / boosterPrice) * 100) : null,
     coverage: round3(coverage),
+    liquidity,
     trackedCoverage: round3(Math.min(1, opening.evCoverage.reduce((sum, item) => sum + item.share, 0))),
     freshnessDays,
     confidence,
@@ -532,9 +548,46 @@ export async function buildDropV2Artifact(root, radarPayload) {
     } catch (error) {
       if (error?.code !== "ENOENT") throw error;
     }
+    // Les sorties d'annonces sont rares carte par carte, mais nombreuses à
+    // l'échelle des cartes qui portent l'espérance : on les met en commun pour
+    // que la durée d'écoulement soit mesurable dès aujourd'hui.
+    const covered = new Set(
+      (set.opening?.evCoverage ?? []).map((item) => normalizeCollectorNumber(item.number)).filter(Boolean),
+    );
+    const rowsByCard = new Map();
+    for (const row of Object.values(ledger.listings ?? {})) {
+      if (!row?.subject?.startsWith("card:")) continue;
+      const key = row.subject.slice(5);
+      if (!covered.has(key)) continue;
+      if (!rowsByCard.has(key)) rowsByCard.set(key, []);
+      rowsByCard.get(key).push(row);
+    }
+    const listedDays = [];
+    let exits = 0;
+    let active = 0;
+    for (const rows of rowsByCard.values()) {
+      const days = [...new Set(rows.map((row) => row.last_seen).filter(Boolean))].sort();
+      const last = days.at(-1);
+      const stillThere = rows.filter((row) => row.last_seen === last);
+      if (!stillThere.length) continue; // carnet vidé : variance de recherche
+      active += stillThere.length;
+      if (days.length < 2) continue;
+      const signatures = new Set(stillThere.map((row) => row.relist_signature).filter(Boolean));
+      for (const row of rows.filter((entry) => entry.last_seen < last)) {
+        if (row.relist_signature && signatures.has(row.relist_signature)) continue; // remise en ligne
+        exits++;
+        listedDays.push(
+          Math.max(1, Math.round((Date.parse(`${row.last_seen}T12:00:00Z`) - Date.parse(`${row.first_seen}T12:00:00Z`)) / 86_400_000) + 1),
+        );
+      }
+    }
+
     const built = buildDropV2Set(set, ledger, radarPayload.generatedAt, {
       crawls: crawlsBySet.get(set.id),
       referenceByNumber: referencesBySet.get(set.id),
+      flowPooled: exits
+        ? { exits, active, cardsObserved: rowsByCard.size, medianDaysListed: Math.round(quantile(listedDays, 0.5)) }
+        : null,
       boosterMarketHistory: buildBoosterMarketHistory(
         cardmarketHistoryBySet.get(set.id) ?? [],
         marketplaceHistory.snapshots?.[set.id] ?? [],

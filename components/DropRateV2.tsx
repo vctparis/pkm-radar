@@ -396,6 +396,7 @@ function CoverageComposition({ set }: { set: DropV2Set }) {
         <div className="flex justify-between gap-4"><dt className="text-[#627069]">Cartes repricées</dt><dd className="m-0 font-semibold tabular-nums">{set.study.repricedCards}/{set.study.trackedCards}</dd></div>
         <div className="flex justify-between gap-4"><dt className="text-[#627069]">Offres actives observées</dt><dd className="m-0 font-semibold tabular-nums">{set.study.observedOffers}</dd></div>
         <div className="flex justify-between gap-4"><dt className="text-[#627069]">Conflits bloquants</dt><dd className="m-0 font-semibold tabular-nums">{set.blockingConflicts}</dd></div>
+        {set.liquidity ? <div className="flex justify-between gap-4"><dt className="text-[#627069]">Écoulement observé</dt><dd className="m-0 font-semibold tabular-nums">{set.liquidity.exits} sorties · {set.liquidity.medianDaysListed} j</dd></div> : null}
         <div className="flex justify-between gap-4"><dt className="text-[#627069]">Crawls incomplets/erreur</dt><dd className={`m-0 font-semibold tabular-nums ${crawlIssues ? "text-[#8a4b2d]" : ""}`}>{crawlIssues}</dd></div>
       </dl>
     </aside>

@@ -77,6 +77,9 @@ export function normalizeCard(card) {
     rarity: card.rarity ?? "Inconnue",
     isCommon: COMMON_RARITIES.has(card.rarity),
     image: card.images?.small ?? null,
+    // Conservées pour l'appariement Cardmarket : leur catalogue distingue les
+    // homonymes par les attaques, pas par le numéro de collection.
+    attacks: Array.isArray(card.attacks) ? card.attacks.map((attack) => attack.name).filter(Boolean) : [],
     cardmarketUrl: market.url ?? null,
     updatedAt,
     prices,

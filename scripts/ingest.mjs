@@ -999,6 +999,11 @@ async function main() {
         num: card.number,
         r: card.rarity,
         s: set.id,
+        // Noms d'attaques : c'est ainsi que Cardmarket distingue deux cartes
+        // homonymes d'un même set (« Charizard ex [Slash | Burning Darkness] »).
+        // Sans eux, les cartes chase — toutes homonymes — restaient sans
+        // repère de ventes européennes.
+        atk: Array.isArray(card.attacks) && card.attacks.length ? card.attacks : undefined,
         // Le tracker doit pouvoir illustrer une impression exacte sans
         // reconstruire une URL à partir d'un identifiant parfois atypique.
         im: frOf(card.number)?.image ?? card.image ?? null,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T15:53:00.360Z",
+  "generatedAt": "2026-08-13T16:05:10.513Z",
   "sets": [
     {
       "id": "cosmic-eclipse",
@@ -30427,37 +30427,37 @@
           "jackpotNet": 205.07,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 5.32,
+              "evNet": 5.55,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.07,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 5.32,
+              "evNet": 5.55,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.07,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 5.32,
+              "evNet": 5.55,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.07,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 5.32,
+              "evNet": 5.55,
               "p25": 0,
               "median": 0,
-              "p75": 1.31,
+              "p75": 1.45,
               "pRecoup": 0.07,
               "pLoseHalf": 0.89,
               "pDouble": 0.02
@@ -32435,19 +32435,19 @@
       "boosterFR": {
         "price": 1.99,
         "priceUrl": "https://www.ebay.fr/itm/376174413823?_skw=pokemon+booster+Flammes+Obsidiennes&hash=item5795be07ff:g:gUEAAOSwWYdn~xiy",
-        "floor10": 8.2,
+        "floor10": 8.17,
         "floor10Url": "https://www.ebay.fr/itm/237002671636?_skw=pokemon+booster+Flammes+Obsidiennes&hash=item372e75c614:g:GXEAAeSwL~NqfUWG",
         "median": 13.49,
-        "offers": 58,
+        "offers": 57,
         "sellers": 35,
         "sampleSufficient": true,
         "observedFloor": 1.99,
-        "trusted": 41,
+        "trusted": 40,
         "review": 17,
         "quarantined": 0,
-        "matched": 58,
-        "scanned": 221,
-        "totalAvailable": 218,
+        "matched": 57,
+        "scanned": 219,
+        "totalAvailable": 216,
         "pages": 2,
         "complete": true,
         "scope": {
@@ -32707,7 +32707,7 @@
           "jackpotNet": 68.32,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 1.69,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
@@ -32716,7 +32716,7 @@
               "pDouble": 0.01
             },
             "freshBox": {
-              "evNet": 1.69,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
@@ -32725,7 +32725,7 @@
               "pDouble": 0.01
             },
             "trustedLoose": {
-              "evNet": 1.69,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
@@ -32734,7 +32734,7 @@
               "pDouble": 0.01
             },
             "unknownLoose": {
-              "evNet": 1.69,
+              "evNet": 1.74,
               "p25": 0,
               "median": 0,
               "p75": 1.03,
@@ -33202,11 +33202,11 @@
           "singlesOffers": 42666,
           "top5Value": 103.78,
           "top12ex5Value": 39.16,
-          "boosterFRp10": 8.2,
+          "boosterFRp10": 8.17,
           "boosterFRmedian": 13.49,
-          "boosterFRoffers": 58,
+          "boosterFRoffers": 57,
           "boosterFRsellers": 35,
-          "boosterFRtrusted": 41,
+          "boosterFRtrusted": 40,
           "boosterFRreview": 17,
           "boosterFRquarantined": 0,
           "boosterFRcomplete": true
@@ -35495,8 +35495,8 @@
         "review": 13,
         "quarantined": 0,
         "matched": 44,
-        "scanned": 156,
-        "totalAvailable": 156,
+        "scanned": 157,
+        "totalAvailable": 157,
         "pages": 1,
         "complete": true,
         "scope": {
@@ -35749,37 +35749,37 @@
           "jackpotNet": 237.56,
           "byProvenance": {
             "sealedBox": {
-              "evNet": 3.05,
+              "evNet": 3.38,
               "p25": 0,
               "median": 0,
-              "p75": 1.16,
+              "p75": 1.17,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
             },
             "freshBox": {
-              "evNet": 3.05,
+              "evNet": 3.38,
               "p25": 0,
               "median": 0,
-              "p75": 1.16,
+              "p75": 1.17,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
             },
             "trustedLoose": {
-              "evNet": 3.05,
+              "evNet": 3.38,
               "p25": 0,
               "median": 0,
-              "p75": 1.16,
+              "p75": 1.17,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
             },
             "unknownLoose": {
-              "evNet": 3.05,
+              "evNet": 3.38,
               "p25": 0,
               "median": 0,
-              "p75": 1.16,
+              "p75": 1.17,
               "pRecoup": 0.04,
               "pLoseHalf": 0.93,
               "pDouble": 0.02
@@ -36463,19 +36463,19 @@
           "marketFR": {
             "price": 5,
             "priceUrl": "https://www.ebay.fr/itm/287015907284?_skw=Fermite-ex+215%2F191&hash=item42d37b2fd4:g:euIAAeSw7ltpQnMB",
-            "floor10": 6.09,
+            "floor10": 5.99,
             "floor10Url": "https://www.ebay.fr/itm/188276487412?_skw=Fermite-ex+215%2F191&hash=item2bd62734f4:g:27IAAeSwPw9p3f3p",
             "median": 8,
-            "offers": 12,
-            "sellers": 12,
+            "offers": 13,
+            "sellers": 13,
             "sampleSufficient": true,
             "observedFloor": 5,
-            "trusted": 12,
+            "trusted": 13,
             "review": 0,
             "quarantined": 0,
-            "matched": 12,
-            "scanned": 13,
-            "totalAvailable": 13,
+            "matched": 13,
+            "scanned": 14,
+            "totalAvailable": 14,
             "pages": 1,
             "complete": true,
             "scope": {

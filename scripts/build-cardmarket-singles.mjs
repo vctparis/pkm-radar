@@ -26,16 +26,36 @@ import {
 const SINGLES_CATALOG_URL = CARDMARKET_PRODUCT_CATALOG_URL.replace("products_nonsingles", "products_singles");
 const ROOT = process.cwd();
 
-const normalizeName = (value) =>
+const clean = (value) =>
   String(value ?? "")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
-    // « Gengar [Life Shaker | Hypnoblast] », « Pikachu (V1) » : les suffixes
-    // Cardmarket décrivent la variante, pas l'identité du Pokémon.
-    .replace(/\[[^\]]*\]|\([^)]*\)/g, " ")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
+
+/** Nom seul : « Gengar [Life Shaker | Hypnoblast] » → « gengar ». */
+const normalizeName = (value) => clean(String(value ?? "").replace(/\[[^\]]*\]|\([^)]*\)/g, " "));
+
+/**
+ * Clé d'identité fine : nom + attaques, triées.
+ *
+ * Cardmarket n'expose aucun numéro de collection dans son catalogue public :
+ * il distingue les homonymes d'un même set par les attaques, entre crochets.
+ * Or les cartes qui portent l'espérance d'un booster sont justement des
+ * homonymes (« Charizard ex » y figure deux fois). Sans cette clé, elles
+ * restaient sans repère de ventes européennes.
+ */
+const attackKey = (name, attacks) => {
+  const list = (attacks ?? []).map(clean).filter(Boolean).sort();
+  return `${normalizeName(name)}|${list.join("+")}`;
+};
+
+/** Attaques déclarées par Cardmarket dans le nom du produit. */
+const attacksFromCardmarket = (name) => {
+  const match = String(name ?? "").match(/\[([^\]]*)\]/);
+  return match ? match[1].split("|").map((part) => part.trim()).filter(Boolean) : [];
+};
 
 async function fetchJson(url) {
   const response = await fetch(url, { signal: AbortSignal.timeout(300_000) });
@@ -74,13 +94,23 @@ for (const set of SETS) {
     continue;
   }
   const byName = new Map();
+  const byAttacks = new Map();
   for (const product of singlesByExpansion.get(expansion) ?? []) {
-    const key = normalizeName(product.name);
-    if (!byName.has(key)) byName.set(key, []);
-    byName.get(key).push(product);
+    const nameKey = normalizeName(product.name);
+    if (!byName.has(nameKey)) byName.set(nameKey, []);
+    byName.get(nameKey).push(product);
+    const attacks = attacksFromCardmarket(product.name);
+    if (attacks.length) {
+      const fine = attackKey(product.name, attacks);
+      if (!byAttacks.has(fine)) byAttacks.set(fine, []);
+      byAttacks.get(fine).push(product);
+    }
   }
   for (const card of index.cards.filter((entry) => entry.s === set.id)) {
-    const candidates = byName.get(normalizeName(card.n)) ?? [];
+    // D'abord l'identité fine (nom + attaques), qui lève les homonymies ;
+    // le nom seul ne sert que lorsqu'il ne désigne qu'un produit.
+    const fine = card.atk?.length ? byAttacks.get(attackKey(card.n, card.atk)) ?? [] : [];
+    const candidates = fine.length === 1 ? fine : byName.get(normalizeName(card.n)) ?? [];
     if (!candidates.length) {
       skipped.noMatch++;
       continue;
@@ -89,7 +119,13 @@ for (const set of SETS) {
       skipped.ambiguous++;
       continue;
     }
-    entries.push({ cardId: card.i, idProduct: candidates[0].idProduct, name: candidates[0].name, setId: set.id });
+    entries.push({
+      cardId: card.i,
+      idProduct: candidates[0].idProduct,
+      name: candidates[0].name,
+      setId: set.id,
+      basis: fine.length === 1 ? "name_and_attacks" : "name_only",
+    });
   }
 }
 

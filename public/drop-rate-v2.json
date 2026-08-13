@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T15:53:00.360Z",
+  "generatedAt": "2026-08-13T16:05:10.513Z",
   "modelVersion": "drop-rate-v2.5",
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
@@ -36,6 +36,12 @@
       "lossPct": 94,
       "quickLossPct": 94,
       "coverage": 0.13,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 26,
+        "exits": 1,
+        "active": 874
+      },
       "trackedCoverage": 0.806,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -331,6 +337,7 @@
       "lossPct": 76,
       "quickLossPct": 77,
       "coverage": 0.168,
+      "liquidity": null,
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -603,6 +610,12 @@
       "lossPct": 93,
       "quickLossPct": 93,
       "coverage": 0,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 1,
+        "exits": 1,
+        "active": 62
+      },
       "trackedCoverage": 0.884,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -768,6 +781,12 @@
       "lossPct": 99,
       "quickLossPct": 99,
       "coverage": 0.418,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 33,
+        "exits": 33,
+        "active": 2072
+      },
       "trackedCoverage": 0.809,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -1278,6 +1297,12 @@
       "lossPct": 93,
       "quickLossPct": 94,
       "coverage": 0.285,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 38,
+        "exits": 8,
+        "active": 2808
+      },
       "trackedCoverage": 0.802,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -1875,6 +1900,12 @@
       "lossPct": 94,
       "quickLossPct": 94,
       "coverage": 0.569,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 28,
+        "exits": 5,
+        "active": 1323
+      },
       "trackedCoverage": 0.8,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -2346,6 +2377,12 @@
       "lossPct": 88,
       "quickLossPct": 89,
       "coverage": 0.175,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 38,
+        "exits": 34,
+        "active": 3185
+      },
       "trackedCoverage": 0.798,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -2926,6 +2963,12 @@
       "lossPct": 94,
       "quickLossPct": 95,
       "coverage": 0.559,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 28,
+        "exits": 35,
+        "active": 2223
+      },
       "trackedCoverage": 0.81,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -3358,6 +3401,12 @@
       "lossPct": 93,
       "quickLossPct": 95,
       "coverage": 0.79,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 10,
+        "exits": 1,
+        "active": 1465
+      },
       "trackedCoverage": 0.809,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -3744,6 +3793,12 @@
       "lossPct": 84,
       "quickLossPct": 86,
       "coverage": 0.384,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 40,
+        "exits": 30,
+        "active": 2138
+      },
       "trackedCoverage": 0.801,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -4254,6 +4309,12 @@
       "lossPct": 92,
       "quickLossPct": 93,
       "coverage": 0.587,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 6,
+        "exits": 3,
+        "active": 408
+      },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -4559,6 +4620,12 @@
       "lossPct": 86,
       "quickLossPct": 86,
       "coverage": 0.035,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 23,
+        "exits": 9,
+        "active": 887
+      },
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -4888,6 +4955,12 @@
       "lossPct": 87,
       "quickLossPct": 88,
       "coverage": 0.12,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 23,
+        "exits": 31,
+        "active": 2066
+      },
       "trackedCoverage": 0.802,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -5364,6 +5437,7 @@
       "lossPct": 99,
       "quickLossPct": 99,
       "coverage": 0,
+      "liquidity": null,
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -5688,6 +5762,7 @@
       "lossPct": 83,
       "quickLossPct": 84,
       "coverage": 0.147,
+      "liquidity": null,
       "trackedCoverage": 0.8,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -5948,6 +6023,12 @@
       "lossPct": 82,
       "quickLossPct": 85,
       "coverage": 0.321,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 18,
+        "exits": 24,
+        "active": 1365
+      },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -6424,6 +6505,12 @@
       "lossPct": 90,
       "quickLossPct": 94,
       "coverage": 0.303,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 17,
+        "exits": 22,
+        "active": 1148
+      },
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -6842,6 +6929,12 @@
       "lossPct": 91,
       "quickLossPct": 92,
       "coverage": 0.168,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 5,
+        "exits": 9,
+        "active": 312
+      },
       "trackedCoverage": 0.811,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -7101,6 +7194,12 @@
       "lossPct": 59,
       "quickLossPct": 65,
       "coverage": 0.581,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 22,
+        "exits": 18,
+        "active": 2048
+      },
       "trackedCoverage": 0.802,
       "freshnessDays": 0,
       "confidence": "moyenne",
@@ -7553,6 +7652,12 @@
       "lossPct": 72,
       "quickLossPct": 79,
       "coverage": 0.787,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 22,
+        "exits": 62,
+        "active": 2601
+      },
       "trackedCoverage": 0.808,
       "freshnessDays": 0,
       "confidence": "élevée",
@@ -7636,11 +7741,11 @@
             "cardmarketAvg": 6.1,
             "cardmarketLow": 4.28,
             "cardmarketSourceCreatedAt": "2026-08-13T00:45:24.000Z",
-            "ebayP10": 8.2,
+            "ebayP10": 8.17,
             "ebayMedian": 13.49,
-            "ebayOffers": 58,
+            "ebayOffers": 57,
             "ebaySellers": 35,
-            "ebayTrusted": 41,
+            "ebayTrusted": 40,
             "ebayReview": 17,
             "ebayQuarantined": 0,
             "ebayComplete": true
@@ -7983,6 +8088,12 @@
       "lossPct": 89,
       "quickLossPct": 89,
       "coverage": 0.05,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 10,
+        "exits": 11,
+        "active": 1006
+      },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -8367,6 +8478,7 @@
       "lossPct": 60,
       "quickLossPct": 70,
       "coverage": 0.608,
+      "liquidity": null,
       "trackedCoverage": 0.805,
       "freshnessDays": 0,
       "confidence": "moyenne",
@@ -8777,6 +8889,12 @@
       "lossPct": 94,
       "quickLossPct": 94,
       "coverage": 0,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 11,
+        "exits": 10,
+        "active": 664
+      },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -8991,6 +9109,12 @@
       "lossPct": 82,
       "quickLossPct": 82,
       "coverage": 0,
+      "liquidity": {
+        "medianDaysListed": 1,
+        "cardsObserved": 40,
+        "exits": 26,
+        "active": 1151
+      },
       "trackedCoverage": 0.794,
       "freshnessDays": 0,
       "confidence": "faible",
@@ -9181,6 +9305,7 @@
       "lossPct": 69,
       "quickLossPct": 69,
       "coverage": 0,
+      "liquidity": null,
       "trackedCoverage": 0.805,
       "freshnessDays": 0,
       "confidence": "faible",

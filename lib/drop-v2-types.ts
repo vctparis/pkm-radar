@@ -93,6 +93,8 @@ export type DropV2Set = {
   lossPct: number | null;
   quickLossPct: number | null;
   coverage: number;
+  /** Durée d'écoulement observée sur les cartes qui portent l'EV. */
+  liquidity?: { medianDaysListed: number; cardsObserved: number; exits: number; active: number } | null;
   trackedCoverage: number;
   freshnessDays: number;
   confidence: "élevée" | "moyenne" | "faible";
