@@ -39,7 +39,10 @@
 //      sans fraction) ; lexique de gradation élargi (CollectAura, Gem Mint,
 //      CGA, SGC, ACE, « mint 10 »). Découvert par le test grandeur nature
 //      Gengar 071 de Shiny Star V.
-export const ANALYSIS_VERSION = 5;
+// v6 : périmètre eBay « livrable en France » au lieu de « vendeur en France »
+//      — les cartes japonaises étaient coupées de leur marché. Provenance et
+//      frais de port capturés avec chaque annonce.
+export const ANALYSIS_VERSION = 6;
 
 // Lexique contrefaçon / hors-marché-authentique, multilingue.
 export const SUSPICIOUS_KW =

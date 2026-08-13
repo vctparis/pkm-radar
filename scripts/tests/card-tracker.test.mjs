@@ -93,6 +93,18 @@ for (const market of Object.values(artifact.markets ?? {})) {
 }
 check("rotation cohérente et jamais nommée vente", badFlow, 0);
 
+// Une offre lointaine doit dire d'où elle vient : sans provenance ni port,
+// « 20,11 € » et « 30 € expédié de France » ne sont pas comparables.
+let undisclosedOrigin = 0;
+for (const market of Object.values(artifact.markets ?? {})) {
+  for (const summary of [market.ebayFR].filter(Boolean)) {
+    const cheapest = (summary.evidence ?? [])[0];
+    if (!cheapest) continue;
+    if (cheapest.country && cheapest.country !== "FR" && summary.bestAskCountry !== cheapest.country) undisclosedOrigin++;
+  }
+}
+check("provenance de l'offre la moins chère exposée", undisclosedOrigin, 0);
+
 check("les sets japonais sont cotés en japonais",
   jpMarkets.length > 0 && jpMarkets.every((summary) => summary.language === "jp"), true);
 

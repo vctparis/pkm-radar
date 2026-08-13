@@ -100,8 +100,16 @@ async function browseAll(params, maxPages) {
 }
 
 // Observation brute d'une annonce, prête pour le ledger.
+// « Livrable en France » plutôt que « vendeur en France » : sur les cartes
+// japonaises, la seconde formulation nous coupait du marché (1 offre à 30 €
+// au lieu de 3, dont une à 20,11 € expédiée du Japon). La contrepartie est
+// qu'une offre lointaine porte des frais de port et parfois des droits : on
+// capture le port et le pays pour que l'écran puisse le dire.
 function observationOf(item) {
+  const shipping = (item.shippingOptions ?? []).find((option) => option.shippingCost?.value != null);
   return {
+    shipping: shipping ? Number(shipping.shippingCost.value) : null,
+    country: item.itemLocation?.country ?? null,
     id: item.itemId,
     title: item.title ?? null,
     url: item.itemWebUrl ?? null,
@@ -323,7 +331,7 @@ export async function fetchSealedBoosterFR(setName, { japanese = false, exclude 
     {
       q: `pokemon booster ${setName}${japanese ? " japonais" : ""}`,
       category_ids: "183456",
-      filter: "conditions:{NEW},buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
+      filter: "conditions:{NEW},buyingOptions:{FIXED_PRICE},deliveryCountry:FR",
       // L'aspect de langue est le vrai rempart : sans lui, un booster chinois à
       // 5,99 € devient le « plancher français » du set (vécu sur 151).
       aspect_filter: `categoryId:183456,Langue:{${japanese ? "Japonais" : "Français"}}`,
@@ -368,7 +376,7 @@ export async function fetchCardFR(cardName, collectorNumber, officialCount, { la
     {
       q: `${cardName} ${numberTag}`,
       category_ids: SINGLES_CATEGORY,
-      filter: "buyingOptions:{FIXED_PRICE},itemLocationCountry:FR",
+      filter: "buyingOptions:{FIXED_PRICE},deliveryCountry:FR",
       aspect_filter: `categoryId:${SINGLES_CATEGORY},Langue:{${language}}`,
     },
     2,

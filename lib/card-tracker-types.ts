@@ -36,6 +36,8 @@ export type TrackerEvidence = {
   title: string | null;
   url: string | null;
   price: number;
+  shipping?: number | null;
+  country?: string | null;
   condition: string | null;
   trust: "trusted" | "review";
 };
@@ -50,6 +52,9 @@ export type TrackerMarketSummary = {
   floor10: number;
   /** L'offre crédible la moins chère : ce qu'on paie réellement. */
   bestAsk?: number;
+  /** Frais de port et pays de l'offre la moins chère, quand eBay les donne. */
+  bestAskShipping?: number | null;
+  bestAskCountry?: string | null;
   offers: number;
   sellers: number;
   trusted: number;

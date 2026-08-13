@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.6";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.7";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -218,6 +218,11 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
   // marché profond la médiane des demandes vit loin au-dessus du prix
   // transactable (vécu : médiane 27,70 € quand la carte s'achetait à 12 €).
   const bestAsk = Math.min(...prices);
+  // L'offre la moins chère peut venir de loin : le port et le pays décident
+  // si « 20,11 € » est vraiment moins cher que « 30 € expédié de France ».
+  const cheapestRow = sellerRows.reduce((best, row) =>
+    Number(row.price_last) < Number(best.price_last) ? row : best,
+  );
   const excluded = observed.filter((row) => !included(row, source, language)).length;
   return {
     source,
@@ -227,6 +232,8 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
     median: round2(median),
     floor10: round2(floor10),
     bestAsk: round2(bestAsk),
+    bestAskShipping: cheapestRow.shipping != null ? round2(Number(cheapestRow.shipping)) : null,
+    bestAskCountry: cheapestRow.country ?? null,
     offers: retained.length,
     sellers: sellerRows.length,
     trusted: retained.filter((row) => row.integrity === "trusted").length,
@@ -243,6 +250,8 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
         title: row.title ?? null,
         url: row.url ?? null,
         price: round2(Number(row.price_last)),
+        shipping: row.shipping != null ? round2(Number(row.shipping)) : null,
+        country: row.country ?? null,
         condition: row.condition ?? null,
         trust: row.integrity === "trusted" ? "trusted" : "review",
       })),
@@ -264,6 +273,8 @@ function combine(summaries, language = "fr") {
     median: round2(quantile(prices, 0.5)),
     floor10: round2(quantile(prices, 0.1)),
     bestAsk: round2(Math.min(...prices)),
+    bestAskShipping: (available.find((row) => row.bestAsk === Math.min(...available.map((entry) => entry.bestAsk))) ?? {}).bestAskShipping ?? null,
+    bestAskCountry: (available.find((row) => row.bestAsk === Math.min(...available.map((entry) => entry.bestAsk))) ?? {}).bestAskCountry ?? null,
     offers,
     sellers,
     trusted: available.reduce((sum, row) => sum + row.trusted, 0),

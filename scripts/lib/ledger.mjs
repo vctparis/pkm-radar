@@ -98,6 +98,8 @@ function eventOf(entry, { date, observedAt, runId }) {
     url: entry.url ?? null,
     p: Number(entry.price),
     q: entry.quantity ?? null,
+    shipping: entry.shipping ?? null,
+    country: entry.country ?? null,
     currency: entry.currency ?? "EUR",
     language: entry.language ?? null,
     condition: entry.condition ?? null,
@@ -155,6 +157,8 @@ export async function recordObservations(setId, entries, context) {
       existing.price_min = Math.min(existing.price_min ?? price, price);
       existing.price_max = Math.max(existing.price_max ?? price, price);
       existing.quantity = entry.quantity ?? null;
+      existing.shipping = entry.shipping ?? null;
+      existing.country = entry.country ?? null;
       existing.title = entry.title ?? existing.title ?? null;
       existing.url = entry.url ?? existing.url ?? null;
       existing.currency = entry.currency ?? existing.currency ?? "EUR";
@@ -189,6 +193,8 @@ export async function recordObservations(setId, entries, context) {
         graded: entry.graded ?? null,
         on_vacation: entry.onVacation ?? null,
         quantity: entry.quantity ?? null,
+        shipping: entry.shipping ?? null,
+        country: entry.country ?? null,
         seller_id: entry.sellerId ?? null,
         seller_feedback_score: entry.sellerScore ?? null,
         seller_feedback_pct: entry.sellerPct ?? null,
