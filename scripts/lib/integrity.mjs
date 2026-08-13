@@ -40,7 +40,8 @@
 //      CGA, SGC, ACE, « mint 10 »). Découvert par le test grandeur nature
 //      Gengar 071 de Shiny Star V.
 // v6 : provenance et frais de port capturés avec chaque annonce.
-// v7 : zone d'achat explicite (FR, BE, IT, ES, GB). La requête reste large
+// v7 : zone d'achat explicite — France et limitrophes (BE, LU, DE, CH, IT,
+//      ES, AD, MC) plus GB. La requête reste large
 //      pour tout voir, mais une offre hors zone est classée « hors_zone » :
 //      un envoi du Japon ne se compare pas à une offre française (port,
 //      droits, délais). Tracée, comptée, jamais dans la cotation.

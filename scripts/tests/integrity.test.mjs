@@ -113,6 +113,11 @@ has("gradation CollectAura Gem Mint → produit_grade",
 has("annonce expédiée du Japon → hors_zone",
   classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "JP" }),
   "hors_zone");
+clean("vendeur allemand → retenu (limitrophe, premier marché européen)",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "DE" }));
+has("vendeur américain → hors_zone",
+  classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "US" }),
+  "hors_zone");
 clean("vendeur belge → retenu (zone d'achat)",
   classifySingleTitle("Gengar 071/190 s4a Shiny Star V", { collectorNumber: "71", country: "BE" }));
 clean("pays inconnu → retenu, faute de preuve du contraire",

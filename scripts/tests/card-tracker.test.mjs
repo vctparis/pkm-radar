@@ -40,8 +40,8 @@ let misleadingPriceTypes = 0;
 for (const market of Object.values(artifact.markets ?? {})) {
   for (const summary of [market.rawFR, market.ebayFR, market.cardTraderFR].filter(Boolean)) {
     if (!(summary.median > 0) || !(summary.floor10 > 0) || summary.floor10 > summary.median || summary.offers < summary.sellers) invalidMarkets++;
-    // La langue suit la doctrine du set : français, ou japonais quand la
-    // série n'existe qu'en japonais. Jamais « toutes langues ».
+    // Français ; japonais si et seulement si la carte n'existe pas en
+    // français. Jamais coréen, chinois ou « toutes langues ».
     if (summary.priceType !== "active_ask" || !["fr", "jp"].includes(summary.language) || summary.conditionScope !== "EX+") misleadingPriceTypes++;
     for (const row of summary.evidence ?? []) if (Object.hasOwn(row, "sellerId") || Object.hasOwn(row, "seller_id")) leakedSellerIds++;
   }
@@ -104,6 +104,24 @@ for (const market of Object.values(artifact.markets ?? {})) {
   }
 }
 check("provenance de l'offre la moins chère exposée", undisclosedOrigin, 0);
+
+// Test direct de la doctrine : une annonce coréenne ou chinoise ne cote
+// jamais, quelle que soit la langue visée ; une japonaise ne cote que pour
+// une carte sans équivalent français.
+const { isQuotable } = await import("../lib/card-tracker.mjs");
+const ctRow = (language) => ({
+  source: "cardtrader", matching: "exact", integrity: "unassessed",
+  graded: false, on_vacation: false, price_last: 10, condition: "Near Mint", language,
+});
+check("coréen jamais coté (ni en fr, ni en jp)",
+  [isQuotable(ctRow("kr"), "cardtrader", "fr"), isQuotable(ctRow("kr"), "cardtrader", "jp")], [false, false]);
+check("chinois jamais coté",
+  [isQuotable(ctRow("cn"), "cardtrader", "fr"), isQuotable(ctRow("cn"), "cardtrader", "jp")], [false, false]);
+check("anglais et italien jamais cotés",
+  [isQuotable(ctRow("en"), "cardtrader", "fr"), isQuotable(ctRow("it"), "cardtrader", "fr")], [false, false]);
+check("japonais coté pour une carte sans équivalent français, pas ailleurs",
+  [isQuotable(ctRow("jp"), "cardtrader", "jp"), isQuotable(ctRow("jp"), "cardtrader", "fr")], [true, false]);
+check("français coté sur une carte française", isQuotable(ctRow("fr"), "cardtrader", "fr"), true);
 
 check("les sets japonais sont cotés en japonais",
   jpMarkets.length > 0 && jpMarkets.every((summary) => summary.language === "jp"), true);

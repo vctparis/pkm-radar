@@ -45,7 +45,8 @@ export type TrackerEvidence = {
 export type TrackerMarketSummary = {
   source: "ebay" | "cardtrader" | "combined";
   priceType: "active_ask";
-  /** La langue du set : français, ou japonais si la série n'existe qu'en japonais. */
+  /** Français ; japonais si et seulement si la carte n'existe pas en français.
+   *  Jamais coréen ni chinois : collectés, mais hors marché. */
   language: "fr" | "jp";
   conditionScope: "EX+";
   median: number;

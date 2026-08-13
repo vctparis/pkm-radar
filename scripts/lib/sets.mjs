@@ -10,7 +10,9 @@
 //             d'après les rotations de blocs et les vagues observées.
 //
 // Le scope linguistique du radar : cartes françaises en priorité, japonaises
-// uniquement quand la série n'existe qu'en japonais. Les autres langues sont
+// uniquement pour les impressions sans équivalent français. Les autres langues
+// (coréen, chinois, anglais, italien, allemand) sont collectées mais ne cotent
+// jamais : elles décrivent un autre marché. Les autres langues sont
 // exclues des métriques de marché — elles brouillent la mesure.
 
 export const SETS = [

@@ -172,8 +172,8 @@ export default function CardTracker() {
   const gradedLadder = Object.entries(market?.gradedAsks ?? {}).sort(
     (first, second) => second[1].grade - first[1].grade || first[1].company.localeCompare(second[1].company),
   );
-  // La doctrine de langue suit le set : un set qui n'existe qu'en japonais se
-  // cote en japonais, et l'écran doit le dire — pas « marché français ».
+  // Français ; japonais si et seulement si la carte n'existe pas en français.
+  // L'écran doit le dire — « marché japonais », pas « marché français ».
   const japanese = Boolean(set?.japanese);
   const languageTag = japanese ? "JP" : "FR";
   const marketLabel = japanese ? "Marché japonais comparable" : "Marché français comparable";

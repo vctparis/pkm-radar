@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.7";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.8";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -66,12 +66,16 @@ function latestCrawls(manifest) {
   return result;
 }
 
-// Doctrine de langue du site : le français quand la série existe en français,
-// le japonais quand elle n'existe QU'en japonais. Exiger « fr » sur un set
-// japonais jetait tout son marché légitime (vécu : Gengar 071 de Shiny Star V
-// — 16 annonces jp Near Mint écartées, la cotation retombait sur 3 annonces
-// eBay dont deux d'autres cartes).
-function included(row, source, language) {
+// Doctrine de langue, mot pour mot : la carte en FRANÇAIS ; en JAPONAIS si et
+// seulement si elle n'existe pas en français — et l'existence parallèle de
+// versions coréennes ou chinoises n'y change rien. Ces marchés ne sont pas le
+// nôtre : leurs annonces sont collectées et conservées (savoir qu'elles
+// existent a de la valeur), mais leur prix ne cote jamais.
+//
+// Exiger « fr » sur une impression japonaise jetait tout son marché légitime
+// (vécu : Gengar 071 de Shiny Star V — 16 annonces jp Near Mint écartées, la
+// cotation retombait sur 3 annonces eBay dont deux d'autres cartes).
+export function isQuotable(row, source, language) {
   return row.source === source &&
     row.matching === "exact" &&
     row.integrity !== "high_risk" &&
@@ -201,7 +205,7 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
   if (crawl && (crawl.status !== "ok" || crawl.complete !== true)) return null;
 
   const observed = sourceRows.filter((row) => row.last_seen === windowDate);
-  const retained = observed.filter((row) => included(row, source, language));
+  const retained = observed.filter((row) => isQuotable(row, source, language));
   if (!retained.length) return null;
 
   const bySeller = new Map();
@@ -223,7 +227,7 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
   const cheapestRow = sellerRows.reduce((best, row) =>
     Number(row.price_last) < Number(best.price_last) ? row : best,
   );
-  const excluded = observed.filter((row) => !included(row, source, language)).length;
+  const excluded = observed.filter((row) => !isQuotable(row, source, language)).length;
   return {
     source,
     priceType: "active_ask",
@@ -444,7 +448,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
     modelVersion: CARD_TRACKER_MODEL_VERSION,
     definitions: {
       identityGrain: "set + numéro de collection + langue + variante ; le nom français/anglais est un alias de recherche",
-      rawPrice: "offres actives EX+ dans la langue du set (français, ou japonais si la série n'existe qu'en japonais) ; médiane et p10 avec une voix par vendeur et par source",
+      rawPrice: "offres actives EX+ chez un vendeur de la zone d'achat (FR, BE, IT, ES, GB), dans la langue de la carte : français, ou japonais si et seulement si la carte n'existe pas en français. Le coréen et le chinois sont collectés mais ne cotent jamais — ce n'est pas notre marché. Médiane et p10 avec une voix par vendeur et par source.",
       history: "instantanés quotidiens du ledger uniquement ; une sortie d'annonce n'est jamais assimilée à une vente",
       cardmarketGuide: "repère produit Cardmarket (guide public) : « le moins cher » toutes conditions et toutes langues, tendance des ventes — jamais fusionné avec nos cotations EX+ par langue",
       flow: "rotation du carnet : annonces entrées et sorties entre deux crawls complets, remises en ligne probables déduites par signature vendeur+titre — une sortie n'est jamais assimilée à une vente",

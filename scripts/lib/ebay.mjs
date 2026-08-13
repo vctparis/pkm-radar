@@ -107,7 +107,13 @@ async function browseAll(params, maxPages) {
 // même cotation. La requête reste large (« livrable en France ») et ce qui
 // sort de la zone est CLASSÉ « hors_zone », donc tracé et comptabilisé, pas
 // silencieusement perdu.
-export const SELLER_ZONE = new Set(["FR", "BE", "IT", "ES", "GB"]);
+// France et pays limitrophes, plus le Royaume-Uni de l'autre côté de la
+// Manche : la zone où le port, les délais et les recours restent comparables
+// à un achat français. La Suisse et le Royaume-Uni sont hors UE — leurs
+// envois peuvent porter des droits, d'où l'affichage systématique de la
+// provenance. Les Pays-Bas ne sont pas limitrophes : gros vendeurs de cartes
+// pourtant, ils s'ajoutent ici d'une ligne si la zone doit s'élargir.
+export const SELLER_ZONE = new Set(["FR", "BE", "LU", "DE", "CH", "IT", "ES", "AD", "MC", "GB"]);
 
 function observationOf(item) {
   const shipping = (item.shippingOptions ?? []).find((option) => option.shippingCost?.value != null);
