@@ -97,6 +97,19 @@ has("reverse → variante_reverse",
 has("numéro absent → numero_absent",
   classifySingleTitle("Dracaufeu ex 151 francais neuf", ctxZard),
   "numero_absent");
+// Vécu sur le test grandeur nature Gengar 071 (Shiny Star V) : le TOTAL du
+// set d'une autre carte passait pour le numéro cherché.
+has("total de set pris pour un numéro → numero_absent",
+  classifySingleTitle("Carte Pokémon : Gengar/Ectoplasma 023/071 Holo - R - s10a - Dark Phantasma", { collectorNumber: "71" }),
+  "numero_absent");
+has("autre carte du même total → numero_absent",
+  classifySingleTitle("Pokémon Gengar ex 047/071 Wild Force JP 2024", { collectorNumber: "71" }),
+  "numero_absent");
+clean("la vraie carte 071/190 reste exacte",
+  classifySingleTitle("Carte Pokémon : Gengar/Ectoplasma 071/190 Holo - R - s4a - Shiny Star V JPN", { collectorNumber: "71" }));
+has("gradation CollectAura Gem Mint → produit_grade",
+  classifySingleTitle("Pokémon Gengar 071/190 JP – CollectAura Gem Mint 10", { collectorNumber: "71" }),
+  "produit_grade");
 clean("carte brute avec numéro → exact",
   classifySingleTitle("Dracaufeu ex 199/165 - 151 EV03.5 FR 🇫🇷", ctxZard));
 has("annonce « played / état moyen » → etat_sous_ex",

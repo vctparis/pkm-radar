@@ -34,7 +34,12 @@
 //      lexique contrefaçon exclu du calcul de la référence.
 // v4 : grading compact (PSA10/PCA9,5), numéros préfixés/suffixés, médiane
 //      conventionnelle ; signaux vendeur et qualité d'annonce séparés.
-export const ANALYSIS_VERSION = 4;
+// v5 : identité de carte durcie — le total du set ne peut plus passer pour un
+//      numéro de carte (le repli « nombre isolé » ne s'applique qu'aux titres
+//      sans fraction) ; lexique de gradation élargi (CollectAura, Gem Mint,
+//      CGA, SGC, ACE, « mint 10 »). Découvert par le test grandeur nature
+//      Gengar 071 de Shiny Star V.
+export const ANALYSIS_VERSION = 5;
 
 // Lexique contrefaçon / hors-marché-authentique, multilingue.
 export const SUSPICIOUS_KW =

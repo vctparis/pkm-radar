@@ -225,7 +225,11 @@ const SINGLES_MISMATCH = /\blots?\b|au[x]? choix|coffret|display|jumbo/i;
 // prudence des vendeurs, pour ne pas assécher l'échantillon.
 const SINGLES_LOW_GRADE = /\bplayed\b|\bpl\b|\bhp\b|heavily|abîm|abim|damaged|\bpoor\b|[ée]tat moyen|moyen [ée]tat|tr[èe]s jou[ée]e?/i;
 const LOW_GRADE_CONDITION_IDS = new Set(["5000", "6000", "7000"]);
-const SINGLES_GRADED = /\b(?:psa|pca|bgs|cgc)\s*[\d.,]*|grad[ée]e?\b|graded|grading|slab/i;
+// Vécu : « CollectAura Gem Mint 10 » passait pour une carte brute. Les
+// maisons de gradation et leurs formules de note sont toutes des marchés
+// distincts de la carte brute.
+const SINGLES_GRADED =
+  /\b(?:psa|pca|bgs|cgc|cga|sgc|ace)\s*[\d.,]*|collectaura|gem\s*mint|gem\s*mt\b|grad[ée]e?\b|graded|grading|slab|\bmint\s*10\b|note\s*10\b/i;
 const SINGLES_VARIANT = /\breverse\b/i;
 
 /** Matching d'une annonce de carte à l'unité. Pur : (title, ctx) → motifs. */
@@ -246,8 +250,13 @@ export function classifySingleTitle(title, { collectorNumber, officialCount = nu
   const fractionMatch = fractions.some((match) =>
     normalizeCollectorNumber(match[1]) === expected &&
     (expectedTotal == null || normalizeCollectorNumber(match[2]) === expectedTotal));
-  const standaloneMatch = expectedTotal == null && [...raw.matchAll(/(?:^|[^0-9a-z])([a-z]*0*\d+[a-z]*)(?=[^0-9a-z]|$)/gi)]
-    .some((match) => normalizeCollectorNumber(match[1]) === expected);
+  // Un titre qui porte une fraction a DÉJÀ déclaré son numéro : le repli
+  // « nombre isolé » n'a alors plus lieu d'être, sinon le TOTAL du set passe
+  // pour un numéro de carte (vécu : « Gengar 023/071 Dark Phantasma » compté
+  // comme le n°71 de Shiny Star V — deux cartes, deux marchés).
+  const standaloneMatch = expectedTotal == null && !fractions.length &&
+    [...raw.matchAll(/(?:^|[^0-9a-z])([a-z]*0*\d+[a-z]*)(?=[^0-9a-z]|$)/gi)]
+      .some((match) => normalizeCollectorNumber(match[1]) === expected);
   if (!expected || (!fractionMatch && !standaloneMatch)) reasons.push("numero_absent");
   return reasons;
 }

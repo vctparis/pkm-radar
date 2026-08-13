@@ -40,13 +40,23 @@ let misleadingPriceTypes = 0;
 for (const market of Object.values(artifact.markets ?? {})) {
   for (const summary of [market.rawFR, market.ebayFR, market.cardTraderFR].filter(Boolean)) {
     if (!(summary.median > 0) || !(summary.floor10 > 0) || summary.floor10 > summary.median || summary.offers < summary.sellers) invalidMarkets++;
-    if (summary.priceType !== "active_ask" || summary.language !== "fr" || summary.conditionScope !== "EX+") misleadingPriceTypes++;
+    // La langue suit la doctrine du set : français, ou japonais quand la
+    // série n'existe qu'en japonais. Jamais « toutes langues ».
+    if (summary.priceType !== "active_ask" || !["fr", "jp"].includes(summary.language) || summary.conditionScope !== "EX+") misleadingPriceTypes++;
     for (const row of summary.evidence ?? []) if (Object.hasOwn(row, "sellerId") || Object.hasOwn(row, "seller_id")) leakedSellerIds++;
   }
 }
 check("résumés de marché cohérents", invalidMarkets, 0);
 check("aucun prix demandé présenté comme vente", misleadingPriceTypes, 0);
 check("aucun identifiant vendeur publié", leakedSellerIds, 0);
+
+// Un set japonais doit être coté en japonais : exiger « fr » y jetait tout
+// le marché légitime (vécu : Gengar 071 de Shiny Star V).
+const jpSets = Object.entries(artifact.sets).filter(([, set]) => set.japanese).map(([id]) => id);
+const jpCards = artifact.cards.filter((card) => jpSets.includes(card.setId));
+const jpMarkets = jpCards.map((card) => artifact.markets[card.id]?.rawFR).filter(Boolean);
+check("les sets japonais sont cotés en japonais",
+  jpMarkets.length > 0 && jpMarkets.every((summary) => summary.language === "jp"), true);
 
 if (failures) process.exit(1);
 console.log("\nTracker cartes : invariants tenus.");

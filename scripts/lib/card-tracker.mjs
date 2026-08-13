@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.2";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.3";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -50,17 +50,22 @@ function latestCrawls(manifest) {
   return result;
 }
 
-function included(row, source) {
+// Doctrine de langue du site : le français quand la série existe en français,
+// le japonais quand elle n'existe QU'en japonais. Exiger « fr » sur un set
+// japonais jetait tout son marché légitime (vécu : Gengar 071 de Shiny Star V
+// — 16 annonces jp Near Mint écartées, la cotation retombait sur 3 annonces
+// eBay dont deux d'autres cartes).
+function included(row, source, language) {
   return row.source === source &&
     row.matching === "exact" &&
     row.integrity !== "high_risk" &&
     !row.graded &&
     !row.on_vacation &&
     Number(row.price_last) > 0 &&
-    (source === "ebay" || (row.language === "fr" && FRESH_PULL_CONDITIONS.has(row.condition)));
+    (source === "ebay" || (row.language === language && FRESH_PULL_CONDITIONS.has(row.condition)));
 }
 
-function summarize(rows, source, crawl, evidenceLimit = 6) {
+function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } = {}) {
   const sourceRows = rows.filter((row) => row.source === source);
   if (!sourceRows.length) return null;
   const fallbackDate = sourceRows.map((row) => row.last_seen).filter(Boolean).sort().at(-1) ?? null;
@@ -69,7 +74,7 @@ function summarize(rows, source, crawl, evidenceLimit = 6) {
   if (crawl && (crawl.status !== "ok" || crawl.complete !== true)) return null;
 
   const observed = sourceRows.filter((row) => row.last_seen === windowDate);
-  const retained = observed.filter((row) => included(row, source));
+  const retained = observed.filter((row) => included(row, source, language));
   if (!retained.length) return null;
 
   const bySeller = new Map();
@@ -82,11 +87,11 @@ function summarize(rows, source, crawl, evidenceLimit = 6) {
   const prices = sellerRows.map((row) => Number(row.price_last));
   const median = quantile(prices, 0.5);
   const floor10 = quantile(prices, 0.1);
-  const excluded = observed.filter((row) => !included(row, source)).length;
+  const excluded = observed.filter((row) => !included(row, source, language)).length;
   return {
     source,
     priceType: "active_ask",
-    language: "fr",
+    language,
     conditionScope: "EX+",
     median: round2(median),
     floor10: round2(floor10),
@@ -112,7 +117,7 @@ function summarize(rows, source, crawl, evidenceLimit = 6) {
   };
 }
 
-function combine(summaries) {
+function combine(summaries, language = "fr") {
   const available = summaries.filter(Boolean);
   if (!available.length) return null;
   const evidence = available.flatMap((summary) => summary.evidence);
@@ -122,7 +127,7 @@ function combine(summaries) {
   return {
     source: "combined",
     priceType: "active_ask",
-    language: "fr",
+    language,
     conditionScope: "EX+",
     median: round2(quantile(prices, 0.5)),
     floor10: round2(quantile(prices, 0.1)),
@@ -246,10 +251,11 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
       const normalized = subject.slice(5);
       const candidates = index.cards.filter((card) => card.s === set.id && normalizeCollectorNumber(card.num) === normalized);
       for (const card of candidates) {
-        const ebay = summarize(rows, "ebay", crawls.get(`${set.id}:${subject}:ebay`));
-        const cardtrader = summarize(rows, "cardtrader", crawls.get(`${set.id}:${subject}:cardtrader`));
+        const language = set.jpOnly ? "jp" : "fr";
+        const ebay = summarize(rows, "ebay", crawls.get(`${set.id}:${subject}:ebay`), { language });
+        const cardtrader = summarize(rows, "cardtrader", crawls.get(`${set.id}:${subject}:cardtrader`), { language });
         markets[card.i] = {
-          rawFR: combine([ebay, cardtrader]),
+          rawFR: combine([ebay, cardtrader], language),
           ebayFR: publicSummary(ebay),
           cardTraderFR: publicSummary(cardtrader),
           history: historyOf(rows),
@@ -270,7 +276,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
     modelVersion: CARD_TRACKER_MODEL_VERSION,
     definitions: {
       identityGrain: "set + numéro de collection + langue + variante ; le nom français/anglais est un alias de recherche",
-      rawPrice: "offres actives françaises EX+ ; médiane et p10 calculés avec une voix par vendeur et par source",
+      rawPrice: "offres actives EX+ dans la langue du set (français, ou japonais si la série n'existe qu'en japonais) ; médiane et p10 avec une voix par vendeur et par source",
       history: "instantanés quotidiens du ledger uniquement ; une sortie d'annonce n'est jamais assimilée à une vente",
       grades: "prix et populations PSA séparés par grade ; aucune estimation n'est publiée sans source carte-niveau autorisée",
     },
