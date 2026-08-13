@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.5";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.6";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -32,6 +32,22 @@ function setAliases(set) {
     set.tcgdex,
     set.cardtrader,
   ].filter(Boolean).map(String))];
+}
+
+// Toutes les journées de crawl COMPLET par (set, sujet, source) : la fenêtre
+// dans laquelle une disparition est interprétable.
+export function completeCrawlDays(manifest) {
+  const result = new Map();
+  for (const line of manifest.split("\n")) {
+    if (!line.trim()) continue;
+    const row = JSON.parse(line);
+    if (row.type !== "crawl" || !row.subject?.startsWith("card:")) continue;
+    if (row.status !== "ok" || row.complete !== true) continue;
+    const key = `${row.set}:${row.subject}:${row.source}`;
+    if (!result.has(key)) result.set(key, new Set());
+    result.get(key).add(row.date);
+  }
+  return result;
 }
 
 function latestCrawls(manifest) {
@@ -131,6 +147,49 @@ function gradedAsksOf(rows, windowDate) {
     };
   }
   return result;
+}
+
+// Rotation du carnet — notre réponse au manque de ventes conclues.
+//
+// L'API eBay publique n'expose que des annonces actives ; les ventes passent
+// par Marketplace Insights, en accès restreint. Mais nous suivons chaque
+// annonce par son identifiant : quand elle disparaît d'un crawl COMPLET, on
+// connaît son dernier prix et son temps de présence. Une sortie n'est PAS une
+// vente (retrait, expiration, remise en ligne) — d'où la déduction des
+// remises en ligne probables, repérées par signature vendeur+titre, et le
+// vocabulaire « sortie », jamais « vente ».
+function flowOf(rows, completeDates) {
+  const days = [...new Set(completeDates)].sort();
+  if (days.length < 2) return null;
+  const last = days.at(-1);
+  const dayCount = (from, to) =>
+    Math.max(1, Math.round((Date.parse(`${to}T12:00:00Z`) - Date.parse(`${from}T12:00:00Z`)) / 86_400_000) + 1);
+
+  const active = rows.filter((row) => row.last_seen === last);
+  const exited = rows.filter((row) => row.last_seen < last);
+  // Une annonce ressortie sous un nouvel identifiant chez le même vendeur,
+  // avec le même titre : remise en ligne, pas sortie de marché.
+  const activeSignatures = new Set(active.map((row) => row.relist_signature).filter(Boolean));
+  const likelyRelists = exited.filter((row) => row.relist_signature && activeSignatures.has(row.relist_signature));
+  const adjusted = exited.filter((row) => !likelyRelists.includes(row));
+  const exitPrices = adjusted.map((row) => Number(row.price_last)).filter((value) => value > 0);
+  const listedDays = adjusted.map((row) => dayCount(row.first_seen, row.last_seen));
+
+  return {
+    observedSince: days[0],
+    observedDays: days.length,
+    // Un carnet qui passe de N annonces à zéro relève presque toujours de la
+    // variance de recherche eBay, pas d'un marché qui se vide : la rotation
+    // n'est pas publiable ce jour-là.
+    suspectEmptyCrawl: active.length === 0 && exited.length > 0,
+    active: active.length,
+    exits: exited.length,
+    likelyRelists: likelyRelists.length,
+    adjustedExits: adjusted.length,
+    exitPriceMedian: exitPrices.length ? round2(quantile(exitPrices, 0.5)) : null,
+    exitPriceRange: exitPrices.length ? [round2(Math.min(...exitPrices)), round2(Math.max(...exitPrices))] : null,
+    medianDaysListed: listedDays.length ? Math.round(quantile(listedDays, 0.5)) : null,
+  };
 }
 
 function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } = {}) {
@@ -280,6 +339,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
     if (error?.code !== "ENOENT") throw error;
   }
   const crawls = latestCrawls(manifest);
+  const completeDays = completeCrawlDays(manifest);
   const setById = new Map(SETS.map((set) => [set.id, set]));
   const imageMap = imageMapFromRadar(radar);
   const markets = {};
@@ -333,6 +393,13 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
           ebayFR: publicSummary(ebay),
           cardTraderFR: publicSummary(cardtrader),
           history: historyOf(rows),
+          flow: flowOf(
+            rows,
+            [
+              ...(completeDays.get(`${set.id}:${subject}:ebay`) ?? []),
+              ...(completeDays.get(`${set.id}:${subject}:cardtrader`) ?? []),
+            ],
+          ),
           gradedAsks: gradedAsksOf(rows, crawls.get(`${set.id}:${subject}:ebay`)?.date ?? null),
           grades: gradesByCard.get(card.i) ?? {},
         };
@@ -369,6 +436,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
       rawPrice: "offres actives EX+ dans la langue du set (français, ou japonais si la série n'existe qu'en japonais) ; médiane et p10 avec une voix par vendeur et par source",
       history: "instantanés quotidiens du ledger uniquement ; une sortie d'annonce n'est jamais assimilée à une vente",
       cardmarketGuide: "repère produit Cardmarket (guide public) : « le moins cher » toutes conditions et toutes langues, tendance des ventes — jamais fusionné avec nos cotations EX+ par langue",
+      flow: "rotation du carnet : annonces entrées et sorties entre deux crawls complets, remises en ligne probables déduites par signature vendeur+titre — une sortie n'est jamais assimilée à une vente",
       gradedAsks: "demandes actives par maison de gradation et par grade, relevées sur eBay.fr — des prix demandés, jamais des ventes conclues, et un marché distinct de la carte brute",
       grades: "prix et populations PSA séparés par grade ; aucune estimation n'est publiée sans source carte-niveau autorisée",
     },

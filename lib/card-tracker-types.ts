@@ -91,6 +91,20 @@ export type TrackerGradedAsk = {
   evidence: TrackerEvidence[];
 };
 
+export type TrackerFlow = {
+  observedSince: string;
+  observedDays: number;
+  /** Carnet tombé à zéro : variance de recherche probable, rotation non publiable. */
+  suspectEmptyCrawl: boolean;
+  active: number;
+  exits: number;
+  likelyRelists: number;
+  adjustedExits: number;
+  exitPriceMedian: number | null;
+  exitPriceRange: [number, number] | null;
+  medianDaysListed: number | null;
+};
+
 export type TrackerCardMarket = {
   rawFR: TrackerMarketSummary | null;
   ebayFR: TrackerMarketSummary | null;
@@ -98,6 +112,8 @@ export type TrackerCardMarket = {
   /** Repère produit Cardmarket — contrepoint, jamais fusionné aux cotations. */
   cardmarketGuide?: TrackerCardmarketGuide;
   history: TrackerHistoryPoint[];
+  /** Rotation du carnet — sorties d'annonces, jamais des ventes confirmées. */
+  flow?: TrackerFlow | null;
   /** Demandes gradées relevées sur eBay.fr — clé « PSA:10 », « PCA:9.5 »… */
   gradedAsks?: Record<string, TrackerGradedAsk>;
   grades: Record<string, {

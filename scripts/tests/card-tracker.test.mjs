@@ -81,6 +81,18 @@ for (const market of Object.values(artifact.markets ?? {})) {
 check("échelle de grades cohérente", gradedLeak, 0);
 check("aucune demande gradée présentée comme une vente", gradedAsSale, 0);
 
+// La rotation ne doit jamais se lire comme une vente, ni compter une remise
+// en ligne comme une sortie, ni publier un carnet tombé à zéro.
+let badFlow = 0;
+for (const market of Object.values(artifact.markets ?? {})) {
+  const flow = market.flow;
+  if (!flow) continue;
+  if (flow.adjustedExits + flow.likelyRelists !== flow.exits) badFlow++;
+  if (flow.observedDays < 2) badFlow++;
+  if (Object.hasOwn(flow, "sales") || Object.hasOwn(flow, "sold")) badFlow++;
+}
+check("rotation cohérente et jamais nommée vente", badFlow, 0);
+
 check("les sets japonais sont cotés en japonais",
   jpMarkets.length > 0 && jpMarkets.every((summary) => summary.language === "jp"), true);
 
