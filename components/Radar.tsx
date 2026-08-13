@@ -18,7 +18,6 @@ const TIER_SERIES = [
   { key: "r6_15", label: "Rangs 6-15", color: "#199e70" },
   { key: "r16_50", label: "Rangs 16-50", color: "#c98500" },
   { key: "fond", label: "Fond (51+)", color: "#d55181" },
-  { key: "booster", label: "Booster", color: "#9085e9" },
 ] as const;
 
 const eur = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
@@ -79,10 +78,11 @@ export default function Radar({ data }: { data: RadarData }) {
   const [activeId, setActiveId] = useState(data.sets[0]?.id);
   const [smoothing, setSmoothing] = useState<"monthly" | "quarterly">("monthly");
   const [detailView, setDetailView] = useState<"analyse" | "ouverture">("analyse");
-  // Toutes les strates visibles par defaut ; le booster s'ajoute des que son
-  // historique existe (2 relevés).
+  // Toutes les strates visibles par défaut. Le booster reste dans les graphes
+  // de niveau base 100 / prix : sa variation cumulée n'est pas comparable au
+  // momentum 7 j contre 30 j des cartes.
   const [visible, setVisible] = useState<Record<string, boolean>>({
-    top1: true, r2_5: true, r6_15: true, r16_50: true, fond: true, booster: true,
+    top1: true, r2_5: true, r6_15: true, r16_50: true, fond: true,
   });
   const active: SetEntry | undefined = data.sets.find((s) => s.id === activeId) ?? data.sets[0];
   if (!active) return null;
@@ -114,28 +114,19 @@ export default function Radar({ data }: { data: RadarData }) {
     return t1 != null && circle != null && t1 > Math.max(circle, 0);
   }).length;
 
-  // Series du graphe de croissance : les 5 strates (croissance 30 j sur
-  // fenetre glissante) + le booster, exprime lui aussi en pourcentage — la
-  // variation depuis son premier releve. Un axe unique impose une unite
-  // unique : tout est en %.
-  const boosterGrowthPoints = (() => {
-    const rows = active.liveHistory;
-    const value = (row: (typeof rows)[number]) => row.boosterFRmedian ?? row.boosterFRp10 ?? row.boosterPrice ?? null;
-    const base = rows.map(value).find((v) => v != null && v > 0);
-    if (base == null) return [];
-    return rows.map((row) => {
-      const v = value(row);
-      return { date: row.date, value: v != null && v > 0 ? Number((((v / base) - 1) * 100).toFixed(2)) : null };
-    });
-  })();
+  // Momentum des cinq strates de cartes. Chaque point compare le panier en
+  // moyenne 7 j à sa moyenne 30 j, sur une fenêtre de relevés rétrospective.
   const growthChartSeries = TIER_SERIES.filter((tier) => visible[tier.key]).map((tier) => ({
     label: tier.label,
     color: tier.color,
-    points:
-      tier.key === "booster"
-        ? boosterGrowthPoints
-        : active.growthSeries[smoothing][tier.key].map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
+    points: active.growthSeries[smoothing][tier.key].map((p) => ({ date: p.date, value: p.growth, sample: p.sample })),
   }));
+  // Borne calculée sur toutes les strates, y compris masquées : filtrer une
+  // courbe ne doit pas modifier visuellement l'amplitude des autres.
+  const growthScaleBound = Math.max(
+    1,
+    ...TIER_SERIES.flatMap((tier) => active.growthSeries[smoothing][tier.key].map((point) => Math.abs(point.growth))),
+  );
 
   return (
     <div className="relative z-10">
@@ -436,20 +427,20 @@ export default function Radar({ data }: { data: RadarData }) {
               emptyHint="Premier relevé enregistré aujourd'hui. La courbe apparaît au deuxième passage du cron quotidien — c'est le seul moyen d'obtenir cette profondeur, aucune API ne la vend."
             />
 
-            {/* Pleine largeur et plus haut : c'est le graphe de lecture
-                principal. L'historique commence en novembre 2025 — première
-                date de relevé Cardmarket, aucune source accessible ne remonte
-                plus loin ; le cron l'allonge désormais chaque jour. */}
+            {/* Pleine largeur et plus haut : lecture du momentum récent, pas
+                d'un niveau de prix historique. Les fenêtres sont strictement
+                rétrospectives pour qu'un point n'utilise jamais le futur. */}
             {!active.jpOnly && (
             <LineChart
-              title="Croissance dans le temps"
+              title="Momentum récent par strate"
               legend={false}
               subtitle={
                 smoothing === "monthly"
-                  ? "Croissance pondérée par la valeur, fenêtre glissante de 90 jours avancée mois par mois. Les strates hautes (carte-titre, rangs 2-5) n'ont que peu de points : Cardmarket relève les cartes chères rarement. Le booster est en variation depuis son premier relevé."
-                  : "Croissance pondérée par la valeur, fenêtre glissante de 180 jours avancée trimestre par trimestre — moins de points, moins de bruit. Le booster est en variation depuis son premier relevé."
+                  ? "Écart pondéré entre moyenne 7 j et moyenne 30 j. Chaque point regroupe uniquement les relevés des 90 jours précédents ; les strates hautes ont peu de points et doivent être lues avec leur volume."
+                  : "Écart pondéré entre moyenne 7 j et moyenne 30 j. Chaque point regroupe uniquement les relevés des 180 jours précédents, avec un pas trimestriel — moins de points, moins de bruit."
               }
               height={430}
+              symmetricZero={growthScaleBound}
               controls={
                 <>
                 <div role="group" aria-label="Séries affichées" className="flex flex-wrap gap-1.5">

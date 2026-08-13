@@ -20,6 +20,9 @@ type Props = {
   /** Masquer la légende interne quand les commandes tiennent déjà ce rôle
       (des pastilles de sélection colorées SONT une légende). */
   legend?: boolean;
+  /** Domaine vertical symétrique autour de zéro. Une borne explicite permet
+      de garder la même échelle quand l'utilisateur masque une série. */
+  symmetricZero?: boolean | number;
 };
 
 const dateFmtShort = new Intl.DateTimeFormat("fr-FR", { month: "short", year: "2-digit" });
@@ -27,7 +30,7 @@ const dateFmtShort = new Intl.DateTimeFormat("fr-FR", { month: "short", year: "2
 const dateFmt = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short", year: "2-digit" });
 const parse = (iso: string) => Date.parse(`${iso}T12:00:00Z`);
 
-export default function LineChart({ title, subtitle, series, reference, emptyHint, format, height, controls, legend = true }: Props) {
+export default function LineChart({ title, subtitle, series, reference, emptyHint, format, height, controls, legend = true, symmetricZero = false }: Props) {
   const [hover, setHover] = useState<number | null>(null);
   const [asTable, setAsTable] = useState(false);
 
@@ -71,13 +74,20 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
     const maxT = Math.max(...times);
     let lo = Math.min(...values);
     let hi = Math.max(...values);
-    if (lo === hi) {
-      lo -= 1;
-      hi += 1;
+    if (symmetricZero) {
+      const observed = Math.max(1, ...values.map((value) => Math.abs(value)));
+      const bound = (typeof symmetricZero === "number" ? Math.max(symmetricZero, observed) : observed) * 1.15;
+      lo = -bound;
+      hi = bound;
+    } else {
+      if (lo === hi) {
+        lo -= 1;
+        hi += 1;
+      }
+      const pad = (hi - lo) * 0.15;
+      lo -= pad;
+      hi += pad;
     }
-    const pad = (hi - lo) * 0.15;
-    lo -= pad;
-    hi += pad;
 
     const x = (t: number) => (maxT === minT ? (PAD.left + W - PAD.right) / 2 : PAD.left + ((t - minT) / (maxT - minT)) * (W - PAD.left - PAD.right));
     const y = (v: number) => PAD.top + ((hi - v) / (hi - lo)) * (H - PAD.top - PAD.bottom);
@@ -87,7 +97,7 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
     const dates = [...new Set(clean.flatMap((s) => s.points.map((p) => p.date)))].sort();
 
     return { clean, x, y, lo, hi, minT, maxT, dates };
-  }, [series, reference, H, W, PAD]);
+  }, [series, reference, symmetricZero, H, W, PAD]);
 
   // Une ligne exige au moins deux points ; en dessous on affiche l'état réel
   // plutôt qu'un graphe trompeusement vide.
@@ -285,14 +295,17 @@ export default function LineChart({ title, subtitle, series, reference, emptyHin
                       <span aria-hidden className="h-[3px] w-3 rounded-full" style={{ background: s.color }} />
                       {s.label}
                     </span>
-                    <span className="tabular text-mist-050">{fmt(p.value as number)}</span>
+                    <span className="text-right">
+                      <span className="tabular block text-mist-050">{fmt(p.value as number)}</span>
+                      {p.sample != null && (
+                        <span className="block text-[0.7rem] text-mist-500">
+                          {p.sample} carte{p.sample > 1 ? "s" : ""}
+                        </span>
+                      )}
+                    </span>
                   </div>
                 );
               })}
-              {(() => {
-                const sample = model.clean.map((s) => s.points.find((q) => q.date === model.dates[hover])?.sample).find(Boolean);
-                return sample ? <div className="mt-1 text-mist-500">{sample} cartes mesurées</div> : null;
-              })()}
             </div>
           )}
         </div>

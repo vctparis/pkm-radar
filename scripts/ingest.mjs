@@ -672,8 +672,10 @@ async function main() {
       bestCard.offersFR = podium[0].offersFR;
     }
 
-    // Séries temporelles à deux lissages : mensuel (fenêtre 90 j avancée mois
-    // par mois) et trimestriel (fenêtre 180 j avancée trimestre par trimestre).
+    // Séries temporelles à deux lissages rétrospectifs : mensuel (les 90 jours
+    // précédant chaque point) et trimestriel (les 180 jours précédents). Une
+    // fenêtre centrée daterait certains points dans le futur et créerait un
+    // biais d'anticipation.
     // L'historique ne peut pas remonter plus loin que novembre 2025 : c'est la
     // première date de relevé Cardmarket disponible, aucune source accessible
     // ne vend plus profond.

@@ -79,7 +79,7 @@ let compactGradedExact = 0;
 let missingRelistSignature = 0;
 for (const file of files) {
   const store = JSON.parse(await readFile(join(ledgerDir, file), "utf8"));
-  if (store.schema_version !== 4) invalidSchema++;
+  if (store.schema_version !== 5) invalidSchema++;
   for (const row of Object.values(store.listings ?? {})) {
     if (!Array.isArray(row.history) || !row.history.length) missingHistory++;
     if (row.times_seen !== row.history?.length) inconsistentSeen++;
@@ -90,7 +90,7 @@ for (const file of files) {
     if (row.seller_id && row.title && !row.relist_signature) missingRelistSignature++;
   }
 }
-check("tous les stores sont en schéma v4", invalidSchema, 0);
+check("tous les stores sont en schéma v5", invalidSchema, 0);
 check("aucun historique manquant", missingHistory, 0);
 check("times_seen correspond aux événements", inconsistentSeen, 0);
 check("mauvais matching laissé non évalué", wrongAssessed, 0);

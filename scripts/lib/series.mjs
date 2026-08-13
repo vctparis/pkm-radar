@@ -32,6 +32,22 @@ export function median(values) {
 
 export const iso = (ms) => new Date(ms).toISOString().slice(0, 10);
 
+function rollingEnds(observations, stepMonths = 1) {
+  const first = new Date(Math.min(...observations.map((o) => o.t)));
+  const last = Math.max(...observations.map((o) => o.t));
+  const cursor = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), 15, 12));
+  const ends = [];
+  while (cursor.getTime() <= last) {
+    ends.push(cursor.getTime());
+    cursor.setUTCMonth(cursor.getUTCMonth() + stepMonths);
+  }
+  // Le dernier relevé est le point le plus utile pour décider. On l'ajoute à
+  // la grille régulière sans jamais prolonger artificiellement l'axe au-delà
+  // de la donnée réellement disponible.
+  if (ends.at(-1) !== last) ends.push(last);
+  return ends;
+}
+
 // avg7 vs avg30 : deux moyennes de même nature, donc comparables.
 // On évite avg1 comme mesure principale — sur une carte peu échangée c'est
 // souvent une vente isolée, pas un niveau de marché.
@@ -65,32 +81,27 @@ export function momentumSeries(cards, { minSample = 8, rollingDays = 0 } = {}) {
     byDate.get(key).push(value);
   }
 
-  // Fenêtre glissante : indispensable dès qu'on découpe le set en segments.
-  // Les cartes chères ont presque toutes été relevées le même mois, si bien
-  // qu'un découpage en seaux disjoints ne produit qu'un seul point — donc
-  // aucune courbe. Une fenêtre de 90 jours avancée de mois en mois triple
-  // l'échantillon de chaque point sans inventer de donnée ; les points
-  // successifs se recouvrent, ce qui lisse la série et doit être annoncé.
+  // Fenêtre glissante rétrospective : le point daté t ne voit que les relevés
+  // antérieurs ou égaux à t. Une fenêtre centrée produisait des points futurs
+  // et introduisait un biais d'anticipation dans une lecture chronologique.
+  // Les points successifs se recouvrent, ce qui lisse la série et doit rester
+  // annoncé dans l'interface.
   if (rollingDays > 0 && observations.length) {
     const DAY = 86_400_000;
-    const half = (rollingDays / 2) * DAY;
-    const first = new Date(Math.min(...observations.map((o) => o.t)));
-    const last = Math.max(...observations.map((o) => o.t));
+    const span = rollingDays * DAY;
     const points = [];
 
-    const cursor = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), 15, 12));
-    while (cursor.getTime() <= last + half) {
-      const center = cursor.getTime();
-      const values = observations.filter((o) => Math.abs(o.t - center) <= half).map((o) => o.value);
+    for (const end of rollingEnds(observations)) {
+      const start = end - span;
+      const values = observations.filter((o) => o.t > start && o.t <= end).map((o) => o.value);
       if (values.length >= minSample) {
         points.push({
-          date: iso(center),
+          date: iso(end),
           sample: values.length,
           momentum: Number((median(values) * 100).toFixed(2)),
           diffusion: Number(((values.filter((v) => v > 0).length / values.length) * 100).toFixed(1)),
         });
       }
-      cursor.setUTCMonth(cursor.getUTCMonth() + 1);
     }
     return points;
   }
@@ -158,7 +169,7 @@ export function basketGrowth(cards) {
 }
 
 /**
- * Croissance d'un panier, pondérée par la valeur.
+ * Momentum récent d'un panier, pondéré par la valeur.
  *
  * La diffusion répond à « combien de cartes montent ». Cette mesure-ci répond à
  * « de combien le panier monte », ce qui est la question économique. On somme
@@ -167,7 +178,9 @@ export function basketGrowth(cards) {
  * médiane de variations donnerait le même poids à une commune à 0,30 € qu'à un
  * Dracaufeu à 300 €.
  *
- * Réserve de lecture : la composition du panier change d'une fenêtre à l'autre
+ * Chaque point utilise une fenêtre rétrospective se terminant à sa date : il ne
+ * contient donc jamais d'observation future. Réserve de lecture : la composition
+ * du panier change d'une fenêtre à l'autre
  * (les cartes n'ont pas toutes la même date de relevé). Chaque point reste
  * valide en interne — c'est bien le même jeu de cartes au numérateur et au
  * dénominateur — mais deux points successifs ne portent pas exactement sur les
@@ -187,26 +200,22 @@ export function basketGrowthSeries(cards, { minSample = 5, rollingDays = 90, ste
   if (!observations.length) return [];
 
   const DAY = 86_400_000;
-  const half = (rollingDays / 2) * DAY;
-  const first = new Date(Math.min(...observations.map((o) => o.t)));
-  const last = Math.max(...observations.map((o) => o.t));
+  const span = rollingDays * DAY;
   const points = [];
 
-  const cursor = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), 15, 12));
-  while (cursor.getTime() <= last + half) {
-    const center = cursor.getTime();
-    const window = observations.filter((o) => Math.abs(o.t - center) <= half);
+  for (const end of rollingEnds(observations, stepMonths)) {
+    const start = end - span;
+    const window = observations.filter((o) => o.t > start && o.t <= end);
     if (window.length >= minSample) {
       const before = window.reduce((sum, o) => sum + o.before, 0);
       const after = window.reduce((sum, o) => sum + o.after, 0);
       points.push({
-        date: iso(center),
+        date: iso(end),
         sample: window.length,
         growth: Number(((after / before - 1) * 100).toFixed(2)),
         basketValue: Number(after.toFixed(2)),
       });
     }
-    cursor.setUTCMonth(cursor.getUTCMonth() + stepMonths);
   }
   return points;
 }
