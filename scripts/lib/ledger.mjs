@@ -52,23 +52,38 @@ function legacyEvent(row) {
   };
 }
 
+/** Compaction d'un journal existant — même transformation qu'à la lecture. */
+export function compactStore(store) {
+  return normalizeStore(store);
+}
+
 function normalizeStore(store) {
   if (!store || typeof store !== "object" || !store.listings || typeof store.listings !== "object") {
     throw new Error("schéma ledger invalide");
   }
-  store.schema_version = 4;
+  // Compaction v5 : un événement ne garde que ce qui varie (jour, relevé,
+  // prix, quantité). Les descriptifs et la classification vivent au niveau de
+  // la fiche, à jour — les recopier chaque jour avait porté le journal à
+  // 173 Mo en deux jours.
+  store.schema_version = 5;
   for (const row of Object.values(store.listings)) {
     if (!Array.isArray(row.history) || !row.history.length) row.history = [legacyEvent(row)];
-    else row.history = row.history.map((event) => event.legacy_compacted
-      ? { d: event.d, run_id: event.run_id, p: event.p, legacy_compacted: true }
-      : event.run_id
-        ? event
-        : {
-            ...legacyEvent(row),
-            d: event.d ?? row.first_seen,
-            p: event.p ?? row.price_first,
-            run_id: `legacy-${event.d ?? row.first_seen}`,
-          });
+    else row.history = row.history.map((event, index) => {
+      const slim = {
+        d: event.d ?? row.first_seen,
+        run_id: event.run_id ?? `legacy-${event.d ?? row.first_seen}`,
+        p: event.p ?? row.price_first,
+      };
+      if (event.q != null) slim.q = event.q;
+      if (event.legacy_compacted) slim.legacy_compacted = true;
+      // Le premier événement est l'instantané d'identité : il garde tout ce
+      // qu'il portait. Les suivants ne gardent que les changements réels.
+      for (const [key, , ofRow] of EVENT_DESCRIPTORS) {
+        if (!(key in event)) continue;
+        if (index === 0 || event[key] !== ofRow(row)) slim[key] = event[key];
+      }
+      return slim;
+    });
     if (row.matching === "wrong") {
       row.integrity = "unassessed";
       row.integrity_reasons = [];
@@ -88,38 +103,36 @@ async function writeAtomic(path, data, runId) {
   await rename(tmp, path);
 }
 
-function eventOf(entry, { date, observedAt, runId }) {
-  return {
-    d: date,
-    at: observedAt,
-    run_id: runId,
-    subject: entry.subject,
-    title: entry.title ?? null,
-    url: entry.url ?? null,
-    p: Number(entry.price),
-    q: entry.quantity ?? null,
-    shipping: entry.shipping ?? null,
-    country: entry.country ?? null,
-    currency: entry.currency ?? "EUR",
-    language: entry.language ?? null,
-    condition: entry.condition ?? null,
-    graded: entry.graded ?? null,
-    on_vacation: entry.onVacation ?? null,
-    seller_feedback_score: entry.sellerScore ?? null,
-    seller_feedback_pct: entry.sellerPct ?? null,
-    seller_id: entry.sellerId ?? null,
-    matching: entry.matching,
-    matching_reasons: entry.matchingReasons ?? [],
-    integrity: entry.matching === "wrong" ? "unassessed" : entry.integrity,
-    integrity_reasons: entry.integrityReasons ?? [],
-    seller_trust: entry.sellerTrust ?? "unassessed",
-    seller_reasons: entry.sellerReasons ?? [],
-    listing_quality: entry.listingQuality ?? "unassessed",
-    listing_reasons: entry.listingReasons ?? [],
-    source_confidence: entry.sourceConfidence ?? "unassessed",
-    relist_signature: relistSignature(entry),
-    analysis_version: ANALYSIS_VERSION,
-  };
+// Journal en instantané + écarts. Le PREMIER événement d'une annonce porte
+// son identité complète ; les suivants ne portent que ce qui a bougé — prix,
+// quantité, et tout descriptif réellement modifié par le vendeur. Rien n'est
+// perdu : un changement reste enregistré le jour où il survient. Recopier
+// 27 champs identiques chaque jour avait porté le journal à 173 Mo en deux
+// jours et faisait tomber le build de Vercel.
+const EVENT_DESCRIPTORS = [
+  ["subject", (entry) => entry.subject ?? null, (row) => row.subject ?? null],
+  ["title", (entry) => entry.title ?? null, (row) => row.title ?? null],
+  ["url", (entry) => entry.url ?? null, (row) => row.url ?? null],
+  ["shipping", (entry) => entry.shipping ?? null, (row) => row.shipping ?? null],
+  ["country", (entry) => entry.country ?? null, (row) => row.country ?? null],
+  ["language", (entry) => entry.language ?? null, (row) => row.language ?? null],
+  ["condition", (entry) => entry.condition ?? null, (row) => row.condition ?? null],
+  ["seller_id", (entry) => entry.sellerId ?? null, (row) => row.seller_id ?? null],
+  ["seller_feedback_score", (entry) => entry.sellerScore ?? null, (row) => row.seller_feedback_score ?? null],
+  ["matching", (entry) => entry.matching ?? null, (row) => row.matching ?? null],
+  ["integrity", (entry) => (entry.matching === "wrong" ? "unassessed" : entry.integrity ?? null), (row) => row.integrity ?? null],
+];
+
+export const EVENT_DESCRIPTOR_KEYS = EVENT_DESCRIPTORS.map(([key]) => key);
+
+function eventOf(entry, { date, runId }, previous = null) {
+  const event = { d: date, run_id: runId, p: Number(entry.price) };
+  if (entry.quantity != null) event.q = entry.quantity;
+  for (const [key, ofEntry, ofRow] of EVENT_DESCRIPTORS) {
+    const value = ofEntry(entry);
+    if (previous ? value !== ofRow(previous) : value != null) event[key] = value;
+  }
+  return event;
 }
 
 /** Enregistre une observation par exécution et par sujet, de façon idempotente. */
@@ -139,11 +152,13 @@ export async function recordObservations(setId, entries, context) {
     if (!entry.id || !(entry.price > 0) || !entry.source || !entry.subject) continue;
     const key = `${entry.source}:${entry.id}`;
     const price = Number(entry.price);
-    const event = eventOf(entry, context);
     const existing = store.listings[key];
     if (existing) {
-      // Même run + même sujet = retry idempotent, pas une nouvelle observation.
-      const index = existing.history.findIndex((h) => h.run_id === runId && h.subject === entry.subject);
+      // Même relevé = retry idempotent, pas une nouvelle observation.
+      const index = existing.history.findIndex((h) => h.run_id === runId);
+      // Rejouer le PREMIER relevé doit réécrire un instantané complet, pas un
+      // écart : sinon un simple retry effacerait l'identité de l'annonce.
+      const event = eventOf(entry, context, index === 0 ? null : existing);
       if (index >= 0) existing.history[index] = event;
       else {
         existing.history.push(event);
@@ -171,17 +186,18 @@ export async function recordObservations(setId, entries, context) {
       existing.seller_feedback_pct = entry.sellerPct ?? null;
       existing.matching = entry.matching;
       existing.matching_reasons = entry.matchingReasons ?? [];
-      existing.integrity = event.integrity;
-      existing.integrity_reasons = event.integrity_reasons;
-      existing.seller_trust = event.seller_trust;
-      existing.seller_reasons = event.seller_reasons;
-      existing.listing_quality = event.listing_quality;
-      existing.listing_reasons = event.listing_reasons;
-      existing.source_confidence = event.source_confidence;
-      existing.relist_signature = event.relist_signature;
+      existing.integrity = entry.matching === "wrong" ? "unassessed" : entry.integrity;
+      existing.integrity_reasons = entry.integrityReasons ?? [];
+      existing.seller_trust = entry.sellerTrust ?? "unassessed";
+      existing.seller_reasons = entry.sellerReasons ?? [];
+      existing.listing_quality = entry.listingQuality ?? "unassessed";
+      existing.listing_reasons = entry.listingReasons ?? [];
+      existing.source_confidence = entry.sourceConfidence ?? "unassessed";
+      existing.relist_signature = relistSignature(entry);
       existing.analysis_version = ANALYSIS_VERSION;
       updated++;
     } else {
+      const event = eventOf(entry, context, null);
       store.listings[key] = {
         subject: entry.subject,
         source: entry.source,
@@ -210,14 +226,14 @@ export async function recordObservations(setId, entries, context) {
         history: [event],
         matching: entry.matching,
         matching_reasons: entry.matchingReasons ?? [],
-        integrity: event.integrity,
-        integrity_reasons: event.integrity_reasons,
-        seller_trust: event.seller_trust,
-        seller_reasons: event.seller_reasons,
-        listing_quality: event.listing_quality,
-        listing_reasons: event.listing_reasons,
-        source_confidence: event.source_confidence,
-        relist_signature: event.relist_signature,
+        integrity: entry.matching === "wrong" ? "unassessed" : entry.integrity,
+        integrity_reasons: entry.integrityReasons ?? [],
+        seller_trust: entry.sellerTrust ?? "unassessed",
+        seller_reasons: entry.sellerReasons ?? [],
+        listing_quality: entry.listingQuality ?? "unassessed",
+        listing_reasons: entry.listingReasons ?? [],
+        source_confidence: entry.sourceConfidence ?? "unassessed",
+        relist_signature: relistSignature(entry),
         review_status: null,
         analysis_version: ANALYSIS_VERSION,
       };
