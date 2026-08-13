@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import { readFile, readdir } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { Metadata } from "next";
 import type { FRBoosterQuote, RadarData } from "@/lib/types";
@@ -51,40 +51,19 @@ type LedgerStats = {
   reasons: Map<string, number>;
 };
 
+// Le journal brut pèse des centaines de méga-octets et n'a rien à faire dans
+// un build : l'ingestion en écrit un résumé, c'est lui qu'on lit ici.
 async function loadLedgerStats(): Promise<Map<string, LedgerStats>> {
   const stats = new Map<string, LedgerStats>();
-  const dir = join(process.cwd(), "data", "ledger");
-  let files: string[] = [];
   try {
-    files = (await readdir(dir)).filter((f) => f.endsWith(".json"));
-  } catch {
-    return stats;
-  }
-  for (const file of files) {
-    try {
-      const store = JSON.parse(await readFile(join(dir, file), "utf8")) as {
-        listings: Record<string, { subject: string; first_seen: string; integrity: string; integrity_reasons?: string[]; matching: string }>;
-      };
-      const rows = Object.values(store.listings ?? {});
-      const reasons = new Map<string, number>();
-      let highRisk = 0;
-      for (const row of rows) {
-        if (row.matching === "exact" && row.integrity === "high_risk") {
-          highRisk++;
-          for (const reason of row.integrity_reasons ?? []) reasons.set(reason, (reasons.get(reason) ?? 0) + 1);
-        }
-      }
-      stats.set(file.replace(/\.json$/, ""), {
-        tracked: rows.length,
-        sealed: rows.filter((row) => row.subject?.startsWith("sealed")).length,
-        cards: rows.filter((row) => row.subject?.startsWith("card:")).length,
-        highRisk,
-        since: rows.reduce<string | null>((min, row) => (min == null || row.first_seen < min ? row.first_seen : min), null),
-        reasons,
-      });
-    } catch {
-      // fichier illisible : on n'invente rien
+    const summary = JSON.parse(
+      await readFile(join(process.cwd(), "public", "ledger-summary.json"), "utf8"),
+    ) as { sets: Record<string, Omit<LedgerStats, "reasons"> & { reasons: Record<string, number> }> };
+    for (const [setId, row] of Object.entries(summary.sets ?? {})) {
+      stats.set(setId, { ...row, reasons: new Map(Object.entries(row.reasons ?? {})) });
     }
+  } catch {
+    // résumé absent : la page reste lisible, sans les compteurs de ledger
   }
   return stats;
 }

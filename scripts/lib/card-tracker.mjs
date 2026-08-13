@@ -514,6 +514,38 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
   };
   await writeFile(join(root, "public", "card-tracker-index.json"), `${JSON.stringify(indexArtifact)}\n`);
 
+  // Résumé du ledger : la page Marché s'en contente. Lui faire parcourir les
+  // 174 Mo du journal au moment du build faisait tomber Vercel (2 cœurs,
+  // 8 Go, 9 workers en parallèle) — un artefact de 30 lignes remplace ça.
+  const summary = { generatedAt: artifact.generatedAt, sets: {} };
+  for (const set of SETS) {
+    let store = { listings: {} };
+    try {
+      store = JSON.parse(await readFile(join(root, "data", "ledger", `${set.id}.json`), "utf8"));
+    } catch (error) {
+      if (error?.code !== "ENOENT") throw error;
+      continue;
+    }
+    const rows = Object.values(store.listings ?? {});
+    const reasons = {};
+    let highRisk = 0;
+    for (const row of rows) {
+      if (row.matching === "exact" && row.integrity === "high_risk") {
+        highRisk++;
+        for (const reason of row.integrity_reasons ?? []) reasons[reason] = (reasons[reason] ?? 0) + 1;
+      }
+    }
+    summary.sets[set.id] = {
+      tracked: rows.length,
+      sealed: rows.filter((row) => String(row.subject ?? "").startsWith("sealed")).length,
+      cards: rows.filter((row) => String(row.subject ?? "").startsWith("card:")).length,
+      highRisk,
+      since: rows.reduce((min, row) => (min == null || row.first_seen < min ? row.first_seen : min), null),
+      reasons,
+    };
+  }
+  await writeFile(join(root, "public", "ledger-summary.json"), `${JSON.stringify(summary)}\n`);
+
   await mkdir(join(root, "public", "card-tracker"), { recursive: true });
   for (const set of SETS) {
     const detail = { generatedAt: artifact.generatedAt, cards: {}, markets: {} };

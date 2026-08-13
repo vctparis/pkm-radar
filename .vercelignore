@@ -1,0 +1,6 @@
+# Le journal brut des annonces (des centaines de Mo, en croissance quotidienne)
+# n'est jamais lu à l'exécution : l'ingestion en publie un résumé dans
+# public/ledger-summary.json. L'embarquer faisait tomber le build.
+data/ledger
+data/raw
+.worktrees
