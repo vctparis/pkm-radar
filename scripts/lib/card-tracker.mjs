@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.3";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.4";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -87,6 +87,10 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
   const prices = sellerRows.map((row) => Number(row.price_last));
   const median = quantile(prices, 0.5);
   const floor10 = quantile(prices, 0.1);
+  // Ce qu'on paie vraiment se lit EN BAS du carnet, pas au milieu : sur un
+  // marché profond la médiane des demandes vit loin au-dessus du prix
+  // transactable (vécu : médiane 27,70 € quand la carte s'achetait à 12 €).
+  const bestAsk = Math.min(...prices);
   const excluded = observed.filter((row) => !included(row, source, language)).length;
   return {
     source,
@@ -95,6 +99,7 @@ function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } =
     conditionScope: "EX+",
     median: round2(median),
     floor10: round2(floor10),
+    bestAsk: round2(bestAsk),
     offers: retained.length,
     sellers: sellerRows.length,
     trusted: retained.filter((row) => row.integrity === "trusted").length,
@@ -131,6 +136,7 @@ function combine(summaries, language = "fr") {
     conditionScope: "EX+",
     median: round2(quantile(prices, 0.5)),
     floor10: round2(quantile(prices, 0.1)),
+    bestAsk: round2(Math.min(...prices)),
     offers,
     sellers,
     trusted: available.reduce((sum, row) => sum + row.trusted, 0),
@@ -271,6 +277,21 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
     if (!markets[cardId]) markets[cardId] = { rawFR: null, ebayFR: null, cardTraderFR: null, history: [], grades };
   }
 
+  // Repère Cardmarket carte par carte (guide public) : le carnet le plus
+  // profond du marché, absent de nos cotations. Jamais fusionné — c'est un
+  // contrepoint, toutes conditions et toutes langues confondues.
+  let cardmarketByCard = {};
+  try {
+    const file = JSON.parse(await readFile(join(root, "data", "cardmarket", "singles-prices.json"), "utf8"));
+    cardmarketByCard = file.prices ?? {};
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+  for (const [cardId, guide] of Object.entries(cardmarketByCard)) {
+    if (!markets[cardId]) markets[cardId] = { rawFR: null, ebayFR: null, cardTraderFR: null, history: [], grades: {} };
+    markets[cardId].cardmarketGuide = guide;
+  }
+
   const artifact = {
     generatedAt: index.generatedAt ?? radar.generatedAt,
     modelVersion: CARD_TRACKER_MODEL_VERSION,
@@ -278,6 +299,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
       identityGrain: "set + numéro de collection + langue + variante ; le nom français/anglais est un alias de recherche",
       rawPrice: "offres actives EX+ dans la langue du set (français, ou japonais si la série n'existe qu'en japonais) ; médiane et p10 avec une voix par vendeur et par source",
       history: "instantanés quotidiens du ledger uniquement ; une sortie d'annonce n'est jamais assimilée à une vente",
+      cardmarketGuide: "repère produit Cardmarket (guide public) : « le moins cher » toutes conditions et toutes langues, tendance des ventes — jamais fusionné avec nos cotations EX+ par langue",
       grades: "prix et populations PSA séparés par grade ; aucune estimation n'est publiée sans source carte-niveau autorisée",
     },
     sets: Object.fromEntries(SETS.map((set) => [set.id, {

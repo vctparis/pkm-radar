@@ -55,6 +55,15 @@ check("aucun identifiant vendeur publié", leakedSellerIds, 0);
 const jpSets = Object.entries(artifact.sets).filter(([, set]) => set.japanese).map(([id]) => id);
 const jpCards = artifact.cards.filter((card) => jpSets.includes(card.setId));
 const jpMarkets = jpCards.map((card) => artifact.markets[card.id]?.rawFR).filter(Boolean);
+// Le prix mis en avant est celui qu'on paie : bestAsk ≤ p10 ≤ médiane.
+let unorderedLadder = 0;
+for (const market of Object.values(artifact.markets ?? {})) {
+  for (const summary of [market.rawFR, market.ebayFR, market.cardTraderFR].filter(Boolean)) {
+    if (summary.bestAsk == null || summary.bestAsk > summary.floor10 + 0.01 || summary.floor10 > summary.median + 0.01) unorderedLadder++;
+  }
+}
+check("carnet ordonné : moins cher ≤ p10 ≤ médiane", unorderedLadder, 0);
+
 check("les sets japonais sont cotés en japonais",
   jpMarkets.length > 0 && jpMarkets.every((summary) => summary.language === "jp"), true);
 

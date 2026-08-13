@@ -44,7 +44,7 @@ jobs:
       - name: Relever le guide public Cardmarket
         id: cardmarket
         continue-on-error: true
-        run: node scripts/ingest-cardmarket.mjs
+        run: node scripts/ingest-cardmarket.mjs && node scripts/build-cardmarket-singles.mjs
 
       - name: Vérifier les artefacts du relevé
         run: npm run test:data

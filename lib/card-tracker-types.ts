@@ -43,10 +43,13 @@ export type TrackerEvidence = {
 export type TrackerMarketSummary = {
   source: "ebay" | "cardtrader" | "combined";
   priceType: "active_ask";
-  language: "fr";
+  /** La langue du set : français, ou japonais si la série n'existe qu'en japonais. */
+  language: "fr" | "jp";
   conditionScope: "EX+";
   median: number;
   floor10: number;
+  /** L'offre crédible la moins chère : ce qu'on paie réellement. */
+  bestAsk?: number;
   offers: number;
   sellers: number;
   trusted: number;
@@ -66,10 +69,22 @@ export type TrackerHistoryPoint = {
   sellers: number;
 };
 
+export type TrackerCardmarketGuide = {
+  idProduct: number;
+  /** Offre la moins chère de leur carnet, toutes conditions et toutes langues. */
+  low: number | null;
+  trend: number | null;
+  avg30: number | null;
+  avg7: number | null;
+  avg1: number | null;
+};
+
 export type TrackerCardMarket = {
   rawFR: TrackerMarketSummary | null;
   ebayFR: TrackerMarketSummary | null;
   cardTraderFR: TrackerMarketSummary | null;
+  /** Repère produit Cardmarket — contrepoint, jamais fusionné aux cotations. */
+  cardmarketGuide?: TrackerCardmarketGuide;
   history: TrackerHistoryPoint[];
   grades: Record<string, {
     company: "PSA";
