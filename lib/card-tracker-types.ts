@@ -79,6 +79,18 @@ export type TrackerCardmarketGuide = {
   avg1: number | null;
 };
 
+export type TrackerGradedAsk = {
+  company: string;
+  grade: number;
+  priceType: "active_ask";
+  bestAsk: number;
+  median: number;
+  offers: number;
+  sellers: number;
+  confidence: "élevée" | "moyenne" | "faible";
+  evidence: TrackerEvidence[];
+};
+
 export type TrackerCardMarket = {
   rawFR: TrackerMarketSummary | null;
   ebayFR: TrackerMarketSummary | null;
@@ -86,6 +98,8 @@ export type TrackerCardMarket = {
   /** Repère produit Cardmarket — contrepoint, jamais fusionné aux cotations. */
   cardmarketGuide?: TrackerCardmarketGuide;
   history: TrackerHistoryPoint[];
+  /** Demandes gradées relevées sur eBay.fr — clé « PSA:10 », « PCA:9.5 »… */
+  gradedAsks?: Record<string, TrackerGradedAsk>;
   grades: Record<string, {
     company: "PSA";
     grade: number;

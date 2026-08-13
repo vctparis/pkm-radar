@@ -64,6 +64,23 @@ for (const market of Object.values(artifact.markets ?? {})) {
 }
 check("carnet ordonné : moins cher ≤ p10 ≤ médiane", unorderedLadder, 0);
 
+// Le gradé est un autre marché : jamais fusionné à la carte brute, jamais
+// présenté comme une vente, et seulement quand la carte est la bonne.
+let gradedLeak = 0;
+let gradedAsSale = 0;
+for (const market of Object.values(artifact.markets ?? {})) {
+  for (const row of Object.values(market.gradedAsks ?? {})) {
+    if (row.priceType !== "active_ask") gradedAsSale++;
+    if (!(row.bestAsk > 0) || row.bestAsk > row.median + 0.01 || !row.company || !(row.grade > 0)) gradedLeak++;
+  }
+  // Une cotation brute ne doit jamais contenir d'annonce gradée.
+  for (const summary of [market.rawFR, market.ebayFR, market.cardTraderFR].filter(Boolean)) {
+    if ((summary.evidence ?? []).some((row) => /\b(psa|pca|cgc|bgs)\s*\.?\s*\d/i.test(row.title ?? ""))) gradedLeak++;
+  }
+}
+check("échelle de grades cohérente", gradedLeak, 0);
+check("aucune demande gradée présentée comme une vente", gradedAsSale, 0);
+
 check("les sets japonais sont cotés en japonais",
   jpMarkets.length > 0 && jpMarkets.every((summary) => summary.language === "jp"), true);
 

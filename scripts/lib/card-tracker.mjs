@@ -12,7 +12,7 @@ import { SETS } from "./sets.mjs";
 import { normalizeCollectorNumber } from "./identifiers.mjs";
 import { FRESH_PULL_CONDITIONS, quantile } from "./drop-v2.mjs";
 
-export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.4";
+export const CARD_TRACKER_MODEL_VERSION = "card-tracker-beta.5";
 
 const round2 = (value) => Number(value.toFixed(2));
 
@@ -63,6 +63,74 @@ function included(row, source, language) {
     !row.on_vacation &&
     Number(row.price_last) > 0 &&
     (source === "ebay" || (row.language === language && FRESH_PULL_CONDITIONS.has(row.condition)));
+}
+
+// Les annonces gradées sont capturées par nos requêtes puis écartées des prix
+// bruts (autre marché). Elles restent dans le ledger : elles constituent, sans
+// un appel de plus, un carnet de DEMANDES par grade. Ce ne sont pas des ventes
+// conclues — la nuance est portée jusqu'à l'écran.
+const GRADE_PATTERNS = [
+  /\b(psa|pca|cgc|bgs|sgc|ace|cga|collectaura)\s*\.?\s*(10|9[.,]5|9|8[.,]5|8|7)\b/i,
+  /\b(psa|pca|cgc|bgs|sgc)\s*gem\s*(?:mint|mt)\s*(10)\b/i,
+];
+
+export function parseGradeFromTitle(title) {
+  const raw = String(title ?? "");
+  for (const pattern of GRADE_PATTERNS) {
+    const match = raw.match(pattern);
+    if (match) {
+      const company = match[1].toUpperCase() === "COLLECTAURA" ? "CollectAura" : match[1].toUpperCase();
+      return { company, grade: Number(match[2].replace(",", ".")) };
+    }
+  }
+  return null;
+}
+
+/**
+ * Demandes gradées d'une carte, à partir des annonces déjà au ledger.
+ * On ne retient que celles dont le SEUL défaut d'appariement est le grading :
+ * une annonce qui rate aussi le numéro décrit une autre carte.
+ */
+function gradedAsksOf(rows, windowDate) {
+  const byGrade = new Map();
+  for (const row of rows) {
+    if (row.source !== "ebay" || row.integrity === "high_risk") continue;
+    const reasons = row.matching_reasons ?? [];
+    if (reasons.length !== 1 || reasons[0] !== "produit_grade") continue;
+    if (windowDate && row.last_seen !== windowDate) continue;
+    const parsed = parseGradeFromTitle(row.title);
+    if (!parsed || !(Number(row.price_last) > 0)) continue;
+    const key = `${parsed.company}:${parsed.grade}`;
+    if (!byGrade.has(key)) byGrade.set(key, { ...parsed, rows: new Map() });
+    // Une voix par vendeur, son offre la moins chère.
+    const bucket = byGrade.get(key).rows;
+    const sellerKey = row.seller_id ? `s:${row.seller_id}` : `l:${row.url ?? row.title}`;
+    const current = bucket.get(sellerKey);
+    if (!current || Number(row.price_last) < Number(current.price_last)) bucket.set(sellerKey, row);
+  }
+  const result = {};
+  for (const [key, bucket] of byGrade) {
+    const sellerRows = [...bucket.rows.values()].sort((a, b) => Number(a.price_last) - Number(b.price_last));
+    const prices = sellerRows.map((row) => Number(row.price_last));
+    result[key] = {
+      company: bucket.company,
+      grade: bucket.grade,
+      priceType: "active_ask",
+      bestAsk: round2(prices[0]),
+      median: round2(quantile(prices, 0.5)),
+      offers: sellerRows.length,
+      sellers: sellerRows.length,
+      confidence: confidenceOf(sellerRows.length, sellerRows.length),
+      evidence: sellerRows.slice(0, 3).map((row) => ({
+        title: row.title ?? null,
+        url: row.url ?? null,
+        price: round2(Number(row.price_last)),
+        condition: null,
+        trust: row.integrity === "trusted" ? "trusted" : "review",
+      })),
+    };
+  }
+  return result;
 }
 
 function summarize(rows, source, crawl, { language = "fr", evidenceLimit = 6 } = {}) {
@@ -265,6 +333,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
           ebayFR: publicSummary(ebay),
           cardTraderFR: publicSummary(cardtrader),
           history: historyOf(rows),
+          gradedAsks: gradedAsksOf(rows, crawls.get(`${set.id}:${subject}:ebay`)?.date ?? null),
           grades: gradesByCard.get(card.i) ?? {},
         };
       }
@@ -274,7 +343,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
   // Une carte peut avoir une observation PSA avant que son marché raw ne soit
   // suivi dans le ledger : elle mérite tout de même une entrée marché.
   for (const [cardId, grades] of gradesByCard) {
-    if (!markets[cardId]) markets[cardId] = { rawFR: null, ebayFR: null, cardTraderFR: null, history: [], grades };
+    if (!markets[cardId]) markets[cardId] = { rawFR: null, ebayFR: null, cardTraderFR: null, history: [], gradedAsks: {}, grades };
   }
 
   // Repère Cardmarket carte par carte (guide public) : le carnet le plus
@@ -288,7 +357,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
     if (error?.code !== "ENOENT") throw error;
   }
   for (const [cardId, guide] of Object.entries(cardmarketByCard)) {
-    if (!markets[cardId]) markets[cardId] = { rawFR: null, ebayFR: null, cardTraderFR: null, history: [], grades: {} };
+    if (!markets[cardId]) markets[cardId] = { rawFR: null, ebayFR: null, cardTraderFR: null, history: [], gradedAsks: {}, grades: {} };
     markets[cardId].cardmarketGuide = guide;
   }
 
@@ -300,6 +369,7 @@ export async function buildCardTrackerArtifact(root, radarPayload = null) {
       rawPrice: "offres actives EX+ dans la langue du set (français, ou japonais si la série n'existe qu'en japonais) ; médiane et p10 avec une voix par vendeur et par source",
       history: "instantanés quotidiens du ledger uniquement ; une sortie d'annonce n'est jamais assimilée à une vente",
       cardmarketGuide: "repère produit Cardmarket (guide public) : « le moins cher » toutes conditions et toutes langues, tendance des ventes — jamais fusionné avec nos cotations EX+ par langue",
+      gradedAsks: "demandes actives par maison de gradation et par grade, relevées sur eBay.fr — des prix demandés, jamais des ventes conclues, et un marché distinct de la carte brute",
       grades: "prix et populations PSA séparés par grade ; aucune estimation n'est publiée sans source carte-niveau autorisée",
     },
     sets: Object.fromEntries(SETS.map((set) => [set.id, {
