@@ -61,6 +61,27 @@ const cardsIndex = JSON.parse(await readFile(join(root, "public", "cards-index.j
 check("tracker de cartes porte une version de modèle", typeof tracker.modelVersion, "string");
 check("tracker et index ont le même grain carte", tracker.cards.length, cardsIndex.cards.length);
 
+const pressure = JSON.parse(await readFile(join(root, "public", "market-pressure.json"), "utf8"));
+let leakingPressure = 0;
+let mixedPressureSources = 0;
+let invalidPressureDates = 0;
+for (const set of pressure.sets ?? []) {
+  for (const [sourceId, series] of Object.entries(set.sources ?? {})) {
+    if (!series) continue;
+    if (series.source !== sourceId) mixedPressureSources++;
+    const dates = series.history.map((row) => row.date);
+    if (new Set(dates).size !== dates.length || dates.some((date, index) => index > 0 && date < dates[index - 1])) invalidPressureDates++;
+    for (const snapshot of series.history) {
+      if (Object.hasOwn(snapshot, "listings") || Object.hasOwn(snapshot, "runId") || Object.hasOwn(snapshot, "seller_id")) leakingPressure++;
+    }
+  }
+}
+check("pression du carnet porte une version de modèle", typeof pressure.modelVersion, "string");
+check("pression du carnet garde les sources séparées", mixedPressureSources, 0);
+check("pression du carnet : journées triées et uniques", invalidPressureDates, 0);
+check("pression du carnet ne publie aucune annonce brute", leakingPressure, 0);
+check("pression du carnet ne fabrique pas d'acheteurs", pressure.methodology.buyerCountAvailable, false);
+
 const cardmarketMap = JSON.parse(await readFile(join(root, "data", "cardmarket", "product-map.json"), "utf8"));
 const cardmarketHistory = JSON.parse(await readFile(join(root, "data", "cardmarket", "history.json"), "utf8"));
 const cardmarketKeys = cardmarketHistory.observations.map((row) => `${row.date}:${row.idProduct}`);

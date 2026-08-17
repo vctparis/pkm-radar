@@ -139,6 +139,10 @@ export default async function MarchePage() {
       </header>
 
       <main id="contenu" className="mx-auto max-w-[1180px] px-4 pb-24 sm:px-6">
+        <nav aria-label="Vues du marché" className="mt-5 flex w-fit rounded-xl border border-ink-700 bg-ink-850 p-1 text-[0.78rem]">
+          <span aria-current="page" className="rounded-lg bg-ink-700 px-3 py-2 text-mist-050">Qualité des données</span>
+          <Link href="/marche/pression" className="rounded-lg px-3 py-2 text-mist-300 hover:text-mist-050">Pression du carnet</Link>
+        </nav>
         <div className="py-12">
           <p className="m-0 text-[0.8rem] uppercase tracking-[0.14em] text-mist-500">
             Qualité des données · <span className="text-accent">bêta</span>
@@ -171,8 +175,10 @@ export default async function MarchePage() {
           </div>
           <div className="rounded-2xl bg-ink-850 p-5 ring-1 ring-ink-700/70">
             <p className="m-0 text-[0.74rem] uppercase tracking-wider text-mist-500">Prochaine étape</p>
-            <p className="display m-0 mt-1 text-[1.05rem] leading-tight text-mist-050">Flux d&apos;annonces</p>
-            <p className="m-0 mt-1.5 text-[0.78rem] text-mist-500">entrées/sorties à J+30 — le ledger accumule dès aujourd&apos;hui</p>
+            <p className="display m-0 mt-1 text-[1.05rem] leading-tight text-mist-050">Pression du carnet</p>
+            <p className="m-0 mt-1.5 text-[0.78rem] text-mist-500">
+              <Link href="/marche/pression" className="text-accent hover:text-mist-050">voir le chantier bêta</Link> · verdict après 14 journées complètes
+            </p>
           </div>
         </div>
 

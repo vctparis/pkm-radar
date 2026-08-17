@@ -32,6 +32,7 @@ import { fetchFrenchCatalog } from "./lib/tcgdex.mjs";
 import { scoreSet, scoreCard, verdictFor, concentrationOf, medianMomentumOf } from "./lib/scoring.mjs";
 import { buildDropV2Artifact } from "./lib/drop-v2.mjs";
 import { buildCardTrackerArtifact } from "./lib/card-tracker.mjs";
+import { buildMarketPressureArtifact } from "./lib/market-pressure.mjs";
 
 // Date du relevé, pour le ledger d'annonces (first_seen / last_seen).
 const RUN_CONTEXT = createRunContext();
@@ -1144,12 +1145,14 @@ async function main() {
   );
   await buildDropV2Artifact(ROOT, payload);
   await buildCardTrackerArtifact(ROOT, payload);
+  await buildMarketPressureArtifact(ROOT, payload);
 
   await recordRun(RUN_CONTEXT, { status: "completed" });
 
   console.log(`\n${mergedSets.length} sets écrits dans public/radar-data.json`);
   console.log(`Drop rate v2 écrit dans public/drop-rate-v2.json`);
   console.log(`Tracker cartes écrit (index + détails par set)`);
+  console.log(`Pression du carnet écrite dans public/market-pressure.json`);
   console.log(`historique : ${Object.values(history.snapshots).flat().length} relevés cumulés\n`);
 }
 

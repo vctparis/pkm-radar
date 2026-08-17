@@ -14,8 +14,9 @@
     "ingest:cardmarket": "node scripts/ingest-cardmarket.mjs",
     "build:drop-v2": "node scripts/build-drop-v2.mjs",
     "build:tracker": "node scripts/build-card-tracker.mjs",
+    "build:pressure": "node scripts/build-market-pressure.mjs",
     "inspect": "node scripts/inspect.mjs",
-    "test:data": "node scripts/tests/identifiers.test.mjs && node scripts/tests/integrity.test.mjs && node scripts/tests/cardtrader.test.mjs && node scripts/tests/ledger.test.mjs && node scripts/tests/cardmarket-public.test.mjs && node scripts/tests/series.test.mjs && node scripts/tests/drop-v2.test.mjs && node scripts/tests/data-artifacts.test.mjs && node scripts/tests/card-tracker.test.mjs",
+    "test:data": "node scripts/tests/identifiers.test.mjs && node scripts/tests/integrity.test.mjs && node scripts/tests/cardtrader.test.mjs && node scripts/tests/ledger.test.mjs && node scripts/tests/cardmarket-public.test.mjs && node scripts/tests/series.test.mjs && node scripts/tests/drop-v2.test.mjs && node scripts/tests/market-pressure.test.mjs && node scripts/tests/data-artifacts.test.mjs && node scripts/tests/card-tracker.test.mjs",
     "build:cardmarket-singles": "node scripts/build-cardmarket-singles.mjs"
   },
   "dependencies": {
