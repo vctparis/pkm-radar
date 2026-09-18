@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T12:10:13.388Z",
+  "generatedAt": "2026-09-18T11:38:02.018Z",
   "modelVersion": "drop-rate-v2.5",
   "definition": {
     "languageDoctrine": "cotations françaises uniquement : eBay.fr (aspect Langue, état sous EX écarté au matching) + CardTrader restreint aux annonces FR — jamais de toutes-langues",
@@ -24,23 +24,23 @@
       "nameEN": "Cosmic Eclipse",
       "era": "Soleil & Lune",
       "logo": "https://assets.tcgdex.net/fr/sm/sm12/logo.webp",
-      "boosterPrice": 93.78,
-      "grossCentral": 9.08,
-      "grossQuick": 8.36,
-      "netCentralLo": 6,
-      "netCentralHi": 9.64,
-      "netCentralMid": 7.82,
-      "netQuickLo": 5.44,
-      "netQuickHi": 8.94,
-      "netQuickMid": 7.19,
-      "lossPct": 92,
-      "quickLossPct": 92,
-      "coverage": 0.089,
+      "boosterPrice": 83.9,
+      "grossCentral": 9.16,
+      "grossQuick": 8.34,
+      "netCentralLo": 6.06,
+      "netCentralHi": 9.71,
+      "netCentralMid": 7.89,
+      "netQuickLo": 5.43,
+      "netQuickHi": 8.93,
+      "netQuickMid": 7.18,
+      "lossPct": 91,
+      "quickLossPct": 91,
+      "coverage": 0.109,
       "liquidity": {
         "medianDaysListed": 10,
         "cardsObserved": 26,
-        "exits": 339,
-        "active": 872
+        "exits": 338,
+        "active": 896
       },
       "trackedCoverage": 0.806,
       "freshnessDays": 0,
@@ -54,19 +54,19 @@
       "partialNote": null,
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.089,
-        "trackedFallbackThin": 0.507,
+        "repriced": 0.109,
+        "trackedFallbackThin": 0.487,
         "trackedFallbackConflict": 0,
         "trackedFallbackUnavailable": 0.21,
         "untracked": 0.194
       },
       "study": {
         "trackedCards": 27,
-        "repricedCards": 4,
-        "observedOffers": 72,
-        "sellerCardVoices": 69,
+        "repricedCards": 5,
+        "observedOffers": 82,
+        "sellerCardVoices": 78,
         "sourceOffers": {
-          "ebayFR": 70,
+          "ebayFR": 80,
           "cardTraderFR": 2
         },
         "crawlHealth": {
@@ -81,8 +81,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -449,6 +449,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 39.06,
+            "cardmarketAvg": 52.9,
+            "cardmarketLow": 24,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 72.36,
             "ebayMedian": 93.78,
             "ebayOffers": 10,
@@ -457,14 +461,25 @@
             "ebayReview": 0,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 73.5,
+            "ebayMedian": 83.9,
+            "ebayOffers": 11,
+            "ebaySellers": 11,
+            "ebayTrusted": 10,
+            "ebayReview": 1,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -505,8 +520,8 @@
           "oneInSpecific": 142,
           "premium": true,
           "baselineContribution": 1.44,
-          "centralContribution": 2.28,
-          "quickContribution": 1.56
+          "centralContribution": 2.36,
+          "quickContribution": 1.54
         },
         {
           "rarity": "Rare Ultra",
@@ -555,7 +570,7 @@
           "floor10": 50.36,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -578,7 +593,7 @@
           "floor10": 27.89,
           "offers": 8,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -593,6 +608,29 @@
           "contribution": 0.32
         },
         {
+          "number": "75",
+          "name": "Solgaleo & Lunala-GX",
+          "rarity": "Rare Holo GX",
+          "oneIn": 142,
+          "median": 35.02,
+          "floor10": 21.5,
+          "offers": 12,
+          "sellers": 11,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": false,
+          "sourceOffers": {
+            "ebayFR": 12,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 12
+          },
+          "contribution": 0.25
+        },
+        {
           "number": "156",
           "name": "Arceus & Dialga & Palkia-GX",
           "rarity": "Rare Holo GX",
@@ -601,7 +639,7 @@
           "floor10": 24.14,
           "offers": 7,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -624,7 +662,7 @@
           "floor10": 17.69,
           "offers": 6,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -646,23 +684,23 @@
       "nameEN": "Destined Rivals",
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv10/logo.webp",
-      "boosterPrice": 14.5,
-      "grossCentral": 8.31,
-      "grossQuick": 7.75,
-      "netCentralLo": 5.52,
-      "netCentralHi": 8.84,
-      "netCentralMid": 7.18,
-      "netQuickLo": 5.15,
-      "netQuickHi": 8.24,
-      "netQuickMid": 6.7,
+      "boosterPrice": 14.2,
+      "grossCentral": 8.28,
+      "grossQuick": 7.64,
+      "netCentralLo": 5.51,
+      "netCentralHi": 8.81,
+      "netCentralMid": 7.16,
+      "netQuickLo": 5.08,
+      "netQuickHi": 8.12,
+      "netQuickMid": 6.6,
       "lossPct": 50,
       "quickLossPct": 54,
-      "coverage": 0.348,
+      "coverage": 0.366,
       "liquidity": {
         "medianDaysListed": 8,
         "cardsObserved": 16,
-        "exits": 566,
-        "active": 1275
+        "exits": 567,
+        "active": 1284
       },
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
@@ -676,19 +714,19 @@
       "partialNote": null,
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.348,
-        "trackedFallbackThin": 0.456,
+        "repriced": 0.366,
+        "trackedFallbackThin": 0.438,
         "trackedFallbackConflict": 0,
         "trackedFallbackUnavailable": 0,
         "untracked": 0.196
       },
       "study": {
         "trackedCards": 16,
-        "repricedCards": 9,
-        "observedOffers": 89,
-        "sellerCardVoices": 88,
+        "repricedCards": 10,
+        "observedOffers": 99,
+        "sellerCardVoices": 97,
         "sourceOffers": {
-          "ebayFR": 86,
+          "ebayFR": 96,
           "cardTraderFR": 3
         },
         "crawlHealth": {
@@ -703,8 +741,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -1071,6 +1109,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 1.74,
+            "cardmarketAvg": 7.58,
+            "cardmarketLow": 4,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 9.9,
             "ebayMedian": 14.5,
             "ebayOffers": 28,
@@ -1079,14 +1121,25 @@
             "ebayReview": 5,
             "ebayQuarantined": 1,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 9.9,
+            "ebayMedian": 14.2,
+            "ebayOffers": 32,
+            "ebaySellers": 23,
+            "ebayTrusted": 27,
+            "ebayReview": 5,
+            "ebayQuarantined": 1,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -1139,8 +1192,8 @@
           "oneInSpecific": 256,
           "premium": true,
           "baselineContribution": 0.92,
-          "centralContribution": 1.2,
-          "quickContribution": 1.12
+          "centralContribution": 1.19,
+          "quickContribution": 1.1
         },
         {
           "rarity": "Special Illustration Rare",
@@ -1151,8 +1204,8 @@
           "oneInSpecific": 338,
           "premium": true,
           "baselineContribution": 5.54,
-          "centralContribution": 5.52,
-          "quickContribution": 5.15
+          "centralContribution": 5.5,
+          "quickContribution": 5.06
         },
         {
           "rarity": "Hyper Rare",
@@ -1173,21 +1226,21 @@
           "name": "Cynthia's Garchomp ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 338,
-          "median": 271.1,
-          "floor10": 256.54,
-          "offers": 7,
-          "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "median": 270.55,
+          "floor10": 248.98,
+          "offers": 8,
+          "sellers": 8,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 7,
+            "ebayFR": 8,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 7
+            "ebayUnspecified": 8
           },
           "contribution": 0.8
         },
@@ -1196,23 +1249,23 @@
           "name": "Team Rocket's Moltres ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 338,
-          "median": 204.35,
-          "floor10": 119.78,
-          "offers": 10,
-          "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "median": 200,
+          "floor10": 115.1,
+          "offers": 11,
+          "sellers": 11,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 10,
+            "ebayFR": 11,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 10
+            "ebayUnspecified": 11
           },
-          "contribution": 0.6
+          "contribution": 0.59
         },
         {
           "number": "240",
@@ -1223,7 +1276,7 @@
           "floor10": 93.42,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -1246,7 +1299,7 @@
           "floor10": 98.46,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -1265,23 +1318,23 @@
           "name": "Misty's Psyduck",
           "rarity": "Illustration Rare",
           "oneIn": 256,
-          "median": 81.82,
-          "floor10": 73.5,
-          "offers": 11,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "median": 79.22,
+          "floor10": 67.05,
+          "offers": 15,
+          "sellers": 14,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 11,
+            "ebayFR": 15,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 11
+            "ebayUnspecified": 15
           },
-          "contribution": 0.32
+          "contribution": 0.31
         },
         {
           "number": "239",
@@ -1292,7 +1345,7 @@
           "floor10": 46.75,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -1315,7 +1368,7 @@
           "floor10": 65.18,
           "offers": 9,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -1334,46 +1387,69 @@
           "name": "Ethan's Typhlosion",
           "rarity": "Illustration Rare",
           "oneIn": 256,
-          "median": 53.61,
-          "floor10": 43.07,
-          "offers": 12,
-          "sellers": 12,
-          "latestSeen": "2026-09-17",
+          "median": 54.52,
+          "floor10": 43.84,
+          "offers": 13,
+          "sellers": 13,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 11,
+            "ebayFR": 12,
             "cardTraderFR": 1
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 1,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 11
+            "ebayUnspecified": 12
           },
           "contribution": 0.21
+        },
+        {
+          "number": "238",
+          "name": "Team Rocket's Giovanni",
+          "rarity": "Special Illustration Rare",
+          "oneIn": 338,
+          "median": 47.5,
+          "floor10": 36.06,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
+          "sourceOffers": {
+            "ebayFR": 5,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 5
+          },
+          "contribution": 0.14
         },
         {
           "number": "228",
           "name": "Yanmega ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 338,
-          "median": 46.07,
-          "floor10": 43.11,
-          "offers": 5,
-          "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "median": 45,
+          "floor10": 37.1,
+          "offers": 6,
+          "sellers": 5,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 4,
+            "ebayFR": 5,
             "cardTraderFR": 1
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 1,
-            "ebayUnspecified": 4
+            "ebayUnspecified": 5
           },
-          "contribution": 0.14
+          "contribution": 0.13
         }
       ]
     },
@@ -1383,7 +1459,7 @@
       "nameEN": "Celebrations",
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/cel25/logo.webp",
-      "boosterPrice": 57.85,
+      "boosterPrice": 52.6,
       "grossCentral": 4.66,
       "grossQuick": 4.66,
       "netCentralLo": 3,
@@ -1396,10 +1472,10 @@
       "quickLossPct": 93,
       "coverage": 0,
       "liquidity": {
-        "medianDaysListed": 9,
+        "medianDaysListed": 8,
         "cardsObserved": 1,
-        "exits": 36,
-        "active": 68
+        "exits": 37,
+        "active": 69
       },
       "trackedCoverage": 0.884,
       "freshnessDays": 0,
@@ -1440,8 +1516,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -1830,6 +1906,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 28.85,
+            "cardmarketAvg": 28.75,
+            "cardmarketLow": 21,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 47.97,
             "ebayMedian": 57.85,
             "ebayOffers": 6,
@@ -1838,14 +1918,25 @@
             "ebayReview": 2,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 47.86,
+            "ebayMedian": 52.6,
+            "ebayOffers": 5,
+            "ebaySellers": 5,
+            "ebayTrusted": 3,
+            "ebayReview": 2,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -1913,8 +2004,8 @@
       "liquidity": {
         "medianDaysListed": 10,
         "cardsObserved": 33,
-        "exits": 666,
-        "active": 2213
+        "exits": 645,
+        "active": 2241
       },
       "trackedCoverage": 0.809,
       "freshnessDays": 0,
@@ -1935,7 +2026,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -1975,8 +2066,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-11",
@@ -2354,6 +2445,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 10.49,
+            "cardmarketAvg": 9.45,
+            "cardmarketLow": 5,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 25.45,
+            "ebayMedian": 41.26,
+            "ebayOffers": 3,
+            "ebaySellers": 3,
+            "ebayTrusted": 3,
+            "ebayReview": 0,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 25.45,
             "ebayMedian": 41.26,
             "ebayOffers": 3,
@@ -2365,11 +2471,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 26,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 27,
+          "bothDays": 24,
           "firstObserved": "2026-08-11",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -2472,7 +2578,7 @@
           "floor10": 44.03,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -2495,7 +2601,7 @@
           "floor10": 11.91,
           "offers": 8,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -2518,7 +2624,7 @@
           "floor10": 7.28,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -2541,7 +2647,7 @@
           "floor10": 8.66,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 10,
@@ -2564,7 +2670,7 @@
           "floor10": 31.49,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -2587,7 +2693,7 @@
           "floor10": 16.15,
           "offers": 13,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 13,
@@ -2610,7 +2716,7 @@
           "floor10": 7.16,
           "offers": 9,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -2633,7 +2739,7 @@
           "floor10": 17.59,
           "offers": 7,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -2656,7 +2762,7 @@
           "floor10": 7.58,
           "offers": 9,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -2679,7 +2785,7 @@
           "floor10": 2.14,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -2702,22 +2808,22 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh4/logo.webp",
       "boosterPrice": 27.34,
-      "grossCentral": 2.32,
-      "grossQuick": 2,
-      "netCentralLo": 1.45,
-      "netCentralHi": 2.39,
-      "netCentralMid": 1.92,
-      "netQuickLo": 1.24,
-      "netQuickHi": 2.03,
-      "netQuickMid": 1.63,
+      "grossCentral": 2.34,
+      "grossQuick": 2.01,
+      "netCentralLo": 1.46,
+      "netCentralHi": 2.41,
+      "netCentralMid": 1.94,
+      "netQuickLo": 1.25,
+      "netQuickHi": 2.05,
+      "netQuickMid": 1.65,
       "lossPct": 93,
       "quickLossPct": 94,
-      "coverage": 0.303,
+      "coverage": 0.288,
       "liquidity": {
-        "medianDaysListed": 13,
+        "medianDaysListed": 12,
         "cardsObserved": 38,
-        "exits": 851,
-        "active": 2857
+        "exits": 835,
+        "active": 2878
       },
       "trackedCoverage": 0.802,
       "freshnessDays": 0,
@@ -2738,7 +2844,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -2757,7 +2863,7 @@
           "blocking": true,
           "offers": 14,
           "sellers": 13,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 14,
@@ -2776,7 +2882,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -2795,7 +2901,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -2814,7 +2920,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -2833,7 +2939,7 @@
           "blocking": true,
           "offers": 18,
           "sellers": 17,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 18,
@@ -2852,7 +2958,7 @@
           "blocking": true,
           "offers": 16,
           "sellers": 16,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 14,
@@ -2871,7 +2977,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -2884,20 +2990,20 @@
       "partialNote": null,
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.303,
-        "trackedFallbackThin": 0.308,
+        "repriced": 0.288,
+        "trackedFallbackThin": 0.323,
         "trackedFallbackConflict": 0.033,
         "trackedFallbackUnavailable": 0.158,
         "untracked": 0.198
       },
       "study": {
         "trackedCards": 38,
-        "repricedCards": 9,
-        "observedOffers": 145,
+        "repricedCards": 8,
+        "observedOffers": 143,
         "sellerCardVoices": 134,
         "sourceOffers": {
-          "ebayFR": 133,
-          "cardTraderFR": 12
+          "ebayFR": 134,
+          "cardTraderFR": 9
         },
         "crawlHealth": {
           "available": true,
@@ -2911,8 +3017,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-11",
@@ -3290,6 +3396,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 8.27,
+            "cardmarketAvg": 8.46,
+            "cardmarketLow": 6.5,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 21.8,
             "ebayMedian": 27.34,
             "ebayOffers": 25,
@@ -3298,14 +3408,25 @@
             "ebayReview": 0,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 21.25,
+            "ebayMedian": 27.34,
+            "ebayOffers": 26,
+            "ebaySellers": 12,
+            "ebayTrusted": 26,
+            "ebayReview": 0,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 26,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 27,
+          "bothDays": 24,
           "firstObserved": "2026-08-11",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -3322,8 +3443,8 @@
           "oneInSpecific": 55,
           "premium": false,
           "baselineContribution": 0.21,
-          "centralContribution": 0.19,
-          "quickContribution": 0.19
+          "centralContribution": 0.21,
+          "quickContribution": 0.21
         },
         {
           "rarity": "Rare Holo",
@@ -3408,7 +3529,7 @@
           "floor10": 176.02,
           "offers": 8,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -3431,7 +3552,7 @@
           "floor10": 5.2,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -3454,7 +3575,7 @@
           "floor10": 14.52,
           "offers": 6,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -3477,7 +3598,7 @@
           "floor10": 30.02,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -3500,7 +3621,7 @@
           "floor10": 3.42,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -3523,7 +3644,7 @@
           "floor10": 13.49,
           "offers": 7,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -3546,7 +3667,7 @@
           "floor10": 24.93,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -3569,7 +3690,7 @@
           "floor10": 8.59,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -3582,29 +3703,6 @@
             "ebayUnspecified": 5
           },
           "contribution": 0.04
-        },
-        {
-          "number": "39",
-          "name": "Drednaw",
-          "rarity": "Rare",
-          "oneIn": 55,
-          "median": 0.5,
-          "floor10": 0.47,
-          "offers": 6,
-          "sellers": 4,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": true,
-          "sourceOffers": {
-            "ebayFR": 1,
-            "cardTraderFR": 5
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 2,
-            "slightlyPlayed": 3,
-            "ebayUnspecified": 1
-          },
-          "contribution": 0.01
         }
       ]
     },
@@ -3629,14 +3727,14 @@
       "liquidity": {
         "medianDaysListed": 10,
         "cardsObserved": 38,
-        "exits": 1081,
-        "active": 3316
+        "exits": 1075,
+        "active": 3330
       },
       "trackedCoverage": 0.798,
       "freshnessDays": 0,
       "confidence": "faible",
       "rateConfidence": "correcte",
-      "conflicts": 7,
+      "conflicts": 8,
       "blockingConflicts": 2,
       "conflictDetails": [
         {
@@ -3651,7 +3749,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -3670,11 +3768,30 @@
           "blocking": false,
           "offers": 2,
           "sellers": 2,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
             "cardTraderFR": 2
+          }
+        },
+        {
+          "number": "52",
+          "name": "Hisuian Typhlosion",
+          "rarity": "Rare Holo",
+          "anchorGross": 2.05,
+          "anchorMethod": "opening_reference",
+          "marketMedian": 0.34,
+          "ratio": 0.17,
+          "direction": "below",
+          "blocking": false,
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-09-18",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 0,
+            "cardTraderFR": 1
           }
         },
         {
@@ -3689,7 +3806,7 @@
           "blocking": true,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 8,
@@ -3708,7 +3825,7 @@
           "blocking": false,
           "offers": 4,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 3,
@@ -3727,7 +3844,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -3740,17 +3857,17 @@
           "rarity": "Rare Holo VSTAR",
           "anchorGross": 1.32,
           "anchorMethod": "opening_reference",
-          "marketMedian": 8.9,
-          "ratio": 6.74,
+          "marketMedian": 9.38,
+          "ratio": 7.11,
           "direction": "above",
           "blocking": true,
-          "offers": 11,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "offers": 10,
+          "sellers": 10,
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 9,
-            "cardTraderFR": 2
+            "cardTraderFR": 1
           }
         },
         {
@@ -3765,7 +3882,7 @@
           "blocking": false,
           "offers": 3,
           "sellers": 3,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -3787,11 +3904,11 @@
       "study": {
         "trackedCards": 38,
         "repricedCards": 13,
-        "observedOffers": 138,
-        "sellerCardVoices": 133,
+        "observedOffers": 136,
+        "sellerCardVoices": 131,
         "sourceOffers": {
           "ebayFR": 116,
-          "cardTraderFR": 22
+          "cardTraderFR": 20
         },
         "crawlHealth": {
           "available": true,
@@ -3805,8 +3922,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -4173,6 +4290,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 7.57,
+            "cardmarketAvg": 7.28,
+            "cardmarketLow": 5.15,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 12.94,
+            "ebayMedian": 17.22,
+            "ebayOffers": 54,
+            "ebaySellers": 25,
+            "ebayTrusted": 47,
+            "ebayReview": 7,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 12.94,
             "ebayMedian": 17.22,
             "ebayOffers": 54,
@@ -4184,11 +4316,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -4315,7 +4447,7 @@
           "floor10": 123,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -4338,7 +4470,7 @@
           "floor10": 96.47,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -4361,7 +4493,7 @@
           "floor10": 50.2,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -4384,7 +4516,7 @@
           "floor10": 30.69,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -4407,7 +4539,7 @@
           "floor10": 25.84,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -4430,7 +4562,7 @@
           "floor10": 5.44,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -4453,7 +4585,7 @@
           "floor10": 25.38,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 4,
@@ -4476,7 +4608,7 @@
           "floor10": 4,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -4499,7 +4631,7 @@
           "floor10": 19.16,
           "offers": 7,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -4522,7 +4654,7 @@
           "floor10": 7.79,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 4,
@@ -4545,11 +4677,11 @@
       "era": "Soleil & Lune",
       "logo": "https://assets.tcgdex.net/fr/sm/sm3/logo.webp",
       "boosterPrice": 34,
-      "grossCentral": 2.77,
+      "grossCentral": 2.81,
       "grossQuick": 2.34,
-      "netCentralLo": 1.75,
-      "netCentralHi": 2.83,
-      "netCentralMid": 2.29,
+      "netCentralLo": 1.79,
+      "netCentralHi": 2.87,
+      "netCentralMid": 2.33,
       "netQuickLo": 1.46,
       "netQuickHi": 2.37,
       "netQuickMid": 1.92,
@@ -4559,7 +4691,7 @@
       "liquidity": {
         "medianDaysListed": 12,
         "cardsObserved": 28,
-        "exits": 350,
+        "exits": 355,
         "active": 1359
       },
       "trackedCoverage": 0.8,
@@ -4581,7 +4713,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -4600,7 +4732,7 @@
           "blocking": false,
           "offers": 4,
           "sellers": 3,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 4,
@@ -4625,8 +4757,8 @@
         "observedOffers": 154,
         "sellerCardVoices": 146,
         "sourceOffers": {
-          "ebayFR": 149,
-          "cardTraderFR": 5
+          "ebayFR": 150,
+          "cardTraderFR": 4
         },
         "crawlHealth": {
           "available": true,
@@ -4640,8 +4772,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -5030,6 +5162,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 25.59,
+            "cardmarketAvg": 19.52,
+            "cardmarketLow": 13,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 26.7,
+            "ebayMedian": 34,
+            "ebayOffers": 11,
+            "ebaySellers": 8,
+            "ebayTrusted": 5,
+            "ebayReview": 6,
+            "ebayQuarantined": 1,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 26.7,
             "ebayMedian": 34,
             "ebayOffers": 11,
@@ -5041,11 +5188,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -5086,7 +5233,7 @@
           "oneInSpecific": 124,
           "premium": true,
           "baselineContribution": 0.51,
-          "centralContribution": 0.82,
+          "centralContribution": 0.86,
           "quickContribution": 0.62
         },
         {
@@ -5136,7 +5283,7 @@
           "floor10": 146.9,
           "offers": 11,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -5155,23 +5302,23 @@
           "name": "Charizard-GX",
           "rarity": "Rare Holo GX",
           "oneIn": 124,
-          "median": 26.7,
-          "floor10": 18.64,
+          "median": 31.9,
+          "floor10": 18.43,
           "offers": 21,
           "sellers": 19,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 20,
-            "cardTraderFR": 1
+            "ebayFR": 21,
+            "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
-            "slightlyPlayed": 1,
-            "ebayUnspecified": 20
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 21
           },
-          "contribution": 0.21
+          "contribution": 0.26
         },
         {
           "number": "21",
@@ -5182,7 +5329,7 @@
           "floor10": 10.3,
           "offers": 11,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -5205,7 +5352,7 @@
           "floor10": 8.32,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -5228,7 +5375,7 @@
           "floor10": 8.29,
           "offers": 15,
           "sellers": 15,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 13,
@@ -5251,7 +5398,7 @@
           "floor10": 6.02,
           "offers": 13,
           "sellers": 13,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -5274,7 +5421,7 @@
           "floor10": 16.14,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -5297,7 +5444,7 @@
           "floor10": 3,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -5320,7 +5467,7 @@
           "floor10": 5.33,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -5343,7 +5490,7 @@
           "floor10": 31.85,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -5365,23 +5512,23 @@
       "nameEN": "Evolutions",
       "era": "XY",
       "logo": "https://assets.tcgdex.net/fr/xy/xy12/logo.webp",
-      "boosterPrice": 141.09,
-      "grossCentral": 11.23,
-      "grossQuick": 8.29,
-      "netCentralLo": 7.4,
-      "netCentralHi": 12.01,
-      "netCentralMid": 9.7,
-      "netQuickLo": 5.46,
-      "netQuickHi": 8.84,
-      "netQuickMid": 7.15,
+      "boosterPrice": 135.89,
+      "grossCentral": 11.15,
+      "grossQuick": 8.21,
+      "netCentralLo": 7.35,
+      "netCentralHi": 11.92,
+      "netCentralMid": 9.63,
+      "netQuickLo": 5.4,
+      "netQuickHi": 8.75,
+      "netQuickMid": 7.07,
       "lossPct": 93,
       "quickLossPct": 95,
       "coverage": 0.809,
       "liquidity": {
         "medianDaysListed": 9,
         "cardsObserved": 10,
-        "exits": 478,
-        "active": 1407
+        "exits": 485,
+        "active": 1413
       },
       "trackedCoverage": 0.809,
       "freshnessDays": 0,
@@ -5404,10 +5551,10 @@
       "study": {
         "trackedCards": 10,
         "repricedCards": 10,
-        "observedOffers": 127,
-        "sellerCardVoices": 120,
+        "observedOffers": 129,
+        "sellerCardVoices": 122,
         "sourceOffers": {
-          "ebayFR": 125,
+          "ebayFR": 127,
           "cardTraderFR": 2
         },
         "crawlHealth": {
@@ -5422,8 +5569,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-11",
@@ -5801,6 +5948,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 95.92,
+            "cardmarketAvg": 69.69,
+            "cardmarketLow": 45.9,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 85.5,
             "ebayMedian": 141.09,
             "ebayOffers": 22,
@@ -5809,14 +5960,25 @@
             "ebayReview": 6,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 83.9,
+            "ebayMedian": 135.89,
+            "ebayOffers": 23,
+            "ebaySellers": 17,
+            "ebayTrusted": 16,
+            "ebayReview": 7,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 26,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 27,
+          "bothDays": 24,
           "firstObserved": "2026-08-11",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -5869,8 +6031,8 @@
           "oneInSpecific": 164,
           "premium": true,
           "baselineContribution": 2.17,
-          "centralContribution": 2.45,
-          "quickContribution": 1.72
+          "centralContribution": 2.37,
+          "quickContribution": 1.64
         },
         {
           "rarity": "Rare Secret",
@@ -5895,7 +6057,7 @@
           "floor10": 104.7,
           "offers": 31,
           "sellers": 31,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 31,
@@ -5918,7 +6080,7 @@
           "floor10": 20.6,
           "offers": 14,
           "sellers": 14,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 13,
@@ -5941,7 +6103,7 @@
           "floor10": 22.54,
           "offers": 16,
           "sellers": 16,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 16,
@@ -5961,10 +6123,10 @@
           "rarity": "Rare Ultra",
           "oneIn": 164,
           "median": 95,
-          "floor10": 53.92,
+          "floor10": 53.9,
           "offers": 6,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -5983,46 +6145,46 @@
           "name": "M Charizard-EX",
           "rarity": "Rare Ultra",
           "oneIn": 164,
-          "median": 87.14,
-          "floor10": 71.63,
-          "offers": 9,
-          "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "median": 79.99,
+          "floor10": 57.04,
+          "offers": 10,
+          "sellers": 9,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 9,
+            "ebayFR": 10,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 9
+            "ebayUnspecified": 10
           },
-          "contribution": 0.53
+          "contribution": 0.49
         },
         {
           "number": "102",
           "name": "M Blastoise-EX",
           "rarity": "Rare Ultra",
           "oneIn": 164,
-          "median": 84.31,
-          "floor10": 51.43,
-          "offers": 13,
-          "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "median": 78.7,
+          "floor10": 52.7,
+          "offers": 14,
+          "sellers": 11,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 13,
+            "ebayFR": 14,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 13
+            "ebayUnspecified": 14
           },
-          "contribution": 0.52
+          "contribution": 0.48
         },
         {
           "number": "42",
@@ -6033,7 +6195,7 @@
           "floor10": 13.83,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 10,
@@ -6056,7 +6218,7 @@
           "floor10": 36.39,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 10,
@@ -6079,7 +6241,7 @@
           "floor10": 15.51,
           "offers": 11,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 11,
@@ -6102,7 +6264,7 @@
           "floor10": 14.15,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -6124,23 +6286,23 @@
       "nameEN": "Sun & Moon",
       "era": "Soleil & Lune",
       "logo": "https://assets.tcgdex.net/fr/sm/sm1/logo.webp",
-      "boosterPrice": 42.2,
-      "grossCentral": 3.25,
-      "grossQuick": 2.5,
-      "netCentralLo": 2.1,
-      "netCentralHi": 3.35,
-      "netCentralMid": 2.72,
+      "boosterPrice": 42.25,
+      "grossCentral": 3.28,
+      "grossQuick": 2.51,
+      "netCentralLo": 2.12,
+      "netCentralHi": 3.37,
+      "netCentralMid": 2.75,
       "netQuickLo": 1.6,
-      "netQuickHi": 2.55,
-      "netQuickMid": 2.07,
-      "lossPct": 94,
+      "netQuickHi": 2.56,
+      "netQuickMid": 2.08,
+      "lossPct": 93,
       "quickLossPct": 95,
       "coverage": 0.639,
       "liquidity": {
-        "medianDaysListed": 12,
+        "medianDaysListed": 10,
         "cardsObserved": 28,
-        "exits": 533,
-        "active": 2345
+        "exits": 519,
+        "active": 2368
       },
       "trackedCoverage": 0.81,
       "freshnessDays": 0,
@@ -6163,11 +6325,11 @@
       "study": {
         "trackedCards": 28,
         "repricedCards": 22,
-        "observedOffers": 207,
-        "sellerCardVoices": 194,
+        "observedOffers": 204,
+        "sellerCardVoices": 191,
         "sourceOffers": {
-          "ebayFR": 195,
-          "cardTraderFR": 12
+          "ebayFR": 196,
+          "cardTraderFR": 8
         },
         "crawlHealth": {
           "available": true,
@@ -6181,8 +6343,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -6571,6 +6733,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 18.03,
+            "cardmarketAvg": 18.42,
+            "cardmarketLow": 10,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 23.58,
             "ebayMedian": 42.2,
             "ebayOffers": 15,
@@ -6579,14 +6745,25 @@
             "ebayReview": 2,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 24.1,
+            "ebayMedian": 42.25,
+            "ebayOffers": 16,
+            "ebaySellers": 8,
+            "ebayTrusted": 13,
+            "ebayReview": 3,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -6627,8 +6804,8 @@
           "oneInSpecific": 98,
           "premium": true,
           "baselineContribution": 0.48,
-          "centralContribution": 1.1,
-          "quickContribution": 0.77
+          "centralContribution": 1.11,
+          "quickContribution": 0.76
         },
         {
           "rarity": "Rare Ultra",
@@ -6640,7 +6817,7 @@
           "premium": true,
           "baselineContribution": 0.48,
           "centralContribution": 0.78,
-          "quickContribution": 0.64
+          "quickContribution": 0.66
         },
         {
           "rarity": "Rare Rainbow",
@@ -6675,19 +6852,19 @@
           "oneIn": 98,
           "median": 28,
           "floor10": 17.22,
-          "offers": 14,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": false,
+          "offers": 12,
+          "sellers": 9,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 13,
-            "cardTraderFR": 1
+            "ebayFR": 12,
+            "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
-            "slightlyPlayed": 1,
-            "ebayUnspecified": 13
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 12
           },
           "contribution": 0.29
         },
@@ -6700,7 +6877,7 @@
           "floor10": 45.36,
           "offers": 6,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -6723,7 +6900,7 @@
           "floor10": 35.54,
           "offers": 8,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -6746,7 +6923,7 @@
           "floor10": 25.73,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 9,
@@ -6766,20 +6943,43 @@
           "rarity": "Rare Holo GX",
           "oneIn": 98,
           "median": 13.38,
-          "floor10": 9.73,
-          "offers": 14,
-          "sellers": 14,
-          "latestSeen": "2026-09-17",
+          "floor10": 9.02,
+          "offers": 16,
+          "sellers": 16,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 14,
+            "ebayFR": 16,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 14
+            "ebayUnspecified": 16
+          },
+          "contribution": 0.14
+        },
+        {
+          "number": "61",
+          "name": "Espeon-GX",
+          "rarity": "Rare Holo GX",
+          "oneIn": 98,
+          "median": 13.43,
+          "floor10": 8.66,
+          "offers": 11,
+          "sellers": 10,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": false,
+          "sourceOffers": {
+            "ebayFR": 11,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 11
           },
           "contribution": 0.14
         },
@@ -6792,7 +6992,7 @@
           "floor10": 37.49,
           "offers": 7,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -6807,29 +7007,6 @@
           "contribution": 0.13
         },
         {
-          "number": "61",
-          "name": "Espeon-GX",
-          "rarity": "Rare Holo GX",
-          "oneIn": 98,
-          "median": 11.87,
-          "floor10": 8.66,
-          "offers": 12,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": false,
-          "sourceOffers": {
-            "ebayFR": 11,
-            "cardTraderFR": 1
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 0,
-            "slightlyPlayed": 1,
-            "ebayUnspecified": 11
-          },
-          "contribution": 0.12
-        },
-        {
           "number": "42",
           "name": "Primarina-GX",
           "rarity": "Rare Holo GX",
@@ -6838,7 +7015,7 @@
           "floor10": 8.12,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -6861,7 +7038,7 @@
           "floor10": 7.68,
           "offers": 12,
           "sellers": 12,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -6884,7 +7061,7 @@
           "floor10": 8,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -6921,8 +7098,8 @@
       "liquidity": {
         "medianDaysListed": 9,
         "cardsObserved": 40,
-        "exits": 711,
-        "active": 2145
+        "exits": 719,
+        "active": 2143
       },
       "trackedCoverage": 0.801,
       "freshnessDays": 0,
@@ -6943,7 +7120,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -6962,7 +7139,7 @@
           "blocking": true,
           "offers": 15,
           "sellers": 12,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 15,
@@ -6975,17 +7152,17 @@
           "rarity": "Rare Holo V",
           "anchorGross": 1.23,
           "anchorMethod": "opening_reference",
-          "marketMedian": 6.65,
-          "ratio": 5.41,
+          "marketMedian": 10.8,
+          "ratio": 8.78,
           "direction": "above",
           "blocking": false,
-          "offers": 2,
-          "sellers": 2,
-          "latestSeen": "2026-09-17",
+          "offers": 1,
+          "sellers": 1,
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
-            "cardTraderFR": 1
+            "cardTraderFR": 0
           }
         },
         {
@@ -7000,7 +7177,7 @@
           "blocking": true,
           "offers": 16,
           "sellers": 15,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 16,
@@ -7019,7 +7196,7 @@
           "blocking": false,
           "offers": 2,
           "sellers": 2,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 2,
@@ -7038,7 +7215,7 @@
           "blocking": true,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 10,
@@ -7057,7 +7234,7 @@
           "blocking": false,
           "offers": 3,
           "sellers": 3,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 3,
@@ -7079,11 +7256,11 @@
       "study": {
         "trackedCards": 40,
         "repricedCards": 7,
-        "observedOffers": 125,
-        "sellerCardVoices": 118,
+        "observedOffers": 126,
+        "sellerCardVoices": 119,
         "sourceOffers": {
-          "ebayFR": 120,
-          "cardTraderFR": 5
+          "ebayFR": 122,
+          "cardTraderFR": 4
         },
         "crawlHealth": {
           "available": true,
@@ -7097,8 +7274,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -7465,6 +7642,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 8.44,
+            "cardmarketAvg": 8.9,
+            "cardmarketLow": 5.5,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 15.38,
+            "ebayMedian": 16,
+            "ebayOffers": 15,
+            "ebaySellers": 7,
+            "ebayTrusted": 15,
+            "ebayReview": 0,
+            "ebayQuarantined": 1,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 15.38,
             "ebayMedian": 16,
             "ebayOffers": 15,
@@ -7476,11 +7668,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -7583,7 +7775,7 @@
           "floor10": 39.7,
           "offers": 7,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -7606,7 +7798,7 @@
           "floor10": 137.98,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -7629,7 +7821,7 @@
           "floor10": 43.76,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -7652,7 +7844,7 @@
           "floor10": 135.48,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -7675,7 +7867,7 @@
           "floor10": 114.82,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -7698,7 +7890,7 @@
           "floor10": 23.27,
           "offers": 8,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -7721,7 +7913,7 @@
           "floor10": 19.54,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -7744,22 +7936,22 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh7/logo.webp",
       "boosterPrice": 42.92,
-      "grossCentral": 8,
-      "grossQuick": 7.34,
-      "netCentralLo": 5.2,
-      "netCentralHi": 8.54,
-      "netCentralMid": 6.87,
-      "netQuickLo": 4.77,
-      "netQuickHi": 7.83,
-      "netQuickMid": 6.3,
-      "lossPct": 84,
-      "quickLossPct": 85,
-      "coverage": 0.184,
+      "grossCentral": 8.29,
+      "grossQuick": 7.22,
+      "netCentralLo": 5.4,
+      "netCentralHi": 8.85,
+      "netCentralMid": 7.12,
+      "netQuickLo": 4.69,
+      "netQuickHi": 7.7,
+      "netQuickMid": 6.2,
+      "lossPct": 83,
+      "quickLossPct": 86,
+      "coverage": 0.228,
       "liquidity": {
         "medianDaysListed": 9,
         "cardsObserved": 23,
-        "exits": 349,
-        "active": 947
+        "exits": 374,
+        "active": 938
       },
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
@@ -7773,26 +7965,26 @@
       "partialNote": null,
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.184,
-        "trackedFallbackThin": 0.534,
+        "repriced": 0.228,
+        "trackedFallbackThin": 0.544,
         "trackedFallbackConflict": 0,
-        "trackedFallbackUnavailable": 0.086,
+        "trackedFallbackUnavailable": 0.032,
         "untracked": 0.196
       },
       "study": {
         "trackedCards": 23,
-        "repricedCards": 8,
-        "observedOffers": 78,
-        "sellerCardVoices": 76,
+        "repricedCards": 9,
+        "observedOffers": 81,
+        "sellerCardVoices": 79,
         "sourceOffers": {
-          "ebayFR": 77,
+          "ebayFR": 80,
           "cardTraderFR": 1
         },
         "crawlHealth": {
           "available": true,
           "expected": 46,
-          "complete": 44,
-          "completeZero": 2,
+          "complete": 45,
+          "completeZero": 1,
           "incomplete": 0,
           "error": 0,
           "missing": 0
@@ -7800,8 +7992,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -8190,6 +8382,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 32.87,
+            "cardmarketAvg": 31.49,
+            "cardmarketLow": 16.99,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 33.95,
+            "ebayMedian": 42.92,
+            "ebayOffers": 26,
+            "ebaySellers": 20,
+            "ebayTrusted": 22,
+            "ebayReview": 4,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 33.95,
             "ebayMedian": 42.92,
             "ebayOffers": 26,
@@ -8201,11 +8408,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -8270,8 +8477,8 @@
           "oneInSpecific": 585,
           "premium": true,
           "baselineContribution": 2.94,
-          "centralContribution": 3.42,
-          "quickContribution": 3.07
+          "centralContribution": 3.71,
+          "quickContribution": 2.95
         },
         {
           "rarity": "Rare Rainbow",
@@ -8308,7 +8515,7 @@
           "floor10": 720.09,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -8323,6 +8530,29 @@
           "contribution": 0.94
         },
         {
+          "number": "192",
+          "name": "Dragonite V",
+          "rarity": "Rare Ultra",
+          "oneIn": 585,
+          "median": 353.5,
+          "floor10": 115.3,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
+          "sourceOffers": {
+            "ebayFR": 5,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 5
+          },
+          "contribution": 0.6
+        },
+        {
           "number": "180",
           "name": "Espeon V",
           "rarity": "Rare Ultra",
@@ -8331,7 +8561,7 @@
           "floor10": 183.74,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -8354,7 +8584,7 @@
           "floor10": 68.3,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -8377,7 +8607,7 @@
           "floor10": 51.16,
           "offers": 5,
           "sellers": 3,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -8400,7 +8630,7 @@
           "floor10": 100.75,
           "offers": 9,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -8423,7 +8653,7 @@
           "floor10": 31.28,
           "offers": 8,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -8446,7 +8676,7 @@
           "floor10": 25.53,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -8469,7 +8699,7 @@
           "floor10": 30.11,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -8504,10 +8734,10 @@
       "quickLossPct": 94,
       "coverage": 0.587,
       "liquidity": {
-        "medianDaysListed": 10,
+        "medianDaysListed": 11,
         "cardsObserved": 6,
-        "exits": 155,
-        "active": 432
+        "exits": 160,
+        "active": 433
       },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
@@ -8548,8 +8778,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -8938,6 +9168,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 32.43,
+            "cardmarketAvg": 32.29,
+            "cardmarketLow": 24,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 45.9,
+            "ebayMedian": 57.89,
+            "ebayOffers": 11,
+            "ebaySellers": 10,
+            "ebayTrusted": 10,
+            "ebayReview": 1,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 45.9,
             "ebayMedian": 57.89,
             "ebayOffers": 11,
@@ -8949,11 +9194,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -9032,7 +9277,7 @@
           "floor10": 81.82,
           "offers": 5,
           "sellers": 3,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -9055,7 +9300,7 @@
           "floor10": 42.3,
           "offers": 8,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -9078,7 +9323,7 @@
           "floor10": 34.94,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -9101,7 +9346,7 @@
           "floor10": 10.8,
           "offers": 29,
           "sellers": 28,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 29,
@@ -9124,7 +9369,7 @@
           "floor10": 1.75,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 4,
@@ -9183,7 +9428,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -9202,7 +9447,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -9221,7 +9466,7 @@
           "blocking": false,
           "offers": 2,
           "sellers": 2,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 2,
@@ -9240,7 +9485,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -9259,7 +9504,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -9299,8 +9544,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-11",
@@ -9678,6 +9923,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 12.81,
+            "cardmarketAvg": 13.2,
+            "cardmarketLow": 7,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 22.95,
             "ebayMedian": 33.55,
             "ebayOffers": 22,
@@ -9686,14 +9935,25 @@
             "ebayReview": 8,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 22.95,
+            "ebayMedian": 33.55,
+            "ebayOffers": 24,
+            "ebaySellers": 12,
+            "ebayTrusted": 16,
+            "ebayReview": 8,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 26,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 27,
+          "bothDays": 24,
           "firstObserved": "2026-08-11",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -9797,8 +10057,8 @@
       "liquidity": {
         "medianDaysListed": 8,
         "cardsObserved": 23,
-        "exits": 963,
-        "active": 1953
+        "exits": 968,
+        "active": 1948
       },
       "trackedCoverage": 0.802,
       "freshnessDays": 0,
@@ -9819,7 +10079,7 @@
           "blocking": true,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 5,
@@ -9838,7 +10098,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -9851,16 +10111,16 @@
           "rarity": "Radiant Rare",
           "anchorGross": 0.61,
           "anchorMethod": "opening_reference",
-          "marketMedian": 4.27,
-          "ratio": 7,
+          "marketMedian": 4.32,
+          "ratio": 7.08,
           "direction": "above",
           "blocking": true,
-          "offers": 17,
-          "sellers": 17,
-          "latestSeen": "2026-09-17",
+          "offers": 16,
+          "sellers": 16,
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
-            "ebayFR": 15,
+            "ebayFR": 14,
             "cardTraderFR": 2
           }
         },
@@ -9876,7 +10136,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -9898,10 +10158,10 @@
       "study": {
         "trackedCards": 23,
         "repricedCards": 9,
-        "observedOffers": 101,
-        "sellerCardVoices": 99,
+        "observedOffers": 100,
+        "sellerCardVoices": 98,
         "sourceOffers": {
-          "ebayFR": 89,
+          "ebayFR": 88,
           "cardTraderFR": 12
         },
         "crawlHealth": {
@@ -9916,8 +10176,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -10306,6 +10566,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 8.41,
+            "cardmarketAvg": 9.13,
+            "cardmarketLow": 5.95,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 14,
+            "ebayMedian": 17.22,
+            "ebayOffers": 38,
+            "ebaySellers": 23,
+            "ebayTrusted": 34,
+            "ebayReview": 4,
+            "ebayQuarantined": 1,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 14,
             "ebayMedian": 17.22,
             "ebayOffers": 38,
@@ -10317,11 +10592,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -10448,7 +10723,7 @@
           "floor10": 388.5,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -10471,7 +10746,7 @@
           "floor10": 13.65,
           "offers": 9,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -10491,10 +10766,10 @@
           "rarity": "Rare Holo V",
           "oneIn": 75,
           "median": 15.2,
-          "floor10": 5.08,
+          "floor10": 5.09,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 2,
@@ -10517,7 +10792,7 @@
           "floor10": 57.31,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -10540,7 +10815,7 @@
           "floor10": 47.08,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 10,
@@ -10563,7 +10838,7 @@
           "floor10": 33.67,
           "offers": 6,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -10586,7 +10861,7 @@
           "floor10": 26.39,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -10609,7 +10884,7 @@
           "floor10": 19.36,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -10632,7 +10907,7 @@
           "floor10": 15.26,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -10661,7 +10936,7 @@
       "netCentralHi": 2.97,
       "netCentralMid": 2.62,
       "netQuickLo": 2.09,
-      "netQuickHi": 2.73,
+      "netQuickHi": 2.72,
       "netQuickMid": 2.41,
       "lossPct": 84,
       "quickLossPct": 85,
@@ -10670,7 +10945,7 @@
         "medianDaysListed": 8,
         "cardsObserved": 22,
         "exits": 546,
-        "active": 1064
+        "active": 1066
       },
       "trackedCoverage": 0.803,
       "freshnessDays": 0,
@@ -10691,7 +10966,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
@@ -10705,25 +10980,25 @@
       "evCoverageTruncated": false,
       "coverageBreakdown": {
         "repriced": 0.235,
-        "trackedFallbackThin": 0.459,
+        "trackedFallbackThin": 0.472,
         "trackedFallbackConflict": 0,
-        "trackedFallbackUnavailable": 0.109,
+        "trackedFallbackUnavailable": 0.096,
         "untracked": 0.197
       },
       "study": {
         "trackedCards": 22,
         "repricedCards": 6,
-        "observedOffers": 66,
-        "sellerCardVoices": 65,
+        "observedOffers": 68,
+        "sellerCardVoices": 67,
         "sourceOffers": {
-          "ebayFR": 65,
+          "ebayFR": 67,
           "cardTraderFR": 1
         },
         "crawlHealth": {
           "available": true,
           "expected": 44,
-          "complete": 39,
-          "completeZero": 5,
+          "complete": 40,
+          "completeZero": 4,
           "incomplete": 0,
           "error": 0,
           "missing": 0
@@ -10731,8 +11006,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -11099,6 +11374,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 15.63,
+            "cardmarketAvg": 14.72,
+            "cardmarketLow": 5.99,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 15,
             "ebayMedian": 16.15,
             "ebayOffers": 6,
@@ -11107,14 +11386,25 @@
             "ebayReview": 3,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 15,
+            "ebayMedian": 16.15,
+            "ebayOffers": 7,
+            "ebaySellers": 7,
+            "ebayTrusted": 3,
+            "ebayReview": 4,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -11193,7 +11483,7 @@
           "floor10": 81.85,
           "offers": 16,
           "sellers": 16,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 16,
@@ -11216,7 +11506,7 @@
           "floor10": 320.35,
           "offers": 5,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -11239,7 +11529,7 @@
           "floor10": 135.9,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -11262,7 +11552,7 @@
           "floor10": 182.08,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -11282,10 +11572,10 @@
           "rarity": "Special Illustration Rare",
           "oneIn": 1455,
           "median": 200,
-          "floor10": 160.7,
+          "floor10": 154.86,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -11308,7 +11598,7 @@
           "floor10": 24.86,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -11331,29 +11621,29 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh9/logo.webp",
       "boosterPrice": 18.24,
-      "grossCentral": 3.92,
-      "grossQuick": 3.1,
-      "netCentralLo": 2.48,
-      "netCentralHi": 4.11,
-      "netCentralMid": 3.3,
-      "netQuickLo": 1.95,
-      "netQuickHi": 3.22,
-      "netQuickMid": 2.58,
-      "lossPct": 82,
+      "grossCentral": 3.68,
+      "grossQuick": 2.97,
+      "netCentralLo": 2.33,
+      "netCentralHi": 3.85,
+      "netCentralMid": 3.09,
+      "netQuickLo": 1.86,
+      "netQuickHi": 3.08,
+      "netQuickMid": 2.47,
+      "lossPct": 83,
       "quickLossPct": 86,
-      "coverage": 0.657,
+      "coverage": 0.632,
       "liquidity": {
         "medianDaysListed": 10,
         "cardsObserved": 18,
-        "exits": 547,
-        "active": 1392
+        "exits": 559,
+        "active": 1401
       },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
       "confidence": "moyenne",
       "rateConfidence": "correcte",
-      "conflicts": 2,
-      "blockingConflicts": 1,
+      "conflicts": 3,
+      "blockingConflicts": 2,
       "conflictDetails": [
         {
           "number": "69",
@@ -11367,11 +11657,30 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
             "cardTraderFR": 1
+          }
+        },
+        {
+          "number": "123",
+          "name": "Arceus VSTAR",
+          "rarity": "Rare Holo VSTAR",
+          "anchorGross": 2.98,
+          "anchorMethod": "opening_reference",
+          "marketMedian": 16.95,
+          "ratio": 5.69,
+          "direction": "above",
+          "blocking": true,
+          "offers": 14,
+          "sellers": 14,
+          "latestSeen": "2026-09-18",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 14,
+            "cardTraderFR": 0
           }
         },
         {
@@ -11386,7 +11695,7 @@
           "blocking": true,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 10,
@@ -11399,19 +11708,19 @@
       "partialNote": "La Trainer Gallery n'est pas incluse : la valeur d'ouverture réelle est un peu plus haute.",
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.657,
+        "repriced": 0.632,
         "trackedFallbackThin": 0.042,
-        "trackedFallbackConflict": 0.01,
+        "trackedFallbackConflict": 0.035,
         "trackedFallbackUnavailable": 0.098,
         "untracked": 0.193
       },
       "study": {
         "trackedCards": 18,
-        "repricedCards": 12,
-        "observedOffers": 126,
-        "sellerCardVoices": 118,
+        "repricedCards": 11,
+        "observedOffers": 127,
+        "sellerCardVoices": 119,
         "sourceOffers": {
-          "ebayFR": 121,
+          "ebayFR": 122,
           "cardTraderFR": 5
         },
         "crawlHealth": {
@@ -11426,8 +11735,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -11816,6 +12125,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 9.72,
+            "cardmarketAvg": 11.09,
+            "cardmarketLow": 5.49,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 14.54,
+            "ebayMedian": 18.24,
+            "ebayOffers": 72,
+            "ebaySellers": 32,
+            "ebayTrusted": 68,
+            "ebayReview": 4,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 14.54,
             "ebayMedian": 18.24,
             "ebayOffers": 72,
@@ -11827,11 +12151,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -11896,8 +12220,8 @@
           "oneInSpecific": 50,
           "premium": true,
           "baselineContribution": 0.25,
-          "centralContribution": 0.47,
-          "quickContribution": 0.33
+          "centralContribution": 0.25,
+          "quickContribution": 0.25
         },
         {
           "rarity": "Rare Ultra",
@@ -11908,8 +12232,8 @@
           "oneInSpecific": 323,
           "premium": true,
           "baselineContribution": 1.27,
-          "centralContribution": 2.17,
-          "quickContribution": 1.74
+          "centralContribution": 2.15,
+          "quickContribution": 1.7
         },
         {
           "rarity": "Rare Rainbow",
@@ -11946,7 +12270,7 @@
           "floor10": 294.15,
           "offers": 10,
           "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 10,
@@ -11965,23 +12289,23 @@
           "name": "Arceus V",
           "rarity": "Rare Ultra",
           "oneIn": 323,
-          "median": 115.1,
-          "floor10": 97.34,
-          "offers": 9,
-          "sellers": 9,
-          "latestSeen": "2026-09-17",
+          "median": 109.9,
+          "floor10": 96.31,
+          "offers": 8,
+          "sellers": 8,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 9,
+            "ebayFR": 8,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 9
+            "ebayUnspecified": 8
           },
-          "contribution": 0.36
+          "contribution": 0.34
         },
         {
           "number": "174",
@@ -11992,7 +12316,7 @@
           "floor10": 68.3,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -12007,38 +12331,15 @@
           "contribution": 0.32
         },
         {
-          "number": "123",
-          "name": "Arceus VSTAR",
-          "rarity": "Rare Holo VSTAR",
-          "oneIn": 50,
-          "median": 13.9,
-          "floor10": 7.2,
-          "offers": 13,
-          "sellers": 13,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": false,
-          "sourceOffers": {
-            "ebayFR": 13,
-            "cardTraderFR": 0
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 0,
-            "slightlyPlayed": 0,
-            "ebayUnspecified": 13
-          },
-          "contribution": 0.28
-        },
-        {
           "number": "153",
           "name": "Charizard V",
           "rarity": "Rare Ultra",
           "oneIn": 323,
           "median": 71.05,
-          "floor10": 48.02,
+          "floor10": 43.34,
           "offers": 15,
           "sellers": 12,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 14,
@@ -12061,7 +12362,7 @@
           "floor10": 26.09,
           "offers": 9,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -12084,7 +12385,7 @@
           "floor10": 33.34,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -12103,21 +12404,21 @@
           "name": "Lumineon V",
           "rarity": "Rare Ultra",
           "oneIn": 323,
-          "median": 31.9,
-          "floor10": 23.76,
-          "offers": 9,
-          "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "median": 30.95,
+          "floor10": 15.51,
+          "offers": 10,
+          "sellers": 8,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 9,
+            "ebayFR": 10,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 9
+            "ebayUnspecified": 10
           },
           "contribution": 0.1
         },
@@ -12130,7 +12431,7 @@
           "floor10": 29.82,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -12153,7 +12454,7 @@
           "floor10": 27.74,
           "offers": 7,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -12166,6 +12467,29 @@
             "ebayUnspecified": 7
           },
           "contribution": 0.1
+        },
+        {
+          "number": "122",
+          "name": "Arceus V",
+          "rarity": "Rare Holo V",
+          "oneIn": 100,
+          "median": 7.58,
+          "floor10": 4.8,
+          "offers": 10,
+          "sellers": 10,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": false,
+          "sourceOffers": {
+            "ebayFR": 10,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 10
+          },
+          "contribution": 0.08
         }
       ]
     },
@@ -12176,13 +12500,13 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh12.5/logo.webp",
       "boosterPrice": 31.9,
-      "grossCentral": 3.63,
-      "grossQuick": 3.23,
-      "netCentralLo": 2.24,
-      "netCentralHi": 3.89,
-      "netCentralMid": 3.06,
+      "grossCentral": 3.66,
+      "grossQuick": 3.24,
+      "netCentralLo": 2.26,
+      "netCentralHi": 3.93,
+      "netCentralMid": 3.09,
       "netQuickLo": 2,
-      "netQuickHi": 3.43,
+      "netQuickHi": 3.44,
       "netQuickMid": 2.72,
       "lossPct": 90,
       "quickLossPct": 91,
@@ -12190,8 +12514,8 @@
       "liquidity": {
         "medianDaysListed": 7,
         "cardsObserved": 17,
-        "exits": 664,
-        "active": 1208
+        "exits": 681,
+        "active": 1202
       },
       "trackedCoverage": 0.804,
       "freshnessDays": 0,
@@ -12212,7 +12536,7 @@
           "blocking": false,
           "offers": 4,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 4,
@@ -12231,7 +12555,7 @@
           "blocking": true,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 5,
@@ -12250,7 +12574,7 @@
           "blocking": false,
           "offers": 1,
           "sellers": 1,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -12269,7 +12593,7 @@
           "blocking": true,
           "offers": 9,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 9,
@@ -12291,10 +12615,10 @@
       "study": {
         "trackedCards": 17,
         "repricedCards": 5,
-        "observedOffers": 72,
-        "sellerCardVoices": 69,
+        "observedOffers": 70,
+        "sellerCardVoices": 67,
         "sourceOffers": {
-          "ebayFR": 69,
+          "ebayFR": 67,
           "cardTraderFR": 3
         },
         "crawlHealth": {
@@ -12309,8 +12633,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -12699,6 +13023,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 21.64,
+            "cardmarketAvg": 23.24,
+            "cardmarketLow": 14.99,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 26.08,
+            "ebayMedian": 31.9,
+            "ebayOffers": 7,
+            "ebaySellers": 7,
+            "ebayTrusted": 5,
+            "ebayReview": 2,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 26.08,
             "ebayMedian": 31.9,
             "ebayOffers": 7,
@@ -12710,11 +13049,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -12815,8 +13154,8 @@
           "oneInSpecific": 67,
           "premium": true,
           "baselineContribution": 0.57,
-          "centralContribution": 1.35,
-          "quickContribution": 1.05
+          "centralContribution": 1.39,
+          "quickContribution": 1.06
         }
       ],
       "cards": [
@@ -12825,23 +13164,23 @@
           "name": "Pikachu",
           "rarity": "Rare Secret",
           "oneIn": 67,
-          "median": 89.99,
-          "floor10": 70,
-          "offers": 11,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "median": 92.14,
+          "floor10": 70.58,
+          "offers": 10,
+          "sellers": 10,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 11,
+            "ebayFR": 10,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 11
+            "ebayUnspecified": 10
           },
-          "contribution": 1.35
+          "contribution": 1.38
         },
         {
           "number": "108",
@@ -12852,7 +13191,7 @@
           "floor10": 11.01,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -12871,21 +13210,21 @@
           "name": "Friends in Hisui",
           "rarity": "Rare Ultra",
           "oneIn": 200,
-          "median": 19.36,
-          "floor10": 14.17,
-          "offers": 7,
-          "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "median": 19.67,
+          "floor10": 13.96,
+          "offers": 6,
+          "sellers": 6,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 7,
+            "ebayFR": 6,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 7
+            "ebayUnspecified": 6
           },
           "contribution": 0.1
         },
@@ -12898,7 +13237,7 @@
           "floor10": 4.43,
           "offers": 15,
           "sellers": 14,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 14,
@@ -12921,7 +13260,7 @@
           "floor10": 5.49,
           "offers": 8,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 8,
@@ -12944,68 +13283,48 @@
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh8/logo.webp",
       "boosterPrice": 30.75,
-      "grossCentral": 2.98,
-      "grossQuick": 2.64,
-      "netCentralLo": 1.88,
-      "netCentralHi": 3.06,
-      "netCentralMid": 2.47,
-      "netQuickLo": 1.66,
-      "netQuickHi": 2.69,
-      "netQuickMid": 2.18,
-      "lossPct": 92,
-      "quickLossPct": 93,
-      "coverage": 0.134,
+      "grossCentral": 3.72,
+      "grossQuick": 2.81,
+      "netCentralLo": 2.37,
+      "netCentralHi": 3.86,
+      "netCentralMid": 3.12,
+      "netQuickLo": 1.77,
+      "netQuickHi": 2.88,
+      "netQuickMid": 2.32,
+      "lossPct": 90,
+      "quickLossPct": 92,
+      "coverage": 0.266,
       "liquidity": {
         "medianDaysListed": 8,
         "cardsObserved": 5,
-        "exits": 167,
-        "active": 409
+        "exits": 172,
+        "active": 411
       },
       "trackedCoverage": 0.811,
       "freshnessDays": 0,
       "confidence": "faible",
       "rateConfidence": "correcte",
-      "conflicts": 1,
+      "conflicts": 0,
       "blockingConflicts": 0,
-      "conflictDetails": [
-        {
-          "number": "157",
-          "name": "Gengar VMAX",
-          "rarity": "Rare Holo VMAX",
-          "anchorGross": 27.92,
-          "anchorMethod": "opening_reference",
-          "marketMedian": 172.3,
-          "ratio": 6.17,
-          "direction": "above",
-          "blocking": false,
-          "offers": 4,
-          "sellers": 4,
-          "latestSeen": "2026-09-17",
-          "ageDays": 0,
-          "sourceOffers": {
-            "ebayFR": 4,
-            "cardTraderFR": 0
-          }
-        }
-      ],
+      "conflictDetails": [],
       "sample": "plusieurs milliers de boosters sur l'ère",
       "sampleSource": "agrégats communautaires (TCGplayer, r/PokemonTCG)",
       "partialNote": null,
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.134,
-        "trackedFallbackThin": 0.677,
+        "repriced": 0.266,
+        "trackedFallbackThin": 0.545,
         "trackedFallbackConflict": 0,
         "trackedFallbackUnavailable": 0,
         "untracked": 0.189
       },
       "study": {
         "trackedCards": 5,
-        "repricedCards": 2,
-        "observedOffers": 48,
-        "sellerCardVoices": 47,
+        "repricedCards": 3,
+        "observedOffers": 49,
+        "sellerCardVoices": 48,
         "sourceOffers": {
-          "ebayFR": 45,
+          "ebayFR": 46,
           "cardTraderFR": 3
         },
         "crawlHealth": {
@@ -13020,8 +13339,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -13410,6 +13729,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 12.34,
+            "cardmarketAvg": 10.85,
+            "cardmarketLow": 7.9,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 16.79,
+            "ebayMedian": 30.75,
+            "ebayOffers": 29,
+            "ebaySellers": 18,
+            "ebayTrusted": 16,
+            "ebayReview": 13,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 16.79,
             "ebayMedian": 30.75,
             "ebayOffers": 29,
@@ -13421,11 +13755,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -13478,8 +13812,8 @@
           "oneInSpecific": 100,
           "premium": true,
           "baselineContribution": 0.51,
-          "centralContribution": 0.91,
-          "quickContribution": 0.67
+          "centralContribution": 1.65,
+          "quickContribution": 0.84
         },
         {
           "rarity": "Rare Ultra",
@@ -13496,15 +13830,38 @@
       ],
       "cards": [
         {
+          "number": "157",
+          "name": "Gengar VMAX",
+          "rarity": "Rare Holo VMAX",
+          "oneIn": 100,
+          "median": 104.7,
+          "floor10": 42.26,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
+          "sourceOffers": {
+            "ebayFR": 5,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 5
+          },
+          "contribution": 1.05
+        },
+        {
           "number": "114",
           "name": "Mew VMAX",
           "rarity": "Rare Holo VMAX",
           "oneIn": 100,
-          "median": 52.7,
-          "floor10": 28.94,
+          "median": 50,
+          "floor10": 31.3,
           "offers": 28,
           "sellers": 28,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 27,
@@ -13516,7 +13873,7 @@
             "slightlyPlayed": 1,
             "ebayUnspecified": 27
           },
-          "contribution": 0.53
+          "contribution": 0.5
         },
         {
           "number": "250",
@@ -13527,7 +13884,7 @@
           "floor10": 35.74,
           "offers": 9,
           "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 9,
@@ -13549,23 +13906,23 @@
       "nameEN": "151",
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv03.5/logo.webp",
-      "boosterPrice": 30,
-      "grossCentral": 12.79,
-      "grossQuick": 10.94,
-      "netCentralLo": 10.29,
-      "netCentralHi": 11.64,
-      "netCentralMid": 10.97,
-      "netQuickLo": 8.79,
-      "netQuickHi": 9.94,
-      "netQuickMid": 9.36,
-      "lossPct": 63,
-      "quickLossPct": 69,
+      "boosterPrice": 30.95,
+      "grossCentral": 12.52,
+      "grossQuick": 10.68,
+      "netCentralLo": 10.08,
+      "netCentralHi": 11.4,
+      "netCentralMid": 10.74,
+      "netQuickLo": 8.57,
+      "netQuickHi": 9.69,
+      "netQuickMid": 9.13,
+      "lossPct": 65,
+      "quickLossPct": 71,
       "coverage": 0.769,
       "liquidity": {
-        "medianDaysListed": 7,
+        "medianDaysListed": 6,
         "cardsObserved": 22,
-        "exits": 1263,
-        "active": 2187
+        "exits": 1270,
+        "active": 2234
       },
       "trackedCoverage": 0.802,
       "freshnessDays": 0,
@@ -13586,11 +13943,11 @@
           "blocking": false,
           "offers": 4,
           "sellers": 4,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
-            "ebayFR": 3,
-            "cardTraderFR": 1
+            "ebayFR": 4,
+            "cardTraderFR": 0
           }
         }
       ],
@@ -13608,11 +13965,11 @@
       "study": {
         "trackedCards": 22,
         "repricedCards": 20,
-        "observedOffers": 205,
-        "sellerCardVoices": 201,
+        "observedOffers": 222,
+        "sellerCardVoices": 219,
         "sourceOffers": {
-          "ebayFR": 191,
-          "cardTraderFR": 14
+          "ebayFR": 214,
+          "cardTraderFR": 8
         },
         "crawlHealth": {
           "available": true,
@@ -13626,8 +13983,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -14016,6 +14373,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 24.94,
+            "cardmarketAvg": 25.03,
+            "cardmarketLow": 17.5,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 21.49,
             "ebayMedian": 30,
             "ebayOffers": 11,
@@ -14024,14 +14385,25 @@
             "ebayReview": 5,
             "ebayQuarantined": 1,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 21.38,
+            "ebayMedian": 30.95,
+            "ebayOffers": 10,
+            "ebaySellers": 9,
+            "ebayTrusted": 5,
+            "ebayReview": 5,
+            "ebayQuarantined": 1,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -14072,8 +14444,8 @@
           "oneInSpecific": 188,
           "premium": true,
           "baselineContribution": 2.26,
-          "centralContribution": 5.23,
-          "quickContribution": 4.29
+          "centralContribution": 4.94,
+          "quickContribution": 4.1
         },
         {
           "rarity": "Ultra Rare",
@@ -14084,8 +14456,8 @@
           "oneInSpecific": 250,
           "premium": true,
           "baselineContribution": 0.85,
-          "centralContribution": 1.23,
-          "quickContribution": 1.12
+          "centralContribution": 1.19,
+          "quickContribution": 1.07
         },
         {
           "rarity": "Special Illustration Rare",
@@ -14096,8 +14468,8 @@
           "oneInSpecific": 226,
           "premium": true,
           "baselineContribution": 2.55,
-          "centralContribution": 5.26,
-          "quickContribution": 4.63
+          "centralContribution": 5.32,
+          "quickContribution": 4.6
         },
         {
           "rarity": "Hyper Rare",
@@ -14108,7 +14480,7 @@
           "oneInSpecific": 154,
           "premium": true,
           "baselineContribution": 0.16,
-          "centralContribution": 0.38,
+          "centralContribution": 0.39,
           "quickContribution": 0.3
         }
       ],
@@ -14118,23 +14490,23 @@
           "name": "Charizard ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 226,
-          "median": 414.7,
-          "floor10": 384.1,
-          "offers": 12,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "median": 435.1,
+          "floor10": 411.13,
+          "offers": 11,
+          "sellers": 10,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 12,
+            "ebayFR": 11,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 12
+            "ebayUnspecified": 11
           },
-          "contribution": 1.84
+          "contribution": 1.93
         },
         {
           "number": "202",
@@ -14142,20 +14514,20 @@
           "rarity": "Special Illustration Rare",
           "oneIn": 226,
           "median": 208.7,
-          "floor10": 185.82,
-          "offers": 7,
-          "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "floor10": 165.02,
+          "offers": 9,
+          "sellers": 9,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 7,
+            "ebayFR": 9,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 7
+            "ebayUnspecified": 9
           },
           "contribution": 0.92
         },
@@ -14168,145 +14540,122 @@
           "floor10": 146.66,
           "offers": 14,
           "sellers": 14,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 12,
-            "cardTraderFR": 2
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 2,
-            "slightlyPlayed": 0,
-            "ebayUnspecified": 12
-          },
-          "contribution": 0.75
-        },
-        {
-          "number": "168",
-          "name": "Charmander",
-          "rarity": "Illustration Rare",
-          "oneIn": 188,
-          "median": 134.99,
-          "floor10": 102.62,
-          "offers": 9,
-          "sellers": 9,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": true,
-          "sourceOffers": {
-            "ebayFR": 8,
+            "ebayFR": 13,
             "cardTraderFR": 1
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 1,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 8
+            "ebayUnspecified": 13
           },
-          "contribution": 0.72
+          "contribution": 0.75
         },
         {
           "number": "198",
           "name": "Venusaur ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 226,
-          "median": 154.99,
-          "floor10": 138.9,
-          "offers": 12,
-          "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "median": 152.5,
+          "floor10": 136.2,
+          "offers": 13,
+          "sellers": 12,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 12,
+            "ebayFR": 13,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 12
+            "ebayUnspecified": 13
           },
-          "contribution": 0.69
+          "contribution": 0.68
+        },
+        {
+          "number": "168",
+          "name": "Charmander",
+          "rarity": "Illustration Rare",
+          "oneIn": 188,
+          "median": 125.5,
+          "floor10": 94.3,
+          "offers": 11,
+          "sellers": 11,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": false,
+          "sourceOffers": {
+            "ebayFR": 10,
+            "cardTraderFR": 1
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 1,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 10
+          },
+          "contribution": 0.67
         },
         {
           "number": "201",
           "name": "Alakazam ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 226,
-          "median": 149.99,
-          "floor10": 123,
-          "offers": 9,
-          "sellers": 9,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": true,
+          "median": 145.25,
+          "floor10": 115.1,
+          "offers": 11,
+          "sellers": 11,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 9,
+            "ebayFR": 11,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 9
+            "ebayUnspecified": 11
           },
-          "contribution": 0.66
+          "contribution": 0.64
         },
         {
           "number": "173",
           "name": "Pikachu",
           "rarity": "Illustration Rare",
           "oneIn": 188,
-          "median": 109.99,
-          "floor10": 92.54,
-          "offers": 7,
-          "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "median": 104.74,
+          "floor10": 84.98,
+          "offers": 8,
+          "sellers": 8,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 7,
+            "ebayFR": 8,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 7
+            "ebayUnspecified": 8
           },
-          "contribution": 0.58
+          "contribution": 0.56
         },
         {
           "number": "169",
           "name": "Charmeleon",
           "rarity": "Illustration Rare",
           "oneIn": 188,
-          "median": 104.69,
-          "floor10": 99.99,
-          "offers": 5,
-          "sellers": 5,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": true,
-          "sourceOffers": {
-            "ebayFR": 5,
-            "cardTraderFR": 0
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 0,
-            "slightlyPlayed": 0,
-            "ebayUnspecified": 5
-          },
-          "contribution": 0.56
-        },
-        {
-          "number": "166",
-          "name": "Bulbasaur",
-          "rarity": "Illustration Rare",
-          "oneIn": 188,
-          "median": 100,
-          "floor10": 74.34,
+          "median": 99.99,
+          "floor10": 81.4,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -14325,23 +14674,46 @@
           "name": "Wartortle",
           "rarity": "Illustration Rare",
           "oneIn": 188,
-          "median": 99.99,
-          "floor10": 76.32,
-          "offers": 13,
-          "sellers": 13,
-          "latestSeen": "2026-09-17",
+          "median": 99.69,
+          "floor10": 76.04,
+          "offers": 14,
+          "sellers": 14,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 13,
+            "ebayFR": 14,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 13
+            "ebayUnspecified": 14
           },
           "contribution": 0.53
+        },
+        {
+          "number": "170",
+          "name": "Squirtle",
+          "rarity": "Illustration Rare",
+          "oneIn": 188,
+          "median": 93.95,
+          "floor10": 80.1,
+          "offers": 8,
+          "sellers": 8,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
+          "sourceOffers": {
+            "ebayFR": 8,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 8
+          },
+          "contribution": 0.5
         }
       ]
     },
@@ -14352,30 +14724,50 @@
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv03/logo.webp",
       "boosterPrice": 13.12,
-      "grossCentral": 4.2,
-      "grossQuick": 3.13,
-      "netCentralLo": 2.81,
-      "netCentralHi": 4.43,
-      "netCentralMid": 3.62,
-      "netQuickLo": 2.08,
-      "netQuickHi": 3.28,
-      "netQuickMid": 2.68,
-      "lossPct": 72,
+      "grossCentral": 4.17,
+      "grossQuick": 3.1,
+      "netCentralLo": 2.79,
+      "netCentralHi": 4.39,
+      "netCentralMid": 3.59,
+      "netQuickLo": 2.06,
+      "netQuickHi": 3.25,
+      "netQuickMid": 2.66,
+      "lossPct": 73,
       "quickLossPct": 80,
       "coverage": 0.787,
       "liquidity": {
         "medianDaysListed": 6,
         "cardsObserved": 22,
-        "exits": 1461,
-        "active": 2546
+        "exits": 1454,
+        "active": 2559
       },
       "trackedCoverage": 0.808,
       "freshnessDays": 0,
       "confidence": "élevée",
       "rateConfidence": "solide",
-      "conflicts": 0,
+      "conflicts": 1,
       "blockingConflicts": 0,
-      "conflictDetails": [],
+      "conflictDetails": [
+        {
+          "number": "66",
+          "name": "Tyranitar ex",
+          "rarity": "Double Rare",
+          "anchorGross": 1.79,
+          "anchorMethod": "opening_reference",
+          "marketMedian": 11.51,
+          "ratio": 6.43,
+          "direction": "above",
+          "blocking": false,
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-09-18",
+          "ageDays": 0,
+          "sourceOffers": {
+            "ebayFR": 1,
+            "cardTraderFR": 1
+          }
+        }
+      ],
       "sample": "2 000 à 5 000+ boosters ouverts par set",
       "sampleSource": "études TCGplayer Infinite",
       "partialNote": null,
@@ -14390,11 +14782,11 @@
       "study": {
         "trackedCards": 22,
         "repricedCards": 20,
-        "observedOffers": 421,
-        "sellerCardVoices": 400,
+        "observedOffers": 423,
+        "sellerCardVoices": 402,
         "sourceOffers": {
-          "ebayFR": 408,
-          "cardTraderFR": 13
+          "ebayFR": 412,
+          "cardTraderFR": 11
         },
         "crawlHealth": {
           "available": true,
@@ -14408,8 +14800,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -14776,6 +15168,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 6.73,
+            "cardmarketAvg": 6.5,
+            "cardmarketLow": 4.27,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 8.96,
             "ebayMedian": 13.12,
             "ebayOffers": 73,
@@ -14784,14 +15180,25 @@
             "ebayReview": 18,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 8.93,
+            "ebayMedian": 13.12,
+            "ebayOffers": 72,
+            "ebaySellers": 41,
+            "ebayTrusted": 55,
+            "ebayReview": 17,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -14832,8 +15239,8 @@
           "oneInSpecific": 133,
           "premium": true,
           "baselineContribution": 0.22,
-          "centralContribution": 0.55,
-          "quickContribution": 0.35
+          "centralContribution": 0.53,
+          "quickContribution": 0.36
         },
         {
           "rarity": "Illustration Rare",
@@ -14856,8 +15263,8 @@
           "oneInSpecific": 185,
           "premium": true,
           "baselineContribution": 0.59,
-          "centralContribution": 1.1,
-          "quickContribution": 0.82
+          "centralContribution": 1.09,
+          "quickContribution": 0.77
         },
         {
           "rarity": "Hyper Rare",
@@ -14878,23 +15285,23 @@
           "name": "Charizard ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 185,
-          "median": 148.15,
-          "floor10": 115.31,
-          "offers": 33,
-          "sellers": 32,
-          "latestSeen": "2026-09-17",
+          "median": 146.3,
+          "floor10": 106.78,
+          "offers": 34,
+          "sellers": 33,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 32,
+            "ebayFR": 33,
             "cardTraderFR": 1
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 1,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 32
+            "ebayUnspecified": 33
           },
-          "contribution": 0.8
+          "contribution": 0.79
         },
         {
           "number": "199",
@@ -14905,7 +15312,7 @@
           "floor10": 45.74,
           "offers": 14,
           "sellers": 14,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 14,
@@ -14928,7 +15335,7 @@
           "floor10": 47.5,
           "offers": 29,
           "sellers": 28,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 29,
@@ -14947,23 +15354,23 @@
           "name": "Charizard ex",
           "rarity": "Ultra Rare",
           "oneIn": 133,
-          "median": 39,
-          "floor10": 22.43,
-          "offers": 36,
-          "sellers": 35,
-          "latestSeen": "2026-09-17",
+          "median": 35.45,
+          "floor10": 22.2,
+          "offers": 35,
+          "sellers": 34,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 36,
+            "ebayFR": 35,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 36
+            "ebayUnspecified": 35
           },
-          "contribution": 0.29
+          "contribution": 0.27
         },
         {
           "number": "202",
@@ -14974,7 +15381,7 @@
           "floor10": 25.61,
           "offers": 20,
           "sellers": 18,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 20,
@@ -14997,7 +15404,7 @@
           "floor10": 19.85,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 9,
@@ -15016,21 +15423,21 @@
           "name": "Charizard ex",
           "rarity": "Double Rare",
           "oneIn": 84,
-          "median": 13.93,
-          "floor10": 9.21,
-          "offers": 26,
-          "sellers": 26,
-          "latestSeen": "2026-09-17",
+          "median": 13.96,
+          "floor10": 9.25,
+          "offers": 27,
+          "sellers": 27,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 26,
+            "ebayFR": 27,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 26
+            "ebayUnspecified": 27
           },
           "contribution": 0.17
         },
@@ -15039,21 +15446,21 @@
           "name": "Pidgeot ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 185,
-          "median": 29.82,
-          "floor10": 17.13,
-          "offers": 18,
-          "sellers": 18,
-          "latestSeen": "2026-09-17",
+          "median": 29.9,
+          "floor10": 17.27,
+          "offers": 19,
+          "sellers": 19,
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
-            "ebayFR": 17,
+            "ebayFR": 18,
             "cardTraderFR": 1
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 1,
-            "ebayUnspecified": 17
+            "ebayUnspecified": 18
           },
           "contribution": 0.16
         },
@@ -15066,7 +15473,7 @@
           "floor10": 14,
           "offers": 18,
           "sellers": 18,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 18,
@@ -15089,7 +15496,7 @@
           "floor10": 10.11,
           "offers": 14,
           "sellers": 14,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 13,
@@ -15111,23 +15518,23 @@
       "nameEN": "Lost Origin",
       "era": "Épée et Bouclier",
       "logo": "https://assets.tcgdex.net/fr/swsh/swsh11/logo.webp",
-      "boosterPrice": 19.25,
-      "grossCentral": 3.5,
-      "grossQuick": 2.39,
-      "netCentralLo": 2.22,
-      "netCentralHi": 3.6,
-      "netCentralMid": 2.91,
-      "netQuickLo": 1.48,
-      "netQuickHi": 2.42,
-      "netQuickMid": 1.95,
-      "lossPct": 85,
-      "quickLossPct": 90,
+      "boosterPrice": 19.3,
+      "grossCentral": 3.63,
+      "grossQuick": 3,
+      "netCentralLo": 2.3,
+      "netCentralHi": 3.74,
+      "netCentralMid": 3.02,
+      "netQuickLo": 1.89,
+      "netQuickHi": 3.06,
+      "netQuickMid": 2.47,
+      "lossPct": 84,
+      "quickLossPct": 87,
       "coverage": 0.602,
       "liquidity": {
         "medianDaysListed": 10,
         "cardsObserved": 10,
-        "exits": 386,
-        "active": 954
+        "exits": 403,
+        "active": 949
       },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
@@ -15148,7 +15555,7 @@
           "blocking": false,
           "offers": 2,
           "sellers": 2,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 0,
@@ -15167,7 +15574,7 @@
           "blocking": true,
           "offers": 37,
           "sellers": 35,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 37,
@@ -15186,7 +15593,7 @@
           "blocking": true,
           "offers": 25,
           "sellers": 25,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 22,
@@ -15208,11 +15615,11 @@
       "study": {
         "trackedCards": 10,
         "repricedCards": 4,
-        "observedOffers": 99,
-        "sellerCardVoices": 96,
+        "observedOffers": 98,
+        "sellerCardVoices": 95,
         "sourceOffers": {
-          "ebayFR": 87,
-          "cardTraderFR": 12
+          "ebayFR": 89,
+          "cardTraderFR": 9
         },
         "crawlHealth": {
           "available": true,
@@ -15226,8 +15633,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-10",
@@ -15616,6 +16023,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 11.82,
+            "cardmarketAvg": 9.96,
+            "cardmarketLow": 5,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 13.21,
             "ebayMedian": 19.25,
             "ebayOffers": 53,
@@ -15624,14 +16035,25 @@
             "ebayReview": 5,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 13.01,
+            "ebayMedian": 19.3,
+            "ebayOffers": 50,
+            "ebaySellers": 28,
+            "ebayTrusted": 46,
+            "ebayReview": 4,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 27,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 28,
+          "bothDays": 24,
           "firstObserved": "2026-08-10",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -15720,8 +16142,8 @@
           "oneInSpecific": 385,
           "premium": true,
           "baselineContribution": 2.06,
-          "centralContribution": 2.68,
-          "quickContribution": 1.6
+          "centralContribution": 2.81,
+          "quickContribution": 2.21
         },
         {
           "rarity": "Rare Rainbow",
@@ -15754,44 +16176,44 @@
           "name": "Giratina V",
           "rarity": "Rare Ultra",
           "oneIn": 385,
-          "median": 720.7,
-          "floor10": 341.17,
-          "offers": 6,
-          "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "median": 771.7,
+          "floor10": 577.9,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
-            "cardTraderFR": 1
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 0,
-            "slightlyPlayed": 1,
-            "ebayUnspecified": 5
-          },
-          "contribution": 1.87
-        },
-        {
-          "number": "177",
-          "name": "Rotom V",
-          "rarity": "Rare Ultra",
-          "oneIn": 385,
-          "median": 81.89,
-          "floor10": 53.3,
-          "offers": 6,
-          "sellers": 6,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": true,
-          "sourceOffers": {
-            "ebayFR": 6,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 6
+            "ebayUnspecified": 5
+          },
+          "contribution": 2.01
+        },
+        {
+          "number": "177",
+          "name": "Rotom V",
+          "rarity": "Rare Ultra",
+          "oneIn": 385,
+          "median": 79.99,
+          "floor10": 48.54,
+          "offers": 7,
+          "sellers": 7,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
+          "sourceOffers": {
+            "ebayFR": 7,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 7
           },
           "contribution": 0.21
         },
@@ -15804,7 +16226,7 @@
           "floor10": 37.09,
           "offers": 6,
           "sellers": 6,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 6,
@@ -15827,7 +16249,7 @@
           "floor10": 23.1,
           "offers": 8,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -15849,70 +16271,50 @@
       "nameEN": "Surging Sparks",
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv08/logo.webp",
-      "boosterPrice": 15.03,
-      "grossCentral": 7.71,
-      "grossQuick": 5.77,
-      "netCentralLo": 5.13,
-      "netCentralHi": 8.21,
-      "netCentralMid": 6.67,
-      "netQuickLo": 3.83,
-      "netQuickHi": 6.12,
-      "netQuickMid": 4.98,
+      "boosterPrice": 15.02,
+      "grossCentral": 7.68,
+      "grossQuick": 5.75,
+      "netCentralLo": 5.11,
+      "netCentralHi": 8.17,
+      "netCentralMid": 6.64,
+      "netQuickLo": 3.82,
+      "netQuickHi": 6.1,
+      "netQuickMid": 4.96,
       "lossPct": 56,
       "quickLossPct": 67,
-      "coverage": 0.752,
+      "coverage": 0.768,
       "liquidity": {
         "medianDaysListed": 8,
         "cardsObserved": 21,
-        "exits": 766,
-        "active": 1574
+        "exits": 754,
+        "active": 1603
       },
       "trackedCoverage": 0.805,
       "freshnessDays": 0,
       "confidence": "élevée",
       "rateConfidence": "solide",
-      "conflicts": 1,
+      "conflicts": 0,
       "blockingConflicts": 0,
-      "conflictDetails": [
-        {
-          "number": "57",
-          "name": "Pikachu ex",
-          "rarity": "Double Rare",
-          "anchorGross": 4.55,
-          "anchorMethod": "opening_reference",
-          "marketMedian": 60.64,
-          "ratio": 13.33,
-          "direction": "above",
-          "blocking": false,
-          "offers": 1,
-          "sellers": 1,
-          "latestSeen": "2026-09-17",
-          "ageDays": 0,
-          "sourceOffers": {
-            "ebayFR": 0,
-            "cardTraderFR": 1
-          }
-        }
-      ],
+      "conflictDetails": [],
       "sample": "2 000 à 5 000+ boosters ouverts par set",
       "sampleSource": "études TCGplayer Infinite",
       "partialNote": null,
       "evCoverageTruncated": false,
       "coverageBreakdown": {
-        "repriced": 0.752,
-        "trackedFallbackThin": 0.034,
+        "repriced": 0.768,
+        "trackedFallbackThin": 0,
         "trackedFallbackConflict": 0,
-        "trackedFallbackUnavailable": 0.019,
+        "trackedFallbackUnavailable": 0.037,
         "untracked": 0.195
       },
       "study": {
         "trackedCards": 21,
-        "repricedCards": 18,
-        "observedOffers": 173,
-        "sellerCardVoices": 171,
+        "repricedCards": 19,
+        "observedOffers": 174,
+        "sellerCardVoices": 172,
         "sourceOffers": {
-          "ebayFR": 163,
-          "cardTraderFR": 10
+          "ebayFR": 166,
+          "cardTraderFR": 8
         },
         "crawlHealth": {
           "available": true,
@@ -15926,8 +16328,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -16294,6 +16696,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 6.64,
+            "cardmarketAvg": 6.33,
+            "cardmarketLow": 3.99,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 11.08,
             "ebayMedian": 15.03,
             "ebayOffers": 55,
@@ -16302,14 +16708,25 @@
             "ebayReview": 19,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 10.53,
+            "ebayMedian": 15.02,
+            "ebayOffers": 56,
+            "ebaySellers": 34,
+            "ebayTrusted": 38,
+            "ebayReview": 18,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -16363,7 +16780,7 @@
           "premium": true,
           "baselineContribution": 0.52,
           "centralContribution": 0.83,
-          "quickContribution": 0.74
+          "quickContribution": 0.73
         },
         {
           "rarity": "Special Illustration Rare",
@@ -16374,8 +16791,8 @@
           "oneInSpecific": 338,
           "premium": true,
           "baselineContribution": 2.08,
-          "centralContribution": 4.81,
-          "quickContribution": 3.45
+          "centralContribution": 4.78,
+          "quickContribution": 3.44
         },
         {
           "rarity": "Hyper Rare",
@@ -16400,7 +16817,7 @@
           "floor10": 445.3,
           "offers": 17,
           "sellers": 17,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 16,
@@ -16415,29 +16832,6 @@
           "contribution": 1.68
         },
         {
-          "number": "237",
-          "name": "Milotic ex",
-          "rarity": "Special Illustration Rare",
-          "oneIn": 338,
-          "median": 358.6,
-          "floor10": 217.44,
-          "offers": 5,
-          "sellers": 5,
-          "latestSeen": "2026-09-17",
-          "floorIndicative": true,
-          "sourceOffers": {
-            "ebayFR": 5,
-            "cardTraderFR": 0
-          },
-          "conditionMix": {
-            "mint": 0,
-            "nearMint": 0,
-            "slightlyPlayed": 0,
-            "ebayUnspecified": 5
-          },
-          "contribution": 1.06
-        },
-        {
           "number": "239",
           "name": "Latias ex",
           "rarity": "Special Illustration Rare",
@@ -16446,7 +16840,7 @@
           "floor10": 229.49,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -16461,6 +16855,29 @@
           "contribution": 1.01
         },
         {
+          "number": "237",
+          "name": "Milotic ex",
+          "rarity": "Special Illustration Rare",
+          "oneIn": 338,
+          "median": 314.85,
+          "floor10": 200.38,
+          "offers": 6,
+          "sellers": 6,
+          "latestSeen": "2026-09-18",
+          "floorIndicative": true,
+          "sourceOffers": {
+            "ebayFR": 6,
+            "cardTraderFR": 0
+          },
+          "conditionMix": {
+            "mint": 0,
+            "nearMint": 0,
+            "slightlyPlayed": 0,
+            "ebayUnspecified": 6
+          },
+          "contribution": 0.93
+        },
+        {
           "number": "247",
           "name": "Pikachu ex",
           "rarity": "Hyper Rare",
@@ -16469,7 +16886,7 @@
           "floor10": 101.42,
           "offers": 10,
           "sellers": 10,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 9,
@@ -16492,7 +16909,7 @@
           "floor10": 44.98,
           "offers": 22,
           "sellers": 21,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 20,
@@ -16515,7 +16932,7 @@
           "floor10": 48.12,
           "offers": 13,
           "sellers": 13,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 13,
@@ -16538,7 +16955,7 @@
           "floor10": 58.36,
           "offers": 7,
           "sellers": 7,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 7,
@@ -16561,7 +16978,7 @@
           "floor10": 73.5,
           "offers": 11,
           "sellers": 11,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": false,
           "sourceOffers": {
             "ebayFR": 11,
@@ -16584,7 +17001,7 @@
           "floor10": 37,
           "offers": 5,
           "sellers": 5,
-          "latestSeen": "2026-09-17",
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
             "ebayFR": 5,
@@ -16599,27 +17016,27 @@
           "contribution": 0.23
         },
         {
-          "number": "246",
-          "name": "Lisia's Appeal",
+          "number": "236",
+          "name": "Durant ex",
           "rarity": "Special Illustration Rare",
           "oneIn": 338,
-          "median": 47.5,
-          "floor10": 28.65,
-          "offers": 8,
-          "sellers": 8,
-          "latestSeen": "2026-09-17",
+          "median": 52.7,
+          "floor10": 33.89,
+          "offers": 5,
+          "sellers": 5,
+          "latestSeen": "2026-09-18",
           "floorIndicative": true,
           "sourceOffers": {
-            "ebayFR": 8,
+            "ebayFR": 5,
             "cardTraderFR": 0
           },
           "conditionMix": {
             "mint": 0,
             "nearMint": 0,
             "slightlyPlayed": 0,
-            "ebayUnspecified": 8
+            "ebayUnspecified": 5
           },
-          "contribution": 0.14
+          "contribution": 0.16
         }
       ]
     },
@@ -16644,8 +17061,8 @@
       "liquidity": {
         "medianDaysListed": 9,
         "cardsObserved": 11,
-        "exits": 303,
-        "active": 700
+        "exits": 301,
+        "active": 711
       },
       "trackedCoverage": 0.807,
       "freshnessDays": 0,
@@ -16660,17 +17077,17 @@
           "rarity": "Hyper Rare",
           "anchorGross": 10.12,
           "anchorMethod": "opening_reference",
-          "marketMedian": 50.64,
-          "ratio": 5,
+          "marketMedian": 51.67,
+          "ratio": 5.11,
           "direction": "above",
           "blocking": false,
-          "offers": 3,
-          "sellers": 3,
-          "latestSeen": "2026-09-17",
+          "offers": 2,
+          "sellers": 2,
+          "latestSeen": "2026-09-18",
           "ageDays": 0,
           "sourceOffers": {
             "ebayFR": 1,
-            "cardTraderFR": 2
+            "cardTraderFR": 1
           }
         }
       ],
@@ -16688,11 +17105,11 @@
       "study": {
         "trackedCards": 11,
         "repricedCards": 0,
-        "observedOffers": 5,
-        "sellerCardVoices": 5,
+        "observedOffers": 4,
+        "sellerCardVoices": 4,
         "sourceOffers": {
           "ebayFR": 1,
-          "cardTraderFR": 4
+          "cardTraderFR": 3
         },
         "crawlHealth": {
           "available": true,
@@ -16706,8 +17123,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-11",
@@ -17085,6 +17502,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 13.66,
+            "cardmarketAvg": 41.84,
+            "cardmarketLow": 7.9,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 55.82,
+            "ebayMedian": 69.05,
+            "ebayOffers": 4,
+            "ebaySellers": 3,
+            "ebayTrusted": 2,
+            "ebayReview": 2,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 55.82,
             "ebayMedian": 69.05,
             "ebayOffers": 4,
@@ -17096,11 +17528,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 26,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 27,
+          "bothDays": 24,
           "firstObserved": "2026-08-11",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -17213,7 +17645,7 @@
       "nameEN": "White Flare",
       "era": "Écarlate et Violet",
       "logo": "https://assets.tcgdex.net/fr/sv/sv10.5w/logo.webp",
-      "boosterPrice": 15.07,
+      "boosterPrice": 14.01,
       "grossCentral": 3.13,
       "grossQuick": 3.13,
       "netCentralLo": 2.42,
@@ -17222,8 +17654,8 @@
       "netQuickLo": 2.42,
       "netQuickHi": 2.87,
       "netQuickMid": 2.65,
-      "lossPct": 82,
-      "quickLossPct": 82,
+      "lossPct": 81,
+      "quickLossPct": 81,
       "coverage": 0,
       "liquidity": {
         "medianDaysListed": 8,
@@ -17270,8 +17702,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-11",
@@ -17649,6 +18081,10 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 12.15,
+            "cardmarketAvg": 10.71,
+            "cardmarketLow": 6.9,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
             "ebayP10": 11.9,
             "ebayMedian": 15.07,
             "ebayOffers": 4,
@@ -17657,14 +18093,25 @@
             "ebayReview": 0,
             "ebayQuarantined": 0,
             "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
+            "ebayP10": 11.77,
+            "ebayMedian": 14.01,
+            "ebayOffers": 5,
+            "ebaySellers": 5,
+            "ebayTrusted": 4,
+            "ebayReview": 1,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 26,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 27,
+          "bothDays": 24,
           "firstObserved": "2026-08-11",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
@@ -17768,8 +18215,8 @@
       "liquidity": {
         "medianDaysListed": 10,
         "cardsObserved": 32,
-        "exits": 462,
-        "active": 871
+        "exits": 475,
+        "active": 870
       },
       "trackedCoverage": 0.805,
       "freshnessDays": 0,
@@ -17810,8 +18257,8 @@
       },
       "boosterMarketHistory": {
         "windowDays": 365,
-        "from": "2025-09-18",
-        "to": "2026-09-17",
+        "from": "2025-09-19",
+        "to": "2026-09-18",
         "observations": [
           {
             "date": "2026-08-12",
@@ -18178,6 +18625,21 @@
           },
           {
             "date": "2026-09-17",
+            "cardmarketTrend": 10.77,
+            "cardmarketAvg": 10.79,
+            "cardmarketLow": 6.2,
+            "cardmarketSourceCreatedAt": "2026-09-17T00:44:55.000Z",
+            "ebayP10": 7.67,
+            "ebayMedian": 10.49,
+            "ebayOffers": 4,
+            "ebaySellers": 4,
+            "ebayTrusted": 4,
+            "ebayReview": 0,
+            "ebayQuarantined": 0,
+            "ebayComplete": true
+          },
+          {
+            "date": "2026-09-18",
             "ebayP10": 7.67,
             "ebayMedian": 10.49,
             "ebayOffers": 4,
@@ -18189,11 +18651,11 @@
           }
         ],
         "coverage": {
-          "cardmarketDays": 24,
-          "ebayDays": 25,
-          "bothDays": 23,
+          "cardmarketDays": 25,
+          "ebayDays": 26,
+          "bothDays": 24,
           "firstObserved": "2026-08-12",
-          "lastObserved": "2026-09-17"
+          "lastObserved": "2026-09-18"
         },
         "doctrine": {
           "cardmarket": "Trend Price quotidien du guide public Cardmarket, marché européen et langues confondues",
